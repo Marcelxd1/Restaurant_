@@ -25,3 +25,8 @@ hs_err_pid*
 !/ProyectosJava/LP2SoftUserController/src/pe/edu/pucp/lp2soft/user/lib/mysql-connector-java-8.0.28.jar
 /ProyectosJava/LP2SoftNegocioModel/build/
 /ProyectosJava/LP2SoftCajaModel/build/
+/ProyectosJava/LP2SoftDBManager/build/
+/ProyectosJava/LP2SoftDBManager/dist/
+/ProyectosJava/LP2SoftNegocioController/build/
+/ProyectosJava/LP2SoftNegocioController/dist/
+/ProyectosJava/LP2SoftNegocioModel/dist/
