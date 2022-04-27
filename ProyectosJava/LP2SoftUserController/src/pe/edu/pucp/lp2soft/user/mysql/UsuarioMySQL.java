@@ -5,6 +5,7 @@
 
 package pe.edu.pucp.lp2soft.user.mysql;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,6 +22,7 @@ public class UsuarioMySQL implements UsuarioDAO {
     private Connection con ; 
     private ResultSet st ;
     private PreparedStatement ps ;
+    private CallableStatement cs; 
     
     @Override
     public ArrayList<Usuario> listarTodas() {
@@ -32,17 +34,29 @@ public class UsuarioMySQL implements UsuarioDAO {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "INSERT INTO usuario(id_usuario, fid_rol,fid_restaurante,usuario,password,estado,salario,telefono) values(?,?,?,?,?,?,?,?)";
-            ps = con.prepareStatement(sql);
-            ps.setInt(1, usuario.getPersona().getId_persona());
-            ps.setInt(2, usuario.getRol().getId_rol());
-            ps.setInt(3, usuario.getRestaurante().getId_restaurante());
-            ps.setString(4, usuario.getUsuario());
-            ps.setString(5, usuario.getPassword());
-            ps.setBoolean(6, true);
-            ps.setDouble(7, usuario.getSalario());
-            ps.setString(8, usuario.getTelefono());
-            ps.executeUpdate();
+            cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?,?,?)}");
+            cs.setInt("_id_usuario",usuario.getPersona().getId_persona());
+            cs.setInt("_fid_rol", usuario.getRol().getId_rol());
+            cs.setInt("_fid_restaurante", usuario.getRestaurante().getId_restaurante());
+            cs.setString("_usuario", usuario.getUsuario());
+            cs.setString("_password", usuario.getPassword());
+            cs.setBoolean("_estado", true);
+            cs.setDouble("_salario", usuario.getSalario());
+            cs.setString("_telefono", usuario.getTelefono());
+            cs.executeUpdate();
+           
+          
+//            String sql = "INSERT INTO usuario(id_usuario, fid_rol,fid_restaurante,usuario,password,estado,salario,telefono) values(?,?,?,?,?,?,?,?)";
+//            ps = con.prepareStatement(sql);
+//            ps.setInt(1, usuario.getPersona().getId_persona());
+//            ps.setInt(2, usuario.getRol().getId_rol());
+//            ps.setInt(3, usuario.getRestaurante().getId_restaurante());
+//            ps.setString(4, usuario.getUsuario());
+//            ps.setString(5, usuario.getPassword());
+//            ps.setBoolean(6, true);
+//            ps.setDouble(7, usuario.getSalario());
+//            ps.setString(8, usuario.getTelefono());
+           // ps.executeUpdate();
             resultado = 1 ; 
         }catch (Exception ex){
             System.out.println(ex.getMessage());

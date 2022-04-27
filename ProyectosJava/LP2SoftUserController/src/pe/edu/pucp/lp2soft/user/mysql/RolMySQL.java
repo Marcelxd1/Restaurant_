@@ -5,6 +5,7 @@
 
 package pe.edu.pucp.lp2soft.user.mysql;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,6 +22,7 @@ public class RolMySQL implements RolDAO{
     private Connection con ; 
     private ResultSet rs ;
     private PreparedStatement ps ;
+    private CallableStatement cs; 
     @Override
     public ArrayList<Rol> listarTodas() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -31,16 +33,11 @@ public class RolMySQL implements RolDAO{
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "INSERT INTO rol (descripcion) values(?)";
-            ps = con.prepareStatement(sql) ;
-            ps.setString(1, rol.getDescripcion());
-            ps.executeUpdate();
-            sql = "SELECT @@last_insert_id as id";
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            rs.next() ;
-            rol.setId_rol(rs.getInt("id"));
-            
+            cs = con.prepareCall("{call INSERTAR_ROL(?,?)}");
+            cs.registerOutParameter("_id_rol", java.sql.Types.INTEGER);
+            cs.setString("_descripcion", rol.getDescripcion());
+            cs.executeUpdate();
+            rol.setId_rol(cs.getInt("_id_rol"));     
             resultado  = 1; 
         }catch (Exception ex){
             System.out.println(ex.getMessage());

@@ -5,6 +5,7 @@
 
 package pe.edu.pucp.lp2soft.user.mysql;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +22,7 @@ public class RestauranteMySQL implements RestauranteDAO {
     private Connection con ; 
     private ResultSet rs ;
     private PreparedStatement ps ;
-    
+    private CallableStatement cs ;
     @Override
     public ArrayList<Restaurante> listarTodas() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -32,19 +33,17 @@ public class RestauranteMySQL implements RestauranteDAO {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            String sql = "INSERT INTO restaurante (ruc,nombre,telefono,direccion,dineroActual) values(?,?,?,?,?)";
-            ps = con.prepareStatement(sql) ;
-            ps.setString(1,restaurante.getRuc());
-            ps.setString(2, restaurante.getNombre());
-            ps.setString(3, restaurante.getTelefono());
-            ps.setString(4, restaurante.getDireccion());
-            ps.setDouble(5,0.0 );
-            ps.executeUpdate();
-            sql = "SELECT @@last_insert_id as id";
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            rs.next() ;
-            restaurante.setId_restaurante(rs.getInt("id"));
+            cs = con.prepareCall("{call INSERTAR_RESTAURANTE(?,?,?,?,?,?)}");
+            
+            cs.registerOutParameter("_id_rest", java.sql.Types.INTEGER);
+            cs.setString("_ruc", restaurante.getRuc());
+            cs.setString("_nombre", restaurante.getNombre());
+            cs.setString("_telefono", restaurante.getTelefono());
+            cs.setString("_direccion", restaurante.getDireccion());
+            cs.setDouble("_dineroActual", 0);
+            cs.executeUpdate();
+            restaurante.setId_restaurante(cs.getInt("_id_rest"));
+           
             
             resultado  = 1; 
         }catch (Exception ex){
