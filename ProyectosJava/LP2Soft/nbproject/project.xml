@@ -21,7 +21,7 @@
                 <id>jar</id>
             </reference>
             <reference>
-                <foreign-project>LP2SoftUserController</foreign-project>
+                <foreign-project>LP2SoftNegocioController</foreign-project>
                 <artifact-type>jar</artifact-type>
                 <script>build.xml</script>
                 <target>jar</target>
@@ -29,7 +29,7 @@
                 <id>jar</id>
             </reference>
             <reference>
-                <foreign-project>LP2SoftUserModel</foreign-project>
+                <foreign-project>LP2SoftNegocioModel</foreign-project>
                 <artifact-type>jar</artifact-type>
                 <script>build.xml</script>
                 <target>jar</target>

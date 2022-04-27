@@ -7,8 +7,7 @@ public class ItemVendible {
     private boolean estado; 
     private double precio;
     private String descripcion;
-    // restaurante 
-    
+
     public ItemVendible(String nombre, boolean estado, double precio, String descripcion) {
         this.nombre = nombre;
         this.estado = estado;
