@@ -22,7 +22,7 @@ public class PersonaMySQL implements PersonaDAO {
     private Connection con ; 
     private ResultSet rs ;
     private PreparedStatement ps ;
-    private CallableStatement cs ; 
+    private CallableStatement cs ;
     @Override
     public ArrayList<Persona> listarTodas() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -33,7 +33,6 @@ public class PersonaMySQL implements PersonaDAO {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            
             cs = con.prepareCall("{call INSERTAR_PERSONA(?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_persona", java.sql.Types.INTEGER);
             cs.setString("_nombre", persona.getNombre());
@@ -45,23 +44,6 @@ public class PersonaMySQL implements PersonaDAO {
             cs.setString("_RUC", persona.getRuc());
             cs.executeUpdate();
             persona.setId_persona(cs.getInt("_id_persona"));
-            
-            
-//            String sql = "INSERT INTO persona(nombre,apellido_paterno,apellido_materno,DNI,tipo,razon_social,RUC) values(?,?,?,?,?,?,?)";
-//            ps = con.prepareStatement(sql);
-//            ps.setString(1, persona.getNombre());
-//            ps.setString(2, persona.getApellido_paterno());
-//            ps.setString(3, persona.getApellido_materno());
-//            ps.setString(4, persona.getDNI());
-//            ps.setString(5 ,String.valueOf(persona.getTipo()));
-//            ps.setString(6, persona.getRazon_social());
-//            ps.setString(7, persona.getRuc());
-//            ps.executeUpdate();
-//            sql = "SELECT @@last_insert_id as id " ; 
-//            ps = con.prepareStatement(sql);
-//            rs = ps.executeQuery();
-//            rs.next() ;
-//            persona.setId_persona(rs.getInt("id"));
             resultado = 1 ; 
         }catch (Exception ex){
             System.out.println(ex.getMessage());

@@ -22,7 +22,7 @@ public class RolMySQL implements RolDAO{
     private Connection con ; 
     private ResultSet rs ;
     private PreparedStatement ps ;
-    private CallableStatement cs; 
+    private CallableStatement cs  ;
     @Override
     public ArrayList<Rol> listarTodas() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -37,7 +37,7 @@ public class RolMySQL implements RolDAO{
             cs.registerOutParameter("_id_rol", java.sql.Types.INTEGER);
             cs.setString("_descripcion", rol.getDescripcion());
             cs.executeUpdate();
-            rol.setId_rol(cs.getInt("_id_rol"));     
+            rol.setId_rol(cs.getInt("_id_rol"));  
             resultado  = 1; 
         }catch (Exception ex){
             System.out.println(ex.getMessage());

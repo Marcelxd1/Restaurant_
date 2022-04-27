@@ -23,6 +23,7 @@ public class RestauranteMySQL implements RestauranteDAO {
     private ResultSet rs ;
     private PreparedStatement ps ;
     private CallableStatement cs ;
+    
     @Override
     public ArrayList<Restaurante> listarTodas() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -34,7 +35,7 @@ public class RestauranteMySQL implements RestauranteDAO {
         try {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_RESTAURANTE(?,?,?,?,?,?)}");
-            
+
             cs.registerOutParameter("_id_rest", java.sql.Types.INTEGER);
             cs.setString("_ruc", restaurante.getRuc());
             cs.setString("_nombre", restaurante.getNombre());
@@ -43,7 +44,6 @@ public class RestauranteMySQL implements RestauranteDAO {
             cs.setDouble("_dineroActual", 0);
             cs.executeUpdate();
             restaurante.setId_restaurante(cs.getInt("_id_rest"));
-           
             
             resultado  = 1; 
         }catch (Exception ex){
