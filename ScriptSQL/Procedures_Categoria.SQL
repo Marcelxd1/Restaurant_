@@ -8,7 +8,7 @@ DELIMITER $
 #------------------------------------------------------------------------------
 CREATE PROCEDURE LISTAR_CATEGORIAS_TODAS()
 BEGIN
-	SELECT id_categoria, nombre FROM categoria WHERE activo = 1;
+	SELECT id_categoria, nombre, descripcion FROM categoria WHERE activo = 1;
 END$
 
 #------------------------------------------------------------------------------
