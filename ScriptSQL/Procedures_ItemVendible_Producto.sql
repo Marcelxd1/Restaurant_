@@ -20,7 +20,7 @@ BEGIN
 	INSERT INTO item_vendible
     (nombre,precio,descripcion,estado) VALUES(_nombre,_precio,_descripcion,_estado);
     SET _id_item_vendible = @@last_insert_id;
-    INSERT INTO producto(tipo_producto,presentacion,fid_categoria) VALUES(_tipo_producto,_presentacion,_fid_categoria);
+    INSERT INTO producto(id_producto,tipo_producto,presentacion,fid_categoria) VALUES(_id_item_vendible,_tipo_producto,_presentacion,_fid_categoria);
 END$
 
 #------------------------------------------------------------------------------
