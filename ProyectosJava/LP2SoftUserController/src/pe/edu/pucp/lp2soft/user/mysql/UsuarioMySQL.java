@@ -20,13 +20,32 @@ import pe.edu.pucp.lp2soft.usuario.model.Usuario;
  */
 public class UsuarioMySQL implements UsuarioDAO {
     private Connection con ; 
-    private ResultSet st ;
+    private ResultSet rs ;
     private PreparedStatement ps ;
     private CallableStatement cs; 
     
     @Override
     public ArrayList<Usuario> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_USUARIOS()}");
+            rs = cs.executeQuery();
+            while (rs.next()){
+                Usuario usuario = new Usuario();
+                usuario.setId_usuario(rs.getInt("id_persona"));
+                usuario.setUsuario(rs.getString("usuario"));
+                usuario.setSalario(rs.getInt("salario"));
+                usuario.setTelefono(rs.getString("telefono"));             
+                usuarios.add(usuario);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return usuarios ;
     }
 
     @Override
@@ -55,17 +74,45 @@ public class UsuarioMySQL implements UsuarioDAO {
     }
 
     @Override
-    public int modificar(Usuario bebida) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Usuario usuario) {
+        int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_USUARIO(?)}");
+            cs.setInt("_id_usuario", usuario.getId_usuario());
+            cs.setString("_usuario", usuario.getUsuario());
+            cs.setString("_password", usuario.getPassword());
+            cs.executeUpdate();
+            resultado  = 1; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ;
     }
 
     @Override
-    public int eliminar(int idBebida) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idUsuario) {
+       int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call ELIMINAR_USUARIO(?)}");
+            cs.setInt("_id_usuario",idUsuario);
+            cs.executeUpdate();
+            resultado  = 1; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ;
     }
 
     @Override
-    public Usuario listarPorId(int idBebida) {
+    public Usuario listarPorId(int idUsuario) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

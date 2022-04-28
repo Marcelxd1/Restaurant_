@@ -16,7 +16,8 @@ public class Restaurante {
     private String telefono ; 
     private String direccion ;
     private double dineroActual ;
-
+    
+    public Restaurante(){}
     public Restaurante(String ruc, String nombre, String telefono, String direccion, double dineroActual) {
         this.ruc = ruc;
         this.nombre = nombre;

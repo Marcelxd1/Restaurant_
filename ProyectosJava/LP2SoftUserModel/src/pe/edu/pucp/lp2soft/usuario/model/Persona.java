@@ -18,7 +18,9 @@ public class Persona {
     private char tipo ; 
     private String razon_social;
     private String ruc ;
-
+    private boolean activo ; 
+    
+    public Persona(){}
     public Persona( String nombre, String apellido_paterno, String apellido_materno, String DNI, char tipo, String razon_social, String ruc) {
       
         this.nombre = nombre;

@@ -25,7 +25,25 @@ public class RolMySQL implements RolDAO{
     private CallableStatement cs  ;
     @Override
     public ArrayList<Rol> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Rol> roles = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_ROL_TODAS()}");
+            rs = cs.executeQuery();
+            while (rs.next()){
+                Rol rol = new Rol();
+                rol.setId_rol(rs.getInt("id_rol"));
+                rol.setDescripcion(rs.getString("descripcion"));
+                rol.setActivo(true);
+                roles.add(rol);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return roles ;
     }
 
     @Override
@@ -50,12 +68,39 @@ public class RolMySQL implements RolDAO{
 
     @Override
     public int modificar(Rol rol) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_ROL(?,?)}");
+            cs.setInt("_idRol",rol.getId_rol());
+            cs.setString("_descripcion" , rol.getDescripcion());
+            cs.executeUpdate();
+            resultado  = 1; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ;
     }
 
     @Override
     public int eliminar(int idRol) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call ELIMINAR_ROL(?)}");
+            cs.setInt("_idRol",idRol);
+            cs.executeUpdate();
+            resultado  = 1; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ;
     }
 
     @Override

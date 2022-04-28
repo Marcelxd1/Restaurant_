@@ -26,7 +26,25 @@ public class RestauranteMySQL implements RestauranteDAO {
     
     @Override
     public ArrayList<Restaurante> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Restaurante> restaurantes = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_RESTAURANTE_TODAS()}");
+            rs = cs.executeQuery();
+            while (rs.next()){
+                Restaurante rest = new Restaurante();
+                rest.setId_restaurante(rs.getInt("id_restaurante"));
+                rest.setNombre(rs.getString("nombre"));
+                rest.setRuc(rs.getString("ruc"));
+                restaurantes.add(rest);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return restaurantes ;
     }
 
     @Override
@@ -57,7 +75,24 @@ public class RestauranteMySQL implements RestauranteDAO {
 
     @Override
     public int modificar(Restaurante restaurante) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_RESTAURANTE(?,?,?,?,?)}");
+            cs.setInt("_id_restaurante",restaurante.getId_restaurante());
+            cs.setString("_ruc" , restaurante.getRuc());
+            cs.setString("_nombre" , restaurante.getNombre());
+            cs.setString("_telefono" , restaurante.getTelefono());
+            cs.setString("_direccion" , restaurante.getDireccion());
+            cs.executeUpdate();
+            resultado  = 1; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ;
     }
 
     @Override

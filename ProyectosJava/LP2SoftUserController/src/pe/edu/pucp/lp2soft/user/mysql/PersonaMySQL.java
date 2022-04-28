@@ -25,7 +25,29 @@ public class PersonaMySQL implements PersonaDAO {
     private CallableStatement cs ;
     @Override
     public ArrayList<Persona> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Persona> personas = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_PERSONAS()}");
+            rs = cs.executeQuery();
+            while (rs.next()){
+                Persona persona = new Persona();
+                persona.setId_persona(rs.getInt("id_persona"));
+                persona.setNombre(rs.getString("nombre"));
+                persona.setApellido_paterno(rs.getString("apellido_paterno"));
+                persona.setDNI(rs.getString("DNI"));
+                persona.setTipo('P');
+                
+             
+                personas.add(persona);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return personas ;
     }
 
     @Override
@@ -56,12 +78,41 @@ public class PersonaMySQL implements PersonaDAO {
 
     @Override
     public int modificar(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_PERSONA(?,?,?,?)}");
+            cs.setInt("_id_persona",persona.getId_persona());
+            cs.setString("_nombre" , persona.getNombre());
+            cs.setString("_apellido_paterno" , persona.getApellido_paterno());
+            cs.setString("_DNI" , persona.getDNI());
+            cs.executeUpdate();
+            resultado  = 1; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ;
     }
 
     @Override
     public int eliminar(int idPersona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call ELIMINAR_PERSONA(?)}");
+            cs.setInt("_id_persona",idPersona);
+            cs.executeUpdate();
+            resultado  = 1; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ;
     }
 
     @Override

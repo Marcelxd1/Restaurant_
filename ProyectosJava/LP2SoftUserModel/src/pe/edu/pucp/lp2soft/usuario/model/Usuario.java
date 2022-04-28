@@ -20,7 +20,8 @@ public class Usuario {
     private Rol rol ; 
     private Restaurante restaurante ; 
     private Persona persona ; 
-
+    
+    public Usuario(){}
     public Usuario(String usuario, String password, boolean estado, double salario, String telefono) {
         this.usuario = usuario;
         this.password = password;

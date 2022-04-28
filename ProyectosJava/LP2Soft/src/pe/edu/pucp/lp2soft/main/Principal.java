@@ -127,8 +127,31 @@ public class Principal {
         else{
             System.out.println(" NO Se ha registrado en la tabla USUARIO correctamente ");
         }
-    
-
         
+        ArrayList<Rol> roles = daoRol.listarTodas();
+        for (int i = 0 ; i < roles.size();i++){
+            System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
+        }
+        
+        roles.get(2).setDescripcion("CAMBIAZO");
+        resultado = daoRol.modificar(roles.get(2));
+        if (resultado == 1){
+            System.out.println("Se ha modificado en la tabla rol correctamente ");
+        }
+        else{
+            System.out.println(" NO se ha modificado en la tabla rol ");
+        }
+        
+        resultado = daoRol.eliminar(20) ;
+        if (resultado == 1){
+            System.out.println("Se ha eliminado el id 20  en la tabla rol");
+        }
+        else{
+            System.out.println(" NO se ha eliminado nada en la tabla rol ");
+        }
+        roles = daoRol.listarTodas();
+        for (int i = 0 ; i < roles.size();i++){
+            System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
+        }
     }
 }

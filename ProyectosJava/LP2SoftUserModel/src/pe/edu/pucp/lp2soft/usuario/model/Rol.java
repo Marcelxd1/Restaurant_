@@ -12,7 +12,8 @@ package pe.edu.pucp.lp2soft.usuario.model;
 public class Rol {
     private int id_rol ; 
     private String descripcion ; 
-
+    private boolean activo ;
+    public Rol(){}
     public Rol(String descripcion) {
         this.descripcion = descripcion;
     }
@@ -32,6 +33,14 @@ public class Rol {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
     
