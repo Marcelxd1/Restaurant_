@@ -22,12 +22,12 @@ import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
 public class Principal {
     public static void main(String[] args) throws Exception{
-        Categoria cat1 = new Categoria("Pollos","todo tipo de pollo :v");
-        Categoria cat2 = new Categoria("Parrilleros","las parrillas :v");
-        Categoria cat3 = new Categoria("Gaseosas","aguas con gas :v");
-        Producto producto = new Producto("1/4 Pollo a la Brasa",true,19.2,"con papas y ensalada",'C'," ");
-        Producto producto2 = new Producto("Chuletas a la parrilla",true,31.2,"con papas sancochadas",'C'," ");
-        Producto producto3 = new Producto("Inka Kola",true,3.5,"gaseosa descartable",'B',"2.5L");
+        Categoria cat1 = new Categoria("Pollos","todo tipo de pollo");
+        Categoria cat2 = new Categoria("Parrilleros","las parrillas ");
+        Categoria cat3 = new Categoria("Gaseosas","aguas con gas");
+        Producto producto = new Producto("1/4 Pollo a la Brasa",true,19.2,"con papas y ensalada",'C',null);
+        Producto producto2 = new Producto("Chuletas a la parrilla",true,31.2,"con papas sancochadas",'C',null);
+        Producto producto3 = new Producto("Inka Kola",true,3.5,"botella descartable",'B',"2.5L");
         
         ProductoDAO daoProd = new ProductoMySQL();
         CategoriaDAO daoCat = new CategoriaMySQL();

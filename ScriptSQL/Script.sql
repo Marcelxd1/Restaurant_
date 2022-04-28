@@ -242,6 +242,7 @@ CREATE TABLE categoria (
   id_categoria INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(100) NULL DEFAULT NULL,
   descripcion VARCHAR(100) NULL DEFAULT NULL,
+  activo TINYINT NULL DEFAULT NULL,
   PRIMARY KEY (id_categoria))
 ENGINE = InnoDB;
 
