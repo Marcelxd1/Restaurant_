@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import pe.edu.pucp.lp2soft.negocio.dao.CategoriaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.MesaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.ProductoDAO;
+import pe.edu.pucp.lp2soft.negocio.dao.PromocionDAO;
 import pe.edu.pucp.lp2soft.negocio.model.Categoria;
+import pe.edu.pucp.lp2soft.negocio.model.LineaPromocion;
 import pe.edu.pucp.lp2soft.negocio.model.Mesa;
 import pe.edu.pucp.lp2soft.negocio.model.Producto;
+import pe.edu.pucp.lp2soft.negocio.model.Promocion;
 import pe.edu.pucp.lp2soft.negocio.mysql.CategoriaMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.MesaMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.ProductoMySQL;
+import pe.edu.pucp.lp2soft.negocio.mysql.PromocionMySQL;
 import pe.edu.pucp.lp2soft.user.dao.PersonaDAO;
 import pe.edu.pucp.lp2soft.user.dao.RestauranteDAO;
 import pe.edu.pucp.lp2soft.user.dao.RolDAO;
@@ -34,9 +38,22 @@ public class Principal {
         Producto producto3 = new Producto("Inka Kola", true, 3.5, "gaseosa descartable", 'B', "2.5L");
         ProductoDAO daoProd = new ProductoMySQL();
         CategoriaDAO daoCat = new CategoriaMySQL();
+        PromocionDAO daoPromo = new PromocionMySQL();
+        Promocion promocion1= new Promocion(new ArrayList<>(), "Combo Parrillero", true, 200.00, "Pollo a la Brasa con Chuleta a la Parrilla"); 
+        Promocion promocion2= new Promocion(new ArrayList<>(), "Combo Maritimo", true, 100.00, "ceviche y Chicharron de mariscos"); 
+        Promocion promocion3= new Promocion(new ArrayList<>(), "Combo Veranito", true, 100.00, "no somos cevicheria o si? "); 
+        
+        LineaPromocion lin11=new LineaPromocion(0, 4, producto, promocion1, true);
+        LineaPromocion lin12=new LineaPromocion(0, 2, producto2, promocion1, true);
+        LineaPromocion lin13=new LineaPromocion(0, 1, producto3, promocion1, true);
+        
+        promocion1.getLista_de_Comidas().add(lin11);
+        promocion1.getLista_de_Comidas().add(lin12);
+        promocion1.getLista_de_Comidas().add(lin13);
 
+        int resultado;
         //AGREGANDO CATEGORIAS--------------------------------------------------------------
-        int resultado = daoCat.insertar(cat1);
+        resultado = daoCat.insertar(cat1);
         if (resultado == 1) {
             System.out.println("Se ha insertado correctamente la categoria");
         } else {
@@ -161,7 +178,59 @@ public class Principal {
             
             
         }
-
+        //AGREGANDO PROMOCIONES
+        resultado = daoPromo.insertar(promocion1);
+        if(resultado==1)
+            System.out.println("Se ha insertado correctamente la promocion 1");
+        else
+            System.out.println("Ha ocurrido un error al momento de insertar el producto");
+    
+        resultado = daoPromo.insertar(promocion2);
+        if(resultado==1)
+            System.out.println("Se ha insertado correctamente la promocion 2");
+        else
+            System.out.println("Ha ocurrido un error al momento de insertar el producto2");
+    
+        resultado = daoPromo.insertar(promocion3);
+        if(resultado==1)
+            System.out.println("Se ha insertado correctamente la promocion 3");
+        else
+            System.out.println("Ha ocurrido un error al momento de insertar el producto3");
+        
+        //MODIFICANDO PROMOCIONES
+        promocion1.setPrecio(300.00); 
+        resultado= daoPromo.modificar(promocion1);
+        if(resultado==1)
+            System.out.println("Se ha modificado correctamente la promocion 1");
+        else
+            System.out.println("Ha ocurrido un error al momento de modificar el producto1 ");
+        
+        //"ELIMINANDO" PROMOCIONES 
+        System.out.println("id de la promo: "+promocion3.getIdItemVendible());
+        resultado= daoPromo.eliminar(promocion3.getIdItemVendible());
+        if(resultado==1)
+            System.out.println("Se ha eliminado correctamente la promocion 3");
+        else
+            System.out.println("Ha ocurrido un error al momento de eliminar el producto 3");        
+        
+        //MOSTRAR PROMOCION
+        System.out.println("mostrando promociones.....");
+        ArrayList<Promocion> lista; //resultado
+        lista = daoPromo.listarTodos();
+        for (Promocion promo : lista) {
+            System.out.println(promo.getIdItemVendible()+ "-" + promo.getNombre() + " "
+                    + promo.getPrecio() + " " + promo.getDescripcion() + " "+ promo.isEstado());
+            
+            
+        }
+        ArrayList<LineaPromocion> lista_de_Comidas = promocion1.getLista_de_Comidas();
+        System.out.println("mostrando promocion 1 .....");
+        for(LineaPromocion linea: lista_de_Comidas){
+            System.out.println(linea.getIdLineaPromocion()+ " "+ linea.getProducto().getNombre()+ " - "
+            + linea.getUnidades()+ ", "+ linea.getPromocion().getNombre() );
+        }
+        
+        /////////////////////////////////////////////////////////
         //AGREGANDO MESAS ---------------------------------------------------------------------
         Mesa mes1 = new Mesa(1,1,3);
         //Creamos un dao de conexión
