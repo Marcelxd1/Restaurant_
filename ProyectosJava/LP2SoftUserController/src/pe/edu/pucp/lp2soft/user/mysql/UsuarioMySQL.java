@@ -33,7 +33,7 @@ public class UsuarioMySQL implements UsuarioDAO {
             rs = cs.executeQuery();
             while (rs.next()){
                 Usuario usuario = new Usuario();
-                usuario.setId_usuario(rs.getInt("id_persona"));
+                usuario.setId_usuario(rs.getInt("id_usuario"));
                 usuario.setUsuario(rs.getString("usuario"));
                 usuario.setSalario(rs.getInt("salario"));
                 usuario.setTelefono(rs.getString("telefono"));             

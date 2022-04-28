@@ -151,7 +151,16 @@ public class Principal {
         for (int i = 0 ; i < roles.size();i++){
             System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
         }
-          
+         
+        ArrayList<Persona> personas = daoPersona.listarTodas();
+        ArrayList<Usuario> usuarios = daoUsuario.listarTodas();
+        for (int i = 0 ; i < usuarios.size();i++){
+           
+                System.out.println(personas.get(i).getId_persona() +" "+ 
+                        personas.get(i).getNombre() +"  " +usuarios.get(i).getUsuario());
+            
+            
+        }
 
         //AGREGANDO MESAS ---------------------------------------------------------------------
         Mesa mes1 = new Mesa(1,1,3);
