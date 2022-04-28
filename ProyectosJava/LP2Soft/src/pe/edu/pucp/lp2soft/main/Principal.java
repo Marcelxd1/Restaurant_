@@ -1,6 +1,9 @@
 package pe.edu.pucp.lp2soft.main;
 
 import java.util.ArrayList;
+import pe.edu.pucp.lp2soft.caja.model.Pedido;
+import pe.edu.pucp.lp2soft.caja.mysql.PedidoMySQL;
+import pe.edu.pucp.lp2soft.caja.dao.PedidoDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.CategoriaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.MesaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.ProductoDAO;
@@ -30,7 +33,7 @@ import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 public class Principal {
 
     public static void main(String[] args) throws Exception {
-        Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
+        /*Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
         Categoria cat2 = new Categoria("Parrilleros", "las parrillas ");
         Categoria cat3 = new Categoria("Gaseosas", "aguas con gas ");
         Producto producto = new Producto("1/4 Pollo a la Brasa", true, 19.2, "con papas y ensalada", 'C', null);
@@ -99,10 +102,8 @@ public class Principal {
         } else {
             System.out.println("Ha ocurrido un error al momento de insertar el producto3");
         }
-        
-        
-        //--------------------------------------------------------------------------------------------
 
+        //--------------------------------------------------------------------------------------------
         Rol rol1 = new Rol("cajero");
         Restaurante rest1 = new Restaurante("123456", "POLLERIA", "353433", "sanisidro123", 0);
         Persona pers1 = new Persona("axel", "romero", "chambi", "70201028", 'P', " ", " ");
@@ -142,41 +143,37 @@ public class Principal {
             System.out.println(" NO Se ha registrado en la tabla USUARIO correctamente ");
         }
 
-        
         ArrayList<Rol> roles = daoRol.listarTodas();
-        for (int i = 0 ; i < roles.size();i++){
+        for (int i = 0; i < roles.size(); i++) {
             System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
         }
-        
+
         roles.get(2).setDescripcion("CAMBIAZO");
         resultado = daoRol.modificar(roles.get(2));
-        if (resultado == 1){
+        if (resultado == 1) {
             System.out.println("Se ha modificado en la tabla rol correctamente ");
-        }
-        else{
+        } else {
             System.out.println(" NO se ha modificado en la tabla rol ");
         }
-        
-        resultado = daoRol.eliminar(20) ;
-        if (resultado == 1){
+
+        resultado = daoRol.eliminar(20);
+        if (resultado == 1) {
             System.out.println("Se ha eliminado el id 20  en la tabla rol");
-        }
-        else{
+        } else {
             System.out.println(" NO se ha eliminado nada en la tabla rol ");
         }
         roles = daoRol.listarTodas();
-        for (int i = 0 ; i < roles.size();i++){
+        for (int i = 0; i < roles.size(); i++) {
             System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
         }
-         
+
         ArrayList<Persona> personas = daoPersona.listarTodas();
         ArrayList<Usuario> usuarios = daoUsuario.listarTodas();
-        for (int i = 0 ; i < usuarios.size();i++){
-           
-                System.out.println(personas.get(i).getId_persona() +" "+ 
-                        personas.get(i).getNombre() +"  " +usuarios.get(i).getUsuario());
-            
-            
+        for (int i = 0; i < usuarios.size(); i++) {
+
+            System.out.println(personas.get(i).getId_persona() + " "
+                    + personas.get(i).getNombre() + "  " + usuarios.get(i).getUsuario());
+
         }
         //AGREGANDO PROMOCIONES
         resultado = daoPromo.insertar(promocion1);
@@ -232,11 +229,11 @@ public class Principal {
         
         /////////////////////////////////////////////////////////
         //AGREGANDO MESAS ---------------------------------------------------------------------
-        Mesa mes1 = new Mesa(1,1,3);
+        Mesa mes1 = new Mesa(1, 1, 3);
         //Creamos un dao de conexión
         MesaDAO persDao = new MesaMySQL();
         //Insertamos el area en la base de datos
-         resultado = persDao.insertar(mes1);
+        resultado = persDao.insertar(mes1);
         //persDao.insertar(pers1);
         //Verificando la inserción en la base de datos
 
@@ -244,8 +241,24 @@ public class Principal {
             System.out.println("Se ha insertado correctamente la Mesa");
         } else {
             System.out.println("Ha ocurrido un error al momento de insertar la mesa");
+        }*/
+        int resultado;
+        Mesa mes1 = new Mesa(1, 1, 3);
+        Pedido ped1 = new Pedido(1, 100, mes1, "B", "I");
+        PedidoDAO pedDao = new PedidoMySQL();
+        //Insertamos el area en la base de datos
+        resultado = pedDao.insertar(ped1);
+        //persDao.insertar(pers1);
+        //Verificando la inserción en la base de datos
 
-            }
+        if (resultado == 1) {
+            System.out.println("Se ha insertado correctamente la Transaccion");
+        } else {
+            System.out.println("Ha ocurrido un error al momento de insertar la mesa");
         }
+    }
+    //AGREGAR PEDIDO
+    //int idPedido, float total, Mesa mesa, String tipoComprobante, String tipo_transaccion
+    /*Mesa mes1 = new Mesa(1, 1, 3);
+    Pedido ped1 = new Pedido(1, 100, mes1, "B", "I");*/
 }
-
