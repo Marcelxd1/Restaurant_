@@ -208,7 +208,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE linea_pedido (
   id_linea_pedido INT NOT NULL AUTO_INCREMENT,
-  unidades VARCHAR(10) NULL DEFAULT NULL,
+  unidades INT NOT NULL ,
   subtotal DOUBLE NULL DEFAULT NULL,
   fid_itemVendible INT NOT NULL,
   fid_pedido INT NOT NULL,
@@ -273,7 +273,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE linea_promocion (
   id_linea_promocion INT NOT NULL AUTO_INCREMENT,
-  unidad VARCHAR(10) NULL DEFAULT NULL,
+  unidad INT NOT NULL ,
   fid_promocion INT NOT NULL,
   fid_producto INT NOT NULL,
   PRIMARY KEY (id_linea_promocion),
@@ -289,14 +289,3 @@ CREATE TABLE linea_promocion (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
-drop table linea_promocion;
-create table linea_promocion (
-	id_linea_promocion INT AUTO_INCREMENT,
-    unidad INT,
-    fid_promocion INT,
-    fid_producto INT,
-    estado BOOLEAN,
-    PRIMARY KEY (id_linea_promocion)
-)Engine = InnoDB;
