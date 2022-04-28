@@ -289,3 +289,14 @@ CREATE TABLE linea_promocion (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
+drop table linea_promocion;
+create table linea_promocion (
+	id_linea_promocion INT AUTO_INCREMENT,
+    unidad INT,
+    fid_promocion INT,
+    fid_producto INT,
+    estado BOOLEAN,
+    PRIMARY KEY (id_linea_promocion)
+)Engine = InnoDB;
