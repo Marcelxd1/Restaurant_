@@ -30,5 +30,11 @@ hs_err_pid*
 /ProyectosJava/LP2SoftNegocioController/build/
 /ProyectosJava/LP2SoftNegocioController/dist/
 /ProyectosJava/LP2SoftNegocioModel/dist/
+<<<<<<< HEAD
 /proyectosJava/LP2SoftUserController/nbproject/build.xml
 /proyectosJava/LP2SoftUserController/nbproject/
+=======
+/proyectosJava/LP2SoftNegocioController/nbproject/
+/proyectosJava/LP2SoftNegocioController/nbproject/build.xml
+ProyectosJava/LP2Soft/nbproject/private/private.xml
+>>>>>>> 701f1f24127f0ac6a2fc77d0ca6b94042da357d0
