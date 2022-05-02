@@ -44,172 +44,172 @@ public class Principal {
         PromocionDAO daoPromo = new PromocionMySQL();
         int resultado;
         //AGREGANDO CATEGORIAS--------------------------------------------------------------
-        resultado = daoCat.insertar(cat1);
-        if (resultado == 1) {
-            System.out.println("Se ha insertado correctamente la categoria");
-        } else {
-            System.out.println("Ha ocurrido un error al momento de insertar la categoria");
-        }
-
-        resultado = daoCat.insertar(cat2);
-        if (resultado == 1) {
-            System.out.println("Se ha insertado correctamente la categoria2");
-        } else {
-            System.out.println("Ha ocurrido un error al momento de insertar la categoria2");
-        }
-
-        resultado = daoCat.insertar(cat3);
-        if (resultado == 1) {
-            System.out.println("Se ha insertado correctamente la categoria3");
-        } else {
-            System.out.println("Ha ocurrido un error al momento de insertar la categoria3");
-        }
-
-        producto.setCategoria(cat1);
-        producto2.setCategoria(cat2);
-        producto3.setCategoria(cat3);
-
-        //AGREGANDO PRODUCTOS ---------------------------------------------------------------------------------------
-        resultado = daoProd.insertar(producto);
-        if (resultado == 1) {
-            System.out.println("Se ha insertado correctamente el producto");
-        } else {
-            System.out.println("Ha ocurrido un error al momento de insertar el producto");
-        }
-
-        resultado = daoProd.insertar(producto2);
-        if (resultado == 1) {
-            System.out.println("Se ha insertado correctamente el producto2");
-        } else {
-            System.out.println("Ha ocurrido un error al momento de insertar el producto2");
-        }
-
-        resultado = daoProd.insertar(producto3);
-        if (resultado == 1) {
-            System.out.println("Se ha insertado correctamente el producto3");
-        } else {
-            System.out.println("Ha ocurrido un error al momento de insertar el producto3");
-        }
-
-        //--------------------------------------------------------------------------------------------
-        Rol rol1 = new Rol("cajero");
-        Restaurante rest1 = new Restaurante("123456", "POLLERIA", "353433", "sanisidro123", 0);
-        Persona pers1 = new Persona("axel", "romero", "chambi", "70201028", 'P', " ", " ");
-        Usuario us1 = new Usuario("axelin", "123", true, 6666.0, "98765432");
-
-        us1.setRestaurante(rest1);
-        us1.setPersona(pers1);
-        us1.setRol(rol1);
-        RolDAO daoRol = new RolMySQL();
-        resultado = daoRol.insertar(rol1);
-        if (resultado == 1) {
-            System.out.println("Se ha registrado el rol correctamente ");
-        } else {
-            System.out.println(" NO Se ha registrado el rol correctamente ");
-        }
-        RestauranteDAO daoRestaurante = new RestauranteMySQL();
-        resultado = daoRestaurante.insertar(rest1);
-        if (resultado == 1) {
-            System.out.println("Se ha registrado en la tabla restaurante correctamente ");
-        } else {
-            System.out.println(" NO Se ha registrado en la tabla restaurante correctamente ");
-        }
-
-        PersonaDAO daoPersona = new PersonaMySQL();
-        resultado = daoPersona.insertar(pers1);
-        if (resultado == 1) {
-            System.out.println("Se ha registrado en la tabla persona correctamente ");
-        } else {
-            System.out.println(" NO Se ha registrado en la tabla persona correctamente ");
-        }
-
-        UsuarioDAO daoUsuario = new UsuarioMySQL();
-        resultado = daoUsuario.insertar(us1);
-        if (resultado == 1) {
-            System.out.println("Se ha registrado en la tabla USUARIO correctamente ");
-        } else {
-            System.out.println(" NO Se ha registrado en la tabla USUARIO correctamente ");
-        }
-
-        ArrayList<Rol> roles = daoRol.listarTodas();
-        for (int i = 0; i < roles.size(); i++) {
-            System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
-        }
-
-        roles.get(2).setDescripcion("CAMBIAZO");
-        resultado = daoRol.modificar(roles.get(2));
-        if (resultado == 1) {
-            System.out.println("Se ha modificado en la tabla rol correctamente ");
-        } else {
-            System.out.println(" NO se ha modificado en la tabla rol ");
-        }
-
-        resultado = daoRol.eliminar(20);
-        if (resultado == 1) {
-            System.out.println("Se ha eliminado el id 20  en la tabla rol");
-        } else {
-            System.out.println(" NO se ha eliminado nada en la tabla rol ");
-        }
-        roles = daoRol.listarTodas();
-        for (int i = 0; i < roles.size(); i++) {
-            System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
-        }
-
-        ArrayList<Persona> personas = daoPersona.listarTodas();
-        ArrayList<Usuario> usuarios = daoUsuario.listarTodas();
-        for (int i = 0; i < usuarios.size(); i++) {
-
-            System.out.println(personas.get(i).getId_persona() + " "
-                    + personas.get(i).getNombre() + "  " + usuarios.get(i).getUsuario());
-
-        }
-        //AGREGANDO PROMOCIONES 
-        Promocion promocion1= new Promocion(new ArrayList<>(), "Combo Parrillero", true, 200.00, "Pollo a la Brasa con Chuleta a la Parrilla"); 
-        Promocion promocion2= new Promocion(new ArrayList<>(), "Combo Maritimo", true, 100.00, "ceviche y Chicharron de mariscos"); 
-        Promocion promocion3= new Promocion(new ArrayList<>(), "Combo Veranito", true, 100.00, "no somos cevicheria o si? "); 
-        
-        //no puede hacerse aca porque aca el producto tiene un ID 0 es cuando se hace insert donde se le da el ID 
-        LineaPromocion lin11=new LineaPromocion(0, 4, producto, promocion1, true);
-        LineaPromocion lin12=new LineaPromocion(0, 2, producto2, promocion1, true);
-        LineaPromocion lin13=new LineaPromocion(0, 1, producto3, promocion1, true);
-        
-        promocion1.getLista_de_Comidas().add(lin11);
-        promocion1.getLista_de_Comidas().add(lin12);
-        promocion1.getLista_de_Comidas().add(lin13);
-        
-        resultado = daoPromo.insertar(promocion1);
-        if(resultado==1)
-            System.out.println("Se ha insertado correctamente la promocion 1");
-        else
-            System.out.println("Ha ocurrido un error al momento de insertar el producto");
-    
-        resultado = daoPromo.insertar(promocion2);
-        if(resultado==1)
-            System.out.println("Se ha insertado correctamente la promocion 2");
-        else
-            System.out.println("Ha ocurrido un error al momento de insertar el producto2");
-    
-        resultado = daoPromo.insertar(promocion3);
-        if(resultado==1)
-            System.out.println("Se ha insertado correctamente la promocion 3");
-        else
-            System.out.println("Ha ocurrido un error al momento de insertar el producto3");
-        
-        //MODIFICANDO PROMOCIONES
-        promocion1.setPrecio(300.00); 
-        resultado= daoPromo.modificar(promocion1);
-        if(resultado==1)
-            System.out.println("Se ha modificado correctamente la promocion 1");
-        else
-            System.out.println("Ha ocurrido un error al momento de modificar el producto1 ");
-        
-        //"ELIMINANDO" PROMOCIONES 
-        System.out.println("id de la promo: "+promocion3.getIdItemVendible());
-        resultado= daoPromo.eliminar(promocion3.getIdItemVendible());
-        if(resultado==1)
-            System.out.println("Se ha eliminado correctamente la promocion 3");
-        else
-            System.out.println("Ha ocurrido un error al momento de eliminar el producto 3");        
+//        resultado = daoCat.insertar(cat1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado correctamente la categoria");
+//        } else {
+//            System.out.println("Ha ocurrido un error al momento de insertar la categoria");
+//        }
+//
+//        resultado = daoCat.insertar(cat2);
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado correctamente la categoria2");
+//        } else {
+//            System.out.println("Ha ocurrido un error al momento de insertar la categoria2");
+//        }
+//
+//        resultado = daoCat.insertar(cat3);
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado correctamente la categoria3");
+//        } else {
+//            System.out.println("Ha ocurrido un error al momento de insertar la categoria3");
+//        }
+//
+//        producto.setCategoria(cat1);
+//        producto2.setCategoria(cat2);
+//        producto3.setCategoria(cat3);
+//
+//        //AGREGANDO PRODUCTOS ---------------------------------------------------------------------------------------
+//        resultado = daoProd.insertar(producto);
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado correctamente el producto");
+//        } else {
+//            System.out.println("Ha ocurrido un error al momento de insertar el producto");
+//        }
+//
+//        resultado = daoProd.insertar(producto2);
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado correctamente el producto2");
+//        } else {
+//            System.out.println("Ha ocurrido un error al momento de insertar el producto2");
+//        }
+//
+//        resultado = daoProd.insertar(producto3);
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado correctamente el producto3");
+//        } else {
+//            System.out.println("Ha ocurrido un error al momento de insertar el producto3");
+//        }
+//
+//        //--------------------------------------------------------------------------------------------
+//        Rol rol1 = new Rol("cajero");
+//        Restaurante rest1 = new Restaurante("123456", "POLLERIA", "353433", "sanisidro123", 0);
+//        Persona pers1 = new Persona("axel", "romero", "chambi", "70201028", 'P', " ", " ");
+//        Usuario us1 = new Usuario("axelin", "123", true, 6666.0, "98765432");
+//
+//        us1.setRestaurante(rest1);
+//        us1.setPersona(pers1);
+//        us1.setRol(rol1);
+//        RolDAO daoRol = new RolMySQL();
+//        resultado = daoRol.insertar(rol1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha registrado el rol correctamente ");
+//        } else {
+//            System.out.println(" NO Se ha registrado el rol correctamente ");
+//        }
+//        RestauranteDAO daoRestaurante = new RestauranteMySQL();
+//        resultado = daoRestaurante.insertar(rest1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha registrado en la tabla restaurante correctamente ");
+//        } else {
+//            System.out.println(" NO Se ha registrado en la tabla restaurante correctamente ");
+//        }
+//
+//        PersonaDAO daoPersona = new PersonaMySQL();
+//        resultado = daoPersona.insertar(pers1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha registrado en la tabla persona correctamente ");
+//        } else {
+//            System.out.println(" NO Se ha registrado en la tabla persona correctamente ");
+//        }
+//
+//        UsuarioDAO daoUsuario = new UsuarioMySQL();
+//        resultado = daoUsuario.insertar(us1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha registrado en la tabla USUARIO correctamente ");
+//        } else {
+//            System.out.println(" NO Se ha registrado en la tabla USUARIO correctamente ");
+//        }
+//
+//        ArrayList<Rol> roles = daoRol.listarTodas();
+//        for (int i = 0; i < roles.size(); i++) {
+//            System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
+//        }
+//
+//        roles.get(2).setDescripcion("CAMBIAZO");
+//        resultado = daoRol.modificar(roles.get(2));
+//        if (resultado == 1) {
+//            System.out.println("Se ha modificado en la tabla rol correctamente ");
+//        } else {
+//            System.out.println(" NO se ha modificado en la tabla rol ");
+//        }
+//
+//        resultado = daoRol.eliminar(20);
+//        if (resultado == 1) {
+//            System.out.println("Se ha eliminado el id 20  en la tabla rol");
+//        } else {
+//            System.out.println(" NO se ha eliminado nada en la tabla rol ");
+//        }
+//        roles = daoRol.listarTodas();
+//        for (int i = 0; i < roles.size(); i++) {
+//            System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());
+//        }
+//
+//        ArrayList<Persona> personas = daoPersona.listarTodas();
+//        ArrayList<Usuario> usuarios = daoUsuario.listarTodas();
+//        for (int i = 0; i < usuarios.size(); i++) {
+//
+//            System.out.println(personas.get(i).getId_persona() + " "
+//                    + personas.get(i).getNombre() + "  " + usuarios.get(i).getUsuario());
+//
+//        }
+//        //AGREGANDO PROMOCIONES 
+//        Promocion promocion1= new Promocion(new ArrayList<>(), "Combo Parrillero", true, 200.00, "Pollo a la Brasa con Chuleta a la Parrilla"); 
+//        Promocion promocion2= new Promocion(new ArrayList<>(), "Combo Maritimo", true, 100.00, "ceviche y Chicharron de mariscos"); 
+//        Promocion promocion3= new Promocion(new ArrayList<>(), "Combo Veranito", true, 100.00, "no somos cevicheria o si? "); 
+//        
+//        //no puede hacerse aca porque aca el producto tiene un ID 0 es cuando se hace insert donde se le da el ID 
+//        LineaPromocion lin11=new LineaPromocion(0, 4, producto, promocion1, true);
+//        LineaPromocion lin12=new LineaPromocion(0, 2, producto2, promocion1, true);
+//        LineaPromocion lin13=new LineaPromocion(0, 1, producto3, promocion1, true);
+//        
+//        promocion1.getLista_de_Comidas().add(lin11);
+//        promocion1.getLista_de_Comidas().add(lin12);
+//        promocion1.getLista_de_Comidas().add(lin13);
+//        
+//        resultado = daoPromo.insertar(promocion1);
+//        if(resultado==1)
+//            System.out.println("Se ha insertado correctamente la promocion 1");
+//        else
+//            System.out.println("Ha ocurrido un error al momento de insertar el producto");
+//    
+//        resultado = daoPromo.insertar(promocion2);
+//        if(resultado==1)
+//            System.out.println("Se ha insertado correctamente la promocion 2");
+//        else
+//            System.out.println("Ha ocurrido un error al momento de insertar el producto2");
+//    
+//        resultado = daoPromo.insertar(promocion3);
+//        if(resultado==1)
+//            System.out.println("Se ha insertado correctamente la promocion 3");
+//        else
+//            System.out.println("Ha ocurrido un error al momento de insertar el producto3");
+//        
+//        //MODIFICANDO PROMOCIONES
+//        promocion1.setPrecio(300.00); 
+//        resultado= daoPromo.modificar(promocion1);
+//        if(resultado==1)
+//            System.out.println("Se ha modificado correctamente la promocion 1");
+//        else
+//            System.out.println("Ha ocurrido un error al momento de modificar el producto1 ");
+//        
+//        //"ELIMINANDO" PROMOCIONES 
+//        System.out.println("id de la promo: "+promocion3.getIdItemVendible());
+//        resultado= daoPromo.eliminar(promocion3.getIdItemVendible());
+//        if(resultado==1)
+//            System.out.println("Se ha eliminado correctamente la promocion 3");
+//        else
+//            System.out.println("Ha ocurrido un error al momento de eliminar el producto 3");        
         
         //MOSTRAR PROMOCION
         System.out.println("mostrando promociones.....");
@@ -221,28 +221,28 @@ public class Principal {
             
             
         }
-        ArrayList<LineaPromocion> lista_de_Comidas = promocion1.getLista_de_Comidas();
-        System.out.println("mostrando promocion 1 .....");
-        for(LineaPromocion linea: lista_de_Comidas){
-            System.out.println(linea.getIdLineaPromocion()+ " "+ linea.getProducto().getNombre()+ " - "
-            + linea.getUnidades()+ ", "+ linea.getProducto().getIdItemVendible() );
-        }
+//        ArrayList<LineaPromocion> lista_de_Comidas = promocion1.getLista_de_Comidas();
+//        System.out.println("mostrando promocion 1 .....");
+//        for(LineaPromocion linea: lista_de_Comidas){
+//            System.out.println(linea.getIdLineaPromocion()+ " "+ linea.getProducto().getNombre()+ " - "
+//            + linea.getUnidades()+ ", "+ linea.getProducto().getIdItemVendible() );
+//        }
 
         /////////////////////////////////////////////////////////
-        //AGREGANDO MESAS ---------------------------------------------------------------------
-        Mesa mes1 = new Mesa(1, 1, 3);
-        //Creamos un dao de conexión
-        MesaDAO persDao = new MesaMySQL();
-        //Insertamos el area en la base de datos
-        resultado = persDao.insertar(mes1);
-        //persDao.insertar(pers1);
-        //Verificando la inserción en la base de datos
-
-        if (resultado == 1) {
-            System.out.println("Se ha insertado correctamente la Mesa");
-        } else {
-            System.out.println("Ha ocurrido un error al momento de insertar la mesa");
-        }
+//        //AGREGANDO MESAS ---------------------------------------------------------------------
+//        Mesa mes1 = new Mesa(1, 1, 3);
+//        //Creamos un dao de conexión
+//        MesaDAO persDao = new MesaMySQL();
+//        //Insertamos el area en la base de datos
+//        resultado = persDao.insertar(mes1);
+//        //persDao.insertar(pers1);
+//        //Verificando la inserción en la base de datos
+//
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado correctamente la Mesa");
+//        } else {
+//            System.out.println("Ha ocurrido un error al momento de insertar la mesa");
+       // }
         //int resultado;
         //Mesa mes1 = new Mesa(1, 1, 3);
         /*Pedido ped1 = new Pedido(1, 100, mes1, "B", "I");
@@ -258,18 +258,18 @@ public class Principal {
             System.out.println("Ha ocurrido un error al momento de insertar la mesa");
         }*/
         //Mesa mes1 = new Mesa(1, 1, 3);
-        Pedido ped1 = new Pedido(1, 100, mes1, "B", "I");
-        PedidoDAO pedDao = new PedidoMySQL();
-        //Insertamos el area en la base de datos
-        resultado = pedDao.insertar(ped1);
-        //persDao.insertar(pers1);
-        //Verificando la inserción en la base de datos
-
-        if (resultado == 1) {
-            System.out.println("Se ha insertado correctamente la Transaccion");
-        } else {
-            System.out.println("Ha ocurrido un error al momento de insertar la mesa");
-        }
+//        Pedido ped1 = new Pedido(1, 100, mes1, "B", "I");
+//        PedidoDAO pedDao = new PedidoMySQL();
+//        //Insertamos el area en la base de datos
+//        resultado = pedDao.insertar(ped1);
+//        //persDao.insertar(pers1);
+//        //Verificando la inserción en la base de datos
+//
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado correctamente la Transaccion");
+//        } else {
+//            System.out.println("Ha ocurrido un error al momento de insertar la mesa");
+//        }
     }
     //AGREGAR PEDIDO
     //int idPedido, float total, Mesa mesa, String tipoComprobante, String tipo_transaccion
