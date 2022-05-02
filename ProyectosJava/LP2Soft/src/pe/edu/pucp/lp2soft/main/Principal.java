@@ -31,8 +31,8 @@ import pe.edu.pucp.lp2soft.usuario.model.Rol;
 import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
 public class Principal {
-
     public static void main(String[] args) throws Exception {
+
         Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
         Categoria cat2 = new Categoria("Parrilleros", "las parrillas ");
         Categoria cat3 = new Categoria("Gaseosas", "aguas con gas ");
@@ -42,8 +42,6 @@ public class Principal {
         ProductoDAO daoProd = new ProductoMySQL();
         CategoriaDAO daoCat = new CategoriaMySQL();
         PromocionDAO daoPromo = new PromocionMySQL();
-        
-
         int resultado;
         //AGREGANDO CATEGORIAS--------------------------------------------------------------
         resultado = daoCat.insertar(cat1);

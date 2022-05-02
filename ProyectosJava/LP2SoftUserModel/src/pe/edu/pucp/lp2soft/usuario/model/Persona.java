@@ -97,6 +97,5 @@ public class Persona {
     public void setRuc(String ruc) {
         this.ruc = ruc;
     }
-    
-    
+
 }

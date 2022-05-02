@@ -40,6 +40,7 @@ public class PedidoMySQL implements PedidoDAO {
             cs.setInt("_fid_restaurante", 1);
             cs.setFloat("_total", pedido.getTotal());
             cs.setString("_tipo", String.valueOf(pedido.getTipo_transaccion()));
+            //AGREGAR EL FOR DE LINEA DE PEDIDO
             cs.executeUpdate();
             pedido.setIdPedido(cs.getInt("_id_pedido"));
             resultado = 1;

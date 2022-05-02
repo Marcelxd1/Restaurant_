@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="LP2SoftDBManager">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../LP2SoftDBManager/dist/LP2SoftDBManager.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
