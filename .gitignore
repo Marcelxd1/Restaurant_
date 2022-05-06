@@ -54,3 +54,17 @@ ProyectosJava/LP2SoftUserController/nbproject/private/private.properties
 ProyectosJava/LP2SoftUserModel/nbproject/build-impl.xml
 ProyectosJava/LP2SoftUserModel/nbproject/genfiles.properties
 ProyectosJava/LP2SoftUserModel/nbproject/private/private.properties
+
+ProyectosJava/LP2Soft/build/
+ProyectosJava/LP2Soft/nbproject/private/
+
+ProyectosJava/LP2SoftDBManager/nbproject/private/
+
+ProyectosJava/LP2SoftNegocioModel/nbproject/private/
+
+ProyectosJava/LP2SoftUserController/build/
+ProyectosJava/LP2SoftUserController/nbproject/private/
+
+ProyectosJava/LP2SoftUserModel/build/
+ProyectosJava/LP2SoftUserModel/nbproject/
+ProyectosJava/LP2SoftUserModel/dist/
