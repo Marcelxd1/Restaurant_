@@ -39,6 +39,8 @@ CREATE PROCEDURE ELIMINAR_PROMOCION(
 	IN _id_item_vendible INT
 )
 BEGIN
+	-- es una dependencia absoluta por eso lo puse en 1 porque no se puede desactivar 
+    -- independientemente la linea 
 	UPDATE item_vendible SET estado = False WHERE id_item_vendible = _id_item_vendible;
     UPDATE linea_promocion SET estado = False where fid_promocion = _id_item_vendible;
 END$
@@ -46,12 +48,13 @@ END$
 CREATE PROCEDURE LISTAR_PROMOCIONES_TODOS(
 )
 BEGIN	
-	SELECT iv.id_item_vendible, iv.nombre, iv.precio , iv.descripcion, iv.estado from promocion p INNER JOIN item_vendible iv ON p.id_promocion= iv.id_item_vendible;
+	SELECT iv.id_item_vendible, iv.nombre, iv.precio , iv.descripcion, iv.estado from promocion p 
+    INNER JOIN item_vendible iv ON p.id_promocion= iv.id_item_vendible;
 END$
 
 CREATE procedure INSERTAR_LINEA_PROMOCION(
 	OUT _idLineaPromocion INT,
-	IN _unidades VARCHAR(10), 
+	IN _unidades INT, 
     IN _fid_promocion INT ,
 	IN _fid_producto INT 
     
@@ -78,7 +81,9 @@ END$
 CREATE procedure LISTAR_LINEA_PROMOCION_PROMO(
 	in _id_item_vendible INT 
 )BEGIN
-	SELECT id_linea_promocion, unidad, fid_promocion, fid_producto FROM linea_promocion WHERE fid_promocion= _id_item_vendible;
+	SELECT pro.id_producto, iv.nombre , iv.estado, iv.precio, iv.descripcion ,
+    pro.tipo_producto, pro.presentacion, pro.fid_categoria FROM linea_promocion lin
+    INNER JOIN producto pro ON lin.fid_producto= pro.id_producto INNER JOIN item_vendible iv ON pro.id_producto= id_item_vendible;
 END$
 
 
