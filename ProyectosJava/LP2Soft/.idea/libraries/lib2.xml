@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../LP2SoftNegocioController/dist/lib/LP2SoftDBManager.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../LP2SoftNegocioController/dist/lib/LP2SoftNegocioModel.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

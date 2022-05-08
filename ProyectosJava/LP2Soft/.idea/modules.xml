@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LP2Soft.iml" filepath="$PROJECT_DIR$/LP2Soft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LP2SoftCajaModel/LP2SoftCajaModel.iml" filepath="$PROJECT_DIR$/../LP2SoftCajaModel/LP2SoftCajaModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LP2SoftDBManager/LP2SoftDBManager.iml" filepath="$PROJECT_DIR$/../LP2SoftDBManager/LP2SoftDBManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LP2SoftNegocioController/LP2SoftNegocioController.iml" filepath="$PROJECT_DIR$/../LP2SoftNegocioController/LP2SoftNegocioController.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LP2SoftNegocioModel/LP2SoftNegocioModel.iml" filepath="$PROJECT_DIR$/../LP2SoftNegocioModel/LP2SoftNegocioModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LP2SoftUserController/LP2SoftUserController.iml" filepath="$PROJECT_DIR$/../LP2SoftUserController/LP2SoftUserController.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LP2SoftUserModel/LP2SoftUserModel.iml" filepath="$PROJECT_DIR$/../LP2SoftUserModel/LP2SoftUserModel.iml" />
+    </modules>
+  </component>
+</project>

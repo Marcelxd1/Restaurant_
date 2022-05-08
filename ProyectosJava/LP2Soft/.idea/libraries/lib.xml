@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/lib/LP2SoftCajaModel.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/LP2SoftNegocioModel.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/LP2SoftDBManager.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/LP2SoftUserModel.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/LP2SoftUserController.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/LP2SoftCajaController.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/LP2SoftNegocioController.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/mysql-connector-java-8.0.28.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

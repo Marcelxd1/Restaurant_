@@ -22,7 +22,7 @@ public class CategoriaMySQL implements CategoriaDAO{
             rs = cs.executeQuery();
             while(rs.next()){
                 Categoria categoria = new Categoria();
-                categoria.setIdCategoria(rs.getInt("_id_categoria"));
+                categoria.setIdCategoria(rs.getInt("id_categoria"));
                 categoria.setNombre(rs.getString("nombre"));
                 categoria.setDescripcion(rs.getString("descripcion"));
                 categoria.setActivo(true);

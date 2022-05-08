@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="LP2SoftUserController">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../LP2SoftUserController/dist/LP2SoftUserController.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
