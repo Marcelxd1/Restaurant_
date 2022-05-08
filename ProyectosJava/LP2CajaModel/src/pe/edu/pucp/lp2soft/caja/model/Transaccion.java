@@ -6,7 +6,7 @@ import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
 public class Transaccion {
     private int id_transaccion;
     private Restaurante restaurante;
-    private float total; 
+    private double total; 
     private Date fecha;
     //private char tipo_transaccion;esto no 
     //esto de abajo con polimorfismo
@@ -45,14 +45,14 @@ public class Transaccion {
     /**
      * @return the total
      */
-    public float getTotal() {
+    public double getTotal() {
         return total;
     }
 
     /**
      * @param total the total to set
      */
-    public void setTotal(float total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 

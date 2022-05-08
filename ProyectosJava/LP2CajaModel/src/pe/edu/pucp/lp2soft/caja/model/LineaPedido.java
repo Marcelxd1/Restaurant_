@@ -7,7 +7,7 @@ public class LineaPedido{
     private ItemVendible item; 
     private Pedido pedido;
     private int unidades;
-    private float subtotal;
+    private double subtotal;
        
     //SETTERS Y GETTERS 
     public int getId_linea_pedido() {
@@ -24,10 +24,10 @@ public class LineaPedido{
         this.unidades = unidades;
     }
 
-    public float getSubtotal() {
+    public double getSubtotal() {
         return subtotal;
     }
-    public void setSubtotal(float subtotal) {
+    public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
     }
 
