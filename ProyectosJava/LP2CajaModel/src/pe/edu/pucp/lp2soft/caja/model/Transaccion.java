@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Transaccion {
     private int id_transaccion;
-    private float monto;
+    private float total;
     private Date fecha;
     private String tipo_transaccion;
     private Gasto gasto;
@@ -24,12 +24,12 @@ public class Transaccion {
         this.id_transaccion = id_transaccion;
     }
 
-    public float getMonto() {
-        return monto;
+    public float getTotal() {
+        return total;
     }
 
-    public void setMonto(float monto) {
-        this.monto = monto;
+    public void setTotal(float total) {
+        this.total = total;
     }
 
     public Date getFecha() {
