@@ -17,10 +17,12 @@ import pe.edu.pucp.lp2soft.negocio.mysql.CategoriaMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.MesaMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.ProductoMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.PromocionMySQL;
+import pe.edu.pucp.lp2soft.user.dao.AsistenciaDAO;
 import pe.edu.pucp.lp2soft.user.dao.PersonaDAO;
 import pe.edu.pucp.lp2soft.user.dao.RestauranteDAO;
 import pe.edu.pucp.lp2soft.user.dao.RolDAO;
 import pe.edu.pucp.lp2soft.user.dao.UsuarioDAO;
+import pe.edu.pucp.lp2soft.user.mysql.AsistenciaMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.PersonaMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.RestauranteMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.RolMySQL;
@@ -33,16 +35,16 @@ import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 public class Principal {
     public static void main(String[] args) throws Exception {
 
-        Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
-        Categoria cat2 = new Categoria("Parrilleros", "las parrillas ");
-        Categoria cat3 = new Categoria("Gaseosas", "aguas con gas ");
-        Producto producto = new Producto("1/4 Pollo a la Brasa", true, 19.2, "con papas y ensalada", 'C', null);
-        Producto producto2 = new Producto("Chuletas a la parrilla", true, 31.2, "con papas sancochadas", 'C', null);
-        Producto producto3 = new Producto("Inka Kola", true, 3.5, "gaseosa descartable", 'B', "2.5L");
-        ProductoDAO daoProd = new ProductoMySQL();
-        CategoriaDAO daoCat = new CategoriaMySQL();
-        PromocionDAO daoPromo = new PromocionMySQL();
-        int resultado;
+//        Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
+//        Categoria cat2 = new Categoria("Parrilleros", "las parrillas ");
+//        Categoria cat3 = new Categoria("Gaseosas", "aguas con gas ");
+//        Producto producto = new Producto("1/4 Pollo a la Brasa", true, 19.2, "con papas y ensalada", 'C', null);
+//        Producto producto2 = new Producto("Chuletas a la parrilla", true, 31.2, "con papas sancochadas", 'C', null);
+//        Producto producto3 = new Producto("Inka Kola", true, 3.5, "gaseosa descartable", 'B', "2.5L");
+//        ProductoDAO daoProd = new ProductoMySQL();
+//        CategoriaDAO daoCat = new CategoriaMySQL();
+//        PromocionDAO daoPromo = new PromocionMySQL();
+//        int resultado;
         //AGREGANDO CATEGORIAS--------------------------------------------------------------
 //        resultado = daoCat.insertar(cat1);
 //        if (resultado == 1) {
@@ -92,13 +94,10 @@ public class Principal {
 //        }
 //
 //        //--------------------------------------------------------------------------------------------
-//        Rol rol1 = new Rol("cajero");
+//        Rol rol1 = new Rol("Cajero");
 //        Restaurante rest1 = new Restaurante("123456", "POLLERIA", "353433", "sanisidro123", 0);
-//        Persona pers1 = new Persona("axel", "romero", "chambi", "70201028", 'P', " ", " ");
-//        Usuario us1 = new Usuario("axelin", "123", true, 6666.0, "98765432");
-//
+//            Usuario us1 = new Usuario("axelin", "123", 3333.00, "987654321", "axel", "romero", "chambi", "72121233", 'P');
 //        us1.setRestaurante(rest1);
-//        us1.setPersona(pers1);
 //        us1.setRol(rol1);
 //        RolDAO daoRol = new RolMySQL();
 //        resultado = daoRol.insertar(rol1);
@@ -115,20 +114,25 @@ public class Principal {
 //            System.out.println(" NO Se ha registrado en la tabla restaurante correctamente ");
 //        }
 //
-//        PersonaDAO daoPersona = new PersonaMySQL();
-//        resultado = daoPersona.insertar(pers1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha registrado en la tabla persona correctamente ");
-//        } else {
-//            System.out.println(" NO Se ha registrado en la tabla persona correctamente ");
-//        }
-//
 //        UsuarioDAO daoUsuario = new UsuarioMySQL();
 //        resultado = daoUsuario.insertar(us1);
 //        if (resultado == 1) {
 //            System.out.println("Se ha registrado en la tabla USUARIO correctamente ");
 //        } else {
 //            System.out.println(" NO Se ha registrado en la tabla USUARIO correctamente ");
+//        }
+//        AsistenciaDAO daoAsistencia = new AsistenciaMySQL();
+//        resultado = daoAsistencia.registrarAsistencia(us1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha registrado la asistencia de entrada correctamente ");
+//        } else {
+//            System.out.println("NO se  ha registrado la asistencia de entrada  ");
+//        }
+//        resultado = daoAsistencia.registrarSalida(us1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha registrado la salida correctamente ");
+//        } else {
+//            System.out.println("NO se  ha registrado la salida de entrada  ");
 //        }
 //
 //        ArrayList<Rol> roles = daoRol.listarTodas();
@@ -212,15 +216,15 @@ public class Principal {
 //            System.out.println("Ha ocurrido un error al momento de eliminar el producto 3");        
         
         //MOSTRAR PROMOCION
-        System.out.println("mostrando promociones.....");
-        ArrayList<Promocion> lista; //resultado
-        lista = daoPromo.listarTodos();
-        for (Promocion promo : lista) {
-            System.out.println(promo.getIdItemVendible()+ "-" + promo.getNombre() + " "
-                    + promo.getPrecio() + " " + promo.getDescripcion() + " "+ promo.isEstado());
-            
-            
-        }
+//        System.out.println("mostrando promociones.....");
+//        ArrayList<Promocion> lista; //resultado
+//        lista = daoPromo.listarTodos();
+//        for (Promocion promo : lista) {
+//            System.out.println(promo.getIdItemVendible()+ "-" + promo.getNombre() + " "
+//                    + promo.getPrecio() + " " + promo.getDescripcion() + " "+ promo.isEstado());
+//            
+//            
+//        }
 //        ArrayList<LineaPromocion> lista_de_Comidas = promocion1.getLista_de_Comidas();
 //        System.out.println("mostrando promocion 1 .....");
 //        for(LineaPromocion linea: lista_de_Comidas){

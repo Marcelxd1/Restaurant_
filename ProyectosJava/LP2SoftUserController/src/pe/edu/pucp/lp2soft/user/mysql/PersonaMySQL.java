@@ -51,19 +51,18 @@ public class PersonaMySQL implements PersonaDAO {
     }
 
     @Override
-    public int insertar(Persona persona) {
+    public int insertarPersona(Persona persona) {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_PERSONA(?,?,?,?,?,?,?,?)}");
+           
+            cs = con.prepareCall("{call INSERTAR_PERSONA(?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_persona", java.sql.Types.INTEGER);
+            cs.setString("_fid_tipo",String.valueOf(persona.getTipo()));
             cs.setString("_nombre", persona.getNombre());
-            cs.setString("_apellidoPat", persona.getApellido_paterno());
-            cs.setString("_apellidoMat", persona.getApellido_materno());
+            cs.setString("_apellido_paterno", persona.getApellido_paterno());
+            cs.setString("_apellido_materno", persona.getApellido_materno());
             cs.setString("_DNI", persona.getDNI());
-            cs.setString("_tipo", String.valueOf(persona.getTipo()));
-            cs.setString("_razon_social", persona.getRazon_social());
-            cs.setString("_RUC", persona.getRuc());
             cs.executeUpdate();
             persona.setId_persona(cs.getInt("_id_persona"));
             resultado = 1 ; 
@@ -75,7 +74,7 @@ public class PersonaMySQL implements PersonaDAO {
         
         return resultado ; 
     }
-
+    
     @Override
     public int modificar(Persona persona) {
         int resultado = 0 ; 
@@ -118,6 +117,28 @@ public class PersonaMySQL implements PersonaDAO {
     @Override
     public Persona listarPorId(int idPersona) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public int insertarEmpresa(Persona persona) {
+        int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+           
+            cs = con.prepareCall("{call INSERTAR_EMPRESA(?,?,?)}");
+            cs.registerOutParameter("_id_persona", java.sql.Types.INTEGER);
+            cs.setString("_razon_social",String.valueOf('E'));
+            cs.setString("_ruc", persona.getNombre());
+            cs.executeUpdate();
+            persona.setId_persona(cs.getInt("_id_persona"));
+            resultado = 1 ; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ; 
     }
 
 }

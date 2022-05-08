@@ -9,7 +9,7 @@ package pe.edu.pucp.lp2soft.usuario.model;
  *
  * Axel Romero (20172469)
  */
-public class Usuario {
+public class Usuario extends Persona {
     private int id_usuario ; 
     private String usuario ; 
     private String password ;
@@ -20,15 +20,18 @@ public class Usuario {
     private Rol rol ; 
     private Restaurante restaurante ; 
     private Persona persona ; 
+    private int id_asistencia ;
     
     public Usuario(){}
-    public Usuario(String usuario, String password, boolean estado, double salario, String telefono) {
+
+    public Usuario(String usuario, String password, double salario, String telefono, String nombre, String apellido_paterno, String apellido_materno, String DNI, char tipo) {
+        super(nombre, apellido_paterno, apellido_materno, DNI, tipo);
         this.usuario = usuario;
         this.password = password;
-        this.estado = estado;
         this.salario = salario;
         this.telefono = telefono;
     }
+        
    
     public int getId_usuario() {
         return id_usuario;
@@ -100,6 +103,14 @@ public class Usuario {
 
     public void setPersona(Persona persona) {
         this.persona = persona;
+    }
+
+    public int getId_asistencia() {
+        return id_asistencia;
+    }
+
+    public void setId_asistencia(int id_asistencia) {
+        this.id_asistencia = id_asistencia;
     }
     
    

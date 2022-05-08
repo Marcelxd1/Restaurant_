@@ -53,8 +53,19 @@ public class UsuarioMySQL implements UsuarioDAO {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call INSERTAR_PERSONA(?,?,?,?,?,?)}");
+            cs.registerOutParameter("_id_persona", java.sql.Types.INTEGER);
+            cs.setString("_fid_tipo",String.valueOf(usuario.getTipo()));
+            cs.setString("_nombre", usuario.getNombre());
+            cs.setString("_apellido_paterno", usuario.getApellido_paterno());
+            cs.setString("_apellido_materno", usuario.getApellido_materno());
+            cs.setString("_DNI", usuario.getDNI());
+            cs.executeUpdate();
+            usuario.setId_usuario(cs.getInt("_id_persona"));
+            usuario.setId_persona(cs.getInt("_id_persona"));
+            
             cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?,?,?)}");
-            cs.setInt("_id_usuario",usuario.getPersona().getId_persona());
+            cs.setInt("_id_usuario",usuario.getId_persona());
             cs.setInt("_fid_rol", usuario.getRol().getId_rol());
             cs.setInt("_fid_restaurante", usuario.getRestaurante().getId_restaurante());
             cs.setString("_usuario", usuario.getUsuario());

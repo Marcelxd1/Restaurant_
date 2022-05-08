@@ -21,15 +21,16 @@ public class Persona {
     private boolean activo ; 
     
     public Persona(){}
-    public Persona( String nombre, String apellido_paterno, String apellido_materno, String DNI, char tipo, String razon_social, String ruc) {
-      
+    public Persona( String nombre, String apellido_paterno, String apellido_materno, String DNI, char tipo ) {
         this.nombre = nombre;
         this.apellido_paterno = apellido_paterno;
         this.apellido_materno = apellido_materno;
         this.DNI = DNI;
         this.tipo = tipo;
-        this.razon_social = razon_social;
-        this.ruc = ruc;
+    }
+    public Persona (String razon_social , String ruc){ // PARA EMPRESAS 
+        this.razon_social = razon_social ;
+        this.ruc = ruc ; 
     }
     
     

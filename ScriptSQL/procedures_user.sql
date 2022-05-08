@@ -27,13 +27,19 @@ BEGIN
     set _id_rest = @@last_insert_id ;
 END$
 
-CREATE PROCEDURE INSERTAR_PERSONA(out _id_persona int , in _nombre varchar(50) , in _apellidoPat varchar(50) , in _apellidoMat varchar(20),
-									in _DNI varchar(50) , in _tipo char , in _razon_social varchar(50) , in _RUC varchar(50))
+CREATE PROCEDURE INSERTAR_PERSONA(out _id_persona int ,in _fid_tipo char, in _nombre varchar(50) , in _apellido_paterno varchar(50) , in _apellido_materno varchar(20),
+									in _DNI varchar(50) )
 BEGIN
-	insert into persona(nombre,apellido_paterno,apellido_materno,DNI,tipo,razon_social,RUC,activo) 
-					values (_nombre,_apellidoPat,_apellidoMat , _DNI , _tipo ,_razon_social,_razon_social,1) ; 
+	insert into persona(fid_tipo,nombre,apellido_paterno,apellido_materno,DNI,activo )
+					values ('P',_nombre,_apellido_paterno,_apellido_materno,_DNI,1) ; 
     set _id_persona = @@last_insert_id ;
 END$
+
+CREATE PROCEDURE INSERTAR_EMPRESA(out _id_persona int , in _razon_social varchar(100) , in _ruc varchar(30) )
+begin
+	insert into persona(fid_tipo,razon_social,RUC , activo ) values ('E' , _razon_social , _ruc , 1) ;
+	set _id_persona = @@last_insert_id ;
+end$
 
 CREATE PROCEDURE INSERTAR_USUARIO(in _id_usuario int , in _fid_rol varchar(50) , in _fid_restaurante varchar(50) , in _usuario varchar(20),
 									in _password varchar(50) , in _estado TINYINT , in _salario decimal(10,2) , in _telefono varchar(50))
@@ -101,3 +107,17 @@ CREATE PROCEDURE ELIMINAR_USUARIO(in _id_usuario)
 begin
 	update usuario set activo = 0 where id_usuario = _id_usuario ; 
 end $
+
+
+
+##################
+CREATE PROCEDURE REGISTRAR_ASISTENCIA_ENTRADA(out _id_asistencia int , in _fid_usuario int)
+begin 
+	insert into asistencia (fid_usuario , hora_inicio , fecha , activo) values (_fid_usuario , now() - interval 5 hour , now(),1) ;
+	set _id_asistencia = @@last_insert_id ;
+end$
+
+CREATE PROCEDURE REGISTRAR_ASISTENCIA_SALIDA(in _id_asistencia int)
+begin
+	update asistencia set hora_fin = now() - interval 5 hour where id_asistencia = _id_asistencia ;
+end$
