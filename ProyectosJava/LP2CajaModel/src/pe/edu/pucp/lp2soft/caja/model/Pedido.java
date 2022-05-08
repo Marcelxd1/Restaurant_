@@ -11,7 +11,7 @@ public class Pedido extends Transaccion {
     private Mesa mesa;
     private char tipoPago; //{tarjeta contado}
     private Usuario mesero;//el mesero maneja todo para llevar y para mesa
-    private Usuario cajero;
+    private Usuario cajero;//deberia de ser usuario o persona? para que mostrar el usuario y contraseña?
     private char tipoPedido;//llevar o mesa
     private Persona cliente;
     private char tipoComprobante;//boleta factura
@@ -19,6 +19,10 @@ public class Pedido extends Transaccion {
     private char estado;// 3 estados creo
     private ArrayList<LineaPedido> list_lineaPedido;
 
+    public Pedido() {
+    }
+    
+    
     //private Restaurante rest;
     public Pedido(char tipoPago, Usuario mesero, Usuario cajero, char tipoPedido, Persona cliente, char tipoComp, int numComp, char estado) {
         //this.idPedido = idPedido; no se puede asignar es generado por el sistema

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.lp2soft.config.DBManager;
 import pe.edu.pucp.lp2soft.negocio.dao.PromocionDAO;
 import pe.edu.pucp.lp2soft.negocio.model.LineaPromocion;
+import pe.edu.pucp.lp2soft.negocio.model.Producto;
 import pe.edu.pucp.lp2soft.negocio.model.Promocion;
 
 /**
@@ -158,14 +159,14 @@ public class PromocionMySQL implements PromocionDAO{
                 
                 ResultSet subrs = cs.executeQuery();
                 while (subrs.next()) {
+                    linea.setEstado(subrs.getBoolean("estado"));
                     linea.setIdLineaPromocion(subrs.getInt("id_linea_promocion"));
                     linea.setUnidades(subrs.getInt("unidad"));
-                    linea.setPromocion(promocion);//esto hace que todos apunten al mismo lugar lo que es riesgoso (cambias uno -> cambias el original)
-                    //a la linea se le da el mismo objeto que lo contiene mmmmm....
-                    //linea.getPromocion(subrs.getInt("fid_promocion"));esto no es necesario porque promocion ya esta con el id ingresado arriba
-                    //linea.setProducto(subrs.get(columnLabel, type)); ESTO TENGO QUE PENSARLO SI SE USA PRODUCTO 
-                    //SE CAERA PORQUE APUNTA A NULL ¿como obtengo el producto?
-                    //Linea promo podria tener solo unidades idlinea y producto (o una fk producto)
+                    linea.setPromocion(promocion);//riesgo de datos
+                    //falta los datos de producto, ya estan en el inner join ahora 
+                    linea.setProducto(new Producto());
+                    //falta llenar producto que a su vez tiene que llenar categoria 
+                    //y que ademas tiene valores heredados de itemVendible
                     linea.setIdLineaPromocion(subrs.getInt("fid_producto"));
                     
                 }
