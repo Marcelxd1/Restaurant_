@@ -1,6 +1,8 @@
 package pe.edu.pucp.lp2soft.main;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.lp2soft.caja.model.Pedido;
 import pe.edu.pucp.lp2soft.caja.mysql.PedidoMySQL;
 import pe.edu.pucp.lp2soft.caja.dao.PedidoDAO;
@@ -27,6 +29,7 @@ import pe.edu.pucp.lp2soft.user.mysql.PersonaMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.RestauranteMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.RolMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.UsuarioMySQL;
+import pe.edu.pucp.lp2soft.usuario.model.Asistencia;
 import pe.edu.pucp.lp2soft.usuario.model.Persona;
 import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
 import pe.edu.pucp.lp2soft.usuario.model.Rol;
@@ -44,7 +47,7 @@ public class Principal {
 //        ProductoDAO daoProd = new ProductoMySQL();
 //        CategoriaDAO daoCat = new CategoriaMySQL();
 //        PromocionDAO daoPromo = new PromocionMySQL();
-//        int resultado;
+        int resultado;
         //AGREGANDO CATEGORIAS--------------------------------------------------------------
 //        resultado = daoCat.insertar(cat1);
 //        if (resultado == 1) {
@@ -96,7 +99,7 @@ public class Principal {
 //        //--------------------------------------------------------------------------------------------
 //        Rol rol1 = new Rol("Cajero");
 //        Restaurante rest1 = new Restaurante("123456", "POLLERIA", "353433", "sanisidro123", 0);
-//            Usuario us1 = new Usuario("axelin", "123", 3333.00, "987654321", "axel", "romero", "chambi", "72121233", 'P');
+//        Usuario us1 = new Usuario("axelin", "123", 3333.00, "987654321", "axel", "romero", "chambi", "72121233", 'P');
 //        us1.setRestaurante(rest1);
 //        us1.setRol(rol1);
 //        RolDAO daoRol = new RolMySQL();
@@ -121,7 +124,7 @@ public class Principal {
 //        } else {
 //            System.out.println(" NO Se ha registrado en la tabla USUARIO correctamente ");
 //        }
-//        AsistenciaDAO daoAsistencia = new AsistenciaMySQL();
+//            AsistenciaDAO daoAsistencia = new AsistenciaMySQL();
 //        resultado = daoAsistencia.registrarAsistencia(us1);
 //        if (resultado == 1) {
 //            System.out.println("Se ha registrado la asistencia de entrada correctamente ");
@@ -134,7 +137,14 @@ public class Principal {
 //        } else {
 //            System.out.println("NO se  ha registrado la salida de entrada  ");
 //        }
-//
+//          ArrayList<Asistencia> asistencias = daoAsistencia.listarAsistencia();
+//          long  diferencia;
+//          SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+//          for (int i = 0 ; i < asistencias.size();i++){
+//              diferencia =  asistencias.get(i).getHora_fin().getTime() - asistencias.get(i).getHora_inicio().getTime();
+//              System.out.println(asistencias.get(i).getFid_id_usuario()+ " " + asistencias.get(i).getHora_inicio() + " " + asistencias.get(i).getHora_fin()
+//                           +" " + asistencias.get(i).getFecha()+" "  + sdf.format(diferencia));
+//          }
 //        ArrayList<Rol> roles = daoRol.listarTodas();
 //        for (int i = 0; i < roles.size(); i++) {
 //            System.out.println(roles.get(i).getId_rol() + ". " + roles.get(i).getDescripcion());

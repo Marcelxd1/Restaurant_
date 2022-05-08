@@ -13,19 +13,28 @@ import java.util.Date;
  * 
  */
 public class Asistencia {
-    private int id_asistencia ; 
+    private int id_asistencia ;
+    private int fid_id_usuario ; 
     private Date hora_inicio ; 
     private Date hora_fin;
     private Date fecha ; 
-    
     private ArrayList<Usuario> usuarios ; 
-
+    
+    public Asistencia(){}
     public int getId_asistencia() {
         return id_asistencia;
     }
 
     public void setId_asistencia(int id_asistencia) {
         this.id_asistencia = id_asistencia;
+    }
+
+    public int getFid_id_usuario() {
+        return fid_id_usuario;
+    }
+
+    public void setFid_id_usuario(int fid_id_usuario) {
+        this.fid_id_usuario = fid_id_usuario;
     }
 
     public Date getHora_inicio() {

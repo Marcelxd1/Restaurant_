@@ -121,3 +121,9 @@ CREATE PROCEDURE REGISTRAR_ASISTENCIA_SALIDA(in _id_asistencia int)
 begin
 	update asistencia set hora_fin = now() - interval 5 hour where id_asistencia = _id_asistencia ;
 end$
+
+
+CREATE PROCEDURE LISTAR_ASISTENCIA()
+begin
+	select id_asistencia , fid_usuario , hora_inicio , hora_fin , fecha from asistencia  where activo = 1 ; 
+end$

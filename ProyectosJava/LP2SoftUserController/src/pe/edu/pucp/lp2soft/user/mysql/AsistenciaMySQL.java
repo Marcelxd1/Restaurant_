@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.lp2soft.config.DBManager;
 import pe.edu.pucp.lp2soft.user.dao.AsistenciaDAO;
+import pe.edu.pucp.lp2soft.usuario.model.Asistencia;
 import pe.edu.pucp.lp2soft.usuario.model.Persona;
 import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
@@ -26,8 +27,28 @@ public class AsistenciaMySQL implements AsistenciaDAO {
     private PreparedStatement ps ;
     private CallableStatement cs ;
     @Override
-    public ArrayList<Persona> listarAsistencia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Asistencia> listarAsistencia() {
+        ArrayList<Asistencia> asistencias = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_ASISTENCIA()}");
+            rs = cs.executeQuery();
+            while (rs.next()){
+                Asistencia asist = new Asistencia();
+                asist.setId_asistencia(rs.getInt("id_asistencia"));
+                asist.setHora_inicio(rs.getTime("hora_inicio"));
+                asist.setHora_fin(rs.getTime("hora_fin"));
+                asist.setFecha(rs.getDate("fecha"));
+                asist.setFid_id_usuario(rs.getInt("fid_usuario"));
+                asistencias.add(asist);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return asistencias ;
     }
 
     @Override

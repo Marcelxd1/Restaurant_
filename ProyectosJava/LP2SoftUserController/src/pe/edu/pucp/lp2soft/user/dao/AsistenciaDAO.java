@@ -6,6 +6,7 @@
 package pe.edu.pucp.lp2soft.user.dao;
 
 import java.util.ArrayList;
+import pe.edu.pucp.lp2soft.usuario.model.Asistencia;
 import pe.edu.pucp.lp2soft.usuario.model.Persona;
 import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
@@ -14,7 +15,7 @@ import pe.edu.pucp.lp2soft.usuario.model.Usuario;
  * @author axeli
  */
 public interface AsistenciaDAO {
-    ArrayList<Persona> listarAsistencia();
+    ArrayList<Asistencia> listarAsistencia();
     int registrarAsistencia(Usuario usuario);
     int registrarSalida(Usuario usuario );
     int eliminarAsistencia(Usuario usuario); 
