@@ -4,12 +4,10 @@ import pe.edu.pucp.lp2soft.negocio.model.ItemVendible;
 
 public class LineaPedido{
     private int id_linea_pedido;
+    private ItemVendible item; 
+    private Pedido pedido;
     private int unidades;
     private float subtotal;
-    private Pedido pedido;
-    private ItemVendible item; //no seria un array? o era de un solo producto?
-    //en cualquier caso es mejor que el atribute aqui para pasarlo rapido a pedido 
-    //Linea depenede de Item entonces caja depende de Negocio
        
     //SETTERS Y GETTERS 
     public int getId_linea_pedido() {
