@@ -1,74 +1,76 @@
 package pe.edu.pucp.lp2soft.caja.model;
 
 import java.util.Date;
+import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
 
 public class Transaccion {
     private int id_transaccion;
-    private float total;
+    private Restaurante restaurante;
+    private float total; 
     private Date fecha;
-    private String tipo_transaccion;
-    private Gasto gasto;
-    private Pedido pedido;
-    private String decripcion;
+    //private char tipo_transaccion;esto no 
+    //esto de abajo con polimorfismo
+//    private Gasto gasto;
+//    private Pedido pedido;
+//    private String decripcion;
 
-    //deberia tener 1 resturante 
-    public Transaccion(String tipo_transaccion) {
-        this.tipo_transaccion = tipo_transaccion;
-    }
-    //SETTERS Y GETTERS  ---------------------------------------
+    /**
+     * @return the id_transaccion
+     */
     public int getId_transaccion() {
         return id_transaccion;
     }
 
+    /**
+     * @param id_transaccion the id_transaccion to set
+     */
     public void setId_transaccion(int id_transaccion) {
         this.id_transaccion = id_transaccion;
     }
 
+    /**
+     * @return the restaurante
+     */
+    public Restaurante getRestaurante() {
+        return restaurante;
+    }
+
+    /**
+     * @param restaurante the restaurante to set
+     */
+    public void setRestaurante(Restaurante restaurante) {
+        this.restaurante = restaurante;
+    }
+
+    /**
+     * @return the total
+     */
     public float getTotal() {
         return total;
     }
 
+    /**
+     * @param total the total to set
+     */
     public void setTotal(float total) {
         this.total = total;
     }
 
+    /**
+     * @return the fecha
+     */
     public Date getFecha() {
         return fecha;
     }
 
+    /**
+     * @param fecha the fecha to set
+     */
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-
-    public String getTipo_transaccion() {
-        return tipo_transaccion;
-    }
-
-    public void setTipo_transaccion(String tipo_transaccion) {
-        this.tipo_transaccion = tipo_transaccion;
-    }
-
-    public Gasto getGasto() {
-        return gasto;
-    }
-
-    public void setGasto(Gasto gasto) {
-        this.gasto = gasto;
-    }
-
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
-
-    public String getDecripcion() {
-        return decripcion;
-    }
-
-    public void setDecripcion(String decripcion) {
-        this.decripcion = decripcion;
-    }
+    
+    
+    
+    
 }
