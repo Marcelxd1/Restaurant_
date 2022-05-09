@@ -126,6 +126,7 @@ CREATE TABLE transaccion (
   total DECIMAL(10,2) NULL DEFAULT NULL,
   fecha DATETIME NULL DEFAULT NULL,
   activo TINYINT(1)  NULL,
+  tipo CHAR NULL,
   PRIMARY KEY (id_transaccion),
   INDEX fid_restaurante (fid_restaurante ASC) VISIBLE,
   CONSTRAINT transaccion_ibfk_1
@@ -138,7 +139,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE gasto (
   id_gasto INT NOT NULL AUTO_INCREMENT,
-  item VARCHAR(50) NULL DEFAULT NULL,
+  item VARCHAR(100) NULL DEFAULT NULL,
+  precio DOUBLE(10,2) NULL,
+  cantidad INT NULL,
+  descripcion VARCHAR(100) NULL,
   PRIMARY KEY (id_gasto),
   CONSTRAINT fk_gasto_trans
     FOREIGN KEY (id_gasto)

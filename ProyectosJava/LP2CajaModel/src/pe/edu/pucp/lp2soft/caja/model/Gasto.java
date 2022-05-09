@@ -1,54 +1,65 @@
 package pe.edu.pucp.lp2soft.caja.model;
 
-public class Gasto extends Transaccion{
+import java.util.Date;
+import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
 
-    //private int id_gastos;
-    //id transaccion deberia de ser heredado y no deberia haber id_gastos
-    private String item;//es la descripcion
-    private int subtotal;//el subtotal solo sirve con las unidades( cantidades del producto) 
-    private int unidades;
+public class Gasto extends Transaccion{
+    private int idGasto;
+    private String item;
+    private double precio;
+    private int cantidad;
+    private String descripcion;
+
+    public Gasto(){}
     
-    public Gasto(int id_gastos, String descripcion ,String tipo_transaccion) {
-        //this.id_gastos = id_gastos;
-        this.item = descripcion;
+    public Gasto(String item,double precio,
+            int cantidad, String descripcion) {
+        this.item = item;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.descripcion = descripcion;
     }
     
-    //SETTERS Y GETTERS --------------------------
+    public int getIdGasto() {
+        return idGasto;
+    }
+
+    public void setIdGasto(int idGasto) {
+        this.idGasto = idGasto;
+    }
 
     public String getItem() {
         return item;
     }
+
     public void setItem(String item) {
         this.item = item;
     }
 
-    //METODOS Y PROCEDIMIENTOS 
-
-    /**
-     * @return the subtotal
-     */
-    public int getSubtotal() {
-        return subtotal;
+    public int getCantidad() {
+        return cantidad;
     }
 
-    /**
-     * @param subtotal the subtotal to set
-     */
-    public void setSubtotal(int subtotal) {
-        this.subtotal = subtotal;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
-    /**
-     * @return the unidades
-     */
-    public int getUnidades() {
-        return unidades;
+
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    /**
-     * @param unidades the unidades to set
-     */
-    public void setUnidades(int unidades) {
-        this.unidades = unidades;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+    
+    
 }

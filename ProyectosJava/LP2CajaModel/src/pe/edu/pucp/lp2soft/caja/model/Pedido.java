@@ -1,8 +1,10 @@
 package pe.edu.pucp.lp2soft.caja.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.lp2soft.negocio.model.Mesa;
 import pe.edu.pucp.lp2soft.usuario.model.Persona;
+import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
 import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
 public class Pedido extends Transaccion {
@@ -35,6 +37,7 @@ public class Pedido extends Transaccion {
         this.numeroComprobante= numComp;
         this.estado= estado;
     }
+    
 
     /**
      * @return the idPedido

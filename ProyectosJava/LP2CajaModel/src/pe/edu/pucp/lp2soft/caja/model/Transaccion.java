@@ -8,12 +8,12 @@ public class Transaccion {
     private Restaurante restaurante;
     private double total; 
     private Date fecha;
-    //private char tipo_transaccion;esto no 
-    //esto de abajo con polimorfismo
-//    private Gasto gasto;
-//    private Pedido pedido;
-//    private String decripcion;
-
+    private boolean activo;
+    private char tipo;
+    
+    public Transaccion(){}
+        
+    
     /**
      * @return the id_transaccion
      */
@@ -68,6 +68,22 @@ public class Transaccion {
      */
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
     }
     
     

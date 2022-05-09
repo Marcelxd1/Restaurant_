@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package pe.edu.pucp.lp2soft.caja.dao;
 
-/**
- *
- * @author DaytonCuellarSolis
- */
+import java.util.ArrayList;
+import pe.edu.pucp.lp2soft.caja.model.Gasto;
+
+
 public interface GastoDAO {
-    
+    ArrayList<Gasto> listarTodas();
+    int insertar(Gasto gasto);
+    int modificar(Gasto gasto);
+    int eliminar(int IdGasto);
 }

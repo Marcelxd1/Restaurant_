@@ -59,7 +59,7 @@ public class RestauranteMySQL implements RestauranteDAO {
             cs.setString("_nombre", restaurante.getNombre());
             cs.setString("_telefono", restaurante.getTelefono());
             cs.setString("_direccion", restaurante.getDireccion());
-            cs.setDouble("_dineroActual", 0);
+            cs.setDouble("_dineroActual", restaurante.getDineroActual());
             cs.executeUpdate();
             restaurante.setId_restaurante(cs.getInt("_id_rest"));
             

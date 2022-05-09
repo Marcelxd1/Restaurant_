@@ -3,9 +3,12 @@ package pe.edu.pucp.lp2soft.main;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import pe.edu.pucp.lp2soft.caja.dao.GastoDAO;
 import pe.edu.pucp.lp2soft.caja.model.Pedido;
 import pe.edu.pucp.lp2soft.caja.mysql.PedidoMySQL;
 import pe.edu.pucp.lp2soft.caja.dao.PedidoDAO;
+import pe.edu.pucp.lp2soft.caja.model.Gasto;
+import pe.edu.pucp.lp2soft.caja.mysql.GastoMySQL;
 import pe.edu.pucp.lp2soft.negocio.dao.CategoriaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.MesaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.ProductoDAO;
@@ -240,7 +243,47 @@ public class Principal {
 //        for(LineaPromocion linea: lista_de_Comidas){
 //            System.out.println(linea.getIdLineaPromocion()+ " "+ linea.getProducto().getNombre()+ " - "
 //            + linea.getUnidades()+ ", "+ linea.getProducto().getIdItemVendible() );
-//        }
+
+    //*************************
+    //PROBANDO GASTOS
+    //***************************+
+    Restaurante res1 = new Restaurante("aasdasd","CEVICHERIA","123213213","AV NOSE",4294.2);
+    RestauranteDAO res = new RestauranteMySQL();
+    resultado=res.insertar(res1);
+    if (resultado == 1) {
+        System.out.println("Se ha insertado rest correctamente ");
+    } else {
+        System.out.println(" NO se ha insertado res ");
+    }
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    Gasto gasto1 = new Gasto("Pollos",15.5,4,"1 KG");
+    Gasto gasto2 = new Gasto("Papas",10,2,"1/2 KG");
+    gasto1.setRestaurante(res1);
+    gasto2.setRestaurante(res1);
+    GastoDAO gastoDao = new GastoMySQL();
+    resultado = gastoDao.insertar(gasto1);
+    if (resultado == 1) {
+        System.out.println("Se ha insertado gasto1 correctamente ");
+    } else {
+        System.out.println(" NO se ha insertado gasto1 ");
+    }
+    
+    System.out.println("DINERO ACTUAL: " + res1.getDineroActual() + "\n===============================================");
+    
+    resultado = gastoDao.insertar(gasto2);
+    
+    if (resultado == 1) {
+        System.out.println("Se ha insertado gasto2 correctamente ");
+    } else {
+        System.out.println(" NO se ha insertado gasto2 ");
+    }
+    ArrayList<Gasto> gastos; //resultado
+    gastos = gastoDao.listarTodas();
+    for(Gasto g : gastos) {
+        System.out.println(g.getRestaurante().getNombre()+ " - " + g.getRestaurante().getDineroActual() + ": \n" + 
+                "\t" + sdf.format(g.getFecha()) + " - " +g.getItem() + " \n\t " + g.getCantidad() + " * " + g.getPrecio() + " = " + g.getTotal());
+    }
+    }
 
         /////////////////////////////////////////////////////////
 //        //AGREGANDO MESAS ---------------------------------------------------------------------
@@ -284,7 +327,7 @@ public class Principal {
 //        } else {
 //            System.out.println("Ha ocurrido un error al momento de insertar la mesa");
 //        }
-    }
+    
     //AGREGAR PEDIDO
     //int idPedido, float total, Mesa mesa, String tipoComprobante, String tipo_transaccion
     /*Mesa mes1 = new Mesa(1, 1, 3);
