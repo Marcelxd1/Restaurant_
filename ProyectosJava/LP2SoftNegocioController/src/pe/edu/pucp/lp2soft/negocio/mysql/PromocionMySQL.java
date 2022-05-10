@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.lp2soft.config.DBManager;
 import pe.edu.pucp.lp2soft.negocio.dao.PromocionDAO;
+import pe.edu.pucp.lp2soft.negocio.model.Categoria;
 import pe.edu.pucp.lp2soft.negocio.model.LineaPromocion;
 import pe.edu.pucp.lp2soft.negocio.model.Producto;
 import pe.edu.pucp.lp2soft.negocio.model.Promocion;
@@ -26,12 +27,6 @@ public class PromocionMySQL implements PromocionDAO{
     private CallableStatement cs;
     private ResultSet rs;
     
-    
-    /* private int idItemVendible;
-    private String nombre;
-    private boolean estado; 
-    private double precio;
-    private String descripcion;*/
     @Override
     public int insertar(Promocion promocion) {
         //asume que le daras una promocion con su lista creada
@@ -84,14 +79,7 @@ public class PromocionMySQL implements PromocionDAO{
             cs.setBoolean("_estado", promocion.isEstado());
             cs.executeUpdate();
            
-            //Por ejemplo le damos la misma lista pero con las lineas cambiadas y aqui
-          //las cambiaria en la BD 
-          
             //modificamos cada una de las Lineas asociadas a la promo 
-            //funcion sin mandar el _id_item_vendible supongo
-            //porque el id no se va a cambiar y usara el que ya existe para ubicar al
-            //que deba cambiar 
-            //aprovecharemos que el idLinea es unico 
             for (LineaPromocion linea : promocion.getLista_de_Comidas()) {
                 cs= con.prepareCall("{call MODIFICAR_LINEA_PROMOCION(?,?,?,?,?)}");
                 cs.setInt("_id_linea_promocion", linea.getIdLineaPromocion()); // el _id_linea_promocion es aparte del itemvendi
@@ -124,7 +112,6 @@ public class PromocionMySQL implements PromocionDAO{
             
             
             //ponemos las lineas en desactivadas
-            //deberia de poner un estado?
             //ELIMINAR PROMOCION SE ENCARGA DE DESACTIVAR LAS LINEASPROMOCION
             
         }catch(Exception ex){
@@ -149,26 +136,49 @@ public class PromocionMySQL implements PromocionDAO{
                 promocion.setPrecio(rs.getDouble("precio"));
                 promocion.setDescripcion(rs.getString("descripcion"));
                 promocion.setEstado(rs.getBoolean("estado"));
-                //promocion.setEstado(True);
-               
-                //promocion.setLista_de_Comidas(new ArrayList<>());
-                LineaPromocion linea=new LineaPromocion();
-                cs=con.prepareCall("{call LISTAR_LINEA_PROMOCION_PROMO(?)}");
-                cs.setInt("_id_item_vendible", promocion.getIdItemVendible());
-                //ahora te devuelve un query con solo las lineas que usan la promocion 
                 
+                //creacion de la lista asociada
+                promocion.setLista_de_Comidas(new ArrayList<LineaPromocion>());
+                LineaPromocion linea=new LineaPromocion();//para cada promo es una lista 
+                cs=con.prepareCall("{call LISTAR_LINEA_PROMOCION_PROMO(?)}");
+                cs.setInt("_idPromo", promocion.getIdItemVendible());
+                //ahora te devuelve un query con solo las lineas que usan la promocion 
+                //el query tendria las columnas de linea y las columnas de Producto
+                //no hay estado en lineaPRomo
+                //producto: id_producto, 
+                //item vendible : 
                 ResultSet subrs = cs.executeQuery();
                 while (subrs.next()) {
+                    
                     linea.setEstado(subrs.getBoolean("estado"));
                     linea.setIdLineaPromocion(subrs.getInt("id_linea_promocion"));
                     linea.setUnidades(subrs.getInt("unidad"));
-                    linea.setPromocion(promocion);//riesgo de datos
-                    //falta los datos de producto, ya estan en el inner join ahora 
-                    linea.setProducto(new Producto());
-                    //falta llenar producto que a su vez tiene que llenar categoria 
-                    //y que ademas tiene valores heredados de itemVendible
-                    linea.setIdLineaPromocion(subrs.getInt("fid_producto"));
+                    linea.setPromocion(promocion);//apuntan al que los contiene
                     
+                    //insertamos datos de producto,hereda de item vendible y tiene categoria
+                    
+                    Producto nuevo = new Producto();
+                    Categoria categoria= new Categoria();
+                    categoria.setActivo(subrs.getBoolean("activo"));
+                    categoria.setDescripcion(subrs.getString("descripcion"));
+                    categoria.setIdCategoria(subrs.getInt("id_categoria"));
+                    categoria.setNombre(subrs.getString("nombre"));
+                    nuevo.setCategoria(categoria);
+                    
+                    nuevo.setIdProducto(subrs.getInt("id_producto"));
+                    nuevo.setPresentacion(subrs.getString("presentacion"));
+                    nuevo.setTipoProducto(subrs.getString("fid_tipo_producto").charAt(0));
+                    nuevo.setDescripcion(subrs.getString("descripcion"));
+                    nuevo.setEstado(subrs.getBoolean("estado"));
+                    nuevo.setIdItemVendible(subrs.getInt("id_item_vendible"));//este es el id del producto en la linea
+                    //no el id de la promocion que tiene el nombre de _id_item_vendible
+                    nuevo.setNombre(subrs.getString("nombre"));
+                    nuevo.setPrecio(subrs.getDouble("precio"));
+                    
+                    linea.setProducto(nuevo);
+                    //fin del seteo de producto ahora sigue linea
+                    linea.setIdLineaPromocion(subrs.getInt("fid_producto"));
+                    promocion.getLista_de_Comidas().add(linea);//agregamos a la lista 
                 }
                 promociones.add(promocion);
             }

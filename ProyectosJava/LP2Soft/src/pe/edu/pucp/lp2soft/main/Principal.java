@@ -278,7 +278,7 @@ public class Principal {
 //        //AGREGANDO PROMOCIONES 
 //        Promocion promocion1= new Promocion(new ArrayList<>(), "Combo Parrillero", true, 200.00, "Pollo a la Brasa con Chuleta a la Parrilla"); 
 //        Promocion promocion2= new Promocion(new ArrayList<>(), "Combo Maritimo", true, 100.00, "ceviche y Chicharron de mariscos"); 
-//        Promocion promocion3= new Promocion(new ArrayList<>(), "Combo Veranito", true, 100.00, "no somos cevicheria o si? "); 
+//        Promocion promocion3= new Promocion(new ArrayList<>(), "Combo Veranito", true, 100.00, "KFC criollo"); 
 //        
 //        //no puede hacerse aca porque aca el producto tiene un ID 0 es cuando se hace insert donde se le da el ID 
 //        LineaPromocion lin11=new LineaPromocion(0, 4, producto, promocion1, true);
