@@ -1,24 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package pe.edu.pucp.lp2soft.usuario.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 
-/**
- *
- * 
- */
 public class Asistencia {
     private int id_asistencia ;
-    private int fid_id_usuario ; 
+    private Usuario usuario;
     private Date hora_inicio ; 
     private Date hora_fin;
     private Date fecha ; 
-    private ArrayList<Usuario> usuarios ; 
+    private boolean activo;
     
     public Asistencia(){}
     public int getId_asistencia() {
@@ -29,13 +19,23 @@ public class Asistencia {
         this.id_asistencia = id_asistencia;
     }
 
-    public int getFid_id_usuario() {
-        return fid_id_usuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setFid_id_usuario(int fid_id_usuario) {
-        this.fid_id_usuario = fid_id_usuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+    
 
     public Date getHora_inicio() {
         return hora_inicio;
@@ -59,15 +59,6 @@ public class Asistencia {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public ArrayList<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(ArrayList<Usuario> usuarios) {
-        this.usuarios = usuarios;
-    }
-    
+    }  
     
 }

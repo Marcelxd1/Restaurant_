@@ -6,20 +6,16 @@ package pe.edu.pucp.lp2soft.negocio.mysql;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.lp2soft.config.DBManager;
 import pe.edu.pucp.lp2soft.negocio.dao.MesaDAO;
-import pe.edu.pucp.lp2soft.negocio.model.Categoria;
 import pe.edu.pucp.lp2soft.negocio.model.Mesa;
-import pe.edu.pucp.lp2soft.negocio.model.Producto;
 
 public class MesaMySQL implements MesaDAO {
 
     private Connection con;
     private ResultSet rs;
-    private PreparedStatement ps;
     private CallableStatement cs;
 
     @Override
@@ -27,13 +23,13 @@ public class MesaMySQL implements MesaDAO {
         ArrayList<Mesa> mesas = new ArrayList<>();
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_MESA()}");
+            cs = con.prepareCall("{call LISTAR_MESA_TODOS()}");
             rs = cs.executeQuery();
             while (rs.next()) {
                 Mesa mesa = new Mesa();
                 mesa.setIdMesa(rs.getInt("id_mesa"));
                 mesa.setNumero(rs.getInt("capacidad"));
-                mesa.setEstado(1);
+                mesa.setEstado(true);
                 mesas.add(mesa);
             }
         } catch (Exception ex) {
@@ -54,10 +50,9 @@ public class MesaMySQL implements MesaDAO {
         //System.out.println(mesa.getId_personaje());
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_MESA(?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_MESA(?,?)}");
             cs.registerOutParameter("_id_mesa", java.sql.Types.INTEGER);
             cs.setInt("_capacidad", mesa.getNumero());
-            cs.setInt("_activo", mesa.getEstado());
             cs.executeUpdate();
             mesa.setIdMesa(cs.getInt("_id_mesa"));
             resultado = 1;
@@ -79,7 +74,8 @@ public class MesaMySQL implements MesaDAO {
         try {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_MESA(?,?)}");
-            cs.setInt("_id_mesa", mesa.getIdMesa());
+            cs.setInt("id_mesa", mesa.getIdMesa());
+            cs.setBoolean("_activo", mesa.isEstado());
             cs.setInt("_capacidad", mesa.getNumero());
             cs.executeUpdate();
             resultado = 1;

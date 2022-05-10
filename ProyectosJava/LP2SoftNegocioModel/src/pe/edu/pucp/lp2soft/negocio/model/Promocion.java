@@ -15,8 +15,8 @@ public class Promocion extends ItemVendible{
     public Promocion() {
     }
 
-    public Promocion(ArrayList<LineaPromocion> lista_de_Comidas, String nombre, boolean estado, double precio, String descripcion) {
-        super(nombre, estado, precio, descripcion);
+    public Promocion(ArrayList<LineaPromocion> lista_de_Comidas, String nombre, double precio, String descripcion) {
+        super(nombre, precio, descripcion);
         this.lista_de_Comidas = lista_de_Comidas;
     }
     

@@ -29,7 +29,7 @@ public class ProductoMySQL implements ProductoDAO{
                 producto.setEstado(rs.getBoolean("estado"));
                 producto.setDescripcion(rs.getString("descripcion"));
                 producto.setPresentacion(rs.getString("presentacion"));
-                producto.setTipoProducto(rs.getString("tipo_producto").charAt(0));
+                producto.setTipoProducto(rs.getString("fid_tipo_producto").charAt(0));
                 producto.setCategoria(new Categoria());
                 producto.getCategoria().setIdCategoria(rs.getInt("id_categoria"));
                 producto.getCategoria().setDescripcion(rs.getString("descripcion"));
@@ -54,8 +54,8 @@ public class ProductoMySQL implements ProductoDAO{
             cs.setString("_nombre", producto.getNombre());
             cs.setDouble("_precio", producto.getPrecio());
             cs.setString("_descripcion", producto.getDescripcion());
-            cs.setBoolean("_estado", producto.isEstado());
-            cs.setString("_tipo_producto", String.valueOf(producto.getTipoProducto()));
+            cs.setBoolean("_estado", true);
+            cs.setString("_fid_tipo_producto", String.valueOf(producto.getTipoProducto()));
             cs.setString("_presentacion", producto.getPresentacion());
             cs.setInt("_fid_categoria", producto.getCategoria().getIdCategoria());
             cs.executeUpdate();
@@ -80,7 +80,7 @@ public class ProductoMySQL implements ProductoDAO{
             cs.setDouble("_precio", producto.getPrecio());
             cs.setString("_descripcion", producto.getDescripcion());
             cs.setBoolean("_estado", producto.isEstado());
-            cs.setString("_tipo_producto", String.valueOf(producto.getTipoProducto()));
+            cs.setString("_fid_tipo_producto", String.valueOf(producto.getTipoProducto()));
             cs.setString("_presentacion", producto.getPresentacion());
             cs.setInt("_fid_categoria", producto.getCategoria().getIdCategoria());
             cs.executeUpdate();
@@ -110,36 +110,6 @@ public class ProductoMySQL implements ProductoDAO{
         return resultado;
     }
 
-    @Override
-    public Producto listarPorId(int idProducto) {
-        Producto producto = null;
-        int resultado = 0;
-        try{
-            con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call BUSCAR_PRODUCTO_POR_ID(?)}");
-            cs.setInt("_id_producto", idProducto);
-            rs = cs.executeQuery();
-            if(rs.next()){
-                producto = new Producto();
-                producto.setIdItemVendible(rs.getInt("id_item_vendible"));
-                producto.setNombre(rs.getString("nombre"));
-                producto.setPrecio(rs.getDouble("precio"));
-                producto.setEstado(true);
-                producto.setDescripcion(rs.getString("descripcion"));
-                producto.setPresentacion(rs.getString("presentacion"));
-                producto.setTipoProducto(rs.getString("tipo_producto").charAt(0));
-                producto.setCategoria(new Categoria());
-                producto.getCategoria().setIdCategoria(rs.getInt("id_area"));
-                producto.getCategoria().setDescripcion(rs.getString("detalle"));
-                producto.getCategoria().setNombre(rs.getString("nombre-area"));
-            }
-            resultado = 1;
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-        }
-        return producto;
-    }
+    
 
 }

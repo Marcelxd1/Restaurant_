@@ -8,9 +8,8 @@ public class ItemVendible {
     private double precio;
     private String descripcion;
 
-    public ItemVendible(String nombre, boolean estado, double precio, String descripcion) {
+    public ItemVendible(String nombre, double precio, String descripcion) {
         this.nombre = nombre;
-        this.estado = estado;
         this.precio = precio;
         this.descripcion = descripcion;
     }

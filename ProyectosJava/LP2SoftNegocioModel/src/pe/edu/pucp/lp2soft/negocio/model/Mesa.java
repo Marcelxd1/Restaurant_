@@ -3,18 +3,13 @@ package pe.edu.pucp.lp2soft.negocio.model;
 public class Mesa {
 
     private int idMesa;
-    private int estado;
+    private boolean estado;
     private int numero;
 
     //CONSTRUCTOR 
-    public Mesa() {
-        estado = 0;      //se crea como activo
-        numero = 0;
-    }
+    public Mesa() {}
 
-    public Mesa(int idMesa, int estado, int numero) {
-        this.idMesa = idMesa;
-        this.estado = estado;
+    public Mesa(int numero) {
         this.numero = numero;
     }
 
@@ -27,13 +22,15 @@ public class Mesa {
         this.idMesa = idMesa;
     }
 
-    public int getEstado() {
-        return this.estado;
+    public boolean isEstado() {
+        return estado;
     }
 
-    public void setEstado(int estado) {
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    
 
     public int getNumero() {
         return this.numero;

@@ -1,7 +1,5 @@
 package pe.edu.pucp.lp2soft.caja.model;
 
-import java.util.Date;
-import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
 
 public class Gasto extends Transaccion{
     private int idGasto;

@@ -20,7 +20,6 @@ public class Usuario extends Persona {
     private Rol rol ; 
     private Restaurante restaurante ; 
     private Persona persona ; 
-    private int id_asistencia ;
     
     public Usuario(){}
 
@@ -104,15 +103,7 @@ public class Usuario extends Persona {
     public void setPersona(Persona persona) {
         this.persona = persona;
     }
-
-    public int getId_asistencia() {
-        return id_asistencia;
-    }
-
-    public void setId_asistencia(int id_asistencia) {
-        this.id_asistencia = id_asistencia;
-    }
-    
+ 
    
     
 }

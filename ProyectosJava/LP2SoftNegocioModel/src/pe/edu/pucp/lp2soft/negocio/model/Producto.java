@@ -6,9 +6,9 @@ public class Producto extends ItemVendible{
     private String presentacion;
     private Categoria categoria;
 
-    public Producto(String nombre,boolean estado, double precio, String descripcion,
+    public Producto(String nombre, double precio, String descripcion,
             char tipoProducto, String presentacion) {
-        super(nombre, estado, precio, descripcion);
+        super(nombre, precio, descripcion);
         this.tipoProducto = tipoProducto;
         this.presentacion = presentacion;
     }

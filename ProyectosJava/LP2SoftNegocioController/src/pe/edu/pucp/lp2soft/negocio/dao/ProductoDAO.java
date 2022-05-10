@@ -8,5 +8,4 @@ public interface ProductoDAO {
     int insertar(Producto producto);
     int modificar(Producto producto);
     int eliminar(int idProducto);
-    Producto listarPorId(int idProducto);
 }

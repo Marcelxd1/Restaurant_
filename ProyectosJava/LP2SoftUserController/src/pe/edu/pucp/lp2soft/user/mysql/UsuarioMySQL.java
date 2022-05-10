@@ -64,13 +64,12 @@ public class UsuarioMySQL implements UsuarioDAO {
             usuario.setId_usuario(cs.getInt("_id_persona"));
             usuario.setId_persona(cs.getInt("_id_persona"));
             
-            cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?,?)}");
             cs.setInt("_id_usuario",usuario.getId_persona());
             cs.setInt("_fid_rol", usuario.getRol().getId_rol());
             cs.setInt("_fid_restaurante", usuario.getRestaurante().getId_restaurante());
             cs.setString("_usuario", usuario.getUsuario());
             cs.setString("_password", usuario.getPassword());
-            cs.setBoolean("_estado", true);
             cs.setDouble("_salario", usuario.getSalario());
             cs.setString("_telefono", usuario.getTelefono());
             cs.executeUpdate();

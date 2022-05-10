@@ -40,106 +40,201 @@ import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
 public class Principal {
     public static void main(String[] args) throws Exception {
-
-//        Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
-//        Categoria cat2 = new Categoria("Parrilleros", "las parrillas ");
-//        Categoria cat3 = new Categoria("Gaseosas", "aguas con gas ");
-//        Producto producto = new Producto("1/4 Pollo a la Brasa", true, 19.2, "con papas y ensalada", 'C', null);
-//        Producto producto2 = new Producto("Chuletas a la parrilla", true, 31.2, "con papas sancochadas", 'C', null);
-//        Producto producto3 = new Producto("Inka Kola", true, 3.5, "gaseosa descartable", 'B', "2.5L");
-//        ProductoDAO daoProd = new ProductoMySQL();
-//        CategoriaDAO daoCat = new CategoriaMySQL();
-//        PromocionDAO daoPromo = new PromocionMySQL();
         int resultado;
-        //AGREGANDO CATEGORIAS--------------------------------------------------------------
-//        resultado = daoCat.insertar(cat1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha insertado correctamente la categoria");
-//        } else {
-//            System.out.println("Ha ocurrido un error al momento de insertar la categoria");
-//        }
+/*
+  PARA PROBAR USUARIOS, COMIDAS, Y TODOS LOS TIPOS SIN CLASE, PRIMERO AGREGARLOS MANUALMENTE EN LA BASE DE DATOS      
+*/        
+//************************************************************************************************************
+// RESTAURANTE
+//************************************************************************************************************ 
+        Restaurante res1 = new Restaurante("ASAS-2323","CEVICHERIA","123213213","AV NOSE",4294.2);
+        RestauranteDAO res = new RestauranteMySQL();
+        resultado=res.insertar(res1);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado RESTAURANTE correctamente ");
+        } else {
+            System.out.println(" NO se ha insertado RESTAURANTE ");
+        }
+
+//************************************************************************************************************
+// MESAS
+//************************************************************************************************************        
+        Mesa mes1 = new Mesa(4); //4 sillas
+        MesaDAO m1 = new MesaMySQL();
+        resultado = m1.insertar(mes1);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado MESA correctamente ");
+        } else {
+            System.out.println(" NO se ha insertado MESA ");
+        }
+        
+//************************************************************************************************************
+// CATEGORIAS COMIDAS 
+//************************************************************************************************************  
+        Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
+        Categoria cat2 = new Categoria("Parrilleros", "las parrillas ");
+        Categoria cat3 = new Categoria("Gaseosas", "aguas con gas ");        
+
+        CategoriaDAO daoCat = new CategoriaMySQL();
+        resultado = daoCat.insertar(cat1);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado correctamente la CATEGORIA");
+        } else {
+            System.out.println("Ha ocurrido un error al momento de insertar la CATEGORIA");
+        }
+        resultado = daoCat.insertar(cat2);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado correctamente la CATEGORIA2");
+        } else {
+            System.out.println("Ha ocurrido un error al momento de insertar la CATEGORIA2");
+        }
+        resultado = daoCat.insertar(cat3);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado correctamente la CATEGORIA3");
+        } else {
+            System.out.println("Ha ocurrido un error al momento de insertar la CATEGORIA3");
+        }
+//************************************************************************************************************
+// COMIDAS Y BEBIDAS
+//************************************************************************************************************  
+        Producto producto = new Producto("1/4 Pollo a la Brasa", 19.2, "con papas y ensalada", 'C', null); //platillo
+        Producto producto2 = new Producto("Chuletas a la parrilla", 31.2, "con papas sancochadas", 'C', null);//platillo
+        Producto producto3 = new Producto("Inka Kola", 3.5, "gaseosa descartable", 'B', "2.5L");//bebida
+        ProductoDAO daoProd = new ProductoMySQL();
+        
+        producto.setCategoria(cat1);
+        producto2.setCategoria(cat2);
+        producto3.setCategoria(cat3);
+
+        resultado = daoProd.insertar(producto);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado correctamente el PRODUCTO");
+        } else {
+            System.out.println("Ha ocurrido un error al momento de insertar el PRODUCTO");
+        }
+        resultado = daoProd.insertar(producto2);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado correctamente el PRODUCTO2");
+        } else {
+            System.out.println("Ha ocurrido un error al momento de insertar el PRODUCTO2");
+        }
+        resultado = daoProd.insertar(producto3);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado correctamente el PRODUCTO3");
+        } else {
+            System.out.println("Ha ocurrido un error al momento de insertar el PRODUCTO3");
+        }
+        
+
+//************************************************************************************************************
+// PROMOCIONES
+//************************************************************************************************************         
+        PromocionDAO daoPromo = new PromocionMySQL();
+        
+        
+//************************************************************************************************************
+// ROLES
+//************************************************************************************************************  
+        Rol rol1 = new Rol("ADMINISTRADOR");
+        Rol rol2 = new Rol("CAJERO");
+        Rol rol3 = new Rol("MESERO");
+        Rol rol4 = new Rol("COCINERO");
+        
+        RolDAO daoRol = new RolMySQL();
+        resultado = daoRol.insertar(rol1);
+        if (resultado == 1) {
+            System.out.println("Se ha registrado el rol correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado el rol correctamente ");
+        }
+        
+        resultado = daoRol.insertar(rol2);
+        if (resultado == 1) {
+            System.out.println("Se ha registrado el rol2 correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado el rol2 correctamente ");
+        }
+        
+        resultado = daoRol.insertar(rol3);
+        if (resultado == 1) {
+            System.out.println("Se ha registrado el rol3 correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado el rol3 correctamente ");
+        }
+        
+        resultado = daoRol.insertar(rol4);
+        if (resultado == 1) {
+            System.out.println("Se ha registrado el rol4 correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado el rol4 correctamente ");
+        }
+
+//************************************************************************************************************
+// PERSONAS
+//************************************************************************************************************  
+        Usuario us1 = new Usuario("psanchez", "asd1234", 1200.0, "9878842", "PEDRO", "PEREZ", "SANCHEZ", "9989893", 'N');
+        //Persona per1 = new Persona("Empresa ABC", null, null, null,) NO SE PUEDE AGREGAR EMPRESAS!!!!!!!!!!!!!!!!!!!!!
+        
+        us1.setRol(rol1);
+        us1.setRestaurante(res1);
+        
+        UsuarioDAO daoUsuario = new UsuarioMySQL();
+        resultado = daoUsuario.insertar(us1);
+        if (resultado == 1) {
+            System.out.println("Se ha registrado en la tabla USUARIO correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado en la tabla USUARIO correctamente ");
+        }
+        
+//************************************************************************************************************
+// ASISTENCIAS
+//************************************************************************************************************        
+        Asistencia asistencia = new Asistencia();
+        asistencia.setUsuario(us1);
+        
+        AsistenciaDAO daoAsistencia = new AsistenciaMySQL();
+        resultado = daoAsistencia.registrarAsistencia(asistencia);
+        if (resultado == 1) {
+            System.out.println("Se ha registrado en la tabla ASISTENCIA correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado en la tabla ASISTENCIA correctamente ");
+        }
+        
+//************************************************************************************************************
+// GASTOS
+//************************************************************************************************************           
+        Gasto gasto1 = new Gasto("Pollos",15.5,4,"1 KG");
+        Gasto gasto2 = new Gasto("Papas",10,2,"1/2 KG");
+        gasto1.setRestaurante(res1);
+        gasto2.setRestaurante(res1);
+        GastoDAO gastoDao = new GastoMySQL();
+        //System.out.println("DINERO ACTUAL: " + res1.getDineroActual() + "\n===============================================");
+        resultado = gastoDao.insertar(gasto1);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado GASTO1 correctamente ");
+        } else {
+            System.out.println(" NO se ha insertado GASTO1 ");
+        }
+        resultado = gastoDao.insertar(gasto2);
+        if (resultado == 1) {
+            System.out.println("Se ha insertado GASTO2 correctamente ");
+        } else {
+            System.out.println(" NO se ha insertado GASTO2 ");
+        }
+        
+
+        
+        
+        
+        
+
+
+        
+       
 //
-//        resultado = daoCat.insertar(cat2);
-//        if (resultado == 1) {
-//            System.out.println("Se ha insertado correctamente la categoria2");
-//        } else {
-//            System.out.println("Ha ocurrido un error al momento de insertar la categoria2");
-//        }
+//        
 //
-//        resultado = daoCat.insertar(cat3);
-//        if (resultado == 1) {
-//            System.out.println("Se ha insertado correctamente la categoria3");
-//        } else {
-//            System.out.println("Ha ocurrido un error al momento de insertar la categoria3");
-//        }
-//
-//        producto.setCategoria(cat1);
-//        producto2.setCategoria(cat2);
-//        producto3.setCategoria(cat3);
-//
-//        //AGREGANDO PRODUCTOS ---------------------------------------------------------------------------------------
-//        resultado = daoProd.insertar(producto);
-//        if (resultado == 1) {
-//            System.out.println("Se ha insertado correctamente el producto");
-//        } else {
-//            System.out.println("Ha ocurrido un error al momento de insertar el producto");
-//        }
-//
-//        resultado = daoProd.insertar(producto2);
-//        if (resultado == 1) {
-//            System.out.println("Se ha insertado correctamente el producto2");
-//        } else {
-//            System.out.println("Ha ocurrido un error al momento de insertar el producto2");
-//        }
-//
-//        resultado = daoProd.insertar(producto3);
-//        if (resultado == 1) {
-//            System.out.println("Se ha insertado correctamente el producto3");
-//        } else {
-//            System.out.println("Ha ocurrido un error al momento de insertar el producto3");
-//        }
-//
-//        //--------------------------------------------------------------------------------------------
-//        Rol rol1 = new Rol("Cajero");
-//        Restaurante rest1 = new Restaurante("123456", "POLLERIA", "353433", "sanisidro123", 0);
-//        Usuario us1 = new Usuario("axelin", "123", 3333.00, "987654321", "axel", "romero", "chambi", "72121233", 'P');
-//        us1.setRestaurante(rest1);
-//        us1.setRol(rol1);
-//        RolDAO daoRol = new RolMySQL();
-//        resultado = daoRol.insertar(rol1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha registrado el rol correctamente ");
-//        } else {
-//            System.out.println(" NO Se ha registrado el rol correctamente ");
-//        }
-//        RestauranteDAO daoRestaurante = new RestauranteMySQL();
-//        resultado = daoRestaurante.insertar(rest1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha registrado en la tabla restaurante correctamente ");
-//        } else {
-//            System.out.println(" NO Se ha registrado en la tabla restaurante correctamente ");
-//        }
-//
-//        UsuarioDAO daoUsuario = new UsuarioMySQL();
-//        resultado = daoUsuario.insertar(us1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha registrado en la tabla USUARIO correctamente ");
-//        } else {
-//            System.out.println(" NO Se ha registrado en la tabla USUARIO correctamente ");
-//        }
-//            AsistenciaDAO daoAsistencia = new AsistenciaMySQL();
-//        resultado = daoAsistencia.registrarAsistencia(us1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha registrado la asistencia de entrada correctamente ");
-//        } else {
-//            System.out.println("NO se  ha registrado la asistencia de entrada  ");
-//        }
-//        resultado = daoAsistencia.registrarSalida(us1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha registrado la salida correctamente ");
-//        } else {
-//            System.out.println("NO se  ha registrado la salida de entrada  ");
-//        }
+//        
 //          ArrayList<Asistencia> asistencias = daoAsistencia.listarAsistencia();
 //          long  diferencia;
 //          SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
@@ -247,60 +342,16 @@ public class Principal {
     //*************************
     //PROBANDO GASTOS
     //***************************+
-    Restaurante res1 = new Restaurante("aasdasd","CEVICHERIA","123213213","AV NOSE",4294.2);
-    RestauranteDAO res = new RestauranteMySQL();
-    resultado=res.insertar(res1);
-    if (resultado == 1) {
-        System.out.println("Se ha insertado rest correctamente ");
-    } else {
-        System.out.println(" NO se ha insertado res ");
-    }
-    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-    Gasto gasto1 = new Gasto("Pollos",15.5,4,"1 KG");
-    Gasto gasto2 = new Gasto("Papas",10,2,"1/2 KG");
-    gasto1.setRestaurante(res1);
-    gasto2.setRestaurante(res1);
-    GastoDAO gastoDao = new GastoMySQL();
-    resultado = gastoDao.insertar(gasto1);
-    if (resultado == 1) {
-        System.out.println("Se ha insertado gasto1 correctamente ");
-    } else {
-        System.out.println(" NO se ha insertado gasto1 ");
-    }
-    
-    System.out.println("DINERO ACTUAL: " + res1.getDineroActual() + "\n===============================================");
-    
-    resultado = gastoDao.insertar(gasto2);
-    
-    if (resultado == 1) {
-        System.out.println("Se ha insertado gasto2 correctamente ");
-    } else {
-        System.out.println(" NO se ha insertado gasto2 ");
-    }
-    ArrayList<Gasto> gastos; //resultado
-    gastos = gastoDao.listarTodas();
-    for(Gasto g : gastos) {
-        System.out.println(g.getRestaurante().getNombre()+ " - " + g.getRestaurante().getDineroActual() + ": \n" + 
-                "\t" + sdf.format(g.getFecha()) + " - " +g.getItem() + " \n\t " + g.getCantidad() + " * " + g.getPrecio() + " = " + g.getTotal());
-    }
+//    ArrayList<Gasto> gastos; //resultado
+//    gastos = gastoDao.listarTodas();
+//    for(Gasto g : gastos) {
+//        System.out.println(g.getRestaurante().getNombre()+ " - " + g.getRestaurante().getDineroActual() + ": \n" + 
+//                "\t" + sdf.format(g.getFecha()) + " - " +g.getItem() + " \n\t " + g.getCantidad() + " * " + g.getPrecio() + " = " + g.getTotal());
+//    }
+        
+        
     }
 
-        /////////////////////////////////////////////////////////
-//        //AGREGANDO MESAS ---------------------------------------------------------------------
-//        Mesa mes1 = new Mesa(1, 1, 3);
-//        //Creamos un dao de conexión
-//        MesaDAO persDao = new MesaMySQL();
-//        //Insertamos el area en la base de datos
-//        resultado = persDao.insertar(mes1);
-//        //persDao.insertar(pers1);
-//        //Verificando la inserción en la base de datos
-//
-//        if (resultado == 1) {
-//            System.out.println("Se ha insertado correctamente la Mesa");
-//        } else {
-//            System.out.println("Ha ocurrido un error al momento de insertar la mesa");
-       // }
-        //int resultado;
         //Mesa mes1 = new Mesa(1, 1, 3);
         /*Pedido ped1 = new Pedido(1, 100, mes1, "B", "I");
         PedidoDAO pedDao = new PedidoMySQL();

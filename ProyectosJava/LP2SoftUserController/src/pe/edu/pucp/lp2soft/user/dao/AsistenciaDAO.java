@@ -16,7 +16,7 @@ import pe.edu.pucp.lp2soft.usuario.model.Usuario;
  */
 public interface AsistenciaDAO {
     ArrayList<Asistencia> listarAsistencia();
-    int registrarAsistencia(Usuario usuario);
-    int registrarSalida(Usuario usuario );
-    int eliminarAsistencia(Usuario usuario); 
+    int registrarAsistencia(Asistencia asistencia);
+    int registrarSalida(int idAsistencia);
+    int eliminarAsistencia(int idAsistencia); 
 }

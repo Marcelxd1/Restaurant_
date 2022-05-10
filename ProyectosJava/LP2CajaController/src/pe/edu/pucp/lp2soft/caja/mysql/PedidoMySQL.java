@@ -58,7 +58,7 @@ public class PedidoMySQL implements PedidoDAO {
                 
                 Mesa mesa= new Mesa();//crea nueva mesa para cada pedido 
                 mesa.setIdMesa(rs.getInt("id_mesa"));
-                mesa.setEstado(rs.getInt("activo"));
+                mesa.setEstado(rs.getBoolean("activo"));
                 mesa.setNumero(rs.getInt("capacidad"));
                 pedido.setMesa(mesa);
                 
