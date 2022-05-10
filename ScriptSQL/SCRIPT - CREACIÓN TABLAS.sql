@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS tipo_persona;
 DROP TABLE IF EXISTS rol ;
 DROP TABLE IF EXISTS tipo_comprobante;
 DROP TABLE IF EXISTS tipo_pedido;
+DROP TABLE IF EXISTS estado_pedido;
 DROP TABLE IF EXISTS tipo_pago ;
 DROP TABLE IF EXISTS transaccion ;
 DROP TABLE IF EXISTS restaurante ;
@@ -106,8 +107,8 @@ ENGINE = InnoDB;
 CREATE TABLE asistencia (
   id_asistencia INT NOT NULL AUTO_INCREMENT,
   fid_usuario INT NOT NULL,
-  hora_inicio DATETIME NULL DEFAULT NULL,
-  hora_fin DATETIME NULL DEFAULT NULL,
+  hora_inicio TIME NULL DEFAULT NULL,
+  hora_fin TIME NULL DEFAULT NULL,
   fecha DATE NULL DEFAULT NULL,
   activo TINYINT(1)  NULL,
   PRIMARY KEY (id_asistencia),
@@ -199,6 +200,15 @@ CREATE TABLE tipo_comprobante (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table estado_pedido
+-- -----------------------------------------------------
+CREATE TABLE estado_pedido (
+  id_estado_pedido CHAR NOT NULL,
+  descripcion VARCHAR(20) NULL DEFAULT NULL,
+  PRIMARY KEY (id_estado_pedido))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table pedido
 -- -----------------------------------------------------
 CREATE TABLE pedido (
@@ -210,6 +220,7 @@ CREATE TABLE pedido (
   fid_tipo_pedido CHAR NOT NULL,
   fid_cliente INT NOT NULL,
   fid_tipo_comprobante CHAR NOT NULL,
+  fid_estado_pedido CHAR NOT NULL,
   numero_comprobante INT NULL,
   PRIMARY KEY (id_pedido),
   INDEX fid_mesa (fid_mesa ASC) VISIBLE,
@@ -219,6 +230,7 @@ CREATE TABLE pedido (
   INDEX pedido_ibfk_7_idx (fid_cliente ASC) VISIBLE,
   INDEX fid_tipo_pedido (fid_tipo_pedido ASC) VISIBLE,
   INDEX fid_tipo_comprobante(fid_tipo_comprobante ASC) VISIBLE,
+  INDEX fid_estado_pedido(fid_estado_pedido ASC) VISIBLE,
   CONSTRAINT pedido_ibfk_1
     FOREIGN KEY (fid_mesa)
     REFERENCES mesa (id_mesa),
@@ -249,6 +261,11 @@ CREATE TABLE pedido (
  CONSTRAINT pedido_ibfk_9
     FOREIGN KEY (fid_tipo_comprobante)
     REFERENCES tipo_comprobante (id_tipo_comprobante)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+ CONSTRAINT pedido_ibfk_10
+    FOREIGN KEY (fid_estado_pedido)
+    REFERENCES estado_pedido (id_estado_pedido)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -356,3 +373,10 @@ CREATE TABLE linea_promocion (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+# DATOS INICIALES
+INSERT INTO `Restaurante`.`tipo_persona` (`id_tipo_persona`, `descripcion`) VALUES ('N', 'NATURAL');
+INSERT INTO `Restaurante`.`tipo_persona` (`id_tipo_persona`, `descripcion`) VALUES ('J', 'JURIDICA');
+
+INSERT INTO `Restaurante`.`tipo_producto` (`id_tipo_producto`, `descripcion`) VALUES ('C', 'COMIDAS');
+INSERT INTO `Restaurante`.`tipo_producto` (`id_tipo_producto`, `descripcion`) VALUES ('B', 'BEBIDAS');
