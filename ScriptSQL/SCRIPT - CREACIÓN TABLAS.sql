@@ -277,7 +277,7 @@ ENGINE = InnoDB;
 -- Table promocion
 -- -----------------------------------------------------
 CREATE TABLE promocion (
-  id_promocion INT NOT NULL,
+  id_promocion INT NOT NULL AUTO_INCREMENT,
   INDEX fk_PromocionCombo_ItemVendible1_idx (id_promocion ASC) VISIBLE,
   PRIMARY KEY (id_promocion),
   CONSTRAINT fk_PromocionCombo_ItemVendible1
