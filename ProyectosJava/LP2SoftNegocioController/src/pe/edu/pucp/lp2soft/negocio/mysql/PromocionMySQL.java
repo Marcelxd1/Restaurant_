@@ -39,7 +39,7 @@ public class PromocionMySQL implements PromocionDAO{
             cs.setString("_nombre", promocion.getNombre());
             cs.setDouble("_precio", promocion.getPrecio());
             cs.setString("_descripcion", promocion.getDescripcion());
-            cs.setBoolean("_estado", promocion.isEstado());
+            cs.setBoolean("_estado", true);//porque si se inserta sera usado 
             cs.executeUpdate();
             promocion.setIdItemVendible(cs.getInt("_id_item_vendible"));
             
