@@ -132,7 +132,29 @@ public class PersonaMySQL implements PersonaDAO {
 
     @Override
     public Persona buscarPorId(int idPersona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       Persona persona = new Persona();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call BUSCAR_PERSONA_POR_ID(?)}");
+            cs.setInt("_id_persona", idPersona);
+            rs = cs.executeQuery();
+            rs.next();
+            
+            if(rs.getInt("id_persona")!=idPersona){
+                System.out.println("ERROR GRAVISIMO NO EXISTE ESTA PERSONA");
+            }//ojo no esta cargado el apeMaterno ni los campos de empresa
+            persona.setId_persona(rs.getInt("id_persona"));
+            persona.setNombre(rs.getString("nombre"));
+            persona.setApellido_paterno(rs.getString("apellido_paterno"));
+            persona.setDNI(rs.getString("DNI"));
+            persona.setTipo('P');
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return persona;
     }
 
 }

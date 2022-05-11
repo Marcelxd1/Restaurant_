@@ -72,13 +72,16 @@ public class PedidoMySQL implements PedidoDAO {
                 int idcajero=rs.getInt("fid_cajero");
                 int idcliente=rs.getInt("fid_cliente");
                 
-//                Usuario mesero = daouser.buscarPorId(idmesero);//listaID deberia de dar un usuario
-//                Usuario cajero= daouser.buscarPorId(idcajero);
+                Usuario mesero = daouser.buscarPorId(idmesero);// deberia de dar un objeto
+                if(mesero==null)System.out.println("ERROR ENCONTRANDO USUARIO ");
+                Usuario cajero= daouser.buscarPorId(idcajero);
+                if(cajero==null)System.out.println("ERROR ENCONTRANDO USUARIO ");
                 Persona cliente= daopersona.buscarPorId(idcliente);
+                if(cliente==null)System.out.println("ERROR ENCONTRANDO USUARIO ");
                 
                 //insertamos los objetos obtenidos
-//                pedido.setMesero(mesero);
-//                pedido.setCajero(cajero);
+                pedido.setMesero(mesero);
+                pedido.setCajero(cajero);
                 pedido.setCliente(cliente);
                 
                 

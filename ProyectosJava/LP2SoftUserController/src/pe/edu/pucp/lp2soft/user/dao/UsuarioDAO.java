@@ -9,5 +9,5 @@ public interface UsuarioDAO {
     int insertar(Usuario usuario);
     int modificar(Usuario usuario);
     int eliminar(int idUsuario);
-    Usuario listarPorId(int idUsuario);
+    Usuario buscarPorId(int idUsuario);
 }

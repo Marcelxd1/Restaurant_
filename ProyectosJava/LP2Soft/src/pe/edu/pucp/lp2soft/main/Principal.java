@@ -591,10 +591,30 @@ public class Principal {
         
         Pedido pedido1 = new Pedido(mes1, 'C', mesero1, cajero1, 'M', cliente, 'B', 12345678, 'A', list_lineaPedido, res1, fecha, true, 'A');
 
+//        resultado= daoPedido.insertar(pedido1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha insertado PEDIDO 1 correctamente ");
+//        } else {
+//            System.out.println(" NO se ha insertado PEDIDO 1 ");
+//        }
+//
+//        resultado= daoPedido.modificar(pedido1);
+//        if (resultado == 1) {
+//            System.out.println("Se ha modificado PEDIDO 1 correctamente ");
+//        } else {
+//            System.out.println(" NO se ha modificado PEDIDO 1 ");
+//        }
+//
+//        int idPedido= pedido1.getIdPedido();
+//        System.out.println(idPedido);
+//        resultado= daoPedido.eliminar(idPedido);
+//        if (resultado == 1) {
+//            System.out.println("Se ha eliminado PEDIDO 1 correctamente ");
+//        } else {
+//            System.out.println(" NO se ha eliminado PEDIDO 1 ");
+//        }
+//
+//        ArrayList<Pedido> pedidos = daoPedido.listarTodas();        
 
-//        ArrayList<Persona> personas = daoPersona.listarTodas();
-//        
-
-        
     }
 }

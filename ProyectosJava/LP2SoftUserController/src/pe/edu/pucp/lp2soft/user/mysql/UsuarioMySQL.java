@@ -122,8 +122,29 @@ public class UsuarioMySQL implements UsuarioDAO {
     }
 
     @Override
-    public Usuario listarPorId(int idUsuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Usuario buscarPorId(int idUsuario) {
+        Usuario usuario = new Usuario();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call BUSCAR_PERSONA_POR_ID(?)}");
+            cs.setInt("_id_usuario", idUsuario);
+            rs = cs.executeQuery();
+            rs.next();
+            
+            if(rs.getInt("_id_usuario")!=idUsuario){
+                System.out.println("ERROR GRAVISIMO NO EXISTE ESTA PERSONA");
+            }//ojo no esta cargado el apeMaterno ni los campos de empresa
+            usuario.setId_usuario(rs.getInt("id_usuario"));
+            usuario.setUsuario(rs.getString("usuario"));
+            usuario.setSalario(rs.getInt("salario"));
+            usuario.setTelefono(rs.getString("telefono")); 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return usuario;
     }
 
 }
