@@ -22,7 +22,7 @@ public class AsistenciaMySQL implements AsistenciaDAO {
         ArrayList<Asistencia> asistencias = new ArrayList<>();
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_ASISTENCIA()}");
+            cs = con.prepareCall("{call LISTAR_ASISTENCIA_TODOS()}");
             rs = cs.executeQuery();
             while (rs.next()){
                 Asistencia asist = new Asistencia();
@@ -65,12 +65,12 @@ public class AsistenciaMySQL implements AsistenciaDAO {
         return resultado ; 
     }
     @Override
-    public int registrarSalida(int idAsistencia ) {
+    public int registrarSalida(int idUsuario ) {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call REGISTRAR_ASISTENCIA_SALIDA(?)}");
-            cs.setInt("_id_asistencia",idAsistencia);
+            cs = con.prepareCall("{call INSERTAR_ASISTENCIA_SALIDA(?)}");
+            cs.setInt("_id_usuario",idUsuario);
             cs.executeUpdate();
             resultado = 1 ; 
         }catch (Exception ex){

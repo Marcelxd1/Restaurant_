@@ -382,9 +382,21 @@ INSERT INTO `Restaurante`.`tipo_persona` (`id_tipo_persona`, `descripcion`) VALU
 INSERT INTO `Restaurante`.`tipo_producto` (`id_tipo_producto`, `descripcion`) VALUES ('C', 'COMIDAS');
 INSERT INTO `Restaurante`.`tipo_producto` (`id_tipo_producto`, `descripcion`) VALUES ('B', 'BEBIDAS');
 
+INSERT INTO Restaurante.tipo_pago(id_tipo_pago, descripcion) values('E', 'En efectivo');
+INSERT INTO Restaurante.tipo_pago(id_tipo_pago, descripcion) values('T', 'Tarjeta');
+
+INSERT INTO Restaurante.tipo_comprobante(id_tipo_comprobante, descripcion) values('B', 'Boleta');
+INSERT INTO Restaurante.tipo_comprobante(id_tipo_comprobante, descripcion) values('F', 'Factura');
+
+INSERT INTO Restaurante.tipo_pedido(id_tipo_pedido, descripcion) values('L', 'Para llevar');
+INSERT INTO Restaurante.tipo_pedido(id_tipo_pedido, descripcion) values('C', 'Para comer');
+
+INSERT INTO Restaurante.estado_pedido(id_estado_pedido, descripcion) values('E', 'En espera');
+INSERT INTO Restaurante.estado_pedido(id_estado_pedido, descripcion) values('P', 'En proceso');
+INSERT INTO Restaurante.estado_pedido(id_estado_pedido, descripcion) values('L', 'Listo');
 
 DELIMITER $
-CREATE TRIGGER ACTUALIZAR_DINEROACTUAL
+CREATE TRIGGER ACTUALIZAR_GASTO
 AFTER INSERT ON transaccion
 FOR EACH ROW 
 BEGIN
@@ -392,4 +404,14 @@ BEGIN
   SET dineroActual = dineroActual - new.total
   WHERE id_restaurante = new.fid_restaurante
   AND new.tipo = 'G';
+END$
+
+CREATE TRIGGER ACTUALIZAR_PEDIDO
+AFTER INSERT ON transaccion
+FOR EACH ROW 
+BEGIN
+  UPDATE restaurante
+  SET dineroActual = dineroActual + new.total
+  WHERE id_restaurante = new.fid_restaurante
+  AND new.tipo = 'P';
 END$

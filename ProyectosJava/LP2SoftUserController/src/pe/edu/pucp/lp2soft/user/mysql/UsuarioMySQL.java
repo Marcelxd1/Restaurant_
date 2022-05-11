@@ -32,14 +32,17 @@ public class UsuarioMySQL implements UsuarioDAO {
         ArrayList<Usuario> usuarios = new ArrayList<>();
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_USUARIOS()}");
+            cs = con.prepareCall("{call LISTAR_USUARIOS_TODOS()}");
             rs = cs.executeQuery();
             while (rs.next()){
                 Usuario usuario = new Usuario();
                 usuario.setId_usuario(rs.getInt("id_usuario"));
                 usuario.setUsuario(rs.getString("usuario"));
                 usuario.setSalario(rs.getInt("salario"));
-                usuario.setTelefono(rs.getString("telefono"));             
+                usuario.setTelefono(rs.getString("telefono"));
+                usuario.setNombre(rs.getString("nombre"));
+                usuario.setApellido_paterno(rs.getString("apellido_paterno"));
+                usuario.setApellido_materno(rs.getString("apellido_materno"));
                 usuarios.add(usuario);
             }
         }catch (Exception ex){
@@ -91,7 +94,7 @@ public class UsuarioMySQL implements UsuarioDAO {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_USUARIO(?)}");
+            cs = con.prepareCall("{call MODIFICAR_USUARIO(?,?,?)}");
             cs.setInt("_id_usuario", usuario.getId_usuario());
             cs.setString("_usuario", usuario.getUsuario());
             cs.setString("_password", usuario.getPassword());
@@ -106,23 +109,7 @@ public class UsuarioMySQL implements UsuarioDAO {
         return resultado ;
     }
 
-    @Override
-    public int eliminar(int idUsuario) {
-       int resultado = 0 ; 
-        try {
-            con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call ELIMINAR_USUARIO(?)}");
-            cs.setInt("_id_usuario",idUsuario);
-            cs.executeUpdate();
-            resultado  = 1; 
-        }catch (Exception ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-        }
-        
-        return resultado ;
-    }
+    
 
     @Override
     public Usuario listarPorId(int idUsuario) {

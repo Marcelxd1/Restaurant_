@@ -499,27 +499,21 @@ public class Principal {
             System.out.println(" NO Se ha registrado en la tabla CAJERO2 correctamente ");
         }
         
-        //MODIFCAR -----------------------------------------------------------------
-        us1.setPassword("NUEVACONTRA");
+        //MODIFICAR -----------------------------------------------------------------
+        us1.setUsuario("NUEVOUSUARIO");
         resultado = daoUsuario.modificar(us1);
         if (resultado == 1) {
             System.out.println("Se ha modifcado en la tabla USUARIO correctamente ");
         } else {
             System.out.println(" NO Se ha modifcado en la tabla USUARIO correctamente ");
         }
-        //ELIMINAR -----------------------------------------------------------------
-        resultado = daoUsuario.eliminar(cajero2.getId_usuario());
-        if (resultado == 1) {
-            System.out.println("Se ha elminado en la tabla CAJERO2 correctamente ");
-        } else {
-            System.out.println(" NO Se ha elminado en la tabla CAJERO2 correctamente ");
-        }
+        
 
         //LISTAR -----------------------------------------------------------------       
         ArrayList<Usuario> usuarios = daoUsuario.listarTodas();
         for (int i = 0; i < usuarios.size(); i++) {
 
-            System.out.println(usuarios.get(i).getId_persona() + " "
+            System.out.println(usuarios.get(i).getId_usuario() + " "
                     + usuarios.get(i).getNombre() + "  " + usuarios.get(i).getUsuario());
 
         }
@@ -528,8 +522,11 @@ public class Principal {
 // ASISTENCIAS
 //************************************************************************************************************        
         Asistencia asistencia = new Asistencia();
+        Asistencia asistencia1 = new Asistencia();
         asistencia.setUsuario(us1);
+        asistencia1.setUsuario(mesero1);
         
+        //REGISTRAR -----------------------------------------------------------------
         AsistenciaDAO daoAsistencia = new AsistenciaMySQL();
         resultado = daoAsistencia.registrarAsistencia(asistencia);
         if (resultado == 1) {
@@ -537,9 +534,30 @@ public class Principal {
         } else {
             System.out.println(" NO Se ha registrado en la tabla ASISTENCIA correctamente ");
         }
+        resultado = daoAsistencia.registrarAsistencia(asistencia1);
+        if (resultado == 1) {
+            System.out.println("Se ha registrado en la tabla ASISTENCIA1 correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado en la tabla ASISTENCIA1 correctamente ");
+        }
         
+        //LISTAR -----------------------------------------------------------------
+        SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss");
+        ArrayList<Asistencia> asistencias = daoAsistencia.listarAsistencia();
+        for(Asistencia a : asistencias) {
+            System.out.println(a.getUsuario().getNombre() + ": " + sdf1.format(a.getFecha()) + " - INICIO: " +
+                    sdf2.format(a.getHora_inicio()) + " - FIN: " );
+        }
         
-        System.out.println("----------------------------------------------------------\n");   
+        //MODIFICAR -----------------------------------------------------------------
+        resultado = daoAsistencia.registrarSalida(us1.getId_usuario());
+        if (resultado == 1) {
+            System.out.println("Se ha registrado SALIDA en la tabla ASISTENCIA correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado SALIDA en la tabla ASISTENCIA correctamente ");
+        }
+        System.out.println("----------------------------------------------------------\n");     
 //************************************************************************************************************
 // GASTOS
 //************************************************************************************************************           
@@ -632,31 +650,6 @@ public class Principal {
                     ". \nCantidad: " + lineas.get(i).getUnidades());
         }
         System.out.println("Se ha listado lista_pedido correctamente ");
-        
-//        resultado= daoPedido.insertar(pedido1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha insertado PEDIDO 1 correctamente ");
-//        } else {
-//            System.out.println(" NO se ha insertado PEDIDO 1 ");
-//        }
-//
-//        resultado= daoPedido.modificar(pedido1);
-//        if (resultado == 1) {
-//            System.out.println("Se ha modificado PEDIDO 1 correctamente ");
-//        } else {
-//            System.out.println(" NO se ha modificado PEDIDO 1 ");
-//        }
-//
-//        int idPedido= pedido1.getIdPedido();
-//        System.out.println(idPedido);
-//        resultado= daoPedido.eliminar(idPedido);
-//        if (resultado == 1) {
-//            System.out.println("Se ha eliminado PEDIDO 1 correctamente ");
-//        } else {
-//            System.out.println(" NO se ha eliminado PEDIDO 1 ");
-//        }
-//
-//        ArrayList<Pedido> pedidos = daoPedido.listarTodas();        
-
+    
     }
 }

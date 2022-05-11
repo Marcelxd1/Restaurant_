@@ -112,12 +112,13 @@ BEGIN
 	UPDATE asistencia SET activo = 0 WHERE id_asistencia = _id_asistencia;
 END$
 
-CREATE PROCEDURE REGISTRAR_ASISTENCIA_SALIDA(
-	IN _id_asistencia INT
+CREATE PROCEDURE INSERTAR_ASISTENCIA_SALIDA(
+	IN _id_usuario INT
 )
 BEGIN
+	SET @max = (SELECT MAX(hora_inicio) FROM asistencia WHERE _id_usuario = fid_usuario);
 	UPDATE asistencia  SET  hora_fin = (now()- INTERVAL 5 HOUR)
-    WHERE id_asistencia = _id_asistencia;
+    WHERE fid_usuario = _id_usuario AND hora_inicio = @max;
 END$
 
 -- GASTO ---------------------------------------------------------------------------------------------------------------
@@ -225,6 +226,14 @@ begin
     where id_persona = _id_persona ; 
 end$
 
+CREATE PROCEDURE INSERTAR_EMPRESA(out _id_persona int , in _razon_social varchar(100) , in _ruc varchar(30), in _nombre VARCHAR(100), in _fid_tipo char )
+begin
+	insert into persona(nombre, fid_tipo,razon_social,RUC , activo ) values (_nombre,_fid_tipo , _razon_social , _ruc , 1) ;
+	set _id_persona = @@last_insert_id ;
+end$
+
+-- USUARIOS
+
 CREATE  PROCEDURE INSERTAR_USUARIO(in _id_usuario int , in _fid_rol varchar(50) , in _fid_restaurante varchar(50) ,in _usuario varchar(50),
 									in _password varchar(50) , in _salario decimal(10,2) , in _telefono varchar(50))
 BEGIN
@@ -232,8 +241,194 @@ BEGIN
 					values (_id_usuario, _fid_rol,_fid_restaurante,_usuario,_password,_salario,_telefono) ; 
 END$
 
-CREATE PROCEDURE INSERTAR_EMPRESA(out _id_persona int , in _razon_social varchar(100) , in _ruc varchar(30), in _nombre VARCHAR(100), in _fid_tipo char )
-begin
-	insert into persona(nombre, fid_tipo,razon_social,RUC , activo ) values (_nombre,_fid_tipo , _razon_social , _ruc , 1) ;
-	set _id_persona = @@last_insert_id ;
-end$
+CREATE  PROCEDURE LISTAR_USUARIOS_TODOS()
+BEGIN 
+	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno
+    from usuario u inner join persona p on u.id_usuario = p.id_persona
+    where p.activo = 1;
+END$
+
+DROP PROCEDURE IF EXISTS INSERTAR_PEDIDO;
+DROP PROCEDURE IF EXISTS MODIFICAR_PEDIDO;
+DROP PROCEDURE IF EXISTS ELIMINAR_PEDIDO;
+DROP PROCEDURE IF EXISTS LISTAR_PEDIDOS_TODOS;
+
+DELIMITER $
+#------------------------------------------------------------------------------
+CREATE PROCEDURE INSERTAR_PEDIDO(
+	OUT _id_transaccion INT, 
+    IN _fid_restaurante INT, 
+	IN  _total DECIMAL(10,2), 
+	IN _fecha DATETIME, 
+	
+	IN _fid_mesa INT, 
+    IN _fid_tipo_pago CHAR(1), 
+	IN _fid_mesero INT, 
+	IN _fid_cajero INT,
+    IN _fid_tipo_pedido CHAR(1), 
+	IN _fid_cliente INT, 
+	IN _fid_tipo_comprobante CHAR(1),
+    IN _numero_comprobante INT, 
+	IN _fid_estado_pedido CHAR(1)
+)
+BEGIN
+	INSERT INTO transaccion (fid_restaurante, total, fecha, activo,tipo) 
+    VALUES (_fid_restaurante, _total, _fecha, 1,'P');
+    SET _id_transaccion = @@last_insert_id;
+    
+    INSERT INTO pedido (id_pedido, fid_mesa, fid_tipo_pago, fid_mesero, fid_cajero, fid_tipo_pedido, fid_cliente,
+    fid_tipo_comprobante, numero_comprobante, fid_estado_pedido)
+    VALUES(_id_transaccion, _fid_mesa, _fid_tipo_pago, _fid_mesero, _fid_cajero, _fid_tipo_pedido, _fid_cliente,
+    _fid_tipo_comprobante, _numero_comprobante, _fid_estado_pedido);
+END$
+
+#------------------------------------------------------------------------------
+CREATE PROCEDURE MODIFICAR_PEDIDO(
+	IN _id_pedido INT, 
+	IN _fid_restaurante INT, 
+	IN  _total DECIMAL(10,2), 
+	IN _fecha DATETIME,
+    
+    IN _fid_mesa INT, 
+	IN _fid_tipo_pago CHAR(1), 
+	IN _fid_mesero INT, 
+	IN _fid_cajero INT,
+    IN _fid_tipo_pedido CHAR(1), 
+	IN _fid_cliente INT, 
+	IN _fid_tipo_comprobante CHAR(1),
+    IN _numero_comprobante INT, 
+	IN _fid_estado_pedido CHAR(1)
+)
+BEGIN
+	UPDATE transaccion 
+    SET fid_restaurante = _fid_restaurante, fid_restaurante = _fid_restaurante, total = _total, fecha = _fecha  
+    WHERE id_transaccion = _id_pedido;
+    UPDATE pedido 
+    SET fid_mesa = _fid_mesa, fid_tipo_pago = _fid_tipo_pago, fid_mesero = _fid_mesero, fid_cajero = _fid_cajero,
+		fid_tipo_pedido = _fid_tipo_pedido, fid_cliente = _fid_cliente, fid_tipo_comprobante = _fid_tipo_comprobante,
+		numero_comprobante = _numero_comprobante, fid_estado_pedido = _fid_estado_pedido
+    WHERE id_pedido= _id_pedido;
+END$
+
+#------------------------------------------------------------------------------
+CREATE PROCEDURE ELIMINAR_PEDIDO (IN _id_transaccion INT)
+BEGIN
+	UPDATE transaccion SET activo = 0 WHERE id_transaccion = _id_transaccion ;
+END$
+
+#------------------------------------------------------------------------------
+CREATE PROCEDURE LISTAR_PEDIDOS_TODOS()
+BEGIN
+	SELECT 	t.id_transaccion, t.fid_restaurante, t.total, t.fecha, 
+			m.id_mesa , m.activo, m.capacidad,
+            p.fid_tipo_pago, p.fid_mesero, p.fid_cajero, p.fid_cliente,
+			p.fid_tipo_pedido, p.fid_tipo_comprobante, p.numero_comprobante, p.fid_estado_pedido
+    FROM transaccion t INNER JOIN pedido p ON p.id_pedido = t.id_transaccion
+    INNER JOIN mesa m ON m.id_mesa = p.fid_mesa
+    WHERE t.activo = 1;
+END$
+
+#------------------------------------------------------------------------------
+CREATE PROCEDURE BUSCAR_PEDIDO_POR_ID(
+	IN _id_pedido INT
+)
+BEGIN
+	SELECT 	t.fid_restaurante, t.total, t.fecha,
+    m.id_mesa, m.capacidad,
+    p.fid_tipo_pago, p.fid_mesero, p.fid_cajero, p.fid_tipo_pedido, p.fid_cliente, p.fid_tipo_comprobante, 
+    p.numero_comprobante, p.fid_estado_pedido
+    FROM pedido p INNER JOIN transaccion t ON p.id_pedido = t.id_transaccion
+    INNER JOIN mesa m ON m.id_mesa = p.fid_mesa
+    WHERE _id_pedido = p.id_pedido and t.activo = 1;
+END$
+
+
+#------------------------------------------------------------------------------------------
+#-------------------------------------LINEA PEDIDO-----------------------------------------
+DROP PROCEDURE IF EXISTS INSERTAR_LINEA_PEDIDO;
+DROP PROCEDURE IF EXISTS MODIFICAR_LINEA_PEDIDO;
+
+DELIMITER $
+#------------------------------------------------------------------------------
+CREATE PROCEDURE INSERTAR_LINEA_PEDIDO(
+	OUT _id_linea_pedido INT,
+    IN _fid_itemVendible INT,
+    IN _fid_pedido INT,
+    IN _unidades INT,
+    IN  _subtotal DECIMAL(10,2)
+)
+BEGIN
+	INSERT INTO linea_pedido (fid_itemVendible, fid_pedido, unidades, subtotal) 
+    VALUES (_fid_itemVendible, _fid_pedido, _unidades, _subtotal);
+    SET _id_linea_pedido = @@last_insert_id;
+END$
+
+DELIMITER $
+#------------------------------------------------------------------------------
+CREATE PROCEDURE MODIFICAR_LINEA_PEDIDO(
+	IN _id_linea_pedido INT,
+    IN _fid_itemVendible INT,
+    IN _fid_pedido INT,
+    IN _unidades INT,
+    IN  _subtotal DECIMAL(10,2)
+)
+BEGIN
+	UPDATE linea_pedido SET fid_itemVendible = _fid_itemVendible, fid_pedido = _fid_pedido, 
+    unidades = _unidades, subtotal = _subtotal 
+    WHERE id_linea_pedido = _id_linea_pedido;    
+END$
+
+DROP PROCEDURE IF EXISTS LISTAR_LINEA_PEDIDO;
+DELIMITER $
+CREATE PROCEDURE LISTAR_LINEA_PEDIDO ()
+BEGIN
+	SELECT l.id_linea_pedido, i.id_item_vendible, i.nombre, i.precio, i.descripcion, 
+    l.fid_pedido, l.unidades, l.subtotal
+    FROM linea_pedido l INNER JOIN item_vendible i ON l.fid_itemVendible = i.id_item_vendible
+    ;
+END$
+
+#-------------------------------------------------------------------------------------
+#----------------------------------------USUARIO--------------------------------------
+
+DROP PROCEDURE IF EXISTS BUSCAR_USUARIO_POR_ID;
+DELIMITER $
+#------------------------------------------------------------------------------
+CREATE PROCEDURE BUSCAR_USUARIO_POR_ID (IN _id_usuario INT)
+BEGIN
+	SELECT 	p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI, p.fid_tipo , p.razon_social, p.RUC,
+			r.id_rol, r.descripcion, 
+            u.fid_restaurante, u.usuario, u.password, u.salario, u.telefono
+    FROM usuario u INNER JOIN persona p ON p.id_persona = u.id_usuario
+    INNER JOIN rol r ON u.fid_rol = r.id_rol
+    WHERE _id_usuario = u.id_usuario and p.activo = 1;
+END$
+
+
+#-----------------------------------------------------------------------------------------
+#----------------------------------------RESTAURANTE--------------------------------------
+DROP PROCEDURE IF EXISTS BUSCAR_RESTAURANTE_POR_ID;
+DELIMITER $
+#------------------------------------------------------------------------------
+CREATE PROCEDURE BUSCAR_RESTAURANTE_POR_ID(
+	IN _id_restaurante INT
+)
+BEGIN
+	SELECT r.ruc, r.nombre, r.telefono, r.direccion, r.dineroActual
+    FROM restaurante r
+    WHERE _id_restaurante = r.id_restaurante;
+END$
+
+#-------------------------------------------------------------------------------------
+#----------------------------------------PERSONA--------------------------------------
+DROP PROCEDURE IF EXISTS BUSCAR_PERSONA_POR_ID;
+DELIMITER $
+#------------------------------------------------------------------------------
+CREATE PROCEDURE BUSCAR_PERSONA_POR_ID(
+	IN _id_persona INT
+)
+BEGIN
+	SELECT 	p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI, p.fid_tipo , p.razon_social, p.RUC
+    FROM persona p
+    WHERE id_persona = _id_persona and activo = 1;
+END$
