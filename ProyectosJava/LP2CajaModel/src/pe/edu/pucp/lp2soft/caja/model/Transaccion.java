@@ -12,7 +12,15 @@ public class Transaccion {
     private char tipo;
     
     public Transaccion(){}
-        
+
+    public Transaccion(Restaurante restaurante, Date fecha, boolean activo, char tipo) {
+        //this.id_transaccion = id_transaccion;
+        this.restaurante = restaurante;
+        this.fecha = fecha;
+        this.activo = activo;
+        this.tipo = tipo;
+    }
+    
     
     /**
      * @return the id_transaccion

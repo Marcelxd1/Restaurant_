@@ -26,17 +26,30 @@ public class Pedido extends Transaccion {
     
     
     //private Restaurante rest;
-    public Pedido(char tipoPago, Usuario mesero, Usuario cajero, char tipoPedido, Persona cliente, char tipoComp, int numComp, char estado) {
-        //this.idPedido = idPedido; no se puede asignar es generado por el sistema
-        this.tipoPago= tipoPago;
-        this.mesero= mesero;
-        this.cajero= cajero;
-        this.tipoPedido= tipoPedido;
-        this.cliente= cliente;
-        this.tipoComprobante= tipoComp;
-        this.numeroComprobante= numComp;
-        this.estado= estado;
+
+    public Pedido( Mesa mesa, char tipoPago, Usuario mesero, Usuario cajero, 
+            char tipoPedido, Persona cliente, char tipoComprobante, int numeroComprobante, 
+            char estado, ArrayList<LineaPedido> list_lineaPedido, Restaurante restaurante, 
+             Date fecha, boolean activo, char tipo) {
+        super( restaurante, fecha, activo, tipo);
+        //this.idPedido = idPedido;
+        this.mesa = mesa;
+        this.tipoPago = tipoPago;
+        this.mesero = mesero;
+        this.cajero = cajero;
+        this.tipoPedido = tipoPedido;
+        this.cliente = cliente;
+        this.tipoComprobante = tipoComprobante;
+        this.numeroComprobante = numeroComprobante;
+        this.estado = estado;
+        this.list_lineaPedido = list_lineaPedido;
+        double totalAux=0;
+        for (LineaPedido lineaPedido : list_lineaPedido) {
+            totalAux+= lineaPedido.getSubtotal();
+        }
+        setTotal(totalAux);//el total se calcula
     }
+    
     
 
     /**

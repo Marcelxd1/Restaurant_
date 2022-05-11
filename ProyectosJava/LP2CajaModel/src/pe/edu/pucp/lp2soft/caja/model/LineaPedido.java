@@ -4,11 +4,26 @@ import pe.edu.pucp.lp2soft.negocio.model.ItemVendible;
 
 public class LineaPedido{
     private int id_linea_pedido;
-    private ItemVendible item; 
-    private Pedido pedido;
-    private int unidades;
+    private ItemVendible item; //solo hay 1 tipo de item
+    private Pedido pedido;//esta por gusto creo porque pedido si puede llegar aqui a travez de la lista 
+    private int unidades;//se repite
     private double subtotal;
-       
+
+    public LineaPedido() {
+    }
+    
+    public LineaPedido( ItemVendible item, int unidades) {
+        //Pedido pedido
+        //this.id_linea_pedido = id_linea_pedido;
+        this.item = item;
+        //this.pedido = pedido;
+        this.unidades = unidades;
+        this.subtotal= unidades*item.getPrecio();
+        //this.subtotal = subtotal;mal
+        
+    }
+    
+    
     //SETTERS Y GETTERS 
     public int getId_linea_pedido() {
         return id_linea_pedido;
