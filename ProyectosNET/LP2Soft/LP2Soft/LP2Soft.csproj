@@ -51,6 +51,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UC_Caja_Pedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Caja_Pedido.Designer.cs">
+      <DependentUpon>UC_Caja_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Caja_Pedido_Pedir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Caja_Pedido_Pedir.Designer.cs">
+      <DependentUpon>UC_Caja_Pedido_Pedir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Mesero_Mesa_Pedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Mesero_Mesa_Pedido.Designer.cs">
+      <DependentUpon>UC_Mesero_Mesa_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Mesero_Mesa_Pedido_Pedir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Mesero_Mesa_Pedido_Pedir.Designer.cs">
+      <DependentUpon>UC_Mesero_Mesa_Pedido_Pedir.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +113,18 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_Caja_Pedido.resx">
+      <DependentUpon>UC_Caja_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Caja_Pedido_Pedir.resx">
+      <DependentUpon>UC_Caja_Pedido_Pedir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Mesero_Mesa_Pedido.resx">
+      <DependentUpon>UC_Mesero_Mesa_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Mesero_Mesa_Pedido_Pedir.resx">
+      <DependentUpon>UC_Mesero_Mesa_Pedido_Pedir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +168,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cebiche1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nota1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_espera1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
