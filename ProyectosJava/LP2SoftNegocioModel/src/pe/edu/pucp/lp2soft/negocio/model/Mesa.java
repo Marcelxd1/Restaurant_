@@ -4,6 +4,7 @@ public class Mesa {
 
     private int idMesa;
     private boolean estado;
+    private boolean disponible;
     private int numero;
 
     //CONSTRUCTOR 
@@ -11,6 +12,8 @@ public class Mesa {
 
     public Mesa(int numero) {
         this.numero = numero;
+        this.estado = true;
+        this.disponible = true;
     }
 
     //SETTERS Y GETTERS 
@@ -30,8 +33,6 @@ public class Mesa {
         this.estado = estado;
     }
 
-    
-
     public int getNumero() {
         return this.numero;
     }
@@ -40,5 +41,12 @@ public class Mesa {
         this.numero = numero;
     }
 
-    //METODOS Y PROCEDIMIENTOS ;
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
 }

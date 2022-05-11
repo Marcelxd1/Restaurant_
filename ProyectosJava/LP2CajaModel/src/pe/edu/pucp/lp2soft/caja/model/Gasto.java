@@ -12,6 +12,7 @@ public class Gasto extends Transaccion{
     
     public Gasto(String item,double precio,
             int cantidad, String descripcion) {
+        super();
         this.item = item;
         this.precio = precio;
         this.cantidad = cantidad;

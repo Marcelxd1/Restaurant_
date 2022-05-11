@@ -1,14 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package pe.edu.pucp.lp2soft.usuario.model;
 
-/**
- *
- * 
- */
 public class Restaurante {
     private int id_restaurante ; 
     private String ruc; 
@@ -16,6 +7,7 @@ public class Restaurante {
     private String telefono ; 
     private String direccion ;
     private double dineroActual ;
+    private boolean activo;
     
     public Restaurante(){}
     public Restaurante(String ruc, String nombre, String telefono, String direccion, double dineroActual) {
@@ -24,6 +16,7 @@ public class Restaurante {
         this.telefono = telefono;
         this.direccion = direccion;
         this.dineroActual = dineroActual;
+        this.activo = true;
     }
     
     
@@ -74,6 +67,14 @@ public class Restaurante {
 
     public void setDineroActual(double dineroActual) {
         this.dineroActual = dineroActual;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
     

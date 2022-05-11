@@ -12,6 +12,7 @@ public class ItemVendible {
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
+        this.estado = true;
     }
     
     public ItemVendible(){};

@@ -1,14 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package pe.edu.pucp.lp2soft.usuario.model;
 
-/**
- *
- *
- */
 public class Persona {
     private int id_persona ; 
     private String nombre ;
@@ -27,10 +18,14 @@ public class Persona {
         this.apellido_materno = apellido_materno;
         this.DNI = DNI;
         this.tipo = tipo;
+        this.activo = true;
     }
-    public Persona (String razon_social , String ruc){ // PARA EMPRESAS 
+    public Persona (String nombre,String razon_social , String ruc, char tipo){ // PARA EMPRESAS 
         this.razon_social = razon_social ;
         this.ruc = ruc ; 
+        this.activo = true;
+        this.tipo = tipo;
+        this.nombre = nombre;
     }
     
     
@@ -98,5 +93,15 @@ public class Persona {
     public void setRuc(String ruc) {
         this.ruc = ruc;
     }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+    
+    
 
 }

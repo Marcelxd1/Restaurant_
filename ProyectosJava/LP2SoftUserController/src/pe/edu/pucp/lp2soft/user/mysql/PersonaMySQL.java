@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package pe.edu.pucp.lp2soft.user.mysql;
 
 import java.sql.CallableStatement;
@@ -14,10 +9,7 @@ import pe.edu.pucp.lp2soft.config.DBManager;
 import pe.edu.pucp.lp2soft.user.dao.PersonaDAO;
 import pe.edu.pucp.lp2soft.usuario.model.Persona;
 
-/**
- *
- * Axel Romero (20172469)
- */
+
 public class PersonaMySQL implements PersonaDAO {
     private Connection con ; 
     private ResultSet rs ;
@@ -36,9 +28,7 @@ public class PersonaMySQL implements PersonaDAO {
                 persona.setNombre(rs.getString("nombre"));
                 persona.setApellido_paterno(rs.getString("apellido_paterno"));
                 persona.setDNI(rs.getString("DNI"));
-                persona.setTipo('P');
-                
-             
+                persona.setTipo(rs.getString("fid_tipo").charAt(0));
                 personas.add(persona);
             }
         }catch (Exception ex){
@@ -114,32 +104,7 @@ public class PersonaMySQL implements PersonaDAO {
         return resultado ;
     }
 
-    @Override
-    public Persona buscarPorId(int idPersona) {
-       Persona persona = new Persona();
-        try {
-            con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call BUSCAR_PERSONA_POR_ID(?)}");
-            cs.setInt("_id_persona", idPersona);
-            rs = cs.executeQuery();
-            rs.next();
-            
-            if(rs.getInt("id_persona")!=idPersona){
-                System.out.println("ERROR GRAVISIMO NO EXISTE ESTA PERSONA");
-            }//ojo no esta cargado el apeMaterno ni los campos de empresa
-            persona.setId_persona(rs.getInt("id_persona"));
-            persona.setNombre(rs.getString("nombre"));
-            persona.setApellido_paterno(rs.getString("apellido_paterno"));
-            persona.setDNI(rs.getString("DNI"));
-            persona.setTipo('P');
-        }catch (Exception ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-        }
-        
-        return persona;
-    }
+    
 
     @Override
     public int insertarEmpresa(Persona persona) {
@@ -147,9 +112,11 @@ public class PersonaMySQL implements PersonaDAO {
         try {
             con = DBManager.getInstance().getConnection();
            
-            cs = con.prepareCall("{call INSERTAR_EMPRESA(?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_EMPRESA(?,?,?,?,?)}");
             cs.registerOutParameter("_id_persona", java.sql.Types.INTEGER);
-            cs.setString("_razon_social",String.valueOf('E'));
+            cs.setString("_nombre", persona.getNombre());
+            cs.setString("_fid_tipo", String.valueOf(persona.getTipo()));
+            cs.setString("_razon_social",persona.getRazon_social());
             cs.setString("_ruc", persona.getNombre());
             cs.executeUpdate();
             persona.setId_persona(cs.getInt("_id_persona"));
@@ -161,6 +128,11 @@ public class PersonaMySQL implements PersonaDAO {
         }
         
         return resultado ; 
+    }
+
+    @Override
+    public Persona buscarPorId(int idPersona) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

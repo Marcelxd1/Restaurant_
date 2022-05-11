@@ -169,6 +169,7 @@ CREATE TABLE mesa (
   id_mesa INT NOT NULL AUTO_INCREMENT,
   capacidad INT NULL DEFAULT NULL,
   activo TINYINT(1) NULL DEFAULT NULL,
+  disponible TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (id_mesa))
 ENGINE = InnoDB;
 
@@ -380,3 +381,15 @@ INSERT INTO `Restaurante`.`tipo_persona` (`id_tipo_persona`, `descripcion`) VALU
 
 INSERT INTO `Restaurante`.`tipo_producto` (`id_tipo_producto`, `descripcion`) VALUES ('C', 'COMIDAS');
 INSERT INTO `Restaurante`.`tipo_producto` (`id_tipo_producto`, `descripcion`) VALUES ('B', 'BEBIDAS');
+
+
+DELIMITER $
+CREATE TRIGGER ACTUALIZAR_DINEROACTUAL
+AFTER INSERT ON transaccion
+FOR EACH ROW 
+BEGIN
+  UPDATE restaurante
+  SET dineroActual = dineroActual - new.total
+  WHERE id_restaurante = new.fid_restaurante
+  AND new.tipo = 'G';
+END$

@@ -30,6 +30,7 @@ public class MesaMySQL implements MesaDAO {
                 mesa.setIdMesa(rs.getInt("id_mesa"));
                 mesa.setNumero(rs.getInt("capacidad"));
                 mesa.setEstado(true);
+                mesa.setDisponible(rs.getBoolean("disponible")); 
                 mesas.add(mesa);
             }
         } catch (Exception ex) {
@@ -73,9 +74,10 @@ public class MesaMySQL implements MesaDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_MESA(?,?)}");
-            cs.setInt("id_mesa", mesa.getIdMesa());
+            cs = con.prepareCall("{call MODIFICAR_MESA(?,?,?,?)}");
+            cs.setInt("_id_mesa", mesa.getIdMesa());
             cs.setBoolean("_activo", mesa.isEstado());
+            cs.setBoolean("_disponible", mesa.isDisponible());
             cs.setInt("_capacidad", mesa.getNumero());
             cs.executeUpdate();
             resultado = 1;

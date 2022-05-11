@@ -11,7 +11,7 @@ public class Transaccion {
     private boolean activo;
     private char tipo;
     
-    public Transaccion(){}
+    public Transaccion(){activo=true;}
 
     public Transaccion(Restaurante restaurante, Date fecha, boolean activo, char tipo) {
         //this.id_transaccion = id_transaccion;

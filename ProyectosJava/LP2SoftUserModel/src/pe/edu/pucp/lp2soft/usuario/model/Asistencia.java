@@ -10,7 +10,7 @@ public class Asistencia {
     private Date fecha ; 
     private boolean activo;
     
-    public Asistencia(){}
+    public Asistencia(){this.activo=true;}
     public int getId_asistencia() {
         return id_asistencia;
     }

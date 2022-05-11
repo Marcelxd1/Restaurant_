@@ -19,7 +19,6 @@ public class Usuario extends Persona {
     private String telefono ; 
     private Rol rol ; 
     private Restaurante restaurante ; 
-    private Persona persona ; 
     
     public Usuario(){}
 
@@ -96,14 +95,5 @@ public class Usuario extends Persona {
         this.restaurante = restaurante;
     }
 
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
- 
-   
     
 }
