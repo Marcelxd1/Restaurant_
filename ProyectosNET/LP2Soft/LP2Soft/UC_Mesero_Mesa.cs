@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LP2Soft
 {
-    public partial class Prueba2 : UserControl
+    public partial class UC_Mesero_Mesa : UserControl
     {
-        public Prueba2()
+        public UC_Mesero_Mesa()
         {
             InitializeComponent();
         }

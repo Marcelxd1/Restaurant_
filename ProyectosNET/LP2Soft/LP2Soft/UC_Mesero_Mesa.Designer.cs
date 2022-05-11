@@ -1,6 +1,6 @@
 ﻿namespace LP2Soft
 {
-    partial class Prueba2
+    partial class UC_Mesero_Mesa
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prueba2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Mesero_Mesa));
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -50,7 +50,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Axiforma SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(255, 39);
+            this.label2.Location = new System.Drawing.Point(504, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(270, 39);
             this.label2.TabIndex = 14;
@@ -65,7 +65,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Axiforma Medium", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(111, 250);
+            this.guna2Button1.Location = new System.Drawing.Point(360, 315);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(119, 39);
@@ -82,7 +82,7 @@
             this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
             this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
             this.guna2CircleButton2.ImageOffset = new System.Drawing.Point(0, 50);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(315, 123);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(564, 188);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
@@ -96,7 +96,7 @@
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(29, 21);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(278, 86);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
             this.guna2PictureBox3.Size = new System.Drawing.Size(716, 506);
@@ -115,7 +115,7 @@
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
             this.guna2CircleButton1.ImageOffset = new System.Drawing.Point(0, 50);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(111, 123);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(360, 188);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
@@ -135,7 +135,7 @@
             this.guna2CircleButton3.HoverState.Parent = this.guna2CircleButton3;
             this.guna2CircleButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton3.Image")));
             this.guna2CircleButton3.ImageOffset = new System.Drawing.Point(0, 50);
-            this.guna2CircleButton3.Location = new System.Drawing.Point(526, 123);
+            this.guna2CircleButton3.Location = new System.Drawing.Point(775, 188);
             this.guna2CircleButton3.Name = "guna2CircleButton3";
             this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
@@ -155,7 +155,7 @@
             this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
             this.guna2CircleButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton4.Image")));
             this.guna2CircleButton4.ImageOffset = new System.Drawing.Point(0, 50);
-            this.guna2CircleButton4.Location = new System.Drawing.Point(111, 322);
+            this.guna2CircleButton4.Location = new System.Drawing.Point(360, 387);
             this.guna2CircleButton4.Name = "guna2CircleButton4";
             this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
@@ -175,7 +175,7 @@
             this.guna2CircleButton5.HoverState.Parent = this.guna2CircleButton5;
             this.guna2CircleButton5.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton5.Image")));
             this.guna2CircleButton5.ImageOffset = new System.Drawing.Point(0, 50);
-            this.guna2CircleButton5.Location = new System.Drawing.Point(315, 322);
+            this.guna2CircleButton5.Location = new System.Drawing.Point(564, 387);
             this.guna2CircleButton5.Name = "guna2CircleButton5";
             this.guna2CircleButton5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton5.ShadowDecoration.Parent = this.guna2CircleButton5;
@@ -195,7 +195,7 @@
             this.guna2CircleButton6.HoverState.Parent = this.guna2CircleButton6;
             this.guna2CircleButton6.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton6.Image")));
             this.guna2CircleButton6.ImageOffset = new System.Drawing.Point(0, 50);
-            this.guna2CircleButton6.Location = new System.Drawing.Point(526, 322);
+            this.guna2CircleButton6.Location = new System.Drawing.Point(775, 387);
             this.guna2CircleButton6.Name = "guna2CircleButton6";
             this.guna2CircleButton6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton6.ShadowDecoration.Parent = this.guna2CircleButton6;
@@ -214,7 +214,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Axiforma Medium", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(315, 250);
+            this.guna2Button2.Location = new System.Drawing.Point(564, 315);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(119, 39);
@@ -230,7 +230,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Axiforma Medium", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(526, 250);
+            this.guna2Button3.Location = new System.Drawing.Point(775, 315);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(119, 39);
@@ -246,7 +246,7 @@
             this.guna2Button4.Font = new System.Drawing.Font("Axiforma Medium", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(111, 449);
+            this.guna2Button4.Location = new System.Drawing.Point(360, 514);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(119, 39);
@@ -262,7 +262,7 @@
             this.guna2Button5.Font = new System.Drawing.Font("Axiforma Medium", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(315, 449);
+            this.guna2Button5.Location = new System.Drawing.Point(564, 514);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
             this.guna2Button5.Size = new System.Drawing.Size(119, 39);
@@ -278,7 +278,7 @@
             this.guna2Button6.Font = new System.Drawing.Font("Axiforma Medium", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
             this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Location = new System.Drawing.Point(526, 449);
+            this.guna2Button6.Location = new System.Drawing.Point(775, 514);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
             this.guna2Button6.Size = new System.Drawing.Size(119, 39);
@@ -304,7 +304,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2PictureBox3);
             this.Name = "Prueba2";
-            this.Size = new System.Drawing.Size(769, 547);
+            this.Size = new System.Drawing.Size(1283, 706);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

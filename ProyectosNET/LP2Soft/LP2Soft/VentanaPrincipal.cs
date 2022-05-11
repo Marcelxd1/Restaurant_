@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace LP2Soft
 {
-    public partial class Form1 : Form
+    public partial class VentanaPrincipal : Form
     {
-        public Form1()
+        public VentanaPrincipal()
         {
             InitializeComponent();
-            Prueba2 prueba = new Prueba2();
+            UC_Mesero_Mesa prueba = new UC_Mesero_Mesa();
             addUserControl(prueba);
         }
 
@@ -33,7 +33,7 @@ namespace LP2Soft
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Prueba2 prueba = new Prueba2();
+            UC_Mesero_Mesa prueba = new UC_Mesero_Mesa();
             addUserControl(prueba);
             
                     
