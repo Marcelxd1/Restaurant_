@@ -115,8 +115,6 @@ public class PedidoMySQL implements PedidoDAO {
         try {
             con = DBManager.getInstance().getConnection();
             
-            if((pedido.getCajero().isActivo() == false) || (pedido.getMesero().isActivo()==false)) 
-                System.out.println("Uno de los usuarios no está activo");
             
             cs = con.prepareCall("{call INSERTAR_PEDIDO(?,?,?,?, ?,?,?,?, ?,?,?,?, ?)}");
             cs.registerOutParameter("_id_transaccion", java.sql.Types.INTEGER);
