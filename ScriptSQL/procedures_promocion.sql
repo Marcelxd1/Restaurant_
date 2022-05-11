@@ -84,9 +84,14 @@ CREATE procedure LISTAR_LINEA_PROMOCION_PROMO(
 )BEGIN
 	SELECT lin.fid_producto, lin.fid_promocion, lin.id_linea_promocion, lin.unidad ,
     pro.id_producto, iv.nombre , iv.estado, iv.precio, iv.descripcion ,iv.id_item_vendible, 
-    pro.fid_tipo_producto, pro.presentacion, pro.fid_categoria, cat.activo, cat.descripcion, cat.id_categoria, cat.nombre FROM linea_promocion lin 
-    INNER JOIN producto pro ON lin.fid_producto= pro.id_producto INNER JOIN item_vendible iv ON pro.id_producto= id_item_vendible
-    INNER JOIN categoria cat ON cat.id_categoria= producto.fid_categoria
+    pro.fid_tipo_producto, pro.presentacion, pro.fid_categoria, cat.activo, cat.descripcion, cat.id_categoria, cat.nombre 
+    FROM linea_promocion lin 
+    INNER JOIN 
+    producto pro ON lin.fid_producto= pro.id_producto 
+    INNER JOIN 
+    item_vendible iv ON pro.id_producto= id_item_vendible
+    INNER JOIN 
+    categoria cat ON cat.id_categoria= pro.fid_categoria
     WHERE lin.fid_promocion= _idPromo;
 END$
 
