@@ -69,5 +69,10 @@ namespace LP2Soft
             UC_Gestion prueba = new UC_Gestion();
             addUserControl(prueba);
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

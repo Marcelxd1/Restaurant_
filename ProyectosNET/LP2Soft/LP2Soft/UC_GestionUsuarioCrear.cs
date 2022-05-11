@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace LP2Soft
 {
-    public partial class UC_Gestion : UserControl
+    public partial class UC_GestionUsuarioCrear : UserControl
     {
-        public UC_Gestion()
+        public UC_GestionUsuarioCrear()
         {
             InitializeComponent();
         }
 
-        private void guna2PictureBox4_Click(object sender, EventArgs e)
+        private void UC_GestionUsuario_Load(object sender, EventArgs e)
         {
 
         }
@@ -27,7 +27,12 @@ namespace LP2Soft
 
         }
 
-        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -37,9 +42,14 @@ namespace LP2Soft
 
         }
 
-        private void guna2ImageButton3_Click_1(object sender, EventArgs e)
+        private void label2_Click_1(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

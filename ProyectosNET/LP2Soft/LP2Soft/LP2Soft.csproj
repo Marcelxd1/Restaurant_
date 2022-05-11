@@ -77,6 +77,18 @@
     <Compile Include="UC_Gestion.Designer.cs">
       <DependentUpon>UC_Gestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_GestionUsuarioCrear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_GestionUsuarioCrear.Designer.cs">
+      <DependentUpon>UC_GestionUsuarioCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_GestionUsuarioListar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_GestionUsuarioListar.Designer.cs">
+      <DependentUpon>UC_GestionUsuarioListar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,12 +109,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Prueba2.resx">
       <DependentUpon>Prueba2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Gestion.resx">
       <DependentUpon>UC_Gestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_GestionUsuarioCrear.resx">
+      <DependentUpon>UC_GestionUsuarioCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_GestionUsuarioListar.resx">
+      <DependentUpon>UC_GestionUsuarioListar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,6 +135,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dolar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
