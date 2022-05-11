@@ -4,12 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import pe.edu.pucp.lp2soft.caja.dao.GastoDAO;
+import pe.edu.pucp.lp2soft.caja.dao.LineaPedidoDAO;
 import pe.edu.pucp.lp2soft.caja.model.Pedido;
 import pe.edu.pucp.lp2soft.caja.mysql.PedidoMySQL;
 import pe.edu.pucp.lp2soft.caja.dao.PedidoDAO;
 import pe.edu.pucp.lp2soft.caja.model.Gasto;
 import pe.edu.pucp.lp2soft.caja.model.LineaPedido;
 import pe.edu.pucp.lp2soft.caja.mysql.GastoMySQL;
+import pe.edu.pucp.lp2soft.caja.mysql.LineaPedidoMySQL;
 import pe.edu.pucp.lp2soft.negocio.dao.CategoriaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.MesaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.ProductoDAO;
@@ -445,13 +447,16 @@ public class Principal {
         Persona empresa = new Persona("EMPRESA ABC", "123-ASD", "2344412312", 'J');
         Usuario mesero1= new Usuario("Parmando", "asd1234", 1500.0, "9881234", "Armando", "Paredes", "gomez", "9989885", 'N');
         Usuario cajero1= new Usuario("sdrick", "asd1234", 3000.0, "9878842", "RICK", "SANCHEZ", "PEREZ", "9934893", 'N');
+        Usuario cajero2= new Usuario("sdreik", "asl1234", 3000.0, "9878842", "MIKE", "LOPEZ", "GONZALEZ", "9934893", 'N');
         Persona cliente= new Persona("gaston", "acurio", "ddddd", "8128313", 'N');
         us1.setRol(rol1);
         us1.setRestaurante(res1);
         mesero1.setRestaurante(res1);
         cajero1.setRestaurante(res1);
+        cajero2.setRestaurante(res1);
         mesero1.setRol(rol3);
         cajero1.setRol(rol2);
+        cajero2.setRol(rol2);
         
         //INSERTAR -----------------------------------------------------------------
         PersonaDAO daoPersona= new PersonaMySQL();
@@ -487,6 +492,13 @@ public class Principal {
             System.out.println(" NO Se ha registrado en la tabla CAJERO correctamente ");
         }
         
+        resultado = daoUsuario.insertar(cajero2);
+        if (resultado == 1) {
+            System.out.println("Se ha registrado en la tabla CAJERO2 correctamente ");
+        } else {
+            System.out.println(" NO Se ha registrado en la tabla CAJERO2 correctamente ");
+        }
+        
         //MODIFCAR -----------------------------------------------------------------
         us1.setPassword("NUEVACONTRA");
         resultado = daoUsuario.modificar(us1);
@@ -496,11 +508,11 @@ public class Principal {
             System.out.println(" NO Se ha modifcado en la tabla USUARIO correctamente ");
         }
         //ELIMINAR -----------------------------------------------------------------
-        resultado = daoUsuario.eliminar(cajero1.getId_usuario());
+        resultado = daoUsuario.eliminar(cajero2.getId_usuario());
         if (resultado == 1) {
-            System.out.println("Se ha elminado en la tabla CAJERO correctamente ");
+            System.out.println("Se ha elminado en la tabla CAJERO2 correctamente ");
         } else {
-            System.out.println(" NO Se ha elminado en la tabla CAJERO correctamente ");
+            System.out.println(" NO Se ha elminado en la tabla CAJERO2 correctamente ");
         }
 
         //LISTAR -----------------------------------------------------------------       
@@ -575,22 +587,52 @@ public class Principal {
 //************************************************************************************************************
 // PEDIDOS
 //************************************************************************************************************        
-        SimpleDateFormat formato=new SimpleDateFormat("dd-MM-yyyy");
-        Date fecha= formato.parse("10-05-2022");
-        PedidoDAO daoPedido=new PedidoMySQL();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        Pedido pedido = new Pedido(mes1, 'E', mesero1, cajero1, 'L', cliente, 'B', 256362, 'P',
+                        new ArrayList<>(), res1, formato.parse("24-12-2022"), true, 'P');
         
+        pedido.setTotal(15);
         
+        //INSERTAR PEDIDO
+        PedidoDAO pedidoDao = new PedidoMySQL();
+        resultado = pedidoDao.insertar(pedido);
+        if (resultado == 1) System.out.println("Se ha insertado pedido correctamente ");
+        else System.out.println(" NO se ha insertado pedido ");
         
-        LineaPedido linea_pedido1= new LineaPedido(producto, 2);//ojo configurar TOTAL Y SUBTOTAL
-        LineaPedido linea_pedido2= new LineaPedido(promocion1, 1);//ojo configurar TOTAL Y SUBTOTAL
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        LineaPedido linea1 = new LineaPedido(producto3, pedido, 2, 15);
         
+        //INSERTAR LINEA PEDIDO
+        LineaPedidoDAO lineaDao = new LineaPedidoMySQL();
+        resultado = lineaDao.insertar(linea1);
+        if (resultado == 1) System.out.println("Se ha insertado LineaPedido correctamente ");
+        else System.out.println(" NO se ha insertado LineaPedido ");
         
-        ArrayList <LineaPedido> list_lineaPedido= new ArrayList<>();
-        list_lineaPedido.add(linea_pedido1);
-        list_lineaPedido.add(linea_pedido2);
+        //MODIFICAR PEDIDO/LINEA PEDIDO
+        pedido.getList_lineaPedido().add(linea1);
+        resultado = pedidoDao.modificar(pedido);
+        if (resultado == 1) System.out.println("Se ha modificado pedido correctamente ");
+        else System.out.println(" NO se ha modificado pedido ");
         
-        Pedido pedido1 = new Pedido(mes1, 'C', mesero1, cajero1, 'M', cliente, 'B', 12345678, 'A', list_lineaPedido, res1, fecha, true, 'A');
-
+        //ELIMINAR PEDIDO
+        resultado = pedidoDao.eliminar(pedido.getIdPedido());
+        if (resultado == 1) System.out.println("Se ha elminado pedido correctamente ");
+        else System.out.println(" NO se ha elminado pedido ");
+        
+        //Listando todas las areas registradas
+        ArrayList<Pedido> pedidos = pedidoDao.listarTodas();
+        for(int i=0;i<pedidos.size();i++){
+            System.out.println("I: " + pedidos.get(i).getIdPedido() + "   el id es: " + pedidos.get(i).getCajero().getNombre() + 
+                    ". \nLa mesa tiene " + pedidos.get(i).getMesa().getNumero());
+        }
+        System.out.println("Se ha listado pedido correctamente ");
+        ArrayList<LineaPedido> lineas = lineaDao.listarTodas();
+        for(int i=0;i<lineas.size();i++){
+            System.out.println("Id es: " + lineas.get(i).getId_linea_pedido() + " Producto: " + lineas.get(i).getItem().getNombre() + 
+                    ". \nCantidad: " + lineas.get(i).getUnidades());
+        }
+        System.out.println("Se ha listado lista_pedido correctamente ");
+        
 //        resultado= daoPedido.insertar(pedido1);
 //        if (resultado == 1) {
 //            System.out.println("Se ha insertado PEDIDO 1 correctamente ");

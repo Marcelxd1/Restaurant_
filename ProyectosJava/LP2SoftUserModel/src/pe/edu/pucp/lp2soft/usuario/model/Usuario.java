@@ -13,7 +13,7 @@ public class Usuario extends Persona {
     private int id_usuario ; 
     private String usuario ; 
     private String password ;
-    private boolean estado ; 
+    //private boolean estado ; 
     //private String imagen ; 
     private double salario ; 
     private String telefono ; 
@@ -55,13 +55,6 @@ public class Usuario extends Persona {
         this.password = password;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
 
     public double getSalario() {
         return salario;
