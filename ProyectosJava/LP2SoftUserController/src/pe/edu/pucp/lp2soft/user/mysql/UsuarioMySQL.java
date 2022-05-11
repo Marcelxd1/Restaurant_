@@ -11,7 +11,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.lp2soft.config.DBManager;
+import pe.edu.pucp.lp2soft.user.dao.RestauranteDAO;
 import pe.edu.pucp.lp2soft.user.dao.UsuarioDAO;
+import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
+import pe.edu.pucp.lp2soft.usuario.model.Rol;
 import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
 /**
@@ -122,28 +125,47 @@ public class UsuarioMySQL implements UsuarioDAO {
     }
 
     @Override
-    public Usuario buscarPorId(int idUsuario) {
-        Usuario usuario = new Usuario();
-        try {
+    public Usuario listarPorId(int idUsuario) {
+        Usuario usuario = null;
+        int resultado = 0;
+        try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call BUSCAR_PERSONA_POR_ID(?)}");
+            cs = con.prepareCall("{call BUSCAR_USUARIO_POR_ID(?)}");
             cs.setInt("_id_usuario", idUsuario);
             rs = cs.executeQuery();
-            rs.next();
-            
-            if(rs.getInt("_id_usuario")!=idUsuario){
-                System.out.println("ERROR GRAVISIMO NO EXISTE ESTA PERSONA");
-            }//ojo no esta cargado el apeMaterno ni los campos de empresa
-            usuario.setId_usuario(rs.getInt("id_usuario"));
-            usuario.setUsuario(rs.getString("usuario"));
-            usuario.setSalario(rs.getInt("salario"));
-            usuario.setTelefono(rs.getString("telefono")); 
-        }catch (Exception ex){
+            if(rs.next()){
+                usuario = new Usuario();
+                usuario.setId_persona(idUsuario);
+                
+                usuario.setNombre(rs.getString("nombre"));
+                usuario.setApellido_paterno(rs.getString("apellido_paterno"));
+                usuario.setApellido_materno(rs.getString("apellido_materno"));
+                usuario.setDNI(rs.getString("DNI"));
+                
+                usuario.setTipo(rs.getString("fid_tipo").charAt(0));
+                usuario.setRazon_social(rs.getString("razon_social"));
+                usuario.setRuc(rs.getString("RUC"));
+                
+                usuario.setRol(new Rol());
+                usuario.getRol().setId_rol(rs.getInt("id_rol"));
+                usuario.getRol().setDescripcion(rs.getString("descripcion"));
+                usuario.getRol().setActivo(true);
+                
+                RestauranteDAO daorest = new RestauranteMySQL();
+                usuario.setRestaurante(daorest.listarPorId(rs.getInt("fid_restaurante")));
+                
+                usuario.setUsuario(rs.getString("usuario"));
+                usuario.setPassword(rs.getString("password"));
+                usuario.setSalario(rs.getDouble("salario"));
+                usuario.setTelefono(rs.getString("telefono"));
+                
+            }
+            resultado = 1;
+        }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
-        
         return usuario;
     }
 

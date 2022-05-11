@@ -107,6 +107,28 @@ public class RestauranteMySQL implements RestauranteDAO {
 
     @Override
     public Restaurante listarPorId(int idRestaurante) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Restaurante restaurante = null;
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call BUSCAR_RESTAURANTE_POR_ID(?)}");
+            cs.setInt("_id_restaurante", idRestaurante);
+            rs = cs.executeQuery();
+            if(rs.next()){
+                restaurante = new Restaurante();
+                restaurante.setId_restaurante(idRestaurante);
+                restaurante.setRuc(rs.getString("ruc"));
+                restaurante.setNombre(rs.getString("nombre"));
+                restaurante.setTelefono(rs.getString("telefono"));
+                restaurante.setDireccion(rs.getString("direccion"));
+                restaurante.setDineroActual(rs.getDouble("dineroActual"));
+            }
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return restaurante;
     }
 }

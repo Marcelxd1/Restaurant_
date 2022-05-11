@@ -131,29 +131,32 @@ public class PersonaMySQL implements PersonaDAO {
     }
 
     @Override
-    public Persona buscarPorId(int idPersona) {
-       Persona persona = new Persona();
-        try {
+    public Persona listarPorId(int idPersona) {
+        Persona persona = null;
+        int resultado = 0;
+        try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call BUSCAR_PERSONA_POR_ID(?)}");
             cs.setInt("_id_persona", idPersona);
             rs = cs.executeQuery();
-            rs.next();
-            
-            if(rs.getInt("id_persona")!=idPersona){
-                System.out.println("ERROR GRAVISIMO NO EXISTE ESTA PERSONA");
-            }//ojo no esta cargado el apeMaterno ni los campos de empresa
-            persona.setId_persona(rs.getInt("id_persona"));
-            persona.setNombre(rs.getString("nombre"));
-            persona.setApellido_paterno(rs.getString("apellido_paterno"));
-            persona.setDNI(rs.getString("DNI"));
-            persona.setTipo('P');
-        }catch (Exception ex){
+            if(rs.next()){
+                persona = new Persona();
+                persona.setId_persona(idPersona);
+                persona.setNombre(rs.getString("nombre"));
+                persona.setApellido_paterno(rs.getString("apellido_paterno"));
+                persona.setApellido_materno(rs.getString("apellido_materno"));
+                persona.setDNI(rs.getString("DNI"));
+                
+                persona.setTipo(rs.getString("fid_tipo").charAt(0));
+                persona.setRazon_social(rs.getString("razon_social"));
+                persona.setRuc(rs.getString("RUC"));
+            }
+            resultado = 1;
+        }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
-        
         return persona;
     }
 

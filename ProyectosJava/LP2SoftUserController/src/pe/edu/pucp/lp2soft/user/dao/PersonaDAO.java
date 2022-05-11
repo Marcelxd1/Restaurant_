@@ -18,5 +18,5 @@ public interface PersonaDAO {
     int insertarEmpresa(Persona persona );
     int modificar(Persona persona);
     int eliminar(int idPersona);
-    Persona buscarPorId(int idPersona);
+    Persona listarPorId(int idPersona);
 }
