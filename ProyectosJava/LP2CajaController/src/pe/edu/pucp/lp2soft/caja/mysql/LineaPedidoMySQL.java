@@ -21,6 +21,7 @@ public class LineaPedidoMySQL implements LineaPedidoDAO{
     public int insertar(LineaPedido lineaPedido) {
         int resultado = 0;
         try{
+            lineaPedido.setSubtotal(lineaPedido.getItem().getPrecio()*lineaPedido.getUnidades());
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_LINEA_PEDIDO(?,?,?,? ,?)}");
             cs.registerOutParameter("_id_linea_pedido", java.sql.Types.INTEGER);
@@ -44,6 +45,7 @@ public class LineaPedidoMySQL implements LineaPedidoDAO{
     public int modificar(LineaPedido lineaPedido) {
         int resultado = 0;
         try{
+            lineaPedido.setSubtotal(lineaPedido.getItem().getPrecio()*lineaPedido.getUnidades());
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_LINEA_PEDIDO(?,?,?,?, ?)}");
             cs.setInt("_id_linea_pedido", java.sql.Types.INTEGER);
