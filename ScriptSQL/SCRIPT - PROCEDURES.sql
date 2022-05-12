@@ -181,7 +181,7 @@ END$
 
 
 -- MESA ----------------------------------------------------------------------------------------------------
-DELIMITER $
+
 CREATE PROCEDURE INSERTAR_MESA(out _id_mesa int , in _capacidad int )
 BEGIN
     insert into mesa( capacidad,activo,disponible) values (_capacidad,1,1);
@@ -253,7 +253,7 @@ DROP PROCEDURE IF EXISTS MODIFICAR_PEDIDO;
 DROP PROCEDURE IF EXISTS ELIMINAR_PEDIDO;
 DROP PROCEDURE IF EXISTS LISTAR_PEDIDOS_TODOS;
 
-DELIMITER $
+
 #------------------------------------------------------------------------------
 CREATE PROCEDURE INSERTAR_PEDIDO(
 	OUT _id_transaccion INT, 
@@ -348,7 +348,6 @@ END$
 DROP PROCEDURE IF EXISTS INSERTAR_LINEA_PEDIDO;
 DROP PROCEDURE IF EXISTS MODIFICAR_LINEA_PEDIDO;
 
-DELIMITER $
 #------------------------------------------------------------------------------
 CREATE PROCEDURE INSERTAR_LINEA_PEDIDO(
 	OUT _id_linea_pedido INT,
@@ -363,7 +362,7 @@ BEGIN
     SET _id_linea_pedido = @@last_insert_id;
 END$
 
-DELIMITER $
+
 #------------------------------------------------------------------------------
 CREATE PROCEDURE MODIFICAR_LINEA_PEDIDO(
 	IN _id_linea_pedido INT,
@@ -379,7 +378,7 @@ BEGIN
 END$
 
 DROP PROCEDURE IF EXISTS LISTAR_LINEA_PEDIDO;
-DELIMITER $
+
 CREATE PROCEDURE LISTAR_LINEA_PEDIDO ()
 BEGIN
 	SELECT l.id_linea_pedido, i.id_item_vendible, i.nombre, i.precio, i.descripcion, 
@@ -392,7 +391,7 @@ END$
 #----------------------------------------USUARIO--------------------------------------
 
 DROP PROCEDURE IF EXISTS BUSCAR_USUARIO_POR_ID;
-DELIMITER $
+
 #------------------------------------------------------------------------------
 CREATE PROCEDURE BUSCAR_USUARIO_POR_ID (IN _id_usuario INT)
 BEGIN
@@ -408,7 +407,7 @@ END$
 #-----------------------------------------------------------------------------------------
 #----------------------------------------RESTAURANTE--------------------------------------
 DROP PROCEDURE IF EXISTS BUSCAR_RESTAURANTE_POR_ID;
-DELIMITER $
+
 #------------------------------------------------------------------------------
 CREATE PROCEDURE BUSCAR_RESTAURANTE_POR_ID(
 	IN _id_restaurante INT
@@ -422,7 +421,7 @@ END$
 #-------------------------------------------------------------------------------------
 #----------------------------------------PERSONA--------------------------------------
 DROP PROCEDURE IF EXISTS BUSCAR_PERSONA_POR_ID;
-DELIMITER $
+
 #------------------------------------------------------------------------------
 CREATE PROCEDURE BUSCAR_PERSONA_POR_ID(
 	IN _id_persona INT
@@ -431,4 +430,56 @@ BEGIN
 	SELECT 	p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI, p.fid_tipo , p.razon_social, p.RUC
     FROM persona p
     WHERE id_persona = _id_persona and activo = 1;
+END$
+
+DROP PROCEDURE IF EXISTS LISTAR_CATEGORIAS_TODAS;
+DROP PROCEDURE IF EXISTS INSERTAR_CATEGORIA;
+DROP PROCEDURE IF EXISTS MODIFICAR_CATEGORIA;
+DROP PROCEDURE IF EXISTS ELIMINAR_CATEGORIA;
+DROP PROCEDURE IF EXISTS BUSCAR_CATEGORIA_POR_ID;
+
+DELIMITER $
+#------------------------------------------------------------------------------
+CREATE PROCEDURE LISTAR_CATEGORIAS_TODAS()
+BEGIN
+	SELECT id_categoria, nombre, descripcion FROM categoria WHERE activo = 1;
+END$
+
+#------------------------------------------------------------------------------
+CREATE PROCEDURE INSERTAR_CATEGORIA(
+	OUT _id_categoria INT,
+    IN _nombre VARCHAR(100),
+	IN _descripcion VARCHAR(100)
+)
+BEGIN
+	INSERT INTO categoria(nombre, descripcion, activo) VALUES(_nombre, _descripcion, 1);
+    SET _id_categoria = @@last_insert_id;
+END$
+
+#------------------------------------------------------------------------------
+CREATE PROCEDURE MODIFICAR_CATEGORIA(
+	IN _id_categoria INT,
+    IN _nombre VARCHAR(100),
+	IN _descripcion VARCHAR(100)
+)
+BEGIN
+	UPDATE categoria SET nombre = _nombre, descripcion = _descripcion 
+	WHERE id_categoria = _id_categoria;
+END$
+
+#------------------------------------------------------------------------------
+#preguntar si habra una clase activo
+CREATE PROCEDURE ELIMINAR_CATEGORIA(
+	IN _id_categoria INT
+)
+BEGIN
+	UPDATE categoria SET activo = 0 where id_categoria = _id_categoria;
+END$
+
+#------------------------------------------------------------------------------
+CREATE PROCEDURE BUSCAR_CATEGORIA_POR_ID(
+	IN _id_categoria INT
+)
+BEGIN
+	SELECT nombre, descripcion FROM categoria WHERE id_categoria = _id_categoria and activo = 1;
 END$

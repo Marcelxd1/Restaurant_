@@ -508,6 +508,14 @@ public class Principal {
             System.out.println(" NO Se ha modifcado en la tabla USUARIO correctamente ");
         }
         
+        //ELIMINAR -----------------------------------------------------------------
+        resultado = daoUsuario.elminiar(cajero2.getId_usuario());
+        if (resultado == 1) {
+            System.out.println("Se ha eliminado en la tabla CAJERO2 correctamente ");
+        } else {
+            System.out.println(" NO Se ha eliminado en la tabla CAJERO2 correctamente ");
+        }
+        
 
         //LISTAR -----------------------------------------------------------------       
         ArrayList<Usuario> usuarios = daoUsuario.listarTodas();

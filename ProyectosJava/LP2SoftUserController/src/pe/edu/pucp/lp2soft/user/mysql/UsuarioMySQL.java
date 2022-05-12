@@ -156,4 +156,22 @@ public class UsuarioMySQL implements UsuarioDAO {
         return usuario;
     }
 
+    @Override
+    public int elminiar(int idUsuario) {
+        int resultado = 0 ; 
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call ELIMINAR_PERSONA(?)}");
+            cs.setInt("_id_persona",idUsuario);
+            cs.executeUpdate();
+            resultado  = 1; 
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return resultado ;
+    }
+
 }
