@@ -23,11 +23,10 @@ public class LineaPedido{
         
     }
     
-	public LineaPedido(ItemVendible item, Pedido pedido, int unidades, double subtotal){
+	public LineaPedido(ItemVendible item, Pedido pedido, int unidades){
         this.item = item;
         this.pedido = pedido;
         this.unidades = unidades;
-        this.subtotal = subtotal;
     }
     
     //SETTERS Y GETTERS 

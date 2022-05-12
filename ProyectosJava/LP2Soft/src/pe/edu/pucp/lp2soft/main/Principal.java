@@ -617,7 +617,7 @@ public class Principal {
         Pedido pedido = new Pedido(mes1, 'E', mesero1, cajero1, 'L', cliente, 'B', 256362, 'P',
                         new ArrayList<>(), res1, formato.parse("24-12-2022"), true, 'P');
         
-        pedido.setTotal(15);
+        pedido.calcularTotal();
         
         //INSERTAR PEDIDO
         PedidoDAO pedidoDao = new PedidoMySQL();
@@ -626,7 +626,7 @@ public class Principal {
         else System.out.println(" NO se ha insertado pedido ");
         
         ///////////////////////////////////////////////////////////////////////////////////////////////////
-        LineaPedido linea1 = new LineaPedido(producto3, pedido, 2, 15);
+        LineaPedido linea1 = new LineaPedido(producto3, pedido, 2);
         
         //INSERTAR LINEA PEDIDO
         LineaPedidoDAO lineaDao = new LineaPedidoMySQL();
@@ -636,6 +636,7 @@ public class Principal {
         
         //MODIFICAR PEDIDO/LINEA PEDIDO
         pedido.getList_lineaPedido().add(linea1);
+        pedido.calcularTotal();
         resultado = pedidoDao.modificar(pedido);
         if (resultado == 1) System.out.println("Se ha modificado pedido correctamente ");
         else System.out.println(" NO se ha modificado pedido ");

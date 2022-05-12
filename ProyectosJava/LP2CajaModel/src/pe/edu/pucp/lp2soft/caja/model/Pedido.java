@@ -206,6 +206,12 @@ public class Pedido extends Transaccion {
         this.list_lineaPedido = list_lineaPedido;
     }
     
-
+    public void calcularTotal(){
+        double totalAux=0;
+        for (LineaPedido lineaPedido : list_lineaPedido) {
+            totalAux+= lineaPedido.getSubtotal();
+        }
+        setTotal(totalAux);
+    }
    
 }

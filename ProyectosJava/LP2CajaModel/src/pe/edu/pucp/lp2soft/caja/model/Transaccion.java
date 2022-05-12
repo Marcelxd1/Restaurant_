@@ -11,7 +11,10 @@ public class Transaccion {
     private boolean activo;
     private char tipo;
     
-    public Transaccion(){activo=true;}
+    public Transaccion(){
+        activo=true;
+        this.total = 0;
+    }
 
     public Transaccion(Restaurante restaurante, Date fecha, boolean activo, char tipo) {
         //this.id_transaccion = id_transaccion;
@@ -19,6 +22,7 @@ public class Transaccion {
         this.fecha = fecha;
         this.activo = activo;
         this.tipo = tipo;
+        this.total = 0;
     }
     
     
