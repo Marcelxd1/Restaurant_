@@ -51,12 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLoginUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLoginUsuario.Designer.cs">
-      <DependentUpon>frmLoginUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_Caja_Pedido.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -68,6 +62,12 @@
     </Compile>
     <Compile Include="UC_Caja_Pedido_Pedir.Designer.cs">
       <DependentUpon>UC_Caja_Pedido_Pedir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Cocina_Pedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Cocina_Pedido.Designer.cs">
+      <DependentUpon>UC_Cocina_Pedido.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Gestion_Productos_RegistroPlatos.cs">
       <SubType>UserControl</SubType>
@@ -81,6 +81,54 @@
     <Compile Include="UC_Gestion_Productos.Designer.cs">
       <DependentUpon>UC_Gestion_Productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Gestion_Reportes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes.Designer.cs">
+      <DependentUpon>UC_Gestion_Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_Asistencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_Asistencia.Designer.cs">
+      <DependentUpon>UC_Gestion_Reportes_Asistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_MejoresVentas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_MejoresVentas.Designer.cs">
+      <DependentUpon>UC_Gestion_Reportes_MejoresVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_PlatosVendidos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_PlatosVendidos.Designer.cs">
+      <DependentUpon>UC_Gestion_Reportes_PlatosVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_Ventas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_Ventas.Designer.cs">
+      <DependentUpon>UC_Gestion_Reportes_Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_Caja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Reportes_Caja.Designer.cs">
+      <DependentUpon>UC_Gestion_Reportes_Caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Gestion_Usuario_Combos_Crear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Usuario_Combos_Crear.Designer.cs">
+      <DependentUpon>UC_Gestion_Usuario_Combos_Crear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Gestion_Usuario_Combos_Listar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Usuario_Combos_Listar.Designer.cs">
+      <DependentUpon>UC_Gestion_Usuario_Combos_Listar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Mesero_Mesa_Pedido.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +140,18 @@
     </Compile>
     <Compile Include="UC_Mesero_Mesa_Pedido_Pedir.Designer.cs">
       <DependentUpon>UC_Mesero_Mesa_Pedido_Pedir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Plantilla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Plantilla.Designer.cs">
+      <DependentUpon>UC_Plantilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_RegistroGastos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_RegistroGastos.Designer.cs">
+      <DependentUpon>UC_RegistroGastos.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_RegistroMesas.cs">
       <SubType>UserControl</SubType>
@@ -137,14 +197,14 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmLoginUsuario.resx">
-      <DependentUpon>frmLoginUsuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_Caja_Pedido.resx">
       <DependentUpon>UC_Caja_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Caja_Pedido_Pedir.resx">
       <DependentUpon>UC_Caja_Pedido_Pedir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Cocina_Pedido.resx">
+      <DependentUpon>UC_Cocina_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Gestion_Productos_RegistroPlatos.resx">
       <DependentUpon>UC_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
@@ -152,11 +212,41 @@
     <EmbeddedResource Include="UC_Gestion_Productos.resx">
       <DependentUpon>UC_Gestion_Productos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Reportes.resx">
+      <DependentUpon>UC_Gestion_Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Reportes_Asistencia.resx">
+      <DependentUpon>UC_Gestion_Reportes_Asistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Reportes_Caja.resx">
+      <DependentUpon>UC_Gestion_Reportes_Caja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Reportes_MejoresVentas.resx">
+      <DependentUpon>UC_Gestion_Reportes_MejoresVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Reportes_PlatosVendidos.resx">
+      <DependentUpon>UC_Gestion_Reportes_PlatosVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Reportes_Ventas.resx">
+      <DependentUpon>UC_Gestion_Reportes_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Usuario_Combos_Crear.resx">
+      <DependentUpon>UC_Gestion_Usuario_Combos_Crear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Usuario_Combos_Listar.resx">
+      <DependentUpon>UC_Gestion_Usuario_Combos_Listar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Mesero_Mesa_Pedido.resx">
       <DependentUpon>UC_Mesero_Mesa_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Mesero_Mesa_Pedido_Pedir.resx">
       <DependentUpon>UC_Mesero_Mesa_Pedido_Pedir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Plantilla.resx">
+      <DependentUpon>UC_Plantilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_RegistroGastos.resx">
+      <DependentUpon>UC_RegistroGastos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_RegistroMesas.resx">
       <DependentUpon>UC_RegistroMesas.cs</DependentUpon>
@@ -221,19 +311,13 @@
     <None Include="Resources\icon_espera1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Group 785.png" />
+    <None Include="Resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\iconFlecha.png" />
+    <None Include="Resources\plus_otro.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\iconPasword.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iconUsuario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\loginQuinti.png" />
+    <None Include="Resources\only_plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

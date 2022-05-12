@@ -56,5 +56,10 @@ namespace LP2Soft
         {
 
         }
+
+        private void frmLoginUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
