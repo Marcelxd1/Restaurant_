@@ -301,8 +301,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton4;
@@ -320,5 +318,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton6;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
     }
 }

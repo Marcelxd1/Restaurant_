@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LP2Soft
 {
-    public partial class UC_GestionUsuarioCrear : UserControl
+    public partial class UC_Gestion_Usuario_Crear : UserControl
     {
-        public UC_GestionUsuarioCrear()
+        public UC_Gestion_Usuario_Crear()
         {
             InitializeComponent();
         }

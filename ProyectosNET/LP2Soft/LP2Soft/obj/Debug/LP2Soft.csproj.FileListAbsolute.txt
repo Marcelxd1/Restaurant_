@@ -43,7 +43,14 @@ C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\ProyectosNET\LP2Soft\LP
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.pdb
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_GestionUsuarioCrear.resources
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_GestionUsuarioListar.resources
-C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_GestionUsuarioCrear.resources
-C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_GestionUsuarioListar.resources
 C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.VentanaPrincipal.resources
 C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Mesero_Mesa.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Caja_Pedido.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Caja_Pedido_Pedir.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Gestion_Productos_RegistroPlatos.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Gestion_Productos.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Mesero_Mesa_Pedido.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Mesero_Mesa_Pedido_Pedir.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_RegistroMesas.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Gestion_Usuario_Crear.resources
+C:\Users\USUARIO\Documents\GitHub\Mikuy\ProyectosNET\LP2Soft\LP2Soft\obj\Debug\LP2Soft.UC_Gestion_Usuario_Listar.resources

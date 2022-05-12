@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LP2Soft
 {
-    public partial class UC_GestionUsuarioListar : UserControl
+    public partial class UC_Gestion_Productos : UserControl
     {
-        public UC_GestionUsuarioListar()
+        public UC_Gestion_Productos()
         {
             InitializeComponent();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

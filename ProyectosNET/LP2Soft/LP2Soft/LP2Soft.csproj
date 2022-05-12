@@ -63,6 +63,18 @@
     <Compile Include="UC_Caja_Pedido_Pedir.Designer.cs">
       <DependentUpon>UC_Caja_Pedido_Pedir.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Gestion_Productos_RegistroPlatos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Productos_RegistroPlatos.Designer.cs">
+      <DependentUpon>UC_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Gestion_Productos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Gestion_Productos.Designer.cs">
+      <DependentUpon>UC_Gestion_Productos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Mesero_Mesa_Pedido.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,6 +86,12 @@
     </Compile>
     <Compile Include="UC_Mesero_Mesa_Pedido_Pedir.Designer.cs">
       <DependentUpon>UC_Mesero_Mesa_Pedido_Pedir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_RegistroMesas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_RegistroMesas.Designer.cs">
+      <DependentUpon>UC_RegistroMesas.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
@@ -95,17 +113,17 @@
     <Compile Include="UC_Gestion.Designer.cs">
       <DependentUpon>UC_Gestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_GestionUsuarioCrear.cs">
+    <Compile Include="UC_Gestion_Usuario_Crear.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_GestionUsuarioCrear.Designer.cs">
-      <DependentUpon>UC_GestionUsuarioCrear.cs</DependentUpon>
+    <Compile Include="UC_Gestion_Usuario_Crear.Designer.cs">
+      <DependentUpon>UC_Gestion_Usuario_Crear.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_GestionUsuarioListar.cs">
+    <Compile Include="UC_Gestion_Usuario_Listar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_GestionUsuarioListar.Designer.cs">
-      <DependentUpon>UC_GestionUsuarioListar.cs</DependentUpon>
+    <Compile Include="UC_Gestion_Usuario_Listar.Designer.cs">
+      <DependentUpon>UC_Gestion_Usuario_Listar.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -119,11 +137,20 @@
     <EmbeddedResource Include="UC_Caja_Pedido_Pedir.resx">
       <DependentUpon>UC_Caja_Pedido_Pedir.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Productos_RegistroPlatos.resx">
+      <DependentUpon>UC_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Gestion_Productos.resx">
+      <DependentUpon>UC_Gestion_Productos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Mesero_Mesa_Pedido.resx">
       <DependentUpon>UC_Mesero_Mesa_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Mesero_Mesa_Pedido_Pedir.resx">
       <DependentUpon>UC_Mesero_Mesa_Pedido_Pedir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_RegistroMesas.resx">
+      <DependentUpon>UC_RegistroMesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
@@ -144,11 +171,11 @@
     <EmbeddedResource Include="UC_Gestion.resx">
       <DependentUpon>UC_Gestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_GestionUsuarioCrear.resx">
-      <DependentUpon>UC_GestionUsuarioCrear.cs</DependentUpon>
+    <EmbeddedResource Include="UC_Gestion_Usuario_Crear.resx">
+      <DependentUpon>UC_Gestion_Usuario_Crear.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_GestionUsuarioListar.resx">
-      <DependentUpon>UC_GestionUsuarioListar.cs</DependentUpon>
+    <EmbeddedResource Include="UC_Gestion_Usuario_Listar.resx">
+      <DependentUpon>UC_Gestion_Usuario_Listar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
