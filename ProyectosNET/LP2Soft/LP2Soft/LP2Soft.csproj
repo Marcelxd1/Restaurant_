@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLoginUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginUsuario.Designer.cs">
+      <DependentUpon>frmLoginUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Caja_Pedido.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmLoginUsuario.resx">
+      <DependentUpon>frmLoginUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Caja_Pedido.resx">
       <DependentUpon>UC_Caja_Pedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +219,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_espera1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 785.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconFlecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPasword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginQuinti.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
