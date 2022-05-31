@@ -50,6 +50,7 @@ public class PromocionMySQL implements PromocionDAO{
                 cs= con.prepareCall("{call INSERTAR_LINEA_PROMOCION(?,?,?,?)}");
                 cs.registerOutParameter("_idLineaPromocion", java.sql.Types.INTEGER);
                 cs.setInt("_unidades", linea.getUnidades());
+                cs.setInt("_fid_promocion", promocion.getIdItemVendible());
                 //cs.setInt("_fid_promocion", linea.getPromocion().getIdItemVendible());
                 cs.setInt("_fid_producto", linea.getProducto().getIdItemVendible());//no se usa el idProducto
                 linea.setEstado(true); //porque si lo inserto entrara por defecto como activo
@@ -87,6 +88,7 @@ public class PromocionMySQL implements PromocionDAO{
                 cs= con.prepareCall("{call MODIFICAR_LINEA_PROMOCION(?,?,?,?,?)}");
                 cs.setInt("_id_linea_promocion", linea.getIdLineaPromocion()); // el _id_linea_promocion es aparte del itemvendi
                 cs.setInt("_unidad", linea.getUnidades());
+                cs.setInt("_fid_promocion", promocion.getIdItemVendible());//aun necesita la FK 
                 //cs.setInt("_fid_promocion", linea.getPromocion().getIdItemVendible());//este es el item vendible
                 cs.setInt("_fid_producto", linea.getProducto().getIdItemVendible());
                 cs.setBoolean("_estado", linea.isEstado());
