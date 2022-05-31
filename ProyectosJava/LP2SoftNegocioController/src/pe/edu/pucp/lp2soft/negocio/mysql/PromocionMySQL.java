@@ -20,8 +20,11 @@ import pe.edu.pucp.lp2soft.negocio.model.Promocion;
  *
  * Jhosep Huaricallo Quispe
  * 20170398
+ * Modificacion de LineaPromocion para que no contenga a Promocion -> no debe de ser ciclico
+ * solo se puede ir desde Promocion a cada linea por medio de la lista de lineas que tiene promocion
+ * PromoSQL
+ * LineaPromocion
  */
-//FALTA LA LISTA DE COMIDAS
 public class PromocionMySQL implements PromocionDAO{
     private Connection con; 
     private CallableStatement cs;
@@ -47,7 +50,7 @@ public class PromocionMySQL implements PromocionDAO{
                 cs= con.prepareCall("{call INSERTAR_LINEA_PROMOCION(?,?,?,?)}");
                 cs.registerOutParameter("_idLineaPromocion", java.sql.Types.INTEGER);
                 cs.setInt("_unidades", linea.getUnidades());
-                cs.setInt("_fid_promocion", linea.getPromocion().getIdItemVendible());
+                //cs.setInt("_fid_promocion", linea.getPromocion().getIdItemVendible());
                 cs.setInt("_fid_producto", linea.getProducto().getIdItemVendible());//no se usa el idProducto
                 linea.setEstado(true); //porque si lo inserto entrara por defecto como activo
                 
@@ -55,7 +58,7 @@ public class PromocionMySQL implements PromocionDAO{
                 linea.setIdLineaPromocion(cs.getInt("_idLineaPromocion"));//Este es el generado
                 
             }
-            resultado = 1;
+            resultado = promocion.getIdItemVendible();//////////
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -84,7 +87,7 @@ public class PromocionMySQL implements PromocionDAO{
                 cs= con.prepareCall("{call MODIFICAR_LINEA_PROMOCION(?,?,?,?,?)}");
                 cs.setInt("_id_linea_promocion", linea.getIdLineaPromocion()); // el _id_linea_promocion es aparte del itemvendi
                 cs.setInt("_unidad", linea.getUnidades());
-                cs.setInt("_fid_promocion", linea.getPromocion().getIdItemVendible());//este es el item vendible
+                //cs.setInt("_fid_promocion", linea.getPromocion().getIdItemVendible());//este es el item vendible
                 cs.setInt("_fid_producto", linea.getProducto().getIdItemVendible());
                 cs.setBoolean("_estado", linea.isEstado());
                 cs.executeUpdate();
@@ -139,21 +142,16 @@ public class PromocionMySQL implements PromocionDAO{
                 
                 //creacion de la lista asociada
                 promocion.setLista_de_Comidas(new ArrayList<LineaPromocion>());
-                LineaPromocion linea=new LineaPromocion();//para cada promo es una lista 
+                LineaPromocion linea=new LineaPromocion();//la promo ya apunta a cada linea 
                 cs=con.prepareCall("{call LISTAR_LINEA_PROMOCION_PROMO(?)}");
                 cs.setInt("_idPromo", promocion.getIdItemVendible());
-                //ahora te devuelve un query con solo las lineas que usan la promocion 
-                //el query tendria las columnas de linea y las columnas de Producto
-                //no hay estado en lineaPRomo
-                //producto: id_producto, 
-                //item vendible : 
                 ResultSet subrs = cs.executeQuery();
                 while (subrs.next()) {
                     
                     linea.setEstado(subrs.getBoolean("estado"));
                     linea.setIdLineaPromocion(subrs.getInt("id_linea_promocion"));
                     linea.setUnidades(subrs.getInt("unidad"));
-                    linea.setPromocion(promocion);//apuntan al que los contiene
+                    //linea.setPromocion(promocion);//apuntan al que los contiene -> no porque los hace ciclicos
                     
                     //insertamos datos de producto,hereda de item vendible y tiene categoria
                     

@@ -4,7 +4,6 @@ public class LineaPromocion {
     private int idLineaPromocion;
     private int unidades;
     private Producto producto;
-    private Promocion promocion;
     private boolean estado;
 
     public LineaPromocion() {
@@ -14,7 +13,6 @@ public class LineaPromocion {
         this.idLineaPromocion = idLineaPromocion;
         this.unidades = unidades;
         this.producto = producto;
-        this.promocion = promocion;
         this.estado = estado;
     }
     
@@ -39,13 +37,6 @@ public class LineaPromocion {
 	}
 	public void setProducto(Producto producto) {
 		this.producto = producto;
-	}
-
-    public Promocion getPromocion() {
-		return promocion;
-	}
-	public void setPromocion(Promocion promocion) {
-		this.promocion = promocion;
 	}
     
     //METODSO Y PROCEDIMIENTOS 
