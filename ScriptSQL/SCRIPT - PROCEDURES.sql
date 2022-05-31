@@ -96,13 +96,11 @@ END$
 
 -- ASISTENCIA --------------------------------------------------------------------------------------------------------------
 CREATE  PROCEDURE INSERTAR_ASISTENCIA_ENTRADA(
-	OUT _id_asistencia INT,
     IN _fid_usuario INT
 )
 BEGIN
 	INSERT INTO asistencia(fid_usuario,hora_inicio,fecha,activo) 
     VALUES(_fid_usuario,(now()- INTERVAL 5 HOUR),(now()- INTERVAL 5 HOUR),1);
-    SET _id_asistencia = @@last_insert_id;
 END$
 
 CREATE PROCEDURE ELIMINAR_ASISTENCIA(
@@ -119,6 +117,14 @@ BEGIN
 	SET @max = (SELECT MAX(hora_inicio) FROM asistencia WHERE _id_usuario = fid_usuario);
 	UPDATE asistencia  SET  hora_fin = (now()- INTERVAL 5 HOUR)
     WHERE fid_usuario = _id_usuario AND hora_inicio = @max;
+END$
+
+CREATE PROCEDURE LISTAR_ASISTENCIA_TODOS()
+BEGIN
+	SELECT a.id_asistencia, a.hora_inicio, a.hora_fin, a.fecha, u.id_usuario,p.nombre, p.DNI
+		FROM asistencia a INNER JOIN usuario u ON a.fid_usuario = u.id_usuario
+        INNER JOIN persona p ON u.id_usuario = p.id_persona
+        WHERE a.activo = 1 ;        
 END$
 
 -- GASTO ---------------------------------------------------------------------------------------------------------------

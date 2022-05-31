@@ -46,16 +46,14 @@ public class AsistenciaMySQL implements AsistenciaDAO {
     }
 
     @Override
-    public int registrarAsistencia(Asistencia asistencia) {
+    public int registrarAsistencia(int idUsuario ) {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_ASISTENCIA_ENTRADA(?,?)}");
-            cs.registerOutParameter("_id_asistencia", java.sql.Types.INTEGER);
-            cs.setInt("_fid_usuario", asistencia.getUsuario().getId_usuario());
+            cs = con.prepareCall("{call INSERTAR_ASISTENCIA_ENTRADA(?)}");
+            cs.setInt("_fid_usuario", idUsuario);
             cs.executeUpdate();
-            asistencia.setId_asistencia(cs.getInt("_id_asistencia"));
-            resultado = 1 ; 
+            resultado = idUsuario ; 
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -72,7 +70,7 @@ public class AsistenciaMySQL implements AsistenciaDAO {
             cs = con.prepareCall("{call INSERTAR_ASISTENCIA_SALIDA(?)}");
             cs.setInt("_id_usuario",idUsuario);
             cs.executeUpdate();
-            resultado = 1 ; 
+            resultado = idUsuario ; 
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }finally{

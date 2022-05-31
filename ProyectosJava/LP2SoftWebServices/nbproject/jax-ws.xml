@@ -4,6 +4,12 @@
     <service name="NegocioWS">
       <implementation-class>pe.edu.pucp.lp2soft.services.NegocioWS</implementation-class>
     </service>
+    <service name="CajaWS">
+      <implementation-class>pe.edu.pucp.lp2soft.services.CajaWS</implementation-class>
+    </service>
+    <service name="UserWS">
+      <implementation-class>pe.edu.pucp.lp2soft.services.UserWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

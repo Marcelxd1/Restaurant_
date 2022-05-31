@@ -60,7 +60,7 @@ public class ProductoMySQL implements ProductoDAO{
             cs.setInt("_fid_categoria", producto.getCategoria().getIdCategoria());
             cs.executeUpdate();
             producto.setIdItemVendible(cs.getInt("_id_item_vendible"));
-            resultado = 1;
+            resultado = producto.getIdItemVendible();
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{

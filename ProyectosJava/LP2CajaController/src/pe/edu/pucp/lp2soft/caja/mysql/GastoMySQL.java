@@ -61,7 +61,8 @@ public class GastoMySQL implements GastoDAO{
             cs.setString("_descripcion", gasto.getDescripcion());
             cs.executeUpdate();
             gasto.setId_transaccion(cs.getInt("_id_transaccion"));
-            resultado = 1;
+            gasto.setIdGasto(cs.getInt("_id_transaccion"));
+            resultado = gasto.getIdGasto();
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
