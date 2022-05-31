@@ -49,10 +49,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Axiforma SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(504, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(270, 39);
+            this.label2.Size = new System.Drawing.Size(263, 29);
             this.label2.TabIndex = 14;
             this.label2.Text = "Seleccione una Mesa";
             // 
@@ -285,7 +285,7 @@
             this.guna2Button6.TabIndex = 41;
             this.guna2Button6.Text = "Reservar";
             // 
-            // Prueba2
+            // UC_Mesero_Mesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,7 +303,7 @@
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2PictureBox3);
-            this.Name = "Prueba2";
+            this.Name = "UC_Mesero_Mesa";
             this.Size = new System.Drawing.Size(1283, 706);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);

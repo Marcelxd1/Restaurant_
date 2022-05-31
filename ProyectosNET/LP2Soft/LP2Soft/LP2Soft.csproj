@@ -141,12 +141,6 @@
     <Compile Include="UC_Mesero_Mesa_Pedido_Pedir.Designer.cs">
       <DependentUpon>UC_Mesero_Mesa_Pedido_Pedir.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Plantilla.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Plantilla.Designer.cs">
-      <DependentUpon>UC_Plantilla.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_RegistroGastos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Mesero_Mesa_Pedido_Pedir.resx">
       <DependentUpon>UC_Mesero_Mesa_Pedido_Pedir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Plantilla.resx">
-      <DependentUpon>UC_Plantilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_RegistroGastos.resx">
       <DependentUpon>UC_RegistroGastos.cs</DependentUpon>
