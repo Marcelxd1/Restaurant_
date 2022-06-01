@@ -13,10 +13,13 @@ import pe.edu.pucp.lp2soft.usuario.model.Persona;
  *
  */
 public interface PersonaDAO {
-    ArrayList<Persona> listarTodas();
+    ArrayList<Persona> listarPersonasTodas();
+    ArrayList<Persona> listarPersonas();
     int insertarPersona(Persona persona);
+    int modificarPersona(Persona persona);
+    int eliminarPersona(int idPersona);
+    ArrayList<Persona> listarEmpresas();
     int insertarEmpresa(Persona persona );
-    int modificar(Persona persona);
-    int eliminar(int idPersona);
+    int modificarEmpresa(Persona persona);
     Persona listarPorId(int idPersona);
 }

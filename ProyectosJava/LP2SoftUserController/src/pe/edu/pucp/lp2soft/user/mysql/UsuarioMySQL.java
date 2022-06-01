@@ -43,6 +43,35 @@ public class UsuarioMySQL implements UsuarioDAO {
                 usuario.setNombre(rs.getString("nombre"));
                 usuario.setApellido_paterno(rs.getString("apellido_paterno"));
                 usuario.setApellido_materno(rs.getString("apellido_materno"));
+                usuario.setDNI(rs.getString("DNI")); 
+                usuarios.add(usuario);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return usuarios ;
+    }
+    
+    @Override
+    public ArrayList<Usuario> listarXNombre(String nombre) {
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_USUARIO_X_NOMBRE()}");
+            rs = cs.executeQuery();
+            while (rs.next()){
+                Usuario usuario = new Usuario();
+                usuario.setId_usuario(rs.getInt("id_usuario"));
+                usuario.setUsuario(rs.getString("usuario"));
+                usuario.setSalario(rs.getInt("salario"));
+                usuario.setTelefono(rs.getString("telefono"));
+                usuario.setNombre(rs.getString("nombre"));
+                usuario.setApellido_paterno(rs.getString("apellido_paterno"));
+                usuario.setApellido_materno(rs.getString("apellido_materno"));
+                usuario.setDNI(rs.getString("DNI")); 
                 usuarios.add(usuario);
             }
         }catch (Exception ex){
@@ -79,7 +108,7 @@ public class UsuarioMySQL implements UsuarioDAO {
             cs.setDouble("_salario", usuario.getSalario());
             cs.setString("_telefono", usuario.getTelefono());
             cs.executeUpdate();
-            resultado = 1 ; 
+            resultado = usuario.getId_usuario() ; 
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -157,7 +186,7 @@ public class UsuarioMySQL implements UsuarioDAO {
     }
 
     @Override
-    public int elminiar(int idUsuario) {
+    public int eliminiar(int idUsuario) {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();

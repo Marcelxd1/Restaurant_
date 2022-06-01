@@ -218,6 +218,15 @@ BEGIN
 END$
 
 -- PERSONA -----------------------------------------------------------------------------------------
+
+CREATE  PROCEDURE LISTAR_PERSONAS_TODAS()
+BEGIN 
+	SELECT p.id_persona , p.nombre, p.apellido_paterno, p.apellido_materno , p.DNI, p.razon_social, p.RUC,t.id_tipo_persona, t.descripcion 
+    from persona p INNER JOIN tipo_persona t 
+    ON p.fid_tipo = t.id_tipo_persona 
+    WHERE p.activo = 1;
+END$
+
 CREATE PROCEDURE INSERTAR_PERSONA(out _id_persona int ,in _fid_tipo char, in _nombre varchar(50) , in _apellido_paterno varchar(50) , in _apellido_materno varchar(20),
 									in _DNI varchar(50) )
 BEGIN
@@ -226,17 +235,41 @@ BEGIN
     set _id_persona = @@last_insert_id ;
 END$
 
-CREATE PROCEDURE MODIFICAR_PERSONA(in _id_persona int ,in _nombre varchar(50),in _apellido_paterno varchar(50), in _DNI varchar(10), in _fid_tipo int)
+CREATE PROCEDURE MODIFICAR_PERSONA(in _id_persona int ,in _nombre varchar(50),in _apellido_paterno varchar(50),in _apellido_materno varchar(50), in _DNI varchar(10))
 begin
-	update persona set nombre = _nombre , apellido_paterno = _apellido_paterno , DNI = _DNI , fid_tipo = _fid_tipo
+	update persona set nombre = _nombre , apellido_paterno = _apellido_paterno, apellido_materno = _apellido_materno , DNI = _DNI
     where id_persona = _id_persona ; 
 end$
+
+CREATE  PROCEDURE LISTAR_PERSONAS()
+BEGIN 
+	SELECT p.id_persona , p.nombre, p.apellido_paterno, p.apellido_materno , p.DNI, p.fid_tipo, t.descripcion 
+    from persona p INNER JOIN tipo_persona t 
+    ON p.fid_tipo = t.id_tipo_persona 
+    WHERE p.activo = 1 AND
+	p.fid_tipo = 'N';
+END$
 
 CREATE PROCEDURE INSERTAR_EMPRESA(out _id_persona int , in _razon_social varchar(100) , in _ruc varchar(30), in _nombre VARCHAR(100), in _fid_tipo char )
 begin
 	insert into persona(nombre, fid_tipo,razon_social,RUC , activo ) values (_nombre,_fid_tipo , _razon_social , _ruc , 1) ;
 	set _id_persona = @@last_insert_id ;
 end$
+
+CREATE PROCEDURE MODIFICAR_EMPRESA(in _id_persona int ,in _razon_social varchar(100) , in _ruc varchar(30), in _nombre VARCHAR(100))
+begin
+	update persona set nombre = _nombre , razon_social = _razon_social, ruc = _ruc
+    where id_persona = _id_persona ; 
+end$
+
+CREATE  PROCEDURE LISTAR_EMPRESAS()
+BEGIN 
+	SELECT p.id_persona , p.nombre, p.razon_social, p.RUC, p.fid_tipo, t.descripcion 
+    from persona p INNER JOIN tipo_persona t 
+    ON p.fid_tipo = t.id_tipo_persona 
+    WHERE p.activo = 1 AND
+	p.fid_tipo = 'J';
+END$
 
 -- USUARIOS
 
@@ -249,9 +282,21 @@ END$
 
 CREATE  PROCEDURE LISTAR_USUARIOS_TODOS()
 BEGIN 
-	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno
+	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI
     from usuario u inner join persona p on u.id_usuario = p.id_persona
     where p.activo = 1;
+END$
+
+CREATE PROCEDURE LISTAR_USUARIO_X_NOMBRE(IN _nombre VARCHAR(100))
+BEGIN
+	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI
+    from usuario u inner join persona p on u.id_usuario = p.id_persona
+    where p.activo = 1 AND  p.nombre LIKE CONCAT('%',_nombre,'%');
+END$
+
+CREATE PROCEDURE ELIMINAR_PERSONA (IN _id_persona INT)
+BEGIN
+	UPDATE persona SET activo = 0 WHERE id_persona = _id_persona ;
 END$
 
 DROP PROCEDURE IF EXISTS INSERTAR_PEDIDO;

@@ -8,6 +8,7 @@ public interface UsuarioDAO {
     ArrayList<Usuario> listarTodas();
     int insertar(Usuario usuario);
     int modificar(Usuario usuario);
-    int elminiar(int idUsuario);
+    int eliminiar(int idUsuario);
     Usuario listarPorId(int idUsuario);
+    ArrayList<Usuario> listarXNombre(String nombre);
 }
