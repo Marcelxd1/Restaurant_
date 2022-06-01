@@ -24,6 +24,9 @@ import pe.edu.pucp.lp2soft.negocio.model.Promocion;
  * solo se puede ir desde Promocion a cada linea por medio de la lista de lineas que tiene promocion
  * PromoSQL
  * LineaPromocion
+ * 
+ * //Si se elimina un producto -> eliminar combo
+    //trigger
  */
 public class PromocionMySQL implements PromocionDAO{
     private Connection con; 

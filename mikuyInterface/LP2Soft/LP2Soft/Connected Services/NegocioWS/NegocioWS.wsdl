@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lp2soft.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="NegocioWS" targetNamespace="http://services.lp2soft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/NegocioWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="insertarPromocion">
+    <part name="parameters" element="tns:insertarPromocion" />
+  </message>
+  <message name="insertarPromocionResponse">
+    <part name="parameters" element="tns:insertarPromocionResponse" />
+  </message>
+  <message name="modificarPromocion">
+    <part name="parameters" element="tns:modificarPromocion" />
+  </message>
+  <message name="modificarPromocionResponse">
+    <part name="parameters" element="tns:modificarPromocionResponse" />
+  </message>
+  <message name="eliminarPromocion">
+    <part name="parameters" element="tns:eliminarPromocion" />
+  </message>
+  <message name="eliminarPromocionResponse">
+    <part name="parameters" element="tns:eliminarPromocionResponse" />
+  </message>
+  <message name="listarTodasPromociones">
+    <part name="parameters" element="tns:listarTodasPromociones" />
+  </message>
+  <message name="listarTodasPromocionesResponse">
+    <part name="parameters" element="tns:listarTodasPromocionesResponse" />
+  </message>
+  <portType name="NegocioWS">
+    <operation name="insertarPromocion">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionRequest" message="tns:insertarPromocion" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionResponse" message="tns:insertarPromocionResponse" />
+    </operation>
+    <operation name="modificarPromocion">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionRequest" message="tns:modificarPromocion" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionResponse" message="tns:modificarPromocionResponse" />
+    </operation>
+    <operation name="eliminarPromocion">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarPromocionRequest" message="tns:eliminarPromocion" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarPromocionResponse" message="tns:eliminarPromocionResponse" />
+    </operation>
+    <operation name="listarTodasPromociones">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasPromocionesRequest" message="tns:listarTodasPromociones" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasPromocionesResponse" message="tns:listarTodasPromocionesResponse" />
+    </operation>
+  </portType>
+  <binding name="NegocioWSPortBinding" type="tns:NegocioWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodasPromociones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="NegocioWS">
+    <port name="NegocioWSPort" binding="tns:NegocioWSPortBinding">
+      <soap:address location="http://localhost:8080/LP2SoftWebServices/NegocioWS" />
+    </port>
+  </service>
+</definitions>
