@@ -18,6 +18,10 @@ public class LineaPromocion {
     
     
     //SETTERS Y GETTERS 
+    public String getNombre() {
+        return this.producto.getNombre();
+    }
+    
     public int getIdLineaPromocion() {
         return this.idLineaPromocion;
     }

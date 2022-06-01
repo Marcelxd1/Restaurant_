@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.lp2soft.pucp.edu.pe/" targetNamespace="http://services.lp2soft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarProducto" type="tns:eliminarProducto" />
+  <xs:element name="eliminarProductoResponse" type="tns:eliminarProductoResponse" />
   <xs:element name="eliminarPromocion" type="tns:eliminarPromocion" />
   <xs:element name="eliminarPromocionResponse" type="tns:eliminarPromocionResponse" />
+  <xs:element name="insertarProducto" type="tns:insertarProducto" />
+  <xs:element name="insertarProductoResponse" type="tns:insertarProductoResponse" />
   <xs:element name="insertarPromocion" type="tns:insertarPromocion" />
   <xs:element name="insertarPromocionResponse" type="tns:insertarPromocionResponse" />
+  <xs:element name="listarProductoXNombre" type="tns:listarProductoXNombre" />
+  <xs:element name="listarProductoXNombreResponse" type="tns:listarProductoXNombreResponse" />
   <xs:element name="listarTodasPromociones" type="tns:listarTodasPromociones" />
   <xs:element name="listarTodasPromocionesResponse" type="tns:listarTodasPromocionesResponse" />
+  <xs:element name="listarTodosProductos" type="tns:listarTodosProductos" />
+  <xs:element name="listarTodosProductosResponse" type="tns:listarTodosProductosResponse" />
+  <xs:element name="modificarProducto" type="tns:modificarProducto" />
+  <xs:element name="modificarProductoResponse" type="tns:modificarProductoResponse" />
   <xs:element name="modificarPromocion" type="tns:modificarPromocion" />
   <xs:element name="modificarPromocionResponse" type="tns:modificarPromocionResponse" />
   <xs:complexType name="insertarPromocion">
@@ -64,12 +74,60 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="modificarProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Producto" type="tns:producto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarProductoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarPromocion">
     <xs:sequence>
       <xs:element minOccurs="0" name="Promocion" type="tns:promocion" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarPromocionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Producto" type="tns:producto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarProductoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProductoXNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProductoXNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTodosProductos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTodosProductosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarProducto">
+    <xs:sequence>
+      <xs:element name="idProducto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarProductoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

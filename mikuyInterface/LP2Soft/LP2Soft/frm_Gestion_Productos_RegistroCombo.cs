@@ -16,7 +16,7 @@ namespace LP2Soft
         private Estado _estado;
         private NegocioWS.promocion _promo;
         private BindingList<NegocioWS.lineaPromocion> _listaLineas;
-        private NegocioWS.promocion _prodSelec;
+        private NegocioWS.producto _prodSelec;
         public frm_Gestion_Productos_RegistroCombo()
         {
             InitializeComponent();
@@ -98,8 +98,9 @@ namespace LP2Soft
             txtBuscar.Text = "";
             txtPlato.Text = "";
             txtPrecio.Text = "";
-            dgvLineas.Rows.Clear();
-            dgvPlatos.Rows.Clear();
+            txtID.Text = "";
+            dgvLineas.DataSource=null;
+            dgvPlatos.DataSource=null;
             _promo = new NegocioWS.promocion();
             _listaLineas = new BindingList<NegocioWS.lineaPromocion>();
         }
@@ -116,7 +117,14 @@ namespace LP2Soft
             frm_Gestion_Productos_BusquedaCombo frmBusquedaCombo = new frm_Gestion_Productos_BusquedaCombo();
             if (frmBusquedaCombo.ShowDialog() == DialogResult.OK)
             {
-                //_promo = frmBusquedaCombo
+                _promo = frmBusquedaCombo.PromoSeleccionada;
+                txtID.Text = _promo.idItemVendible.ToString();
+                txtNombre.Text = _promo.nombre;
+                txtPrecio.Text = _promo.precio.ToString();
+                txtDescripcion.Text = _promo.descripcion;
+                dgvLineas.DataSource = _promo.lista_de_Comidas;
+                
+
             }
 
         }
@@ -295,32 +303,34 @@ namespace LP2Soft
         {
             if(e.KeyCode == Keys.Enter)
             {
-                //MessageBox.Show("Hello World");
-                dgvPlatos.DataSource= daoNegocio.listarTodasPromociones();
+                //al apretar enter se muestra los productos
+                dgvPlatos.DataSource= daoNegocio.listarProductoXNombre(txtBuscar.Text);
 
             }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            _prodSelec = new NegocioWS.promocion();
-            _prodSelec = (NegocioWS.promocion)dgvPlatos.CurrentRow.DataBoundItem;
+            _prodSelec = new NegocioWS.producto();
+            _prodSelec = (NegocioWS.producto)dgvPlatos.CurrentRow.DataBoundItem;
             //this.DialogResult = DialogResult.OK;
             txtPlato.Text = _prodSelec.nombre;
-            //DataGridViewRow seleccionado = dgvPlatos.CurrentRow;
-            //seleccionado.InheritedStyle.ForeColor = Color.Yellow;
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             NegocioWS.lineaPromocion linea = new NegocioWS.lineaPromocion();
             //linea.idLineaPromocion = _prodSelec.id generado en BD
+            //los insertados al inicio solo tendra id 0
+            //pero sacados de la BD ya tendran un id asignado
             linea.estado = true;
-            //linea.producto = _prodSelec;
+            linea.producto = _prodSelec;
             linea.unidades = Int32.Parse(txtCantidad.Text);
             
             _listaLineas.Add(linea);
             dgvLineas.DataSource= _listaLineas;
+            
 
         }
 
