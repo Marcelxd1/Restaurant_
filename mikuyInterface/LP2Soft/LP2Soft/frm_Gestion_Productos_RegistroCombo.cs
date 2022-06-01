@@ -24,6 +24,7 @@ namespace LP2Soft
             _estado = Estado.Inicial;
             dgvPlatos.AutoGenerateColumns= false;
             dgvLineas.AutoGenerateColumns= false;
+            dgvLineas.ScrollBars = ScrollBars.Both;
             establecerEstadoComponentes();
             
             
@@ -315,21 +316,25 @@ namespace LP2Soft
             _prodSelec = (NegocioWS.producto)dgvPlatos.CurrentRow.DataBoundItem;
             //this.DialogResult = DialogResult.OK;
             txtPlato.Text = _prodSelec.nombre;
-            
+            dgvLineas.DataSource = _listaLineas;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             NegocioWS.lineaPromocion linea = new NegocioWS.lineaPromocion();
+            NegocioWS.producto prodinser= new NegocioWS.producto();
+            prodinser = _prodSelec;
             //linea.idLineaPromocion = _prodSelec.id generado en BD
             //los insertados al inicio solo tendra id 0
             //pero sacados de la BD ya tendran un id asignado
             linea.estado = true;
-            linea.producto = _prodSelec;
+            linea.producto = prodinser;
             linea.unidades = Int32.Parse(txtCantidad.Text);
             
             _listaLineas.Add(linea);
-            dgvLineas.DataSource= _listaLineas;
+            dgvLineas.Rows[dgvLineas.RowCount-2].Cells[1].Value = linea.producto.nombre;
+            String dato = dgvLineas.Rows[dgvLineas.RowCount - 2].Cells[1].Value.ToString();
+            MessageBox.Show(dato);
             
 
         }
@@ -341,7 +346,6 @@ namespace LP2Soft
             try
             {
                 _listaLineas.Remove(_lineaSelec);
-                dgvLineas.DataSource = _listaLineas;
                 //deberian de desactivarse en la BD? 
                 //-> si esta creandose aun no esta en BD pero cuando se modifica si
                 //si estado modificar entonces -> "eliminarLinea"
@@ -352,6 +356,34 @@ namespace LP2Soft
                         , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void dgvLineas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+                if (dgvLineas.DataSource!=null)
+                {
+                    if (_estado == Estado.Buscar)
+                    {
+                        NegocioWS.lineaPromocion linea = (NegocioWS.lineaPromocion)dgvLineas.Rows[e.RowIndex].DataBoundItem;
+                        dgvLineas.Rows[e.RowIndex].Cells[0].Value = linea.idLineaPromocion;
+                        dgvLineas.Rows[e.RowIndex].Cells[1].Value = linea.producto.nombre;
+                        dgvLineas.Rows[e.RowIndex].Cells[2].Value = linea.unidades;
+                    }
+                    else if (_estado == Estado.Nuevo)
+                    {
+                       
+                    }
+                    
+                }
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+
         }
     }
 }

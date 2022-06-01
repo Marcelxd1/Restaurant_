@@ -43,6 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPlatos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLineas = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.pctImagenPlato = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -217,6 +217,8 @@
             // 
             // dgvPlatos
             // 
+            this.dgvPlatos.AllowUserToAddRows = false;
+            this.dgvPlatos.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvPlatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -249,10 +251,11 @@
             this.dgvPlatos.Location = new System.Drawing.Point(605, 97);
             this.dgvPlatos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPlatos.Name = "dgvPlatos";
+            this.dgvPlatos.ReadOnly = true;
             this.dgvPlatos.RowHeadersVisible = false;
             this.dgvPlatos.RowHeadersWidth = 51;
             this.dgvPlatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlatos.Size = new System.Drawing.Size(447, 170);
+            this.dgvPlatos.Size = new System.Drawing.Size(411, 168);
             this.dgvPlatos.TabIndex = 50;
             this.dgvPlatos.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPlatos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -268,7 +271,7 @@
             this.dgvPlatos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvPlatos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPlatos.ThemeStyle.HeaderStyle.Height = 22;
-            this.dgvPlatos.ThemeStyle.ReadOnly = false;
+            this.dgvPlatos.ThemeStyle.ReadOnly = true;
             this.dgvPlatos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPlatos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPlatos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -276,6 +279,22 @@
             this.dgvPlatos.ThemeStyle.RowsStyle.Height = 22;
             this.dgvPlatos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPlatos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // Nro
+            // 
+            this.Nro.DataPropertyName = "idProducto";
+            this.Nro.HeaderText = "ID.";
+            this.Nro.MinimumWidth = 6;
+            this.Nro.Name = "Nro";
+            this.Nro.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // dgvLineas
             // 
@@ -339,6 +358,7 @@
             this.dgvLineas.ThemeStyle.RowsStyle.Height = 22;
             this.dgvLineas.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLineas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvLineas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLineas_CellFormatting);
             // 
             // guna2Button1
             // 
@@ -687,20 +707,6 @@
             this.guna2PictureBox3.TabIndex = 32;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // Nro
-            // 
-            this.Nro.DataPropertyName = "idProducto";
-            this.Nro.HeaderText = "ID.";
-            this.Nro.MinimumWidth = 6;
-            this.Nro.Name = "Nro";
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -714,7 +720,6 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "producto";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
