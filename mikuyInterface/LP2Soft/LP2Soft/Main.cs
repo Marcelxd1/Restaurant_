@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LP2Soft
@@ -14,7 +7,7 @@ namespace LP2Soft
     {
         private UserWS.persona persona;
         private UserWS.rol rol;
-        private Form formularioActivo = null; 
+        private Form formularioActivo = null;
         public Main()
         {
             InitializeComponent();
@@ -51,11 +44,11 @@ namespace LP2Soft
         public void abrirFormulario(Form formularioMostrar)
         {
             if (formularioActivo != null)
-                formularioActivo.Close(); 
+                formularioActivo.Close();
             formularioActivo = formularioMostrar;
             formularioMostrar.TopLevel = false;
             panelContenedor.Controls.Add(formularioMostrar);
-            formularioMostrar.Show();   
+            formularioMostrar.Show();
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
