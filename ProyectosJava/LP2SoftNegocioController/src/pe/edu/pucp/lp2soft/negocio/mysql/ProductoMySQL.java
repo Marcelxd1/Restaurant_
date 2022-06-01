@@ -121,6 +121,7 @@ public class ProductoMySQL implements ProductoDAO{
             while(rs.next()){
                 Producto producto = new Producto();
                 producto.setIdProducto(rs.getInt("id_item_vendible"));
+                producto.setIdItemVendible(rs.getInt("id_item_vendible"));
                 producto.setNombre(rs.getString("nombre"));
                 producto.setPrecio(rs.getDouble("precio"));
                 producto.setDescripcion(rs.getString("descripcion"));

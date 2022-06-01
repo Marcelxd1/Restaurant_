@@ -86,3 +86,4 @@ ProyectosJava/LP2SoftUserModel/nbproject/private/private.xml
 /ProyectosJava/LP2SoftWebServices/build/
 /ProyectosJava/LP2SoftWebServices/dist/
 *.cache
+*.properties

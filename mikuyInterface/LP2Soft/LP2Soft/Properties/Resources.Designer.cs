@@ -253,6 +253,16 @@ namespace LP2Soft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imagenVacia {
+            get {
+                object obj = ResourceManager.GetObject("imagenVacia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LA_CAMPIÑA {
             get {
                 object obj = ResourceManager.GetObject("LA_CAMPIÑA", resourceCulture);
