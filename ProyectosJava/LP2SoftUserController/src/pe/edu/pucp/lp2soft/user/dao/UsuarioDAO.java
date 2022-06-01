@@ -11,4 +11,5 @@ public interface UsuarioDAO {
     int eliminiar(int idUsuario);
     Usuario listarPorId(int idUsuario);
     ArrayList<Usuario> listarXNombre(String nombre);
+    Usuario verificarUsuario (Usuario usuario);
 }

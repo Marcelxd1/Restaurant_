@@ -202,5 +202,29 @@ public class UsuarioMySQL implements UsuarioDAO {
         
         return resultado ;
     }
-
+    
+    @Override
+    public Usuario verificarUsuario(Usuario usuario) {
+        int resultado = -1 ;
+        Usuario user = null;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call VERIFICAR_CUENTA_USUARIO(?,?)}");
+            cs.setString("_username", usuario.getUsuario());
+            cs.setString("_password", usuario.getPassword()); 
+            rs = cs.executeQuery();
+            if(rs.next()){
+                user = new Usuario();
+                Rol rol  = new Rol ();
+                user.setId_usuario(rs.getInt("id_usuario"));
+                rol.setId_rol(rs.getInt("fid_rol"));
+                user.setRol(rol);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return user ;
+    }
 }

@@ -6,12 +6,15 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.lp2soft.user.dao.AsistenciaDAO;
 import pe.edu.pucp.lp2soft.user.dao.PersonaDAO;
+import pe.edu.pucp.lp2soft.user.dao.RolDAO;
 import pe.edu.pucp.lp2soft.user.dao.UsuarioDAO;
 import pe.edu.pucp.lp2soft.user.mysql.AsistenciaMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.PersonaMySQL;
+import pe.edu.pucp.lp2soft.user.mysql.RolMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.UsuarioMySQL;
 import pe.edu.pucp.lp2soft.usuario.model.Asistencia;
 import pe.edu.pucp.lp2soft.usuario.model.Persona;
+import pe.edu.pucp.lp2soft.usuario.model.Rol;
 import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
 
@@ -21,6 +24,7 @@ public class UserWS {
     private AsistenciaDAO daoAsistencia = new AsistenciaMySQL();
     private UsuarioDAO daoUsuario = new UsuarioMySQL();
     private PersonaDAO daoPersona = new PersonaMySQL();
+    private RolDAO daoRol = new RolMySQL();
     
     //ASISTENCIA =========================================================================
 
@@ -215,4 +219,36 @@ public class UserWS {
         return personas;
     }
     
+    @WebMethod(operationName = "verificarCuentaUsuario")
+    public Usuario verificarCuentaUsuario(@WebParam(name = "usuario") Usuario usuario) {
+        Usuario user = new Usuario() ; 
+        try{
+            user = daoUsuario.verificarUsuario(usuario);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return user ;
+    }
+    
+    @WebMethod(operationName = "buscarPersonaPorIdUsuario")
+    public Persona buscarPersonaPorIdUsuario(@WebParam(name = "id_usuario") int id_usuario) {
+        Persona persona  = new Persona(); 
+        try{
+            persona = daoPersona.listarPorId(id_usuario);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return persona ;
+    }
+    
+    @WebMethod(operationName = "buscarRolPorId")
+    public Rol buscarRolPorId(@WebParam(name = "id_rol") int id_rol) {
+        Rol rol  = new Rol(); 
+        try{
+           rol = daoRol.listarPorId(id_rol); 
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return rol ;
+    }
 }

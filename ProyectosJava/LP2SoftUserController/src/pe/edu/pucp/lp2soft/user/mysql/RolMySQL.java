@@ -105,7 +105,24 @@ public class RolMySQL implements RolDAO{
 
     @Override
     public Rol listarPorId(int idRol) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         Rol rol = null;
+        
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call BUSCAR_ROL_POR_ID(?)}");
+            cs.setInt("_id_rol", idRol);
+            rs = cs.executeQuery();
+            if(rs.next()){
+                rol = new Rol();
+                rol.setId_rol(idRol);
+                rol.setDescripcion(rs.getString("descripcion"));
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return rol;
     }
 
 }

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelSuperior = new System.Windows.Forms.Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pctPersona = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblRolPersona = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNombre = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.btnSignOut = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panelContenedor = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnClientes = new Guna.UI2.WinForms.Guna2Button();
             this.btnAsistencia = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -43,14 +43,16 @@
             this.btnCocina = new Guna.UI2.WinForms.Guna2Button();
             this.btnGestion = new Guna.UI2.WinForms.Guna2Button();
             this.btnPedidos = new Guna.UI2.WinForms.Guna2Button();
-            this.panelContenedor = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pctPersona = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPersona)).BeginInit();
             this.panelLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSignOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelContenedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelContenedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPersona)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSuperior
@@ -66,33 +68,11 @@
             this.panelSuperior.Size = new System.Drawing.Size(1257, 168);
             this.panelSuperior.TabIndex = 0;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackgroundImage = global::LP2Soft.Properties.Resources.logo_restaurant;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(71, 51);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(123, 108);
-            this.guna2PictureBox1.TabIndex = 5;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // pctPersona
-            // 
-            this.pctPersona.BackgroundImage = global::LP2Soft.Properties.Resources.User;
-            this.pctPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctPersona.Location = new System.Drawing.Point(1146, 51);
-            this.pctPersona.Name = "pctPersona";
-            this.pctPersona.ShadowDecoration.Parent = this.pctPersona;
-            this.pctPersona.Size = new System.Drawing.Size(91, 96);
-            this.pctPersona.TabIndex = 4;
-            this.pctPersona.TabStop = false;
-            // 
             // lblRolPersona
             // 
             this.lblRolPersona.BackColor = System.Drawing.Color.Transparent;
             this.lblRolPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRolPersona.Location = new System.Drawing.Point(977, 94);
+            this.lblRolPersona.Location = new System.Drawing.Point(903, 94);
             this.lblRolPersona.Name = "lblRolPersona";
             this.lblRolPersona.Size = new System.Drawing.Size(75, 27);
             this.lblRolPersona.TabIndex = 3;
@@ -102,7 +82,7 @@
             // 
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(977, 61);
+            this.lblNombre.Location = new System.Drawing.Point(903, 61);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(120, 27);
             this.lblNombre.TabIndex = 2;
@@ -123,6 +103,28 @@
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(259, 579);
             this.panelLateral.TabIndex = 1;
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Image = global::LP2Soft.Properties.Resources.signout;
+            this.btnSignOut.Location = new System.Drawing.Point(1188, 685);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.ShadowDecoration.Parent = this.btnSignOut;
+            this.btnSignOut.Size = new System.Drawing.Size(49, 50);
+            this.btnSignOut.TabIndex = 3;
+            this.btnSignOut.TabStop = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Image = ((System.Drawing.Image)(resources.GetObject("panelContenedor.Image")));
+            this.panelContenedor.Location = new System.Drawing.Point(372, 184);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.ShadowDecoration.Parent = this.panelContenedor;
+            this.panelContenedor.Size = new System.Drawing.Size(753, 525);
+            this.panelContenedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.panelContenedor.TabIndex = 2;
+            this.panelContenedor.TabStop = false;
             // 
             // btnClientes
             // 
@@ -262,16 +264,27 @@
             this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
-            // panelContenedor
+            // guna2PictureBox1
             // 
-            this.panelContenedor.Image = ((System.Drawing.Image)(resources.GetObject("panelContenedor.Image")));
-            this.panelContenedor.Location = new System.Drawing.Point(372, 184);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.ShadowDecoration.Parent = this.panelContenedor;
-            this.panelContenedor.Size = new System.Drawing.Size(753, 525);
-            this.panelContenedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.panelContenedor.TabIndex = 2;
-            this.panelContenedor.TabStop = false;
+            this.guna2PictureBox1.BackgroundImage = global::LP2Soft.Properties.Resources.logo_restaurant;
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(71, 51);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(123, 108);
+            this.guna2PictureBox1.TabIndex = 5;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // pctPersona
+            // 
+            this.pctPersona.BackgroundImage = global::LP2Soft.Properties.Resources.User;
+            this.pctPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctPersona.Location = new System.Drawing.Point(1146, 51);
+            this.pctPersona.Name = "pctPersona";
+            this.pctPersona.ShadowDecoration.Parent = this.pctPersona;
+            this.pctPersona.Size = new System.Drawing.Size(91, 96);
+            this.pctPersona.TabIndex = 4;
+            this.pctPersona.TabStop = false;
             // 
             // Main
             // 
@@ -279,6 +292,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1257, 747);
+            this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelLateral);
             this.Controls.Add(this.panelSuperior);
@@ -288,12 +302,13 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPersona)).EndInit();
             this.panelLateral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSignOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelContenedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelContenedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPersona)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,5 +330,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox panelContenedor;
         private Guna.UI2.WinForms.Guna2Button btnClientes;
         private Guna.UI2.WinForms.Guna2Button btnAsistencia;
+        private Guna.UI2.WinForms.Guna2PictureBox btnSignOut;
     }
 }

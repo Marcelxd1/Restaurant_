@@ -12,10 +12,40 @@ namespace LP2Soft
 {
     public partial class Main : Form
     {
+        private UserWS.persona persona;
+        private UserWS.rol rol;
         private Form formularioActivo = null; 
         public Main()
         {
             InitializeComponent();
+        }
+        public Main(UserWS.persona persona, UserWS.rol rol)
+        {
+            InitializeComponent();
+            this.persona = persona;
+            this.rol = rol;
+            lblNombre.Text = this.persona.nombre + " " + this.persona.apellido_paterno;
+            lblRolPersona.Text = this.rol.descripcion;
+            if (rol.descripcion == "MESERO")
+            {
+                btnAsistencia.Visible = false;
+                btnCaja.Visible = false;
+                btnClientes.Visible = false;
+                btnGestion.Visible = false;
+                btnCocina.Visible = false;
+            }
+            else if (rol.descripcion == "CAJERO")
+            {
+                btnGestion.Visible = false;
+            }
+            else if (rol.descripcion == "COCINERO")
+            {
+                btnAsistencia.Visible = false;
+                btnCaja.Visible = false;
+                btnClientes.Visible = false;
+                btnGestion.Visible = false;
+                btnPedidos.Visible = false;
+            }
         }
 
         public void abrirFormulario(Form formularioMostrar)
@@ -52,6 +82,13 @@ namespace LP2Soft
         private void Main_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            frm_Login_Usuario frmLogin = new frm_Login_Usuario();
+            frmLogin.Show();
+            this.Close();
         }
     }
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="NegocioWS">
-      <implementation-class>pe.edu.pucp.lp2soft.services.NegocioWS</implementation-class>
+    <service name="UserWS">
+      <implementation-class>pe.edu.pucp.lp2soft.services.UserWS</implementation-class>
     </service>
     <service name="CajaWS">
       <implementation-class>pe.edu.pucp.lp2soft.services.CajaWS</implementation-class>
     </service>
-    <service name="UserWS">
-      <implementation-class>pe.edu.pucp.lp2soft.services.UserWS</implementation-class>
+    <service name="NegocioWS">
+      <implementation-class>pe.edu.pucp.lp2soft.services.NegocioWS</implementation-class>
     </service>
   </services>
   <clients/>
