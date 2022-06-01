@@ -456,7 +456,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
     <None Include="Resources\signout.png" />
   </ItemGroup>
   <ItemGroup>
@@ -470,9 +469,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-=======
     <None Include="Resources\imagenVacia.png" />
->>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
