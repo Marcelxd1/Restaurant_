@@ -162,6 +162,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_Asitencia.es-PE.resx">
+      <DependentUpon>frm_Asitencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Productos_BusquedaCombo.resx">
       <DependentUpon>frm_Gestion_Productos_BusquedaCombo.cs</DependentUpon>
     </EmbeddedResource>

@@ -94,8 +94,8 @@ namespace LP2Soft
             userVerificar = daoUser.verificarCuentaUsuario(user);
             if (userVerificar != null)
             {
-                lblError.Visible = true;
-                lblError.Text = "ENTRO ACA.";
+                //lblError.Visible = true;
+                //lblError.Text = "ENTRO ACA.";
                 UserWS.rol rol = daoUser.buscarRolPorId(userVerificar.rol.id_rol);
                 UserWS.persona persona = daoUser.buscarPersonaPorIdUsuario(userVerificar.id_usuario);
 

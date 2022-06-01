@@ -150,3 +150,6 @@ C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterface\LP2Soft\
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterface\LP2Soft\LP2Soft\obj\Debug\LP2Soft.csproj.CopyComplete
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterface\LP2Soft\LP2Soft\obj\Debug\LP2Soft.exe
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterface\LP2Soft\LP2Soft\obj\Debug\LP2Soft.pdb
+C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterface\LP2Soft\LP2Soft\bin\Debug\es-PE\LP2Soft.resources.dll
+C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterface\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Asitencia.es-PE.resources
+C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterface\LP2Soft\LP2Soft\obj\Debug\es-PE\LP2Soft.resources.dll
