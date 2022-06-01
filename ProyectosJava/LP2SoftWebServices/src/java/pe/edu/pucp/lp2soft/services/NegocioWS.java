@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import pe.edu.pucp.lp2soft.negocio.dao.CategoriaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.ProductoDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.PromocionDAO;
+import pe.edu.pucp.lp2soft.negocio.model.Categoria;
 import pe.edu.pucp.lp2soft.negocio.model.Producto;
 import pe.edu.pucp.lp2soft.negocio.model.Promocion;
+import pe.edu.pucp.lp2soft.negocio.mysql.CategoriaMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.ProductoMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.PromocionMySQL;
 
@@ -19,6 +22,7 @@ public class NegocioWS {
     
     private ProductoDAO daoProducto= new ProductoMySQL();
     
+    private CategoriaDAO daoCategoria = new CategoriaMySQL();
     // PROMOCION ==========================================================================
     
     @WebMethod(operationName = "insertarPromocion")
@@ -124,5 +128,49 @@ public class NegocioWS {
         return productos;
     }
     
+    // CATEGORIA ========================================================================== 
+    @WebMethod(operationName = "insertarCategoria")
+    public int insertarCategoria(@WebParam(name = "Categoria") Categoria categoria) {
+        int resultado = 0;
+        try{
+            resultado= daoCategoria.insertar(categoria);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+
+    @WebMethod(operationName = "modificarCategoria")
+    public int modificarCategoria(@WebParam(name = "Categoria") Categoria categoria) {
+        int resultado = 0;
+        try{
+            resultado= daoCategoria.modificar(categoria);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+
+    @WebMethod(operationName = "eliminarCategoria")
+    public int eliminarCategoria(@WebParam(name = "idCategoria") int idCategoria) {
+        int resultado = 0;
+        try{
+            resultado= daoCategoria.eliminar(idCategoria);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+
+    @WebMethod(operationName = "listarTodasCategorias")
+    public ArrayList<Categoria> listarTodasCategorias() {
+        ArrayList<Categoria> categorias = new ArrayList<>();
+        try{
+            categorias = daoCategoria.listarTodas();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return categorias;
+    }
 }
      
