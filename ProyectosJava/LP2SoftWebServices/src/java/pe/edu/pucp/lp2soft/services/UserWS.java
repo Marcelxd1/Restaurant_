@@ -251,4 +251,27 @@ public class UserWS {
         }
         return rol ;
     }
+    
+    @WebMethod(operationName = "listarRolTodos")
+    public ArrayList<Rol> listarRolTodos() {
+        ArrayList<Rol> roles = new ArrayList<>();
+        try{
+            roles= daoRol.listarTodas();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return roles;
+    }
+    
+    
+    @WebMethod(operationName = "modificarDatosUsuario")
+    public int modificarDatosUsuario(@WebParam(name = "usuario") Usuario usuario) {
+        int resultado = 0;
+        try{
+            resultado= daoUsuario.modificarDatos(usuario);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
 }

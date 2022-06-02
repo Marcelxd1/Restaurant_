@@ -1,3 +1,7 @@
+drop procedure if exists VERIFICAR_CUENTA_USUARIO ;
+drop procedure if exists BUSCAR_ROL_POR_ID ;
+drop procedure if exists LISTAR_USUARIO_X_NOMBRE ; 
+drop procedure if exists MODIFICAR_DATOS_USUARIO ; 
 -- RESTAURANTE ------------------------------------------------------------------------------------------------------------
 DELIMITER $
 CREATE PROCEDURE INSERTAR_RESTAURANTE(out _id_rest int , in _ruc varchar(20) , in _nombre varchar(50) , in _telefono varchar(20),
@@ -289,11 +293,12 @@ END$
 
 CREATE PROCEDURE LISTAR_USUARIO_X_NOMBRE(IN _nombre VARCHAR(100))
 BEGIN
-	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI
-    from usuario u inner join persona p on u.id_usuario = p.id_persona
+	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI , r.descripcion as rol
+    from usuario u 
+    inner join persona p on u.id_usuario = p.id_persona
+    inner join rol r on r.id_rol = u.fid_rol
     where p.activo = 1 AND  p.nombre LIKE CONCAT('%',_nombre,'%');
 END$
-
 CREATE PROCEDURE ELIMINAR_PERSONA (IN _id_persona INT)
 BEGIN
 	UPDATE persona SET activo = 0 WHERE id_persona = _id_persona ;
@@ -641,3 +646,37 @@ CREATE procedure BUSCAR_PERSONA_POR_ID(
 	SELECT id_persona , nombre, apellido_paterno , DNI from persona where _id_persona= id_persona ;
 END$
 DELIMITER ;
+
+-----------------------------
+CREATE PROCEDURE VERIFICAR_CUENTA_USUARIO(in _username varchar(100) , in _password varchar(100))
+begin
+	select * from usuario where usuario = _username and password = _password ;
+end $
+
+CREATE PROCEDURE BUSCAR_ROL_POR_ID(in _id_rol int)
+begin
+	select * from rol where id_rol = _id_rol ; 
+end $
+
+
+CREATE PROCEDURE LISTAR_USUARIO_X_NOMBRE(IN _nombre VARCHAR(100))
+BEGIN
+	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI , r.descripcion as rol , r.id_rol as id_rol
+    from usuario u 
+    inner join persona p on u.id_usuario = p.id_persona
+    inner join rol r on r.id_rol = u.fid_rol
+    where p.activo = 1 AND  p.nombre LIKE CONCAT('%',_nombre,'%');
+END$
+
+CREATE  PROCEDURE INSERTAR_USUARIO(in _id_usuario int , in _fid_rol varchar(50) , in _fid_restaurante varchar(50) ,in _usuario varchar(50),
+									in _password varchar(50) , in _salario decimal(10,2) , in _telefono varchar(50))
+BEGIN
+	insert into usuario(id_usuario, fid_rol,fid_restaurante,usuario,password,salario,telefono) 
+					values (_id_usuario, _fid_rol,_fid_restaurante,_usuario,_password,_salario,_telefono) ; 
+END$
+
+CREATE PROCEDURE MODIFICAR_DATOS_USUARIO(in _id_usuario int , in _fid_rol int , in _salario decimal(10,2) , in _telefono varchar(30)  )
+begin 
+	update usuario set 	fid_rol = _fid_rol , salario = _salario , telefono = _telefono 
+    where id_usuario = _id_usuario ; 
+end$

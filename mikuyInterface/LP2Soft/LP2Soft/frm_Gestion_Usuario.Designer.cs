@@ -46,9 +46,13 @@
             this.txtDNI = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRegistrar = new Guna.UI2.WinForms.Guna2Button();
             this.lblDatosUsuario = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.txtTelefono = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.txtSueldo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblSueldo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +71,7 @@
             this.cmbRol.HoverState.Parent = this.cmbRol;
             this.cmbRol.ItemHeight = 30;
             this.cmbRol.ItemsAppearance.Parent = this.cmbRol;
-            this.cmbRol.Location = new System.Drawing.Point(153, 213);
+            this.cmbRol.Location = new System.Drawing.Point(317, 152);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.ShadowDecoration.Parent = this.cmbRol;
             this.cmbRol.Size = new System.Drawing.Size(203, 36);
@@ -91,7 +95,7 @@
             this.txtPasswordConfirm.ForeColor = System.Drawing.Color.Black;
             this.txtPasswordConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPasswordConfirm.HoverState.Parent = this.txtPasswordConfirm;
-            this.txtPasswordConfirm.Location = new System.Drawing.Point(482, 377);
+            this.txtPasswordConfirm.Location = new System.Drawing.Point(322, 404);
             this.txtPasswordConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPasswordConfirm.Name = "txtPasswordConfirm";
             this.txtPasswordConfirm.PasswordChar = '\0';
@@ -106,7 +110,7 @@
             this.lblConfirmarPassword.AutoSize = true;
             this.lblConfirmarPassword.BackColor = System.Drawing.SystemColors.Window;
             this.lblConfirmarPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmarPassword.Location = new System.Drawing.Point(478, 349);
+            this.lblConfirmarPassword.Location = new System.Drawing.Point(318, 376);
             this.lblConfirmarPassword.Name = "lblConfirmarPassword";
             this.lblConfirmarPassword.Size = new System.Drawing.Size(192, 24);
             this.lblConfirmarPassword.TabIndex = 53;
@@ -130,7 +134,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.HoverState.Parent = this.txtPassword;
-            this.txtPassword.Location = new System.Drawing.Point(482, 315);
+            this.txtPassword.Location = new System.Drawing.Point(322, 342);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
@@ -145,7 +149,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.SystemColors.Window;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(476, 286);
+            this.lblPassword.Location = new System.Drawing.Point(316, 314);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(106, 24);
             this.lblPassword.TabIndex = 51;
@@ -156,7 +160,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.SystemColors.Window;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(149, 286);
+            this.lblUsername.Location = new System.Drawing.Point(70, 314);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(97, 24);
             this.lblUsername.TabIndex = 50;
@@ -180,7 +184,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.HoverState.Parent = this.txtUsername;
-            this.txtUsername.Location = new System.Drawing.Point(153, 314);
+            this.txtUsername.Location = new System.Drawing.Point(74, 342);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
@@ -195,7 +199,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.Window;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(369, 257);
+            this.label6.Location = new System.Drawing.Point(72, 278);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 29);
             this.label6.TabIndex = 48;
@@ -219,7 +223,7 @@
             this.txtApellidoMaterno.ForeColor = System.Drawing.Color.Black;
             this.txtApellidoMaterno.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellidoMaterno.HoverState.Parent = this.txtApellidoMaterno;
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(480, 152);
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(579, 90);
             this.txtApellidoMaterno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.PasswordChar = '\0';
@@ -234,7 +238,7 @@
             this.lblApellidoMaterno.AutoSize = true;
             this.lblApellidoMaterno.BackColor = System.Drawing.SystemColors.Window;
             this.lblApellidoMaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidoMaterno.Location = new System.Drawing.Point(476, 124);
+            this.lblApellidoMaterno.Location = new System.Drawing.Point(587, 62);
             this.lblApellidoMaterno.Name = "lblApellidoMaterno";
             this.lblApellidoMaterno.Size = new System.Drawing.Size(153, 24);
             this.lblApellidoMaterno.TabIndex = 46;
@@ -258,7 +262,7 @@
             this.txtApellidoPaterno.ForeColor = System.Drawing.Color.Black;
             this.txtApellidoPaterno.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellidoPaterno.HoverState.Parent = this.txtApellidoPaterno;
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(480, 90);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(320, 90);
             this.txtApellidoPaterno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.PasswordChar = '\0';
@@ -273,7 +277,7 @@
             this.lblApellidoPaterno.AutoSize = true;
             this.lblApellidoPaterno.BackColor = System.Drawing.SystemColors.Window;
             this.lblApellidoPaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidoPaterno.Location = new System.Drawing.Point(476, 62);
+            this.lblApellidoPaterno.Location = new System.Drawing.Point(313, 62);
             this.lblApellidoPaterno.Name = "lblApellidoPaterno";
             this.lblApellidoPaterno.Size = new System.Drawing.Size(149, 24);
             this.lblApellidoPaterno.TabIndex = 44;
@@ -284,7 +288,7 @@
             this.lblRol.AutoSize = true;
             this.lblRol.BackColor = System.Drawing.SystemColors.Window;
             this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Location = new System.Drawing.Point(149, 186);
+            this.lblRol.Location = new System.Drawing.Point(318, 124);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(38, 24);
             this.lblRol.TabIndex = 43;
@@ -308,7 +312,7 @@
             this.txtNombre.ForeColor = System.Drawing.Color.Black;
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
-            this.txtNombre.Location = new System.Drawing.Point(153, 90);
+            this.txtNombre.Location = new System.Drawing.Point(74, 90);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -336,8 +340,9 @@
             this.txtDNI.ForeColor = System.Drawing.Color.Black;
             this.txtDNI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDNI.HoverState.Parent = this.txtDNI;
-            this.txtDNI.Location = new System.Drawing.Point(153, 152);
+            this.txtDNI.Location = new System.Drawing.Point(74, 152);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.PasswordChar = '\0';
             this.txtDNI.PlaceholderText = "";
@@ -351,7 +356,7 @@
             this.lblDNI.AutoSize = true;
             this.lblDNI.BackColor = System.Drawing.SystemColors.Window;
             this.lblDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNI.Location = new System.Drawing.Point(149, 124);
+            this.lblDNI.Location = new System.Drawing.Point(70, 124);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(41, 24);
             this.lblDNI.TabIndex = 40;
@@ -362,27 +367,28 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.SystemColors.Window;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(149, 62);
+            this.lblNombre.Location = new System.Drawing.Point(70, 62);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(79, 24);
             this.lblNombre.TabIndex = 39;
             this.lblNombre.Text = "Nombre";
             // 
-            // btnGuardar
+            // btnRegistrar
             // 
-            this.btnGuardar.BorderRadius = 10;
-            this.btnGuardar.CheckedState.Parent = this.btnGuardar;
-            this.btnGuardar.CustomImages.Parent = this.btnGuardar;
-            this.btnGuardar.FillColor = System.Drawing.Color.Black;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.HoverState.Parent = this.btnGuardar;
-            this.btnGuardar.Location = new System.Drawing.Point(374, 423);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.ShadowDecoration.Parent = this.btnGuardar;
-            this.btnGuardar.Size = new System.Drawing.Size(88, 28);
-            this.btnGuardar.TabIndex = 38;
-            this.btnGuardar.Text = "Guardar";
+            this.btnRegistrar.BorderRadius = 10;
+            this.btnRegistrar.CheckedState.Parent = this.btnRegistrar;
+            this.btnRegistrar.CustomImages.Parent = this.btnRegistrar;
+            this.btnRegistrar.FillColor = System.Drawing.Color.Black;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.HoverState.Parent = this.btnRegistrar;
+            this.btnRegistrar.Location = new System.Drawing.Point(374, 441);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.ShadowDecoration.Parent = this.btnRegistrar;
+            this.btnRegistrar.Size = new System.Drawing.Size(88, 28);
+            this.btnRegistrar.TabIndex = 38;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // lblDatosUsuario
             // 
@@ -401,16 +407,99 @@
             this.guna2PictureBox3.Location = new System.Drawing.Point(12, 12);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(837, 487);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(837, 478);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 56;
             this.guna2PictureBox3.TabStop = false;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.BorderColor = System.Drawing.Color.White;
+            this.txtTelefono.BorderRadius = 10;
+            this.txtTelefono.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTelefono.DefaultText = "";
+            this.txtTelefono.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTelefono.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTelefono.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTelefono.DisabledState.Parent = this.txtTelefono;
+            this.txtTelefono.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTelefono.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtTelefono.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTelefono.FocusedState.Parent = this.txtTelefono;
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.ForeColor = System.Drawing.Color.Black;
+            this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTelefono.HoverState.Parent = this.txtTelefono;
+            this.txtTelefono.Location = new System.Drawing.Point(579, 152);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.PasswordChar = '\0';
+            this.txtTelefono.PlaceholderText = "";
+            this.txtTelefono.SelectedText = "";
+            this.txtTelefono.ShadowDecoration.Parent = this.txtTelefono;
+            this.txtTelefono.Size = new System.Drawing.Size(203, 30);
+            this.txtTelefono.TabIndex = 57;
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.BackColor = System.Drawing.SystemColors.Window;
+            this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(585, 124);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(85, 24);
+            this.lblTelefono.TabIndex = 58;
+            this.lblTelefono.Text = "Teléfono";
+            // 
+            // txtSueldo
+            // 
+            this.txtSueldo.BorderColor = System.Drawing.Color.White;
+            this.txtSueldo.BorderRadius = 10;
+            this.txtSueldo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSueldo.DefaultText = "";
+            this.txtSueldo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSueldo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSueldo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSueldo.DisabledState.Parent = this.txtSueldo;
+            this.txtSueldo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSueldo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtSueldo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSueldo.FocusedState.Parent = this.txtSueldo;
+            this.txtSueldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSueldo.ForeColor = System.Drawing.Color.Black;
+            this.txtSueldo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSueldo.HoverState.Parent = this.txtSueldo;
+            this.txtSueldo.Location = new System.Drawing.Point(74, 222);
+            this.txtSueldo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSueldo.Name = "txtSueldo";
+            this.txtSueldo.PasswordChar = '\0';
+            this.txtSueldo.PlaceholderText = "";
+            this.txtSueldo.SelectedText = "";
+            this.txtSueldo.ShadowDecoration.Parent = this.txtSueldo;
+            this.txtSueldo.Size = new System.Drawing.Size(203, 30);
+            this.txtSueldo.TabIndex = 59;
+            // 
+            // lblSueldo
+            // 
+            this.lblSueldo.AutoSize = true;
+            this.lblSueldo.BackColor = System.Drawing.SystemColors.Window;
+            this.lblSueldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSueldo.Location = new System.Drawing.Point(70, 194);
+            this.lblSueldo.Name = "lblSueldo";
+            this.lblSueldo.Size = new System.Drawing.Size(70, 24);
+            this.lblSueldo.TabIndex = 60;
+            this.lblSueldo.Text = "Sueldo";
             // 
             // frm_Gestion_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(861, 494);
+            this.Controls.Add(this.lblSueldo);
+            this.Controls.Add(this.txtSueldo);
+            this.Controls.Add(this.lblTelefono);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.txtPasswordConfirm);
             this.Controls.Add(this.lblConfirmarPassword);
@@ -428,7 +517,7 @@
             this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.lblDNI);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.lblDatosUsuario);
             this.Controls.Add(this.guna2PictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -460,8 +549,12 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDNI;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.Label lblNombre;
-        private Guna.UI2.WinForms.Guna2Button btnGuardar;
+        private Guna.UI2.WinForms.Guna2Button btnRegistrar;
         private System.Windows.Forms.Label lblDatosUsuario;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private Guna.UI2.WinForms.Guna2TextBox txtTelefono;
+        private System.Windows.Forms.Label lblTelefono;
+        private Guna.UI2.WinForms.Guna2TextBox txtSueldo;
+        private System.Windows.Forms.Label lblSueldo;
     }
 }
