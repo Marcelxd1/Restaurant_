@@ -201,11 +201,29 @@
       <xs:element minOccurs="0" name="Persona" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
+<<<<<<< HEAD
   <xs:complexType name="insertarPersonaResponse">
+=======
+  <xs:complexType name="listarPersonasTodas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPersonasTodasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarUsuarioResponse">
+>>>>>>> b597743040f7f52cd3f22907b7dea33afcebb013
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+<<<<<<< HEAD
   <xs:complexType name="listarPersonasTodas">
     <xs:sequence />
   </xs:complexType>
@@ -224,6 +242,8 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+=======
+>>>>>>> b597743040f7f52cd3f22907b7dea33afcebb013
   <xs:complexType name="insertarUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="Usuario" type="tns:usuario" />

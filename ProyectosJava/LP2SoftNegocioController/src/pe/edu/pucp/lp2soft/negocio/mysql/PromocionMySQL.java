@@ -147,12 +147,12 @@ public class PromocionMySQL implements PromocionDAO{
                 
                 //creacion de la lista asociada
                 promocion.setLista_de_Comidas(new ArrayList<LineaPromocion>());
-                LineaPromocion linea=new LineaPromocion();//la promo ya apunta a cada linea 
+                
                 cs=con.prepareCall("{call LISTAR_LINEA_PROMOCION_PROMO(?)}");
                 cs.setInt("_idPromo", promocion.getIdItemVendible());
                 ResultSet subrs = cs.executeQuery();
                 while (subrs.next()) {
-                    
+                    LineaPromocion linea=new LineaPromocion();//la promo ya apunta a cada linea 
                     linea.setEstado(subrs.getBoolean("estado"));
                     linea.setIdLineaPromocion(subrs.getInt("id_linea_promocion"));
                     linea.setUnidades(subrs.getInt("unidad"));
