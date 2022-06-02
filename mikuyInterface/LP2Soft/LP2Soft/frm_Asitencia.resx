@@ -122,7 +122,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="txtUsuario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 266</value>
+    <value>128, 250</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtUsuario.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -328,7 +328,7 @@
     <value>Microsoft Sans Serif, 18pt, style=Bold</value>
   </data>
   <data name="lblHora.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 109</value>
+    <value>129, 110</value>
   </data>
   <data name="lblHora.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 29</value>
