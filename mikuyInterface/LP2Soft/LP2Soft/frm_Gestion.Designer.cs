@@ -135,7 +135,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 29);
             this.label2.TabIndex = 41;
-            this.label2.Text = "Gestion";
+            this.label2.Text = "Gestión";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox5

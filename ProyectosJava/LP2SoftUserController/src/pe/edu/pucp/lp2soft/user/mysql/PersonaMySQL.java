@@ -45,6 +45,34 @@ public class PersonaMySQL implements PersonaDAO {
     }
     
     @Override
+    public ArrayList<Persona> listarClientesXNombre(String nombre) {
+        ArrayList<Persona> personas = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_CLIENTES_X_NOMBRE(?)}");
+            cs.setString("_nombre", nombre);
+            rs = cs.executeQuery();
+            while (rs.next()){
+                Persona persona = new Persona();
+                persona.setId_persona(rs.getInt("id_persona"));
+                persona.setNombre(rs.getString("nombre"));
+                persona.setApellido_paterno(rs.getString("apellido_paterno"));
+                persona.setApellido_materno(rs.getString("apellido_materno"));
+                persona.setDNI(rs.getString("DNI"));
+                persona.setRazon_social(rs.getString("razon_social"));
+                persona.setRuc(rs.getString("RUC"));
+                persona.setTipo(rs.getString("fid_tipo").charAt(0));
+                personas.add(persona);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return personas ;
+    }
+    
+    @Override
     public ArrayList<Persona> listarPersonas() {
         ArrayList<Persona> personas = new ArrayList<>();
         try {

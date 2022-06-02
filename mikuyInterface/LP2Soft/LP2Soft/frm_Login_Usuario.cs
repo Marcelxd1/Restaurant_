@@ -109,5 +109,10 @@ namespace LP2Soft
                 lblError.Text = "La cuenta de usuario o contraseña no es correcta!";
             }
         }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
     }
 }

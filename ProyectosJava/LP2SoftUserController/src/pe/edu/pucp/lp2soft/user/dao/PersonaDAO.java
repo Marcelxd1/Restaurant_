@@ -22,4 +22,5 @@ public interface PersonaDAO {
     int insertarEmpresa(Persona persona );
     int modificarEmpresa(Persona persona);
     Persona listarPorId(int idPersona);
+    ArrayList<Persona> listarClientesXNombre(String nombre);
 }

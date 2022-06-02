@@ -158,7 +158,7 @@
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(135, 37);
             this.guna2Button1.TabIndex = 8;
-            this.guna2Button1.Text = "Iniciar Sesion";
+            this.guna2Button1.Text = "Iniciar Sesión";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txtPassword
@@ -242,6 +242,7 @@
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(40, 25);
             this.guna2ControlBox1.TabIndex = 11;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // lblError
             // 
