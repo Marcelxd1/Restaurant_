@@ -174,6 +174,18 @@ public class UserWS {
         return personas;
     }
     
+    
+    @WebMethod(operationName = "listarClienteXNombre")
+    public ArrayList<Persona> listarClienteXNombre(@WebParam(name = "nombre") String nombre) {
+        ArrayList<Persona> personas = new ArrayList<>();
+        try{
+            personas = daoPersona.listarClientesXNombre(nombre);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return personas;
+    }
+    
     @WebMethod(operationName = "insertarEmpresa")
     public int insertarEmpresa(@WebParam(name = "Persona") Persona persona) {
         int resultado = 0;

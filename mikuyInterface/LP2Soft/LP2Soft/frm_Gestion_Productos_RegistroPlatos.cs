@@ -298,6 +298,5 @@ namespace LP2Soft
 
         }
 
-        
     }
 }

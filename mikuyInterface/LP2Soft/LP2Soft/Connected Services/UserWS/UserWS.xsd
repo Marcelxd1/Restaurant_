@@ -22,6 +22,8 @@
   <xs:element name="insertarUsuarioResponse" type="tns:insertarUsuarioResponse" />
   <xs:element name="listarAsistencias" type="tns:listarAsistencias" />
   <xs:element name="listarAsistenciasResponse" type="tns:listarAsistenciasResponse" />
+  <xs:element name="listarClienteXNombre" type="tns:listarClienteXNombre" />
+  <xs:element name="listarClienteXNombreResponse" type="tns:listarClienteXNombreResponse" />
   <xs:element name="listarEmpresa" type="tns:listarEmpresa" />
   <xs:element name="listarEmpresaResponse" type="tns:listarEmpresaResponse" />
   <xs:element name="listarPersona" type="tns:listarPersona" />
@@ -242,6 +244,16 @@
   <xs:complexType name="buscarPersonaPorIdUsuarioResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:persona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClienteXNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClienteXNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarPersona">

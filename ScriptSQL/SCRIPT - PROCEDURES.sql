@@ -476,6 +476,15 @@ END$
 
 #-------------------------------------------------------------------------------------
 #----------------------------------------PERSONA--------------------------------------
+CREATE  PROCEDURE LISTAR_CLIENTES_X_NOMBRE(in _nombre varchar(50))
+BEGIN 
+	SELECT p.id_persona , p.nombre, p.apellido_paterno, p.apellido_materno , p.DNI, p.razon_social, p.RUC,t.id_tipo_persona, t.descripcion 
+    from persona p INNER JOIN tipo_persona t 
+    ON p.fid_tipo = t.id_tipo_persona 
+    WHERE p.activo = 1 AND p.nombre LIKE CONCAT('%',_nombre,'%');
+END$
+
+
 DROP PROCEDURE IF EXISTS BUSCAR_PERSONA_POR_ID;
 
 #------------------------------------------------------------------------------

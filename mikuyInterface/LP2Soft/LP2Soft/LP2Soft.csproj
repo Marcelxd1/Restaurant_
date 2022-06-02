@@ -311,6 +311,9 @@
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarAsistenciasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarClienteXNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarEmpresaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
