@@ -30,23 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Clientes_Registrar));
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtRazon = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtApellidoMaterno = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblApellidoMaterno = new System.Windows.Forms.Label();
             this.txtApellidoPaterno = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblApellidoPaterno = new System.Windows.Forms.Label();
             this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtDNI = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtRuc = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblDNIRuc = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblDatosUsuario = new System.Windows.Forms.Label();
+            this.lblRegistrarCliente = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.rbPersona = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.Empresa = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbEmpresa = new Guna.UI2.WinForms.Guna2RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtDNI = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnRegistrar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,40 +62,41 @@
             this.guna2PictureBox3.TabIndex = 42;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // guna2TextBox1
+            // txtRazon
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.White;
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(308, 176);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(203, 30);
-            this.guna2TextBox1.TabIndex = 67;
+            this.txtRazon.BorderColor = System.Drawing.Color.White;
+            this.txtRazon.BorderRadius = 10;
+            this.txtRazon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRazon.DefaultText = "";
+            this.txtRazon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRazon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRazon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRazon.DisabledState.Parent = this.txtRazon;
+            this.txtRazon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRazon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtRazon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRazon.FocusedState.Parent = this.txtRazon;
+            this.txtRazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazon.ForeColor = System.Drawing.Color.Black;
+            this.txtRazon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRazon.HoverState.Parent = this.txtRazon;
+            this.txtRazon.Location = new System.Drawing.Point(444, 176);
+            this.txtRazon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRazon.Name = "txtRazon";
+            this.txtRazon.PasswordChar = '\0';
+            this.txtRazon.PlaceholderText = "";
+            this.txtRazon.SelectedText = "";
+            this.txtRazon.ShadowDecoration.Parent = this.txtRazon;
+            this.txtRazon.Size = new System.Drawing.Size(294, 30);
+            this.txtRazon.TabIndex = 67;
+            this.txtRazon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazon_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 148);
+            this.label1.Location = new System.Drawing.Point(440, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 24);
             this.label1.TabIndex = 66;
@@ -125,8 +127,9 @@
             this.txtApellidoMaterno.PlaceholderText = "";
             this.txtApellidoMaterno.SelectedText = "";
             this.txtApellidoMaterno.ShadowDecoration.Parent = this.txtApellidoMaterno;
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(203, 30);
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(294, 30);
             this.txtApellidoMaterno.TabIndex = 65;
+            this.txtApellidoMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMaterno_KeyPress);
             // 
             // lblApellidoMaterno
             // 
@@ -164,8 +167,9 @@
             this.txtApellidoPaterno.PlaceholderText = "";
             this.txtApellidoPaterno.SelectedText = "";
             this.txtApellidoPaterno.ShadowDecoration.Parent = this.txtApellidoPaterno;
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(203, 30);
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(294, 30);
             this.txtApellidoPaterno.TabIndex = 63;
+            this.txtApellidoPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoPaterno_KeyPress);
             // 
             // lblApellidoPaterno
             // 
@@ -203,43 +207,45 @@
             this.txtNombre.PlaceholderText = "";
             this.txtNombre.SelectedText = "";
             this.txtNombre.ShadowDecoration.Parent = this.txtNombre;
-            this.txtNombre.Size = new System.Drawing.Size(203, 30);
+            this.txtNombre.Size = new System.Drawing.Size(294, 30);
             this.txtNombre.TabIndex = 61;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
-            // txtDNI
+            // txtRuc
             // 
-            this.txtDNI.BorderColor = System.Drawing.Color.White;
-            this.txtDNI.BorderRadius = 10;
-            this.txtDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDNI.DefaultText = "";
-            this.txtDNI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDNI.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDNI.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDNI.DisabledState.Parent = this.txtDNI;
-            this.txtDNI.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDNI.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.txtDNI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDNI.FocusedState.Parent = this.txtDNI;
-            this.txtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.ForeColor = System.Drawing.Color.Black;
-            this.txtDNI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDNI.HoverState.Parent = this.txtDNI;
-            this.txtDNI.Location = new System.Drawing.Point(308, 238);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.PasswordChar = '\0';
-            this.txtDNI.PlaceholderText = "";
-            this.txtDNI.SelectedText = "";
-            this.txtDNI.ShadowDecoration.Parent = this.txtDNI;
-            this.txtDNI.Size = new System.Drawing.Size(203, 30);
-            this.txtDNI.TabIndex = 60;
+            this.txtRuc.BorderColor = System.Drawing.Color.White;
+            this.txtRuc.BorderRadius = 10;
+            this.txtRuc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRuc.DefaultText = "";
+            this.txtRuc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRuc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRuc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRuc.DisabledState.Parent = this.txtRuc;
+            this.txtRuc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRuc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtRuc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRuc.FocusedState.Parent = this.txtRuc;
+            this.txtRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRuc.ForeColor = System.Drawing.Color.Black;
+            this.txtRuc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRuc.HoverState.Parent = this.txtRuc;
+            this.txtRuc.Location = new System.Drawing.Point(444, 238);
+            this.txtRuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRuc.Name = "txtRuc";
+            this.txtRuc.PasswordChar = '\0';
+            this.txtRuc.PlaceholderText = "";
+            this.txtRuc.SelectedText = "";
+            this.txtRuc.ShadowDecoration.Parent = this.txtRuc;
+            this.txtRuc.Size = new System.Drawing.Size(178, 30);
+            this.txtRuc.TabIndex = 60;
+            this.txtRuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc_KeyPress);
             // 
             // lblDNIRuc
             // 
             this.lblDNIRuc.AutoSize = true;
             this.lblDNIRuc.BackColor = System.Drawing.SystemColors.Window;
             this.lblDNIRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNIRuc.Location = new System.Drawing.Point(304, 210);
+            this.lblDNIRuc.Location = new System.Drawing.Point(440, 210);
             this.lblDNIRuc.Name = "lblDNIRuc";
             this.lblDNIRuc.Size = new System.Drawing.Size(44, 24);
             this.lblDNIRuc.TabIndex = 59;
@@ -256,17 +262,17 @@
             this.lblNombre.TabIndex = 58;
             this.lblNombre.Text = "Nombre";
             // 
-            // lblDatosUsuario
+            // lblRegistrarCliente
             // 
-            this.lblDatosUsuario.AutoSize = true;
-            this.lblDatosUsuario.BackColor = System.Drawing.Color.White;
-            this.lblDatosUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosUsuario.Location = new System.Drawing.Point(273, 34);
-            this.lblDatosUsuario.Name = "lblDatosUsuario";
-            this.lblDatosUsuario.Size = new System.Drawing.Size(210, 29);
-            this.lblDatosUsuario.TabIndex = 68;
-            this.lblDatosUsuario.Text = "Registrar Cliente";
-            this.lblDatosUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRegistrarCliente.AutoSize = true;
+            this.lblRegistrarCliente.BackColor = System.Drawing.Color.White;
+            this.lblRegistrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistrarCliente.Location = new System.Drawing.Point(301, 33);
+            this.lblRegistrarCliente.Name = "lblRegistrarCliente";
+            this.lblRegistrarCliente.Size = new System.Drawing.Size(210, 29);
+            this.lblRegistrarCliente.TabIndex = 68;
+            this.lblRegistrarCliente.Text = "Registrar Cliente";
+            this.lblRegistrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTipo
             // 
@@ -301,27 +307,27 @@
             this.rbPersona.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rbPersona.UseVisualStyleBackColor = false;
             // 
-            // Empresa
+            // rbEmpresa
             // 
-            this.Empresa.AutoSize = true;
-            this.Empresa.BackColor = System.Drawing.Color.White;
-            this.Empresa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Empresa.CheckedState.BorderThickness = 0;
-            this.Empresa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Empresa.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.Empresa.CheckedState.InnerOffset = -4;
-            this.Empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Empresa.Location = new System.Drawing.Point(241, 92);
-            this.Empresa.Name = "Empresa";
-            this.Empresa.Size = new System.Drawing.Size(87, 20);
-            this.Empresa.TabIndex = 71;
-            this.Empresa.TabStop = true;
-            this.Empresa.Text = "Empresa";
-            this.Empresa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.Empresa.UncheckedState.BorderThickness = 2;
-            this.Empresa.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.Empresa.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.Empresa.UseVisualStyleBackColor = false;
+            this.rbEmpresa.AutoSize = true;
+            this.rbEmpresa.BackColor = System.Drawing.Color.White;
+            this.rbEmpresa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbEmpresa.CheckedState.BorderThickness = 0;
+            this.rbEmpresa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbEmpresa.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbEmpresa.CheckedState.InnerOffset = -4;
+            this.rbEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEmpresa.Location = new System.Drawing.Point(241, 92);
+            this.rbEmpresa.Name = "rbEmpresa";
+            this.rbEmpresa.Size = new System.Drawing.Size(87, 20);
+            this.rbEmpresa.TabIndex = 71;
+            this.rbEmpresa.TabStop = true;
+            this.rbEmpresa.Text = "Empresa";
+            this.rbEmpresa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbEmpresa.UncheckedState.BorderThickness = 2;
+            this.rbEmpresa.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbEmpresa.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rbEmpresa.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -334,71 +340,92 @@
             this.label2.TabIndex = 72;
             this.label2.Text = "DNI";
             // 
-            // guna2TextBox2
+            // txtDNI
             // 
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.White;
-            this.guna2TextBox2.BorderRadius = 10;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(54, 362);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(203, 30);
-            this.guna2TextBox2.TabIndex = 73;
+            this.txtDNI.BorderColor = System.Drawing.Color.White;
+            this.txtDNI.BorderRadius = 10;
+            this.txtDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDNI.DefaultText = "";
+            this.txtDNI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDNI.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDNI.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDNI.DisabledState.Parent = this.txtDNI;
+            this.txtDNI.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDNI.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtDNI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDNI.FocusedState.Parent = this.txtDNI;
+            this.txtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI.ForeColor = System.Drawing.Color.Black;
+            this.txtDNI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDNI.HoverState.Parent = this.txtDNI;
+            this.txtDNI.Location = new System.Drawing.Point(54, 364);
+            this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.PasswordChar = '\0';
+            this.txtDNI.PlaceholderText = "";
+            this.txtDNI.SelectedText = "";
+            this.txtDNI.ShadowDecoration.Parent = this.txtDNI;
+            this.txtDNI.Size = new System.Drawing.Size(178, 30);
+            this.txtDNI.TabIndex = 73;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
-            // guna2Button1
+            // btnRegistrar
             // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Black;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(308, 364);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(205, 28);
-            this.guna2Button1.TabIndex = 74;
-            this.guna2Button1.Text = "Registrar Cliente";
+            this.btnRegistrar.BorderRadius = 10;
+            this.btnRegistrar.CheckedState.Parent = this.btnRegistrar;
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrar.CustomImages.Parent = this.btnRegistrar;
+            this.btnRegistrar.FillColor = System.Drawing.Color.Black;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.HoverState.Parent = this.btnRegistrar;
+            this.btnRegistrar.Location = new System.Drawing.Point(444, 364);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.ShadowDecoration.Parent = this.btnRegistrar;
+            this.btnRegistrar.Size = new System.Drawing.Size(121, 28);
+            this.btnRegistrar.TabIndex = 74;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BorderRadius = 10;
+            this.btnCancelar.CheckedState.Parent = this.btnCancelar;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.CustomImages.Parent = this.btnCancelar;
+            this.btnCancelar.FillColor = System.Drawing.Color.Black;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.HoverState.Parent = this.btnCancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(617, 364);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.ShadowDecoration.Parent = this.btnCancelar;
+            this.btnCancelar.Size = new System.Drawing.Size(121, 28);
+            this.btnCancelar.TabIndex = 75;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frm_Clientes_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.guna2TextBox2);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Empresa);
+            this.Controls.Add(this.rbEmpresa);
             this.Controls.Add(this.rbPersona);
             this.Controls.Add(this.lblTipo);
-            this.Controls.Add(this.lblDatosUsuario);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.lblRegistrarCliente);
+            this.Controls.Add(this.txtRazon);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtApellidoMaterno);
             this.Controls.Add(this.lblApellidoMaterno);
             this.Controls.Add(this.txtApellidoPaterno);
             this.Controls.Add(this.lblApellidoPaterno);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtDNI);
+            this.Controls.Add(this.txtRuc);
             this.Controls.Add(this.lblDNIRuc);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.guna2PictureBox3);
@@ -414,22 +441,23 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtRazon;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtApellidoMaterno;
         private System.Windows.Forms.Label lblApellidoMaterno;
         private Guna.UI2.WinForms.Guna2TextBox txtApellidoPaterno;
         private System.Windows.Forms.Label lblApellidoPaterno;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
-        private Guna.UI2.WinForms.Guna2TextBox txtDNI;
+        private Guna.UI2.WinForms.Guna2TextBox txtRuc;
         private System.Windows.Forms.Label lblDNIRuc;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblDatosUsuario;
+        private System.Windows.Forms.Label lblRegistrarCliente;
         private System.Windows.Forms.Label lblTipo;
         private Guna.UI2.WinForms.Guna2RadioButton rbPersona;
-        private Guna.UI2.WinForms.Guna2RadioButton Empresa;
+        private Guna.UI2.WinForms.Guna2RadioButton rbEmpresa;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2TextBox txtDNI;
+        private Guna.UI2.WinForms.Guna2Button btnRegistrar;
+        private Guna.UI2.WinForms.Guna2Button btnCancelar;
     }
 }

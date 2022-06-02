@@ -356,8 +356,8 @@
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.verificarCuentaUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\UserWS\UserWS.wsdl" />
-    <None Include="Connected Services\UserWS\UserWS.xsd">
+    <None Include="Connected Services\UserWS\UserWS1.wsdl" />
+    <None Include="Connected Services\UserWS\UserWS1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
