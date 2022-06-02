@@ -12,4 +12,5 @@ public interface UsuarioDAO {
     Usuario listarPorId(int idUsuario);
     ArrayList<Usuario> listarXNombre(String nombre);
     Usuario verificarUsuario (Usuario usuario);
+    int modificarDatos (Usuario usuario);
 }

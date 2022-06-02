@@ -102,6 +102,6 @@ public class Persona {
         this.activo = activo;
     }
     
-    
 
+    
 }

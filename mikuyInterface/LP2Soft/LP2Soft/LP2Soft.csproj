@@ -305,10 +305,16 @@
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarPersonasTodasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarRolTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarTodosUsuariosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarUsuariosXNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.modificarDatosUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.modificarEmpresaResponse.datasource">

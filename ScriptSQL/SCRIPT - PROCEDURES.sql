@@ -289,11 +289,12 @@ END$
 
 CREATE PROCEDURE LISTAR_USUARIO_X_NOMBRE(IN _nombre VARCHAR(100))
 BEGIN
-	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI
-    from usuario u inner join persona p on u.id_usuario = p.id_persona
+	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI , r.descripcion as rol
+    from usuario u 
+    inner join persona p on u.id_usuario = p.id_persona
+    inner join rol r on r.id_rol = u.fid_rol
     where p.activo = 1 AND  p.nombre LIKE CONCAT('%',_nombre,'%');
 END$
-
 CREATE PROCEDURE ELIMINAR_PERSONA (IN _id_persona INT)
 BEGIN
 	UPDATE persona SET activo = 0 WHERE id_persona = _id_persona ;
