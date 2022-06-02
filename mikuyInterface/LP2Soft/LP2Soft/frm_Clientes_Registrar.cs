@@ -31,29 +31,56 @@ namespace LP2Soft
                 case Estado.Nuevo:
                     rbEmpresa.Enabled = true;
                     rbPersona.Enabled = true;
-                    btnRegistrar.Enabled = false;
-                    btnCancelar.Enabled = false;
-                    
+                    btnRegistrar.Enabled = true;
+                    btnCancelar.Enabled = true;
+
                     txtNombre.Enabled = false;
                     txtApellidoPaterno.Enabled = false;
                     txtApellidoMaterno.Enabled = false;
                     txtDNI.Enabled = false;
                     txtRuc.Enabled = false;
                     txtRazon.Enabled = false;
+
+                    txtNombre.Show() ;
+                    lblNombre.Show() ;
+                    txtApellidoPaterno.Show() ;
+                    lblApellidoPaterno.Show();
+                    txtApellidoMaterno.Show() ;
+                    lblApellidoMaterno.Show();
+                    txtDNI.Show() ;
+                    lblDNI.Show() ;
+                    txtRuc.Show() ;
+                    lblRuc.Show();
+                    txtRazon.Show();
+                    lblRazon.Show();
                     break;
 
                 case Estado.Inicial:
                     rbEmpresa.Enabled = true;
                     rbPersona.Enabled = true;
-                    btnRegistrar.Enabled = true;
-                    btnCancelar.Enabled = true;
+                    btnRegistrar.Enabled = false;
+                    btnCancelar.Enabled = false;
 
-                    txtNombre.Enabled = true;
-                    txtApellidoPaterno.Enabled = true;
-                    txtApellidoMaterno.Enabled = true;
-                    txtDNI.Enabled = true;
-                    txtRuc.Enabled = true;
-                    txtRazon.Enabled = true;
+                    txtNombre.Enabled = false;
+                    txtApellidoPaterno.Enabled = false;
+                    txtApellidoMaterno.Enabled = false;
+                    txtDNI.Enabled = false;
+                    txtRuc.Enabled = false;
+                    txtRazon.Enabled = false;
+
+                    txtNombre.Show();
+                    lblNombre.Show();
+                    txtApellidoPaterno.Show();
+                    lblApellidoPaterno.Show();
+                    txtApellidoMaterno.Show();
+                    lblApellidoMaterno.Show();
+                    txtDNI.Show();
+                    lblDNI.Show();
+                    txtRuc.Show();
+                    lblRuc.Show();
+                    txtRazon.Show();
+                    lblRazon.Show();
+                    limpiarComponentes();
                     break;
             }
         }
@@ -71,19 +98,38 @@ namespace LP2Soft
 
         private void rbPersona_CheckedChanged(object sender, EventArgs e)
         {
-            _estado = Estado.Nuevo;
-
-            txtRuc.Enabled = false;
-            txtRazon.Enabled = false;
+            if (rbPersona.Checked) { 
+                _estado = Estado.Nuevo;
+                establecerEstadoComponentes();
+                txtNombre.Enabled = true;
+                txtApellidoPaterno.Enabled = true;
+                txtApellidoMaterno.Enabled = true;
+                txtDNI.Enabled = true;
+                lblRuc.Hide();
+                txtRuc.Hide();
+                lblRazon.Hide();
+                txtRazon.Hide();
+            }
+            else
+            {
+                _estado = Estado.Nuevo;
+                establecerEstadoComponentes();
+                txtNombre.Enabled = true;
+                txtRuc.Enabled = true;
+                txtRazon.Enabled = true;
+                txtApellidoPaterno.Hide();
+                lblApellidoPaterno.Hide();
+                txtApellidoMaterno.Hide();
+                lblApellidoMaterno.Hide();
+                txtDNI.Hide();
+                lblDNI.Hide();
+            }
         }
 
         private void rbEmpresa_CheckedChanged(object sender, EventArgs e)
         {
-            _estado = Estado.Nuevo;
-
-            txtApellidoPaterno.Enabled = false;
-            txtApellidoMaterno.Enabled = false;
-            txtDNI.Enabled = false;
+            
+            
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -134,7 +180,7 @@ namespace LP2Soft
                 }
                 try
                 {
-                    Int32.Parse(txtRuc.Text);
+                    Int64.Parse(txtRuc.Text);
                 }
                 catch (Exception ex)
                 {

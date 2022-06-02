@@ -31,20 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Clientes_Registrar));
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtRazon = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRazon = new System.Windows.Forms.Label();
             this.txtApellidoMaterno = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblApellidoMaterno = new System.Windows.Forms.Label();
             this.txtApellidoPaterno = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblApellidoPaterno = new System.Windows.Forms.Label();
             this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtRuc = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblDNIRuc = new System.Windows.Forms.Label();
+            this.lblRuc = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblRegistrarCliente = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.rbPersona = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rbEmpresa = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDNI = new System.Windows.Forms.Label();
             this.txtDNI = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnRegistrar = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
@@ -91,16 +91,16 @@
             this.txtRazon.TabIndex = 67;
             this.txtRazon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazon_KeyPress);
             // 
-            // label1
+            // lblRazon
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(440, 148);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 24);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Razón social";
+            this.lblRazon.AutoSize = true;
+            this.lblRazon.BackColor = System.Drawing.SystemColors.Window;
+            this.lblRazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRazon.Location = new System.Drawing.Point(440, 148);
+            this.lblRazon.Name = "lblRazon";
+            this.lblRazon.Size = new System.Drawing.Size(117, 24);
+            this.lblRazon.TabIndex = 66;
+            this.lblRazon.Text = "Razón social";
             // 
             // txtApellidoMaterno
             // 
@@ -240,16 +240,16 @@
             this.txtRuc.TabIndex = 60;
             this.txtRuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc_KeyPress);
             // 
-            // lblDNIRuc
+            // lblRuc
             // 
-            this.lblDNIRuc.AutoSize = true;
-            this.lblDNIRuc.BackColor = System.Drawing.SystemColors.Window;
-            this.lblDNIRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNIRuc.Location = new System.Drawing.Point(440, 210);
-            this.lblDNIRuc.Name = "lblDNIRuc";
-            this.lblDNIRuc.Size = new System.Drawing.Size(44, 24);
-            this.lblDNIRuc.TabIndex = 59;
-            this.lblDNIRuc.Text = "Ruc";
+            this.lblRuc.AutoSize = true;
+            this.lblRuc.BackColor = System.Drawing.SystemColors.Window;
+            this.lblRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRuc.Location = new System.Drawing.Point(440, 210);
+            this.lblRuc.Name = "lblRuc";
+            this.lblRuc.Size = new System.Drawing.Size(44, 24);
+            this.lblRuc.TabIndex = 59;
+            this.lblRuc.Text = "Ruc";
             // 
             // lblNombre
             // 
@@ -306,6 +306,7 @@
             this.rbPersona.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rbPersona.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rbPersona.UseVisualStyleBackColor = false;
+            this.rbPersona.CheckedChanged += new System.EventHandler(this.rbPersona_CheckedChanged);
             // 
             // rbEmpresa
             // 
@@ -329,16 +330,16 @@
             this.rbEmpresa.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rbEmpresa.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // lblDNI
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 334);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 24);
-            this.label2.TabIndex = 72;
-            this.label2.Text = "DNI";
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.BackColor = System.Drawing.SystemColors.Window;
+            this.lblDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNI.Location = new System.Drawing.Point(50, 334);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(41, 24);
+            this.lblDNI.TabIndex = 72;
+            this.lblDNI.Text = "DNI";
             // 
             // txtDNI
             // 
@@ -413,20 +414,20 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtDNI);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblDNI);
             this.Controls.Add(this.rbEmpresa);
             this.Controls.Add(this.rbPersona);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblRegistrarCliente);
             this.Controls.Add(this.txtRazon);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRazon);
             this.Controls.Add(this.txtApellidoMaterno);
             this.Controls.Add(this.lblApellidoMaterno);
             this.Controls.Add(this.txtApellidoPaterno);
             this.Controls.Add(this.lblApellidoPaterno);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtRuc);
-            this.Controls.Add(this.lblDNIRuc);
+            this.Controls.Add(this.lblRuc);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.guna2PictureBox3);
             this.Name = "frm_Clientes_Registrar";
@@ -442,20 +443,20 @@
 
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2TextBox txtRazon;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRazon;
         private Guna.UI2.WinForms.Guna2TextBox txtApellidoMaterno;
         private System.Windows.Forms.Label lblApellidoMaterno;
         private Guna.UI2.WinForms.Guna2TextBox txtApellidoPaterno;
         private System.Windows.Forms.Label lblApellidoPaterno;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
         private Guna.UI2.WinForms.Guna2TextBox txtRuc;
-        private System.Windows.Forms.Label lblDNIRuc;
+        private System.Windows.Forms.Label lblRuc;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblRegistrarCliente;
         private System.Windows.Forms.Label lblTipo;
         private Guna.UI2.WinForms.Guna2RadioButton rbPersona;
         private Guna.UI2.WinForms.Guna2RadioButton rbEmpresa;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDNI;
         private Guna.UI2.WinForms.Guna2TextBox txtDNI;
         private Guna.UI2.WinForms.Guna2Button btnRegistrar;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;

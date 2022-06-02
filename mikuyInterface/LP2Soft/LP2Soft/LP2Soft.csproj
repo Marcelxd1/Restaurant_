@@ -223,10 +223,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.categoria1.datasource">
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.categoria.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.eliminarCategoriaResponse1.datasource">
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.eliminarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.eliminarProductoResponse.datasource">
@@ -235,7 +235,7 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.eliminarPromocionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.insertarCategoriaResponse1.datasource">
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.insertarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.insertarProductoResponse.datasource">
@@ -247,7 +247,7 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarProductoXNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodasCategoriasResponse1.datasource">
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodasCategoriasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodasPromocionesResponse.datasource">
@@ -256,7 +256,7 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodosProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.modificarCategoriaResponse1.datasource">
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.modificarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.modificarProductoResponse.datasource">
@@ -471,18 +471,6 @@
     <WCFMetadataStorage Include="Connected Services\UserWS\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\NegocioWS\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\NegocioWS\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\NegocioWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\signout.png" />
   </ItemGroup>
   <ItemGroup>
@@ -497,6 +485,18 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Resources\imagenVacia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NegocioWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NegocioWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NegocioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
