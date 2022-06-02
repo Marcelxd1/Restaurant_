@@ -242,6 +242,7 @@
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(40, 25);
             this.guna2ControlBox1.TabIndex = 11;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // lblError
             // 

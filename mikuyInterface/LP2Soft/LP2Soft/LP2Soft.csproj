@@ -70,6 +70,12 @@
     <Compile Include="frm_Gestion_Productos_BusquedaCombo.Designer.cs">
       <DependentUpon>frm_Gestion_Productos_BusquedaCombo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Gestion_Productos_RegistroPlatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Gestion_Productos_RegistroPlatos.designer.cs">
+      <DependentUpon>frm_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Login_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,12 +130,6 @@
     <Compile Include="frm_Gestion_Productos_RegistroCombo.Designer.cs">
       <DependentUpon>frm_Gestion_Productos_RegistroCombo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Gestion_Productos_RegistroPlatos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Gestion_Productos_RegistroPlatos.Designer.cs">
-      <DependentUpon>frm_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Gestion_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +168,9 @@
     <EmbeddedResource Include="frm_Gestion_Productos_BusquedaCombo.resx">
       <DependentUpon>frm_Gestion_Productos_BusquedaCombo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Gestion_Productos_RegistroPlatos.resx">
+      <DependentUpon>frm_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Login_Usuario.resx">
       <DependentUpon>frm_Login_Usuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Productos_RegistroCombo.resx">
       <DependentUpon>frm_Gestion_Productos_RegistroCombo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Gestion_Productos_RegistroPlatos.resx">
-      <DependentUpon>frm_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Usuario.resx">
       <DependentUpon>frm_Gestion_Usuario.cs</DependentUpon>

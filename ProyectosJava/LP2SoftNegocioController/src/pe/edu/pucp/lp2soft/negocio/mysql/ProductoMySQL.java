@@ -127,6 +127,7 @@ public class ProductoMySQL implements ProductoDAO{
                 producto.setDescripcion(rs.getString("descripcion"));
                 producto.setPresentacion(rs.getString("presentacion"));
                 producto.setTipoProducto(rs.getString("fid_tipo_producto").charAt(0));
+                producto.setEstado(rs.getBoolean("estado")); 
                 producto.setCategoria(new Categoria());
                 producto.getCategoria().setIdCategoria(rs.getInt("id_categoria"));
                 producto.getCategoria().setDescripcion(rs.getString("descripcion"));
