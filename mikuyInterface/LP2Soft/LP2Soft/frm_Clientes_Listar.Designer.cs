@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Clientes_Listar));
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.dgvListarClientes = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido_paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.lblDatosUsuario = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtApellidoMaterno = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,6 +53,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtRUC = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ldlRUC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -98,38 +99,41 @@
             // 
             // dgvListarClientes
             // 
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
-            this.dgvListarClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            this.dgvListarClientes.AllowUserToAddRows = false;
+            this.dgvListarClientes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvListarClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListarClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListarClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvListarClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListarClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvListarClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListarClientes.ColumnHeadersHeight = 20;
             this.dgvListarClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nro,
             this.Username,
-            this.DNI});
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarClientes.DefaultCellStyle = dataGridViewCellStyle33;
+            this.apellido_paterno});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarClientes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListarClientes.EnableHeadersVisualStyles = false;
             this.dgvListarClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvListarClientes.Location = new System.Drawing.Point(25, 111);
             this.dgvListarClientes.Name = "dgvListarClientes";
+            this.dgvListarClientes.ReadOnly = true;
             this.dgvListarClientes.RowHeadersVisible = false;
             this.dgvListarClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListarClientes.Size = new System.Drawing.Size(786, 180);
@@ -148,7 +152,7 @@
             this.dgvListarClientes.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvListarClientes.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvListarClientes.ThemeStyle.HeaderStyle.Height = 20;
-            this.dgvListarClientes.ThemeStyle.ReadOnly = false;
+            this.dgvListarClientes.ThemeStyle.ReadOnly = true;
             this.dgvListarClientes.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvListarClientes.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvListarClientes.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -159,18 +163,27 @@
             // 
             // Nro
             // 
+            this.Nro.DataPropertyName = "id_persona";
+            this.Nro.FillWeight = 81.21828F;
             this.Nro.HeaderText = "ID.";
             this.Nro.Name = "Nro";
+            this.Nro.ReadOnly = true;
             // 
             // Username
             // 
+            this.Username.DataPropertyName = "nombre";
+            this.Username.FillWeight = 106.2606F;
             this.Username.HeaderText = "Nombre";
             this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
             // 
-            // DNI
+            // apellido_paterno
             // 
-            this.DNI.HeaderText = "DNI/RUC";
-            this.DNI.Name = "DNI";
+            this.apellido_paterno.DataPropertyName = "apellido_paterno";
+            this.apellido_paterno.FillWeight = 106.2606F;
+            this.apellido_paterno.HeaderText = "Apellido Paterno";
+            this.apellido_paterno.Name = "apellido_paterno";
+            this.apellido_paterno.ReadOnly = true;
             // 
             // txtBuscar
             // 
@@ -204,24 +217,8 @@
             this.txtBuscar.ShadowDecoration.Parent = this.txtBuscar;
             this.txtBuscar.Size = new System.Drawing.Size(437, 30);
             this.txtBuscar.TabIndex = 39;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BorderRadius = 10;
-            this.btnBuscar.CheckedState.Parent = this.btnBuscar;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.CustomImages.Parent = this.btnBuscar;
-            this.btnBuscar.FillColor = System.Drawing.Color.Black;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.HoverState.Parent = this.btnBuscar;
-            this.btnBuscar.Location = new System.Drawing.Point(692, 74);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
-            this.btnBuscar.Size = new System.Drawing.Size(119, 28);
-            this.btnBuscar.TabIndex = 38;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.txtBuscar.IconRightClick += new System.EventHandler(this.txtBuscar_IconRightClick);
+            this.txtBuscar.DoubleClick += new System.EventHandler(this.txtBuscar_DoubleClick);
             // 
             // lblDatosUsuario
             // 
@@ -391,9 +388,9 @@
             this.lblDNIRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDNIRuc.Location = new System.Drawing.Point(21, 443);
             this.lblDNIRuc.Name = "lblDNIRuc";
-            this.lblDNIRuc.Size = new System.Drawing.Size(44, 24);
+            this.lblDNIRuc.Size = new System.Drawing.Size(41, 24);
             this.lblDNIRuc.TabIndex = 49;
-            this.lblDNIRuc.Text = "Ruc";
+            this.lblDNIRuc.Text = "DNI";
             // 
             // lblNombre
             // 
@@ -484,11 +481,52 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtRUC
+            // 
+            this.txtRUC.BorderColor = System.Drawing.Color.White;
+            this.txtRUC.BorderRadius = 10;
+            this.txtRUC.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRUC.DefaultText = "";
+            this.txtRUC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRUC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRUC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRUC.DisabledState.Parent = this.txtRUC;
+            this.txtRUC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRUC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtRUC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRUC.FocusedState.Parent = this.txtRUC;
+            this.txtRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRUC.ForeColor = System.Drawing.Color.Black;
+            this.txtRUC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRUC.HoverState.Parent = this.txtRUC;
+            this.txtRUC.Location = new System.Drawing.Point(498, 471);
+            this.txtRUC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRUC.Name = "txtRUC";
+            this.txtRUC.PasswordChar = '\0';
+            this.txtRUC.PlaceholderText = "";
+            this.txtRUC.SelectedText = "";
+            this.txtRUC.ShadowDecoration.Parent = this.txtRUC;
+            this.txtRUC.Size = new System.Drawing.Size(203, 30);
+            this.txtRUC.TabIndex = 62;
+            // 
+            // ldlRUC
+            // 
+            this.ldlRUC.AutoSize = true;
+            this.ldlRUC.BackColor = System.Drawing.SystemColors.Window;
+            this.ldlRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ldlRUC.Location = new System.Drawing.Point(494, 443);
+            this.ldlRUC.Name = "ldlRUC";
+            this.ldlRUC.Size = new System.Drawing.Size(49, 24);
+            this.ldlRUC.TabIndex = 61;
+            this.ldlRUC.Text = "RUC";
+            // 
             // frm_Clientes_Listar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 661);
+            this.Controls.Add(this.txtRUC);
+            this.Controls.Add(this.ldlRUC);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtRazonSocial);
@@ -505,7 +543,6 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvListarClientes);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblDatosUsuario);
             this.Controls.Add(this.guna2PictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -523,11 +560,7 @@
         private Guna.UI2.WinForms.Guna2Button btnModificar;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
         private Guna.UI2.WinForms.Guna2DataGridView dgvListarClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
-        private Guna.UI2.WinForms.Guna2Button btnBuscar;
         private System.Windows.Forms.Label lblDatosUsuario;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2TextBox txtApellidoMaterno;
@@ -542,5 +575,10 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_paterno;
+        private Guna.UI2.WinForms.Guna2TextBox txtRUC;
+        private System.Windows.Forms.Label ldlRUC;
     }
 }

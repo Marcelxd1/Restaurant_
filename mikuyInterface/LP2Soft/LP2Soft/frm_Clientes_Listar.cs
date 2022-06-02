@@ -20,8 +20,7 @@ namespace LP2Soft
             InitializeComponent();
             daoUser = new UserWS.UserWSClient();
             dgvListarClientes.AutoGenerateColumns = false;
-
-            dgvListarClientes.DataSource = daoUser.listarClienteXNombre(txtBuscar.Text);
+            cargarTabla();
             _estado = Estado.Inicial;
             establecerEstadoComponentes();
             limpiarComponentes();
@@ -34,9 +33,8 @@ namespace LP2Soft
                 case Estado.Inicial:
                     btnGuardar.Enabled = false;
                     btnCancelar.Enabled = false;
-                    btnModificar.Enabled = false;
-                    btnEliminar.Enabled = false;
-                    btnBuscar.Enabled = true;
+                    btnModificar.Enabled = true;
+                    btnEliminar.Enabled = true;
 
                     txtNombre.Enabled = false;
                     txtApellidoMaterno.Enabled = false;
@@ -44,6 +42,7 @@ namespace LP2Soft
                     txtDNIRUC.Enabled = false;
                     txtRazonSocial.Enabled = false;
                     txtBuscar.Enabled = true;
+                    txtRUC.Enabled = false;
                     break;
 
                 case Estado.Modificar:
@@ -51,14 +50,9 @@ namespace LP2Soft
                     btnCancelar.Enabled = true;
                     btnModificar.Enabled = false;
                     btnEliminar.Enabled = false;
-                    btnBuscar.Enabled = false;
                     txtBuscar.Enabled = false;
 
                     txtNombre.Enabled = true;
-                    txtApellidoMaterno.Enabled = true;
-                    txtApellidoPaterno.Enabled = true;
-                    txtDNIRUC.Enabled = true;
-                    txtRazonSocial.Enabled = true;
                     break;
 
                 case Estado.Buscar:
@@ -66,7 +60,6 @@ namespace LP2Soft
                     btnCancelar.Enabled = false;
                     btnModificar.Enabled = true;
                     btnEliminar.Enabled = true;
-                    btnBuscar.Enabled = true;
 
                     txtNombre.Enabled = false;
                     txtApellidoMaterno.Enabled = false;
@@ -85,14 +78,23 @@ namespace LP2Soft
             txtApellidoPaterno.Text = "";
             txtDNIRUC.Text = "";
             txtRazonSocial.Text = "";
-            txtBuscar.Text = "";
+            txtRUC.Text = "";
             _cliente = new UserWS.persona();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void cargarTabla()
         {
-            dgvListarClientes.DataSource = daoUser.listarClienteXNombre(txtBuscar.Text);
+            string indicador = "";
+            if (txtBuscar.Text != "Buscar")
+                indicador = txtBuscar.Text;
+            UserWS.persona[] personas = daoUser.listarClienteXNombre(indicador);
+            if (personas != null)
+                dgvListarClientes.DataSource = new BindingList<UserWS.persona>(personas);
+            else
+                MessageBox.Show("errooooooor", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -102,6 +104,9 @@ namespace LP2Soft
 
             if (_cliente.tipo == 'N')    //si es natural
             {
+                txtDNIRUC.Enabled = true;
+                txtApellidoMaterno.Enabled = true;
+                txtApellidoPaterno.Enabled = true;
                 txtApellidoMaterno.Text = _cliente.apellido_materno;
                 txtApellidoPaterno.Text = _cliente.apellido_paterno;
                 txtDNIRUC.Text = _cliente.DNI;
@@ -109,10 +114,14 @@ namespace LP2Soft
             }
             else                        //si es juridico
             {
-                txtDNIRUC.Text = _cliente.ruc;
+                
+                txtRazonSocial.Enabled = true;
+                txtRUC.Enabled = true;
+                txtRUC.Text = _cliente.ruc;
                 txtRazonSocial.Text = _cliente.razon_social;
             }
             establecerEstadoComponentes();
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -129,7 +138,8 @@ namespace LP2Soft
                 else
                     MessageBox.Show("Ha ocurrido un error con la eliminación", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //*************
-                dgvListarClientes.DataSource = daoUser.listarClienteXNombre(txtBuscar.Text);
+
+                cargarTabla();
             }
         }
 
@@ -183,14 +193,14 @@ namespace LP2Soft
             }
             else
             {
-                if (txtDNIRUC.Text.Trim().Length != 11)
+                if (txtRUC.Text.Trim().Length != 11)
                 {
                     MessageBox.Show("El RUC ingresado debe tener 11 dígitos", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 try
                 {
-                    Int32.Parse(txtDNIRUC.Text);
+                    Int32.Parse(txtRUC.Text);
                 }
                 catch (Exception ex)
                 {
@@ -216,6 +226,7 @@ namespace LP2Soft
                 {
                     MessageBox.Show("Se ha modificado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _estado = Estado.Inicial;
+                    cargarTabla();
                     establecerEstadoComponentes();
                 }
                 else
@@ -262,5 +273,19 @@ namespace LP2Soft
                 e.Handled = true;
             }
         }
+
+       
+
+        private void txtBuscar_DoubleClick(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+        }
+
+        private void txtBuscar_IconRightClick(object sender, EventArgs e)
+        {
+            cargarTabla();
+        }
+
+        
     }
 }

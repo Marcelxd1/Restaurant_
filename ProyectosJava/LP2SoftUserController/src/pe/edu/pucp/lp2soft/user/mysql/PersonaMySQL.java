@@ -49,7 +49,7 @@ public class PersonaMySQL implements PersonaDAO {
         ArrayList<Persona> personas = new ArrayList<>();
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_PERSONAS_TODAS(?)}");
+            cs = con.prepareCall("{call LISTAR_CLIENTES_X_NOMBRE(?)}");
             cs.setString("_nombre", nombre);
             rs = cs.executeQuery();
             while (rs.next()){
