@@ -13,14 +13,14 @@ namespace LP2Soft
 {
     public partial class frm_Gestion_Productos_BusquedaCombo : Form
     {
-        private NegocioWS.promocion _promoSeleccionada ; 
+        private NegocioWS.promocion _promoSeleccionada;
         private NegocioWS.NegocioWSClient daoNegocio;
         public frm_Gestion_Productos_BusquedaCombo()
         {
             InitializeComponent();
             PromoSeleccionada = new NegocioWS.promocion();
             daoNegocio = new NegocioWS.NegocioWSClient();
-            dgvCombos.DataSource=daoNegocio.listarTodasPromociones();
+
         }
 
         public promocion PromoSeleccionada { get => _promoSeleccionada; set => _promoSeleccionada = value; }
@@ -29,6 +29,18 @@ namespace LP2Soft
         {
             PromoSeleccionada = (NegocioWS.promocion)dgvCombos.CurrentRow.DataBoundItem;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //al apretar enter se muestra los productos
+                NegocioWS.promocion[] combos = daoNegocio.listarPromociones_X_nombre(txtBuscarCombo.Text);
+                if (combos != null)
+                    dgvCombos.DataSource = new BindingList<NegocioWS.promocion>(combos);
+
+            }
         }
     }
 }

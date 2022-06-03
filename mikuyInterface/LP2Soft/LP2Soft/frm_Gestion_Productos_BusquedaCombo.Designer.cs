@@ -37,6 +37,7 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSeleccionar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtBuscarCombo = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,11 +155,45 @@
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
+            // txtBuscarCombo
+            // 
+            this.txtBuscarCombo.BackColor = System.Drawing.SystemColors.Control;
+            this.txtBuscarCombo.BorderColor = System.Drawing.Color.Transparent;
+            this.txtBuscarCombo.BorderRadius = 10;
+            this.txtBuscarCombo.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.txtBuscarCombo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscarCombo.DefaultText = "";
+            this.txtBuscarCombo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBuscarCombo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBuscarCombo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBuscarCombo.DisabledState.Parent = this.txtBuscarCombo;
+            this.txtBuscarCombo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBuscarCombo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtBuscarCombo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBuscarCombo.FocusedState.Parent = this.txtBuscarCombo;
+            this.txtBuscarCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarCombo.ForeColor = System.Drawing.Color.Black;
+            this.txtBuscarCombo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBuscarCombo.HoverState.Parent = this.txtBuscarCombo;
+            this.txtBuscarCombo.IconRight = global::LP2Soft.Properties.Resources.Buscar;
+            this.txtBuscarCombo.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.txtBuscarCombo.Location = new System.Drawing.Point(64, 12);
+            this.txtBuscarCombo.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBuscarCombo.Name = "txtBuscarCombo";
+            this.txtBuscarCombo.PasswordChar = '\0';
+            this.txtBuscarCombo.PlaceholderText = "";
+            this.txtBuscarCombo.SelectedText = "";
+            this.txtBuscarCombo.ShadowDecoration.Parent = this.txtBuscarCombo;
+            this.txtBuscarCombo.Size = new System.Drawing.Size(273, 39);
+            this.txtBuscarCombo.TabIndex = 42;
+            this.txtBuscarCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
+            // 
             // frm_Gestion_Productos_BusquedaCombo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBuscarCombo);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvCombos);
             this.Name = "frm_Gestion_Productos_BusquedaCombo";
@@ -176,5 +211,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private Guna.UI2.WinForms.Guna2Button btnSeleccionar;
+        private Guna.UI2.WinForms.Guna2TextBox txtBuscarCombo;
     }
 }

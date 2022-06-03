@@ -46,6 +46,9 @@
             this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLineas = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,19 +69,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnQuitarProd = new System.Windows.Forms.PictureBox();
+            this.btnAgregarProd = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.pctImagenPlato = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLineas)).BeginInit();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQuitarProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagenPlato)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -360,6 +360,31 @@
             this.dgvLineas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvLineas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLineas_CellFormatting);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idLineaPromocion";
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID.";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 337;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 338;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "unidades";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            // 
             // guna2Button1
             // 
             this.guna2Button1.BorderRadius = 10;
@@ -620,33 +645,33 @@
             this.txtID.Size = new System.Drawing.Size(93, 37);
             this.txtID.TabIndex = 69;
             // 
-            // pictureBox2
+            // btnQuitarProd
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImage = global::LP2Soft.Properties.Resources.delete;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Location = new System.Drawing.Point(979, 415);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 43);
-            this.pictureBox2.TabIndex = 53;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.btnQuitarProd.BackColor = System.Drawing.Color.White;
+            this.btnQuitarProd.BackgroundImage = global::LP2Soft.Properties.Resources.delete;
+            this.btnQuitarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnQuitarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuitarProd.Location = new System.Drawing.Point(979, 415);
+            this.btnQuitarProd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuitarProd.Name = "btnQuitarProd";
+            this.btnQuitarProd.Size = new System.Drawing.Size(47, 43);
+            this.btnQuitarProd.TabIndex = 53;
+            this.btnQuitarProd.TabStop = false;
+            this.btnQuitarProd.Click += new System.EventHandler(this.btnQuitarProd_Click);
             // 
-            // pictureBox1
+            // btnAgregarProd
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = global::LP2Soft.Properties.Resources.add;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(880, 415);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 43);
-            this.pictureBox1.TabIndex = 52;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnAgregarProd.BackColor = System.Drawing.Color.White;
+            this.btnAgregarProd.BackgroundImage = global::LP2Soft.Properties.Resources.add;
+            this.btnAgregarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarProd.Location = new System.Drawing.Point(880, 415);
+            this.btnAgregarProd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarProd.Name = "btnAgregarProd";
+            this.btnAgregarProd.Size = new System.Drawing.Size(47, 43);
+            this.btnAgregarProd.TabIndex = 52;
+            this.btnAgregarProd.TabStop = false;
+            this.btnAgregarProd.Click += new System.EventHandler(this.btnAgregarProd_Click);
             // 
             // txtBuscar
             // 
@@ -707,31 +732,6 @@
             this.guna2PictureBox3.TabIndex = 32;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idLineaPromocion";
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID.";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 337;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 338;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "unidades";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            // 
             // frm_Gestion_Productos_RegistroCombo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -748,8 +748,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnQuitarProd);
+            this.Controls.Add(this.btnAgregarProd);
             this.Controls.Add(this.dgvLineas);
             this.Controls.Add(this.dgvPlatos);
             this.Controls.Add(this.txtBuscar);
@@ -770,8 +770,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLineas)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQuitarProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagenPlato)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -793,8 +793,8 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvPlatos;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
         private Guna.UI2.WinForms.Guna2DataGridView dgvLineas;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnAgregarProd;
+        private System.Windows.Forms.PictureBox btnQuitarProd;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

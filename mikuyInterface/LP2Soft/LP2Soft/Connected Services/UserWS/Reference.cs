@@ -16,103 +16,31 @@ namespace LP2Soft.UserWS {
     public interface UserWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.asistenciaEntradaResponse asistenciaEntrada(LP2Soft.UserWS.asistenciaEntradaRequest request);
+        LP2Soft.UserWS.modificarEmpresaResponse modificarEmpresa(LP2Soft.UserWS.modificarEmpresaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaEntradaResponse> asistenciaEntradaAsync(LP2Soft.UserWS.asistenciaEntradaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarEmpresaResponse> modificarEmpresaAsync(LP2Soft.UserWS.modificarEmpresaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.listarClienteXNombreResponse listarClienteXNombre(LP2Soft.UserWS.listarClienteXNombreRequest request);
+        LP2Soft.UserWS.asistenciaSalidaResponse asistenciaSalida(LP2Soft.UserWS.asistenciaSalidaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarClienteXNombreResponse> listarClienteXNombreAsync(LP2Soft.UserWS.listarClienteXNombreRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaSalidaResponse> asistenciaSalidaAsync(LP2Soft.UserWS.asistenciaSalidaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.listarAsistenciasResponse listarAsistencias(LP2Soft.UserWS.listarAsistenciasRequest request);
+        LP2Soft.UserWS.insertarUsuarioResponse insertarUsuario(LP2Soft.UserWS.insertarUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarAsistenciasResponse> listarAsistenciasAsync(LP2Soft.UserWS.listarAsistenciasRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.modificarDatosUsuarioResponse modificarDatosUsuario(LP2Soft.UserWS.modificarDatosUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarDatosUsuarioResponse> modificarDatosUsuarioAsync(LP2Soft.UserWS.modificarDatosUsuarioRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.listarPersonasTodasResponse listarPersonasTodas(LP2Soft.UserWS.listarPersonasTodasRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonasTodasResponse> listarPersonasTodasAsync(LP2Soft.UserWS.listarPersonasTodasRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.listarTodosUsuariosResponse listarTodosUsuarios(LP2Soft.UserWS.listarTodosUsuariosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarTodosUsuariosResponse> listarTodosUsuariosAsync(LP2Soft.UserWS.listarTodosUsuariosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.eliminarAsistenciaResponse eliminarAsistencia(LP2Soft.UserWS.eliminarAsistenciaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.eliminarAsistenciaResponse> eliminarAsistenciaAsync(LP2Soft.UserWS.eliminarAsistenciaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.verificarCuentaUsuarioResponse verificarCuentaUsuario(LP2Soft.UserWS.verificarCuentaUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.verificarCuentaUsuarioResponse> verificarCuentaUsuarioAsync(LP2Soft.UserWS.verificarCuentaUsuarioRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.listarUsuariosXNombreResponse listarUsuariosXNombre(LP2Soft.UserWS.listarUsuariosXNombreRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarUsuariosXNombreResponse> listarUsuariosXNombreAsync(LP2Soft.UserWS.listarUsuariosXNombreRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse buscarPersonaPorIdUsuario(LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse> buscarPersonaPorIdUsuarioAsync(LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.modificarUsuarioResponse modificarUsuario(LP2Soft.UserWS.modificarUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarUsuarioResponse> modificarUsuarioAsync(LP2Soft.UserWS.modificarUsuarioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarUsuarioResponse> insertarUsuarioAsync(LP2Soft.UserWS.insertarUsuarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarPersonaResponse")]
@@ -124,13 +52,67 @@ namespace LP2Soft.UserWS {
         System.Threading.Tasks.Task<LP2Soft.UserWS.modificarPersonaResponse> modificarPersonaAsync(LP2Soft.UserWS.modificarPersonaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.modificarEmpresaResponse modificarEmpresa(LP2Soft.UserWS.modificarEmpresaRequest request);
+        LP2Soft.UserWS.modificarUsuarioResponse modificarUsuario(LP2Soft.UserWS.modificarUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarEmpresaResponse> modificarEmpresaAsync(LP2Soft.UserWS.modificarEmpresaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarUsuarioResponse> modificarUsuarioAsync(LP2Soft.UserWS.modificarUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.UserWS.elminarUsuarioResponse elminarUsuario(LP2Soft.UserWS.elminarUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.elminarUsuarioResponse> elminarUsuarioAsync(LP2Soft.UserWS.elminarUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.UserWS.insertarPersonaResponse insertarPersona(LP2Soft.UserWS.insertarPersonaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarPersonaResponse> insertarPersonaAsync(LP2Soft.UserWS.insertarPersonaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.UserWS.insertarEmpresaResponse insertarEmpresa(LP2Soft.UserWS.insertarEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarEmpresaResponse> insertarEmpresaAsync(LP2Soft.UserWS.insertarEmpresaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.UserWS.listarPersonaResponse listarPersona(LP2Soft.UserWS.listarPersonaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonaResponse> listarPersonaAsync(LP2Soft.UserWS.listarPersonaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarRolPorIdRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/buscarRolPorIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.UserWS.buscarRolPorIdResponse buscarRolPorId(LP2Soft.UserWS.buscarRolPorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarRolPorIdRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/buscarRolPorIdResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.buscarRolPorIdResponse> buscarRolPorIdAsync(LP2Soft.UserWS.buscarRolPorIdRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.UserWS.listarRolTodosResponse listarRolTodos(LP2Soft.UserWS.listarRolTodosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarRolTodosResponse> listarRolTodosAsync(LP2Soft.UserWS.listarRolTodosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/elminarPersonaResponse")]
@@ -151,117 +133,99 @@ namespace LP2Soft.UserWS {
         System.Threading.Tasks.Task<LP2Soft.UserWS.listarEmpresaResponse> listarEmpresaAsync(LP2Soft.UserWS.listarEmpresaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.asistenciaSalidaResponse asistenciaSalida(LP2Soft.UserWS.asistenciaSalidaRequest request);
+        LP2Soft.UserWS.modificarDatosUsuarioResponse modificarDatosUsuario(LP2Soft.UserWS.modificarDatosUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaSalidaResponse> asistenciaSalidaAsync(LP2Soft.UserWS.asistenciaSalidaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarDatosUsuarioResponse> modificarDatosUsuarioAsync(LP2Soft.UserWS.modificarDatosUsuarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.listarRolTodosResponse listarRolTodos(LP2Soft.UserWS.listarRolTodosRequest request);
+        LP2Soft.UserWS.asistenciaEntradaResponse asistenciaEntrada(LP2Soft.UserWS.asistenciaEntradaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarRolTodosResponse> listarRolTodosAsync(LP2Soft.UserWS.listarRolTodosRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaEntradaResponse> asistenciaEntradaAsync(LP2Soft.UserWS.asistenciaEntradaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.insertarPersonaResponse insertarPersona(LP2Soft.UserWS.insertarPersonaRequest request);
+        LP2Soft.UserWS.verificarCuentaUsuarioResponse verificarCuentaUsuario(LP2Soft.UserWS.verificarCuentaUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarPersonaResponse> insertarPersonaAsync(LP2Soft.UserWS.insertarPersonaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.verificarCuentaUsuarioResponse> verificarCuentaUsuarioAsync(LP2Soft.UserWS.verificarCuentaUsuarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.insertarUsuarioResponse insertarUsuario(LP2Soft.UserWS.insertarUsuarioRequest request);
+        LP2Soft.UserWS.listarTodosUsuariosResponse listarTodosUsuarios(LP2Soft.UserWS.listarTodosUsuariosRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarUsuarioResponse> insertarUsuarioAsync(LP2Soft.UserWS.insertarUsuarioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarTodosUsuariosResponse> listarTodosUsuariosAsync(LP2Soft.UserWS.listarTodosUsuariosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.listarPersonaResponse listarPersona(LP2Soft.UserWS.listarPersonaRequest request);
+        LP2Soft.UserWS.listarUsuariosXNombreResponse listarUsuariosXNombre(LP2Soft.UserWS.listarUsuariosXNombreRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonaResponse> listarPersonaAsync(LP2Soft.UserWS.listarPersonaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarUsuariosXNombreResponse> listarUsuariosXNombreAsync(LP2Soft.UserWS.listarUsuariosXNombreRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.insertarEmpresaResponse insertarEmpresa(LP2Soft.UserWS.insertarEmpresaRequest request);
+        LP2Soft.UserWS.listarPersonasTodasResponse listarPersonasTodas(LP2Soft.UserWS.listarPersonasTodasRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarEmpresaResponse> insertarEmpresaAsync(LP2Soft.UserWS.insertarEmpresaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonasTodasResponse> listarPersonasTodasAsync(LP2Soft.UserWS.listarPersonasTodasRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.elminarUsuarioResponse elminarUsuario(LP2Soft.UserWS.elminarUsuarioRequest request);
+        LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse buscarPersonaPorIdUsuario(LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.elminarUsuarioResponse> elminarUsuarioAsync(LP2Soft.UserWS.elminarUsuarioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse> buscarPersonaPorIdUsuarioAsync(LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarRolPorIdRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/buscarRolPorIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.UserWS.buscarRolPorIdResponse buscarRolPorId(LP2Soft.UserWS.buscarRolPorIdRequest request);
+        LP2Soft.UserWS.eliminarAsistenciaResponse eliminarAsistencia(LP2Soft.UserWS.eliminarAsistenciaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarRolPorIdRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/buscarRolPorIdResponse")]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.buscarRolPorIdResponse> buscarRolPorIdAsync(LP2Soft.UserWS.buscarRolPorIdRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="asistenciaEntrada", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class asistenciaEntradaRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.eliminarAsistenciaResponse> eliminarAsistenciaAsync(LP2Soft.UserWS.eliminarAsistenciaRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idUsuario;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.UserWS.listarAsistenciasResponse listarAsistencias(LP2Soft.UserWS.listarAsistenciasRequest request);
         
-        public asistenciaEntradaRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarAsistenciasResponse> listarAsistenciasAsync(LP2Soft.UserWS.listarAsistenciasRequest request);
         
-        public asistenciaEntradaRequest(int idUsuario) {
-            this.idUsuario = idUsuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="asistenciaEntradaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class asistenciaEntradaResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.UserWS.listarClienteXNombreResponse listarClienteXNombre(LP2Soft.UserWS.listarClienteXNombreRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public asistenciaEntradaResponse() {
-        }
-        
-        public asistenciaEntradaResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreResponse")]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarClienteXNombreResponse> listarClienteXNombreAsync(LP2Soft.UserWS.listarClienteXNombreRequest request);
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(usuario))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -405,7 +369,7 @@ namespace LP2Soft.UserWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -549,7 +513,7 @@ namespace LP2Soft.UserWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -656,7 +620,7 @@ namespace LP2Soft.UserWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -772,7 +736,7 @@ namespace LP2Soft.UserWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -834,99 +798,35 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarClienteXNombre", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarClienteXNombreRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarEmpresa", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarEmpresaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nombre;
+        public LP2Soft.UserWS.persona Persona;
         
-        public listarClienteXNombreRequest() {
+        public modificarEmpresaRequest() {
         }
         
-        public listarClienteXNombreRequest(string nombre) {
-            this.nombre = nombre;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarClienteXNombreResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarClienteXNombreResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.persona[] @return;
-        
-        public listarClienteXNombreResponse() {
-        }
-        
-        public listarClienteXNombreResponse(LP2Soft.UserWS.persona[] @return) {
-            this.@return = @return;
+        public modificarEmpresaRequest(LP2Soft.UserWS.persona Persona) {
+            this.Persona = Persona;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAsistencias", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarAsistenciasRequest {
-        
-        public listarAsistenciasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAsistenciasResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarAsistenciasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.asistencia[] @return;
-        
-        public listarAsistenciasResponse() {
-        }
-        
-        public listarAsistenciasResponse(LP2Soft.UserWS.asistencia[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDatosUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarDatosUsuarioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.usuario usuario;
-        
-        public modificarDatosUsuarioRequest() {
-        }
-        
-        public modificarDatosUsuarioRequest(LP2Soft.UserWS.usuario usuario) {
-            this.usuario = usuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDatosUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarDatosUsuarioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarEmpresaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarEmpresaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarDatosUsuarioResponse() {
+        public modificarEmpresaResponse() {
         }
         
-        public modificarDatosUsuarioResponse(int @return) {
+        public modificarEmpresaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -934,73 +834,17 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonasTodas", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPersonasTodasRequest {
-        
-        public listarPersonasTodasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonasTodasResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPersonasTodasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.persona[] @return;
-        
-        public listarPersonasTodasResponse() {
-        }
-        
-        public listarPersonasTodasResponse(LP2Soft.UserWS.persona[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosUsuarios", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodosUsuariosRequest {
-        
-        public listarTodosUsuariosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosUsuariosResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodosUsuariosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.usuario[] @return;
-        
-        public listarTodosUsuariosResponse() {
-        }
-        
-        public listarTodosUsuariosResponse(LP2Soft.UserWS.usuario[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAsistencia", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarAsistenciaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="asistenciaSalida", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class asistenciaSalidaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int idUsuario;
         
-        public eliminarAsistenciaRequest() {
+        public asistenciaSalidaRequest() {
         }
         
-        public eliminarAsistenciaRequest(int idUsuario) {
+        public asistenciaSalidaRequest(int idUsuario) {
             this.idUsuario = idUsuario;
         }
     }
@@ -1008,17 +852,17 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAsistenciaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarAsistenciaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="asistenciaSalidaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class asistenciaSalidaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarAsistenciaResponse() {
+        public asistenciaSalidaResponse() {
         }
         
-        public eliminarAsistenciaResponse(int @return) {
+        public asistenciaSalidaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1026,125 +870,17 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuentaUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class verificarCuentaUsuarioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.usuario usuario;
-        
-        public verificarCuentaUsuarioRequest() {
-        }
-        
-        public verificarCuentaUsuarioRequest(LP2Soft.UserWS.usuario usuario) {
-            this.usuario = usuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuentaUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class verificarCuentaUsuarioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.usuario @return;
-        
-        public verificarCuentaUsuarioResponse() {
-        }
-        
-        public verificarCuentaUsuarioResponse(LP2Soft.UserWS.usuario @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarUsuariosXNombre", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarUsuariosXNombreRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nombre;
-        
-        public listarUsuariosXNombreRequest() {
-        }
-        
-        public listarUsuariosXNombreRequest(string nombre) {
-            this.nombre = nombre;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarUsuariosXNombreResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarUsuariosXNombreResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.usuario[] @return;
-        
-        public listarUsuariosXNombreResponse() {
-        }
-        
-        public listarUsuariosXNombreResponse(LP2Soft.UserWS.usuario[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPersonaPorIdUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class buscarPersonaPorIdUsuarioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id_usuario;
-        
-        public buscarPersonaPorIdUsuarioRequest() {
-        }
-        
-        public buscarPersonaPorIdUsuarioRequest(int id_usuario) {
-            this.id_usuario = id_usuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPersonaPorIdUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class buscarPersonaPorIdUsuarioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.persona @return;
-        
-        public buscarPersonaPorIdUsuarioResponse() {
-        }
-        
-        public buscarPersonaPorIdUsuarioResponse(LP2Soft.UserWS.persona @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarUsuarioRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarUsuarioRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public LP2Soft.UserWS.usuario Usuario;
         
-        public modificarUsuarioRequest() {
+        public insertarUsuarioRequest() {
         }
         
-        public modificarUsuarioRequest(LP2Soft.UserWS.usuario Usuario) {
+        public insertarUsuarioRequest(LP2Soft.UserWS.usuario Usuario) {
             this.Usuario = Usuario;
         }
     }
@@ -1152,17 +888,17 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarUsuarioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarUsuarioResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarUsuarioResponse() {
+        public insertarUsuarioResponse() {
         }
         
-        public modificarUsuarioResponse(int @return) {
+        public insertarUsuarioResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1206,17 +942,89 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarEmpresa", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarEmpresaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.usuario Usuario;
+        
+        public modificarUsuarioRequest() {
+        }
+        
+        public modificarUsuarioRequest(LP2Soft.UserWS.usuario Usuario) {
+            this.Usuario = Usuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarUsuarioResponse() {
+        }
+        
+        public modificarUsuarioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="elminarUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class elminarUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idUsuario;
+        
+        public elminarUsuarioRequest() {
+        }
+        
+        public elminarUsuarioRequest(int idUsuario) {
+            this.idUsuario = idUsuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="elminarUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class elminarUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public elminarUsuarioResponse() {
+        }
+        
+        public elminarUsuarioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPersona", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarPersonaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public LP2Soft.UserWS.persona Persona;
         
-        public modificarEmpresaRequest() {
+        public insertarPersonaRequest() {
         }
         
-        public modificarEmpresaRequest(LP2Soft.UserWS.persona Persona) {
+        public insertarPersonaRequest(LP2Soft.UserWS.persona Persona) {
             this.Persona = Persona;
         }
     }
@@ -1224,17 +1032,145 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarEmpresaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarEmpresaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPersonaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarPersonaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarEmpresaResponse() {
+        public insertarPersonaResponse() {
         }
         
-        public modificarEmpresaResponse(int @return) {
+        public insertarPersonaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarEmpresa", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.persona Persona;
+        
+        public insertarEmpresaRequest() {
+        }
+        
+        public insertarEmpresaRequest(LP2Soft.UserWS.persona Persona) {
+            this.Persona = Persona;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarEmpresaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarEmpresaResponse() {
+        }
+        
+        public insertarEmpresaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersona", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPersonaRequest {
+        
+        public listarPersonaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPersonaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.persona[] @return;
+        
+        public listarPersonaResponse() {
+        }
+        
+        public listarPersonaResponse(LP2Soft.UserWS.persona[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarRolPorId", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarRolPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id_rol;
+        
+        public buscarRolPorIdRequest() {
+        }
+        
+        public buscarRolPorIdRequest(int id_rol) {
+            this.id_rol = id_rol;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarRolPorIdResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarRolPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.rol @return;
+        
+        public buscarRolPorIdResponse() {
+        }
+        
+        public buscarRolPorIdResponse(LP2Soft.UserWS.rol @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRolTodos", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarRolTodosRequest {
+        
+        public listarRolTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRolTodosResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarRolTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.rol[] @return;
+        
+        public listarRolTodosResponse() {
+        }
+        
+        public listarRolTodosResponse(LP2Soft.UserWS.rol[] @return) {
             this.@return = @return;
         }
     }
@@ -1306,17 +1242,53 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="asistenciaSalida", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class asistenciaSalidaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDatosUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarDatosUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.usuario usuario;
+        
+        public modificarDatosUsuarioRequest() {
+        }
+        
+        public modificarDatosUsuarioRequest(LP2Soft.UserWS.usuario usuario) {
+            this.usuario = usuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDatosUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarDatosUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarDatosUsuarioResponse() {
+        }
+        
+        public modificarDatosUsuarioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="asistenciaEntrada", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class asistenciaEntradaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int idUsuario;
         
-        public asistenciaSalidaRequest() {
+        public asistenciaEntradaRequest() {
         }
         
-        public asistenciaSalidaRequest(int idUsuario) {
+        public asistenciaEntradaRequest(int idUsuario) {
             this.idUsuario = idUsuario;
         }
     }
@@ -1324,17 +1296,17 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="asistenciaSalidaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class asistenciaSalidaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="asistenciaEntradaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class asistenciaEntradaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public asistenciaSalidaResponse() {
+        public asistenciaEntradaResponse() {
         }
         
-        public asistenciaSalidaResponse(int @return) {
+        public asistenciaEntradaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1342,27 +1314,63 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRolTodos", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarRolTodosRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuentaUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class verificarCuentaUsuarioRequest {
         
-        public listarRolTodosRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.usuario usuario;
+        
+        public verificarCuentaUsuarioRequest() {
+        }
+        
+        public verificarCuentaUsuarioRequest(LP2Soft.UserWS.usuario usuario) {
+            this.usuario = usuario;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRolTodosResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarRolTodosResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCuentaUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class verificarCuentaUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.usuario @return;
+        
+        public verificarCuentaUsuarioResponse() {
+        }
+        
+        public verificarCuentaUsuarioResponse(LP2Soft.UserWS.usuario @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosUsuarios", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodosUsuariosRequest {
+        
+        public listarTodosUsuariosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosUsuariosResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodosUsuariosResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.rol[] @return;
+        public LP2Soft.UserWS.usuario[] @return;
         
-        public listarRolTodosResponse() {
+        public listarTodosUsuariosResponse() {
         }
         
-        public listarRolTodosResponse(LP2Soft.UserWS.rol[] @return) {
+        public listarTodosUsuariosResponse(LP2Soft.UserWS.usuario[] @return) {
             this.@return = @return;
         }
     }
@@ -1370,35 +1378,35 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPersona", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarPersonaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarUsuariosXNombre", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarUsuariosXNombreRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.persona Persona;
+        public string nombre;
         
-        public insertarPersonaRequest() {
+        public listarUsuariosXNombreRequest() {
         }
         
-        public insertarPersonaRequest(LP2Soft.UserWS.persona Persona) {
-            this.Persona = Persona;
+        public listarUsuariosXNombreRequest(string nombre) {
+            this.nombre = nombre;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPersonaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarPersonaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarUsuariosXNombreResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarUsuariosXNombreResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.usuario[] @return;
         
-        public insertarPersonaResponse() {
+        public listarUsuariosXNombreResponse() {
         }
         
-        public insertarPersonaResponse(int @return) {
+        public listarUsuariosXNombreResponse(LP2Soft.UserWS.usuario[] @return) {
             this.@return = @return;
         }
     }
@@ -1406,63 +1414,27 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarUsuarioRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonasTodas", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPersonasTodasRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.usuario Usuario;
-        
-        public insertarUsuarioRequest() {
-        }
-        
-        public insertarUsuarioRequest(LP2Soft.UserWS.usuario Usuario) {
-            this.Usuario = Usuario;
+        public listarPersonasTodasRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarUsuarioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarUsuarioResponse() {
-        }
-        
-        public insertarUsuarioResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersona", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPersonaRequest {
-        
-        public listarPersonaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPersonaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonasTodasResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPersonasTodasResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public LP2Soft.UserWS.persona[] @return;
         
-        public listarPersonaResponse() {
+        public listarPersonasTodasResponse() {
         }
         
-        public listarPersonaResponse(LP2Soft.UserWS.persona[] @return) {
+        public listarPersonasTodasResponse(LP2Soft.UserWS.persona[] @return) {
             this.@return = @return;
         }
     }
@@ -1470,35 +1442,35 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarEmpresa", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarEmpresaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPersonaPorIdUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarPersonaPorIdUsuarioRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.persona Persona;
+        public int id_usuario;
         
-        public insertarEmpresaRequest() {
+        public buscarPersonaPorIdUsuarioRequest() {
         }
         
-        public insertarEmpresaRequest(LP2Soft.UserWS.persona Persona) {
-            this.Persona = Persona;
+        public buscarPersonaPorIdUsuarioRequest(int id_usuario) {
+            this.id_usuario = id_usuario;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarEmpresaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarEmpresaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPersonaPorIdUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarPersonaPorIdUsuarioResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        public LP2Soft.UserWS.persona @return;
         
-        public insertarEmpresaResponse() {
+        public buscarPersonaPorIdUsuarioResponse() {
         }
         
-        public insertarEmpresaResponse(int @return) {
+        public buscarPersonaPorIdUsuarioResponse(LP2Soft.UserWS.persona @return) {
             this.@return = @return;
         }
     }
@@ -1506,17 +1478,17 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="elminarUsuario", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class elminarUsuarioRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAsistencia", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarAsistenciaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int idUsuario;
         
-        public elminarUsuarioRequest() {
+        public eliminarAsistenciaRequest() {
         }
         
-        public elminarUsuarioRequest(int idUsuario) {
+        public eliminarAsistenciaRequest(int idUsuario) {
             this.idUsuario = idUsuario;
         }
     }
@@ -1524,17 +1496,17 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="elminarUsuarioResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class elminarUsuarioResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAsistenciaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarAsistenciaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public elminarUsuarioResponse() {
+        public eliminarAsistenciaResponse() {
         }
         
-        public elminarUsuarioResponse(int @return) {
+        public eliminarAsistenciaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1542,35 +1514,63 @@ namespace LP2Soft.UserWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarRolPorId", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class buscarRolPorIdRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAsistencias", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarAsistenciasRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id_rol;
-        
-        public buscarRolPorIdRequest() {
-        }
-        
-        public buscarRolPorIdRequest(int id_rol) {
-            this.id_rol = id_rol;
+        public listarAsistenciasRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarRolPorIdResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class buscarRolPorIdResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAsistenciasResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarAsistenciasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.asistencia[] @return;
+        
+        public listarAsistenciasResponse() {
+        }
+        
+        public listarAsistenciasResponse(LP2Soft.UserWS.asistencia[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarClienteXNombre", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarClienteXNombreRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.UserWS.rol @return;
+        public string nombre;
         
-        public buscarRolPorIdResponse() {
+        public listarClienteXNombreRequest() {
         }
         
-        public buscarRolPorIdResponse(LP2Soft.UserWS.rol @return) {
+        public listarClienteXNombreRequest(string nombre) {
+            this.nombre = nombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarClienteXNombreResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarClienteXNombreResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.UserWS.persona[] @return;
+        
+        public listarClienteXNombreResponse() {
+        }
+        
+        public listarClienteXNombreResponse(LP2Soft.UserWS.persona[] @return) {
             this.@return = @return;
         }
     }
@@ -1603,250 +1603,72 @@ namespace LP2Soft.UserWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.asistenciaEntradaResponse LP2Soft.UserWS.UserWS.asistenciaEntrada(LP2Soft.UserWS.asistenciaEntradaRequest request) {
-            return base.Channel.asistenciaEntrada(request);
+        LP2Soft.UserWS.modificarEmpresaResponse LP2Soft.UserWS.UserWS.modificarEmpresa(LP2Soft.UserWS.modificarEmpresaRequest request) {
+            return base.Channel.modificarEmpresa(request);
         }
         
-        public int asistenciaEntrada(int idUsuario) {
-            LP2Soft.UserWS.asistenciaEntradaRequest inValue = new LP2Soft.UserWS.asistenciaEntradaRequest();
+        public int modificarEmpresa(LP2Soft.UserWS.persona Persona) {
+            LP2Soft.UserWS.modificarEmpresaRequest inValue = new LP2Soft.UserWS.modificarEmpresaRequest();
+            inValue.Persona = Persona;
+            LP2Soft.UserWS.modificarEmpresaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).modificarEmpresa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarEmpresaResponse> LP2Soft.UserWS.UserWS.modificarEmpresaAsync(LP2Soft.UserWS.modificarEmpresaRequest request) {
+            return base.Channel.modificarEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.modificarEmpresaResponse> modificarEmpresaAsync(LP2Soft.UserWS.persona Persona) {
+            LP2Soft.UserWS.modificarEmpresaRequest inValue = new LP2Soft.UserWS.modificarEmpresaRequest();
+            inValue.Persona = Persona;
+            return ((LP2Soft.UserWS.UserWS)(this)).modificarEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.asistenciaSalidaResponse LP2Soft.UserWS.UserWS.asistenciaSalida(LP2Soft.UserWS.asistenciaSalidaRequest request) {
+            return base.Channel.asistenciaSalida(request);
+        }
+        
+        public int asistenciaSalida(int idUsuario) {
+            LP2Soft.UserWS.asistenciaSalidaRequest inValue = new LP2Soft.UserWS.asistenciaSalidaRequest();
             inValue.idUsuario = idUsuario;
-            LP2Soft.UserWS.asistenciaEntradaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).asistenciaEntrada(inValue);
+            LP2Soft.UserWS.asistenciaSalidaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).asistenciaSalida(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaEntradaResponse> LP2Soft.UserWS.UserWS.asistenciaEntradaAsync(LP2Soft.UserWS.asistenciaEntradaRequest request) {
-            return base.Channel.asistenciaEntradaAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaSalidaResponse> LP2Soft.UserWS.UserWS.asistenciaSalidaAsync(LP2Soft.UserWS.asistenciaSalidaRequest request) {
+            return base.Channel.asistenciaSalidaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaEntradaResponse> asistenciaEntradaAsync(int idUsuario) {
-            LP2Soft.UserWS.asistenciaEntradaRequest inValue = new LP2Soft.UserWS.asistenciaEntradaRequest();
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaSalidaResponse> asistenciaSalidaAsync(int idUsuario) {
+            LP2Soft.UserWS.asistenciaSalidaRequest inValue = new LP2Soft.UserWS.asistenciaSalidaRequest();
             inValue.idUsuario = idUsuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).asistenciaEntradaAsync(inValue);
+            return ((LP2Soft.UserWS.UserWS)(this)).asistenciaSalidaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.listarClienteXNombreResponse LP2Soft.UserWS.UserWS.listarClienteXNombre(LP2Soft.UserWS.listarClienteXNombreRequest request) {
-            return base.Channel.listarClienteXNombre(request);
+        LP2Soft.UserWS.insertarUsuarioResponse LP2Soft.UserWS.UserWS.insertarUsuario(LP2Soft.UserWS.insertarUsuarioRequest request) {
+            return base.Channel.insertarUsuario(request);
         }
         
-        public LP2Soft.UserWS.persona[] listarClienteXNombre(string nombre) {
-            LP2Soft.UserWS.listarClienteXNombreRequest inValue = new LP2Soft.UserWS.listarClienteXNombreRequest();
-            inValue.nombre = nombre;
-            LP2Soft.UserWS.listarClienteXNombreResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarClienteXNombre(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarClienteXNombreResponse> LP2Soft.UserWS.UserWS.listarClienteXNombreAsync(LP2Soft.UserWS.listarClienteXNombreRequest request) {
-            return base.Channel.listarClienteXNombreAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarClienteXNombreResponse> listarClienteXNombreAsync(string nombre) {
-            LP2Soft.UserWS.listarClienteXNombreRequest inValue = new LP2Soft.UserWS.listarClienteXNombreRequest();
-            inValue.nombre = nombre;
-            return ((LP2Soft.UserWS.UserWS)(this)).listarClienteXNombreAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.listarAsistenciasResponse LP2Soft.UserWS.UserWS.listarAsistencias(LP2Soft.UserWS.listarAsistenciasRequest request) {
-            return base.Channel.listarAsistencias(request);
-        }
-        
-        public LP2Soft.UserWS.asistencia[] listarAsistencias() {
-            LP2Soft.UserWS.listarAsistenciasRequest inValue = new LP2Soft.UserWS.listarAsistenciasRequest();
-            LP2Soft.UserWS.listarAsistenciasResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarAsistencias(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarAsistenciasResponse> LP2Soft.UserWS.UserWS.listarAsistenciasAsync(LP2Soft.UserWS.listarAsistenciasRequest request) {
-            return base.Channel.listarAsistenciasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarAsistenciasResponse> listarAsistenciasAsync() {
-            LP2Soft.UserWS.listarAsistenciasRequest inValue = new LP2Soft.UserWS.listarAsistenciasRequest();
-            return ((LP2Soft.UserWS.UserWS)(this)).listarAsistenciasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.modificarDatosUsuarioResponse LP2Soft.UserWS.UserWS.modificarDatosUsuario(LP2Soft.UserWS.modificarDatosUsuarioRequest request) {
-            return base.Channel.modificarDatosUsuario(request);
-        }
-        
-        public int modificarDatosUsuario(LP2Soft.UserWS.usuario usuario) {
-            LP2Soft.UserWS.modificarDatosUsuarioRequest inValue = new LP2Soft.UserWS.modificarDatosUsuarioRequest();
-            inValue.usuario = usuario;
-            LP2Soft.UserWS.modificarDatosUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).modificarDatosUsuario(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarDatosUsuarioResponse> LP2Soft.UserWS.UserWS.modificarDatosUsuarioAsync(LP2Soft.UserWS.modificarDatosUsuarioRequest request) {
-            return base.Channel.modificarDatosUsuarioAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.modificarDatosUsuarioResponse> modificarDatosUsuarioAsync(LP2Soft.UserWS.usuario usuario) {
-            LP2Soft.UserWS.modificarDatosUsuarioRequest inValue = new LP2Soft.UserWS.modificarDatosUsuarioRequest();
-            inValue.usuario = usuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).modificarDatosUsuarioAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.listarPersonasTodasResponse LP2Soft.UserWS.UserWS.listarPersonasTodas(LP2Soft.UserWS.listarPersonasTodasRequest request) {
-            return base.Channel.listarPersonasTodas(request);
-        }
-        
-        public LP2Soft.UserWS.persona[] listarPersonasTodas() {
-            LP2Soft.UserWS.listarPersonasTodasRequest inValue = new LP2Soft.UserWS.listarPersonasTodasRequest();
-            LP2Soft.UserWS.listarPersonasTodasResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarPersonasTodas(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonasTodasResponse> LP2Soft.UserWS.UserWS.listarPersonasTodasAsync(LP2Soft.UserWS.listarPersonasTodasRequest request) {
-            return base.Channel.listarPersonasTodasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonasTodasResponse> listarPersonasTodasAsync() {
-            LP2Soft.UserWS.listarPersonasTodasRequest inValue = new LP2Soft.UserWS.listarPersonasTodasRequest();
-            return ((LP2Soft.UserWS.UserWS)(this)).listarPersonasTodasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.listarTodosUsuariosResponse LP2Soft.UserWS.UserWS.listarTodosUsuarios(LP2Soft.UserWS.listarTodosUsuariosRequest request) {
-            return base.Channel.listarTodosUsuarios(request);
-        }
-        
-        public LP2Soft.UserWS.usuario[] listarTodosUsuarios() {
-            LP2Soft.UserWS.listarTodosUsuariosRequest inValue = new LP2Soft.UserWS.listarTodosUsuariosRequest();
-            LP2Soft.UserWS.listarTodosUsuariosResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarTodosUsuarios(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarTodosUsuariosResponse> LP2Soft.UserWS.UserWS.listarTodosUsuariosAsync(LP2Soft.UserWS.listarTodosUsuariosRequest request) {
-            return base.Channel.listarTodosUsuariosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarTodosUsuariosResponse> listarTodosUsuariosAsync() {
-            LP2Soft.UserWS.listarTodosUsuariosRequest inValue = new LP2Soft.UserWS.listarTodosUsuariosRequest();
-            return ((LP2Soft.UserWS.UserWS)(this)).listarTodosUsuariosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.eliminarAsistenciaResponse LP2Soft.UserWS.UserWS.eliminarAsistencia(LP2Soft.UserWS.eliminarAsistenciaRequest request) {
-            return base.Channel.eliminarAsistencia(request);
-        }
-        
-        public int eliminarAsistencia(int idUsuario) {
-            LP2Soft.UserWS.eliminarAsistenciaRequest inValue = new LP2Soft.UserWS.eliminarAsistenciaRequest();
-            inValue.idUsuario = idUsuario;
-            LP2Soft.UserWS.eliminarAsistenciaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).eliminarAsistencia(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.eliminarAsistenciaResponse> LP2Soft.UserWS.UserWS.eliminarAsistenciaAsync(LP2Soft.UserWS.eliminarAsistenciaRequest request) {
-            return base.Channel.eliminarAsistenciaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.eliminarAsistenciaResponse> eliminarAsistenciaAsync(int idUsuario) {
-            LP2Soft.UserWS.eliminarAsistenciaRequest inValue = new LP2Soft.UserWS.eliminarAsistenciaRequest();
-            inValue.idUsuario = idUsuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).eliminarAsistenciaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.verificarCuentaUsuarioResponse LP2Soft.UserWS.UserWS.verificarCuentaUsuario(LP2Soft.UserWS.verificarCuentaUsuarioRequest request) {
-            return base.Channel.verificarCuentaUsuario(request);
-        }
-        
-        public LP2Soft.UserWS.usuario verificarCuentaUsuario(LP2Soft.UserWS.usuario usuario) {
-            LP2Soft.UserWS.verificarCuentaUsuarioRequest inValue = new LP2Soft.UserWS.verificarCuentaUsuarioRequest();
-            inValue.usuario = usuario;
-            LP2Soft.UserWS.verificarCuentaUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).verificarCuentaUsuario(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.verificarCuentaUsuarioResponse> LP2Soft.UserWS.UserWS.verificarCuentaUsuarioAsync(LP2Soft.UserWS.verificarCuentaUsuarioRequest request) {
-            return base.Channel.verificarCuentaUsuarioAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.verificarCuentaUsuarioResponse> verificarCuentaUsuarioAsync(LP2Soft.UserWS.usuario usuario) {
-            LP2Soft.UserWS.verificarCuentaUsuarioRequest inValue = new LP2Soft.UserWS.verificarCuentaUsuarioRequest();
-            inValue.usuario = usuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).verificarCuentaUsuarioAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.listarUsuariosXNombreResponse LP2Soft.UserWS.UserWS.listarUsuariosXNombre(LP2Soft.UserWS.listarUsuariosXNombreRequest request) {
-            return base.Channel.listarUsuariosXNombre(request);
-        }
-        
-        public LP2Soft.UserWS.usuario[] listarUsuariosXNombre(string nombre) {
-            LP2Soft.UserWS.listarUsuariosXNombreRequest inValue = new LP2Soft.UserWS.listarUsuariosXNombreRequest();
-            inValue.nombre = nombre;
-            LP2Soft.UserWS.listarUsuariosXNombreResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarUsuariosXNombre(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarUsuariosXNombreResponse> LP2Soft.UserWS.UserWS.listarUsuariosXNombreAsync(LP2Soft.UserWS.listarUsuariosXNombreRequest request) {
-            return base.Channel.listarUsuariosXNombreAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarUsuariosXNombreResponse> listarUsuariosXNombreAsync(string nombre) {
-            LP2Soft.UserWS.listarUsuariosXNombreRequest inValue = new LP2Soft.UserWS.listarUsuariosXNombreRequest();
-            inValue.nombre = nombre;
-            return ((LP2Soft.UserWS.UserWS)(this)).listarUsuariosXNombreAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse LP2Soft.UserWS.UserWS.buscarPersonaPorIdUsuario(LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest request) {
-            return base.Channel.buscarPersonaPorIdUsuario(request);
-        }
-        
-        public LP2Soft.UserWS.persona buscarPersonaPorIdUsuario(int id_usuario) {
-            LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest inValue = new LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest();
-            inValue.id_usuario = id_usuario;
-            LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).buscarPersonaPorIdUsuario(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse> LP2Soft.UserWS.UserWS.buscarPersonaPorIdUsuarioAsync(LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest request) {
-            return base.Channel.buscarPersonaPorIdUsuarioAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse> buscarPersonaPorIdUsuarioAsync(int id_usuario) {
-            LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest inValue = new LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest();
-            inValue.id_usuario = id_usuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).buscarPersonaPorIdUsuarioAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.modificarUsuarioResponse LP2Soft.UserWS.UserWS.modificarUsuario(LP2Soft.UserWS.modificarUsuarioRequest request) {
-            return base.Channel.modificarUsuario(request);
-        }
-        
-        public int modificarUsuario(LP2Soft.UserWS.usuario Usuario) {
-            LP2Soft.UserWS.modificarUsuarioRequest inValue = new LP2Soft.UserWS.modificarUsuarioRequest();
+        public int insertarUsuario(LP2Soft.UserWS.usuario Usuario) {
+            LP2Soft.UserWS.insertarUsuarioRequest inValue = new LP2Soft.UserWS.insertarUsuarioRequest();
             inValue.Usuario = Usuario;
-            LP2Soft.UserWS.modificarUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).modificarUsuario(inValue);
+            LP2Soft.UserWS.insertarUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).insertarUsuario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarUsuarioResponse> LP2Soft.UserWS.UserWS.modificarUsuarioAsync(LP2Soft.UserWS.modificarUsuarioRequest request) {
-            return base.Channel.modificarUsuarioAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarUsuarioResponse> LP2Soft.UserWS.UserWS.insertarUsuarioAsync(LP2Soft.UserWS.insertarUsuarioRequest request) {
+            return base.Channel.insertarUsuarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.modificarUsuarioResponse> modificarUsuarioAsync(LP2Soft.UserWS.usuario Usuario) {
-            LP2Soft.UserWS.modificarUsuarioRequest inValue = new LP2Soft.UserWS.modificarUsuarioRequest();
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.insertarUsuarioResponse> insertarUsuarioAsync(LP2Soft.UserWS.usuario Usuario) {
+            LP2Soft.UserWS.insertarUsuarioRequest inValue = new LP2Soft.UserWS.insertarUsuarioRequest();
             inValue.Usuario = Usuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).modificarUsuarioAsync(inValue);
+            return ((LP2Soft.UserWS.UserWS)(this)).insertarUsuarioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1873,26 +1695,160 @@ namespace LP2Soft.UserWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.modificarEmpresaResponse LP2Soft.UserWS.UserWS.modificarEmpresa(LP2Soft.UserWS.modificarEmpresaRequest request) {
-            return base.Channel.modificarEmpresa(request);
+        LP2Soft.UserWS.modificarUsuarioResponse LP2Soft.UserWS.UserWS.modificarUsuario(LP2Soft.UserWS.modificarUsuarioRequest request) {
+            return base.Channel.modificarUsuario(request);
         }
         
-        public int modificarEmpresa(LP2Soft.UserWS.persona Persona) {
-            LP2Soft.UserWS.modificarEmpresaRequest inValue = new LP2Soft.UserWS.modificarEmpresaRequest();
-            inValue.Persona = Persona;
-            LP2Soft.UserWS.modificarEmpresaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).modificarEmpresa(inValue);
+        public int modificarUsuario(LP2Soft.UserWS.usuario Usuario) {
+            LP2Soft.UserWS.modificarUsuarioRequest inValue = new LP2Soft.UserWS.modificarUsuarioRequest();
+            inValue.Usuario = Usuario;
+            LP2Soft.UserWS.modificarUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).modificarUsuario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarEmpresaResponse> LP2Soft.UserWS.UserWS.modificarEmpresaAsync(LP2Soft.UserWS.modificarEmpresaRequest request) {
-            return base.Channel.modificarEmpresaAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarUsuarioResponse> LP2Soft.UserWS.UserWS.modificarUsuarioAsync(LP2Soft.UserWS.modificarUsuarioRequest request) {
+            return base.Channel.modificarUsuarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.modificarEmpresaResponse> modificarEmpresaAsync(LP2Soft.UserWS.persona Persona) {
-            LP2Soft.UserWS.modificarEmpresaRequest inValue = new LP2Soft.UserWS.modificarEmpresaRequest();
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.modificarUsuarioResponse> modificarUsuarioAsync(LP2Soft.UserWS.usuario Usuario) {
+            LP2Soft.UserWS.modificarUsuarioRequest inValue = new LP2Soft.UserWS.modificarUsuarioRequest();
+            inValue.Usuario = Usuario;
+            return ((LP2Soft.UserWS.UserWS)(this)).modificarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.elminarUsuarioResponse LP2Soft.UserWS.UserWS.elminarUsuario(LP2Soft.UserWS.elminarUsuarioRequest request) {
+            return base.Channel.elminarUsuario(request);
+        }
+        
+        public int elminarUsuario(int idUsuario) {
+            LP2Soft.UserWS.elminarUsuarioRequest inValue = new LP2Soft.UserWS.elminarUsuarioRequest();
+            inValue.idUsuario = idUsuario;
+            LP2Soft.UserWS.elminarUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).elminarUsuario(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.elminarUsuarioResponse> LP2Soft.UserWS.UserWS.elminarUsuarioAsync(LP2Soft.UserWS.elminarUsuarioRequest request) {
+            return base.Channel.elminarUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.elminarUsuarioResponse> elminarUsuarioAsync(int idUsuario) {
+            LP2Soft.UserWS.elminarUsuarioRequest inValue = new LP2Soft.UserWS.elminarUsuarioRequest();
+            inValue.idUsuario = idUsuario;
+            return ((LP2Soft.UserWS.UserWS)(this)).elminarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.insertarPersonaResponse LP2Soft.UserWS.UserWS.insertarPersona(LP2Soft.UserWS.insertarPersonaRequest request) {
+            return base.Channel.insertarPersona(request);
+        }
+        
+        public int insertarPersona(LP2Soft.UserWS.persona Persona) {
+            LP2Soft.UserWS.insertarPersonaRequest inValue = new LP2Soft.UserWS.insertarPersonaRequest();
             inValue.Persona = Persona;
-            return ((LP2Soft.UserWS.UserWS)(this)).modificarEmpresaAsync(inValue);
+            LP2Soft.UserWS.insertarPersonaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).insertarPersona(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarPersonaResponse> LP2Soft.UserWS.UserWS.insertarPersonaAsync(LP2Soft.UserWS.insertarPersonaRequest request) {
+            return base.Channel.insertarPersonaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.insertarPersonaResponse> insertarPersonaAsync(LP2Soft.UserWS.persona Persona) {
+            LP2Soft.UserWS.insertarPersonaRequest inValue = new LP2Soft.UserWS.insertarPersonaRequest();
+            inValue.Persona = Persona;
+            return ((LP2Soft.UserWS.UserWS)(this)).insertarPersonaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.insertarEmpresaResponse LP2Soft.UserWS.UserWS.insertarEmpresa(LP2Soft.UserWS.insertarEmpresaRequest request) {
+            return base.Channel.insertarEmpresa(request);
+        }
+        
+        public int insertarEmpresa(LP2Soft.UserWS.persona Persona) {
+            LP2Soft.UserWS.insertarEmpresaRequest inValue = new LP2Soft.UserWS.insertarEmpresaRequest();
+            inValue.Persona = Persona;
+            LP2Soft.UserWS.insertarEmpresaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).insertarEmpresa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarEmpresaResponse> LP2Soft.UserWS.UserWS.insertarEmpresaAsync(LP2Soft.UserWS.insertarEmpresaRequest request) {
+            return base.Channel.insertarEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.insertarEmpresaResponse> insertarEmpresaAsync(LP2Soft.UserWS.persona Persona) {
+            LP2Soft.UserWS.insertarEmpresaRequest inValue = new LP2Soft.UserWS.insertarEmpresaRequest();
+            inValue.Persona = Persona;
+            return ((LP2Soft.UserWS.UserWS)(this)).insertarEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.listarPersonaResponse LP2Soft.UserWS.UserWS.listarPersona(LP2Soft.UserWS.listarPersonaRequest request) {
+            return base.Channel.listarPersona(request);
+        }
+        
+        public LP2Soft.UserWS.persona[] listarPersona() {
+            LP2Soft.UserWS.listarPersonaRequest inValue = new LP2Soft.UserWS.listarPersonaRequest();
+            LP2Soft.UserWS.listarPersonaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarPersona(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonaResponse> LP2Soft.UserWS.UserWS.listarPersonaAsync(LP2Soft.UserWS.listarPersonaRequest request) {
+            return base.Channel.listarPersonaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonaResponse> listarPersonaAsync() {
+            LP2Soft.UserWS.listarPersonaRequest inValue = new LP2Soft.UserWS.listarPersonaRequest();
+            return ((LP2Soft.UserWS.UserWS)(this)).listarPersonaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.buscarRolPorIdResponse LP2Soft.UserWS.UserWS.buscarRolPorId(LP2Soft.UserWS.buscarRolPorIdRequest request) {
+            return base.Channel.buscarRolPorId(request);
+        }
+        
+        public LP2Soft.UserWS.rol buscarRolPorId(int id_rol) {
+            LP2Soft.UserWS.buscarRolPorIdRequest inValue = new LP2Soft.UserWS.buscarRolPorIdRequest();
+            inValue.id_rol = id_rol;
+            LP2Soft.UserWS.buscarRolPorIdResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).buscarRolPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.buscarRolPorIdResponse> LP2Soft.UserWS.UserWS.buscarRolPorIdAsync(LP2Soft.UserWS.buscarRolPorIdRequest request) {
+            return base.Channel.buscarRolPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.buscarRolPorIdResponse> buscarRolPorIdAsync(int id_rol) {
+            LP2Soft.UserWS.buscarRolPorIdRequest inValue = new LP2Soft.UserWS.buscarRolPorIdRequest();
+            inValue.id_rol = id_rol;
+            return ((LP2Soft.UserWS.UserWS)(this)).buscarRolPorIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.listarRolTodosResponse LP2Soft.UserWS.UserWS.listarRolTodos(LP2Soft.UserWS.listarRolTodosRequest request) {
+            return base.Channel.listarRolTodos(request);
+        }
+        
+        public LP2Soft.UserWS.rol[] listarRolTodos() {
+            LP2Soft.UserWS.listarRolTodosRequest inValue = new LP2Soft.UserWS.listarRolTodosRequest();
+            LP2Soft.UserWS.listarRolTodosResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarRolTodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarRolTodosResponse> LP2Soft.UserWS.UserWS.listarRolTodosAsync(LP2Soft.UserWS.listarRolTodosRequest request) {
+            return base.Channel.listarRolTodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarRolTodosResponse> listarRolTodosAsync() {
+            LP2Soft.UserWS.listarRolTodosRequest inValue = new LP2Soft.UserWS.listarRolTodosRequest();
+            return ((LP2Soft.UserWS.UserWS)(this)).listarRolTodosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1940,183 +1896,227 @@ namespace LP2Soft.UserWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.asistenciaSalidaResponse LP2Soft.UserWS.UserWS.asistenciaSalida(LP2Soft.UserWS.asistenciaSalidaRequest request) {
-            return base.Channel.asistenciaSalida(request);
+        LP2Soft.UserWS.modificarDatosUsuarioResponse LP2Soft.UserWS.UserWS.modificarDatosUsuario(LP2Soft.UserWS.modificarDatosUsuarioRequest request) {
+            return base.Channel.modificarDatosUsuario(request);
         }
         
-        public int asistenciaSalida(int idUsuario) {
-            LP2Soft.UserWS.asistenciaSalidaRequest inValue = new LP2Soft.UserWS.asistenciaSalidaRequest();
+        public int modificarDatosUsuario(LP2Soft.UserWS.usuario usuario) {
+            LP2Soft.UserWS.modificarDatosUsuarioRequest inValue = new LP2Soft.UserWS.modificarDatosUsuarioRequest();
+            inValue.usuario = usuario;
+            LP2Soft.UserWS.modificarDatosUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).modificarDatosUsuario(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.modificarDatosUsuarioResponse> LP2Soft.UserWS.UserWS.modificarDatosUsuarioAsync(LP2Soft.UserWS.modificarDatosUsuarioRequest request) {
+            return base.Channel.modificarDatosUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.modificarDatosUsuarioResponse> modificarDatosUsuarioAsync(LP2Soft.UserWS.usuario usuario) {
+            LP2Soft.UserWS.modificarDatosUsuarioRequest inValue = new LP2Soft.UserWS.modificarDatosUsuarioRequest();
+            inValue.usuario = usuario;
+            return ((LP2Soft.UserWS.UserWS)(this)).modificarDatosUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.asistenciaEntradaResponse LP2Soft.UserWS.UserWS.asistenciaEntrada(LP2Soft.UserWS.asistenciaEntradaRequest request) {
+            return base.Channel.asistenciaEntrada(request);
+        }
+        
+        public int asistenciaEntrada(int idUsuario) {
+            LP2Soft.UserWS.asistenciaEntradaRequest inValue = new LP2Soft.UserWS.asistenciaEntradaRequest();
             inValue.idUsuario = idUsuario;
-            LP2Soft.UserWS.asistenciaSalidaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).asistenciaSalida(inValue);
+            LP2Soft.UserWS.asistenciaEntradaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).asistenciaEntrada(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaSalidaResponse> LP2Soft.UserWS.UserWS.asistenciaSalidaAsync(LP2Soft.UserWS.asistenciaSalidaRequest request) {
-            return base.Channel.asistenciaSalidaAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaEntradaResponse> LP2Soft.UserWS.UserWS.asistenciaEntradaAsync(LP2Soft.UserWS.asistenciaEntradaRequest request) {
+            return base.Channel.asistenciaEntradaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaSalidaResponse> asistenciaSalidaAsync(int idUsuario) {
-            LP2Soft.UserWS.asistenciaSalidaRequest inValue = new LP2Soft.UserWS.asistenciaSalidaRequest();
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.asistenciaEntradaResponse> asistenciaEntradaAsync(int idUsuario) {
+            LP2Soft.UserWS.asistenciaEntradaRequest inValue = new LP2Soft.UserWS.asistenciaEntradaRequest();
             inValue.idUsuario = idUsuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).asistenciaSalidaAsync(inValue);
+            return ((LP2Soft.UserWS.UserWS)(this)).asistenciaEntradaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.listarRolTodosResponse LP2Soft.UserWS.UserWS.listarRolTodos(LP2Soft.UserWS.listarRolTodosRequest request) {
-            return base.Channel.listarRolTodos(request);
+        LP2Soft.UserWS.verificarCuentaUsuarioResponse LP2Soft.UserWS.UserWS.verificarCuentaUsuario(LP2Soft.UserWS.verificarCuentaUsuarioRequest request) {
+            return base.Channel.verificarCuentaUsuario(request);
         }
         
-        public LP2Soft.UserWS.rol[] listarRolTodos() {
-            LP2Soft.UserWS.listarRolTodosRequest inValue = new LP2Soft.UserWS.listarRolTodosRequest();
-            LP2Soft.UserWS.listarRolTodosResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarRolTodos(inValue);
+        public LP2Soft.UserWS.usuario verificarCuentaUsuario(LP2Soft.UserWS.usuario usuario) {
+            LP2Soft.UserWS.verificarCuentaUsuarioRequest inValue = new LP2Soft.UserWS.verificarCuentaUsuarioRequest();
+            inValue.usuario = usuario;
+            LP2Soft.UserWS.verificarCuentaUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).verificarCuentaUsuario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarRolTodosResponse> LP2Soft.UserWS.UserWS.listarRolTodosAsync(LP2Soft.UserWS.listarRolTodosRequest request) {
-            return base.Channel.listarRolTodosAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.verificarCuentaUsuarioResponse> LP2Soft.UserWS.UserWS.verificarCuentaUsuarioAsync(LP2Soft.UserWS.verificarCuentaUsuarioRequest request) {
+            return base.Channel.verificarCuentaUsuarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarRolTodosResponse> listarRolTodosAsync() {
-            LP2Soft.UserWS.listarRolTodosRequest inValue = new LP2Soft.UserWS.listarRolTodosRequest();
-            return ((LP2Soft.UserWS.UserWS)(this)).listarRolTodosAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.verificarCuentaUsuarioResponse> verificarCuentaUsuarioAsync(LP2Soft.UserWS.usuario usuario) {
+            LP2Soft.UserWS.verificarCuentaUsuarioRequest inValue = new LP2Soft.UserWS.verificarCuentaUsuarioRequest();
+            inValue.usuario = usuario;
+            return ((LP2Soft.UserWS.UserWS)(this)).verificarCuentaUsuarioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.insertarPersonaResponse LP2Soft.UserWS.UserWS.insertarPersona(LP2Soft.UserWS.insertarPersonaRequest request) {
-            return base.Channel.insertarPersona(request);
+        LP2Soft.UserWS.listarTodosUsuariosResponse LP2Soft.UserWS.UserWS.listarTodosUsuarios(LP2Soft.UserWS.listarTodosUsuariosRequest request) {
+            return base.Channel.listarTodosUsuarios(request);
         }
         
-        public int insertarPersona(LP2Soft.UserWS.persona Persona) {
-            LP2Soft.UserWS.insertarPersonaRequest inValue = new LP2Soft.UserWS.insertarPersonaRequest();
-            inValue.Persona = Persona;
-            LP2Soft.UserWS.insertarPersonaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).insertarPersona(inValue);
+        public LP2Soft.UserWS.usuario[] listarTodosUsuarios() {
+            LP2Soft.UserWS.listarTodosUsuariosRequest inValue = new LP2Soft.UserWS.listarTodosUsuariosRequest();
+            LP2Soft.UserWS.listarTodosUsuariosResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarTodosUsuarios(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarPersonaResponse> LP2Soft.UserWS.UserWS.insertarPersonaAsync(LP2Soft.UserWS.insertarPersonaRequest request) {
-            return base.Channel.insertarPersonaAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarTodosUsuariosResponse> LP2Soft.UserWS.UserWS.listarTodosUsuariosAsync(LP2Soft.UserWS.listarTodosUsuariosRequest request) {
+            return base.Channel.listarTodosUsuariosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.insertarPersonaResponse> insertarPersonaAsync(LP2Soft.UserWS.persona Persona) {
-            LP2Soft.UserWS.insertarPersonaRequest inValue = new LP2Soft.UserWS.insertarPersonaRequest();
-            inValue.Persona = Persona;
-            return ((LP2Soft.UserWS.UserWS)(this)).insertarPersonaAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarTodosUsuariosResponse> listarTodosUsuariosAsync() {
+            LP2Soft.UserWS.listarTodosUsuariosRequest inValue = new LP2Soft.UserWS.listarTodosUsuariosRequest();
+            return ((LP2Soft.UserWS.UserWS)(this)).listarTodosUsuariosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.insertarUsuarioResponse LP2Soft.UserWS.UserWS.insertarUsuario(LP2Soft.UserWS.insertarUsuarioRequest request) {
-            return base.Channel.insertarUsuario(request);
+        LP2Soft.UserWS.listarUsuariosXNombreResponse LP2Soft.UserWS.UserWS.listarUsuariosXNombre(LP2Soft.UserWS.listarUsuariosXNombreRequest request) {
+            return base.Channel.listarUsuariosXNombre(request);
         }
         
-        public int insertarUsuario(LP2Soft.UserWS.usuario Usuario) {
-            LP2Soft.UserWS.insertarUsuarioRequest inValue = new LP2Soft.UserWS.insertarUsuarioRequest();
-            inValue.Usuario = Usuario;
-            LP2Soft.UserWS.insertarUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).insertarUsuario(inValue);
+        public LP2Soft.UserWS.usuario[] listarUsuariosXNombre(string nombre) {
+            LP2Soft.UserWS.listarUsuariosXNombreRequest inValue = new LP2Soft.UserWS.listarUsuariosXNombreRequest();
+            inValue.nombre = nombre;
+            LP2Soft.UserWS.listarUsuariosXNombreResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarUsuariosXNombre(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarUsuarioResponse> LP2Soft.UserWS.UserWS.insertarUsuarioAsync(LP2Soft.UserWS.insertarUsuarioRequest request) {
-            return base.Channel.insertarUsuarioAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarUsuariosXNombreResponse> LP2Soft.UserWS.UserWS.listarUsuariosXNombreAsync(LP2Soft.UserWS.listarUsuariosXNombreRequest request) {
+            return base.Channel.listarUsuariosXNombreAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.insertarUsuarioResponse> insertarUsuarioAsync(LP2Soft.UserWS.usuario Usuario) {
-            LP2Soft.UserWS.insertarUsuarioRequest inValue = new LP2Soft.UserWS.insertarUsuarioRequest();
-            inValue.Usuario = Usuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).insertarUsuarioAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarUsuariosXNombreResponse> listarUsuariosXNombreAsync(string nombre) {
+            LP2Soft.UserWS.listarUsuariosXNombreRequest inValue = new LP2Soft.UserWS.listarUsuariosXNombreRequest();
+            inValue.nombre = nombre;
+            return ((LP2Soft.UserWS.UserWS)(this)).listarUsuariosXNombreAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.listarPersonaResponse LP2Soft.UserWS.UserWS.listarPersona(LP2Soft.UserWS.listarPersonaRequest request) {
-            return base.Channel.listarPersona(request);
+        LP2Soft.UserWS.listarPersonasTodasResponse LP2Soft.UserWS.UserWS.listarPersonasTodas(LP2Soft.UserWS.listarPersonasTodasRequest request) {
+            return base.Channel.listarPersonasTodas(request);
         }
         
-        public LP2Soft.UserWS.persona[] listarPersona() {
-            LP2Soft.UserWS.listarPersonaRequest inValue = new LP2Soft.UserWS.listarPersonaRequest();
-            LP2Soft.UserWS.listarPersonaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarPersona(inValue);
+        public LP2Soft.UserWS.persona[] listarPersonasTodas() {
+            LP2Soft.UserWS.listarPersonasTodasRequest inValue = new LP2Soft.UserWS.listarPersonasTodasRequest();
+            LP2Soft.UserWS.listarPersonasTodasResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarPersonasTodas(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonaResponse> LP2Soft.UserWS.UserWS.listarPersonaAsync(LP2Soft.UserWS.listarPersonaRequest request) {
-            return base.Channel.listarPersonaAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonasTodasResponse> LP2Soft.UserWS.UserWS.listarPersonasTodasAsync(LP2Soft.UserWS.listarPersonasTodasRequest request) {
+            return base.Channel.listarPersonasTodasAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonaResponse> listarPersonaAsync() {
-            LP2Soft.UserWS.listarPersonaRequest inValue = new LP2Soft.UserWS.listarPersonaRequest();
-            return ((LP2Soft.UserWS.UserWS)(this)).listarPersonaAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarPersonasTodasResponse> listarPersonasTodasAsync() {
+            LP2Soft.UserWS.listarPersonasTodasRequest inValue = new LP2Soft.UserWS.listarPersonasTodasRequest();
+            return ((LP2Soft.UserWS.UserWS)(this)).listarPersonasTodasAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.insertarEmpresaResponse LP2Soft.UserWS.UserWS.insertarEmpresa(LP2Soft.UserWS.insertarEmpresaRequest request) {
-            return base.Channel.insertarEmpresa(request);
+        LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse LP2Soft.UserWS.UserWS.buscarPersonaPorIdUsuario(LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest request) {
+            return base.Channel.buscarPersonaPorIdUsuario(request);
         }
         
-        public int insertarEmpresa(LP2Soft.UserWS.persona Persona) {
-            LP2Soft.UserWS.insertarEmpresaRequest inValue = new LP2Soft.UserWS.insertarEmpresaRequest();
-            inValue.Persona = Persona;
-            LP2Soft.UserWS.insertarEmpresaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).insertarEmpresa(inValue);
+        public LP2Soft.UserWS.persona buscarPersonaPorIdUsuario(int id_usuario) {
+            LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest inValue = new LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest();
+            inValue.id_usuario = id_usuario;
+            LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).buscarPersonaPorIdUsuario(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.insertarEmpresaResponse> LP2Soft.UserWS.UserWS.insertarEmpresaAsync(LP2Soft.UserWS.insertarEmpresaRequest request) {
-            return base.Channel.insertarEmpresaAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse> LP2Soft.UserWS.UserWS.buscarPersonaPorIdUsuarioAsync(LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest request) {
+            return base.Channel.buscarPersonaPorIdUsuarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.insertarEmpresaResponse> insertarEmpresaAsync(LP2Soft.UserWS.persona Persona) {
-            LP2Soft.UserWS.insertarEmpresaRequest inValue = new LP2Soft.UserWS.insertarEmpresaRequest();
-            inValue.Persona = Persona;
-            return ((LP2Soft.UserWS.UserWS)(this)).insertarEmpresaAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse> buscarPersonaPorIdUsuarioAsync(int id_usuario) {
+            LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest inValue = new LP2Soft.UserWS.buscarPersonaPorIdUsuarioRequest();
+            inValue.id_usuario = id_usuario;
+            return ((LP2Soft.UserWS.UserWS)(this)).buscarPersonaPorIdUsuarioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.elminarUsuarioResponse LP2Soft.UserWS.UserWS.elminarUsuario(LP2Soft.UserWS.elminarUsuarioRequest request) {
-            return base.Channel.elminarUsuario(request);
+        LP2Soft.UserWS.eliminarAsistenciaResponse LP2Soft.UserWS.UserWS.eliminarAsistencia(LP2Soft.UserWS.eliminarAsistenciaRequest request) {
+            return base.Channel.eliminarAsistencia(request);
         }
         
-        public int elminarUsuario(int idUsuario) {
-            LP2Soft.UserWS.elminarUsuarioRequest inValue = new LP2Soft.UserWS.elminarUsuarioRequest();
+        public int eliminarAsistencia(int idUsuario) {
+            LP2Soft.UserWS.eliminarAsistenciaRequest inValue = new LP2Soft.UserWS.eliminarAsistenciaRequest();
             inValue.idUsuario = idUsuario;
-            LP2Soft.UserWS.elminarUsuarioResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).elminarUsuario(inValue);
+            LP2Soft.UserWS.eliminarAsistenciaResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).eliminarAsistencia(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.elminarUsuarioResponse> LP2Soft.UserWS.UserWS.elminarUsuarioAsync(LP2Soft.UserWS.elminarUsuarioRequest request) {
-            return base.Channel.elminarUsuarioAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.eliminarAsistenciaResponse> LP2Soft.UserWS.UserWS.eliminarAsistenciaAsync(LP2Soft.UserWS.eliminarAsistenciaRequest request) {
+            return base.Channel.eliminarAsistenciaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.elminarUsuarioResponse> elminarUsuarioAsync(int idUsuario) {
-            LP2Soft.UserWS.elminarUsuarioRequest inValue = new LP2Soft.UserWS.elminarUsuarioRequest();
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.eliminarAsistenciaResponse> eliminarAsistenciaAsync(int idUsuario) {
+            LP2Soft.UserWS.eliminarAsistenciaRequest inValue = new LP2Soft.UserWS.eliminarAsistenciaRequest();
             inValue.idUsuario = idUsuario;
-            return ((LP2Soft.UserWS.UserWS)(this)).elminarUsuarioAsync(inValue);
+            return ((LP2Soft.UserWS.UserWS)(this)).eliminarAsistenciaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.UserWS.buscarRolPorIdResponse LP2Soft.UserWS.UserWS.buscarRolPorId(LP2Soft.UserWS.buscarRolPorIdRequest request) {
-            return base.Channel.buscarRolPorId(request);
+        LP2Soft.UserWS.listarAsistenciasResponse LP2Soft.UserWS.UserWS.listarAsistencias(LP2Soft.UserWS.listarAsistenciasRequest request) {
+            return base.Channel.listarAsistencias(request);
         }
         
-        public LP2Soft.UserWS.rol buscarRolPorId(int id_rol) {
-            LP2Soft.UserWS.buscarRolPorIdRequest inValue = new LP2Soft.UserWS.buscarRolPorIdRequest();
-            inValue.id_rol = id_rol;
-            LP2Soft.UserWS.buscarRolPorIdResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).buscarRolPorId(inValue);
+        public LP2Soft.UserWS.asistencia[] listarAsistencias() {
+            LP2Soft.UserWS.listarAsistenciasRequest inValue = new LP2Soft.UserWS.listarAsistenciasRequest();
+            LP2Soft.UserWS.listarAsistenciasResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarAsistencias(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.UserWS.buscarRolPorIdResponse> LP2Soft.UserWS.UserWS.buscarRolPorIdAsync(LP2Soft.UserWS.buscarRolPorIdRequest request) {
-            return base.Channel.buscarRolPorIdAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarAsistenciasResponse> LP2Soft.UserWS.UserWS.listarAsistenciasAsync(LP2Soft.UserWS.listarAsistenciasRequest request) {
+            return base.Channel.listarAsistenciasAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.UserWS.buscarRolPorIdResponse> buscarRolPorIdAsync(int id_rol) {
-            LP2Soft.UserWS.buscarRolPorIdRequest inValue = new LP2Soft.UserWS.buscarRolPorIdRequest();
-            inValue.id_rol = id_rol;
-            return ((LP2Soft.UserWS.UserWS)(this)).buscarRolPorIdAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarAsistenciasResponse> listarAsistenciasAsync() {
+            LP2Soft.UserWS.listarAsistenciasRequest inValue = new LP2Soft.UserWS.listarAsistenciasRequest();
+            return ((LP2Soft.UserWS.UserWS)(this)).listarAsistenciasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.UserWS.listarClienteXNombreResponse LP2Soft.UserWS.UserWS.listarClienteXNombre(LP2Soft.UserWS.listarClienteXNombreRequest request) {
+            return base.Channel.listarClienteXNombre(request);
+        }
+        
+        public LP2Soft.UserWS.persona[] listarClienteXNombre(string nombre) {
+            LP2Soft.UserWS.listarClienteXNombreRequest inValue = new LP2Soft.UserWS.listarClienteXNombreRequest();
+            inValue.nombre = nombre;
+            LP2Soft.UserWS.listarClienteXNombreResponse retVal = ((LP2Soft.UserWS.UserWS)(this)).listarClienteXNombre(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.UserWS.listarClienteXNombreResponse> LP2Soft.UserWS.UserWS.listarClienteXNombreAsync(LP2Soft.UserWS.listarClienteXNombreRequest request) {
+            return base.Channel.listarClienteXNombreAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.UserWS.listarClienteXNombreResponse> listarClienteXNombreAsync(string nombre) {
+            LP2Soft.UserWS.listarClienteXNombreRequest inValue = new LP2Soft.UserWS.listarClienteXNombreRequest();
+            inValue.nombre = nombre;
+            return ((LP2Soft.UserWS.UserWS)(this)).listarClienteXNombreAsync(inValue);
         }
     }
 }

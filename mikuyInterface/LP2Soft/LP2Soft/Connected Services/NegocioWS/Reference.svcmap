@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://44.198.32.69:8080/LP2SoftWebServices/NegocioWS?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/LP2SoftWebServices/NegocioWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NegocioWS.xsd" MetadataType="Schema" ID="94124a72-0584-4072-af7e-e00c069762d3" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/NegocioWS?xsd=1" />
-    <MetadataFile FileName="NegocioWS.wsdl" MetadataType="Wsdl" ID="c4567478-40f8-4d6a-b5ca-5447f9696ef6" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/NegocioWS?WSDL" />
+    <MetadataFile FileName="NegocioWS1.wsdl" MetadataType="Wsdl" ID="b548c089-135c-40de-8d96-a257d6bf83a7" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/NegocioWS?WSDL" />
+    <MetadataFile FileName="NegocioWS1.xsd" MetadataType="Schema" ID="3373628f-ddef-4fc7-b862-4c20c7bbaa95" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/NegocioWS?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

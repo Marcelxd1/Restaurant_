@@ -119,9 +119,6 @@ public class PromocionMySQL implements PromocionDAO{
             resultado = 1;
             
             
-            //ponemos las lineas en desactivadas
-            //ELIMINAR PROMOCION SE ENCARGA DE DESACTIVAR LAS LINEASPROMOCION
-            
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -184,6 +181,34 @@ public class PromocionMySQL implements PromocionDAO{
                     promocion.getLista_de_Comidas().add(linea);//agregamos a la lista 
                 }
                 promociones.add(promocion);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return promociones; 
+    }
+
+    @Override
+    public ArrayList<Promocion> listarTodosXID_nombre(String idnom) {
+        ArrayList<Promocion> promociones= new ArrayList<>();
+        try{
+            con= DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_PROMOCIONES_X_NOMBRE(?)}");
+            cs.setString("_nom", idnom);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Promocion promocion = new Promocion();
+                promocion.setIdItemVendible(rs.getInt("id_item_vendible"));
+                promocion.setNombre(rs.getString("nombre"));
+                promocion.setPrecio(rs.getDouble("precio"));
+                promocion.setDescripcion(rs.getString("descripcion"));
+                promocion.setEstado(rs.getBoolean("estado"));
+                
+                promociones.add(promocion);
+                //creacion de la lista asociada
+                //no hay porque quita tiempo pero se puede usar el listar lineas 
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());

@@ -5,12 +5,15 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.lp2soft.negocio.dao.CategoriaDAO;
+import pe.edu.pucp.lp2soft.negocio.dao.LineaPromocionDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.ProductoDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.PromocionDAO;
 import pe.edu.pucp.lp2soft.negocio.model.Categoria;
+import pe.edu.pucp.lp2soft.negocio.model.LineaPromocion;
 import pe.edu.pucp.lp2soft.negocio.model.Producto;
 import pe.edu.pucp.lp2soft.negocio.model.Promocion;
 import pe.edu.pucp.lp2soft.negocio.mysql.CategoriaMySQL;
+import pe.edu.pucp.lp2soft.negocio.mysql.LineaPromocionMYSQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.ProductoMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.PromocionMySQL;
 
@@ -23,10 +26,55 @@ public class NegocioWS {
     private ProductoDAO daoProducto= new ProductoMySQL();
     
     private CategoriaDAO daoCategoria = new CategoriaMySQL();
+    
+    private LineaPromocionDAO daolineaPromo = new LineaPromocionMYSQL();
+    // LINEAPROMOCION ==========================================================================
+    
+    @WebMethod(operationName = "insertarLineaPromo")
+    public int insertarLineaPromo(@WebParam(name = "Linea")LineaPromocion linea,@WebParam(name = "idPromo")int idPromo ){
+        int resultado = 0;
+        try{
+            resultado=daolineaPromo.insertar(linea,idPromo);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "modificarLineaPromo")
+    public int modificarLineaPromo(@WebParam(name = "Linea")LineaPromocion linea,@WebParam(name = "idPromo")int idPromo ){
+        int resultado = 0;
+        try{
+            resultado=daolineaPromo.modificar(linea,idPromo);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "eliminarLineaPromo")
+    public int eliminarLineaPromo(@WebParam(name = "idlinea")int idlinea,@WebParam(name = "idPromo")int idPromo ){
+        int resultado = 0;
+        try{
+            resultado=daolineaPromo.eliminar(idlinea,idPromo);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "listarTodosLineaPromo")
+    public ArrayList<LineaPromocion> listarTodosLineaPromo(@WebParam(name = "idPromo")int idPromo ){
+        ArrayList<LineaPromocion> resultado= new ArrayList<>() ;
+        try{
+            resultado=daolineaPromo.listarTodos(idPromo);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
     // PROMOCION ==========================================================================
     
     @WebMethod(operationName = "insertarPromocion")
     public int insertarPromocion(@WebParam(name = "Promocion") Promocion promocion) {
+        
         int resultado = 0;
         try{
             resultado=daoPromo.insertar(promocion);
@@ -63,7 +111,20 @@ public class NegocioWS {
         ArrayList<Promocion> listaPromos = new ArrayList<>();
         try{
             listaPromos=daoPromo.listarTodos();
-            System.out.println(listaPromos);
+            //System.out.println(listaPromos);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return listaPromos;
+    }
+    
+    //este solo lista la procion pero no la linea
+    @WebMethod(operationName = "listarPromociones_X_nombre")
+    public ArrayList<Promocion> listarPromociones_X_nombre(@WebParam(name = "idPromocion") String idnom) {
+        ArrayList<Promocion> listaPromos = new ArrayList<>();
+        try{
+            listaPromos=daoPromo.listarTodosXID_nombre(idnom);
+            //System.out.println(listaPromos);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
