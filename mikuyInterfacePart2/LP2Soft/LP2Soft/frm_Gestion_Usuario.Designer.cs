@@ -73,6 +73,7 @@
             this.cmbRol.ItemsAppearance.Parent = this.cmbRol;
             this.cmbRol.Location = new System.Drawing.Point(317, 152);
             this.cmbRol.Name = "cmbRol";
+            this.cmbRol.ShadowDecoration.BorderRadius = 0;
             this.cmbRol.ShadowDecoration.Parent = this.cmbRol;
             this.cmbRol.Size = new System.Drawing.Size(203, 36);
             this.cmbRol.TabIndex = 55;
@@ -342,7 +343,6 @@
             this.txtDNI.HoverState.Parent = this.txtDNI;
             this.txtDNI.Location = new System.Drawing.Point(74, 152);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.PasswordChar = '\0';
             this.txtDNI.PlaceholderText = "";
@@ -375,6 +375,7 @@
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
             this.btnRegistrar.BorderRadius = 10;
             this.btnRegistrar.CheckedState.Parent = this.btnRegistrar;
             this.btnRegistrar.CustomImages.Parent = this.btnRegistrar;
@@ -384,6 +385,7 @@
             this.btnRegistrar.HoverState.Parent = this.btnRegistrar;
             this.btnRegistrar.Location = new System.Drawing.Point(374, 441);
             this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.ShadowDecoration.BorderRadius = 0;
             this.btnRegistrar.ShadowDecoration.Parent = this.btnRegistrar;
             this.btnRegistrar.Size = new System.Drawing.Size(88, 28);
             this.btnRegistrar.TabIndex = 38;
@@ -406,6 +408,8 @@
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.Location = new System.Drawing.Point(12, 12);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.ShadowDecoration.Color = System.Drawing.Color.IndianRed;
+            this.guna2PictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
             this.guna2PictureBox3.Size = new System.Drawing.Size(837, 478);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

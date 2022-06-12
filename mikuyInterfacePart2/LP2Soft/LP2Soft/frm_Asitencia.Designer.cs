@@ -117,7 +117,7 @@
             // 
             // btnShow
             // 
-            this.btnShow.BackColor = System.Drawing.Color.DarkGray;
+            this.btnShow.BackColor = System.Drawing.Color.Transparent;
             this.btnShow.BackgroundImage = global::LP2Soft.Properties.Resources.passwordshow;
             resources.ApplyResources(this.btnShow, "btnShow");
             this.btnShow.BorderRadius = 10;
@@ -132,7 +132,7 @@
             // 
             // btnHide
             // 
-            this.btnHide.BackColor = System.Drawing.Color.DarkGray;
+            this.btnHide.BackColor = System.Drawing.Color.Transparent;
             this.btnHide.BackgroundImage = global::LP2Soft.Properties.Resources.password;
             resources.ApplyResources(this.btnHide, "btnHide");
             this.btnHide.BorderRadius = 10;

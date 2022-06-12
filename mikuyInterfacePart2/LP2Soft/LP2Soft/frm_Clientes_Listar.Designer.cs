@@ -35,9 +35,6 @@
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.dgvListarClientes = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblDatosUsuario = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -55,6 +52,10 @@
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.txtRUC = new Guna.UI2.WinForms.Guna2TextBox();
             this.ldlRUC = new System.Windows.Forms.Label();
+            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNIRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -112,15 +113,16 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListarClientes.ColumnHeadersHeight = 20;
             this.dgvListarClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nro,
-            this.Username,
-            this.apellido_paterno});
+            this.Tipo,
+            this.DNIRUC,
+            this.Username});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -160,30 +162,7 @@
             this.dgvListarClientes.ThemeStyle.RowsStyle.Height = 22;
             this.dgvListarClientes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvListarClientes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Nro
-            // 
-            this.Nro.DataPropertyName = "id_persona";
-            this.Nro.FillWeight = 81.21828F;
-            this.Nro.HeaderText = "ID.";
-            this.Nro.Name = "Nro";
-            this.Nro.ReadOnly = true;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "nombre";
-            this.Username.FillWeight = 106.2606F;
-            this.Username.HeaderText = "Nombre";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            // 
-            // apellido_paterno
-            // 
-            this.apellido_paterno.DataPropertyName = "apellido_paterno";
-            this.apellido_paterno.FillWeight = 106.2606F;
-            this.apellido_paterno.HeaderText = "Apellido Paterno";
-            this.apellido_paterno.Name = "apellido_paterno";
-            this.apellido_paterno.ReadOnly = true;
+            this.dgvListarClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListarClientes_CellFormatting);
             // 
             // txtBuscar
             // 
@@ -520,6 +499,34 @@
             this.ldlRUC.TabIndex = 61;
             this.ldlRUC.Text = "RUC";
             // 
+            // Nro
+            // 
+            this.Nro.FillWeight = 58.58155F;
+            this.Nro.HeaderText = "ID.";
+            this.Nro.Name = "Nro";
+            this.Nro.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.FillWeight = 84.7323F;
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // DNIRUC
+            // 
+            this.DNIRUC.FillWeight = 69.81967F;
+            this.DNIRUC.HeaderText = "DNI/RUC";
+            this.DNIRUC.Name = "DNIRUC";
+            this.DNIRUC.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.FillWeight = 120.7118F;
+            this.Username.HeaderText = "Nombre Completo";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            // 
             // frm_Clientes_Listar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,10 +582,11 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_paterno;
         private Guna.UI2.WinForms.Guna2TextBox txtRUC;
         private System.Windows.Forms.Label ldlRUC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNIRUC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
     }
 }

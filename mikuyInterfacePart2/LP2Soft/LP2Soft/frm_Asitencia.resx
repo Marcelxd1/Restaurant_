@@ -2044,10 +2044,10 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="btnShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 337</value>
+    <value>361, 341</value>
   </data>
   <data name="btnShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 30</value>
+    <value>30, 26</value>
   </data>
   <data name="btnShow.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -2071,10 +2071,10 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="btnHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 337</value>
+    <value>361, 341</value>
   </data>
   <data name="btnHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 30</value>
+    <value>30, 26</value>
   </data>
   <data name="btnHide.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>

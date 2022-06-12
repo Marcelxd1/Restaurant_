@@ -234,7 +234,6 @@ namespace LP2Soft
                 return;
             }
 
-            
             _promo.descripcion= txtDescripcion.Text;
             _promo.estado = true;
             _promo.nombre = txtNombre.Text;

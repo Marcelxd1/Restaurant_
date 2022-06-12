@@ -58,6 +58,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\CajaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\UserWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -261,6 +266,9 @@
     <EmbeddedResource Include="frm_Mesero_Mesa.resx">
       <DependentUpon>frm_Mesero_Mesa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Mesero_Mesa_Pedido.resx">
+      <DependentUpon>frm_Mesero_Mesa_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +282,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.eliminarGastoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.gasto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.insertarGastoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarGastosXNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTodosGastosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarGastoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.categoria.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -340,8 +366,12 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.promocion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\NegocioWS\NegocioWS1.wsdl" />
-    <None Include="Connected Services\NegocioWS\NegocioWS1.xsd">
+    <None Include="Connected Services\NegocioWS\NegocioWS.wsdl" />
+    <None Include="Connected Services\NegocioWS\NegocioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CajaWS\CajaWS.wsdl" />
+    <None Include="Connected Services\CajaWS\CajaWS.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.asistencia.datasource">
@@ -536,11 +566,15 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\NegocioWS\" />
-    <WCFMetadataStorage Include="Connected Services\UserWS\" />
+    <None Include="Resources\signout.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\signout.png" />
+    <None Include="Resources\imagenVacia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\NegocioWS\" />
+    <WCFMetadataStorage Include="Connected Services\CajaWS\" />
+    <WCFMetadataStorage Include="Connected Services\UserWS\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\UserWS\configuration91.svcinfo" />
@@ -553,7 +587,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Resources\imagenVacia.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\NegocioWS\configuration91.svcinfo" />
@@ -563,6 +596,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\NegocioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CajaWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CajaWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CajaWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

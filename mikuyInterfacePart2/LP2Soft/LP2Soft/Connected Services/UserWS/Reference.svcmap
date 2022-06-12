@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="4fd08997-ff95-4812-b884-de2972a64c3b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="fefff321-48bd-433e-ad25-93c77d35f9ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://localhost:8080/LP2SoftWebServices/UserWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserWS.xsd" MetadataType="Schema" ID="bce43ef5-243c-4ede-b91c-a56700eae39c" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/UserWS?xsd=1" />
-    <MetadataFile FileName="UserWS.wsdl" MetadataType="Wsdl" ID="3e43df55-3f4d-4e4e-9542-bd5156ece526" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/UserWS?WSDL" />
+    <MetadataFile FileName="UserWS.xsd" MetadataType="Schema" ID="e950fbcf-da98-4e0d-a8dc-3b5a6fc10a84" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/UserWS?xsd=1" />
+    <MetadataFile FileName="UserWS.wsdl" MetadataType="Wsdl" ID="2411aca3-3925-4d91-9de6-49a2b0f8e826" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/UserWS?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

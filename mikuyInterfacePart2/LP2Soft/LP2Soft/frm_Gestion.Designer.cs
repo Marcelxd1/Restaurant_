@@ -65,6 +65,7 @@
             this.lblGestionGastos.TabIndex = 55;
             this.lblGestionGastos.Text = "Gestión de Gastos";
             this.lblGestionGastos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGestionGastos.Click += new System.EventHandler(this.lblGestionGastos_Click);
             this.lblGestionGastos.MouseEnter += new System.EventHandler(this.guna2ImageButton6_MouseEnter);
             this.lblGestionGastos.MouseLeave += new System.EventHandler(this.guna2ImageButton6_MouseLeave);
             // 

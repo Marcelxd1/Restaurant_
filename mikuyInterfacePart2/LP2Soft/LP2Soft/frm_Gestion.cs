@@ -93,5 +93,11 @@ namespace LP2Soft
         {
 
         }
+
+        private void lblGestionGastos_Click(object sender, EventArgs e)
+        {
+            frm_Gestion_Gastos formGestionGasto = new frm_Gestion_Gastos();
+            formGestionGasto.ShowDialog();
+        }
     }
 }

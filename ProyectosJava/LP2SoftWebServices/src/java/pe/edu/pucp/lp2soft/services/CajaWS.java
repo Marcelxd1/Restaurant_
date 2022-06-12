@@ -60,5 +60,14 @@ public class CajaWS {
     }
     
     
-    
+    @WebMethod(operationName = "listarGastosXNombre")
+    public ArrayList<Gasto> listarGastosXNombre(@WebParam(name = "nombre") String nombre) {
+        ArrayList<Gasto> gastos = new ArrayList<>();
+        try{
+            gastos=daoGasto.listarXNombre(nombre);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return gastos;
+    }
 }

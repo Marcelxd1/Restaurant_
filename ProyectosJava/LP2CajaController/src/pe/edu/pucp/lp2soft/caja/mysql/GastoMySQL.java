@@ -31,6 +31,39 @@ public class GastoMySQL implements GastoDAO{
                 gasto.setPrecio(rs.getDouble("precio"));
                 gasto.setCantidad(rs.getInt("cantidad"));
                 gasto.setTotal(rs.getDouble("total"));
+                gasto.setActivo(rs.getBoolean("activo")); 
+                gasto.setDescripcion(rs.getString("descripcion"));
+                gasto.setRestaurante(new Restaurante());
+                gasto.getRestaurante().setId_restaurante(rs.getInt("id_Restaurante"));
+                gasto.getRestaurante().setNombre(rs.getString("nombre"));
+                gasto.getRestaurante().setDineroActual(rs.getDouble("dineroActual"));
+                gastos.add(gasto);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return gastos;
+    }
+    
+    @Override
+    public ArrayList<Gasto> listarXNombre(String nombre) {
+        ArrayList<Gasto> gastos = new ArrayList<>();
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_GASTOS_X_NOMBRE(?)}");
+            cs.setString("_nombre",nombre);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Gasto gasto = new Gasto();
+                gasto.setId_transaccion(rs.getInt("id_transaccion"));
+                gasto.setItem(rs.getString("item"));
+                gasto.setFecha(rs.getDate("fecha"));
+                gasto.setPrecio(rs.getDouble("precio"));
+                gasto.setCantidad(rs.getInt("cantidad"));
+                gasto.setTotal(rs.getDouble("total"));
+                gasto.setActivo(rs.getBoolean("activo")); 
                 gasto.setDescripcion(rs.getString("descripcion"));
                 gasto.setRestaurante(new Restaurante());
                 gasto.getRestaurante().setId_restaurante(rs.getInt("id_Restaurante"));
