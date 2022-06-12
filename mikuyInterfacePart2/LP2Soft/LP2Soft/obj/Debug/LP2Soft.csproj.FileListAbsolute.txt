@@ -377,3 +377,4 @@ C:\Users\marce\Documents\PUCP\7 CICLO\LENGUAJE DE PROGRAMACIÓN 2\Mikuy\mikuyInt
 C:\Users\marce\Documents\PUCP\7 CICLO\LENGUAJE DE PROGRAMACIÓN 2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.exe
 C:\Users\marce\Documents\PUCP\7 CICLO\LENGUAJE DE PROGRAMACIÓN 2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.pdb
 C:\Users\marce\Documents\PUCP\7 CICLO\LENGUAJE DE PROGRAMACIÓN 2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Mesero_Mesa_Pedido.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Mesero_Mesa_Pedido.resources

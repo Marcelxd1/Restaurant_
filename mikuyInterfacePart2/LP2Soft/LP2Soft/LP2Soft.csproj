@@ -309,6 +309,9 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.eliminarLineaPromoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.eliminarMesaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.eliminarProductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -319,6 +322,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.insertarLineaPromoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.insertarMesaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.insertarProductoResponse.datasource">
@@ -339,6 +345,9 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodasCategoriasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodasMesaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodasPromocionesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -348,10 +357,16 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodosProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.mesa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.modificarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.modificarLineaPromoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.modificarMesaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.modificarProductoResponse.datasource">

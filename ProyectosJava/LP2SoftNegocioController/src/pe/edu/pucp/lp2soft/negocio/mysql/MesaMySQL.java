@@ -56,7 +56,7 @@ public class MesaMySQL implements MesaDAO {
             cs.setInt("_capacidad", mesa.getNumero());
             cs.executeUpdate();
             mesa.setIdMesa(cs.getInt("_id_mesa"));
-            resultado = 1;
+            resultado = mesa.getIdMesa();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
