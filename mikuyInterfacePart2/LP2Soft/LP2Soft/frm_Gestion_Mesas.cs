@@ -50,6 +50,8 @@ namespace LP2Soft
                 case Estado.Inicial:
                     txtID.Text = "";
                     txtCapacidad.Text = "";
+                    txtID.Enabled = false;
+                    txtCapacidad.Enabled = false;
                     txtID.Enabled = true;
                     txtCapacidad.Enabled = true;
                     btnNuevo.Enabled = true;

@@ -195,6 +195,12 @@
     <Compile Include="frm_Mesero_Mesa_Pedido.Designer.cs">
       <DependentUpon>frm_Mesero_Mesa_Pedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Mesero_MesaVer2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Mesero_MesaVer2.Designer.cs">
+      <DependentUpon>frm_Mesero_MesaVer2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Mesero_Mesa_Pedido.resx">
       <DependentUpon>frm_Mesero_Mesa_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Mesero_MesaVer2.resx">
+      <DependentUpon>frm_Mesero_MesaVer2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
