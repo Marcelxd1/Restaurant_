@@ -40,7 +40,7 @@ namespace LP2Soft
                     btnGuardar.Enabled = false;
                     btnModificar.Enabled = false;
                     btnEliminar.Enabled = false;
-                    btnCancelar.Enabled = true;
+                    btnEliminar.Enabled = true;
                     btnSeleccionar.Enabled = false;
                     txtID.Enabled = false;
                     txtCantidad.Enabled = false;
@@ -61,7 +61,7 @@ namespace LP2Soft
                     btnGuardar.Enabled = true;
                     btnModificar.Enabled = false;
                     btnEliminar.Enabled = false;
-                    btnCancelar.Enabled = true;
+                    btnEliminar.Enabled = true;
                     btnSeleccionar.Enabled = true;
                     txtCantidad.Enabled = true;
                     txtID.Enabled = true;
@@ -81,7 +81,7 @@ namespace LP2Soft
                     btnGuardar.Enabled = false;
                     btnModificar.Enabled = true;
                     btnEliminar.Enabled = true;
-                    btnCancelar.Enabled = true;
+                    btnEliminar.Enabled = true;
                     btnSeleccionar.Enabled = false;
                     txtID.Enabled = true;
                     txtCantidad.Enabled = false;

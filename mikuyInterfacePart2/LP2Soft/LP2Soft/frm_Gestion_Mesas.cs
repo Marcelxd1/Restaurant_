@@ -52,6 +52,7 @@ namespace LP2Soft
                     txtCapacidad.Text = "";
                     txtID.Enabled = false;
                     txtCapacidad.Enabled = false;
+                    txtCapacidad.ReadOnly = true;
                     txtID.Enabled = true;
                     txtCapacidad.Enabled = true;
                     btnNuevo.Enabled = true;
@@ -65,6 +66,7 @@ namespace LP2Soft
                 case Estado.Nuevo:
                     txtID.Enabled = true;
                     txtCapacidad.Enabled = true;
+                    txtCapacidad.ReadOnly = false;
                     btnNuevo.Enabled = false;
                     btnGuardar.Enabled = true;
                     btnBuscar.Enabled = false;
@@ -75,6 +77,7 @@ namespace LP2Soft
                 case Estado.Buscar:
                     txtID.Enabled = false;
                     txtCapacidad.Enabled= false;
+                    txtCapacidad.ReadOnly = true;
                     btnNuevo.Enabled = false;
                     btnGuardar.Enabled = false;
                     btnBuscar.Enabled = false;
