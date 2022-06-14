@@ -22,8 +22,13 @@
     <MetadataSource Address="http://localhost:8080/LP2SoftWebServices/UserWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+<<<<<<< HEAD
     <MetadataFile FileName="UserWS.xsd" MetadataType="Schema" ID="2da5494e-24af-4fd5-bd67-38a65bc1390d" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/UserWS?xsd=1" />
     <MetadataFile FileName="UserWS.wsdl" MetadataType="Wsdl" ID="83990ce8-118a-4204-afc8-ec6977704127" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/UserWS?WSDL" />
+=======
+    <MetadataFile FileName="UserWS.xsd" MetadataType="Schema" ID="bce43ef5-243c-4ede-b91c-a56700eae39c" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/UserWS?xsd=1" />
+    <MetadataFile FileName="UserWS.wsdl" MetadataType="Wsdl" ID="3e43df55-3f4d-4e4e-9542-bd5156ece526" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/UserWS?WSDL" />
+>>>>>>> a337f5fa2ddd76e81d9ee376334ded82b2b141ab
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

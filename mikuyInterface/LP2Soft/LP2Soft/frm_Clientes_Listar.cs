@@ -200,7 +200,7 @@ namespace LP2Soft
                 }
                 try
                 {
-                    Int32.Parse(txtRUC.Text);
+                    Int64.Parse(txtRUC.Text);
                 }
                 catch (Exception ex)
                 {
@@ -214,7 +214,7 @@ namespace LP2Soft
                     return;
                 }
 
-                _cliente.ruc = txtDNIRUC.Text.Trim();
+                _cliente.ruc = txtRUC.Text.Trim();
                 _cliente.razon_social = txtRazonSocial.Text.Trim();
             }
 

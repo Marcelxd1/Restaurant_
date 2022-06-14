@@ -16,4 +16,5 @@ public interface PromocionDAO {
     int modificar(Promocion promocion);
     int eliminar(int idPromocion);
     ArrayList<Promocion> listarTodos();
+    ArrayList<Promocion> listarTodosXID_nombre(String idnom);
 }

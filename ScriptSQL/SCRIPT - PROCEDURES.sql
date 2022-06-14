@@ -57,6 +57,7 @@ BEGIN
 	UPDATE item_vendible SET estado = 0 WHERE id_item_vendible = _id_item_vendible;
 END$
 
+
 CREATE PROCEDURE LISTAR_PRODUCTOS_TODOS()
 BEGIN
 	SELECT i.id_item_vendible, i.nombre, i.precio, i.descripcion, i.estado, p.fid_tipo_producto, p.presentacion, c.id_categoria, c.nombre as nombre_cat, c.descripcion as detalle 
@@ -559,6 +560,7 @@ DROP PROCEDURE IF EXISTS INSERTAR_LINEA_PROMOCION;
 DROP PROCEDURE IF EXISTS LISTAR_LINEA_PROMOCION_PROMO;
 DROP PROCEDURE IF EXISTS MODIFICAR_LINEA_PROMOCION;
 DROP PROCEDURE IF EXISTS BUSCAR_PERSONA_POR_ID;
+DROP PROCEDURE IF EXISTS ELIMINAR_LINEA_PROMOCION;
 DELIMITER $
 
 CREATE PROCEDURE INSERTAR_PROMOCION(
@@ -606,6 +608,16 @@ BEGIN
     INNER JOIN item_vendible iv ON p.id_promocion= iv.id_item_vendible;
 END$
 
+
+CREATE PROCEDURE LISTAR_PROMOCIONES_X_NOMBRE(
+	IN _nom varchar(200) 
+)
+BEGIN	
+	SELECT iv.id_item_vendible, iv.nombre, iv.precio , iv.descripcion, iv.estado from promocion p 
+    INNER JOIN item_vendible iv ON p.id_promocion= iv.id_item_vendible 
+    WHERE iv.estado= 1 and iv.nombre like CONCAT('%',_nom,'%');
+END$
+
 CREATE procedure INSERTAR_LINEA_PROMOCION(
 	OUT _idLineaPromocion INT,
 	IN _unidades INT, 
@@ -632,6 +644,14 @@ BEGIN
     
 END$
 
+CREATE PROCEDURE ELIMINAR_LINEA_PROMOCION(
+	IN _idlinea INT,
+    IN _idPromo INT
+)
+BEGIN
+    UPDATE linea_promocion SET estado = False where fid_promocion = _idPromo and id_linea_promocion=_idlinea;
+END$
+
 CREATE procedure LISTAR_LINEA_PROMOCION_PROMO(
 	in _idPromo INT -- es el id de la proomocion que es el id itemvendible en la lista IV 
 )BEGIN
@@ -645,7 +665,7 @@ CREATE procedure LISTAR_LINEA_PROMOCION_PROMO(
     item_vendible iv ON pro.id_producto= id_item_vendible
     INNER JOIN 
     categoria cat ON cat.id_categoria= pro.fid_categoria
-    WHERE lin.fid_promocion= _idPromo;
+    WHERE lin.fid_promocion= _idPromo and lin.estado = 1;
 END$
 
 -- procedure para buscar persona por ID
@@ -654,9 +674,7 @@ CREATE procedure BUSCAR_PERSONA_POR_ID(
 )BEGIN
 	SELECT id_persona , nombre, apellido_paterno , DNI from persona where _id_persona= id_persona ;
 END$
-DELIMITER ;
-
------------------------------
+-- ---------------------------
 CREATE PROCEDURE VERIFICAR_CUENTA_USUARIO(in _username varchar(100) , in _password varchar(100))
 begin
 	select * from usuario where usuario = _username and password = _password ;

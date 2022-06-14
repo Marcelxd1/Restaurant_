@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lp2soft.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="CajaWS" targetNamespace="http://services.lp2soft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/CajaWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="eliminarGasto">
+    <part name="parameters" element="tns:eliminarGasto" />
+  </message>
+  <message name="eliminarGastoResponse">
+    <part name="parameters" element="tns:eliminarGastoResponse" />
+  </message>
+  <message name="modificarGasto">
+    <part name="parameters" element="tns:modificarGasto" />
+  </message>
+  <message name="modificarGastoResponse">
+    <part name="parameters" element="tns:modificarGastoResponse" />
+  </message>
+  <message name="insertarGasto">
+    <part name="parameters" element="tns:insertarGasto" />
+  </message>
+  <message name="insertarGastoResponse">
+    <part name="parameters" element="tns:insertarGastoResponse" />
+  </message>
+  <message name="listarTodosGastos">
+    <part name="parameters" element="tns:listarTodosGastos" />
+  </message>
+  <message name="listarTodosGastosResponse">
+    <part name="parameters" element="tns:listarTodosGastosResponse" />
+  </message>
+  <message name="listarGastosXNombre">
+    <part name="parameters" element="tns:listarGastosXNombre" />
+  </message>
+  <message name="listarGastosXNombreResponse">
+    <part name="parameters" element="tns:listarGastosXNombreResponse" />
+  </message>
+  <portType name="CajaWS">
+    <operation name="eliminarGasto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarGastoRequest" message="tns:eliminarGasto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarGastoResponse" message="tns:eliminarGastoResponse" />
+    </operation>
+    <operation name="modificarGasto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoRequest" message="tns:modificarGasto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoResponse" message="tns:modificarGastoResponse" />
+    </operation>
+    <operation name="insertarGasto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoRequest" message="tns:insertarGasto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoResponse" message="tns:insertarGastoResponse" />
+    </operation>
+    <operation name="listarTodosGastos">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosRequest" message="tns:listarTodosGastos" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosResponse" message="tns:listarTodosGastosResponse" />
+    </operation>
+    <operation name="listarGastosXNombre">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreRequest" message="tns:listarGastosXNombre" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreResponse" message="tns:listarGastosXNombreResponse" />
+    </operation>
+  </portType>
+  <binding name="CajaWSPortBinding" type="tns:CajaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarGasto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarGasto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarGasto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodosGastos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarGastosXNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CajaWS">
+    <port name="CajaWSPort" binding="tns:CajaWSPortBinding">
+      <soap:address location="http://localhost:8080/LP2SoftWebServices/CajaWS" />
+    </port>
+  </service>
+</definitions>

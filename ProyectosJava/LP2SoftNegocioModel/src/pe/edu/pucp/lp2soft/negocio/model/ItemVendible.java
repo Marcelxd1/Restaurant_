@@ -7,6 +7,7 @@ public class ItemVendible {
     private boolean estado; 
     private double precio;
     private String descripcion;
+    private byte[] imagen;
 
     public ItemVendible(String nombre, double precio, String descripcion) {
         this.nombre = nombre;
@@ -57,6 +58,12 @@ public class ItemVendible {
         this.descripcion = descripcion;
     }
     
-    
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
 	
 }

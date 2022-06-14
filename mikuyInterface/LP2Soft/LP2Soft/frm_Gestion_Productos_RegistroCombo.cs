@@ -17,6 +17,7 @@ namespace LP2Soft
         private NegocioWS.promocion _promo;
         private BindingList<NegocioWS.lineaPromocion> _listaLineas;
         private NegocioWS.producto _prodSelec;
+        private BindingList<NegocioWS.lineaPromocion> _lineasEliminadas;
         public frm_Gestion_Productos_RegistroCombo()
         {
             InitializeComponent();
@@ -50,6 +51,8 @@ namespace LP2Soft
                     txtPrecio.Enabled = false;
                     dgvLineas.Enabled = false;
                     dgvPlatos.Enabled = false;
+                    btnAgregarProd.Enabled = false;
+                    btnQuitarProd.Enabled = false;
                     break;
                 case Estado.Modificar:
                 case Estado.Nuevo:
@@ -67,6 +70,8 @@ namespace LP2Soft
                     txtBuscar.Enabled = true;
                     txtPlato.Enabled = true;
                     txtPrecio.Enabled = true;
+                    btnAgregarProd.Enabled = true;
+                    btnQuitarProd.Enabled = true;
                     dgvLineas.Enabled = true;
                     dgvPlatos.Enabled = true;
                     break;
@@ -81,12 +86,14 @@ namespace LP2Soft
                     txtID.Enabled = true;
                     txtCantidad.Enabled = false;
                     txtDescripcion.Enabled = false;
-                    txtNombre.Enabled = false;
+                    txtNombre.Enabled = true;
                     txtBuscar.Enabled = false;
                     txtPlato.Enabled = false;
-                    txtPrecio.Enabled = false;
-                    dgvLineas.Enabled = false;
+                    txtPrecio.Enabled = true;
+                    dgvLineas.Enabled = true;
                     dgvPlatos.Enabled = false;
+                    btnAgregarProd.Enabled = false;
+                    btnQuitarProd.Enabled = false;
                     break;
 
             }
@@ -100,21 +107,24 @@ namespace LP2Soft
             txtPlato.Text = "";
             txtPrecio.Text = "";
             txtID.Text = "";
-            dgvLineas.DataSource=null;
-            dgvPlatos.DataSource=null;
+            //dgvLineas.DataSource=null;
+            //dgvPlatos.DataSource=null;
             _promo = new NegocioWS.promocion();
             _listaLineas = new BindingList<NegocioWS.lineaPromocion>();
+            dgvLineas.DataSource = this._listaLineas;
+            _lineasEliminadas = new BindingList<NegocioWS.lineaPromocion>();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             _estado = Estado.Nuevo;
-            limpiarComponentes();
             establecerEstadoComponentes();
+            limpiarComponentes();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            limpiarComponentes();
             frm_Gestion_Productos_BusquedaCombo frmBusquedaCombo = new frm_Gestion_Productos_BusquedaCombo();
             if (frmBusquedaCombo.ShowDialog() == DialogResult.OK)
             {
@@ -123,9 +133,20 @@ namespace LP2Soft
                 txtNombre.Text = _promo.nombre;
                 txtPrecio.Text = _promo.precio.ToString();
                 txtDescripcion.Text = _promo.descripcion;
-                dgvLineas.DataSource = _promo.lista_de_Comidas;
-                
 
+                //solo para ese cargamos las lineas 
+                //y no mostrara las que esten desactivadas
+                NegocioWS.lineaPromocion[] listAux = daoNegocio.listarTodosLineaPromo(_promo.idItemVendible);
+                if (listAux != null)
+                {
+                    foreach (NegocioWS.lineaPromocion d in listAux)
+                    {
+                        _listaLineas.Add(d);
+                    }
+                    _promo.lista_de_Comidas = _listaLineas.ToArray();
+                }
+                _estado = Estado.Buscar;
+                establecerEstadoComponentes();
             }
 
         }
@@ -146,21 +167,40 @@ namespace LP2Soft
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            if (txtPlato.Text.Trim() == "")
+            if(_estado == Estado.Nuevo)
             {
-                MessageBox.Show("Debe de seleccionar un plato", "Mensaje de advertencia",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (txtPlato.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe de seleccionar un plato", "Mensaje de advertencia",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (txtCantidad.Text == "")
+                {
+                    MessageBox.Show("NO ha ingresado una cantidad", "Mensaje de advertencia",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (txtPlato.Text == "")
+                {
+                    MessageBox.Show("NO ha ingresado un plato", "Mensaje de advertencia",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                try
+                {
+                    Int32.Parse(txtCantidad.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No ha ingresado correctamente la cantidad", "Mensaje de advertencia",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
 
-            if (txtCantidad.Text == "")
-            {
-                MessageBox.Show("NO ha ingresado una cantidad", "Mensaje de advertencia",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            
             if (txtDescripcion.Text == "")
             {
                 MessageBox.Show("NO ha ingresado una descripcion", "Mensaje de advertencia",
@@ -175,12 +215,7 @@ namespace LP2Soft
                 return;
             }
 
-            if (txtPlato.Text == "")
-            {
-                MessageBox.Show("NO ha ingresado un plato", "Mensaje de advertencia",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            
             if (txtPrecio.Text == "")
             {
                 MessageBox.Show("NO ha ingresado un precio", "Mensaje de advertencia",
@@ -199,16 +234,7 @@ namespace LP2Soft
                 return;
             }
 
-            try
-            {
-                Int32.Parse(txtCantidad.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No ha ingresado correctamente la cantidad", "Mensaje de advertencia",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            
             _promo.descripcion= txtDescripcion.Text;
             _promo.estado = true;
             _promo.nombre = txtNombre.Text;
@@ -242,7 +268,16 @@ namespace LP2Soft
                 else
                     MessageBox.Show("Ha ocurrido un error con la modificación", "Mensaje de error"
                         , MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                foreach (NegocioWS.lineaPromocion item in _lineasEliminadas)
+                {
+                    int res = 0;
+                    res=daoNegocio.eliminarLineaPromo(item.idLineaPromocion, _promo.idItemVendible);
+                    if(res == 0)
+                    {
+                        MessageBox.Show("Ha ocurrido un error con la eliminacion", "Mensaje de error"
+                        , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 
@@ -250,23 +285,30 @@ namespace LP2Soft
         {
             _estado = Estado.Modificar;
             establecerEstadoComponentes();
+            //dgvLineas.DataSource;
+            
             //este boton solo setea el estado, el boton guardar hace el trabajo
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("Esta seguro que desea eliminar esta promocion?"
-                ,"Mensaje de confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question );
-            if (respuesta == DialogResult.Yes)
+            DialogResult dr = MessageBox.Show("¿Esta seguro que desea eliminar esta orden de venta?", 
+                "Mensaje de Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+            if (dr == DialogResult.Yes)
             {
                 int resultado = daoNegocio.eliminarPromocion(_promo.idItemVendible);
                 if (resultado != 0)
                     MessageBox.Show("Se ha eliminado correctamente", "Mensaje de Confirmación"
-                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        , MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                 else
                     MessageBox.Show("Ha ocurrido un error con la eliminación", "Mensaje de Confirmación"
-                        , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        , MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
             }
+            _estado = Estado.Inicial;
+            limpiarComponentes();
+            establecerEstadoComponentes();
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -317,10 +359,21 @@ namespace LP2Soft
             //this.DialogResult = DialogResult.OK;
             txtPlato.Text = _prodSelec.nombre;
             dgvLineas.DataSource = _listaLineas;
+            //no deberia esta aqui 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnAgregarProd_Click(object sender, EventArgs e)
         {
+            if (txtPlato.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar un producto", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtCantidad.Text == "" || Int32.Parse(txtCantidad.Text) == 0)
+            {
+                MessageBox.Show("Debe ingresar una cantidad válida", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             NegocioWS.lineaPromocion linea = new NegocioWS.lineaPromocion();
             NegocioWS.producto prodinser= new NegocioWS.producto();
             prodinser = _prodSelec;
@@ -339,22 +392,23 @@ namespace LP2Soft
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void btnQuitarProd_Click(object sender, EventArgs e)
         {
             NegocioWS.lineaPromocion _lineaSelec;
+             
             _lineaSelec = (NegocioWS.lineaPromocion)dgvLineas.CurrentRow.DataBoundItem;
             try
             {
                 _listaLineas.Remove(_lineaSelec);
-                //deberian de desactivarse en la BD? 
-                //-> si esta creandose aun no esta en BD pero cuando se modifica si
-                //si estado modificar entonces -> "eliminarLinea"
+                _lineasEliminadas.Add(_lineaSelec);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error con la eliminación", "Mensaje de Confirmación"
                         , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             
         }
 
@@ -364,16 +418,12 @@ namespace LP2Soft
             {
                 if (dgvLineas.DataSource!=null)
                 {
-                    if (_estado == Estado.Buscar)
+                    if (_estado == Estado.Buscar && dgvLineas.Rows[e.RowIndex].DataBoundItem!=null)
                     {
                         NegocioWS.lineaPromocion linea = (NegocioWS.lineaPromocion)dgvLineas.Rows[e.RowIndex].DataBoundItem;
                         dgvLineas.Rows[e.RowIndex].Cells[0].Value = linea.idLineaPromocion;
                         dgvLineas.Rows[e.RowIndex].Cells[1].Value = linea.producto.nombre;
                         dgvLineas.Rows[e.RowIndex].Cells[2].Value = linea.unidades;
-                    }
-                    else if (_estado == Estado.Nuevo)
-                    {
-                       
                     }
                     
                 }
