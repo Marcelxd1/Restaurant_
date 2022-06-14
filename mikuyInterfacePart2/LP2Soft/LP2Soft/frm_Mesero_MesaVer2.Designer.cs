@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFalso = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelMesas = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.PanelMostrar = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // btnFalso
-            // 
-            this.btnFalso.CheckedState.Parent = this.btnFalso;
-            this.btnFalso.CustomImages.Parent = this.btnFalso;
-            this.btnFalso.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnFalso.ForeColor = System.Drawing.Color.White;
-            this.btnFalso.HoverState.Parent = this.btnFalso;
-            this.btnFalso.Location = new System.Drawing.Point(869, 27);
-            this.btnFalso.Name = "btnFalso";
-            this.btnFalso.ShadowDecoration.Parent = this.btnFalso;
-            this.btnFalso.Size = new System.Drawing.Size(180, 45);
-            this.btnFalso.TabIndex = 0;
-            this.btnFalso.Text = "guna2Button1";
-            this.btnFalso.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(454, 100);
+            this.label3.Location = new System.Drawing.Point(428, 93);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 36);
@@ -66,7 +53,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(410, 50);
+            this.label2.Location = new System.Drawing.Point(384, 43);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 36);
@@ -74,25 +61,43 @@
             this.label2.Text = "Asignacion de";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // frm_probando
+            // panelMesas
+            // 
+            this.panelMesas.Location = new System.Drawing.Point(21, 156);
+            this.panelMesas.Name = "panelMesas";
+            this.panelMesas.Size = new System.Drawing.Size(321, 449);
+            this.panelMesas.TabIndex = 39;
+            // 
+            // PanelMostrar
+            // 
+            this.PanelMostrar.Location = new System.Drawing.Point(372, 156);
+            this.PanelMostrar.Name = "PanelMostrar";
+            this.PanelMostrar.Size = new System.Drawing.Size(599, 449);
+            this.PanelMostrar.TabIndex = 40;
+            // 
+            // frm_Mesero_MesaVer2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 545);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(1004, 646);
+            this.Controls.Add(this.PanelMostrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnFalso);
-            this.Name = "frm_probando";
-            this.Text = "frm_probando";
+            this.Controls.Add(this.panelMesas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frm_Mesero_MesaVer2";
+            this.Text = "frm_Mesa";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button btnFalso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelMesas;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel PanelMostrar;
     }
 }
