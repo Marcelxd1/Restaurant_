@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace LP2Soft
@@ -9,6 +11,7 @@ namespace LP2Soft
         private Estado _estado;
         private NegocioWS.producto _producto;
         private NegocioWS.NegocioWSClient daoNegocio;
+        private string _rutaFotoPortada;
 
         public frm_Gestion_Productos_RegistroPlatos()
         {
@@ -32,6 +35,7 @@ namespace LP2Soft
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
                     btnModificar.Enabled = true;
+                    btnSubirFoto.Enabled = false;
                     btnEliminar.Enabled = true;
                     txtNombre.Enabled = false;
                     txtDescripcion.Enabled = false;
@@ -47,6 +51,7 @@ namespace LP2Soft
                     btnGuardar.Enabled = true;
                     btnModificar.Enabled = true;
                     btnEliminar.Enabled = true;
+                    btnSubirFoto.Enabled=true;
                     txtNombre.Enabled = true;
                     txtDescripcion.Enabled = true;
                     txtPrecio.Enabled = true;
@@ -69,6 +74,7 @@ namespace LP2Soft
             txtDescripcion.Text = "";
             txtPrecio.Text = "";
             txtPresentacion.Text = "";
+            pbPlato.Image = null;
             rbBebida.Checked = false;
             rbPlato.Checked = false;
             _producto = new NegocioWS.producto();
@@ -164,6 +170,11 @@ namespace LP2Soft
             txtNombre.Text = _producto.nombre;
             txtDescripcion.Text = _producto.descripcion;
             txtPrecio.Text = _producto.precio.ToString("N2");
+            if(_producto.imagen != null) { 
+                MemoryStream ms = new MemoryStream(_producto.imagen);
+                pbPlato.Image = new Bitmap(ms);
+            }
+            else pbPlato.Image = null;
             if (_producto.tipoProducto == 'C')
             {
                 rbPlato.Checked = true;
@@ -186,6 +197,26 @@ namespace LP2Soft
         private void txtBuscar_IconRightClick(object sender, EventArgs e)
         {
             cargarTabla();
+        }
+
+        private void btnSubirFoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ofdFotos.ShowDialog() == DialogResult.OK)
+                {
+                    _rutaFotoPortada = ofdFotos.FileName;
+                    pbPlato.Image = Image.FromFile(_rutaFotoPortada);
+                    FileStream fs = new FileStream(_rutaFotoPortada, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    this._producto.imagen = br.ReadBytes((int)fs.Length);
+                    fs.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+            }
         }
 
         private void cargarTabla()
@@ -288,15 +319,6 @@ namespace LP2Soft
                 epTipo.SetError(rbBebida, "");
         }
 
-        private void guna2PictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
     }
 }

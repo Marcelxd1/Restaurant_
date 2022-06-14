@@ -66,6 +66,7 @@
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="estado" type="xs:boolean" />
       <xs:element name="idItemVendible" type="xs:int" />
+      <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element name="precio" type="xs:double" />
     </xs:sequence>
@@ -147,16 +148,6 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:categoria" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarPromociones_X_nombre">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="idPromocion" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarPromociones_X_nombreResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocion" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarTodasMesa">
     <xs:sequence />
   </xs:complexType>
@@ -165,14 +156,14 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:mesa" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarProductoXNombre">
+  <xs:complexType name="listarPromociones_X_nombre">
     <xs:sequence>
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="idPromocion" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarProductoXNombreResponse">
+  <xs:complexType name="listarPromociones_X_nombreResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocion" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarProducto">
@@ -185,22 +176,22 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarProductoXNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProductoXNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarTodosProductos">
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarTodosProductosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTodosLineaPromo">
-    <xs:sequence>
-      <xs:element name="idPromo" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTodosLineaPromoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:lineaPromocion" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarProducto">
@@ -213,6 +204,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarTodosLineaPromo">
+    <xs:sequence>
+      <xs:element name="idPromo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTodosLineaPromoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:lineaPromocion" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarTodasPromociones">
     <xs:sequence />
   </xs:complexType>
@@ -221,22 +222,22 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocion" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarPromocion">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Promocion" type="tns:promocion" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarPromocionResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="modificarMesa">
     <xs:sequence>
       <xs:element minOccurs="0" name="mesa" type="tns:mesa" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarMesaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Promocion" type="tns:promocion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPromocionResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
