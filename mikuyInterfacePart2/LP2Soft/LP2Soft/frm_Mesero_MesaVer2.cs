@@ -45,40 +45,54 @@ namespace LP2Soft
                 button.Top = top;
                 button.Text = "Mesa_" + (i + 1).ToString();
                 button.Name = "btn_" + i.ToString();
-                button.Click += guna2Button1_Click;
+                //button.Click += guna2Button1_Click;
+                button.Click += new System.EventHandler(hacerCLik);
+                
                 this.Controls.Add(button);
                 top += button.Height + 2;
                 if (top == 275)
                 {
-                    top = 50;
+                    top = 150;
                     left += button.Width + 5;
                 }
 
                 if (lista_mesas[i].disponible == true)
-                    button.BackColor = Color.GreenYellow;
+                    button.BackColor = Color.Aquamarine;
                 else
                     button.BackColor = Color.IndianRed;
 
                 lista_botones.Add(button);
 
             }
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    Button button = new Button();
+            
+        }
+        private void hacerCLik(object sender, EventArgs e)
+        {
+            //obtener el indice
+            char[] sep = new char[] { '_' };
+            string[] subs = sender.ToString().Split(sep, StringSplitOptions.RemoveEmptyEntries);
+            //tendra btn y i
+            int indice = Int32.Parse(subs[1]) - 1;
+            //obtener el objeto mesa
+            NegocioWS.mesa mesaSelec = lista_mesas.ElementAt(indice);
+            if (mesaSelec.disponible == true)
+            {
+                mesaSelec.disponible = false;
+                lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
+                //polimorfismo cajero mesero 
+                //formularios
+            }
 
-            //    button.Left = left;
-            //    button.Top = top;
-            //    button.Text = (top).ToString();
-            //    button.Name = "btn_"+i.ToString();
+            else
+            {
+                mesaSelec.disponible = true;
+                lista_botones.ElementAt(indice).BackColor = Color.Aquamarine;
+            }
 
-            //    this.Controls.Add(button);
-            //    top += button.Height + 2;
-            //    if (top == 175)
-            //    {
-            //        top = 50;
-            //        left += button.Width + 5;
-            //    }
-            //}
+            daonegocio.modificarMesa(mesaSelec);
+            ///cambiar estado a ocupado 
+            ///a disponible
+            ///cambiar la Bd en ambos casos
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {

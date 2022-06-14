@@ -31,6 +31,7 @@
             this.btnFalso = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnFalso
@@ -74,15 +75,23 @@
             this.label2.Text = "Asignacion de";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // frm_probando
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(56, 172);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(505, 318);
+            this.panel1.TabIndex = 39;
+            // 
+            // frm_Mesero_MesaVer2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 545);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFalso);
-            this.Name = "frm_probando";
+            this.Name = "frm_Mesero_MesaVer2";
             this.Text = "frm_probando";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,5 +103,6 @@
         private Guna.UI2.WinForms.Guna2Button btnFalso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
