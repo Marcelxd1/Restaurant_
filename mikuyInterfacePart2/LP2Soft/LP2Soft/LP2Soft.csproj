@@ -69,6 +69,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
+    <Compile Include="frm_Caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Caja.Designer.cs">
+      <DependentUpon>frm_Caja.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Caja_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     <EmbeddedResource Include="frm_Asitencia.es-PE.resx">
       <DependentUpon>frm_Asitencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Caja.resx">
+      <DependentUpon>frm_Caja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Caja_Pedido.resx">
       <DependentUpon>frm_Caja_Pedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,7 +333,16 @@
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTodosGastosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTransaccionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTransaccionesXFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarGastoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.transaccion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.categoria.datasource">
@@ -425,6 +443,9 @@
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.asistenciaSalidaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.BuscaRestauranteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.buscarPersonaPorIdUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -489,6 +510,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.persona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.restaurante.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.rol.datasource">

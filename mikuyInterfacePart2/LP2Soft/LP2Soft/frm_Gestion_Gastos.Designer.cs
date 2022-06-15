@@ -34,10 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Gestion_Gastos));
             this.dgvGasto = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.txtDescripcion = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,6 +54,11 @@
             this.epPrecio = new System.Windows.Forms.ErrorProvider(this.components);
             this.epCantidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.epDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGasto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epItem)).BeginInit();
@@ -90,7 +91,8 @@
             this.Nro,
             this.Item,
             this.Precio,
-            this.Cantidad});
+            this.Cantidad,
+            this.Total});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -132,42 +134,6 @@
             this.dgvGasto.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvGasto.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // Nro
-            // 
-            this.Nro.DataPropertyName = "id_transaccion";
-            this.Nro.FillWeight = 76.14214F;
-            this.Nro.HeaderText = "Nro.";
-            this.Nro.MinimumWidth = 6;
-            this.Nro.Name = "Nro";
-            this.Nro.ReadOnly = true;
-            // 
-            // Item
-            // 
-            this.Item.DataPropertyName = "item";
-            this.Item.FillWeight = 105.9645F;
-            this.Item.HeaderText = "Item";
-            this.Item.MinimumWidth = 6;
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "precio";
-            this.Precio.FillWeight = 105.9645F;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "cantidad";
-            this.Cantidad.FillWeight = 105.9645F;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.BorderRadius = 10;
@@ -201,6 +167,7 @@
             this.txtDescripcion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcion.FocusedState.Parent = this.txtDescripcion;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.Black;
             this.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcion.HoverState.Parent = this.txtDescripcion;
             this.txtDescripcion.Location = new System.Drawing.Point(40, 340);
@@ -212,7 +179,7 @@
             this.txtDescripcion.SelectedText = "";
             this.txtDescripcion.ShadowDecoration.Parent = this.txtDescripcion;
             this.txtDescripcion.Size = new System.Drawing.Size(220, 100);
-            this.txtDescripcion.TabIndex = 43;
+            this.txtDescripcion.TabIndex = 4;
             this.txtDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.txtDescripcion_Validating);
             // 
             // label5
@@ -241,6 +208,7 @@
             this.txtCantidad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCantidad.FocusedState.Parent = this.txtCantidad;
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.ForeColor = System.Drawing.Color.Black;
             this.txtCantidad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCantidad.HoverState.Parent = this.txtCantidad;
             this.txtCantidad.Location = new System.Drawing.Point(40, 277);
@@ -251,7 +219,7 @@
             this.txtCantidad.SelectedText = "";
             this.txtCantidad.ShadowDecoration.Parent = this.txtCantidad;
             this.txtCantidad.Size = new System.Drawing.Size(220, 30);
-            this.txtCantidad.TabIndex = 41;
+            this.txtCantidad.TabIndex = 3;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             this.txtCantidad.Validating += new System.ComponentModel.CancelEventHandler(this.txtCantidad_Validating);
             // 
@@ -281,6 +249,7 @@
             this.txtPrecio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrecio.FocusedState.Parent = this.txtPrecio;
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.ForeColor = System.Drawing.Color.Black;
             this.txtPrecio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrecio.HoverState.Parent = this.txtPrecio;
             this.txtPrecio.Location = new System.Drawing.Point(40, 215);
@@ -291,7 +260,7 @@
             this.txtPrecio.SelectedText = "";
             this.txtPrecio.ShadowDecoration.Parent = this.txtPrecio;
             this.txtPrecio.Size = new System.Drawing.Size(220, 30);
-            this.txtPrecio.TabIndex = 39;
+            this.txtPrecio.TabIndex = 2;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             this.txtPrecio.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrecio_Validating);
             // 
@@ -344,7 +313,7 @@
             this.txtItem.SelectedText = "";
             this.txtItem.ShadowDecoration.Parent = this.txtItem;
             this.txtItem.Size = new System.Drawing.Size(220, 30);
-            this.txtItem.TabIndex = 36;
+            this.txtItem.TabIndex = 1;
             this.txtItem.Validating += new System.ComponentModel.CancelEventHandler(this.txtItem_Validating);
             // 
             // label1
@@ -494,6 +463,49 @@
             // 
             this.epDescripcion.ContainerControl = this;
             // 
+            // Nro
+            // 
+            this.Nro.DataPropertyName = "id_transaccion";
+            this.Nro.FillWeight = 76.14214F;
+            this.Nro.HeaderText = "Nro.";
+            this.Nro.MinimumWidth = 6;
+            this.Nro.Name = "Nro";
+            this.Nro.ReadOnly = true;
+            // 
+            // Item
+            // 
+            this.Item.DataPropertyName = "item";
+            this.Item.FillWeight = 105.9645F;
+            this.Item.HeaderText = "Item";
+            this.Item.MinimumWidth = 6;
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "precio";
+            this.Precio.FillWeight = 105.9645F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "cantidad";
+            this.Cantidad.FillWeight = 105.9645F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
             // frm_Gestion_Gastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -548,13 +560,14 @@
         private Guna.UI2.WinForms.Guna2Button btnNuevo;
         private Guna.UI2.WinForms.Guna2Button btnModificar;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.ErrorProvider epItem;
         private System.Windows.Forms.ErrorProvider epPrecio;
         private System.Windows.Forms.ErrorProvider epCantidad;
         private System.Windows.Forms.ErrorProvider epDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

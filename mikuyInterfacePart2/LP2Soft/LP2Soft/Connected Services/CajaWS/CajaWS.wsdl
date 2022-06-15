@@ -11,17 +11,17 @@
   <message name="eliminarGastoResponse">
     <part name="parameters" element="tns:eliminarGastoResponse" />
   </message>
-  <message name="modificarGasto">
-    <part name="parameters" element="tns:modificarGasto" />
-  </message>
-  <message name="modificarGastoResponse">
-    <part name="parameters" element="tns:modificarGastoResponse" />
-  </message>
   <message name="insertarGasto">
     <part name="parameters" element="tns:insertarGasto" />
   </message>
   <message name="insertarGastoResponse">
     <part name="parameters" element="tns:insertarGastoResponse" />
+  </message>
+  <message name="modificarGasto">
+    <part name="parameters" element="tns:modificarGasto" />
+  </message>
+  <message name="modificarGastoResponse">
+    <part name="parameters" element="tns:modificarGastoResponse" />
   </message>
   <message name="listarTodosGastos">
     <part name="parameters" element="tns:listarTodosGastos" />
@@ -29,32 +29,52 @@
   <message name="listarTodosGastosResponse">
     <part name="parameters" element="tns:listarTodosGastosResponse" />
   </message>
+  <message name="listarTransaccionesXFecha">
+    <part name="parameters" element="tns:listarTransaccionesXFecha" />
+  </message>
+  <message name="listarTransaccionesXFechaResponse">
+    <part name="parameters" element="tns:listarTransaccionesXFechaResponse" />
+  </message>
   <message name="listarGastosXNombre">
     <part name="parameters" element="tns:listarGastosXNombre" />
   </message>
   <message name="listarGastosXNombreResponse">
     <part name="parameters" element="tns:listarGastosXNombreResponse" />
   </message>
+  <message name="listarTransacciones">
+    <part name="parameters" element="tns:listarTransacciones" />
+  </message>
+  <message name="listarTransaccionesResponse">
+    <part name="parameters" element="tns:listarTransaccionesResponse" />
+  </message>
   <portType name="CajaWS">
     <operation name="eliminarGasto">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarGastoRequest" message="tns:eliminarGasto" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarGastoResponse" message="tns:eliminarGastoResponse" />
     </operation>
-    <operation name="modificarGasto">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoRequest" message="tns:modificarGasto" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoResponse" message="tns:modificarGastoResponse" />
-    </operation>
     <operation name="insertarGasto">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoRequest" message="tns:insertarGasto" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoResponse" message="tns:insertarGastoResponse" />
+    </operation>
+    <operation name="modificarGasto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoRequest" message="tns:modificarGasto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoResponse" message="tns:modificarGastoResponse" />
     </operation>
     <operation name="listarTodosGastos">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosRequest" message="tns:listarTodosGastos" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosResponse" message="tns:listarTodosGastosResponse" />
     </operation>
+    <operation name="listarTransaccionesXFecha">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesXFechaRequest" message="tns:listarTransaccionesXFecha" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesXFechaResponse" message="tns:listarTransaccionesXFechaResponse" />
+    </operation>
     <operation name="listarGastosXNombre">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreRequest" message="tns:listarGastosXNombre" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreResponse" message="tns:listarGastosXNombreResponse" />
+    </operation>
+    <operation name="listarTransacciones">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesRequest" message="tns:listarTransacciones" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesResponse" message="tns:listarTransaccionesResponse" />
     </operation>
   </portType>
   <binding name="CajaWSPortBinding" type="tns:CajaWS">
@@ -68,7 +88,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarGasto">
+    <operation name="insertarGasto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +97,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarGasto">
+    <operation name="modificarGasto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +115,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarTransaccionesXFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarGastosXNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTransacciones">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -6,14 +6,17 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.lp2soft.user.dao.AsistenciaDAO;
 import pe.edu.pucp.lp2soft.user.dao.PersonaDAO;
+import pe.edu.pucp.lp2soft.user.dao.RestauranteDAO;
 import pe.edu.pucp.lp2soft.user.dao.RolDAO;
 import pe.edu.pucp.lp2soft.user.dao.UsuarioDAO;
 import pe.edu.pucp.lp2soft.user.mysql.AsistenciaMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.PersonaMySQL;
+import pe.edu.pucp.lp2soft.user.mysql.RestauranteMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.RolMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.UsuarioMySQL;
 import pe.edu.pucp.lp2soft.usuario.model.Asistencia;
 import pe.edu.pucp.lp2soft.usuario.model.Persona;
+import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
 import pe.edu.pucp.lp2soft.usuario.model.Rol;
 import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
@@ -25,6 +28,7 @@ public class UserWS {
     private UsuarioDAO daoUsuario = new UsuarioMySQL();
     private PersonaDAO daoPersona = new PersonaMySQL();
     private RolDAO daoRol = new RolMySQL();
+    private RestauranteDAO daoREst = new RestauranteMySQL();
     
     //ASISTENCIA =========================================================================
 
@@ -307,5 +311,17 @@ public class UserWS {
             System.out.println(ex.getMessage());
         }
         return resultado;
+    }
+    
+    
+    @WebMethod(operationName = "BuscaRestaurante")
+    public Restaurante BuscaRestaurante(@WebParam(name = "id_persona") int id_rest ) {
+        Restaurante res = new Restaurante();
+        try{
+            res= daoREst.listarPorId(id_rest);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return res;
     }
 }

@@ -2,19 +2,24 @@
 package pe.edu.pucp.lp2soft.services;
 
 import java.util.ArrayList;
+import java.util.Date;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.lp2soft.caja.dao.GastoDAO;
+import pe.edu.pucp.lp2soft.caja.dao.TransaccionesDAO;
 import pe.edu.pucp.lp2soft.caja.model.Gasto;
+import pe.edu.pucp.lp2soft.caja.model.Transaccion;
 import pe.edu.pucp.lp2soft.caja.mysql.GastoMySQL;
+import pe.edu.pucp.lp2soft.caja.mysql.TransaccionesMySQL;
 
 
 @WebService(serviceName = "CajaWS")
 public class CajaWS {
     
     private GastoDAO daoGasto= new GastoMySQL();
-
+    private TransaccionesDAO daoTra = new TransaccionesMySQL();
+    
     @WebMethod(operationName = "insertarGasto")
     public int insertarGasto(@WebParam(name = "Gasto") Gasto gasto) {
         int resultado = 0;
@@ -69,5 +74,27 @@ public class CajaWS {
             System.out.println(ex.getMessage());
         }
         return gastos;
+    }
+    
+    @WebMethod(operationName = "listarTransacciones")
+    public ArrayList<Transaccion> listarTransacciones() {
+        ArrayList<Transaccion> transacciones = new ArrayList<>();
+        try{
+            transacciones= daoTra.listarTodas();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return transacciones;
+    }
+    
+    @WebMethod(operationName = "listarTransaccionesXFecha")
+    public ArrayList<Transaccion> listarTransaccionesXFecha(Date f1, Date f2) {
+        ArrayList<Transaccion> transacciones = new ArrayList<>();
+        try{
+            transacciones= daoTra.listarTodasXFechas(f1, f2);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return transacciones;
     }
 }
