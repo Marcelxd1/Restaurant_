@@ -111,6 +111,12 @@
     <Compile Include="frm_Gestion_Productos_RegistroPlatos.designer.cs">
       <DependentUpon>frm_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Login_Recuperar_Contrasenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login_Recuperar_Contrasenia.Designer.cs">
+      <DependentUpon>frm_Login_Recuperar_Contrasenia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Login_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,12 @@
     <Compile Include="frm_Mesero_MesaVer2.Designer.cs">
       <DependentUpon>frm_Mesero_MesaVer2.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Restablecer_Contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Restablecer_Contraseña.Designer.cs">
+      <DependentUpon>frm_Restablecer_Contraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Productos_RegistroPlatos.resx">
       <DependentUpon>frm_Gestion_Productos_RegistroPlatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login_Recuperar_Contrasenia.resx">
+      <DependentUpon>frm_Login_Recuperar_Contrasenia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login_Usuario.resx">
       <DependentUpon>frm_Login_Usuario.cs</DependentUpon>
@@ -277,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Mesero_MesaVer2.resx">
       <DependentUpon>frm_Mesero_MesaVer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Restablecer_Contraseña.resx">
+      <DependentUpon>frm_Restablecer_Contraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -413,6 +431,9 @@
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.buscarRolPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.cambiarContraseniaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.eliminarAsistenciaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -477,6 +498,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.verificarCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.verificarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\UserWS.wsdl" />
@@ -638,6 +662,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-olvidó-su-contraseña-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

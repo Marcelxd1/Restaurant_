@@ -286,4 +286,26 @@ public class UserWS {
         }
         return resultado;
     }
+    
+    @WebMethod(operationName = "verificarUsuario")
+    public int verificarUsuario(@WebParam(name = "dni") int dni , @WebParam(name = "apellido_paterno") String apellido_paterno  ) {
+        int resultado = 0;
+        try{
+            resultado= daoUsuario.validarRecuperarContrasenia(dni, apellido_paterno);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "cambiarContrasenia")
+    public int cambiarContrasenia(@WebParam(name = "id_persona") int id_persona , @WebParam(name = "password") String password  ) {
+        int resultado = 0;
+        try{
+            resultado= daoUsuario.cambiarContrasenia(id_persona, password);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
 }

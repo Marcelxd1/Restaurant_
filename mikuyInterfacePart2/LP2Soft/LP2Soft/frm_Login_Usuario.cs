@@ -53,7 +53,8 @@ namespace LP2Soft
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            frm_Login_Recuperar_Contrasenia formRecuperarContrasenia = new frm_Login_Recuperar_Contrasenia();
+            formRecuperarContrasenia.ShowDialog();
         }
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)

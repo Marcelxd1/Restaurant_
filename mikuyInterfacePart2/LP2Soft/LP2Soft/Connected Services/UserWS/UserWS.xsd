@@ -8,6 +8,8 @@
   <xs:element name="buscarPersonaPorIdUsuarioResponse" type="tns:buscarPersonaPorIdUsuarioResponse" />
   <xs:element name="buscarRolPorId" type="tns:buscarRolPorId" />
   <xs:element name="buscarRolPorIdResponse" type="tns:buscarRolPorIdResponse" />
+  <xs:element name="cambiarContrasenia" type="tns:cambiarContrasenia" />
+  <xs:element name="cambiarContraseniaResponse" type="tns:cambiarContraseniaResponse" />
   <xs:element name="eliminarAsistencia" type="tns:eliminarAsistencia" />
   <xs:element name="eliminarAsistenciaResponse" type="tns:eliminarAsistenciaResponse" />
   <xs:element name="elminarPersona" type="tns:elminarPersona" />
@@ -46,24 +48,11 @@
   <xs:element name="modificarUsuarioResponse" type="tns:modificarUsuarioResponse" />
   <xs:element name="verificarCuentaUsuario" type="tns:verificarCuentaUsuario" />
   <xs:element name="verificarCuentaUsuarioResponse" type="tns:verificarCuentaUsuarioResponse" />
-  <xs:complexType name="asistenciaSalida">
+  <xs:element name="verificarUsuario" type="tns:verificarUsuario" />
+  <xs:element name="verificarUsuarioResponse" type="tns:verificarUsuarioResponse" />
+  <xs:complexType name="verificarCuentaUsuario">
     <xs:sequence>
-      <xs:element name="idUsuario" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="asistenciaSalidaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarUsuariosXNombre">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarUsuariosXNombreResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:usuario" />
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="usuario">
@@ -112,11 +101,6 @@
       <xs:element name="id_rol" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="verificarCuentaUsuario">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="verificarCuentaUsuarioResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:usuario" />
@@ -142,24 +126,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarPersona">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarPersonaResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="asistenciaEntrada">
-    <xs:sequence>
-      <xs:element name="idUsuario" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="asistenciaEntradaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="eliminarAsistencia">
     <xs:sequence>
       <xs:element name="idUsuario" type="xs:int" />
@@ -180,6 +146,14 @@
       <xs:element minOccurs="0" name="return" type="tns:rol" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarTodosUsuarios">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTodosUsuariosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="elminarUsuario">
     <xs:sequence>
       <xs:element name="idUsuario" type="xs:int" />
@@ -188,6 +162,94 @@
   <xs:complexType name="elminarUsuarioResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDatosUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDatosUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="elminarPersona">
+    <xs:sequence>
+      <xs:element name="idPersona" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="elminarPersonaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRolTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarRolTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:rol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asistenciaSalida">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asistenciaSalidaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarUsuario">
+    <xs:sequence>
+      <xs:element name="dni" type="xs:int" />
+      <xs:element minOccurs="0" name="apellido_paterno" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarUsuariosXNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarUsuariosXNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cambiarContrasenia">
+    <xs:sequence>
+      <xs:element name="id_persona" type="xs:int" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cambiarContraseniaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asistenciaEntrada">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asistenciaEntradaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPersona">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPersonaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarPersona">
@@ -200,12 +262,12 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarTodosUsuarios">
+  <xs:complexType name="listarPersonasTodas">
     <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="listarTodosUsuariosResponse">
+  <xs:complexType name="listarPersonasTodasResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:usuario" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarUsuario">
@@ -216,14 +278,6 @@
   <xs:complexType name="modificarUsuarioResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarPersonasTodas">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarPersonasTodasResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarUsuario">
@@ -246,14 +300,14 @@
       <xs:element minOccurs="0" name="return" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarPersona">
+  <xs:complexType name="listarClienteXNombre">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Persona" type="tns:persona" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarPersonaResponse">
+  <xs:complexType name="listarClienteXNombreResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarAsistencias">
@@ -274,22 +328,12 @@
       <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarClienteXNombre">
+  <xs:complexType name="modificarPersona">
     <xs:sequence>
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="Persona" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarClienteXNombreResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="elminarPersona">
-    <xs:sequence>
-      <xs:element name="idPersona" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="elminarPersonaResponse">
+  <xs:complexType name="modificarPersonaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -300,24 +344,6 @@
   <xs:complexType name="listarEmpresaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarDatosUsuario">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarDatosUsuarioResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarRolTodos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarRolTodosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:rol" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

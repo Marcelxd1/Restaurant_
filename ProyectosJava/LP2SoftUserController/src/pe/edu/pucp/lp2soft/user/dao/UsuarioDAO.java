@@ -13,4 +13,6 @@ public interface UsuarioDAO {
     ArrayList<Usuario> listarXNombre(String nombre);
     Usuario verificarUsuario (Usuario usuario);
     int modificarDatos (Usuario usuario);
+    int validarRecuperarContrasenia (int dni , String apellido_paterno);
+    int cambiarContrasenia(int id_usuario, String password);
 }
