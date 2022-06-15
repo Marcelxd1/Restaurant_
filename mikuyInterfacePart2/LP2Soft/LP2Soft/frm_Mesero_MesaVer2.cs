@@ -35,8 +35,7 @@ namespace LP2Soft
             if (formularioActivo != null)
                 formularioActivo.Close();
             formularioActivo = formularioMostrar;
-            formularioMostrar.TopLevel = false;
-            PanelMostrar.Controls.Add(formularioMostrar);
+            //formularioMostrar.TopLevel = false;
             formularioMostrar.Show();
         }
         public void cargarBotonones()
@@ -54,23 +53,36 @@ namespace LP2Soft
             for (int i = 0; i < limite; i++)
             {
                 Button button = new Button();
-                button.Size = new Size(80, 30);
+                button.Size = new Size(150, 90);
                 button.Left = left;
                 button.Top = top;
                 button.Text = "Mesa_" + (i + 1).ToString();
                 button.Name = "btn_" + i.ToString();
+                //button.Image = Properties.Resources.mesaIcono;
                 
                 button.Click += new System.EventHandler(hacerCLik);
                 
                 this.Controls.Add(button);
-                top += button.Height + 2;
-                if (top >= 150)
+                left += button.Width+2;
+                if(left >= 470)
                 {
-                    top = 0;
-                    left += button.Width + 5;
-                    
-                    //if(left == )
+                    left = 0;
+                    top+= button.Height +2;
                 }
+                //top += button.Height + 2;
+                //if (top >= 400)
+                //{
+                //    top = 0;
+                //    left += button.Width + 5;
+                    
+                //    if(left >= 800)
+                //    {
+                //        left = 0;
+                //        top+= button.Height + 2;
+
+                //    }
+                    
+                //}
                 
                 if (lista_mesas[i].disponible == true)
                     button.BackColor = Color.Aquamarine;
@@ -95,17 +107,18 @@ namespace LP2Soft
             {
                 mesaSelec.disponible = false;
                 lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
+                abrirFormulario(new frm_Caja_Pedido_Pedir());
                 //Abran formularios aqui
-                if (rol.descripcion == "MESERO")
-                {
-                    //FORMULARIO DE MESERO
-                    //abrirFormulario()
-                }
-                else if(rol.descripcion == "CAJERO")
-                {
-                    //FORMULARIO DE CAJERO
-                    //abrirFormulario();
-                }
+                //if (rol.descripcion == "MESERO")
+                //{
+                //    //FORMULARIO DE MESERO
+                //    //abrirFormulario()
+                //}
+                //else if(rol.descripcion == "CAJERO")
+                //{
+                //    //FORMULARIO DE CAJERO
+                //    //abrirFormulario();
+                //}
                 
             }
 

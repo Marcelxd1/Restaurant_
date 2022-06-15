@@ -16,9 +16,9 @@ namespace LP2Soft
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Login_Usuario());
-            //Application.Run(new Main());
-            //Application.Run(new frm_Mesero_MesaVer2());
+            //Application.Run(new frm_Login_Usuario());
+            Application.Run(new Main());
+            
         }
     }
 }

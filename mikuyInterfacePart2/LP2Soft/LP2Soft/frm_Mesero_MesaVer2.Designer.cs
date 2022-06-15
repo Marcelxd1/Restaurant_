@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelMesas = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.PanelMostrar = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label3
@@ -65,15 +64,8 @@
             // 
             this.panelMesas.Location = new System.Drawing.Point(21, 156);
             this.panelMesas.Name = "panelMesas";
-            this.panelMesas.Size = new System.Drawing.Size(321, 449);
+            this.panelMesas.Size = new System.Drawing.Size(920, 470);
             this.panelMesas.TabIndex = 39;
-            // 
-            // PanelMostrar
-            // 
-            this.PanelMostrar.Location = new System.Drawing.Point(372, 156);
-            this.PanelMostrar.Name = "PanelMostrar";
-            this.PanelMostrar.Size = new System.Drawing.Size(599, 449);
-            this.PanelMostrar.TabIndex = 40;
             // 
             // frm_Mesero_MesaVer2
             // 
@@ -81,7 +73,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1004, 646);
-            this.Controls.Add(this.PanelMostrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panelMesas);
@@ -98,6 +89,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelMesas;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Panel PanelMostrar;
     }
 }
