@@ -27,6 +27,8 @@ namespace LP2Soft
             //no se sabe si elimino los botones anteriores o no 
             cargarBotonones();
             panelMesas.AutoScroll = true;
+            label1.Enabled = false;
+            label1.Visible = false;
             
             
         }
@@ -58,10 +60,11 @@ namespace LP2Soft
                 button.Top = top;
                 button.Text = "Mesa_" + (i + 1).ToString();
                 button.Name = "btn_" + i.ToString();
-                //button.Image = Properties.Resources.mesaIcono;
-                
+                button.Image = Properties.Resources.mesaIcono;
+                button.TextImageRelation = TextImageRelation.ImageAboveText;
                 button.Click += new System.EventHandler(hacerCLik);
-                
+                button.Font = new Font(label1.Font, FontStyle.Bold);
+                button.ForeColor = Color.White;
                 this.Controls.Add(button);
                 left += button.Width+2;
                 if(left >= 470)
@@ -85,7 +88,7 @@ namespace LP2Soft
                 //}
                 
                 if (lista_mesas[i].disponible == true)
-                    button.BackColor = Color.Aquamarine;
+                    button.BackColor = Color.RoyalBlue;
                 else
                     button.BackColor = Color.IndianRed;
 
@@ -125,7 +128,7 @@ namespace LP2Soft
             else
             {
                 mesaSelec.disponible = true;
-                lista_botones.ElementAt(indice).BackColor = Color.Aquamarine;
+                lista_botones.ElementAt(indice).BackColor = Color.RoyalBlue;
             }
 
             daonegocio.modificarMesa(mesaSelec);
