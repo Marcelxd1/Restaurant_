@@ -11,6 +11,7 @@
   <message name="insertarGastoResponse">
     <part name="parameters" element="tns:insertarGastoResponse" />
   </message>
+<<<<<<< HEAD
   <message name="modificarGasto">
     <part name="parameters" element="tns:modificarGasto" />
   </message>
@@ -19,6 +20,10 @@
   </message>
   <message name="eliminarGasto">
     <part name="parameters" element="tns:eliminarGasto" />
+=======
+  <message name="insertarGasto">
+    <part name="parameters" element="tns:insertarGasto" />
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
   </message>
   <message name="eliminarGastoResponse">
     <part name="parameters" element="tns:eliminarGastoResponse" />
@@ -41,12 +46,19 @@
   <message name="insertarPedidoResponse">
     <part name="parameters" element="tns:insertarPedidoResponse" />
   </message>
+  <message name="modificarGasto">
+    <part name="parameters" element="tns:modificarGasto" />
+  </message>
+  <message name="modificarGastoResponse">
+    <part name="parameters" element="tns:modificarGastoResponse" />
+  </message>
   <message name="listarTodosGastos">
     <part name="parameters" element="tns:listarTodosGastos" />
   </message>
   <message name="listarTodosGastosResponse">
     <part name="parameters" element="tns:listarTodosGastosResponse" />
   </message>
+<<<<<<< HEAD
   <message name="modificarLineaPedido">
     <part name="parameters" element="tns:modificarLineaPedido" />
   </message>
@@ -70,6 +82,13 @@
   </message>
   <message name="listarTodosLineaPedidoResponse">
     <part name="parameters" element="tns:listarTodosLineaPedidoResponse" />
+=======
+  <message name="listarTransaccionesXFecha">
+    <part name="parameters" element="tns:listarTransaccionesXFecha" />
+  </message>
+  <message name="listarTransaccionesXFechaResponse">
+    <part name="parameters" element="tns:listarTransaccionesXFechaResponse" />
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
   </message>
   <message name="listarGastosXNombre">
     <part name="parameters" element="tns:listarGastosXNombre" />
@@ -77,17 +96,26 @@
   <message name="listarGastosXNombreResponse">
     <part name="parameters" element="tns:listarGastosXNombreResponse" />
   </message>
+<<<<<<< HEAD
   <message name="eliminarLineaPedido">
     <part name="parameters" element="tns:eliminarLineaPedido" />
   </message>
   <message name="eliminarLineaPedidoResponse">
     <part name="parameters" element="tns:eliminarLineaPedidoResponse" />
+=======
+  <message name="listarTransacciones">
+    <part name="parameters" element="tns:listarTransacciones" />
+  </message>
+  <message name="listarTransaccionesResponse">
+    <part name="parameters" element="tns:listarTransaccionesResponse" />
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
   </message>
   <portType name="CajaWS">
     <operation name="insertarGasto">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoRequest" message="tns:insertarGasto" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoResponse" message="tns:insertarGastoResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="modificarGasto">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoRequest" message="tns:modificarGasto" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoResponse" message="tns:modificarGastoResponse" />
@@ -107,11 +135,21 @@
     <operation name="insertarPedido">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarPedidoRequest" message="tns:insertarPedido" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarPedidoResponse" message="tns:insertarPedidoResponse" />
+=======
+    <operation name="insertarGasto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoRequest" message="tns:insertarGasto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoResponse" message="tns:insertarGastoResponse" />
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
+    </operation>
+    <operation name="modificarGasto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoRequest" message="tns:modificarGasto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoResponse" message="tns:modificarGastoResponse" />
     </operation>
     <operation name="listarTodosGastos">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosRequest" message="tns:listarTodosGastos" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosResponse" message="tns:listarTodosGastosResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="modificarLineaPedido">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarLineaPedidoRequest" message="tns:modificarLineaPedido" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarLineaPedidoResponse" message="tns:modificarLineaPedidoResponse" />
@@ -127,14 +165,25 @@
     <operation name="listarTodosLineaPedido">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosLineaPedidoRequest" message="tns:listarTodosLineaPedido" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosLineaPedidoResponse" message="tns:listarTodosLineaPedidoResponse" />
+=======
+    <operation name="listarTransaccionesXFecha">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesXFechaRequest" message="tns:listarTransaccionesXFecha" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesXFechaResponse" message="tns:listarTransaccionesXFechaResponse" />
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
     </operation>
     <operation name="listarGastosXNombre">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreRequest" message="tns:listarGastosXNombre" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreResponse" message="tns:listarGastosXNombreResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarLineaPedido">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarLineaPedidoRequest" message="tns:eliminarLineaPedido" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarLineaPedidoResponse" message="tns:eliminarLineaPedidoResponse" />
+=======
+    <operation name="listarTransacciones">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesRequest" message="tns:listarTransacciones" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesResponse" message="tns:listarTransaccionesResponse" />
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
     </operation>
   </portType>
   <binding name="CajaWSPortBinding" type="tns:CajaWS">
@@ -148,7 +197,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarGasto">
+    <operation name="insertarGasto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -157,6 +206,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarGasto">
       <soap:operation soapAction="" />
       <input>
@@ -185,6 +235,9 @@
       </output>
     </operation>
     <operation name="insertarPedido">
+=======
+    <operation name="modificarGasto">
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -202,6 +255,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="modificarLineaPedido">
       <soap:operation soapAction="" />
       <input>
@@ -230,6 +284,9 @@
       </output>
     </operation>
     <operation name="listarTodosLineaPedido">
+=======
+    <operation name="listarTransaccionesXFecha">
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -247,7 +304,11 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarLineaPedido">
+=======
+    <operation name="listarTransacciones">
+>>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

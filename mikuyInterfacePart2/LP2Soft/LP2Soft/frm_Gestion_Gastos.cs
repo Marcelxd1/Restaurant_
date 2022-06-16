@@ -96,6 +96,8 @@ namespace LP2Soft
                 _gasto.precio = Double.Parse(txtPrecio.Text.Trim());
                 _gasto.descripcion = txtDescripcion.Text.Trim();
                 _gasto.cantidad = int.Parse(txtCantidad.Text.Trim());
+                _gasto.restaurante = new CajaWS.restaurante();
+                _gasto.restaurante.id_restaurante = 1;
                 
                 if (_estado == Estado.Nuevo)
                 {

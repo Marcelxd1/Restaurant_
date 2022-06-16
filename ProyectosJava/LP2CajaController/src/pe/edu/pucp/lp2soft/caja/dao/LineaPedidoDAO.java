@@ -9,5 +9,6 @@ public interface LineaPedidoDAO {
     int eliminar(int idLineaPedido);
     ArrayList<LineaPedido> listarTodas();
     LineaPedido listarPorId(int idLineaPedido);
+    ArrayList<LineaPedido> listarPorPedido(int idPedido);
 }
 

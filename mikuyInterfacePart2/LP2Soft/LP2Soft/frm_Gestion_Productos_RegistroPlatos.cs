@@ -46,6 +46,7 @@ namespace LP2Soft
                     cbCategoria.Enabled = false;
                     break;
                 case Estado.Modificar:
+                    break;
                 case Estado.Nuevo:
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = true;
@@ -58,7 +59,6 @@ namespace LP2Soft
                     txtPresentacion.Enabled = false;
                     rbBebida.Enabled = true;
                     rbPlato.Enabled = true;
-                    rbPlato.Checked = true;
                     cbCategoria.Enabled = true;
                     break;
 
@@ -175,14 +175,16 @@ namespace LP2Soft
                 pbPlato.Image = new Bitmap(ms);
             }
             else pbPlato.Image = null;
-            if (_producto.tipoProducto == 'C')
+            if (_producto.tipoProducto == 'B')
             {
-                rbPlato.Checked = true;
+                rbBebida.Checked = true;
+                //rbPlato.Checked = true;
+                txtPresentacion.Text = _producto.presentacion;
             }
             else
             {
-                rbBebida.Checked = true;
-                txtPresentacion.Text = _producto.presentacion;
+                rbPlato.Checked= true;
+                txtPresentacion.Text = "";
             }
             cbCategoria.SelectedValue = _producto.categoria.idCategoria;
             _estado = Estado.Modificar;
