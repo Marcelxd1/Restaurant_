@@ -49,10 +49,10 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnPedir = new Guna.UI2.WinForms.Guna2Button();
             this.dgvItem = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvPedido = new Guna.UI2.WinForms.Guna2DataGridView();
             this.IDI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPedido = new Guna.UI2.WinForms.Guna2DataGridView();
             this.IDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,6 +187,7 @@
             this.btnSumar.PressedState.Parent = this.btnSumar;
             this.btnSumar.Size = new System.Drawing.Size(38, 38);
             this.btnSumar.TabIndex = 133;
+            this.btnSumar.Click += new System.EventHandler(this.btnSumar_Click);
             // 
             // lblPedido
             // 
@@ -212,6 +213,7 @@
             this.btnRestar.PressedState.Parent = this.btnRestar;
             this.btnRestar.Size = new System.Drawing.Size(38, 38);
             this.btnRestar.TabIndex = 135;
+            this.btnRestar.Click += new System.EventHandler(this.btnRestar_Click);
             // 
             // txtTotal
             // 
@@ -282,8 +284,8 @@
             this.dgvItem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvItem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -334,12 +336,34 @@
             this.dgvItem.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvItem.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvItem_CellFormatting);
             // 
+            // IDI
+            // 
+            this.IDI.DataPropertyName = "ID";
+            this.IDI.FillWeight = 38.07106F;
+            this.IDI.HeaderText = "ID";
+            this.IDI.Name = "IDI";
+            // 
+            // NombreT
+            // 
+            this.NombreT.DataPropertyName = "Nombre";
+            this.NombreT.FillWeight = 159.5506F;
+            this.NombreT.HeaderText = "Nombre";
+            this.NombreT.Name = "NombreT";
+            this.NombreT.ReadOnly = true;
+            // 
+            // PrecioT
+            // 
+            this.PrecioT.DataPropertyName = "Precio";
+            this.PrecioT.FillWeight = 102.3783F;
+            this.PrecioT.HeaderText = "Precio";
+            this.PrecioT.Name = "PrecioT";
+            this.PrecioT.ReadOnly = true;
+            // 
             // dgvPedido
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPedido.BackgroundColor = System.Drawing.Color.White;
@@ -347,8 +371,8 @@
             this.dgvPedido.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPedido.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.InactiveCaptionText;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -399,29 +423,6 @@
             this.dgvPedido.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPedido.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvPedido.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPedido_CellFormatting);
-            // 
-            // IDI
-            // 
-            this.IDI.DataPropertyName = "ID";
-            this.IDI.FillWeight = 38.07106F;
-            this.IDI.HeaderText = "ID";
-            this.IDI.Name = "IDI";
-            // 
-            // NombreT
-            // 
-            this.NombreT.DataPropertyName = "Nombre";
-            this.NombreT.FillWeight = 159.5506F;
-            this.NombreT.HeaderText = "Nombre";
-            this.NombreT.Name = "NombreT";
-            this.NombreT.ReadOnly = true;
-            // 
-            // PrecioT
-            // 
-            this.PrecioT.DataPropertyName = "Precio";
-            this.PrecioT.FillWeight = 102.3783F;
-            this.PrecioT.HeaderText = "Precio";
-            this.PrecioT.Name = "PrecioT";
-            this.PrecioT.ReadOnly = true;
             // 
             // IDP
             // 

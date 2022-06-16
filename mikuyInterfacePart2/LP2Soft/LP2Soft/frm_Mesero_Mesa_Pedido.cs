@@ -200,7 +200,6 @@ namespace LP2Soft
                 }
                 else MessageBox.Show("Ha ocurrido un error", "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btnSumar_Click(object sender, EventArgs e)
