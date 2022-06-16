@@ -138,7 +138,38 @@ public class CajaWS {
         }
         return lineas;
     }
-    
+       //****************COCINERO*********************
+       @WebMethod(operationName = "listarPedidosPendientes")
+       public ArrayList<Pedido> listarPedidosPendientes() {
+           ArrayList<Pedido> pedidos = new ArrayList<>();
+           try{
+               pedidos= daoPedido.listarPedidosPendientes();
+           }catch(Exception ex){
+               System.out.println(ex.getMessage());
+           }
+           return pedidos;
+       }
+       @WebMethod(operationName = "listarLineaPedidoMesa")
+       public ArrayList<LineaPedido> listarLineaPedidoMesa(@WebParam(name = "idPedido") int idPedido) {
+           ArrayList<LineaPedido> lineas = new ArrayList<>();
+           try{
+               lineas = daoLineaPedido.listarPedidoXMesa(idPedido);
+           }catch(Exception ex){
+               System.out.println(ex.getMessage());
+           }
+           return lineas;
+       }
+       
+       @WebMethod(operationName = "modificarEstadoPedido")
+       public int modificarEstadoPedido(@WebParam(name = "idPedido") int idPedido , @WebParam(name = "estado") char estado) {
+           int resultado = 0 ; 
+           try{
+               resultado = daoPedido.modificarEstado(idPedido, estado);
+           }catch(Exception ex){
+               System.out.println(ex.getMessage());
+           }
+           return resultado;
+       }
     
     
     

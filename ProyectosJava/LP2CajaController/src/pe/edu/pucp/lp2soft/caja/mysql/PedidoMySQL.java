@@ -369,4 +369,52 @@ public class PedidoMySQL implements PedidoDAO {
         }
         return pedido;
     }
+
+    @Override
+    public ArrayList<Pedido> listarPedidosPendientes() {
+        ArrayList<Pedido> pedidos= new ArrayList<>();
+        try{
+            con= DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_PEDIDOS_PENDIENTES()}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Pedido pedido = new Pedido();
+                pedido.setIdPedido(rs.getInt("id_transaccion"));
+                Mesa mesa = new Mesa();
+                mesa.setIdMesa(rs.getInt("id_mesa"));
+                pedido.setMesa(mesa);
+                pedido.setTipoPedido(rs.getString("fid_tipo_pedido").charAt(0));
+                pedido.setEstado(rs.getString("fid_estado_pedido").charAt(0));
+                pedidos.add(pedido);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return pedidos;
+    }
+
+    @Override
+    public int modificarEstado(int idPedido , char estado) {
+        int resultado = 0;
+        try {
+            con = DBManager.getInstance().getConnection();
+            //valores en transaccion
+            cs = con.prepareCall("{call MODIFICAR_ESTADO_PEDIDO(?,?)}");
+            cs.setInt("_idPedido", idPedido);
+            cs.setString("_estado", String.valueOf(estado));
+            cs.executeUpdate();
+            resultado = 1;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return resultado;
+    }
 }

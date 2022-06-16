@@ -172,5 +172,34 @@ public class LineaPedidoMySQL implements LineaPedidoDAO{
         }
         return lineas;
     }
-    
+    @Override
+    public ArrayList<LineaPedido> listarPedidoXMesa(int idPedido) {
+        ArrayList<LineaPedido> lineas = new ArrayList<>();
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_LINEA_PEDIDO_MESA(?)}");
+            cs.setInt("_fid_pedido", idPedido);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                LineaPedido linea=new LineaPedido();
+                linea.setId_linea_pedido(rs.getInt("id_linea_pedido"));
+                ItemVendible item= new ItemVendible();
+                item.setIdItemVendible(rs.getInt("id_item_vendible"));
+                item.setNombre(rs.getString("nombre"));
+                item.setPrecio(rs.getDouble("precio"));
+                item.setDescripcion(rs.getString("descripcion"));
+                item.setEstado(true);
+                linea.setItem(item); 
+                linea.setUnidades(rs.getInt("unidades"));
+                linea.setSubtotal(rs.getInt("subtotal"));
+                
+                lineas.add(linea);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return lineas;
+    }
 }

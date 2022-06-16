@@ -10,5 +10,6 @@ public interface LineaPedidoDAO {
     ArrayList<LineaPedido> listarTodas();
     LineaPedido listarPorId(int idLineaPedido);
     ArrayList<LineaPedido> listarPorPedido(int idPedido);
+    ArrayList<LineaPedido>listarPedidoXMesa(int idPedido);
 }
 

@@ -88,5 +88,10 @@ namespace LP2Soft
         {
             abrirFormulario(new frm_Caja());
         }
+
+        private void btnCocina_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new frm_Cocina());
+        }
     }
 }

@@ -233,6 +233,7 @@
             this.btnCocina.Size = new System.Drawing.Size(171, 45);
             this.btnCocina.TabIndex = 19;
             this.btnCocina.Text = "Cocina";
+            this.btnCocina.Click += new System.EventHandler(this.btnCocina_Click);
             // 
             // btnGestion
             // 

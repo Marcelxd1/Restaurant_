@@ -87,6 +87,18 @@
     <Compile Include="frm_Caja_Pedido_Pedir.Designer.cs">
       <DependentUpon>frm_Caja_Pedido_Pedir.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Cocina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Cocina.Designer.cs" />
+    <Compile Include="frm_Cocina_DatosMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Cocina_DatosMesa.Designer.cs" />
+    <Compile Include="frm_Cocina_DatosPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Cocina_DatosPedido.Designer.cs" />
     <Compile Include="frm_Cocina_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +251,9 @@
     <EmbeddedResource Include="frm_Caja_Pedido_Pedir.resx">
       <DependentUpon>frm_Caja_Pedido_Pedir.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Cocina.resx" />
+    <EmbeddedResource Include="frm_Cocina_DatosMesa.resx" />
+    <EmbeddedResource Include="frm_Cocina_DatosPedido.resx" />
     <EmbeddedResource Include="frm_Cocina_Pedido.resx">
       <DependentUpon>frm_Cocina_Pedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,7 +351,13 @@
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarGastosXNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarLineaPedidoMesaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarLineaPXPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarPedidosPendientesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.ListarPedidosTransaccionResponse.datasource">
@@ -349,6 +370,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTransaccionesXFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarEstadoPedidoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarGastoResponse.datasource">
@@ -393,7 +417,13 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.insertarPromocionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.itemVendible.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.lineaPromocion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarProductoXCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarProductoXNombreResponse.datasource">
@@ -409,6 +439,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodasPromocionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodosItemsXNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodosLineaPromoResponse.datasource">
@@ -710,6 +743,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mesaIcono1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notificacion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRIORIDAD1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
