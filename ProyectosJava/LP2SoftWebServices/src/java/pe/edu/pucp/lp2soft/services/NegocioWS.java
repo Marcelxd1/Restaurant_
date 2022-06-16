@@ -5,16 +5,19 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.lp2soft.negocio.dao.CategoriaDAO;
+import pe.edu.pucp.lp2soft.negocio.dao.ItemVendibleDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.LineaPromocionDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.MesaDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.ProductoDAO;
 import pe.edu.pucp.lp2soft.negocio.dao.PromocionDAO;
 import pe.edu.pucp.lp2soft.negocio.model.Categoria;
+import pe.edu.pucp.lp2soft.negocio.model.ItemVendible;
 import pe.edu.pucp.lp2soft.negocio.model.LineaPromocion;
 import pe.edu.pucp.lp2soft.negocio.model.Mesa;
 import pe.edu.pucp.lp2soft.negocio.model.Producto;
 import pe.edu.pucp.lp2soft.negocio.model.Promocion;
 import pe.edu.pucp.lp2soft.negocio.mysql.CategoriaMySQL;
+import pe.edu.pucp.lp2soft.negocio.mysql.ItemVendibleMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.LineaPromocionMYSQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.MesaMySQL;
 import pe.edu.pucp.lp2soft.negocio.mysql.ProductoMySQL;
@@ -33,6 +36,8 @@ public class NegocioWS {
     private LineaPromocionDAO daolineaPromo = new LineaPromocionMYSQL();
     
     private MesaDAO daoMesa = new MesaMySQL();
+    
+    private ItemVendibleDAO daoItem = new ItemVendibleMySQL();
     // MESA ==========================================================================
     
     @WebMethod(operationName = "insertarMesa")
@@ -238,6 +243,17 @@ public class NegocioWS {
         return productos;
     }
     
+    @WebMethod(operationName = "listarProductoXCategoria")
+    public ArrayList<Producto> listarProductoXCategoria(@WebParam(name = "nombre") String nombre) {
+        ArrayList<Producto> productos = new ArrayList<>();
+        try{
+            productos = daoProducto.listarXCategoria(nombre);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return productos;
+    }
+    
     // CATEGORIA ========================================================================== 
     @WebMethod(operationName = "insertarCategoria")
     public int insertarCategoria(@WebParam(name = "Categoria") Categoria categoria) {
@@ -282,5 +298,19 @@ public class NegocioWS {
         }
         return categorias;
     }
+    
+    // ITEM VENDIBLE ========================================================================== 
+    @WebMethod(operationName = "listarTodosItemsXNombre")
+    public ArrayList<ItemVendible> listarTodosItemsXNombre(@WebParam(name = "nombre") String nombre) {
+        ArrayList<ItemVendible> items = new ArrayList<>();
+        try{
+            items = daoItem.listarXNombre(nombre);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return items;
+    }
+    
+    
 }
      

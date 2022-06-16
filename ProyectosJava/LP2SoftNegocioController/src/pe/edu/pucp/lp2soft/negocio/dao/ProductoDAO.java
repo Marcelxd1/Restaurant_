@@ -9,4 +9,5 @@ public interface ProductoDAO {
     int modificar(Producto producto);
     int eliminar(int idProducto);
     ArrayList<Producto> listarXNombre(String nombre);
+    ArrayList<Producto> listarXCategoria(String nombre);
 }

@@ -69,6 +69,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
+    <Compile Include="frmBuscarProductoPed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarProductoPed.Designer.cs">
+      <DependentUpon>frmBuscarProductoPed.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Caja_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBuscarProductoPed.resx">
+      <DependentUpon>frmBuscarProductoPed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Asitencia.es-PE.resx">
       <DependentUpon>frm_Asitencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,10 +321,25 @@
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.eliminarGastoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.eliminarLineaPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.eliminarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.gasto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.insertarGastoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.insertarLineaPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.insertarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.lineaPedido.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarGastosXNombreResponse.datasource">
@@ -324,7 +348,22 @@
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTodosGastosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTodosLineaPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTodosPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarGastoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarLineaPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.pedido.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.categoria.datasource">
@@ -360,7 +399,13 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.insertarPromocionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.itemVendible.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.lineaPromocion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarProductoXCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarProductoXNombreResponse.datasource">
@@ -376,6 +421,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodasPromocionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodosItemsXNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.listarTodosLineaPromoResponse.datasource">
