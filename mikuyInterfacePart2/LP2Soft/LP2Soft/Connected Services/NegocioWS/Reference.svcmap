@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="f8e695c2-86cd-461e-bb0b-48377e1f283c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="ee1af952-3cba-4297-a550-75b221ce4c76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/LP2SoftWebServices/NegocioWS?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://44.198.32.69:8080/LP2SoftWebServices/NegocioWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NegocioWS.wsdl" MetadataType="Wsdl" ID="abea796d-1483-4dc5-af5e-e4c878c57a68" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/NegocioWS?WSDL" />
-    <MetadataFile FileName="NegocioWS.xsd" MetadataType="Schema" ID="854ca168-30f6-4473-83c1-f0d45d769760" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/NegocioWS?xsd=1" />
+    <MetadataFile FileName="NegocioWS.xsd" MetadataType="Schema" ID="72e4834e-3d5c-4326-84dd-217ed381b624" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/NegocioWS?xsd=1" />
+    <MetadataFile FileName="NegocioWS.wsdl" MetadataType="Wsdl" ID="66dd34c4-00a9-4366-9f81-046e8442173c" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/NegocioWS?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

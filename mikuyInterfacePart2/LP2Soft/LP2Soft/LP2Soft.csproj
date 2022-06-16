@@ -764,48 +764,6 @@
     <None Include="Resources\imagenVacia.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\NegocioWS\" />
-    <WCFMetadataStorage Include="Connected Services\CajaWS\" />
-    <WCFMetadataStorage Include="Connected Services\ReporteWS\" />
-    <WCFMetadataStorage Include="Connected Services\UserWS\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\UserWS\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\UserWS\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\UserWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\NegocioWS\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\NegocioWS\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\NegocioWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\CajaWS\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\CajaWS\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\CajaWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\upload.png" />
   </ItemGroup>
   <ItemGroup>
@@ -846,14 +804,38 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\NegocioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\NegocioWS\configuration.svcinfo" />
+    <None Include="Connected Services\NegocioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\UserWS\configuration91.svcinfo" />
+    <None Include="Connected Services\UserWS\configuration.svcinfo" />
+    <None Include="Connected Services\UserWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\CajaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\CajaWS\configuration.svcinfo" />
+    <None Include="Connected Services\CajaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
     <None Include="Connected Services\ReporteWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
-    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
     <Content Include="Resources\descargar.png" />
     <None Include="Resources\descargar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\NegocioWS\" />
+    <WCFMetadataStorage Include="Connected Services\CajaWS\" />
+    <WCFMetadataStorage Include="Connected Services\ReporteWS\" />
+    <WCFMetadataStorage Include="Connected Services\UserWS\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

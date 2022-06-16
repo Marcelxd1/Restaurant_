@@ -46,16 +46,6 @@
   <xs:element name="modificarLineaPedidoResponse" type="tns:modificarLineaPedidoResponse" />
   <xs:element name="modificarPedido" type="tns:modificarPedido" />
   <xs:element name="modificarPedidoResponse" type="tns:modificarPedidoResponse" />
-  <xs:complexType name="eliminarPedido">
-    <xs:sequence>
-      <xs:element name="idPedido" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarPedidoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarGastosXNombre">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -98,6 +88,16 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="ruc" type="xs:string" />
       <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPedido">
+    <xs:sequence>
+      <xs:element name="idPedido" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPedidoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarTransaccionesXFecha">
@@ -208,16 +208,6 @@
       <xs:element name="numero" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarGasto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Gasto" type="tns:gasto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarGastoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="BuscarPedidoXMesa">
     <xs:sequence>
       <xs:element name="idPedido" type="xs:int" />
@@ -228,22 +218,22 @@
       <xs:element minOccurs="0" name="return" type="tns:pedido" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="insertarGasto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gasto" type="tns:gasto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarGastoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ListarPedidosTransaccion">
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="ListarPedidosTransaccionResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarLineaPedido">
-    <xs:sequence>
-      <xs:element name="idLineaPedido" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarLineaPedidoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarLineaPedidoMesa">
@@ -254,6 +244,16 @@
   <xs:complexType name="listarLineaPedidoMesaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:lineaPedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarLineaPedido">
+    <xs:sequence>
+      <xs:element name="idLineaPedido" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarLineaPedidoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarLineaPedido">
@@ -350,22 +350,22 @@
       <xs:element minOccurs="0" name="return" type="tns:lineaPedido" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarPedido">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Pedido" type="tns:pedido" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarPedidoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="modificarGasto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Gasto" type="tns:gasto" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarGastoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Pedido" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedidoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

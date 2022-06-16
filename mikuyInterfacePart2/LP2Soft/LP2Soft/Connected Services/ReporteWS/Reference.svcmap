@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="8d5fb34b-a4d6-4c99-bf37-ea70b7d5dd55" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="bcfe8efb-d14c-4dca-a677-e77b213077e5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/LP2SoftWebServices/ReporteWS?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://44.198.32.69:8080/LP2SoftWebServices/ReporteWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ReporteWS.wsdl" MetadataType="Wsdl" ID="909b4434-afda-4217-9e38-5ba5e70a94ff" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/ReporteWS?WSDL" />
-    <MetadataFile FileName="ReporteWS.xsd" MetadataType="Schema" ID="56d21498-e3e2-48eb-b25c-a9bbff0c852f" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/ReporteWS?xsd=1" />
+    <MetadataFile FileName="ReporteWS.xsd" MetadataType="Schema" ID="a772b366-2592-4524-8eba-336675fb36a1" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/ReporteWS?xsd=1" />
+    <MetadataFile FileName="ReporteWS.wsdl" MetadataType="Wsdl" ID="7c2cfa1a-1fbe-4b96-a18e-d1d21ba1fcb5" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/ReporteWS?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

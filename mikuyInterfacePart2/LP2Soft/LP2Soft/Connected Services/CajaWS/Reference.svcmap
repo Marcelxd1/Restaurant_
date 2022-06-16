@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c43f8aaf-ff0f-47f4-9990-fb97e864f443" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="bc2055ba-9c71-4f5c-9dd8-629b97c1e08f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/LP2SoftWebServices/CajaWS?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://44.198.32.69:8080/LP2SoftWebServices/CajaWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CajaWS.wsdl" MetadataType="Wsdl" ID="923c762d-7c39-4963-ae29-a61e62a23521" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/CajaWS?WSDL" />
-    <MetadataFile FileName="CajaWS.xsd" MetadataType="Schema" ID="7cc72cbe-8fc9-46fd-87bb-45e6aea001e5" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/CajaWS?xsd=1" />
+    <MetadataFile FileName="CajaWS.xsd" MetadataType="Schema" ID="47dc6182-a8ac-4b65-be35-617d1e916434" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/CajaWS?xsd=1" />
+    <MetadataFile FileName="CajaWS.wsdl" MetadataType="Wsdl" ID="318518bf-966f-4006-b0f3-44f1b8440eba" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/CajaWS?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
