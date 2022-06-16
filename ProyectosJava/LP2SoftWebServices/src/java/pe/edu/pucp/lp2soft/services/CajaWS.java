@@ -9,14 +9,6 @@ import javax.jws.WebParam;
 import pe.edu.pucp.lp2soft.caja.dao.GastoDAO;
 import pe.edu.pucp.lp2soft.caja.dao.LineaPedidoDAO;
 import pe.edu.pucp.lp2soft.caja.dao.PedidoDAO;
-<<<<<<< HEAD
-import pe.edu.pucp.lp2soft.caja.model.Gasto;
-import pe.edu.pucp.lp2soft.caja.model.LineaPedido;
-import pe.edu.pucp.lp2soft.caja.model.Pedido;
-import pe.edu.pucp.lp2soft.caja.mysql.GastoMySQL;
-import pe.edu.pucp.lp2soft.caja.mysql.LineaPedidoMySQL;
-import pe.edu.pucp.lp2soft.caja.mysql.PedidoMySQL;
-=======
 import pe.edu.pucp.lp2soft.caja.dao.TransaccionesDAO;
 import pe.edu.pucp.lp2soft.caja.model.Gasto;
 import pe.edu.pucp.lp2soft.caja.model.LineaPedido;
@@ -26,23 +18,16 @@ import pe.edu.pucp.lp2soft.caja.mysql.GastoMySQL;
 import pe.edu.pucp.lp2soft.caja.mysql.LineaPedidoMySQL;
 import pe.edu.pucp.lp2soft.caja.mysql.PedidoMySQL;
 import pe.edu.pucp.lp2soft.caja.mysql.TransaccionesMySQL;
->>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
 
 
 @WebService(serviceName = "CajaWS")
 public class CajaWS {
     
     private GastoDAO daoGasto= new GastoMySQL();
-<<<<<<< HEAD
-    private PedidoDAO daoPedido= new PedidoMySQL();
-    private LineaPedidoDAO daoLineaPedido= new LineaPedidoMySQL();
-
-=======
     private PedidoDAO daoPedido = new PedidoMySQL();
     private LineaPedidoDAO daoLineaPedido = new LineaPedidoMySQL();
     private TransaccionesDAO daoTra = new TransaccionesMySQL();
     
->>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
     @WebMethod(operationName = "insertarGasto")
     public int insertarGasto(@WebParam(name = "Gasto") Gasto gasto) {
         int resultado = 0;
@@ -99,47 +84,6 @@ public class CajaWS {
         return gastos;
     }
     
-<<<<<<< HEAD
-    //------------------------------PEDIDO------------------------------  
-    @WebMethod(operationName = "insertarPedido")
-    public int insertarPedido(@WebParam(name = "Pedido") Pedido pedido) {
-        int resultado = 0;
-        try{
-            resultado= daoPedido.insertar(pedido);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-    
-    @WebMethod(operationName = "modificarPedido")
-    public int modificarPedido(@WebParam(name = "Pedido") Pedido pedido) {
-        int resultado = 0;
-        try{
-            resultado=daoPedido.modificar(pedido);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-    
-    @WebMethod(operationName = "eliminarPedido")
-    public int eliminarPedido(@WebParam(name = "idPedido") int idPedido) {
-        int resultado = 0;
-        try{
-            resultado=daoPedido.eliminar(idPedido);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-    
-    @WebMethod(operationName = "listarTodosPedido")
-    public ArrayList<Pedido> listarTodosPedido() {
-        ArrayList<Pedido> pedidos = new ArrayList<>();
-        try{
-            pedidos=daoPedido.listarTodas();
-=======
     @WebMethod(operationName = "listarTransacciones")
     public ArrayList<Transaccion> listarTransacciones() {
         ArrayList<Transaccion> transacciones = new ArrayList<>();
@@ -167,61 +111,12 @@ public class CajaWS {
         ArrayList<Pedido> pedidos = new ArrayList<>();
         try{
             pedidos=daoPedido.listarPedidoTransaccion();
->>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
         return pedidos;
     }
     
-<<<<<<< HEAD
-    //--------------------------LINEA PEDIDO--------------------------
-    @WebMethod(operationName = "insertarLineaPedido")
-    public int insertarLineaPedido(@WebParam(name = "LineaPedido") LineaPedido lineaPedido) {
-        int resultado = 0;
-        try{
-            resultado= daoLineaPedido.insertar(lineaPedido);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-    
-    @WebMethod(operationName = "modificarLineaPedido")
-    public int modificarLineaPedido(@WebParam(name = "LineaPedido") LineaPedido lineaPedido) {
-        int resultado = 0;
-        try{
-            resultado=daoLineaPedido.modificar(lineaPedido);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-    
-    @WebMethod(operationName = "eliminarLineaPedido")
-    public int eliminarLineaPedido(@WebParam(name = "idLineaPedido") int idLineaPedido) {
-        int resultado = 0;
-        try{
-            resultado=daoLineaPedido.eliminar(idLineaPedido);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-    
-    @WebMethod(operationName = "listarTodosLineaPedido")
-    public ArrayList<LineaPedido> listarTodosLineaPedido() {
-        ArrayList<LineaPedido> lineaPedidos = new ArrayList<>();
-        try{
-            lineaPedidos=daoLineaPedido.listarTodas();
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return lineaPedidos;
-    }
-    
-    
-=======
     @WebMethod(operationName = "BuscarPedidoXMesa")
     public Pedido BuscarPedidoXMesa(@WebParam(name = "idPedido") int idPedido) {
         Pedido pedido = new Pedido();
@@ -243,5 +138,4 @@ public class CajaWS {
         }
         return lineas;
     }
->>>>>>> 7f091ad87dd90617e298d0471659c3b714ff2f8c
 }
