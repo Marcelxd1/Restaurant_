@@ -43,19 +43,19 @@ import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
 public class Principal {
     public static void main(String[] args) throws Exception {
-        int resultado;
-        PromocionDAO daoPromo= new PromocionMySQL();
-        ArrayList<Promocion> lista;
-        lista= daoPromo.listarTodos();
-        for (Promocion promocion : lista) {
-            System.out.println(promocion.getIdItemVendible()+"-"+promocion.getNombre()+"-"+ promocion.getDescripcion() );
-        }
-////************************************************************************************************************
-//// RESTAURANTE
-////************************************************************************************************************ 
-//        Restaurante res1 = new Restaurante("ASAS-2323","CEVICHERIA","123213213","AV JAVIER PRADO",4294.2);
-//        Restaurante res2 = new Restaurante("ADFO-2173","POLLERIA","988787","AV NOSE",3000.0);
-//        RestauranteDAO res = new RestauranteMySQL();
+//        int resultado;
+//        PromocionDAO daoPromo= new PromocionMySQL();
+//        ArrayList<Promocion> lista;
+//        lista= daoPromo.listarTodos();
+//        for (Promocion promocion : lista) {
+//            System.out.println(promocion.getIdItemVendible()+"-"+promocion.getNombre()+"-"+ promocion.getDescripcion() );
+//        }
+//************************************************************************************************************
+// RESTAURANTE
+//************************************************************************************************************ 
+        Restaurante res1 = new Restaurante("ASAS-2323","CEVICHERIA","123213213","AV JAVIER PRADO",4294.2);
+        Restaurante res2 = new Restaurante("ADFO-2173","POLLERIA","988787","AV NOSE",3000.0);
+        RestauranteDAO res = new RestauranteMySQL();
 //        
 //        //INSERTAR -------------------------------------------------------------
 //        resultado=res.insertar(res1);
@@ -98,13 +98,14 @@ public class Principal {
 //        System.out.println("----------------------------------------------------------\n");
 //
 ////************************************************************************************************************
-//// MESAS
-////************************************************************************************************************        
-//        Mesa mes1 = new Mesa(4); //4 sillas
-//        Mesa mes2 = new Mesa(6); //6 sillas
-//        Mesa mes3 = new Mesa(5); //5 sillas
-//        Mesa mes4 = new Mesa(8); //8 sillas
-//        MesaDAO m1 = new MesaMySQL();
+// MESAS
+//************************************************************************************************************        
+        Mesa mes1 = new Mesa(); //4 sillas
+        mes1.setIdMesa(26);
+        Mesa mes2 = new Mesa(6); //6 sillas
+        Mesa mes3 = new Mesa(5); //5 sillas
+        Mesa mes4 = new Mesa(8); //8 sillas
+        MesaDAO m1 = new MesaMySQL();
 //        
 //        //INSERTAR -------------------------------------------------------------
 //        resultado = m1.insertar(mes1);
@@ -164,13 +165,13 @@ public class Principal {
 //        }
 //        System.out.println("----------------------------------------------------------\n");
 //        
-////************************************************************************************************************
-//// CATEGORIAS COMIDAS 
-////************************************************************************************************************  
-//        Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
-//        Categoria cat2 = new Categoria("Parrilleros", "las parrillas ");
-//        Categoria cat3 = new Categoria("Gaseo", "aguas con gas ");        
-//        Categoria cat4 = new Categoria("Licores", "aguas con licor xd");        
+//************************************************************************************************************
+// CATEGORIAS COMIDAS 
+//************************************************************************************************************  
+        Categoria cat1 = new Categoria("Pollos", "todo tipo de pollo ");
+        Categoria cat2 = new Categoria("Parrilleros", "las parrillas ");
+        Categoria cat3 = new Categoria("Gaseo", "aguas con gas ");        
+        Categoria cat4 = new Categoria("Licores", "aguas con licor xd");        
 //
 //        //INSERTAR -------------------------------------------------------------
 //        CategoriaDAO daoCat = new CategoriaMySQL();
@@ -233,16 +234,16 @@ public class Principal {
 ////************************************************************************************************************
 //// COMIDAS Y BEBIDAS
 ////************************************************************************************************************  
-//        Producto producto = new Producto("1/4 Pollo a la Brasa", 19.2, "con papas y ensalada", 'C', null); //platillo
-//        Producto producto2 = new Producto("Chuletas a la parrilla", 31.2, "con papas sancochadas", 'C', null);//platillo
-//        Producto producto3 = new Producto("Inka Kola", 3.5, "gaseosa descartable", 'B', "2.5L");//bebida
-//        Producto producto4 = new Producto("Mojito", 13.0, "una copa mediana", 'B', "1/2L");//bebida
-//        ProductoDAO daoProd = new ProductoMySQL();
-//        
-//        producto.setCategoria(cat1);
-//        producto2.setCategoria(cat2);
-//        producto3.setCategoria(cat3);
-//        producto4.setCategoria(cat4);
+        Producto producto = new Producto("1/4 Pollo a la Brasa", 19.2, "con papas y ensalada", 'C', null); //platillo
+        Producto producto2 = new Producto("Chuletas a la parrilla", 31.2, "con papas sancochadas", 'C', null);//platillo
+        Producto producto3 = new Producto("Inka Kola", 3.5, "gaseosa descartable", 'B', "2.5L");//bebida
+        Producto producto4 = new Producto("Mojito", 13.0, "una copa mediana", 'B', "1/2L");//bebida
+        ProductoDAO daoProd = new ProductoMySQL();
+        
+        producto.setCategoria(cat1);
+        producto2.setCategoria(cat2);
+        producto3.setCategoria(cat3);
+        producto4.setCategoria(cat4);
 //        
 //        //INSERTAR -------------------------------------------------------------
 //        resultado = daoProd.insertar(producto);
@@ -379,13 +380,13 @@ public class Principal {
 //        }
 //        //probar todos los campos
 //        System.out.println("----------------------------------------------------------\n"); 
-////************************************************************************************************************
-//// ROLES
-////************************************************************************************************************  
-//        Rol rol1 = new Rol("ADMIN");
-//        Rol rol2 = new Rol("CAJA");
-//        Rol rol3 = new Rol("MESERO");
-//        Rol rol4 = new Rol("COCINERO");
+//************************************************************************************************************
+// ROLES
+//************************************************************************************************************  
+        Rol rol1 = new Rol("ADMIN");
+        Rol rol2 = new Rol("CAJA");
+        Rol rol3 = new Rol("MESERO");
+        Rol rol4 = new Rol("COCINERO");
 //        
 //        //INSERTAR -------------------------------------------------------------
 //        RolDAO daoRol = new RolMySQL();
@@ -445,23 +446,24 @@ public class Principal {
 //        }
 //        
 //        System.out.println("----------------------------------------------------------\n");
-////************************************************************************************************************
-//// PERSONAS
-////************************************************************************************************************  
-//        Usuario us1 = new Usuario("psanchez", "asd1234", 1200.0, "9878842", "PEDRO", "PEREZ", "SANCHEZ", "9989893", 'N');
-//        Persona empresa = new Persona("EMPRESA ABC", "123-ASD", "2344412312", 'J');
-//        Usuario mesero1= new Usuario("Parmando", "asd1234", 1500.0, "9881234", "Armando", "Paredes", "gomez", "9989885", 'N');
-//        Usuario cajero1= new Usuario("sdrick", "asd1234", 3000.0, "9878842", "RICK", "SANCHEZ", "PEREZ", "9934893", 'N');
-//        Usuario cajero2= new Usuario("sdreik", "asl1234", 3000.0, "9878842", "MIKE", "LOPEZ", "GONZALEZ", "9934893", 'N');
-//        Persona cliente= new Persona("gaston", "acurio", "ddddd", "8128313", 'N');
-//        us1.setRol(rol1);
-//        us1.setRestaurante(res1);
-//        mesero1.setRestaurante(res1);
-//        cajero1.setRestaurante(res1);
-//        cajero2.setRestaurante(res1);
-//        mesero1.setRol(rol3);
-//        cajero1.setRol(rol2);
-//        cajero2.setRol(rol2);
+//************************************************************************************************************
+// PERSONAS
+//************************************************************************************************************  
+        Usuario us1 = new Usuario("psanchez", "asd1234", 1200.0, "9878842", "PEDRO", "PEREZ", "SANCHEZ", "9989893", 'N');
+        Persona empresa = new Persona("EMPRESA ABC", "123-ASD", "2344412312", 'J');
+        Usuario mesero1= new Usuario("Parmando", "asd1234", 1500.0, "9881234", "Armando", "Paredes", "gomez", "9989885", 'N');
+        Usuario cajero1= new Usuario("sdrick", "asd1234", 3000.0, "9878842", "RICK", "SANCHEZ", "PEREZ", "9934893", 'N');
+        Usuario cajero2= new Usuario("sdreik", "asl1234", 3000.0, "9878842", "MIKE", "LOPEZ", "GONZALEZ", "9934893", 'N');
+        Persona cliente= new Persona("gaston", "acurio", "ddddd", "8128313", 'N');
+        us1.setRol(rol1);
+        us1.setRestaurante(res1);
+        mesero1.setRestaurante(res1);
+        cajero1.setRestaurante(res1);
+        cajero2.setRestaurante(res1);
+        mesero1.setRol(rol3);
+        cajero1.setRol(rol2);
+        cajero2.setRol(rol2);
+        
 //        
 //        //INSERTAR -----------------------------------------------------------------
 //        PersonaDAO daoPersona= new PersonaMySQL();
@@ -615,23 +617,41 @@ public class Principal {
 //                "\t" + sdf.format(g.getFecha()) + " - " +g.getItem() + " \n\t " + g.getCantidad() + " * " + g.getPrecio() + " = " + g.getTotal());
 //        }
 //        System.out.println("----------------------------------------------------------\n"); 
-////************************************************************************************************************
-//// PEDIDOS
-////************************************************************************************************************        
-//        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
-//        Pedido pedido = new Pedido(mes1, 'E', mesero1, cajero1, 'L', cliente, 'B', 256362, 'P',
-//                        new ArrayList<>(), res1, formato.parse("24-12-2022"), true, 'P');
-//        
-//        pedido.calcularTotal();
-//        
-//        //INSERTAR PEDIDO
-//        PedidoDAO pedidoDao = new PedidoMySQL();
-//        resultado = pedidoDao.insertar(pedido);
+//************************************************************************************************************
+// PEDIDOS
+//************************************************************************************************************        
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        mesero1.setId_usuario(4);
+        cajero1.setId_usuario(5);
+        cliente.setId_persona(2);
+        Pedido pedido = new Pedido(mes1, 'E', mesero1, cajero1, 'L', cliente, 'B', 256362, 'P',
+                        new ArrayList<>(), res1, formato.parse("24-12-2022"), true, 'P');
+        res1.setId_restaurante(1);
+        pedido.calcularTotal();
+        
+        //INSERTAR PEDIDO
+        PedidoDAO pedidoDao = new PedidoMySQL();
+////        resultado = pedidoDao.insertar(pedido);
 //        if (resultado == 1) System.out.println("Se ha insertado pedido correctamente ");
-//        else System.out.println(" NO se ha insertado pedido ");
+        
 //        
 //        ///////////////////////////////////////////////////////////////////////////////////////////////////
-//        LineaPedido linea1 = new LineaPedido(producto3, pedido, 2);
+        
+        LineaPedido linea1 = new LineaPedido();
+        linea1.setItem(new Producto());
+        linea1.getItem().setIdItemVendible(1);
+        linea1.setUnidades(2);
+        linea1.setSubtotal(30);
+        LineaPedido linea12 = new LineaPedido();
+        linea12.setItem(new Producto());
+        linea12.getItem().setIdItemVendible(2); 
+        linea12.setUnidades(2);
+        linea12.setSubtotal(10);
+        pedido.getList_lineaPedido().add(linea1);
+        pedido.getList_lineaPedido().add(linea12);
+        int resultado = pedidoDao.insertar(pedido);
+        if (resultado == 1) System.out.println("Se ha insertado pedido correctamente ");
+        else System.out.println(" NO se ha insertado pedido ");
 //        
 //        //INSERTAR LINEA PEDIDO
 //        LineaPedidoDAO lineaDao = new LineaPedidoMySQL();

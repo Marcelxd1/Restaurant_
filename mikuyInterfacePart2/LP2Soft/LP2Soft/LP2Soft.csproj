@@ -63,12 +63,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ReporteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\UserWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
+    <Compile Include="frmBoleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBoleta.Designer.cs">
+      <DependentUpon>frmBoleta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +262,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBoleta.resx">
+      <DependentUpon>frmBoleta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Loading.resx">
       <DependentUpon>frm_Loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,16 +368,34 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.buscarLineaPedidoXIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.buscarPedidoXIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.BuscarPedidoXMesaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.eliminarGastoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.eliminarLineaPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.eliminarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.gasto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.insertarGastoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.insertarLineaPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.insertarPedidoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.lineaPedido.datasource">
@@ -387,6 +419,12 @@
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTodosGastosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTodosLineaPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTodosPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarTransaccionesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -397,6 +435,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarGastoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarLineaPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.modificarPedidoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.pedido.datasource">
@@ -501,6 +545,13 @@
     </None>
     <None Include="Connected Services\CajaWS\CajaWS.wsdl" />
     <None Include="Connected Services\CajaWS\CajaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarBoletaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\ReporteWS.wsdl" />
+    <None Include="Connected Services\ReporteWS\ReporteWS.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.asistencia.datasource">
@@ -715,6 +766,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\NegocioWS\" />
     <WCFMetadataStorage Include="Connected Services\CajaWS\" />
+    <WCFMetadataStorage Include="Connected Services\ReporteWS\" />
     <WCFMetadataStorage Include="Connected Services\UserWS\" />
   </ItemGroup>
   <ItemGroup>
@@ -773,6 +825,35 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loading-gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ReporteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
+    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
+    <Content Include="Resources\descargar.png" />
+    <None Include="Resources\descargar1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

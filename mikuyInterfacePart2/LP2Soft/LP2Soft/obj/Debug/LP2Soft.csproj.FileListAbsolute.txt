@@ -505,3 +505,9 @@ C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debu
 C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cocina_DatosMesa.resources
 C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cocina_DatosPedido.resources
 C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Loading.resources
+C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.csproj.ResolveComReference.cache
+C:\Users\marce\Documents\PUCP\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frmBoleta.resources

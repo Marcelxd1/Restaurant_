@@ -34,9 +34,10 @@
             this.btnListo = new Guna.UI2.WinForms.Guna2Button();
             this.btnProceso = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblIdPedido = new System.Windows.Forms.Label();
             this.pcbEstado = new System.Windows.Forms.PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblIdPedido = new System.Windows.Forms.Label();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +106,16 @@
             this.label1.TabIndex = 78;
             this.label1.Text = "Estado";
             // 
+            // lblIdPedido
+            // 
+            this.lblIdPedido.AutoSize = true;
+            this.lblIdPedido.Location = new System.Drawing.Point(168, 31);
+            this.lblIdPedido.Name = "lblIdPedido";
+            this.lblIdPedido.Size = new System.Drawing.Size(35, 13);
+            this.lblIdPedido.TabIndex = 81;
+            this.lblIdPedido.Text = "label2";
+            this.lblIdPedido.Visible = false;
+            // 
             // pcbEstado
             // 
             this.pcbEstado.Image = global::LP2Soft.Properties.Resources.PRIORIDAD;
@@ -126,15 +137,18 @@
             this.guna2PictureBox3.TabIndex = 79;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // lblIdPedido
+            // guna2ImageButton1
             // 
-            this.lblIdPedido.AutoSize = true;
-            this.lblIdPedido.Location = new System.Drawing.Point(168, 31);
-            this.lblIdPedido.Name = "lblIdPedido";
-            this.lblIdPedido.Size = new System.Drawing.Size(35, 13);
-            this.lblIdPedido.TabIndex = 81;
-            this.lblIdPedido.Text = "label2";
-            this.lblIdPedido.Visible = false;
+            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Image = global::LP2Soft.Properties.Resources.descargar;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(199, 7);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Size = new System.Drawing.Size(19, 21);
+            this.guna2ImageButton1.TabIndex = 0;
+            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
             // frm_Cocina_DatosMesa
             // 
@@ -142,6 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(230, 416);
+            this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.lblIdPedido);
             this.Controls.Add(this.pcbEstado);
             this.Controls.Add(this.label1);
@@ -169,5 +184,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private System.Windows.Forms.PictureBox pcbEstado;
         private System.Windows.Forms.Label lblIdPedido;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
     }
 }

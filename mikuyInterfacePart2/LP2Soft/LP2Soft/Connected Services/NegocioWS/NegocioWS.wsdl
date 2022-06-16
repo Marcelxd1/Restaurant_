@@ -5,35 +5,53 @@
       <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/NegocioWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="insertarLineaPromo">
-    <part name="parameters" element="tns:insertarLineaPromo" />
+  <message name="modificarMesa">
+    <part name="parameters" element="tns:modificarMesa" />
   </message>
-  <message name="insertarLineaPromoResponse">
-    <part name="parameters" element="tns:insertarLineaPromoResponse" />
+  <message name="modificarMesaResponse">
+    <part name="parameters" element="tns:modificarMesaResponse" />
   </message>
-  <message name="modificarLineaPromo">
-    <part name="parameters" element="tns:modificarLineaPromo" />
+  <message name="insertarProducto">
+    <part name="parameters" element="tns:insertarProducto" />
   </message>
-  <message name="modificarLineaPromoResponse">
-    <part name="parameters" element="tns:modificarLineaPromoResponse" />
+  <message name="insertarProductoResponse">
+    <part name="parameters" element="tns:insertarProductoResponse" />
   </message>
-  <message name="eliminarLineaPromo">
-    <part name="parameters" element="tns:eliminarLineaPromo" />
+  <message name="listarTodasMesa">
+    <part name="parameters" element="tns:listarTodasMesa" />
   </message>
-  <message name="eliminarLineaPromoResponse">
-    <part name="parameters" element="tns:eliminarLineaPromoResponse" />
+  <message name="listarTodasMesaResponse">
+    <part name="parameters" element="tns:listarTodasMesaResponse" />
   </message>
-  <message name="listarTodosLineaPromo">
-    <part name="parameters" element="tns:listarTodosLineaPromo" />
+  <message name="eliminarMesa">
+    <part name="parameters" element="tns:eliminarMesa" />
   </message>
-  <message name="listarTodosLineaPromoResponse">
-    <part name="parameters" element="tns:listarTodosLineaPromoResponse" />
+  <message name="eliminarMesaResponse">
+    <part name="parameters" element="tns:eliminarMesaResponse" />
+  </message>
+  <message name="insertarMesa">
+    <part name="parameters" element="tns:insertarMesa" />
+  </message>
+  <message name="insertarMesaResponse">
+    <part name="parameters" element="tns:insertarMesaResponse" />
+  </message>
+  <message name="eliminarProducto">
+    <part name="parameters" element="tns:eliminarProducto" />
+  </message>
+  <message name="eliminarProductoResponse">
+    <part name="parameters" element="tns:eliminarProductoResponse" />
   </message>
   <message name="insertarPromocion">
     <part name="parameters" element="tns:insertarPromocion" />
   </message>
   <message name="insertarPromocionResponse">
     <part name="parameters" element="tns:insertarPromocionResponse" />
+  </message>
+  <message name="listarProductoXNombre">
+    <part name="parameters" element="tns:listarProductoXNombre" />
+  </message>
+  <message name="listarProductoXNombreResponse">
+    <part name="parameters" element="tns:listarProductoXNombreResponse" />
   </message>
   <message name="listarTodasPromociones">
     <part name="parameters" element="tns:listarTodasPromociones" />
@@ -47,35 +65,11 @@
   <message name="listarProductoXCategoriaResponse">
     <part name="parameters" element="tns:listarProductoXCategoriaResponse" />
   </message>
-  <message name="listarTodasCategorias">
-    <part name="parameters" element="tns:listarTodasCategorias" />
+  <message name="insertarCategoria">
+    <part name="parameters" element="tns:insertarCategoria" />
   </message>
-  <message name="listarTodasCategoriasResponse">
-    <part name="parameters" element="tns:listarTodasCategoriasResponse" />
-  </message>
-  <message name="listarPromociones_X_nombre">
-    <part name="parameters" element="tns:listarPromociones_X_nombre" />
-  </message>
-  <message name="listarPromociones_X_nombreResponse">
-    <part name="parameters" element="tns:listarPromociones_X_nombreResponse" />
-  </message>
-  <message name="modificarPromocion">
-    <part name="parameters" element="tns:modificarPromocion" />
-  </message>
-  <message name="modificarPromocionResponse">
-    <part name="parameters" element="tns:modificarPromocionResponse" />
-  </message>
-  <message name="modificarProducto">
-    <part name="parameters" element="tns:modificarProducto" />
-  </message>
-  <message name="modificarProductoResponse">
-    <part name="parameters" element="tns:modificarProductoResponse" />
-  </message>
-  <message name="listarTodosItemsXNombre">
-    <part name="parameters" element="tns:listarTodosItemsXNombre" />
-  </message>
-  <message name="listarTodosItemsXNombreResponse">
-    <part name="parameters" element="tns:listarTodosItemsXNombreResponse" />
+  <message name="insertarCategoriaResponse">
+    <part name="parameters" element="tns:insertarCategoriaResponse" />
   </message>
   <message name="listarTodosProductos">
     <part name="parameters" element="tns:listarTodosProductos" />
@@ -83,11 +77,59 @@
   <message name="listarTodosProductosResponse">
     <part name="parameters" element="tns:listarTodosProductosResponse" />
   </message>
-  <message name="listarProductoXNombre">
-    <part name="parameters" element="tns:listarProductoXNombre" />
+  <message name="modificarCategoria">
+    <part name="parameters" element="tns:modificarCategoria" />
   </message>
-  <message name="listarProductoXNombreResponse">
-    <part name="parameters" element="tns:listarProductoXNombreResponse" />
+  <message name="modificarCategoriaResponse">
+    <part name="parameters" element="tns:modificarCategoriaResponse" />
+  </message>
+  <message name="modificarPromocion">
+    <part name="parameters" element="tns:modificarPromocion" />
+  </message>
+  <message name="modificarPromocionResponse">
+    <part name="parameters" element="tns:modificarPromocionResponse" />
+  </message>
+  <message name="modificarLineaPromo">
+    <part name="parameters" element="tns:modificarLineaPromo" />
+  </message>
+  <message name="modificarLineaPromoResponse">
+    <part name="parameters" element="tns:modificarLineaPromoResponse" />
+  </message>
+  <message name="eliminarLineaPromo">
+    <part name="parameters" element="tns:eliminarLineaPromo" />
+  </message>
+  <message name="eliminarLineaPromoResponse">
+    <part name="parameters" element="tns:eliminarLineaPromoResponse" />
+  </message>
+  <message name="listarTodasCategorias">
+    <part name="parameters" element="tns:listarTodasCategorias" />
+  </message>
+  <message name="listarTodasCategoriasResponse">
+    <part name="parameters" element="tns:listarTodasCategoriasResponse" />
+  </message>
+  <message name="insertarLineaPromo">
+    <part name="parameters" element="tns:insertarLineaPromo" />
+  </message>
+  <message name="insertarLineaPromoResponse">
+    <part name="parameters" element="tns:insertarLineaPromoResponse" />
+  </message>
+  <message name="listarPromociones_X_nombre">
+    <part name="parameters" element="tns:listarPromociones_X_nombre" />
+  </message>
+  <message name="listarPromociones_X_nombreResponse">
+    <part name="parameters" element="tns:listarPromociones_X_nombreResponse" />
+  </message>
+  <message name="listarTodosItemsXNombre">
+    <part name="parameters" element="tns:listarTodosItemsXNombre" />
+  </message>
+  <message name="listarTodosItemsXNombreResponse">
+    <part name="parameters" element="tns:listarTodosItemsXNombreResponse" />
+  </message>
+  <message name="listarTodosLineaPromo">
+    <part name="parameters" element="tns:listarTodosLineaPromo" />
+  </message>
+  <message name="listarTodosLineaPromoResponse">
+    <part name="parameters" element="tns:listarTodosLineaPromoResponse" />
   </message>
   <message name="eliminarCategoria">
     <part name="parameters" element="tns:eliminarCategoria" />
@@ -95,80 +137,50 @@
   <message name="eliminarCategoriaResponse">
     <part name="parameters" element="tns:eliminarCategoriaResponse" />
   </message>
+  <message name="modificarProducto">
+    <part name="parameters" element="tns:modificarProducto" />
+  </message>
+  <message name="modificarProductoResponse">
+    <part name="parameters" element="tns:modificarProductoResponse" />
+  </message>
   <message name="eliminarPromocion">
     <part name="parameters" element="tns:eliminarPromocion" />
   </message>
   <message name="eliminarPromocionResponse">
     <part name="parameters" element="tns:eliminarPromocionResponse" />
   </message>
-  <message name="modificarCategoria">
-    <part name="parameters" element="tns:modificarCategoria" />
-  </message>
-  <message name="modificarCategoriaResponse">
-    <part name="parameters" element="tns:modificarCategoriaResponse" />
-  </message>
-  <message name="insertarCategoria">
-    <part name="parameters" element="tns:insertarCategoria" />
-  </message>
-  <message name="insertarCategoriaResponse">
-    <part name="parameters" element="tns:insertarCategoriaResponse" />
-  </message>
-  <message name="listarTodasMesa">
-    <part name="parameters" element="tns:listarTodasMesa" />
-  </message>
-  <message name="listarTodasMesaResponse">
-    <part name="parameters" element="tns:listarTodasMesaResponse" />
-  </message>
-  <message name="insertarProducto">
-    <part name="parameters" element="tns:insertarProducto" />
-  </message>
-  <message name="insertarProductoResponse">
-    <part name="parameters" element="tns:insertarProductoResponse" />
-  </message>
-  <message name="eliminarProducto">
-    <part name="parameters" element="tns:eliminarProducto" />
-  </message>
-  <message name="eliminarProductoResponse">
-    <part name="parameters" element="tns:eliminarProductoResponse" />
-  </message>
-  <message name="insertarMesa">
-    <part name="parameters" element="tns:insertarMesa" />
-  </message>
-  <message name="insertarMesaResponse">
-    <part name="parameters" element="tns:insertarMesaResponse" />
-  </message>
-  <message name="modificarMesa">
-    <part name="parameters" element="tns:modificarMesa" />
-  </message>
-  <message name="modificarMesaResponse">
-    <part name="parameters" element="tns:modificarMesaResponse" />
-  </message>
-  <message name="eliminarMesa">
-    <part name="parameters" element="tns:eliminarMesa" />
-  </message>
-  <message name="eliminarMesaResponse">
-    <part name="parameters" element="tns:eliminarMesaResponse" />
-  </message>
   <portType name="NegocioWS">
-    <operation name="insertarLineaPromo">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoRequest" message="tns:insertarLineaPromo" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoResponse" message="tns:insertarLineaPromoResponse" />
+    <operation name="modificarMesa">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarMesaRequest" message="tns:modificarMesa" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarMesaResponse" message="tns:modificarMesaResponse" />
     </operation>
-    <operation name="modificarLineaPromo">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoRequest" message="tns:modificarLineaPromo" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoResponse" message="tns:modificarLineaPromoResponse" />
+    <operation name="insertarProducto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarProductoRequest" message="tns:insertarProducto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarProductoResponse" message="tns:insertarProductoResponse" />
     </operation>
-    <operation name="eliminarLineaPromo">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoRequest" message="tns:eliminarLineaPromo" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoResponse" message="tns:eliminarLineaPromoResponse" />
+    <operation name="listarTodasMesa">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasMesaRequest" message="tns:listarTodasMesa" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasMesaResponse" message="tns:listarTodasMesaResponse" />
     </operation>
-    <operation name="listarTodosLineaPromo">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoRequest" message="tns:listarTodosLineaPromo" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoResponse" message="tns:listarTodosLineaPromoResponse" />
+    <operation name="eliminarMesa">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaRequest" message="tns:eliminarMesa" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaResponse" message="tns:eliminarMesaResponse" />
+    </operation>
+    <operation name="insertarMesa">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarMesaRequest" message="tns:insertarMesa" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarMesaResponse" message="tns:insertarMesaResponse" />
+    </operation>
+    <operation name="eliminarProducto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarProductoRequest" message="tns:eliminarProducto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
     </operation>
     <operation name="insertarPromocion">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionRequest" message="tns:insertarPromocion" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionResponse" message="tns:insertarPromocionResponse" />
+    </operation>
+    <operation name="listarProductoXNombre">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreRequest" message="tns:listarProductoXNombre" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreResponse" message="tns:listarProductoXNombreResponse" />
     </operation>
     <operation name="listarTodasPromociones">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasPromocionesRequest" message="tns:listarTodasPromociones" />
@@ -178,78 +190,66 @@
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaRequest" message="tns:listarProductoXCategoria" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaResponse" message="tns:listarProductoXCategoriaResponse" />
     </operation>
-    <operation name="listarTodasCategorias">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasCategoriasRequest" message="tns:listarTodasCategorias" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasCategoriasResponse" message="tns:listarTodasCategoriasResponse" />
-    </operation>
-    <operation name="listarPromociones_X_nombre">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreRequest" message="tns:listarPromociones_X_nombre" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreResponse" message="tns:listarPromociones_X_nombreResponse" />
-    </operation>
-    <operation name="modificarPromocion">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionRequest" message="tns:modificarPromocion" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionResponse" message="tns:modificarPromocionResponse" />
-    </operation>
-    <operation name="modificarProducto">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoRequest" message="tns:modificarProducto" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoResponse" message="tns:modificarProductoResponse" />
-    </operation>
-    <operation name="listarTodosItemsXNombre">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosItemsXNombreRequest" message="tns:listarTodosItemsXNombre" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosItemsXNombreResponse" message="tns:listarTodosItemsXNombreResponse" />
+    <operation name="insertarCategoria">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaRequest" message="tns:insertarCategoria" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaResponse" message="tns:insertarCategoriaResponse" />
     </operation>
     <operation name="listarTodosProductos">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosRequest" message="tns:listarTodosProductos" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosResponse" message="tns:listarTodosProductosResponse" />
     </operation>
-    <operation name="listarProductoXNombre">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreRequest" message="tns:listarProductoXNombre" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreResponse" message="tns:listarProductoXNombreResponse" />
+    <operation name="modificarCategoria">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarCategoriaRequest" message="tns:modificarCategoria" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarCategoriaResponse" message="tns:modificarCategoriaResponse" />
+    </operation>
+    <operation name="modificarPromocion">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionRequest" message="tns:modificarPromocion" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionResponse" message="tns:modificarPromocionResponse" />
+    </operation>
+    <operation name="modificarLineaPromo">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoRequest" message="tns:modificarLineaPromo" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoResponse" message="tns:modificarLineaPromoResponse" />
+    </operation>
+    <operation name="eliminarLineaPromo">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoRequest" message="tns:eliminarLineaPromo" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoResponse" message="tns:eliminarLineaPromoResponse" />
+    </operation>
+    <operation name="listarTodasCategorias">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasCategoriasRequest" message="tns:listarTodasCategorias" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasCategoriasResponse" message="tns:listarTodasCategoriasResponse" />
+    </operation>
+    <operation name="insertarLineaPromo">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoRequest" message="tns:insertarLineaPromo" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoResponse" message="tns:insertarLineaPromoResponse" />
+    </operation>
+    <operation name="listarPromociones_X_nombre">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreRequest" message="tns:listarPromociones_X_nombre" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreResponse" message="tns:listarPromociones_X_nombreResponse" />
+    </operation>
+    <operation name="listarTodosItemsXNombre">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosItemsXNombreRequest" message="tns:listarTodosItemsXNombre" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosItemsXNombreResponse" message="tns:listarTodosItemsXNombreResponse" />
+    </operation>
+    <operation name="listarTodosLineaPromo">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoRequest" message="tns:listarTodosLineaPromo" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoResponse" message="tns:listarTodosLineaPromoResponse" />
     </operation>
     <operation name="eliminarCategoria">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarCategoriaRequest" message="tns:eliminarCategoria" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarCategoriaResponse" message="tns:eliminarCategoriaResponse" />
     </operation>
+    <operation name="modificarProducto">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoRequest" message="tns:modificarProducto" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoResponse" message="tns:modificarProductoResponse" />
+    </operation>
     <operation name="eliminarPromocion">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarPromocionRequest" message="tns:eliminarPromocion" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarPromocionResponse" message="tns:eliminarPromocionResponse" />
     </operation>
-    <operation name="modificarCategoria">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarCategoriaRequest" message="tns:modificarCategoria" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarCategoriaResponse" message="tns:modificarCategoriaResponse" />
-    </operation>
-    <operation name="insertarCategoria">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaRequest" message="tns:insertarCategoria" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaResponse" message="tns:insertarCategoriaResponse" />
-    </operation>
-    <operation name="listarTodasMesa">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasMesaRequest" message="tns:listarTodasMesa" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasMesaResponse" message="tns:listarTodasMesaResponse" />
-    </operation>
-    <operation name="insertarProducto">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarProductoRequest" message="tns:insertarProducto" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarProductoResponse" message="tns:insertarProductoResponse" />
-    </operation>
-    <operation name="eliminarProducto">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarProductoRequest" message="tns:eliminarProducto" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
-    </operation>
-    <operation name="insertarMesa">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarMesaRequest" message="tns:insertarMesa" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarMesaResponse" message="tns:insertarMesaResponse" />
-    </operation>
-    <operation name="modificarMesa">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarMesaRequest" message="tns:modificarMesa" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarMesaResponse" message="tns:modificarMesaResponse" />
-    </operation>
-    <operation name="eliminarMesa">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaRequest" message="tns:eliminarMesa" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaResponse" message="tns:eliminarMesaResponse" />
-    </operation>
   </portType>
   <binding name="NegocioWSPortBinding" type="tns:NegocioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarLineaPromo">
+    <operation name="modificarMesa">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -258,7 +258,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarLineaPromo">
+    <operation name="insertarProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -267,7 +267,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarLineaPromo">
+    <operation name="listarTodasMesa">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -276,7 +276,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarTodosLineaPromo">
+    <operation name="eliminarMesa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarMesa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -286,6 +304,15 @@
       </output>
     </operation>
     <operation name="insertarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductoXNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -312,43 +339,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarTodasCategorias">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarPromociones_X_nombre">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarPromocion">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTodosItemsXNombre">
+    <operation name="insertarCategoria">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -366,7 +357,79 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarProductoXNombre">
+    <operation name="modificarCategoria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarLineaPromo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarLineaPromo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodasCategorias">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarLineaPromo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPromociones_X_nombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodosItemsXNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodosLineaPromo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -384,79 +447,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarPromocion">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarCategoria">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarCategoria">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTodasMesa">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarProducto">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarMesa">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarMesa">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarMesa">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LP2Soft
@@ -8,6 +9,7 @@ namespace LP2Soft
         private UserWS.persona persona;
         private UserWS.rol rol;
         private Form formularioActivo = null;
+        private Form cargando = new frm_Loading();
         public Main()
         {
             InitializeComponent();
@@ -84,8 +86,9 @@ namespace LP2Soft
             this.Close();
         }
 
-        private void btnCaja_Click(object sender, EventArgs e)
+        private  void btnCaja_Click(object sender, EventArgs e)
         {
+            
             abrirFormulario(new frm_Caja());
         }
 
@@ -93,5 +96,8 @@ namespace LP2Soft
         {
             abrirFormulario(new frm_Cocina());
         }
+
+
+        
     }
 }

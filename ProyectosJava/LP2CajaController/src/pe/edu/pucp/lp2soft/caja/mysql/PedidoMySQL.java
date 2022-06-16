@@ -188,7 +188,7 @@ public class PedidoMySQL implements PedidoDAO {
                 cs = con.prepareCall("{call INSERTAR_LINEA_PEDIDO(?,?,?,?, ?)}");
                 cs.registerOutParameter("_id_linea_pedido", java.sql.Types.INTEGER);
                 cs.setInt("_fid_itemVendible", linea.getItem().getIdItemVendible());
-                cs.setInt("_fid_pedido", linea.getPedido().getIdPedido());
+                cs.setInt("_fid_pedido", pedido.getIdPedido());
                 cs.setInt("_unidades", linea.getUnidades());
                 cs.setDouble("_subtotal", linea.getSubtotal());
                 cs.executeUpdate();

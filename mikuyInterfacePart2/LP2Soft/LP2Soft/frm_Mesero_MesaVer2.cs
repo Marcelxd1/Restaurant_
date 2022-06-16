@@ -110,19 +110,25 @@ namespace LP2Soft
             {
                 mesaSelec.disponible = false;
                 lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
-                abrirFormulario(new frm_Caja_Pedido_Pedir());
+                //abrirFormulario(new frm_Caja_Pedido_Pedir());
                 //Abran formularios aqui
+                
                 //if (rol.descripcion == "MESERO")
                 //{
-                //    //FORMULARIO DE MESERO
-                //    //abrirFormulario()
+                    frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido();
+                    forPedMes.obtenMesa(mesaSelec);
+                    if(forPedMes.ShowDialog() == DialogResult.OK)
+                    {
+                        mesaSelec.disponible = true;
+                    }
+
                 //}
                 //else if(rol.descripcion == "CAJERO")
                 //{
                 //    //FORMULARIO DE CAJERO
                 //    //abrirFormulario();
                 //}
-                
+
             }
 
             else

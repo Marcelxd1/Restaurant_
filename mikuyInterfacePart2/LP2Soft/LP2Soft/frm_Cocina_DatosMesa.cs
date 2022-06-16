@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,9 @@ namespace LP2Soft
     public partial class frm_Cocina_DatosMesa : Form
     {
         private CajaWS.CajaWSClient daoCaja;
-        private int idPedidoActualizado ; 
+        private int idPedidoActualizado ;
+        
+        
         public frm_Cocina_DatosMesa()
         {
             InitializeComponent();
@@ -74,6 +77,15 @@ namespace LP2Soft
             {
                 pcbEstado.Image = global::LP2Soft.Properties.Resources.Check;
             }
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            int idPedido = Int32.Parse(lblIdPedido.Text);
+            frmBoleta formBol = new frmBoleta(idPedido);
+            formBol.Show();
+
+            
         }
     }
 }
