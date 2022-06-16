@@ -12,7 +12,9 @@ import pe.edu.pucp.lp2soft.caja.model.Pedido;
  */
 public interface PedidoDAO {
     ArrayList<Pedido> listarTodas();
-     
+    
+    ArrayList<Pedido> listarPedidoTransaccion();
+    
     int insertar(Pedido pedido);
 
     int modificar(Pedido pedido);
@@ -20,4 +22,7 @@ public interface PedidoDAO {
     int eliminar(int idPedido);
 
     Pedido listarPorId(int idPedido);
+    
+    Pedido listarPorMesa(int idMesa);
+    
 }

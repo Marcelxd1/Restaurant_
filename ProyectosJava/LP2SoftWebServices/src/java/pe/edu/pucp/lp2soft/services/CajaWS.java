@@ -7,10 +7,16 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.lp2soft.caja.dao.GastoDAO;
+import pe.edu.pucp.lp2soft.caja.dao.LineaPedidoDAO;
+import pe.edu.pucp.lp2soft.caja.dao.PedidoDAO;
 import pe.edu.pucp.lp2soft.caja.dao.TransaccionesDAO;
 import pe.edu.pucp.lp2soft.caja.model.Gasto;
+import pe.edu.pucp.lp2soft.caja.model.LineaPedido;
+import pe.edu.pucp.lp2soft.caja.model.Pedido;
 import pe.edu.pucp.lp2soft.caja.model.Transaccion;
 import pe.edu.pucp.lp2soft.caja.mysql.GastoMySQL;
+import pe.edu.pucp.lp2soft.caja.mysql.LineaPedidoMySQL;
+import pe.edu.pucp.lp2soft.caja.mysql.PedidoMySQL;
 import pe.edu.pucp.lp2soft.caja.mysql.TransaccionesMySQL;
 
 
@@ -18,6 +24,8 @@ import pe.edu.pucp.lp2soft.caja.mysql.TransaccionesMySQL;
 public class CajaWS {
     
     private GastoDAO daoGasto= new GastoMySQL();
+    private PedidoDAO daoPedido = new PedidoMySQL();
+    private LineaPedidoDAO daoLineaPedido = new LineaPedidoMySQL();
     private TransaccionesDAO daoTra = new TransaccionesMySQL();
     
     @WebMethod(operationName = "insertarGasto")
@@ -96,5 +104,38 @@ public class CajaWS {
             System.out.println(ex.getMessage());
         }
         return transacciones;
+    }
+    
+    @WebMethod(operationName = "ListarPedidosTransaccion")
+    public ArrayList<Pedido> ListarPedidosTransaccion() {
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+        try{
+            pedidos=daoPedido.listarPedidoTransaccion();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return pedidos;
+    }
+    
+    @WebMethod(operationName = "BuscarPedidoXMesa")
+    public Pedido BuscarPedidoXMesa(@WebParam(name = "idPedido") int idPedido) {
+        Pedido pedido = new Pedido();
+        try{
+            pedido=daoPedido.listarPorMesa(idPedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return pedido;
+    }
+    
+    @WebMethod(operationName = "listarLineaPXPedido")
+    public ArrayList<LineaPedido> listarLineaPXPedido(@WebParam(name = "idPedido") int idPedido) {
+        ArrayList<LineaPedido> lineas = new ArrayList<>();
+        try{
+            lineas=daoLineaPedido.listarPorPedido(idPedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return lineas;
     }
 }
