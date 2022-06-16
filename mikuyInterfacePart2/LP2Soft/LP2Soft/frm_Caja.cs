@@ -17,6 +17,8 @@ namespace LP2Soft
         private UserWS.UserWSClient daoUsuario;
         private UserWS.restaurante restaurante;
         private CajaWS.transaccion[] tran;
+        private CajaWS.pedido[] pedidos;
+        
         public frm_Caja()
         {
             InitializeComponent();
@@ -105,19 +107,39 @@ namespace LP2Soft
             restaurante = daoUsuario.BuscaRestaurante(1);
             txtTotalCaja.Text = restaurante.dineroActual.ToString("N2");
             tran = daoCaja.listarTransacciones();
-            double totalGasto = 0, totalPedido = 0;
+            double totalGasto = 0, totalPedido = 0,totMesa=0,totLLeva =0,totTarj=0,totEfec=0,totModo;
             foreach(CajaWS.transaccion t in tran)
             {
-                if(t.tipo == 'G')
+                if(t.tipo == 'G')//Gastos
                 {
                     totalGasto += t.total;
                 }
                 else
                 {
-
+                    totalPedido += t.total;
                 }
+
             }
             txtGastos.Text = totalGasto.ToString("N2");
+            txtTotPedi.Text = totalPedido.ToString("N2");
+            txtTotalPago.Text = totalPedido.ToString("N2");
+            pedidos = daoCaja.ListarPedidosTransaccion();
+            foreach (CajaWS.pedido p in pedidos)
+            {
+                if (p.tipoPedido == 'C')//Para mesa
+                    totMesa += p.total;
+                else
+                    totLLeva += p.total;//Para llebar
+
+                if (p.tipoComprobante == 'E')//Efectivo
+                    totEfec += p.total;
+                else
+                    totTarj += p.total;//Tarjeta
+            }
+            txtPedLLevar.Text = totLLeva.ToString("N2");
+            txtPedMEsa.Text = totMesa.ToString("N2");
+            txtTarjeta.Text = totTarj.ToString("N2");
+            txtEfectivo.Text = totEfec.ToString("N2");
         }
     }
 }

@@ -12,8 +12,6 @@ namespace LP2Soft
 {
     public partial class frm_Mesero_MesaVer2 : Form
     {
-        private CajaWS.pedido _pedido;
-        private CajaWS.CajaWSClient _daopedido;
         private NegocioWS.NegocioWSClient daonegocio;
         private BindingList<NegocioWS.mesa> lista_mesas;
         private BindingList<Button> lista_botones;
@@ -112,22 +110,7 @@ namespace LP2Soft
             {
                 mesaSelec.disponible = false;
                 lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
-
-                //abrirFormulario(new frm_Caja_Pedido_Pedir());
-                frm_Caja_Pedido_Pedir formPed = new frm_Caja_Pedido_Pedir();
-                //abrirFormulario(formPed);
-                //if (formPed.PedidoRealizado != null)
-                //{
-                //    _pedido = formPed.PedidoRealizado;
-                //    _daopedido.insertarPedido(_pedido);
-                //}
-                if(formPed.ShowDialog() == DialogResult.OK)
-                {
-                    _pedido = formPed.PedidoRealizado;
-                    _daopedido.insertarPedido(_pedido);
-                }
-
-
+                abrirFormulario(new frm_Caja_Pedido_Pedir());
                 //Abran formularios aqui
                 //if (rol.descripcion == "MESERO")
                 //{
