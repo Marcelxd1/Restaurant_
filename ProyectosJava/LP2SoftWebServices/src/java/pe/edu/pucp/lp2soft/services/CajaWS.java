@@ -137,7 +137,21 @@ public class CajaWS {
             System.out.println(ex.getMessage());
         }
         return lineas;
+    } 
+    
+    
+    //---------------------PEDIDOS---------------------
+    @WebMethod(operationName = "insertarPedido")
+    public int insertarPedido(@WebParam(name = "Pedido") Pedido pedido) {
+        int resultado = 0;
+        try{
+            resultado= daoPedido.insertar(pedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
     }
+
        //****************COCINERO*********************
        @WebMethod(operationName = "listarPedidosPendientes")
        public ArrayList<Pedido> listarPedidosPendientes() {
@@ -170,8 +184,108 @@ public class CajaWS {
            }
            return resultado;
        }
+
     
+    @WebMethod(operationName = "modificarPedido")
+    public int modificarPedido(@WebParam(name = "Pedido") Pedido pedido) {
+        int resultado = 0;
+        try{
+            resultado=daoPedido.modificar(pedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
     
+    @WebMethod(operationName = "eliminarPedido")
+    public int eliminarPedido(@WebParam(name = "idPedido") int idPedido) {
+        int resultado = 0;
+        try{
+            resultado=daoPedido.eliminar(idPedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "listarTodosPedido")
+    public ArrayList<Pedido> listarTodosPedido() {
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+        try{
+            pedidos=daoPedido.listarTodas();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return pedidos;
+    }
+    
+    @WebMethod(operationName = "buscarPedidoXID")
+    public Pedido buscarPedidoXID(@WebParam(name = "idPedido") int idPedido) {
+        Pedido pedido = new Pedido();
+        try{
+            pedido=daoPedido.listarPorId(idPedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return pedido;
+    }
+    
+
+    //---------------------LINEA PEDIDO---------------------
+     @WebMethod(operationName = "insertarLineaPedido")
+    public int insertarLineaPedido(@WebParam(name = "LineaPedido") LineaPedido lineP) {
+        int resultado = 0;
+        try{
+            resultado= daoLineaPedido.insertar(lineP);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "modificarLineaPedido")
+    public int modificarLineaPedido(@WebParam(name = "LineaPedido") LineaPedido linepedido) {
+        int resultado = 0;
+        try{
+            resultado=daoLineaPedido.modificar(linepedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "eliminarLineaPedido")
+    public int eliminarLineaPedido(@WebParam(name = "idLineaPedido") int idLineaPedido) {
+        int resultado = 0;
+        try{
+            resultado=daoLineaPedido.eliminar(idLineaPedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "listarTodosLineaPedido")
+    public ArrayList<LineaPedido> listarTodosLineaPedido() {
+        ArrayList<LineaPedido> lineaPedidos = new ArrayList<>();
+        try{
+            lineaPedidos=daoLineaPedido.listarTodas();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return lineaPedidos;
+    }
+    
+    @WebMethod(operationName = "buscarLineaPedidoXID")
+    public LineaPedido buscarLineaPedidoXID(@WebParam(name = "idLineaPedido") int idPedido) {
+        LineaPedido lineaPedido = new LineaPedido();
+        try{
+            lineaPedido=daoLineaPedido.listarPorId(idPedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return lineaPedido;
+    }
     
     
 }

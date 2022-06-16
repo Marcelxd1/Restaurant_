@@ -121,9 +121,9 @@ public class PedidoMySQL implements PedidoDAO {
                 Pedido pedido = new Pedido();
                 pedido.setIdPedido(rs.getInt("id_transaccion"));//el heredado
                 
-                RestauranteDAO daores = new RestauranteMySQL();
-                pedido.setRestaurante(daores.listarPorId(rs.getInt("fid_restaurante")));
-               
+                pedido.setRestaurante(new Restaurante());
+                pedido.getRestaurante().setId_restaurante(rs.getInt("fid_restaurante")); 
+                
                 pedido.setTotal(rs.getDouble("total"));
                 pedido.setFecha(rs.getDate("fecha"));
                 Mesa mesa= new Mesa();
@@ -133,12 +133,12 @@ public class PedidoMySQL implements PedidoDAO {
                 pedido.setMesa(mesa);
                 pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
                 
-                UsuarioDAO mesero = new UsuarioMySQL();                             
-                UsuarioDAO cajero = new UsuarioMySQL();     
-                pedido.setMesero(mesero.listarPorId(rs.getInt("fid_mesero")));      
-                pedido.setCajero(cajero.listarPorId(rs.getInt("fid_cajero")));
-                PersonaDAO cliente = new PersonaMySQL();
-                pedido.setCliente(cliente.listarPorId(rs.getInt("fid_cliente")));
+                pedido.setCajero(new Usuario());
+                pedido.getCajero().setId_usuario(rs.getInt("fid_cajero")); 
+                pedido.setMesero(new Usuario());
+                pedido.getMesero().setId_usuario(rs.getInt("fid_mesero")); 
+                pedido.setCliente(new Persona());
+                pedido.getCliente().setId_persona(rs.getInt("fid_cliente")); 
                 
                 pedido.setTipoPedido(rs.getString("fid_tipo_pedido").charAt(0));
                 pedido.setTipoComprobante(rs.getString("fid_tipo_comprobante").charAt(0));
