@@ -47,6 +47,10 @@ namespace LP2Soft
         {
             mesa = new NegocioWS.mesa();
             this._mesa = mesa;
+
+            //pedidos
+            //this._pedido = pedido;
+            //lista_lineas = pedido.list_lineaPedido();
         }
 
         private void cargarCategorias()
@@ -66,8 +70,8 @@ namespace LP2Soft
                 button.Name = "btn_" + item.nombre;
                 button.Font = new Font(btnBuscar.Font, FontStyle.Bold);
                 button.ForeColor = Color.White;
-                button.FlatAppearance.BorderSize = 0;
-                button.BackColor = System.Drawing.Color.FromArgb(16, 28, 67);
+                button.FlatAppearance.BorderSize = 0; //FromArgb(16, 28, 67)
+                button.BackColor = System.Drawing.Color.Black;
                 button.Click += new System.EventHandler(hacerCLik);
                 this.Controls.Add(button);
                 left += button.Width + 4;
@@ -112,7 +116,7 @@ namespace LP2Soft
             line.subtotal = prod.precio;
             line.item.nombre = prod.nombre;
             suma = suma + prod.precio;
-            txtTotal.Text = suma.ToString();
+            txtTotal.Text = suma.ToString("N2");
             lista_lineas.Add(line);
         }
 
@@ -139,19 +143,16 @@ namespace LP2Soft
 
         private void btnEliminarProd_Click(object sender, EventArgs e)
         {
-            if (dgvItem.CurrentRow != null)
+            if (dgvPedido.CurrentRow != null)
             {
+                int cant = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value);
+                double precio = Convert.ToDouble(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[2].Value);
                 CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedido.CurrentRow.DataBoundItem;
-                suma = suma - line.unidades * line.item.precio;
+                suma = suma - cant * precio;
                 dgvPedido.Rows.RemoveAt(dgvPedido.CurrentRow.Index);
                 this.lista_lineas.Remove(line);
-                txtTotal.Text = suma.ToString();
+                txtTotal.Text = suma.ToString("N2");
             }
-        }
-
-        private void calcularSub()
-        {
-
         }
 
         private void btnPedir_Click(object sender, EventArgs e)
@@ -205,25 +206,38 @@ namespace LP2Soft
         private void btnSumar_Click(object sender, EventArgs e)
         {
             int n;
-            n = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value);
-            dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value = n + 1;
+            if(dgvPedido.CurrentRow != null)
+            {
+                n = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value);
+                dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value = n + 1;
 
-            suma += Convert.ToDouble(dgvPedido[3, dgvPedido.CurrentRow.Index].Value);
-            txtTotal.Text = suma.ToString();
-            lista_lineas[dgvPedido.CurrentRow.Index].unidades = n;
-            lista_lineas[dgvPedido.CurrentRow.Index].subtotal = suma;
+                suma += Convert.ToDouble(dgvPedido[2, dgvPedido.CurrentRow.Index].Value);
+                txtTotal.Text = suma.ToString("N2");
+                lista_lineas[dgvPedido.CurrentRow.Index].unidades = n;
+                lista_lineas[dgvPedido.CurrentRow.Index].subtotal = suma;
+            }
         }
 
         private void btnRestar_Click(object sender, EventArgs e)
         {
             int n;
-            n = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value);
-            dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value = n - 1;
+            if(dgvPedido.CurrentRow != null)
+            {
+                CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedido.CurrentRow.DataBoundItem;
+                n = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value);
+                
+                dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value = n - 1;
 
-            suma -= Convert.ToDouble(dgvPedido[3, dgvPedido.CurrentRow.Index].Value);
-            txtTotal.Text = suma.ToString("N2");
-            lista_lineas[dgvPedido.CurrentRow.Index].unidades = n;
-            lista_lineas[dgvPedido.CurrentRow.Index].subtotal = suma;
+                suma -= Convert.ToDouble(dgvPedido[2, dgvPedido.CurrentRow.Index].Value);
+                txtTotal.Text = suma.ToString("N2");
+                if (n-1 == 0)
+                {
+                    dgvPedido.Rows.RemoveAt(dgvPedido.CurrentRow.Index);
+                    this.lista_lineas.Remove(line);
+                }
+
+            }
+            
         }
     }
 }

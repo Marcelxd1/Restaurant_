@@ -237,6 +237,12 @@ namespace LP2Soft
             _estado = Estado.Inicial;
             limpiarComponentes();
             establecerEstadoComponentes();
+            epNombre.SetError(txtNombre, "");
+            epApPaterno.SetError(txtApellidoPaterno, "");
+            epApMaterno.SetError(txtApellidoMaterno, "");
+            epDNI.SetError(txtDNI, "");
+            epRazon.SetError(txtRazon, "");
+            epRUC.SetError(txtRuc, "");
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -285,6 +291,66 @@ namespace LP2Soft
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombre.Text.Trim() == "")
+            {
+                epNombre.SetError(txtNombre, "Debe ingresar el nombre");
+            }
+            else
+                epNombre.SetError(txtNombre, "");
+        }
+
+        private void txtApellidoPaterno_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtApellidoPaterno.Text.Trim() == "")
+            {
+                epApPaterno.SetError(txtApellidoPaterno, "Debe ingresar el apellido paterno");
+            }
+            else
+                epApPaterno.SetError(txtApellidoPaterno, "");
+        }
+
+        private void txtApellidoMaterno_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtApellidoMaterno.Text.Trim() == "")
+            {
+                epApMaterno.SetError(txtApellidoMaterno, "Debe ingresar el apellido materno");
+            }
+            else
+                epApMaterno.SetError(txtApellidoMaterno, "");
+        }
+
+        private void txtDNI_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtDNI.Text.Trim() == "")
+            {
+                epDNI.SetError(txtDNI, "Debe ingresar el DNI");
+            }
+            else
+                epDNI.SetError(txtDNI, "");
+        }
+
+        private void txtRazon_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtRazon.Text.Trim() == "")
+            {
+                epRazon.SetError(txtRazon, "Debe ingresar la razón social");
+            }
+            else
+                epRazon.SetError(txtRazon, "");
+        }
+
+        private void txtRuc_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtRuc.Text.Trim() == "")
+            {
+                epRUC.SetError(txtRuc, "Debe ingresar el RUC");
+            }
+            else
+                epRUC.SetError(txtRuc, "");
         }
     }
 }

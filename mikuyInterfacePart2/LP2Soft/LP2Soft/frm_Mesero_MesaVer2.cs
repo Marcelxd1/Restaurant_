@@ -112,17 +112,17 @@ namespace LP2Soft
                 lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
                 //abrirFormulario(new frm_Caja_Pedido_Pedir());
                 //Abran formularios aqui
-                
-                //if (rol.descripcion == "MESERO")
-                //{
+
+                if (rol.descripcion == "MESERO")
+                {
                     frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido();
                     forPedMes.obtenMesa(mesaSelec);
-                    if(forPedMes.ShowDialog() == DialogResult.OK)
+                    if (forPedMes.ShowDialog() == DialogResult.OK)
                     {
                         mesaSelec.disponible = true;
                     }
 
-                //}
+                }
                 //else if(rol.descripcion == "CAJERO")
                 //{
                 //    //FORMULARIO DE CAJERO
@@ -133,6 +133,7 @@ namespace LP2Soft
 
             else
             {
+
                 mesaSelec.disponible = true;
                 lista_botones.ElementAt(indice).BackColor = Color.RoyalBlue;
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Clientes_Registrar));
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtRazon = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,7 +49,19 @@
             this.txtDNI = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnRegistrar = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.epNombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epApPaterno = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epRazon = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epRUC = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epApMaterno = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epDNI = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epApPaterno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRazon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRUC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epApMaterno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDNI)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2PictureBox3
@@ -90,6 +103,7 @@
             this.txtRazon.Size = new System.Drawing.Size(294, 30);
             this.txtRazon.TabIndex = 67;
             this.txtRazon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazon_KeyPress);
+            this.txtRazon.Validating += new System.ComponentModel.CancelEventHandler(this.txtRazon_Validating);
             // 
             // lblRazon
             // 
@@ -130,6 +144,7 @@
             this.txtApellidoMaterno.Size = new System.Drawing.Size(294, 30);
             this.txtApellidoMaterno.TabIndex = 65;
             this.txtApellidoMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMaterno_KeyPress);
+            this.txtApellidoMaterno.Validating += new System.ComponentModel.CancelEventHandler(this.txtApellidoMaterno_Validating);
             // 
             // lblApellidoMaterno
             // 
@@ -170,6 +185,7 @@
             this.txtApellidoPaterno.Size = new System.Drawing.Size(294, 30);
             this.txtApellidoPaterno.TabIndex = 63;
             this.txtApellidoPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoPaterno_KeyPress);
+            this.txtApellidoPaterno.Validating += new System.ComponentModel.CancelEventHandler(this.txtApellidoPaterno_Validating);
             // 
             // lblApellidoPaterno
             // 
@@ -210,6 +226,7 @@
             this.txtNombre.Size = new System.Drawing.Size(294, 30);
             this.txtNombre.TabIndex = 61;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // txtRuc
             // 
@@ -239,6 +256,7 @@
             this.txtRuc.Size = new System.Drawing.Size(178, 30);
             this.txtRuc.TabIndex = 60;
             this.txtRuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRuc_KeyPress);
+            this.txtRuc.Validating += new System.ComponentModel.CancelEventHandler(this.txtRuc_Validating);
             // 
             // lblRuc
             // 
@@ -247,9 +265,9 @@
             this.lblRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRuc.Location = new System.Drawing.Point(440, 210);
             this.lblRuc.Name = "lblRuc";
-            this.lblRuc.Size = new System.Drawing.Size(44, 24);
+            this.lblRuc.Size = new System.Drawing.Size(49, 24);
             this.lblRuc.TabIndex = 59;
-            this.lblRuc.Text = "Ruc";
+            this.lblRuc.Text = "RUC";
             // 
             // lblNombre
             // 
@@ -369,6 +387,7 @@
             this.txtDNI.Size = new System.Drawing.Size(178, 30);
             this.txtDNI.TabIndex = 73;
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
+            this.txtDNI.Validating += new System.ComponentModel.CancelEventHandler(this.txtDNI_Validating);
             // 
             // btnRegistrar
             // 
@@ -406,6 +425,30 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // epNombre
+            // 
+            this.epNombre.ContainerControl = this;
+            // 
+            // epApPaterno
+            // 
+            this.epApPaterno.ContainerControl = this;
+            // 
+            // epRazon
+            // 
+            this.epRazon.ContainerControl = this;
+            // 
+            // epRUC
+            // 
+            this.epRUC.ContainerControl = this;
+            // 
+            // epApMaterno
+            // 
+            this.epApMaterno.ContainerControl = this;
+            // 
+            // epDNI
+            // 
+            this.epDNI.ContainerControl = this;
+            // 
             // frm_Clientes_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +477,12 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "frm_Clientes_Registrar";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epApPaterno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRazon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRUC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epApMaterno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epDNI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,5 +509,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDNI;
         private Guna.UI2.WinForms.Guna2Button btnRegistrar;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private System.Windows.Forms.ErrorProvider epNombre;
+        private System.Windows.Forms.ErrorProvider epApPaterno;
+        private System.Windows.Forms.ErrorProvider epRazon;
+        private System.Windows.Forms.ErrorProvider epRUC;
+        private System.Windows.Forms.ErrorProvider epApMaterno;
+        private System.Windows.Forms.ErrorProvider epDNI;
     }
 }

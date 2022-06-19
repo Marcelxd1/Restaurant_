@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lp2soft.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ReporteWS" targetNamespace="http://services.lp2soft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/ReporteWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="generarBoletaVenta">
+    <part name="parameters" element="tns:generarBoletaVenta" />
+  </message>
+  <message name="generarBoletaVentaResponse">
+    <part name="parameters" element="tns:generarBoletaVentaResponse" />
+  </message>
+  <portType name="ReporteWS">
+    <operation name="generarBoletaVenta">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse" message="tns:generarBoletaVentaResponse" />
+    </operation>
+  </portType>
+  <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="generarBoletaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ReporteWS">
+    <port name="ReporteWSPort" binding="tns:ReporteWSPortBinding">
+      <soap:address location="http://localhost:8080/LP2SoftWebServices/ReporteWS" />
+    </port>
+  </service>
+</definitions>

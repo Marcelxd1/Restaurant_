@@ -114,7 +114,6 @@ namespace LP2Soft
             }
             else                        //si es juridico
             {
-                
                 txtRazonSocial.Enabled = true;
                 txtRUC.Enabled = true;
                 txtRUC.Text = _cliente.ruc;
@@ -148,6 +147,18 @@ namespace LP2Soft
             _estado = Estado.Inicial;
             limpiarComponentes();
             establecerEstadoComponentes();
+            epNombre.SetError(txtNombre, "");
+            if(_cliente.tipo == 'N')
+            {
+                epApMaterno.SetError(txtApellidoMaterno, "");
+                epApPaterno.SetError(txtApellidoPaterno, "");
+                epDNI.SetError(txtDNIRUC, "");
+            }
+            else
+            {
+                epRazon.SetError(txtRazonSocial, "");
+                epRUC.SetError(txtRUC, "");
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -294,8 +305,6 @@ namespace LP2Soft
             }
         }
 
-       
-
         private void txtBuscar_DoubleClick(object sender, EventArgs e)
         {
             txtBuscar.Text = "";
@@ -306,6 +315,64 @@ namespace LP2Soft
             cargarTabla();
         }
 
-        
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombre.Text.Trim() == "")
+            {
+                epNombre.SetError(txtNombre, "Debe ingresar el nombre");
+            }
+            else
+                epNombre.SetError(txtNombre, "");
+        }
+
+        private void txtApellidoPaterno_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtApellidoPaterno.Text.Trim() == "")
+            {
+                epApPaterno.SetError(txtApellidoPaterno, "Debe ingresar el apellido paterno");
+            }
+            else
+                epApPaterno.SetError(txtApellidoPaterno, "");
+        }
+
+        private void txtApellidoMaterno_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtApellidoMaterno.Text.Trim() == "")
+            {
+                epApMaterno.SetError(txtApellidoMaterno, "Debe ingresar el apellido materno");
+            }
+            else
+                epApMaterno.SetError(txtApellidoMaterno, "");
+        }
+
+        private void txtDNIRUC_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtDNIRUC.Text.Trim() == "")
+            {
+                epDNI.SetError(txtDNIRUC, "Debe ingresar el DNI");
+            }
+            else
+                epDNI.SetError(txtDNIRUC, "");
+        }
+
+        private void txtRazonSocial_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtRazonSocial.Text.Trim() == "")
+            {
+                epRazon.SetError(txtRazonSocial, "Debe ingresar la razón social");
+            }
+            else
+                epRazon.SetError(txtRazonSocial, "");
+        }
+
+        private void txtRUC_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtRUC.Text.Trim() == "")
+            {
+                epRUC.SetError(txtRUC, "Debe ingresar el RUC");
+            }
+            else
+                epRUC.SetError(txtRUC, "");
+        }
     }
 }

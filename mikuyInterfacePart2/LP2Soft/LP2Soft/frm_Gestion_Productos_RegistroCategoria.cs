@@ -183,5 +183,15 @@ namespace LP2Soft
             _estado = Estado.Buscar;
             establecerEstadoComponentes();
         }
+
+        private void txtNombre_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (txtNombre.Text.Trim() == "")
+            {
+                epNombre.SetError(txtNombre, "Debe ingresar el nombre");
+            }
+            else
+                epNombre.SetError(txtNombre, "");
+        }
     }
 }

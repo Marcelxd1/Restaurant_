@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://44.198.32.69:8080/LP2SoftWebServices/CajaWS?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/LP2SoftWebServices/CajaWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CajaWS.xsd" MetadataType="Schema" ID="47dc6182-a8ac-4b65-be35-617d1e916434" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/CajaWS?xsd=1" />
-    <MetadataFile FileName="CajaWS.wsdl" MetadataType="Wsdl" ID="318518bf-966f-4006-b0f3-44f1b8440eba" SourceId="1" SourceUrl="http://44.198.32.69:8080/LP2SoftWebServices/CajaWS?WSDL" />
+    <MetadataFile FileName="CajaWS1.wsdl" MetadataType="Wsdl" ID="9d1ab0d1-6353-49b3-94af-62be411f48bb" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/CajaWS?WSDL" />
+    <MetadataFile FileName="CajaWS1.xsd" MetadataType="Schema" ID="f3c6cfd7-c8c9-41cd-baff-ed3695be35f8" SourceId="1" SourceUrl="http://localhost:8080/LP2SoftWebServices/CajaWS?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

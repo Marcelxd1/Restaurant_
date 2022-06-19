@@ -368,6 +368,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Connected Services\CajaWS\CajaWS1.wsdl" />
+    <None Include="Connected Services\CajaWS\CajaWS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.buscarLineaPedidoXIDResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -539,19 +543,15 @@
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.promocion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\NegocioWS\NegocioWS.wsdl" />
-    <None Include="Connected Services\NegocioWS\NegocioWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CajaWS\CajaWS.wsdl" />
-    <None Include="Connected Services\CajaWS\CajaWS.xsd">
+    <None Include="Connected Services\NegocioWS\NegocioWS1.wsdl" />
+    <None Include="Connected Services\NegocioWS\NegocioWS1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarBoletaVentaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ReporteWS\ReporteWS.wsdl" />
-    <None Include="Connected Services\ReporteWS\ReporteWS.xsd">
+    <None Include="Connected Services\ReporteWS\ReporteWS1.wsdl" />
+    <None Include="Connected Services\ReporteWS\ReporteWS1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.asistencia.datasource">
@@ -647,8 +647,8 @@
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.verificarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\UserWS\UserWS.wsdl" />
-    <None Include="Connected Services\UserWS\UserWS.xsd">
+    <None Include="Connected Services\UserWS\UserWS1.wsdl" />
+    <None Include="Connected Services\UserWS\UserWS1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">

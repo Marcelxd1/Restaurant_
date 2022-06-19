@@ -156,5 +156,55 @@ namespace LP2Soft
                 MessageBox.Show("Ha ocurrido un error con la ELIMINACION del usuario", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtNombre.Text.Trim() == "")
+            {
+                epNombre.SetError(txtNombre, "Debe ingresar el nombre");
+            }
+            else
+                epNombre.SetError(txtNombre, "");
+        }
+
+        private void txtApellidoPaterno_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtApellidoPaterno.Text.Trim() == "")
+            {
+                epApPaterno.SetError(txtApellidoPaterno, "Debe ingresar el apellido paterno");
+            }
+            else
+                epApPaterno.SetError(txtApellidoPaterno, "");
+        }
+
+        private void txtApellidoMaterno_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtApellidoMaterno.Text.Trim() == "")
+            {
+                epApMaterno.SetError(txtApellidoMaterno, "Debe ingresar el apellido materno");
+            }
+            else
+                epApMaterno.SetError(txtApellidoMaterno, "");
+        }
+
+        private void txtTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtTelefono.Text.Trim() == "")
+            {
+                epTelefono.SetError(txtTelefono, "Debe ingresar el número telefónico");
+            }
+            else
+                epTelefono.SetError(txtTelefono, "");
+        }
+
+        private void txtSueldo_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtSueldo.Text.Trim() == "")
+            {
+                epSueldo.SetError(txtSueldo, "Debe ingresar el sueldo");
+            }
+            else
+                epSueldo.SetError(txtSueldo, "");
+        }
     }
 }
