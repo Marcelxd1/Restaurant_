@@ -417,4 +417,48 @@ public class PedidoMySQL implements PedidoDAO {
         }
         return resultado;
     }
+    
+    @Override
+    public ArrayList<Pedido> listarPedidosPagar() {
+        ArrayList<Pedido> pedidos= new ArrayList<>();
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_PEDIDOS_SIN_PAGAR()}");
+            rs = cs.executeQuery();
+            if(rs.next()){
+                Pedido pedido = new Pedido();
+                pedido.setIdPedido(rs.getInt("id_transaccion"));
+                RestauranteDAO daores = new RestauranteMySQL();
+                pedido.setRestaurante(daores.listarPorId(rs.getInt("fid_restaurante")));
+                pedido.setTotal(rs.getDouble("total"));
+                pedido.setFecha(rs.getDate("fecha"));
+                pedido.setActivo(true);
+                
+                pedido.setMesa(new Mesa());
+                pedido.getMesa().setIdMesa(rs.getInt("id_mesa"));
+                
+                //producto.setTipoProducto(rs.getString("fid_tipo_producto").charAt(0));
+                pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
+                
+                UsuarioDAO mesero = new UsuarioMySQL();                             
+                UsuarioDAO cajero = new UsuarioMySQL();     
+                pedido.setMesero(mesero.listarPorId(rs.getInt("fid_mesero")));      
+                pedido.setCajero(cajero.listarPorId(rs.getInt("fid_cajero"))); 
+                
+                pedido.setTipoPedido(rs.getString("fid_tipo_pedido").charAt(0));
+                
+                PersonaDAO cliente = new PersonaMySQL();
+                pedido.setCliente(cliente.listarPorId(rs.getInt("fid_cliente")));
+                pedido.setTipoComprobante(rs.getString("fid_tipo_comprobante").charAt(0));
+                pedido.setNumeroComprobante(rs.getInt("numero_comprobante"));
+                pedido.setTipoComprobante(rs.getString("fid_estado_pedido").charAt(0));
+                pedidos.add(pedido);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return pedidos;
+    }
 }

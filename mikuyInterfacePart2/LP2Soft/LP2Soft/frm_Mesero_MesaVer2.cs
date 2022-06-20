@@ -108,8 +108,7 @@ namespace LP2Soft
             NegocioWS.mesa mesaSelec = lista_mesas.ElementAt(indice);
             if (mesaSelec.disponible == true)
             {
-                mesaSelec.disponible = false;
-                lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
+                
                 //abrirFormulario(new frm_Caja_Pedido_Pedir());
                 //Abran formularios aqui
 
@@ -121,7 +120,12 @@ namespace LP2Soft
                     //forPedMes.iniciar();
                     if (forPedMes.ShowDialog() == DialogResult.OK)
                     {
-                        mesaSelec.disponible = true;
+                        if(forPedMes.Hecho == true)//solo si se realizó pedido
+                        {
+                            mesaSelec.disponible = false;
+                            lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
+                        }
+                        
                     }
 
                 }

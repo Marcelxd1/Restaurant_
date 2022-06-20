@@ -287,5 +287,15 @@ public class CajaWS {
         return lineaPedido;
     }
     
+    @WebMethod(operationName = "listarPedidosNoPagados")
+    public ArrayList<Pedido> listarPedidosNoPagados() {
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+        try{
+            pedidos=daoPedido.listarPedidosPagar();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return pedidos;
+    }
     
 }

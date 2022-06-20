@@ -98,12 +98,6 @@
     <Compile Include="frm_Caja_Pedido.Designer.cs">
       <DependentUpon>frm_Caja_Pedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Caja_Pedido_Pedir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Caja_Pedido_Pedir.Designer.cs">
-      <DependentUpon>frm_Caja_Pedido_Pedir.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Cocina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,12 +115,6 @@
     </Compile>
     <Compile Include="frm_Cocina_DatosPedido.Designer.cs">
       <DependentUpon>frm_Cocina_DatosPedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Cocina_Pedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Cocina_Pedido.Designer.cs">
-      <DependentUpon>frm_Cocina_Pedido.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Gestion_Gastos.cs">
       <SubType>Form</SubType>
@@ -230,12 +218,6 @@
     <Compile Include="frm_Gestion_Usuario_Listar.Designer.cs">
       <DependentUpon>frm_Gestion_Usuario_Listar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Mesero_Mesa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Mesero_Mesa.Designer.cs">
-      <DependentUpon>frm_Mesero_Mesa.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Mesero_Mesa_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,9 +259,6 @@
     <EmbeddedResource Include="frm_Caja_Pedido.resx">
       <DependentUpon>frm_Caja_Pedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Caja_Pedido_Pedir.resx">
-      <DependentUpon>frm_Caja_Pedido_Pedir.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Cocina.resx">
       <DependentUpon>frm_Cocina.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,9 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Cocina_DatosPedido.resx">
       <DependentUpon>frm_Cocina_DatosPedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Cocina_Pedido.resx">
-      <DependentUpon>frm_Cocina_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Gastos.resx">
       <DependentUpon>frm_Gestion_Gastos.cs</DependentUpon>
@@ -342,9 +318,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Usuario_Listar.resx">
       <DependentUpon>frm_Gestion_Usuario_Listar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Mesero_Mesa.resx">
-      <DependentUpon>frm_Mesero_Mesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Mesero_Mesa_Pedido.resx">
       <DependentUpon>frm_Mesero_Mesa_Pedido.cs</DependentUpon>
@@ -412,6 +385,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarLineaPXPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarPedidosNoPagadosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.listarPedidosPendientesResponse.datasource">

@@ -16,6 +16,7 @@ DROP TABLE IF EXISTS rol ;
 DROP TABLE IF EXISTS tipo_comprobante;
 DROP TABLE IF EXISTS tipo_pedido;
 DROP TABLE IF EXISTS estado_pedido;
+DROP TABLE IF EXISTS pedido_pago;
 DROP TABLE IF EXISTS tipo_pago ;
 DROP TABLE IF EXISTS transaccion ;
 DROP TABLE IF EXISTS restaurante ;

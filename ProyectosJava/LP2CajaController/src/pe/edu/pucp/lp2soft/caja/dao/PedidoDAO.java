@@ -26,6 +26,8 @@ public interface PedidoDAO {
     Pedido listarPorMesa(int idMesa);
 
     ArrayList<Pedido> listarPedidosPendientes();
+    
     int modificarEstado(int idPedido , char estado);
     
+     public ArrayList<Pedido> listarPedidosPagar();
 }

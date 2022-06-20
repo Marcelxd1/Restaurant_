@@ -17,6 +17,7 @@ namespace LP2Soft
         private Estado _estado;
         private NegocioWS.mesa _mesa;
         private UserWS.persona _mesero;
+        private bool hecho=false;
 
 
         private BindingList<NegocioWS.categoria> _listaCat;
@@ -31,6 +32,8 @@ namespace LP2Soft
 
         public mesa Mesa { get => _mesa; set => _mesa = value; }
         public persona Mesero { get => _mesero; set => _mesero = value; }
+
+        public bool Hecho { get => hecho; set => hecho = value; }
 
         public frm_Mesero_Mesa_Pedido()
         {
@@ -218,6 +221,7 @@ namespace LP2Soft
                 {
                     this._pedido.idPedido = resultado;
                     this._estado = Estado.Guardar;
+                    this.hecho = true;
                     MessageBox.Show("Se ha registrado con éxito", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -230,6 +234,7 @@ namespace LP2Soft
                 {
                     MessageBox.Show("Se ha modificado con exito", "Mensaje Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this._estado = Estado.Guardar;
+                    this.hecho=true;
                 }
                 else MessageBox.Show("Ha ocurrido un error", "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -270,6 +275,12 @@ namespace LP2Soft
 
             }
             
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.hecho = false;
+            this.Close();
         }
     }
 }

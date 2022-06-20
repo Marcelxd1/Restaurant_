@@ -19,6 +19,7 @@ public class Pedido extends Transaccion {
     private char tipoComprobante;//boleta factura
     private int numeroComprobante;
     private char estado;// 3 estados creo
+    private boolean pagado;
     private ArrayList<LineaPedido> list_lineaPedido;
 
     public Pedido() {
@@ -205,6 +206,16 @@ public class Pedido extends Transaccion {
     public void setList_lineaPedido(ArrayList<LineaPedido> list_lineaPedido) {
         this.list_lineaPedido = list_lineaPedido;
     }
+
+    public boolean isPagado() {
+        return pagado;
+    }
+
+    public void setPagado(boolean pagado) {
+        this.pagado = pagado;
+    }
+    
+    
     
     public void calcularTotal(){
         double totalAux=0;
