@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LP2Soft.NegocioWS;
+using LP2Soft.UserWS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +16,9 @@ namespace LP2Soft
     {
         private Estado _estado;
         private NegocioWS.mesa _mesa;
+        private UserWS.persona _mesero;
+
+
         private BindingList<NegocioWS.categoria> _listaCat;
         private BindingList<Button> lista_botones;
         private double suma = 0;
@@ -23,11 +28,15 @@ namespace LP2Soft
         private CajaWS.CajaWSClient _daoCaja;
 
         private BindingList<NegocioWS.producto> _lista_prod;
+
+        public mesa Mesa { get => _mesa; set => _mesa = value; }
+        public persona Mesero { get => _mesero; set => _mesero = value; }
+
         public frm_Mesero_Mesa_Pedido()
         {
             InitializeComponent();
-            _estado = Estado.Nuevo;
-            _mesa = new NegocioWS.mesa();
+            _pedido = new CajaWS.pedido();
+            _estado = Estado.Inicial;
             _daoNegocio = new NegocioWS.NegocioWSClient();
             _lista_prod = new BindingList<NegocioWS.producto>();
             lista_lineas = new BindingList<CajaWS.lineaPedido>();
@@ -40,18 +49,35 @@ namespace LP2Soft
             txtTotal.Enabled = false;
             txtTotal.Text = "0.00";
             cargarCategorias();
+            //seModifica();
         }
 
-
-        public void obtenMesa(NegocioWS.mesa mesa)
+        public void establecerEstadoComponentes()
         {
-            mesa = new NegocioWS.mesa();
-            this._mesa = mesa;
+            switch (_estado)
+            {
+                case Estado.Inicial:
+                    break;
+                case Estado.Modificar:
+                    break;
+                case Estado.Nuevo:
+                    break;
 
-            //pedidos
-            //this._pedido = pedido;
-            //lista_lineas = pedido.list_lineaPedido();
+            }
         }
+
+
+        public void seModifica()
+        {
+            
+            if(this._mesa.disponible == false)
+            {
+                _estado = Estado.Modificar;
+                _pedido = _daoCaja.BuscarPedidoXMesa(_mesa.idMesa);
+                //dgvPedido.DataSource = _pedido.list_lineaPedido;
+            }
+        }
+
 
         private void cargarCategorias()
         {
@@ -157,29 +183,35 @@ namespace LP2Soft
 
         private void btnPedir_Click(object sender, EventArgs e)
         {
-            _pedido = new CajaWS.pedido();
-            _pedido.mesa = new CajaWS.mesa();
+            
             _pedido.restaurante = new CajaWS.restaurante();
+            _pedido.restaurante.id_restaurante = 1;
+            _pedido.mesa = new CajaWS.mesa();
+            _pedido.mesa.idMesa = _mesa.idMesa;
+            _pedido.mesa.disponible = false;
             _pedido.mesero = new CajaWS.usuario();
-            _pedido.mesero.id_usuario = 4;
+            _pedido.mesero.id_usuario = _mesero.id_persona;
+            _pedido.list_lineaPedido = this.lista_lineas.ToArray();
+            _pedido.estado = 'E';   //En espera
+            _pedido.tipo = 'P';     //
+
+            
             _pedido.cajero = new CajaWS.usuario();
             _pedido.cajero.id_usuario = 5;
             _pedido.cliente = new CajaWS.persona();
             _pedido.cliente.id_persona = 2;
-            _pedido.restaurante.id_restaurante = 1;
-            _pedido.mesa.idMesa = 26;
-            _pedido.mesa.disponible = false;
+            
             _pedido.total = suma;
             _pedido.fecha = DateTime.Now;
             _pedido.fechaSpecified = true;
-            _pedido.list_lineaPedido = this.lista_lineas.ToArray();
+            
             _pedido.tipoComprobante = 'B';
             _pedido.tipoPago = 'E';
-            _pedido.tipoPedido = 'C';
+            _pedido.tipoPedido = 'C';   //Para comer
             _pedido.numeroComprobante = 23234234;
-            _pedido.estado = 'E';
-            _pedido.tipo = 'P';
-            if (_estado == Estado.Nuevo)
+            
+            
+            if (_estado == Estado.Inicial)
             {
                 int resultado = _daoCaja.insertarPedido(_pedido);
                 if (resultado != 0)

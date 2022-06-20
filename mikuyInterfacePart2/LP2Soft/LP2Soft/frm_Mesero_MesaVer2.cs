@@ -116,7 +116,9 @@ namespace LP2Soft
                 if (rol.descripcion == "MESERO")
                 {
                     frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido();
-                    forPedMes.obtenMesa(mesaSelec);
+                    forPedMes.Mesa = mesaSelec;
+                    forPedMes.Mesero = persona;
+                    //forPedMes.iniciar();
                     if (forPedMes.ShowDialog() == DialogResult.OK)
                     {
                         mesaSelec.disponible = true;
