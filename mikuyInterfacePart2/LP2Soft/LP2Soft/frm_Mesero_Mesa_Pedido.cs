@@ -303,6 +303,22 @@ namespace LP2Soft
 
         }
 
-       
+        private void pbCLiente_Click(object sender, EventArgs e)
+        {
+            frm_Clientes_Registrar formClienteRegistro = new frm_Clientes_Registrar();
+            formClienteRegistro.Dato = 1;
+            if (formClienteRegistro.ShowDialog() == DialogResult.OK)
+            {
+                string doc;
+                _cliente.id_persona = formClienteRegistro.ClienteSeleccionado.id_persona;
+                _cliente.nombre = formClienteRegistro.ClienteSeleccionado.nombre;
+                if (formClienteRegistro.ClienteSeleccionado.tipo == 'N')
+                    doc = formClienteRegistro.ClienteSeleccionado.DNI;
+                else
+                    doc = formClienteRegistro.ClienteSeleccionado.ruc;
+                txtNombre.Text = _cliente.nombre;
+                txtDNIRUC.Text = doc;
+            }
+        }
     }
 }

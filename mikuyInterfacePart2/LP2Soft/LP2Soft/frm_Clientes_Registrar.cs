@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LP2Soft.UserWS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,19 @@ namespace LP2Soft
     public partial class frm_Clientes_Registrar : Form
     {
         private UserWS.persona _cliente;
+        private UserWS.persona _clienteSeleccionado;
         private UserWS.UserWSClient daoUser;
         private Estado _estado;
+        private int dato = 0;
+
+        public persona ClienteSeleccionado { get => _clienteSeleccionado; set => _clienteSeleccionado = value; }
+        public int Dato { get => dato; set => dato = value; }
+
         public frm_Clientes_Registrar()
         {
             InitializeComponent();
             daoUser = new UserWS.UserWSClient();
+            _clienteSeleccionado = new UserWS.persona();
             _estado = Estado.Inicial;
             establecerEstadoComponentes();
             limpiarComponentes();
@@ -208,7 +216,11 @@ namespace LP2Soft
                     {
                         MessageBox.Show("Se ha registrado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         _estado = Estado.Inicial;
-
+                        _clienteSeleccionado = _cliente;
+                        if(dato == 1)
+                        {
+                            this.DialogResult = DialogResult.OK;
+                        }
                         establecerEstadoComponentes();
                     }
                     else

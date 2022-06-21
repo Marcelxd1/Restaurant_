@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Caja_Pedido));
             this.lblPedidos = new System.Windows.Forms.Label();
             this.gbIngresos = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.pbCLiente = new System.Windows.Forms.PictureBox();
             this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.txtDNIRUC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.gbIngresos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCLiente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -77,7 +79,7 @@
             this.lblPedidos.AutoSize = true;
             this.lblPedidos.BackColor = System.Drawing.Color.White;
             this.lblPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedidos.Location = new System.Drawing.Point(276, 19);
+            this.lblPedidos.Location = new System.Drawing.Point(315, 21);
             this.lblPedidos.Name = "lblPedidos";
             this.lblPedidos.Size = new System.Drawing.Size(186, 29);
             this.lblPedidos.TabIndex = 111;
@@ -85,6 +87,7 @@
             // 
             // gbIngresos
             // 
+            this.gbIngresos.Controls.Add(this.pbCLiente);
             this.gbIngresos.Controls.Add(this.btnBuscar);
             this.gbIngresos.Controls.Add(this.txtDNIRUC);
             this.gbIngresos.Controls.Add(this.label2);
@@ -101,10 +104,21 @@
             this.gbIngresos.Location = new System.Drawing.Point(19, 63);
             this.gbIngresos.Name = "gbIngresos";
             this.gbIngresos.ShadowDecoration.Parent = this.gbIngresos;
-            this.gbIngresos.Size = new System.Drawing.Size(311, 223);
+            this.gbIngresos.Size = new System.Drawing.Size(377, 235);
             this.gbIngresos.TabIndex = 112;
             this.gbIngresos.Text = "Datos del Comprobante";
             this.gbIngresos.TextOffset = new System.Drawing.Point(-4, -10);
+            // 
+            // pbCLiente
+            // 
+            this.pbCLiente.Image = global::LP2Soft.Properties.Resources.User;
+            this.pbCLiente.Location = new System.Drawing.Point(11, 109);
+            this.pbCLiente.Name = "pbCLiente";
+            this.pbCLiente.Size = new System.Drawing.Size(69, 77);
+            this.pbCLiente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCLiente.TabIndex = 147;
+            this.pbCLiente.TabStop = false;
+            this.pbCLiente.Click += new System.EventHandler(this.pbCLiente_Click);
             // 
             // btnBuscar
             // 
@@ -115,7 +129,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.HoverState.Parent = this.btnBuscar;
-            this.btnBuscar.Location = new System.Drawing.Point(104, 184);
+            this.btnBuscar.Location = new System.Drawing.Point(137, 195);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
             this.btnBuscar.Size = new System.Drawing.Size(96, 28);
@@ -143,7 +157,7 @@
             this.txtDNIRUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDNIRUC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDNIRUC.HoverState.Parent = this.txtDNIRUC;
-            this.txtDNIRUC.Location = new System.Drawing.Point(95, 147);
+            this.txtDNIRUC.Location = new System.Drawing.Point(159, 149);
             this.txtDNIRUC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDNIRUC.Multiline = true;
             this.txtDNIRUC.Name = "txtDNIRUC";
@@ -152,7 +166,7 @@
             this.txtDNIRUC.ReadOnly = true;
             this.txtDNIRUC.SelectedText = "";
             this.txtDNIRUC.ShadowDecoration.Parent = this.txtDNIRUC;
-            this.txtDNIRUC.Size = new System.Drawing.Size(204, 28);
+            this.txtDNIRUC.Size = new System.Drawing.Size(204, 37);
             this.txtDNIRUC.TabIndex = 145;
             // 
             // label2
@@ -160,11 +174,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 113);
+            this.label2.Location = new System.Drawing.Point(86, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 18);
+            this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 113;
-            this.label2.Text = "Nombre :";
+            this.label2.Text = "Nombre:";
             // 
             // txtNombre
             // 
@@ -186,7 +200,7 @@
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
-            this.txtNombre.Location = new System.Drawing.Point(95, 110);
+            this.txtNombre.Location = new System.Drawing.Point(159, 104);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -195,7 +209,7 @@
             this.txtNombre.ReadOnly = true;
             this.txtNombre.SelectedText = "";
             this.txtNombre.ShadowDecoration.Parent = this.txtNombre;
-            this.txtNombre.Size = new System.Drawing.Size(204, 28);
+            this.txtNombre.Size = new System.Drawing.Size(204, 37);
             this.txtNombre.TabIndex = 144;
             // 
             // label1
@@ -214,11 +228,11 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 151);
+            this.label7.Location = new System.Drawing.Point(86, 156);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 18);
+            this.label7.Size = new System.Drawing.Size(74, 18);
             this.label7.TabIndex = 65;
-            this.label7.Text = "DNI / RUC :";
+            this.label7.Text = "DNI/RUC:";
             // 
             // rbnBoleta
             // 
@@ -277,43 +291,43 @@
             // 
             // dgvPedidos
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPedidos.BackgroundColor = System.Drawing.Color.White;
             this.dgvPedidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPedidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPedidos.ColumnHeadersHeight = 22;
             this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
             this.Cantidad,
             this.Precio,
             this.Importe});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPedidos.EnableHeadersVisualStyles = false;
             this.dgvPedidos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.dgvPedidos.Location = new System.Drawing.Point(336, 63);
+            this.dgvPedidos.Location = new System.Drawing.Point(402, 63);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.RowHeadersVisible = false;
             this.dgvPedidos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedidos.Size = new System.Drawing.Size(405, 223);
+            this.dgvPedidos.Size = new System.Drawing.Size(405, 235);
             this.dgvPedidos.TabIndex = 113;
             this.dgvPedidos.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPedidos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -325,15 +339,15 @@
             this.dgvPedidos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.dgvPedidos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Silver;
             this.dgvPedidos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPedidos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedidos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPedidos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvPedidos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPedidos.ThemeStyle.HeaderStyle.Height = 22;
             this.dgvPedidos.ThemeStyle.ReadOnly = false;
             this.dgvPedidos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPedidos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPedidos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvPedidos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvPedidos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedidos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.dgvPedidos.ThemeStyle.RowsStyle.Height = 22;
             this.dgvPedidos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPedidos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -393,10 +407,10 @@
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(19, 295);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(19, 304);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(722, 187);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(788, 187);
             this.guna2GroupBox1.TabIndex = 147;
             this.guna2GroupBox1.Text = "Pago";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(-4, -10);
@@ -405,7 +419,7 @@
             // 
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(595, 153);
+            this.label12.Location = new System.Drawing.Point(647, 153);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(103, 19);
             this.label12.TabIndex = 154;
@@ -416,7 +430,7 @@
             // 
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(585, 80);
+            this.label5.Location = new System.Drawing.Point(637, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 19);
             this.label5.TabIndex = 147;
@@ -428,30 +442,31 @@
             this.btnPagar.BackgroundImage = global::LP2Soft.Properties.Resources.pago;
             this.btnPagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPagar.Location = new System.Drawing.Point(610, 103);
+            this.btnPagar.Location = new System.Drawing.Point(662, 103);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(65, 47);
             this.btnPagar.TabIndex = 153;
             this.btnPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // btnImprimir
             // 
             this.btnImprimir.BackgroundImage = global::LP2Soft.Properties.Resources.imprmir;
             this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.Location = new System.Drawing.Point(610, 30);
+            this.btnImprimir.Location = new System.Drawing.Point(662, 30);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(65, 47);
             this.btnImprimir.TabIndex = 152;
             this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click_1);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(287, 137);
+            this.label11.Location = new System.Drawing.Point(350, 137);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 18);
             this.label11.TabIndex = 151;
@@ -477,7 +492,7 @@
             this.guna2TextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Location = new System.Drawing.Point(320, 133);
+            this.guna2TextBox4.Location = new System.Drawing.Point(383, 133);
             this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TextBox4.Multiline = true;
             this.guna2TextBox4.Name = "guna2TextBox4";
@@ -494,7 +509,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(287, 66);
+            this.label10.Location = new System.Drawing.Point(350, 66);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(26, 18);
             this.label10.TabIndex = 149;
@@ -505,7 +520,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(273, 103);
+            this.label9.Location = new System.Drawing.Point(336, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 20);
             this.label9.TabIndex = 148;
@@ -516,7 +531,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(273, 30);
+            this.label8.Location = new System.Drawing.Point(336, 30);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 20);
             this.label8.TabIndex = 147;
@@ -541,7 +556,7 @@
             this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(320, 62);
+            this.guna2TextBox2.Location = new System.Drawing.Point(383, 62);
             this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TextBox2.Multiline = true;
             this.guna2TextBox2.Name = "guna2TextBox2";
@@ -617,7 +632,7 @@
             this.rbnEfectivo.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbnEfectivo.CheckedState.InnerOffset = -4;
             this.rbnEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnEfectivo.Location = new System.Drawing.Point(30, 133);
+            this.rbnEfectivo.Location = new System.Drawing.Point(60, 133);
             this.rbnEfectivo.Name = "rbnEfectivo";
             this.rbnEfectivo.Size = new System.Drawing.Size(79, 22);
             this.rbnEfectivo.TabIndex = 70;
@@ -639,7 +654,7 @@
             this.rbnTarjeta.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbnTarjeta.CheckedState.InnerOffset = -4;
             this.rbnTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnTarjeta.Location = new System.Drawing.Point(142, 133);
+            this.rbnTarjeta.Location = new System.Drawing.Point(182, 133);
             this.rbnTarjeta.Name = "rbnTarjeta";
             this.rbnTarjeta.Size = new System.Drawing.Size(71, 22);
             this.rbnTarjeta.TabIndex = 69;
@@ -668,7 +683,7 @@
             this.guna2PictureBox3.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(760, 502);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(826, 515);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 110;
             this.guna2PictureBox3.TabStop = false;
@@ -678,7 +693,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(758, 498);
+            this.ClientSize = new System.Drawing.Size(830, 514);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.dgvPedidos);
             this.Controls.Add(this.gbIngresos);
@@ -690,6 +705,7 @@
             this.Text = "frm_Caja_Pedido";
             this.gbIngresos.ResumeLayout(false);
             this.gbIngresos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCLiente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
@@ -735,5 +751,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.PictureBox pbCLiente;
     }
 }

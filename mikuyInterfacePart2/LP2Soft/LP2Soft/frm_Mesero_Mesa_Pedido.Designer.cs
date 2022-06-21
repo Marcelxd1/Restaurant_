@@ -545,6 +545,7 @@
             this.pbCLiente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCLiente.TabIndex = 145;
             this.pbCLiente.TabStop = false;
+            this.pbCLiente.Click += new System.EventHandler(this.pbCLiente_Click);
             // 
             // lblDNIRUC
             // 
