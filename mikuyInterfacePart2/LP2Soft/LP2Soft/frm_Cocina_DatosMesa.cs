@@ -79,13 +79,6 @@ namespace LP2Soft
             }
         }
 
-        private void guna2ImageButton1_Click(object sender, EventArgs e)
-        {
-            int idPedido = Int32.Parse(lblIdPedido.Text);
-            frmBoleta formBol = new frmBoleta(idPedido);
-            formBol.Show();
-
-            
-        }
+        
     }
 }

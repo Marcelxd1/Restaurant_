@@ -425,33 +425,33 @@ public class PedidoMySQL implements PedidoDAO {
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call LISTAR_PEDIDOS_SIN_PAGAR()}");
             rs = cs.executeQuery();
-            if(rs.next()){
+            while(rs.next()){
                 Pedido pedido = new Pedido();
-                pedido.setIdPedido(rs.getInt("id_transaccion"));
-                RestauranteDAO daores = new RestauranteMySQL();
-                pedido.setRestaurante(daores.listarPorId(rs.getInt("fid_restaurante")));
+                pedido.setIdPedido(rs.getInt("id_transaccion"));//el heredado
+                
+                pedido.setRestaurante(new Restaurante());
+                pedido.getRestaurante().setId_restaurante(rs.getInt("fid_restaurante")); 
+                
                 pedido.setTotal(rs.getDouble("total"));
                 pedido.setFecha(rs.getDate("fecha"));
-                pedido.setActivo(true);
-                
-                pedido.setMesa(new Mesa());
-                pedido.getMesa().setIdMesa(rs.getInt("id_mesa"));
-                
-                //producto.setTipoProducto(rs.getString("fid_tipo_producto").charAt(0));
+                Mesa mesa= new Mesa();
+                mesa.setIdMesa(rs.getInt("id_mesa"));                
+                mesa.setEstado(rs.getBoolean("activo"));
+                mesa.setNumero(rs.getInt("capacidad"));
+                pedido.setMesa(mesa);
                 pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
                 
-                UsuarioDAO mesero = new UsuarioMySQL();                             
-                UsuarioDAO cajero = new UsuarioMySQL();     
-                pedido.setMesero(mesero.listarPorId(rs.getInt("fid_mesero")));      
-                pedido.setCajero(cajero.listarPorId(rs.getInt("fid_cajero"))); 
+                pedido.setCajero(new Usuario());
+                pedido.getCajero().setId_usuario(rs.getInt("fid_cajero")); 
+                pedido.setMesero(new Usuario());
+                pedido.getMesero().setId_usuario(rs.getInt("fid_mesero")); 
+                pedido.setCliente(new Persona());
+                pedido.getCliente().setId_persona(rs.getInt("fid_cliente")); 
                 
                 pedido.setTipoPedido(rs.getString("fid_tipo_pedido").charAt(0));
-                
-                PersonaDAO cliente = new PersonaMySQL();
-                pedido.setCliente(cliente.listarPorId(rs.getInt("fid_cliente")));
                 pedido.setTipoComprobante(rs.getString("fid_tipo_comprobante").charAt(0));
                 pedido.setNumeroComprobante(rs.getInt("numero_comprobante"));
-                pedido.setTipoComprobante(rs.getString("fid_estado_pedido").charAt(0));
+                pedido.setEstado(rs.getString("fid_estado_pedido").charAt(0));
                 pedidos.add(pedido);
             }
         }catch(Exception ex){

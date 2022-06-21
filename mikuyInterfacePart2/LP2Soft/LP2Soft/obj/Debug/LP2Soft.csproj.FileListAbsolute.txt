@@ -582,3 +582,6 @@ C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\
 C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cocina_DatosPedido.resources
 C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Login_Recuperar_Contrasenia.resources
 C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Restablecer_Contraseña.resources
+C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_LineaPedidos.resources
+C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_Pedidos.resources
+C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_Pedidos_Mesa.resources

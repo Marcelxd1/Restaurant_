@@ -12,9 +12,33 @@ namespace LP2Soft
 {
     public partial class frm_Caja_Pedido : Form
     {
-        public frm_Caja_Pedido()
+        private CajaWS.pedido _pedido;
+        public frm_Caja_Pedido(CajaWS.pedido pedido)
         {
             InitializeComponent();
+            _pedido = pedido;
+            dgvPedidos.AutoGenerateColumns = false;
+            dgvPedidos.DataSource = _pedido.list_lineaPedido;
+        }
+
+        
+
+        private void dgvPedidos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedidos.Rows[e.RowIndex].DataBoundItem;
+            if (line != null)
+            {
+                dgvPedidos.Rows[e.RowIndex].Cells[0].Value = line.item.nombre;
+                dgvPedidos.Rows[e.RowIndex].Cells[2].Value = line.item.precio;
+                dgvPedidos.Rows[e.RowIndex].Cells[1].Value = line.unidades;
+                dgvPedidos.Rows[e.RowIndex].Cells[3].Value = line.unidades*line.item.precio;
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            frmBoleta formBol = new frmBoleta(_pedido.idPedido);
+            formBol.Show();
         }
     }
 }

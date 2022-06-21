@@ -55,7 +55,12 @@ namespace LP2Soft
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frm_Mesero_MesaVer2(persona, rol));
+            if (rol.descripcion == "MESERO")
+            {
+                abrirFormulario(new frm_Mesero_MesaVer2(persona, rol));
+            }
+            else
+                abrirFormulario(new frm_Cajero_Pedidos(persona, rol));
 
         }
 

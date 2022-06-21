@@ -283,6 +283,16 @@ namespace LP2Soft.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imprmir {
+            get {
+                object obj = ResourceManager.GetObject("imprmir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LA_CAMPIÑA {
             get {
                 object obj = ResourceManager.GetObject("LA_CAMPIÑA", resourceCulture);
@@ -386,6 +396,16 @@ namespace LP2Soft.Properties {
         internal static System.Drawing.Bitmap notificacion {
             get {
                 object obj = ResourceManager.GetObject("notificacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pago {
+            get {
+                object obj = ResourceManager.GetObject("pago", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -80,6 +80,24 @@
     <Compile Include="frmBoleta.Designer.cs">
       <DependentUpon>frmBoleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Cajero_LineaPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Cajero_LineaPedidos.Designer.cs">
+      <DependentUpon>frm_Cajero_LineaPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Cajero_Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Cajero_Pedidos.Designer.cs">
+      <DependentUpon>frm_Cajero_Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Cajero_Pedidos_Mesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Cajero_Pedidos_Mesa.Designer.cs">
+      <DependentUpon>frm_Cajero_Pedidos_Mesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +264,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBoleta.resx">
       <DependentUpon>frmBoleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Cajero_LineaPedidos.resx">
+      <DependentUpon>frm_Cajero_LineaPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Cajero_Pedidos.resx">
+      <DependentUpon>frm_Cajero_Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Cajero_Pedidos_Mesa.resx">
+      <DependentUpon>frm_Cajero_Pedidos_Mesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Loading.resx">
       <DependentUpon>frm_Loading.cs</DependentUpon>
@@ -783,6 +810,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pago.png" />
+    <None Include="Resources\imprmir.png" />
     <None Include="Connected Services\NegocioWS\configuration91.svcinfo" />
     <None Include="Connected Services\NegocioWS\configuration.svcinfo" />
     <None Include="Connected Services\NegocioWS\Reference.svcmap">

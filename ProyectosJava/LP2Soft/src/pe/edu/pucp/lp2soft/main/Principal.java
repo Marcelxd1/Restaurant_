@@ -649,9 +649,11 @@ public class Principal {
         linea12.setSubtotal(10);
         pedido.getList_lineaPedido().add(linea1);
         pedido.getList_lineaPedido().add(linea12);
-        int resultado = pedidoDao.insertar(pedido);
-        if (resultado == 1) System.out.println("Se ha insertado pedido correctamente ");
-        else System.out.println(" NO se ha insertado pedido ");
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+        pedidos = pedidoDao.listarPedidosPagar();
+//        int resultado = pedidoDao.insertar(pedido);
+//        if (resultado == 1) System.out.println("Se ha insertado pedido correctamente ");
+//        else System.out.println(" NO se ha insertado pedido ");
 //        
 //        //INSERTAR LINEA PEDIDO
 //        LineaPedidoDAO lineaDao = new LineaPedidoMySQL();
