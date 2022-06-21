@@ -17,6 +17,7 @@ namespace LP2Soft
         private Estado _estado;
         private NegocioWS.mesa _mesa;
         private UserWS.persona _mesero;
+        private UserWS.persona _cliente;
         private bool hecho=false;
 
 
@@ -38,6 +39,7 @@ namespace LP2Soft
         public frm_Mesero_Mesa_Pedido()
         {
             InitializeComponent();
+            _cliente = new UserWS.persona();
             _pedido = new CajaWS.pedido();
             _estado = Estado.Inicial;
             _daoNegocio = new NegocioWS.NegocioWSClient();
@@ -202,7 +204,7 @@ namespace LP2Soft
             _pedido.cajero = new CajaWS.usuario();
             _pedido.cajero.id_usuario = 5;
             _pedido.cliente = new CajaWS.persona();
-            _pedido.cliente.id_persona = 2;
+            _pedido.cliente.id_persona = _cliente.id_persona;
             
             _pedido.total = suma;
             _pedido.fecha = DateTime.Now;
@@ -285,6 +287,19 @@ namespace LP2Soft
 
         private void btnBuscaCliente_Click(object sender, EventArgs e)
         {
+            frmBusquedaCliente formBusquedaCliente = new frmBusquedaCliente();
+            if(formBusquedaCliente.ShowDialog() == DialogResult.OK)
+            {
+                string doc;
+                _cliente.id_persona = formBusquedaCliente.ClienteSeleccionado.id_persona;
+                _cliente.nombre = formBusquedaCliente.ClienteSeleccionado.nombre;
+                if (formBusquedaCliente.ClienteSeleccionado.tipo == 'N')
+                    doc = formBusquedaCliente.ClienteSeleccionado.DNI;
+                else
+                    doc = formBusquedaCliente.ClienteSeleccionado.ruc;
+                txtNombre.Text = _cliente.nombre;
+                txtDNIRUC.Text = doc;
+            }
 
         }
 

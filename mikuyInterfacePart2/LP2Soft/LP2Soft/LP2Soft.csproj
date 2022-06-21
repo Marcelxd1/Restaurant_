@@ -80,6 +80,12 @@
     <Compile Include="frmBoleta.Designer.cs">
       <DependentUpon>frmBoleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBusquedaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaCliente.Designer.cs">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Cajero_LineaPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBoleta.resx">
       <DependentUpon>frmBoleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaCliente.resx">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Cajero_LineaPedidos.resx">
       <DependentUpon>frm_Cajero_LineaPedidos.cs</DependentUpon>

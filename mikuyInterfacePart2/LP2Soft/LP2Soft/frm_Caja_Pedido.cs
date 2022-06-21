@@ -13,6 +13,7 @@ namespace LP2Soft
     public partial class frm_Caja_Pedido : Form
     {
         private CajaWS.pedido _pedido;
+        private UserWS.persona _cliente;
         public frm_Caja_Pedido(CajaWS.pedido pedido)
         {
             InitializeComponent();
@@ -39,6 +40,23 @@ namespace LP2Soft
         {
             frmBoleta formBol = new frmBoleta(_pedido.idPedido);
             formBol.Show();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            frmBusquedaCliente formBusquedaCliente = new frmBusquedaCliente();
+            if (formBusquedaCliente.ShowDialog() == DialogResult.OK)
+            {
+                string doc;
+                _cliente.id_persona = formBusquedaCliente.ClienteSeleccionado.id_persona;
+                _cliente.nombre = formBusquedaCliente.ClienteSeleccionado.nombre;
+                if (formBusquedaCliente.ClienteSeleccionado.tipo == 'N')
+                    doc = formBusquedaCliente.ClienteSeleccionado.DNI;
+                else
+                    doc = formBusquedaCliente.ClienteSeleccionado.ruc;
+                txtNombre.Text = _cliente.nombre;
+                txtDNIRUC.Text = doc;
+            }
         }
     }
 }

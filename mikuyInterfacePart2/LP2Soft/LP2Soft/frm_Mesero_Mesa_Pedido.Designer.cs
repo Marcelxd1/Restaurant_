@@ -77,7 +77,7 @@
             this.guna2PictureBox3.Location = new System.Drawing.Point(-2, 0);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(1007, 545);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(1007, 558);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 124;
             this.guna2PictureBox3.TabStop = false;
@@ -191,7 +191,7 @@
             this.btnSumar.HoverState.Parent = this.btnSumar;
             this.btnSumar.Image = global::LP2Soft.Properties.Resources.add;
             this.btnSumar.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSumar.Location = new System.Drawing.Point(527, 155);
+            this.btnSumar.Location = new System.Drawing.Point(527, 163);
             this.btnSumar.Name = "btnSumar";
             this.btnSumar.PressedState.Parent = this.btnSumar;
             this.btnSumar.Size = new System.Drawing.Size(38, 38);
@@ -217,7 +217,7 @@
             this.btnRestar.HoverState.Parent = this.btnRestar;
             this.btnRestar.Image = global::LP2Soft.Properties.Resources.eliminar;
             this.btnRestar.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnRestar.Location = new System.Drawing.Point(571, 155);
+            this.btnRestar.Location = new System.Drawing.Point(571, 163);
             this.btnRestar.Name = "btnRestar";
             this.btnRestar.PressedState.Parent = this.btnRestar;
             this.btnRestar.Size = new System.Drawing.Size(38, 38);
@@ -243,7 +243,7 @@
             this.txtTotal.ForeColor = System.Drawing.Color.Black;
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.HoverState.Parent = this.txtTotal;
-            this.txtTotal.Location = new System.Drawing.Point(848, 443);
+            this.txtTotal.Location = new System.Drawing.Point(848, 452);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
@@ -260,7 +260,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.White;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(716, 453);
+            this.lblTotal.Location = new System.Drawing.Point(716, 462);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(125, 31);
             this.lblTotal.TabIndex = 137;
@@ -276,7 +276,7 @@
             this.btnPedir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedir.ForeColor = System.Drawing.Color.White;
             this.btnPedir.HoverState.Parent = this.btnPedir;
-            this.btnPedir.Location = new System.Drawing.Point(899, 501);
+            this.btnPedir.Location = new System.Drawing.Point(899, 510);
             this.btnPedir.Name = "btnPedir";
             this.btnPedir.ShadowDecoration.Parent = this.btnPedir;
             this.btnPedir.Size = new System.Drawing.Size(83, 29);
@@ -320,7 +320,7 @@
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.RowHeadersVisible = false;
             this.dgvItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItem.Size = new System.Drawing.Size(449, 258);
+            this.dgvItem.Size = new System.Drawing.Size(449, 277);
             this.dgvItem.TabIndex = 139;
             this.dgvItem.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvItem.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -404,7 +404,7 @@
             this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPedido.EnableHeadersVisualStyles = false;
             this.dgvPedido.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPedido.Location = new System.Drawing.Point(527, 198);
+            this.dgvPedido.Location = new System.Drawing.Point(527, 207);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.RowHeadersVisible = false;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -473,7 +473,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.HoverState.Parent = this.btnCancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(790, 501);
+            this.btnCancelar.Location = new System.Drawing.Point(790, 510);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.ShadowDecoration.Parent = this.btnCancelar;
             this.btnCancelar.Size = new System.Drawing.Size(90, 29);
@@ -512,7 +512,7 @@
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
-            this.txtNombre.Location = new System.Drawing.Point(637, 76);
+            this.txtNombre.Location = new System.Drawing.Point(637, 67);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -521,7 +521,7 @@
             this.txtNombre.ReadOnly = true;
             this.txtNombre.SelectedText = "";
             this.txtNombre.ShadowDecoration.Parent = this.txtNombre;
-            this.txtNombre.Size = new System.Drawing.Size(191, 28);
+            this.txtNombre.Size = new System.Drawing.Size(191, 37);
             this.txtNombre.TabIndex = 143;
             // 
             // label2
@@ -529,7 +529,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(527, 52);
+            this.label2.Location = new System.Drawing.Point(534, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 24);
             this.label2.TabIndex = 144;
@@ -551,7 +551,7 @@
             this.lblDNIRUC.AutoSize = true;
             this.lblDNIRUC.BackColor = System.Drawing.Color.White;
             this.lblDNIRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNIRUC.Location = new System.Drawing.Point(546, 124);
+            this.lblDNIRUC.Location = new System.Drawing.Point(546, 129);
             this.lblDNIRUC.Name = "lblDNIRUC";
             this.lblDNIRUC.Size = new System.Drawing.Size(84, 20);
             this.lblDNIRUC.TabIndex = 146;
@@ -577,7 +577,7 @@
             this.txtDNIRUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDNIRUC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDNIRUC.HoverState.Parent = this.txtDNIRUC;
-            this.txtDNIRUC.Location = new System.Drawing.Point(637, 116);
+            this.txtDNIRUC.Location = new System.Drawing.Point(637, 112);
             this.txtDNIRUC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDNIRUC.Multiline = true;
             this.txtDNIRUC.Name = "txtDNIRUC";
@@ -586,7 +586,7 @@
             this.txtDNIRUC.ReadOnly = true;
             this.txtDNIRUC.SelectedText = "";
             this.txtDNIRUC.ShadowDecoration.Parent = this.txtDNIRUC;
-            this.txtDNIRUC.Size = new System.Drawing.Size(191, 28);
+            this.txtDNIRUC.Size = new System.Drawing.Size(191, 37);
             this.txtDNIRUC.TabIndex = 147;
             // 
             // btnBuscaCliente
@@ -611,7 +611,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1014, 542);
+            this.ClientSize = new System.Drawing.Size(1009, 551);
             this.Controls.Add(this.btnBuscaCliente);
             this.Controls.Add(this.txtDNIRUC);
             this.Controls.Add(this.lblDNIRUC);

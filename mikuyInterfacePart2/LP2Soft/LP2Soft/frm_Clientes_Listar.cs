@@ -95,7 +95,6 @@ namespace LP2Soft
         }
 
         
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             _estado = Estado.Modificar;
