@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/ReporteWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="generarFactura">
-    <part name="parameters" element="tns:generarFactura" />
+  <message name="generarFacturaVenta">
+    <part name="parameters" element="tns:generarFacturaVenta" />
   </message>
-  <message name="generarFacturaResponse">
-    <part name="parameters" element="tns:generarFacturaResponse" />
+  <message name="generarFacturaVentaResponse">
+    <part name="parameters" element="tns:generarFacturaVentaResponse" />
   </message>
   <message name="generarBoletaVenta">
     <part name="parameters" element="tns:generarBoletaVenta" />
@@ -18,9 +18,9 @@
     <part name="parameters" element="tns:generarBoletaVentaResponse" />
   </message>
   <portType name="ReporteWS">
-    <operation name="generarFactura">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaRequest" message="tns:generarFactura" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaResponse" message="tns:generarFacturaResponse" />
+    <operation name="generarFacturaVenta">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaVentaRequest" message="tns:generarFacturaVenta" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaVentaResponse" message="tns:generarFacturaVentaResponse" />
     </operation>
     <operation name="generarBoletaVenta">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
@@ -29,7 +29,7 @@
   </portType>
   <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="generarFactura">
+    <operation name="generarFacturaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

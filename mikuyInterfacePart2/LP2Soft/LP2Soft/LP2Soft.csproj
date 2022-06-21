@@ -562,7 +562,7 @@
     <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarBoletaVentaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarFacturaResponse.datasource">
+    <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarFacturaVentaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReporteWS\ReporteWS1.wsdl" />

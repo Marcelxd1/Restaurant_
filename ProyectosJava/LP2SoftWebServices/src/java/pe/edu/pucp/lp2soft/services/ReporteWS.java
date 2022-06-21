@@ -30,7 +30,7 @@ public class ReporteWS {
             Image imagen = (new ImageIcon(rutaImagen)).getImage();
             HashMap hm = new HashMap();
             hm.put("ParamLogo",imagen);
-            hm.put("IdPedido", idPedido);
+            hm.put("IdPedido",idPedido);
             JasperPrint jp = JasperFillManager.fillReport(reporte, hm,con);
             con.close();
             reporteBytes = JasperExportManager.exportReportToPdf(jp);
@@ -41,8 +41,8 @@ public class ReporteWS {
         return reporteBytes;
     }
     
-    @WebMethod(operationName = "generarFactura")
-    public byte[] generarFactura(@WebParam(name = "idPedido") int idPedido) {
+    @WebMethod(operationName = "generarFacturaVenta")
+    public byte[] generarFacturaVenta(@WebParam(name = "idPedido") int idPedido) {
         byte[] reporteBytes = null;
         try{
             Connection con = DBManager.getInstance().getConnection();

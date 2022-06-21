@@ -586,3 +586,7 @@ C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug
 C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_Pedidos.resources
 C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_Pedidos_Mesa.resources
 C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frmBusquedaCliente.resources
+C:\Users\marce\Documents\PUCP\7 CICLO\LENGUAJE DE PROGRAMACIÓN 2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frmBusquedaCliente.resources
+C:\Users\marce\Documents\PUCP\7 CICLO\LENGUAJE DE PROGRAMACIÓN 2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_LineaPedidos.resources
+C:\Users\marce\Documents\PUCP\7 CICLO\LENGUAJE DE PROGRAMACIÓN 2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_Pedidos.resources
+C:\Users\marce\Documents\PUCP\7 CICLO\LENGUAJE DE PROGRAMACIÓN 2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_Pedidos_Mesa.resources
