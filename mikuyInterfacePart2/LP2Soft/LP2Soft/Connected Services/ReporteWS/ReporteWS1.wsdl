@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/ReporteWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+  <message name="generarFactura">
+    <part name="parameters" element="tns:generarFactura" />
+  </message>
+  <message name="generarFacturaResponse">
+    <part name="parameters" element="tns:generarFacturaResponse" />
+  </message>
   <message name="generarBoletaVenta">
     <part name="parameters" element="tns:generarBoletaVenta" />
   </message>
@@ -12,6 +18,10 @@
     <part name="parameters" element="tns:generarBoletaVentaResponse" />
   </message>
   <portType name="ReporteWS">
+    <operation name="generarFactura">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaRequest" message="tns:generarFactura" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaResponse" message="tns:generarFacturaResponse" />
+    </operation>
     <operation name="generarBoletaVenta">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse" message="tns:generarBoletaVentaResponse" />
@@ -19,6 +29,15 @@
   </portType>
   <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="generarFactura">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="generarBoletaVenta">
       <soap:operation soapAction="" />
       <input>

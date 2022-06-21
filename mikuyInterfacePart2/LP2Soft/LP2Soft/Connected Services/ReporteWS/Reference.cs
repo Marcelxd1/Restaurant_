@@ -16,6 +16,14 @@ namespace LP2Soft.ReporteWS {
     public interface ReporteWS {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el espacio de nombres de partes de mensaje () no coincide con el valor predeterminado (http://services.lp2soft.pucp.edu.pe/).
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.ReporteWS.generarFacturaResponse generarFactura(LP2Soft.ReporteWS.generarFacturaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarFacturaResponse> generarFacturaAsync(LP2Soft.ReporteWS.generarFacturaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el espacio de nombres de partes de mensaje () no coincide con el valor predeterminado (http://services.lp2soft.pucp.edu.pe/).
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         LP2Soft.ReporteWS.generarBoletaVentaResponse generarBoletaVenta(LP2Soft.ReporteWS.generarBoletaVentaRequest request);
@@ -27,17 +35,51 @@ namespace LP2Soft.ReporteWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarFactura", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class generarFacturaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public int idPedido;
+        
+        public generarFacturaRequest() {
+        }
+        
+        public generarFacturaRequest(int idPedido) {
+            this.idPedido = idPedido;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarFacturaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class generarFacturaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public byte[] @return;
+        
+        public generarFacturaResponse() {
+        }
+        
+        public generarFacturaResponse(byte[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="generarBoletaVenta", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
     public partial class generarBoletaVentaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public int idMesa;
+        public int idPedido;
         
         public generarBoletaVentaRequest() {
         }
         
-        public generarBoletaVentaRequest(int idMesa) {
-            this.idMesa = idMesa;
+        public generarBoletaVentaRequest(int idPedido) {
+            this.idPedido = idPedido;
         }
     }
     
@@ -86,13 +128,36 @@ namespace LP2Soft.ReporteWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.ReporteWS.generarFacturaResponse LP2Soft.ReporteWS.ReporteWS.generarFactura(LP2Soft.ReporteWS.generarFacturaRequest request) {
+            return base.Channel.generarFactura(request);
+        }
+        
+        public byte[] generarFactura(int idPedido) {
+            LP2Soft.ReporteWS.generarFacturaRequest inValue = new LP2Soft.ReporteWS.generarFacturaRequest();
+            inValue.idPedido = idPedido;
+            LP2Soft.ReporteWS.generarFacturaResponse retVal = ((LP2Soft.ReporteWS.ReporteWS)(this)).generarFactura(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarFacturaResponse> LP2Soft.ReporteWS.ReporteWS.generarFacturaAsync(LP2Soft.ReporteWS.generarFacturaRequest request) {
+            return base.Channel.generarFacturaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarFacturaResponse> generarFacturaAsync(int idPedido) {
+            LP2Soft.ReporteWS.generarFacturaRequest inValue = new LP2Soft.ReporteWS.generarFacturaRequest();
+            inValue.idPedido = idPedido;
+            return ((LP2Soft.ReporteWS.ReporteWS)(this)).generarFacturaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         LP2Soft.ReporteWS.generarBoletaVentaResponse LP2Soft.ReporteWS.ReporteWS.generarBoletaVenta(LP2Soft.ReporteWS.generarBoletaVentaRequest request) {
             return base.Channel.generarBoletaVenta(request);
         }
         
-        public byte[] generarBoletaVenta(int idMesa) {
+        public byte[] generarBoletaVenta(int idPedido) {
             LP2Soft.ReporteWS.generarBoletaVentaRequest inValue = new LP2Soft.ReporteWS.generarBoletaVentaRequest();
-            inValue.idMesa = idMesa;
+            inValue.idPedido = idPedido;
             LP2Soft.ReporteWS.generarBoletaVentaResponse retVal = ((LP2Soft.ReporteWS.ReporteWS)(this)).generarBoletaVenta(inValue);
             return retVal.@return;
         }
@@ -102,9 +167,9 @@ namespace LP2Soft.ReporteWS {
             return base.Channel.generarBoletaVentaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarBoletaVentaResponse> generarBoletaVentaAsync(int idMesa) {
+        public System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarBoletaVentaResponse> generarBoletaVentaAsync(int idPedido) {
             LP2Soft.ReporteWS.generarBoletaVentaRequest inValue = new LP2Soft.ReporteWS.generarBoletaVentaRequest();
-            inValue.idMesa = idMesa;
+            inValue.idPedido = idPedido;
             return ((LP2Soft.ReporteWS.ReporteWS)(this)).generarBoletaVentaAsync(inValue);
         }
     }

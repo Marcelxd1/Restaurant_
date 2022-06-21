@@ -282,5 +282,12 @@ namespace LP2Soft
             this.hecho = false;
             this.Close();
         }
+
+        private void btnBuscaCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

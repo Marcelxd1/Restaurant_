@@ -20,7 +20,7 @@ public class ReporteWS {
 
     
     @WebMethod(operationName = "generarBoletaVenta")
-    public byte[] generarBoletaVenta(@WebParam(name = "idMesa") int idMesa) {
+    public byte[] generarBoletaVenta(@WebParam(name = "idPedido") int idPedido) {
         byte[] reporteBytes = null;
         try{
             Connection con = DBManager.getInstance().getConnection();
@@ -30,7 +30,29 @@ public class ReporteWS {
             Image imagen = (new ImageIcon(rutaImagen)).getImage();
             HashMap hm = new HashMap();
             hm.put("ParamLogo",imagen);
-            hm.put("IdPedido", idMesa);
+            hm.put("IdPedido", idPedido);
+            JasperPrint jp = JasperFillManager.fillReport(reporte, hm,con);
+            con.close();
+            reporteBytes = JasperExportManager.exportReportToPdf(jp);
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return reporteBytes;
+    }
+    
+    @WebMethod(operationName = "generarFactura")
+    public byte[] generarFactura(@WebParam(name = "idPedido") int idPedido) {
+        byte[] reporteBytes = null;
+        try{
+            Connection con = DBManager.getInstance().getConnection();
+            JasperReport reporte = 
+                    (JasperReport) JRLoader.loadObject(ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/reports/Factura.jasper"));
+            String rutaImagen = ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/img/LA_CAMPIÑA.jpg").getPath();
+            Image imagen = (new ImageIcon(rutaImagen)).getImage();
+            HashMap hm = new HashMap();
+            hm.put("ParamLogo",imagen);
+            hm.put("IdPedido", idPedido);
             JasperPrint jp = JasperFillManager.fillReport(reporte, hm,con);
             con.close();
             reporteBytes = JasperExportManager.exportReportToPdf(jp);

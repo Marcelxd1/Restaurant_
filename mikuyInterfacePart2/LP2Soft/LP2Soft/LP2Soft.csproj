@@ -526,6 +526,9 @@
     <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarBoletaVentaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ReporteWS\ReporteWS1.wsdl" />
     <None Include="Connected Services\ReporteWS\ReporteWS1.xsd">
       <SubType>Designer</SubType>

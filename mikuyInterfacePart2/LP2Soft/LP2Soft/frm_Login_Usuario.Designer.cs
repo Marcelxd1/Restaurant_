@@ -94,7 +94,7 @@
             // 
             // btnHide
             // 
-            this.btnHide.BackColor = System.Drawing.Color.DarkGray;
+            this.btnHide.BackColor = System.Drawing.Color.Transparent;
             this.btnHide.BackgroundImage = global::LP2Soft.Properties.Resources.password;
             this.btnHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHide.BorderRadius = 10;
@@ -104,7 +104,7 @@
             this.btnHide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnHide.ForeColor = System.Drawing.Color.MistyRose;
             this.btnHide.HoverState.Parent = this.btnHide;
-            this.btnHide.Location = new System.Drawing.Point(644, 232);
+            this.btnHide.Location = new System.Drawing.Point(645, 229);
             this.btnHide.Name = "btnHide";
             this.btnHide.ShadowDecoration.Parent = this.btnHide;
             this.btnHide.Size = new System.Drawing.Size(47, 33);
@@ -113,7 +113,7 @@
             // 
             // btnShow
             // 
-            this.btnShow.BackColor = System.Drawing.Color.DarkGray;
+            this.btnShow.BackColor = System.Drawing.Color.Transparent;
             this.btnShow.BackgroundImage = global::LP2Soft.Properties.Resources.passwordshow;
             this.btnShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnShow.BorderRadius = 10;
@@ -123,10 +123,10 @@
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.HoverState.Parent = this.btnShow;
-            this.btnShow.Location = new System.Drawing.Point(644, 232);
+            this.btnShow.Location = new System.Drawing.Point(645, 229);
             this.btnShow.Name = "btnShow";
             this.btnShow.ShadowDecoration.Parent = this.btnShow;
-            this.btnShow.Size = new System.Drawing.Size(47, 36);
+            this.btnShow.Size = new System.Drawing.Size(47, 33);
             this.btnShow.TabIndex = 9;
             this.btnShow.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -142,7 +142,7 @@
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::LP2Soft.Properties.Resources.Send;
             this.guna2Button1.Location = new System.Drawing.Point(453, 338);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(135, 37);
@@ -169,7 +169,7 @@
             this.txtPassword.IconLeft = global::LP2Soft.Properties.Resources.Candado;
             this.txtPassword.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.txtPassword.Location = new System.Drawing.Point(410, 229);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderText = "";
@@ -198,7 +198,7 @@
             this.txtUsuario.IconLeft = global::LP2Soft.Properties.Resources.User;
             this.txtUsuario.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.txtUsuario.Location = new System.Drawing.Point(411, 122);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.PasswordChar = '\0';
             this.txtUsuario.PlaceholderText = "";
@@ -226,7 +226,7 @@
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox1.Image = global::LP2Soft.Properties.Resources.login_logo;
             this.guna2PictureBox1.Location = new System.Drawing.Point(-41, -58);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(391, 533);
@@ -278,7 +278,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2PictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Login_Usuario";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

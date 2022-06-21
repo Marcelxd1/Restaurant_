@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Mesero_Mesa_Pedido));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblProductos = new System.Windows.Forms.Label();
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,9 +58,17 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbCLiente = new System.Windows.Forms.PictureBox();
+            this.lblDNIRUC = new System.Windows.Forms.Label();
+            this.txtDNIRUC = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnBuscaCliente = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCLiente)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2PictureBox3
@@ -79,7 +87,7 @@
             this.lblProductos.AutoSize = true;
             this.lblProductos.BackColor = System.Drawing.Color.White;
             this.lblProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductos.Location = new System.Drawing.Point(12, 18);
+            this.lblProductos.Location = new System.Drawing.Point(12, 9);
             this.lblProductos.Name = "lblProductos";
             this.lblProductos.Size = new System.Drawing.Size(131, 29);
             this.lblProductos.TabIndex = 125;
@@ -151,7 +159,7 @@
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionar.HoverState.Parent = this.btnSeleccionar;
-            this.btnSeleccionar.Location = new System.Drawing.Point(472, 192);
+            this.btnSeleccionar.Location = new System.Drawing.Point(472, 290);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.ShadowDecoration.Parent = this.btnSeleccionar;
             this.btnSeleccionar.Size = new System.Drawing.Size(49, 38);
@@ -168,7 +176,7 @@
             this.btnEliminarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarProd.ForeColor = System.Drawing.Color.White;
             this.btnEliminarProd.HoverState.Parent = this.btnEliminarProd;
-            this.btnEliminarProd.Location = new System.Drawing.Point(472, 252);
+            this.btnEliminarProd.Location = new System.Drawing.Point(472, 351);
             this.btnEliminarProd.Name = "btnEliminarProd";
             this.btnEliminarProd.ShadowDecoration.Parent = this.btnEliminarProd;
             this.btnEliminarProd.Size = new System.Drawing.Size(49, 38);
@@ -183,7 +191,7 @@
             this.btnSumar.HoverState.Parent = this.btnSumar;
             this.btnSumar.Image = global::LP2Soft.Properties.Resources.add;
             this.btnSumar.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSumar.Location = new System.Drawing.Point(886, 51);
+            this.btnSumar.Location = new System.Drawing.Point(527, 155);
             this.btnSumar.Name = "btnSumar";
             this.btnSumar.PressedState.Parent = this.btnSumar;
             this.btnSumar.Size = new System.Drawing.Size(38, 38);
@@ -195,11 +203,11 @@
             this.lblPedido.AutoSize = true;
             this.lblPedido.BackColor = System.Drawing.Color.White;
             this.lblPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedido.Location = new System.Drawing.Point(520, 18);
+            this.lblPedido.Location = new System.Drawing.Point(522, 9);
             this.lblPedido.Name = "lblPedido";
-            this.lblPedido.Size = new System.Drawing.Size(235, 29);
+            this.lblPedido.Size = new System.Drawing.Size(97, 29);
             this.lblPedido.TabIndex = 134;
-            this.lblPedido.Text = "Productos Pedidos";
+            this.lblPedido.Text = "Pedido";
             this.lblPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRestar
@@ -209,7 +217,7 @@
             this.btnRestar.HoverState.Parent = this.btnRestar;
             this.btnRestar.Image = global::LP2Soft.Properties.Resources.eliminar;
             this.btnRestar.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnRestar.Location = new System.Drawing.Point(944, 51);
+            this.btnRestar.Location = new System.Drawing.Point(571, 155);
             this.btnRestar.Name = "btnRestar";
             this.btnRestar.PressedState.Parent = this.btnRestar;
             this.btnRestar.Size = new System.Drawing.Size(38, 38);
@@ -235,7 +243,7 @@
             this.txtTotal.ForeColor = System.Drawing.Color.Black;
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.HoverState.Parent = this.txtTotal;
-            this.txtTotal.Location = new System.Drawing.Point(851, 405);
+            this.txtTotal.Location = new System.Drawing.Point(848, 443);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
@@ -252,7 +260,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.White;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(719, 408);
+            this.lblTotal.Location = new System.Drawing.Point(716, 453);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(125, 31);
             this.lblTotal.TabIndex = 137;
@@ -268,44 +276,44 @@
             this.btnPedir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedir.ForeColor = System.Drawing.Color.White;
             this.btnPedir.HoverState.Parent = this.btnPedir;
-            this.btnPedir.Location = new System.Drawing.Point(886, 482);
+            this.btnPedir.Location = new System.Drawing.Point(899, 501);
             this.btnPedir.Name = "btnPedir";
             this.btnPedir.ShadowDecoration.Parent = this.btnPedir;
-            this.btnPedir.Size = new System.Drawing.Size(96, 38);
+            this.btnPedir.Size = new System.Drawing.Size(83, 29);
             this.btnPedir.TabIndex = 138;
             this.btnPedir.Text = "Pedir";
             this.btnPedir.Click += new System.EventHandler(this.btnPedir_Click);
             // 
             // dgvItem
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvItem.BackgroundColor = System.Drawing.Color.White;
             this.dgvItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvItem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItem.ColumnHeadersHeight = 26;
             this.dgvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDI,
             this.NombreT,
             this.PrecioT});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItem.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItem.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItem.EnableHeadersVisualStyles = false;
             this.dgvItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvItem.Location = new System.Drawing.Point(17, 262);
@@ -322,10 +330,10 @@
             this.dgvItem.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgvItem.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.dgvItem.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItem.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvItem.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.dgvItem.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvItem.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvItem.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvItem.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvItem.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvItem.ThemeStyle.HeaderStyle.Height = 26;
             this.dgvItem.ThemeStyle.ReadOnly = false;
@@ -365,42 +373,42 @@
             // 
             this.dgvPedido.AllowUserToAddRows = false;
             this.dgvPedido.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgvPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPedido.BackgroundColor = System.Drawing.Color.White;
             this.dgvPedido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPedido.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPedido.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPedido.ColumnHeadersHeight = 31;
             this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDP,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.Cantidad});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPedido.EnableHeadersVisualStyles = false;
             this.dgvPedido.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPedido.Location = new System.Drawing.Point(527, 96);
+            this.dgvPedido.Location = new System.Drawing.Point(527, 198);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.RowHeadersVisible = false;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedido.Size = new System.Drawing.Size(455, 296);
+            this.dgvPedido.Size = new System.Drawing.Size(455, 238);
             this.dgvPedido.TabIndex = 140;
             this.dgvPedido.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPedido.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -410,10 +418,10 @@
             this.dgvPedido.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgvPedido.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.dgvPedido.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPedido.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvPedido.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.dgvPedido.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPedido.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvPedido.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPedido.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvPedido.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPedido.ThemeStyle.HeaderStyle.Height = 31;
             this.dgvPedido.ThemeStyle.ReadOnly = false;
@@ -465,13 +473,138 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.HoverState.Parent = this.btnCancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(766, 482);
+            this.btnCancelar.Location = new System.Drawing.Point(790, 501);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.ShadowDecoration.Parent = this.btnCancelar;
-            this.btnCancelar.Size = new System.Drawing.Size(96, 38);
+            this.btnCancelar.Size = new System.Drawing.Size(90, 29);
             this.btnCancelar.TabIndex = 141;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.White;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(565, 84);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(65, 20);
+            this.lblNombre.TabIndex = 142;
+            this.lblNombre.Text = "Nombre";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.White;
+            this.txtNombre.BorderColor = System.Drawing.Color.White;
+            this.txtNombre.BorderRadius = 10;
+            this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombre.DefaultText = "";
+            this.txtNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNombre.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNombre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombre.DisabledState.Parent = this.txtNombre;
+            this.txtNombre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombre.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombre.FocusedState.Parent = this.txtNombre;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombre.HoverState.Parent = this.txtNombre;
+            this.txtNombre.Location = new System.Drawing.Point(637, 76);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Multiline = true;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.PasswordChar = '\0';
+            this.txtNombre.PlaceholderText = "";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.SelectedText = "";
+            this.txtNombre.ShadowDecoration.Parent = this.txtNombre;
+            this.txtNombre.Size = new System.Drawing.Size(191, 28);
+            this.txtNombre.TabIndex = 143;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(527, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 24);
+            this.label2.TabIndex = 144;
+            this.label2.Text = "Cliente";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbCLiente
+            // 
+            this.pbCLiente.Image = global::LP2Soft.Properties.Resources.User;
+            this.pbCLiente.Location = new System.Drawing.Point(899, 52);
+            this.pbCLiente.Name = "pbCLiente";
+            this.pbCLiente.Size = new System.Drawing.Size(68, 72);
+            this.pbCLiente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCLiente.TabIndex = 145;
+            this.pbCLiente.TabStop = false;
+            // 
+            // lblDNIRUC
+            // 
+            this.lblDNIRUC.AutoSize = true;
+            this.lblDNIRUC.BackColor = System.Drawing.Color.White;
+            this.lblDNIRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNIRUC.Location = new System.Drawing.Point(546, 124);
+            this.lblDNIRUC.Name = "lblDNIRUC";
+            this.lblDNIRUC.Size = new System.Drawing.Size(84, 20);
+            this.lblDNIRUC.TabIndex = 146;
+            this.lblDNIRUC.Text = "DNI / RUC";
+            this.lblDNIRUC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDNIRUC
+            // 
+            this.txtDNIRUC.BackColor = System.Drawing.Color.White;
+            this.txtDNIRUC.BorderColor = System.Drawing.Color.White;
+            this.txtDNIRUC.BorderRadius = 10;
+            this.txtDNIRUC.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDNIRUC.DefaultText = "";
+            this.txtDNIRUC.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDNIRUC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDNIRUC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDNIRUC.DisabledState.Parent = this.txtDNIRUC;
+            this.txtDNIRUC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDNIRUC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtDNIRUC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDNIRUC.FocusedState.Parent = this.txtDNIRUC;
+            this.txtDNIRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNIRUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDNIRUC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDNIRUC.HoverState.Parent = this.txtDNIRUC;
+            this.txtDNIRUC.Location = new System.Drawing.Point(637, 116);
+            this.txtDNIRUC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDNIRUC.Multiline = true;
+            this.txtDNIRUC.Name = "txtDNIRUC";
+            this.txtDNIRUC.PasswordChar = '\0';
+            this.txtDNIRUC.PlaceholderText = "";
+            this.txtDNIRUC.ReadOnly = true;
+            this.txtDNIRUC.SelectedText = "";
+            this.txtDNIRUC.ShadowDecoration.Parent = this.txtDNIRUC;
+            this.txtDNIRUC.Size = new System.Drawing.Size(191, 28);
+            this.txtDNIRUC.TabIndex = 147;
+            // 
+            // btnBuscaCliente
+            // 
+            this.btnBuscaCliente.BorderRadius = 10;
+            this.btnBuscaCliente.CheckedState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.FillColor = System.Drawing.Color.Black;
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Location = new System.Drawing.Point(899, 129);
+            this.btnBuscaCliente.Name = "btnBuscaCliente";
+            this.btnBuscaCliente.ShadowDecoration.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Size = new System.Drawing.Size(68, 29);
+            this.btnBuscaCliente.TabIndex = 148;
+            this.btnBuscaCliente.Text = "Buscar";
+            this.btnBuscaCliente.Click += new System.EventHandler(this.btnBuscaCliente_Click);
             // 
             // frm_Mesero_Mesa_Pedido
             // 
@@ -479,6 +612,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1014, 542);
+            this.Controls.Add(this.btnBuscaCliente);
+            this.Controls.Add(this.txtDNIRUC);
+            this.Controls.Add(this.lblDNIRUC);
+            this.Controls.Add(this.pbCLiente);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvPedido);
             this.Controls.Add(this.dgvItem);
@@ -501,6 +641,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCLiente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,5 +672,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private System.Windows.Forms.Label lblNombre;
+        private Guna.UI2.WinForms.Guna2TextBox txtNombre;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbCLiente;
+        private System.Windows.Forms.Label lblDNIRUC;
+        private Guna.UI2.WinForms.Guna2TextBox txtDNIRUC;
+        private Guna.UI2.WinForms.Guna2Button btnBuscaCliente;
     }
 }
