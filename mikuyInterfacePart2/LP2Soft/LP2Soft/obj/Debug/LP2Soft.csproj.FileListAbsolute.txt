@@ -420,8 +420,6 @@ C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\bin\Debug\es-PE\L
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.csproj.AssemblyReference.cache
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.csproj.SuggestedBindingRedirects.cache
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Caja_Pedido.resources
-C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Caja_Pedido_Pedir.resources
-C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cocina_Pedido.resources
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Gastos.resources
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Mesas.resources
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Productos_BusquedaCombo.resources
@@ -438,7 +436,6 @@ C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Usuario.resources
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Usuario_Contenedor.resources
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Usuario_Listar.resources
-C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Mesero_Mesa.resources
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Mesero_Mesa_Pedido.resources
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Mesero_MesaVer2.resources
 C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Restablecer_Contraseña.resources
@@ -642,3 +639,21 @@ C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2S
 C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.exe
 C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.pdb
 C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frmBusquedaCliente.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.csproj.ResolveComReference.cache
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frmBoleta.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frmBusquedaCliente.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_LineaPedidos.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_Pedidos.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cajero_Pedidos_Mesa.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Loading.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Caja.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cocina.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cocina_DatosMesa.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Cocina_DatosPedido.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Reportes.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Reporte_Asistencia.resources
+C:\Users\yosep\repos\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Reporte_PlatosMasVendidos.resources

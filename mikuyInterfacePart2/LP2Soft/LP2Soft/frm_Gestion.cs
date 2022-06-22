@@ -105,5 +105,11 @@ namespace LP2Soft
             frm_Gestion_Mesas formGestionMesas = new frm_Gestion_Mesas();
             formGestionMesas.ShowDialog();
         }
+
+        private void lblReporte_Click(object sender, EventArgs e)
+        {
+            frm_Gestion_Reportes formReportes = new frm_Gestion_Reportes();
+            formReportes.ShowDialog();
+        }
     }
 }

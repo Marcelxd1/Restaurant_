@@ -104,6 +104,12 @@
     <Compile Include="frm_Cajero_Pedidos_Mesa.Designer.cs">
       <DependentUpon>frm_Cajero_Pedidos_Mesa.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Gestion_Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Gestion_Reportes.Designer.cs">
+      <DependentUpon>frm_Gestion_Reportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,18 @@
     <Compile Include="frm_Mesero_MesaVer2.Designer.cs">
       <DependentUpon>frm_Mesero_MesaVer2.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Reporte_Asistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Reporte_Asistencia.Designer.cs">
+      <DependentUpon>frm_Reporte_Asistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Reporte_PlatosMasVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Reporte_PlatosMasVendidos.Designer.cs">
+      <DependentUpon>frm_Reporte_PlatosMasVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Restablecer_Contraseña.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Cajero_Pedidos_Mesa.resx">
       <DependentUpon>frm_Cajero_Pedidos_Mesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Gestion_Reportes.resx">
+      <DependentUpon>frm_Gestion_Reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Loading.resx">
       <DependentUpon>frm_Loading.cs</DependentUpon>
@@ -360,6 +381,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Mesero_MesaVer2.resx">
       <DependentUpon>frm_Mesero_MesaVer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Reporte_Asistencia.resx">
+      <DependentUpon>frm_Reporte_Asistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Reporte_PlatosMasVendidos.resx">
+      <DependentUpon>frm_Reporte_PlatosMasVendidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Restablecer_Contraseña.resx">
       <DependentUpon>frm_Restablecer_Contraseña.cs</DependentUpon>
@@ -566,6 +593,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarFacturaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarReporteAsistenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarReportePlatosMasVendidosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReporteWS\ReporteWS1.wsdl" />

@@ -2,6 +2,7 @@ package pe.edu.pucp.lp2soft.services;
 
 import java.awt.Image;
 import java.sql.Connection;
+import java.sql.Date;
 import java.util.HashMap;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -68,6 +69,48 @@ public class ReporteWS {
             reporteBytes = JasperExportManager.exportReportToPdf(jp);
         }
         catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return reporteBytes;
+    }
+    
+    @WebMethod(operationName = "generarReporteAsistencia")
+    public byte[] generarReporteAsistencia( String fechaini, String fechafin ) {
+        byte[] reporteBytes= null;
+        try {
+            Connection con= DBManager.getInstance().getConnection();
+            JasperReport reporte = (JasperReport)JRLoader.loadObject(ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/reports/ReporteAsistencia.jasper"));
+            Date fini, ffin; 
+            fini = java.sql.Date.valueOf(fechaini);
+            ffin = java.sql.Date.valueOf(fechafin);
+            HashMap hm = new HashMap();// aqui entraria la imagen
+            hm.put("fechaIni", fini);
+            hm.put("fechaFin", ffin);
+            JasperPrint jp = JasperFillManager.fillReport(reporte, hm, con);
+            con.close();
+            reporteBytes = JasperExportManager.exportReportToPdf(jp);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return reporteBytes;
+    }
+    
+    @WebMethod(operationName = "generarReportePlatosMasVendidos")
+    public byte[] generarReportePlatosMasVendidos( String fechaini, String fechafin ) {
+        byte[] reporteBytes= null;
+        try {
+            Connection con= DBManager.getInstance().getConnection();
+            JasperReport reporte = (JasperReport)JRLoader.loadObject(ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/reports/ReportePlatosVendidos.jasper"));
+            Date fini, ffin; 
+            fini = java.sql.Date.valueOf(fechaini);
+            ffin = java.sql.Date.valueOf(fechafin);
+            HashMap hm = new HashMap();// aqui entraria la imagen
+            hm.put("fechaIni", fini);
+            hm.put("fechaFin", ffin);
+            JasperPrint jp = JasperFillManager.fillReport(reporte, hm, con);
+            con.close();
+            reporteBytes = JasperExportManager.exportReportToPdf(jp);
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         return reporteBytes;

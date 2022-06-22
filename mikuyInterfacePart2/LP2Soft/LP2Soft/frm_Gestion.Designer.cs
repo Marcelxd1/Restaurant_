@@ -115,6 +115,7 @@
             this.lblReporte.TabIndex = 46;
             this.lblReporte.Text = "Reportes";
             this.lblReporte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReporte.Click += new System.EventHandler(this.lblReporte_Click);
             this.lblReporte.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
             this.lblReporte.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
             // 
@@ -151,7 +152,7 @@
             this.guna2PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
             this.guna2PictureBox5.Location = new System.Drawing.Point(620, 485);
-            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
             this.guna2PictureBox5.ShadowDecoration.Parent = this.guna2PictureBox5;
             this.guna2PictureBox5.Size = new System.Drawing.Size(53, 43);
@@ -170,7 +171,7 @@
             this.guna2ImageButton6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ImageButton6.HoverState.Parent = this.guna2ImageButton6;
             this.guna2ImageButton6.Location = new System.Drawing.Point(553, 398);
-            this.guna2ImageButton6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButton6.Name = "guna2ImageButton6";
             this.guna2ImageButton6.PressedState.Parent = this.guna2ImageButton6;
             this.guna2ImageButton6.Size = new System.Drawing.Size(180, 149);
@@ -183,7 +184,7 @@
             this.guna2PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
             this.guna2PictureBox4.Location = new System.Drawing.Point(343, 485);
-            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
             this.guna2PictureBox4.ShadowDecoration.Parent = this.guna2PictureBox4;
             this.guna2PictureBox4.Size = new System.Drawing.Size(53, 43);
@@ -202,7 +203,7 @@
             this.guna2ImageButton5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ImageButton5.HoverState.Parent = this.guna2ImageButton5;
             this.guna2ImageButton5.Location = new System.Drawing.Point(276, 398);
-            this.guna2ImageButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButton5.Name = "guna2ImageButton5";
             this.guna2ImageButton5.PressedState.Parent = this.guna2ImageButton5;
             this.guna2ImageButton5.Size = new System.Drawing.Size(180, 149);
@@ -215,7 +216,7 @@
             this.pctBGestionUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBGestionUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pctBGestionUsuario.Image")));
             this.pctBGestionUsuario.Location = new System.Drawing.Point(736, 278);
-            this.pctBGestionUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBGestionUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.pctBGestionUsuario.Name = "pctBGestionUsuario";
             this.pctBGestionUsuario.ShadowDecoration.Parent = this.pctBGestionUsuario;
             this.pctBGestionUsuario.Size = new System.Drawing.Size(53, 43);
@@ -235,7 +236,7 @@
             this.imgGestionUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgGestionUsuario.HoverState.Parent = this.imgGestionUsuario;
             this.imgGestionUsuario.Location = new System.Drawing.Point(669, 191);
-            this.imgGestionUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgGestionUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.imgGestionUsuario.Name = "imgGestionUsuario";
             this.imgGestionUsuario.PressedState.Parent = this.imgGestionUsuario;
             this.imgGestionUsuario.Size = new System.Drawing.Size(180, 149);
@@ -249,7 +250,7 @@
             this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.Location = new System.Drawing.Point(479, 278);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(53, 43);
@@ -268,7 +269,7 @@
             this.guna2ImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.Location = new System.Drawing.Point(412, 191);
-            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.Size = new System.Drawing.Size(180, 149);
@@ -281,7 +282,7 @@
             this.guna2PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox7.Image")));
             this.guna2PictureBox7.Location = new System.Drawing.Point(220, 278);
-            this.guna2PictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox7.Name = "guna2PictureBox7";
             this.guna2PictureBox7.ShadowDecoration.Parent = this.guna2PictureBox7;
             this.guna2PictureBox7.Size = new System.Drawing.Size(53, 43);
@@ -301,7 +302,7 @@
             this.guna2ImageButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2ImageButton4.HoverState.Parent = this.guna2ImageButton4;
             this.guna2ImageButton4.Location = new System.Drawing.Point(153, 191);
-            this.guna2ImageButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButton4.Name = "guna2ImageButton4";
             this.guna2ImageButton4.PressedState.Parent = this.guna2ImageButton4;
             this.guna2ImageButton4.Size = new System.Drawing.Size(180, 149);
@@ -313,7 +314,7 @@
             // 
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.Location = new System.Drawing.Point(24, 11);
-            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
             this.guna2PictureBox3.Size = new System.Drawing.Size(955, 623);
@@ -345,7 +346,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2PictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_Gestion";
             this.Text = "frm_Gestion";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
