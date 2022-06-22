@@ -128,6 +128,7 @@
             // 
             this.btnBuscar.BorderRadius = 10;
             this.btnBuscar.CheckedState.Parent = this.btnBuscar;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.CustomImages.Parent = this.btnBuscar;
             this.btnBuscar.FillColor = System.Drawing.Color.Black;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,6 +155,7 @@
             // 
             this.btnSeleccionar.BorderRadius = 10;
             this.btnSeleccionar.CheckedState.Parent = this.btnSeleccionar;
+            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionar.CustomImages.Parent = this.btnSeleccionar;
             this.btnSeleccionar.FillColor = System.Drawing.Color.Black;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +173,7 @@
             // 
             this.btnEliminarProd.BorderRadius = 10;
             this.btnEliminarProd.CheckedState.Parent = this.btnEliminarProd;
+            this.btnEliminarProd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarProd.CustomImages.Parent = this.btnEliminarProd;
             this.btnEliminarProd.FillColor = System.Drawing.Color.Black;
             this.btnEliminarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,6 +191,7 @@
             // 
             this.btnSumar.BackColor = System.Drawing.SystemColors.Window;
             this.btnSumar.CheckedState.Parent = this.btnSumar;
+            this.btnSumar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSumar.HoverState.Parent = this.btnSumar;
             this.btnSumar.Image = global::LP2Soft.Properties.Resources.add;
             this.btnSumar.ImageSize = new System.Drawing.Size(35, 35);
@@ -214,6 +218,7 @@
             // 
             this.btnRestar.BackColor = System.Drawing.SystemColors.Window;
             this.btnRestar.CheckedState.Parent = this.btnRestar;
+            this.btnRestar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestar.HoverState.Parent = this.btnRestar;
             this.btnRestar.Image = global::LP2Soft.Properties.Resources.eliminar;
             this.btnRestar.ImageSize = new System.Drawing.Size(30, 30);
@@ -252,7 +257,7 @@
             this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTotal.SelectedText = "";
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
-            this.txtTotal.Size = new System.Drawing.Size(134, 41);
+            this.txtTotal.Size = new System.Drawing.Size(134, 51);
             this.txtTotal.TabIndex = 136;
             // 
             // lblTotal
@@ -271,6 +276,7 @@
             // 
             this.btnPedir.BorderRadius = 10;
             this.btnPedir.CheckedState.Parent = this.btnPedir;
+            this.btnPedir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPedir.CustomImages.Parent = this.btnPedir;
             this.btnPedir.FillColor = System.Drawing.Color.Black;
             this.btnPedir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,7 +301,7 @@
             this.dgvItem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -332,7 +338,7 @@
             this.dgvItem.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvItem.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.dgvItem.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvItem.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvItem.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvItem.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvItem.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvItem.ThemeStyle.HeaderStyle.Height = 26;
@@ -382,7 +388,7 @@
             this.dgvPedido.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -420,7 +426,7 @@
             this.dgvPedido.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPedido.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.dgvPedido.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPedido.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvPedido.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPedido.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvPedido.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPedido.ThemeStyle.HeaderStyle.Height = 31;
@@ -468,6 +474,7 @@
             // 
             this.btnCancelar.BorderRadius = 10;
             this.btnCancelar.CheckedState.Parent = this.btnCancelar;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.CustomImages.Parent = this.btnCancelar;
             this.btnCancelar.FillColor = System.Drawing.Color.Black;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -486,7 +493,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.White;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(565, 84);
+            this.lblNombre.Location = new System.Drawing.Point(565, 76);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(65, 20);
             this.lblNombre.TabIndex = 142;
@@ -529,7 +536,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(534, 51);
+            this.label2.Location = new System.Drawing.Point(534, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 24);
             this.label2.TabIndex = 144;
@@ -538,6 +545,7 @@
             // 
             // pbCLiente
             // 
+            this.pbCLiente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCLiente.Image = global::LP2Soft.Properties.Resources.User;
             this.pbCLiente.Location = new System.Drawing.Point(899, 52);
             this.pbCLiente.Name = "pbCLiente";
@@ -552,7 +560,7 @@
             this.lblDNIRUC.AutoSize = true;
             this.lblDNIRUC.BackColor = System.Drawing.Color.White;
             this.lblDNIRUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNIRUC.Location = new System.Drawing.Point(546, 129);
+            this.lblDNIRUC.Location = new System.Drawing.Point(546, 122);
             this.lblDNIRUC.Name = "lblDNIRUC";
             this.lblDNIRUC.Size = new System.Drawing.Size(84, 20);
             this.lblDNIRUC.TabIndex = 146;
@@ -594,6 +602,7 @@
             // 
             this.btnBuscaCliente.BorderRadius = 10;
             this.btnBuscaCliente.CheckedState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.FillColor = System.Drawing.Color.Black;
             this.btnBuscaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

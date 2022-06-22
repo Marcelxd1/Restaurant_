@@ -15,11 +15,49 @@ namespace LP2Soft
     {
         private byte[] arreglo;
         private ReporteWS.ReporteWSClient reporte;
-        public frmBoleta(int IdPedido)
+        private CajaWS.pedido pedido;
+        private string cajero;
+        private string mesero;
+        private string cliente;
+        private string dniRuc;
+        public frmBoleta(CajaWS.pedido _pedido)
         {
             InitializeComponent();
-            reporte = new ReporteWS.ReporteWSClient();  
-            arreglo = reporte.generarBoletaVenta(IdPedido);
+            pedido = _pedido;
+            reporte = new ReporteWS.ReporteWSClient();
+            if (pedido.cliente == null) //  no hay clientes
+            {
+                cliente = "";
+                dniRuc = "";
+            }
+            else // si hay cliente
+            {
+                cliente = _pedido.cliente.nombre;
+                if (_pedido.cliente.tipo == 'N') //cliente natural
+                    dniRuc = _pedido.cliente.DNI;
+                else //cliente juridico
+                    dniRuc = _pedido.cliente.ruc;
+            }
+            if (pedido.cajero == null)//cajeros
+                cajero = "";
+            else
+                cajero = _pedido.cajero.nombre;
+            if (pedido.mesero == null)//meseros
+                mesero = "";
+            else
+                mesero = _pedido.mesero.nombre;
+
+            if (pedido.tipoComprobante == 'B')
+            {
+                arreglo = reporte.generarBoletaVenta(_pedido.idPedido, cajero,
+                    mesero, cliente, dniRuc);
+            }
+            else
+            {
+                arreglo = reporte.generarFacturaVenta(_pedido.idPedido, cajero,
+                    mesero, cliente, dniRuc);
+            }
+
             File.WriteAllBytes("temporal.pdf", arreglo);
             visorPDF.LoadFile("temporal.pdf");
         }

@@ -298,4 +298,14 @@ public class CajaWS {
         return pedidos;
     }
     
+    @WebMethod(operationName = "RealizarPago")
+    public int RealizarPago(@WebParam(name = "Pedido") Pedido pedido) {
+        int resultado = 0;
+        try{
+            resultado=daoPedido.realizarPago(pedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
 }

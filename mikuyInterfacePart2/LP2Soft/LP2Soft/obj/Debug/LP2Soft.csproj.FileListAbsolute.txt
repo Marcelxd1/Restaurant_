@@ -641,3 +641,4 @@ C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2S
 C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.csproj.CopyComplete
 C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.exe
 C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.pdb
+C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frmBusquedaCliente.resources

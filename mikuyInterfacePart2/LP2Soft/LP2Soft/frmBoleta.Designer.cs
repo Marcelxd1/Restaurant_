@@ -35,12 +35,11 @@
             // 
             // visorPDF
             // 
-            this.visorPDF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.visorPDF.Enabled = true;
             this.visorPDF.Location = new System.Drawing.Point(0, 0);
             this.visorPDF.Name = "visorPDF";
             this.visorPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("visorPDF.OcxState")));
-            this.visorPDF.Size = new System.Drawing.Size(473, 527);
+            this.visorPDF.Size = new System.Drawing.Size(471, 527);
             this.visorPDF.TabIndex = 0;
             // 
             // frmBoleta

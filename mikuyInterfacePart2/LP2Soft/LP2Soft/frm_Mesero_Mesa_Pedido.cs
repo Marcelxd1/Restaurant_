@@ -17,6 +17,7 @@ namespace LP2Soft
         private Estado _estado;
         private NegocioWS.mesa _mesa;
         private UserWS.persona _mesero;
+        private UserWS.persona _cajero;
         private UserWS.persona _cliente;
         private bool hecho=false;
 
@@ -35,6 +36,9 @@ namespace LP2Soft
         public persona Mesero { get => _mesero; set => _mesero = value; }
 
         public bool Hecho { get => hecho; set => hecho = value; }
+        public persona Cajero { get => _cajero; set => _cajero = value; }
+
+
 
         public frm_Mesero_Mesa_Pedido()
         {
@@ -103,6 +107,7 @@ namespace LP2Soft
                 button.ForeColor = Color.White;
                 button.FlatAppearance.BorderSize = 0; //FromArgb(16, 28, 67)
                 button.BackColor = System.Drawing.Color.Black;
+                button.Cursor = System.Windows.Forms.Cursors.Hand;
                 button.Click += new System.EventHandler(hacerCLik);
                 this.Controls.Add(button);
                 left += button.Width + 4;
@@ -132,6 +137,25 @@ namespace LP2Soft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            NegocioWS.itemVendible prod = (NegocioWS.itemVendible)dgvItem.CurrentRow.DataBoundItem;
+            int i = 0,n=0;
+            if (lista_lineas != null)
+            {
+                foreach (CajaWS.lineaPedido linea in lista_lineas)
+                {
+                    if (linea.item.idItemVendible == prod.idItemVendible)
+                    {
+                        n = Convert.ToInt32(dgvPedido.Rows[i].Cells[3].Value);
+                        dgvPedido.Rows[i].Cells[3].Value = n + 1;
+                        linea.unidades = linea.unidades + 1;
+                        linea.subtotal = linea.unidades * linea.item.precio;
+                        suma += linea.item.precio;
+                        txtTotal.Text =  suma.ToString("N2");
+                        i++;
+                        return;
+                    }
+                }
+            }
             dgvPedido.Rows.Add(new string[] {
                 Convert.ToString(dgvItem[0, dgvItem.CurrentRow.Index].Value),
                 Convert.ToString(dgvItem[1, dgvItem.CurrentRow.Index].Value),
@@ -139,7 +163,6 @@ namespace LP2Soft
                 Convert.ToString(1)
             });
             CajaWS.lineaPedido line = new CajaWS.lineaPedido();
-            NegocioWS.itemVendible prod = (NegocioWS.itemVendible)dgvItem.CurrentRow.DataBoundItem;
             line.item = new CajaWS.itemVendible();
             line.item.idItemVendible = prod.idItemVendible;
             line.item.precio = prod.precio;
@@ -191,29 +214,32 @@ namespace LP2Soft
             
             _pedido.restaurante = new CajaWS.restaurante();
             _pedido.restaurante.id_restaurante = 1;
-            _pedido.mesa = new CajaWS.mesa();
-            _pedido.mesa.idMesa = _mesa.idMesa;
-            _pedido.mesa.disponible = false;
-            _pedido.mesero = new CajaWS.usuario();
-            _pedido.mesero.id_usuario = _mesero.id_persona;
             _pedido.list_lineaPedido = this.lista_lineas.ToArray();
-            _pedido.estado = 'E';   //En espera
-            _pedido.tipo = 'P';     //
 
-            
-            _pedido.cajero = new CajaWS.usuario();
-            _pedido.cajero.id_usuario = 5;
-            _pedido.cliente = new CajaWS.persona();
-            _pedido.cliente.id_persona = _cliente.id_persona;
-            
+            if (_mesero != null) {
+                _pedido.mesero = new CajaWS.usuario();
+                _pedido.mesero.id_usuario = _mesero.id_persona;
+
+                _pedido.mesa = new CajaWS.mesa();
+                _pedido.mesa.idMesa = _mesa.idMesa;
+                _pedido.mesa.disponible = false;
+            }
+
+            if (_cajero != null)
+            {
+                _pedido.cajero = new CajaWS.usuario();
+                _pedido.cajero.id_usuario = _cajero.id_persona;
+            }
+
+            if (_cliente != null)
+            {
+                _pedido.cliente = new CajaWS.persona();
+                _pedido.cliente.id_persona = _cliente.id_persona;
+            }
             _pedido.total = suma;
             _pedido.fecha = DateTime.Now;
             _pedido.fechaSpecified = true;
             
-            _pedido.tipoComprobante = 'B';
-            _pedido.tipoPago = 'E';
-            _pedido.tipoPedido = 'C';   //Para comer
-            _pedido.numeroComprobante = 23234234;
             
             
             if (_estado == Estado.Inicial)
@@ -252,8 +278,9 @@ namespace LP2Soft
 
                 suma += Convert.ToDouble(dgvPedido[2, dgvPedido.CurrentRow.Index].Value);
                 txtTotal.Text = suma.ToString("N2");
-                lista_lineas[dgvPedido.CurrentRow.Index].unidades = n;
-                lista_lineas[dgvPedido.CurrentRow.Index].subtotal = suma;
+                lista_lineas[dgvPedido.CurrentRow.Index].unidades = n+1;
+                lista_lineas[dgvPedido.CurrentRow.Index].subtotal = 
+                    (n+1)*lista_lineas[dgvPedido.CurrentRow.Index].subtotal/n ;
             }
         }
 

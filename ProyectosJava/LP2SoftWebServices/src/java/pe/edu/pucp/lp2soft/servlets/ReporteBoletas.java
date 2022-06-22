@@ -31,6 +31,7 @@ public class ReporteBoletas extends HttpServlet {
             JasperReport reporte = 
                     (JasperReport) JRLoader.loadObject(ReporteBoletas.class.getResource("/pe/edu/pucp/lp2soft/reports/Boleta.jasper"));
             String rutaImagen = ReporteBoletas.class.getResource("/pe/edu/pucp/lp2soft/img/LA_CAMPIÑA.jpg").getPath();
+            rutaImagen = rutaImagen.replace("%20", " ");
             Image imagen = (new ImageIcon(rutaImagen)).getImage();
             HashMap hm = new HashMap();
             hm.put("ParamLogo",imagen);

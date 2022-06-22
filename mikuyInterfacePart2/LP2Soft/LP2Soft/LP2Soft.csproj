@@ -462,6 +462,9 @@
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.pedido.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.RealizarPagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.transaccion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -819,6 +822,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\llevar.png" />
     <None Include="Resources\pago.png" />
     <None Include="Resources\imprmir.png" />
     <None Include="Connected Services\NegocioWS\configuration91.svcinfo" />

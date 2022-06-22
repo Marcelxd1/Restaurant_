@@ -11,35 +11,17 @@
   <message name="listarAsistenciasResponse">
     <part name="parameters" element="tns:listarAsistenciasResponse" />
   </message>
-  <message name="cambiarContrasenia">
-    <part name="parameters" element="tns:cambiarContrasenia" />
-  </message>
-  <message name="cambiarContraseniaResponse">
-    <part name="parameters" element="tns:cambiarContraseniaResponse" />
-  </message>
-  <message name="eliminarAsistencia">
-    <part name="parameters" element="tns:eliminarAsistencia" />
-  </message>
-  <message name="eliminarAsistenciaResponse">
-    <part name="parameters" element="tns:eliminarAsistenciaResponse" />
-  </message>
-  <message name="listarClienteXNombre">
-    <part name="parameters" element="tns:listarClienteXNombre" />
-  </message>
-  <message name="listarClienteXNombreResponse">
-    <part name="parameters" element="tns:listarClienteXNombreResponse" />
-  </message>
   <message name="listarUsuariosXNombre">
     <part name="parameters" element="tns:listarUsuariosXNombre" />
   </message>
   <message name="listarUsuariosXNombreResponse">
     <part name="parameters" element="tns:listarUsuariosXNombreResponse" />
   </message>
-  <message name="listarPersonasTodas">
-    <part name="parameters" element="tns:listarPersonasTodas" />
+  <message name="eliminarAsistencia">
+    <part name="parameters" element="tns:eliminarAsistencia" />
   </message>
-  <message name="listarPersonasTodasResponse">
-    <part name="parameters" element="tns:listarPersonasTodasResponse" />
+  <message name="eliminarAsistenciaResponse">
+    <part name="parameters" element="tns:eliminarAsistenciaResponse" />
   </message>
   <message name="modificarDatosUsuario">
     <part name="parameters" element="tns:modificarDatosUsuario" />
@@ -53,11 +35,11 @@
   <message name="listarTodosUsuariosResponse">
     <part name="parameters" element="tns:listarTodosUsuariosResponse" />
   </message>
-  <message name="asistenciaEntrada">
-    <part name="parameters" element="tns:asistenciaEntrada" />
+  <message name="listarClienteXNombre">
+    <part name="parameters" element="tns:listarClienteXNombre" />
   </message>
-  <message name="asistenciaEntradaResponse">
-    <part name="parameters" element="tns:asistenciaEntradaResponse" />
+  <message name="listarClienteXNombreResponse">
+    <part name="parameters" element="tns:listarClienteXNombreResponse" />
   </message>
   <message name="verificarCuentaUsuario">
     <part name="parameters" element="tns:verificarCuentaUsuario" />
@@ -71,11 +53,23 @@
   <message name="buscarPersonaPorIdUsuarioResponse">
     <part name="parameters" element="tns:buscarPersonaPorIdUsuarioResponse" />
   </message>
-  <message name="elminarUsuario">
-    <part name="parameters" element="tns:elminarUsuario" />
+  <message name="cambiarContrasenia">
+    <part name="parameters" element="tns:cambiarContrasenia" />
   </message>
-  <message name="elminarUsuarioResponse">
-    <part name="parameters" element="tns:elminarUsuarioResponse" />
+  <message name="cambiarContraseniaResponse">
+    <part name="parameters" element="tns:cambiarContraseniaResponse" />
+  </message>
+  <message name="listarPersonasTodas">
+    <part name="parameters" element="tns:listarPersonasTodas" />
+  </message>
+  <message name="listarPersonasTodasResponse">
+    <part name="parameters" element="tns:listarPersonasTodasResponse" />
+  </message>
+  <message name="asistenciaEntrada">
+    <part name="parameters" element="tns:asistenciaEntrada" />
+  </message>
+  <message name="asistenciaEntradaResponse">
+    <part name="parameters" element="tns:asistenciaEntradaResponse" />
   </message>
   <message name="insertarEmpresa">
     <part name="parameters" element="tns:insertarEmpresa" />
@@ -83,11 +77,71 @@
   <message name="insertarEmpresaResponse">
     <part name="parameters" element="tns:insertarEmpresaResponse" />
   </message>
+  <message name="insertarUsuario">
+    <part name="parameters" element="tns:insertarUsuario" />
+  </message>
+  <message name="insertarUsuarioResponse">
+    <part name="parameters" element="tns:insertarUsuarioResponse" />
+  </message>
+  <message name="elminarPersona">
+    <part name="parameters" element="tns:elminarPersona" />
+  </message>
+  <message name="elminarPersonaResponse">
+    <part name="parameters" element="tns:elminarPersonaResponse" />
+  </message>
+  <message name="listarPersona">
+    <part name="parameters" element="tns:listarPersona" />
+  </message>
+  <message name="listarPersonaResponse">
+    <part name="parameters" element="tns:listarPersonaResponse" />
+  </message>
+  <message name="BuscaRestaurante">
+    <part name="parameters" element="tns:BuscaRestaurante" />
+  </message>
+  <message name="BuscaRestauranteResponse">
+    <part name="parameters" element="tns:BuscaRestauranteResponse" />
+  </message>
   <message name="asistenciaSalida">
     <part name="parameters" element="tns:asistenciaSalida" />
   </message>
   <message name="asistenciaSalidaResponse">
     <part name="parameters" element="tns:asistenciaSalidaResponse" />
+  </message>
+  <message name="modificarPersona">
+    <part name="parameters" element="tns:modificarPersona" />
+  </message>
+  <message name="modificarPersonaResponse">
+    <part name="parameters" element="tns:modificarPersonaResponse" />
+  </message>
+  <message name="insertarPersona">
+    <part name="parameters" element="tns:insertarPersona" />
+  </message>
+  <message name="insertarPersonaResponse">
+    <part name="parameters" element="tns:insertarPersonaResponse" />
+  </message>
+  <message name="modificarEmpresa">
+    <part name="parameters" element="tns:modificarEmpresa" />
+  </message>
+  <message name="modificarEmpresaResponse">
+    <part name="parameters" element="tns:modificarEmpresaResponse" />
+  </message>
+  <message name="elminarUsuario">
+    <part name="parameters" element="tns:elminarUsuario" />
+  </message>
+  <message name="elminarUsuarioResponse">
+    <part name="parameters" element="tns:elminarUsuarioResponse" />
+  </message>
+  <message name="modificarUsuario">
+    <part name="parameters" element="tns:modificarUsuario" />
+  </message>
+  <message name="modificarUsuarioResponse">
+    <part name="parameters" element="tns:modificarUsuarioResponse" />
+  </message>
+  <message name="verificarUsuario">
+    <part name="parameters" element="tns:verificarUsuario" />
+  </message>
+  <message name="verificarUsuarioResponse">
+    <part name="parameters" element="tns:verificarUsuarioResponse" />
   </message>
   <message name="listarEmpresa">
     <part name="parameters" element="tns:listarEmpresa" />
@@ -107,84 +161,18 @@
   <message name="listarRolTodosResponse">
     <part name="parameters" element="tns:listarRolTodosResponse" />
   </message>
-  <message name="modificarUsuario">
-    <part name="parameters" element="tns:modificarUsuario" />
-  </message>
-  <message name="modificarUsuarioResponse">
-    <part name="parameters" element="tns:modificarUsuarioResponse" />
-  </message>
-  <message name="insertarUsuario">
-    <part name="parameters" element="tns:insertarUsuario" />
-  </message>
-  <message name="insertarUsuarioResponse">
-    <part name="parameters" element="tns:insertarUsuarioResponse" />
-  </message>
-  <message name="listarPersona">
-    <part name="parameters" element="tns:listarPersona" />
-  </message>
-  <message name="listarPersonaResponse">
-    <part name="parameters" element="tns:listarPersonaResponse" />
-  </message>
-  <message name="elminarPersona">
-    <part name="parameters" element="tns:elminarPersona" />
-  </message>
-  <message name="elminarPersonaResponse">
-    <part name="parameters" element="tns:elminarPersonaResponse" />
-  </message>
-  <message name="modificarPersona">
-    <part name="parameters" element="tns:modificarPersona" />
-  </message>
-  <message name="modificarPersonaResponse">
-    <part name="parameters" element="tns:modificarPersonaResponse" />
-  </message>
-  <message name="modificarEmpresa">
-    <part name="parameters" element="tns:modificarEmpresa" />
-  </message>
-  <message name="modificarEmpresaResponse">
-    <part name="parameters" element="tns:modificarEmpresaResponse" />
-  </message>
-  <message name="insertarPersona">
-    <part name="parameters" element="tns:insertarPersona" />
-  </message>
-  <message name="insertarPersonaResponse">
-    <part name="parameters" element="tns:insertarPersonaResponse" />
-  </message>
-  <message name="verificarUsuario">
-    <part name="parameters" element="tns:verificarUsuario" />
-  </message>
-  <message name="verificarUsuarioResponse">
-    <part name="parameters" element="tns:verificarUsuarioResponse" />
-  </message>
-  <message name="BuscaRestaurante">
-    <part name="parameters" element="tns:BuscaRestaurante" />
-  </message>
-  <message name="BuscaRestauranteResponse">
-    <part name="parameters" element="tns:BuscaRestauranteResponse" />
-  </message>
   <portType name="UserWS">
     <operation name="listarAsistencias">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasRequest" message="tns:listarAsistencias" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarAsistenciasResponse" message="tns:listarAsistenciasResponse" />
     </operation>
-    <operation name="cambiarContrasenia">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/cambiarContraseniaRequest" message="tns:cambiarContrasenia" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/cambiarContraseniaResponse" message="tns:cambiarContraseniaResponse" />
-    </operation>
-    <operation name="eliminarAsistencia">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaRequest" message="tns:eliminarAsistencia" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaResponse" message="tns:eliminarAsistenciaResponse" />
-    </operation>
-    <operation name="listarClienteXNombre">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreRequest" message="tns:listarClienteXNombre" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreResponse" message="tns:listarClienteXNombreResponse" />
-    </operation>
     <operation name="listarUsuariosXNombre">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreRequest" message="tns:listarUsuariosXNombre" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarUsuariosXNombreResponse" message="tns:listarUsuariosXNombreResponse" />
     </operation>
-    <operation name="listarPersonasTodas">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasRequest" message="tns:listarPersonasTodas" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasResponse" message="tns:listarPersonasTodasResponse" />
+    <operation name="eliminarAsistencia">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaRequest" message="tns:eliminarAsistencia" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/eliminarAsistenciaResponse" message="tns:eliminarAsistenciaResponse" />
     </operation>
     <operation name="modificarDatosUsuario">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarDatosUsuarioRequest" message="tns:modificarDatosUsuario" />
@@ -194,9 +182,9 @@
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosRequest" message="tns:listarTodosUsuarios" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarTodosUsuariosResponse" message="tns:listarTodosUsuariosResponse" />
     </operation>
-    <operation name="asistenciaEntrada">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaRequest" message="tns:asistenciaEntrada" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaResponse" message="tns:asistenciaEntradaResponse" />
+    <operation name="listarClienteXNombre">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreRequest" message="tns:listarClienteXNombre" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarClienteXNombreResponse" message="tns:listarClienteXNombreResponse" />
     </operation>
     <operation name="verificarCuentaUsuario">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarCuentaUsuarioRequest" message="tns:verificarCuentaUsuario" />
@@ -206,17 +194,65 @@
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioRequest" message="tns:buscarPersonaPorIdUsuario" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/buscarPersonaPorIdUsuarioResponse" message="tns:buscarPersonaPorIdUsuarioResponse" />
     </operation>
-    <operation name="elminarUsuario">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioRequest" message="tns:elminarUsuario" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioResponse" message="tns:elminarUsuarioResponse" />
+    <operation name="cambiarContrasenia">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/cambiarContraseniaRequest" message="tns:cambiarContrasenia" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/cambiarContraseniaResponse" message="tns:cambiarContraseniaResponse" />
+    </operation>
+    <operation name="listarPersonasTodas">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasRequest" message="tns:listarPersonasTodas" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonasTodasResponse" message="tns:listarPersonasTodasResponse" />
+    </operation>
+    <operation name="asistenciaEntrada">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaRequest" message="tns:asistenciaEntrada" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaEntradaResponse" message="tns:asistenciaEntradaResponse" />
     </operation>
     <operation name="insertarEmpresa">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaRequest" message="tns:insertarEmpresa" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarEmpresaResponse" message="tns:insertarEmpresaResponse" />
     </operation>
+    <operation name="insertarUsuario">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioRequest" message="tns:insertarUsuario" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioResponse" message="tns:insertarUsuarioResponse" />
+    </operation>
+    <operation name="elminarPersona">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarPersonaRequest" message="tns:elminarPersona" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarPersonaResponse" message="tns:elminarPersonaResponse" />
+    </operation>
+    <operation name="listarPersona">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaRequest" message="tns:listarPersona" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaResponse" message="tns:listarPersonaResponse" />
+    </operation>
+    <operation name="BuscaRestaurante">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/BuscaRestauranteRequest" message="tns:BuscaRestaurante" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/BuscaRestauranteResponse" message="tns:BuscaRestauranteResponse" />
+    </operation>
     <operation name="asistenciaSalida">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaRequest" message="tns:asistenciaSalida" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/asistenciaSalidaResponse" message="tns:asistenciaSalidaResponse" />
+    </operation>
+    <operation name="modificarPersona">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarPersonaRequest" message="tns:modificarPersona" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarPersonaResponse" message="tns:modificarPersonaResponse" />
+    </operation>
+    <operation name="insertarPersona">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaRequest" message="tns:insertarPersona" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaResponse" message="tns:insertarPersonaResponse" />
+    </operation>
+    <operation name="modificarEmpresa">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaRequest" message="tns:modificarEmpresa" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaResponse" message="tns:modificarEmpresaResponse" />
+    </operation>
+    <operation name="elminarUsuario">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioRequest" message="tns:elminarUsuario" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarUsuarioResponse" message="tns:elminarUsuarioResponse" />
+    </operation>
+    <operation name="modificarUsuario">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioRequest" message="tns:modificarUsuario" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioResponse" message="tns:modificarUsuarioResponse" />
+    </operation>
+    <operation name="verificarUsuario">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarUsuarioRequest" message="tns:verificarUsuario" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarUsuarioResponse" message="tns:verificarUsuarioResponse" />
     </operation>
     <operation name="listarEmpresa">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarEmpresaRequest" message="tns:listarEmpresa" />
@@ -230,73 +266,10 @@
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosRequest" message="tns:listarRolTodos" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarRolTodosResponse" message="tns:listarRolTodosResponse" />
     </operation>
-    <operation name="modificarUsuario">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioRequest" message="tns:modificarUsuario" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarUsuarioResponse" message="tns:modificarUsuarioResponse" />
-    </operation>
-    <operation name="insertarUsuario">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioRequest" message="tns:insertarUsuario" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarUsuarioResponse" message="tns:insertarUsuarioResponse" />
-    </operation>
-    <operation name="listarPersona">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaRequest" message="tns:listarPersona" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/listarPersonaResponse" message="tns:listarPersonaResponse" />
-    </operation>
-    <operation name="elminarPersona">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarPersonaRequest" message="tns:elminarPersona" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/elminarPersonaResponse" message="tns:elminarPersonaResponse" />
-    </operation>
-    <operation name="modificarPersona">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarPersonaRequest" message="tns:modificarPersona" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarPersonaResponse" message="tns:modificarPersonaResponse" />
-    </operation>
-    <operation name="modificarEmpresa">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaRequest" message="tns:modificarEmpresa" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/modificarEmpresaResponse" message="tns:modificarEmpresaResponse" />
-    </operation>
-    <operation name="insertarPersona">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaRequest" message="tns:insertarPersona" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/insertarPersonaResponse" message="tns:insertarPersonaResponse" />
-    </operation>
-    <operation name="verificarUsuario">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarUsuarioRequest" message="tns:verificarUsuario" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/verificarUsuarioResponse" message="tns:verificarUsuarioResponse" />
-    </operation>
-    <operation name="BuscaRestaurante">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/BuscaRestauranteRequest" message="tns:BuscaRestaurante" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/UserWS/BuscaRestauranteResponse" message="tns:BuscaRestauranteResponse" />
-    </operation>
   </portType>
   <binding name="UserWSPortBinding" type="tns:UserWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="listarAsistencias">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="cambiarContrasenia">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarAsistencia">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarClienteXNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -314,7 +287,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarPersonasTodas">
+    <operation name="eliminarAsistencia">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -341,7 +314,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="asistenciaEntrada">
+    <operation name="listarClienteXNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -368,7 +341,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="elminarUsuario">
+    <operation name="cambiarContrasenia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPersonasTodas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="asistenciaEntrada">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -386,7 +377,97 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="insertarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="elminarPersona">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPersona">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="BuscaRestaurante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="asistenciaSalida">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPersona">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPersona">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarEmpresa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="elminarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verificarUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -414,87 +495,6 @@
       </output>
     </operation>
     <operation name="listarRolTodos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarPersona">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="elminarPersona">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarPersona">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarEmpresa">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarPersona">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="verificarUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="BuscaRestaurante">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -29,5 +29,7 @@ public interface PedidoDAO {
     
     int modificarEstado(int idPedido , char estado);
     
-     public ArrayList<Pedido> listarPedidosPagar();
+    public ArrayList<Pedido> listarPedidosPagar();
+    
+    int realizarPago( Pedido pedido);
 }

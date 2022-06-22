@@ -129,11 +129,6 @@ namespace LP2Soft
                     }
 
                 }
-                //else if(rol.descripcion == "CAJERO")
-                //{
-                //    //FORMULARIO DE CAJERO
-                //    //abrirFormulario();
-                //}
 
             }
 

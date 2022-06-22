@@ -6,7 +6,11 @@
   <xs:element name="generarFacturaVentaResponse" type="tns:generarFacturaVentaResponse" />
   <xs:complexType name="generarFacturaVenta">
     <xs:sequence>
-      <xs:element name="idPedido" type="xs:int" />
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="generarFacturaVentaResponse">
@@ -16,7 +20,11 @@
   </xs:complexType>
   <xs:complexType name="generarBoletaVenta">
     <xs:sequence>
-      <xs:element name="idPedido" type="xs:int" />
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="generarBoletaVentaResponse">

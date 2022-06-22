@@ -257,7 +257,6 @@ public class PersonaMySQL implements PersonaDAO {
                 persona.setDNI(rs.getString("DNI"));
                 
                 persona.setTipo(rs.getString("fid_tipo").charAt(0));
-                persona.setRazon_social(rs.getString("razon_social"));
                 persona.setRuc(rs.getString("RUC"));
             }
             resultado = 1;

@@ -160,25 +160,35 @@ public class PedidoMySQL implements PedidoDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            
-            
-            cs = con.prepareCall("{call INSERTAR_PEDIDO(?,?,?,?, ?,?,?,?, ?,?,?,?, ?)}");
+            if(pedido.getCajero() == null && pedido.getCliente() == null){
+                cs = con.prepareCall("{call INSERTAR_PEDIDO_SOLO_MESERO(?,?,?,?, ?,?)}");
+            }
+            else if (pedido.getCajero() == null && pedido.getCliente() != null){
+                //poner procedure!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            cs = con.prepareCall("{call INSERTAR_PEDIDO_MESERO_CLIENTE(?,?,?,?, ?,?,?)}");
+            }//CAJERO
+            else if(pedido.getMesero() == null && pedido.getCliente() == null){
+                cs = con.prepareCall("{call INSERTAR_PEDIDO_SOLO_CAJERO(?,?,?,?, ?)}");
+            }
+            else if(pedido.getMesero() == null && pedido.getCliente() != null){
+                cs = con.prepareCall("{call INSERTAR_PEDIDO_CAJERO_CLIENTE(?,?,?,?, ?,?)}");                
+            }
             cs.registerOutParameter("_id_transaccion", java.sql.Types.INTEGER);
             cs.setInt("_fid_restaurante", pedido.getRestaurante().getId_restaurante());
             cs.setDouble("_total", pedido.getTotal());
             cs.setDate("_fecha", new java.sql.Date(pedido.getFecha().getTime()));
+            if(pedido.getCajero() ==null)
+                cs.setInt("_fid_mesa", pedido.getMesa().getIdMesa());
             
-            cs.setInt("_fid_mesa", pedido.getMesa().getIdMesa());
-            cs.setString("_fid_tipo_pago", String.valueOf(pedido.getTipoPago()));//es un caracter
+            if(pedido.getMesero() != null)
+                cs.setInt("_fid_mesero", pedido.getMesero().getId_usuario());
             
-            cs.setInt("_fid_mesero", pedido.getMesero().getId_usuario());
-            cs.setInt("_fid_cajero", pedido.getCajero().getId_usuario());
-            cs.setString("_fid_tipo_pedido", String.valueOf(pedido.getTipoPedido()));//caracter
-            cs.setInt("_fid_cliente", pedido.getCliente().getId_persona());
-            cs.setString("_fid_tipo_comprobante", String.valueOf(pedido.getTipoComprobante()));
+            if(pedido.getCajero() !=null)
+                cs.setInt("_fid_cajero", pedido.getCajero().getId_usuario());
             
-            cs.setInt("_numero_comprobante", pedido.getNumeroComprobante());
-            cs.setString("_fid_estado_pedido", String.valueOf(pedido.getEstado()));
+            if(pedido.getCliente() != null)
+                cs.setInt("_fid_cliente", pedido.getCliente().getId_persona());
+            
             
             cs.executeUpdate();
             
@@ -422,6 +432,7 @@ public class PedidoMySQL implements PedidoDAO {
     public ArrayList<Pedido> listarPedidosPagar() {
         ArrayList<Pedido> pedidos= new ArrayList<>();
         try{
+            int i=0;
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call LISTAR_PEDIDOS_SIN_PAGAR()}");
             rs = cs.executeQuery();
@@ -439,17 +450,26 @@ public class PedidoMySQL implements PedidoDAO {
                 mesa.setEstado(rs.getBoolean("activo"));
                 mesa.setNumero(rs.getInt("capacidad"));
                 pedido.setMesa(mesa);
-                pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
                 
-                pedido.setCajero(new Usuario());
-                pedido.getCajero().setId_usuario(rs.getInt("fid_cajero")); 
-                pedido.setMesero(new Usuario());
-                pedido.getMesero().setId_usuario(rs.getInt("fid_mesero")); 
-                pedido.setCliente(new Persona());
-                pedido.getCliente().setId_persona(rs.getInt("fid_cliente")); 
+                i = rs.getInt("fid_cajero");
+                if(i!=0){
+                    pedido.setCajero(new Usuario());
+                    pedido.getCajero().setId_usuario(rs.getInt("fid_cajero")); 
+                }
                 
+                i = rs.getInt("fid_mesero");
+                if(i!=0){
+                    pedido.setMesero(new Usuario());
+                    pedido.getMesero().setId_usuario(rs.getInt("fid_mesero")); 
+                }
+                
+                i = rs.getInt("fid_cliente");
+                if(i!=0){
+                    pedido.setCliente(new Persona());
+                    pedido.getCliente().setId_persona(rs.getInt("fid_cliente"));  
+                }
+                                
                 pedido.setTipoPedido(rs.getString("fid_tipo_pedido").charAt(0));
-                pedido.setTipoComprobante(rs.getString("fid_tipo_comprobante").charAt(0));
                 pedido.setNumeroComprobante(rs.getInt("numero_comprobante"));
                 pedido.setEstado(rs.getString("fid_estado_pedido").charAt(0));
                 pedidos.add(pedido);
@@ -460,5 +480,35 @@ public class PedidoMySQL implements PedidoDAO {
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return pedidos;
+    }
+
+    @Override
+    public int realizarPago(Pedido pedido) {
+        int resultado = 0;
+        try {
+            con = DBManager.getInstance().getConnection();
+            //valores en transaccion
+            cs = con.prepareCall("{call REALIZAR_PAGO(?,?,?,?, ?)}");
+            cs.setInt("_id_pedido", pedido.getIdPedido());
+            
+            cs.setInt("_fid_cajero", pedido.getCajero().getId_usuario());
+            
+            cs.setInt("_fid_cliente", pedido.getCliente().getId_persona());
+            cs.setString("_fid_tipo_comprobante", String.valueOf(pedido.getTipoComprobante()));
+            
+            cs.setString("_fid_tipo_pago", String.valueOf(pedido.getTipoPago()));//caracter
+            cs.executeUpdate();
+            
+            resultado = 1;
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return resultado;
     }
 }

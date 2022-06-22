@@ -55,13 +55,13 @@
             this.btnPagar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtVuelto = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtImporte = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.rbnEfectivo = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rbnTarjeta = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -111,6 +111,7 @@
             // 
             // pbCLiente
             // 
+            this.pbCLiente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCLiente.Image = global::LP2Soft.Properties.Resources.User;
             this.pbCLiente.Location = new System.Drawing.Point(11, 109);
             this.pbCLiente.Name = "pbCLiente";
@@ -124,6 +125,7 @@
             // 
             this.btnBuscar.BorderRadius = 10;
             this.btnBuscar.CheckedState.Parent = this.btnBuscar;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.CustomImages.Parent = this.btnBuscar;
             this.btnBuscar.FillColor = System.Drawing.Color.Black;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,7 +250,6 @@
             this.rbnBoleta.Name = "rbnBoleta";
             this.rbnBoleta.Size = new System.Drawing.Size(68, 22);
             this.rbnBoleta.TabIndex = 70;
-            this.rbnBoleta.TabStop = true;
             this.rbnBoleta.Text = "Boleta";
             this.rbnBoleta.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rbnBoleta.UncheckedState.BorderThickness = 2;
@@ -260,6 +261,7 @@
             // 
             this.rbnFactura.AutoSize = true;
             this.rbnFactura.BackColor = System.Drawing.Color.White;
+            this.rbnFactura.Checked = true;
             this.rbnFactura.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbnFactura.CheckedState.BorderThickness = 0;
             this.rbnFactura.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -300,7 +302,7 @@
             this.dgvPedidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
@@ -339,7 +341,7 @@
             this.dgvPedidos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.dgvPedidos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Silver;
             this.dgvPedidos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPedidos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedidos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPedidos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvPedidos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPedidos.ThemeStyle.HeaderStyle.Height = 22;
@@ -392,13 +394,13 @@
             this.guna2GroupBox1.Controls.Add(this.btnPagar);
             this.guna2GroupBox1.Controls.Add(this.btnImprimir);
             this.guna2GroupBox1.Controls.Add(this.label11);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox4);
+            this.guna2GroupBox1.Controls.Add(this.txtVuelto);
             this.guna2GroupBox1.Controls.Add(this.label10);
             this.guna2GroupBox1.Controls.Add(this.label9);
             this.guna2GroupBox1.Controls.Add(this.label8);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox2);
+            this.guna2GroupBox1.Controls.Add(this.txtImporte);
             this.guna2GroupBox1.Controls.Add(this.label3);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox3);
+            this.guna2GroupBox1.Controls.Add(this.txtTotal);
             this.guna2GroupBox1.Controls.Add(this.label4);
             this.guna2GroupBox1.Controls.Add(this.rbnEfectivo);
             this.guna2GroupBox1.Controls.Add(this.rbnTarjeta);
@@ -472,37 +474,37 @@
             this.label11.TabIndex = 151;
             this.label11.Text = "S/.";
             // 
-            // guna2TextBox4
+            // txtVuelto
             // 
-            this.guna2TextBox4.BackColor = System.Drawing.Color.White;
-            this.guna2TextBox4.BorderColor = System.Drawing.Color.White;
-            this.guna2TextBox4.BorderRadius = 10;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.Enabled = false;
-            this.guna2TextBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.FocusedState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Location = new System.Drawing.Point(383, 133);
-            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox4.Multiline = true;
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "";
-            this.guna2TextBox4.ReadOnly = true;
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Size = new System.Drawing.Size(202, 28);
-            this.guna2TextBox4.TabIndex = 150;
+            this.txtVuelto.BackColor = System.Drawing.Color.White;
+            this.txtVuelto.BorderColor = System.Drawing.Color.White;
+            this.txtVuelto.BorderRadius = 10;
+            this.txtVuelto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtVuelto.DefaultText = "";
+            this.txtVuelto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtVuelto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtVuelto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVuelto.DisabledState.Parent = this.txtVuelto;
+            this.txtVuelto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVuelto.Enabled = false;
+            this.txtVuelto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtVuelto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVuelto.FocusedState.Parent = this.txtVuelto;
+            this.txtVuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVuelto.ForeColor = System.Drawing.Color.Black;
+            this.txtVuelto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVuelto.HoverState.Parent = this.txtVuelto;
+            this.txtVuelto.Location = new System.Drawing.Point(383, 133);
+            this.txtVuelto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtVuelto.Multiline = true;
+            this.txtVuelto.Name = "txtVuelto";
+            this.txtVuelto.PasswordChar = '\0';
+            this.txtVuelto.PlaceholderText = "";
+            this.txtVuelto.ReadOnly = true;
+            this.txtVuelto.SelectedText = "";
+            this.txtVuelto.ShadowDecoration.Parent = this.txtVuelto;
+            this.txtVuelto.Size = new System.Drawing.Size(202, 39);
+            this.txtVuelto.TabIndex = 150;
             // 
             // label10
             // 
@@ -537,36 +539,36 @@
             this.label8.TabIndex = 147;
             this.label8.Text = "Importe";
             // 
-            // guna2TextBox2
+            // txtImporte
             // 
-            this.guna2TextBox2.BackColor = System.Drawing.Color.White;
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.White;
-            this.guna2TextBox2.BorderRadius = 10;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(383, 62);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox2.Multiline = true;
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.ReadOnly = true;
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(202, 28);
-            this.guna2TextBox2.TabIndex = 145;
+            this.txtImporte.BackColor = System.Drawing.Color.White;
+            this.txtImporte.BorderColor = System.Drawing.Color.White;
+            this.txtImporte.BorderRadius = 10;
+            this.txtImporte.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtImporte.DefaultText = "";
+            this.txtImporte.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtImporte.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtImporte.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtImporte.DisabledState.Parent = this.txtImporte;
+            this.txtImporte.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtImporte.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtImporte.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtImporte.FocusedState.Parent = this.txtImporte;
+            this.txtImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImporte.ForeColor = System.Drawing.Color.Black;
+            this.txtImporte.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtImporte.HoverState.Parent = this.txtImporte;
+            this.txtImporte.Location = new System.Drawing.Point(383, 62);
+            this.txtImporte.Margin = new System.Windows.Forms.Padding(4);
+            this.txtImporte.Multiline = true;
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.PasswordChar = '\0';
+            this.txtImporte.PlaceholderText = "";
+            this.txtImporte.SelectedText = "";
+            this.txtImporte.ShadowDecoration.Parent = this.txtImporte;
+            this.txtImporte.Size = new System.Drawing.Size(202, 37);
+            this.txtImporte.TabIndex = 145;
+            this.txtImporte.TextChanged += new System.EventHandler(this.txtImporte_TextChanged);
             // 
             // label3
             // 
@@ -579,37 +581,37 @@
             this.label3.TabIndex = 113;
             this.label3.Text = "S/.";
             // 
-            // guna2TextBox3
+            // txtTotal
             // 
-            this.guna2TextBox3.BackColor = System.Drawing.Color.White;
-            this.guna2TextBox3.BorderColor = System.Drawing.Color.White;
-            this.guna2TextBox3.BorderRadius = 10;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.Enabled = false;
-            this.guna2TextBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.FocusedState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Location = new System.Drawing.Point(60, 62);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox3.Multiline = true;
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.ReadOnly = true;
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Size = new System.Drawing.Size(190, 28);
-            this.guna2TextBox3.TabIndex = 144;
+            this.txtTotal.BackColor = System.Drawing.Color.White;
+            this.txtTotal.BorderColor = System.Drawing.Color.White;
+            this.txtTotal.BorderRadius = 10;
+            this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotal.DefaultText = "";
+            this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotal.DisabledState.Parent = this.txtTotal;
+            this.txtTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotal.Enabled = false;
+            this.txtTotal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotal.FocusedState.Parent = this.txtTotal;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.Color.Black;
+            this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotal.HoverState.Parent = this.txtTotal;
+            this.txtTotal.Location = new System.Drawing.Point(60, 62);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTotal.Multiline = true;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.PasswordChar = '\0';
+            this.txtTotal.PlaceholderText = "";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.SelectedText = "";
+            this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
+            this.txtTotal.Size = new System.Drawing.Size(190, 37);
+            this.txtTotal.TabIndex = 144;
             // 
             // label4
             // 
@@ -626,6 +628,7 @@
             // 
             this.rbnEfectivo.AutoSize = true;
             this.rbnEfectivo.BackColor = System.Drawing.Color.White;
+            this.rbnEfectivo.Checked = true;
             this.rbnEfectivo.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbnEfectivo.CheckedState.BorderThickness = 0;
             this.rbnEfectivo.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -658,7 +661,6 @@
             this.rbnTarjeta.Name = "rbnTarjeta";
             this.rbnTarjeta.Size = new System.Drawing.Size(71, 22);
             this.rbnTarjeta.TabIndex = 69;
-            this.rbnTarjeta.TabStop = true;
             this.rbnTarjeta.Text = "Tarjeta";
             this.rbnTarjeta.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rbnTarjeta.UncheckedState.BorderThickness = 2;
@@ -735,15 +737,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtImporte;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2TextBox txtTotal;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2RadioButton rbnEfectivo;
         private Guna.UI2.WinForms.Guna2RadioButton rbnTarjeta;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2TextBox txtVuelto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
