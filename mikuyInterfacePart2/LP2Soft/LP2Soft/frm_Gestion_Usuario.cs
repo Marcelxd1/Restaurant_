@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace LP2Soft
 {
     public partial class frm_Gestion_Usuario : Form
     {
+        private string _rutaFoto;
         private UserWS.UserWSClient daoUser;
         private UserWS.usuario _usuario;
         public frm_Gestion_Usuario()
@@ -113,6 +115,21 @@ namespace LP2Soft
                 MessageBox.Show("Ingrese su usuario", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (pbFoto.Image == null)
+            {
+                MessageBox.Show("Ingrese una imagen para el usuario", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if(txtCorreo.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese su correo", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!txtCorreo.Text.Contains("@"))
+            {
+                MessageBox.Show("Ingrese un correo valido", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string pass1 = txtPassword.Text.Trim();
             string pass2 = txtPasswordConfirm.Text.Trim();
             if (pass1 != pass2)
@@ -129,9 +146,9 @@ namespace LP2Soft
             _usuario.telefono = txtTelefono.Text.Trim();
             _usuario.usuario1 = txtUsername.Text.Trim();
             _usuario.password = pass1; 
-
+            _usuario.correo = txtCorreo.Text.Trim();
             int resultado = daoUser.insertarUsuario(_usuario);
-            if(resultado >= 0)
+            if(resultado > 0)
             {
                 MessageBox.Show("Se ha registrado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtApellidoMaterno.Text = "";
@@ -143,6 +160,8 @@ namespace LP2Soft
                 txtSueldo.Text = "";
                 txtTelefono.Text = "";
                 txtUsername.Text = "";
+                txtCorreo.Text = "";
+                pbFoto.Image = null;
             }
             else
             {
@@ -153,5 +172,26 @@ namespace LP2Soft
 
 
     }
+
+        private void btnSubirFoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ofdFoto.ShowDialog() == DialogResult.OK)
+                {
+                    _rutaFoto = ofdFoto.FileName;
+                    pbFoto.Image = Image.FromFile(_rutaFoto);
+                    FileStream fs = new FileStream(_rutaFoto, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    _usuario.imagen = br.ReadBytes((int)fs.Length);
+                    fs.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+            }
+        }
     }
 }

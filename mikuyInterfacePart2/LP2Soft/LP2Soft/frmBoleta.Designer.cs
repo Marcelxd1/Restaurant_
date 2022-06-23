@@ -51,7 +51,7 @@
             this.Controls.Add(this.visorPDF);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmBoleta";
-            this.Text = "frmBoleta";
+            this.Text = "Boleta";
             ((System.ComponentModel.ISupportInitialize)(this.visorPDF)).EndInit();
             this.ResumeLayout(false);
 

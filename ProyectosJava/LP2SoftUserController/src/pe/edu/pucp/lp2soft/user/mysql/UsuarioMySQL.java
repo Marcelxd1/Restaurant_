@@ -104,7 +104,7 @@ public class UsuarioMySQL implements UsuarioDAO {
             usuario.setId_usuario(cs.getInt("_id_persona"));
             usuario.setId_persona(cs.getInt("_id_persona"));
             
-            cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?,?,?,?)}");
             cs.setInt("_id_usuario",usuario.getId_persona());
             cs.setInt("_fid_rol", usuario.getRol().getId_rol());
             cs.setInt("_fid_restaurante", 1);
@@ -112,6 +112,8 @@ public class UsuarioMySQL implements UsuarioDAO {
             cs.setString("_password", usuario.getPassword());
             cs.setDouble("_salario", usuario.getSalario());
             cs.setString("_telefono", usuario.getTelefono());
+            cs.setString("_correo",usuario.getCorreo());
+            cs.setBytes("_imagen", usuario.getImagen());
             cs.executeUpdate();
             resultado = usuario.getId_usuario() ; 
         }catch (Exception ex){
@@ -224,6 +226,7 @@ public class UsuarioMySQL implements UsuarioDAO {
                 user.setId_usuario(rs.getInt("id_usuario"));
                 rol.setId_rol(rs.getInt("fid_rol"));
                 user.setRol(rol);
+                user.setImagen(rs.getBytes("imagen"));
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());

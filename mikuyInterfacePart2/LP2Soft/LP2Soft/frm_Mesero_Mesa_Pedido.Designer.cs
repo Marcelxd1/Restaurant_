@@ -645,9 +645,10 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblProductos);
             this.Controls.Add(this.guna2PictureBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "frm_Mesero_Mesa_Pedido";
-            this.Text = "frm_Mesero_Mesa_Pedido";
+            this.Text = "Pedidos de mesa";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();

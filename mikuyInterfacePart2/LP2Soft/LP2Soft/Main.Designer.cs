@@ -33,7 +33,7 @@
             this.lblRolPersona = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pctPersona = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbPersona = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelLateral = new System.Windows.Forms.Panel();
             this.btnClientes = new Guna.UI2.WinForms.Guna2Button();
             this.btnAsistencia = new Guna.UI2.WinForms.Guna2Button();
@@ -47,7 +47,7 @@
             this.panelContenedor = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPersona)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersona)).BeginInit();
             this.panelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -61,7 +61,7 @@
             this.panelSuperior.Controls.Add(this.lblRolPersona);
             this.panelSuperior.Controls.Add(this.lblNombre);
             this.panelSuperior.Controls.Add(this.guna2PictureBox1);
-            this.panelSuperior.Controls.Add(this.pctPersona);
+            this.panelSuperior.Controls.Add(this.pbPersona);
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
             this.panelSuperior.Name = "panelSuperior";
@@ -103,17 +103,17 @@
             this.guna2PictureBox1.TabIndex = 5;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // pctPersona
+            // pbPersona
             // 
-            this.pctPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctPersona.Image = global::LP2Soft.Properties.Resources.User;
-            this.pctPersona.Location = new System.Drawing.Point(1088, 51);
-            this.pctPersona.Name = "pctPersona";
-            this.pctPersona.ShadowDecoration.Parent = this.pctPersona;
-            this.pctPersona.Size = new System.Drawing.Size(91, 96);
-            this.pctPersona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctPersona.TabIndex = 4;
-            this.pctPersona.TabStop = false;
+            this.pbPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPersona.Image = global::LP2Soft.Properties.Resources.User;
+            this.pbPersona.Location = new System.Drawing.Point(1088, 51);
+            this.pbPersona.Name = "pbPersona";
+            this.pbPersona.ShadowDecoration.Parent = this.pbPersona;
+            this.pbPersona.Size = new System.Drawing.Size(91, 96);
+            this.pbPersona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPersona.TabIndex = 4;
+            this.pbPersona.TabStop = false;
             // 
             // panelLateral
             // 
@@ -139,6 +139,7 @@
             this.btnClientes.FillColor = System.Drawing.Color.Transparent;
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnClientes.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnClientes.HoverState.Parent = this.btnClientes;
             this.btnClientes.Image = global::LP2Soft.Properties.Resources.clientes;
             this.btnClientes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -154,11 +155,13 @@
             // btnAsistencia
             // 
             this.btnAsistencia.BorderColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnAsistencia.CheckedState.FillColor = System.Drawing.Color.Transparent;
             this.btnAsistencia.CheckedState.Parent = this.btnAsistencia;
             this.btnAsistencia.CustomImages.Parent = this.btnAsistencia;
             this.btnAsistencia.FillColor = System.Drawing.Color.Transparent;
             this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsistencia.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnAsistencia.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAsistencia.HoverState.Parent = this.btnAsistencia;
             this.btnAsistencia.Image = global::LP2Soft.Properties.Resources.listar;
             this.btnAsistencia.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -203,6 +206,7 @@
             this.btnCaja.FillColor = System.Drawing.Color.Transparent;
             this.btnCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaja.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnCaja.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnCaja.HoverState.Parent = this.btnCaja;
             this.btnCaja.Image = global::LP2Soft.Properties.Resources.dolar;
             this.btnCaja.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -223,6 +227,7 @@
             this.btnCocina.FillColor = System.Drawing.Color.Transparent;
             this.btnCocina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCocina.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnCocina.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnCocina.HoverState.Parent = this.btnCocina;
             this.btnCocina.Image = ((System.Drawing.Image)(resources.GetObject("btnCocina.Image")));
             this.btnCocina.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -243,6 +248,7 @@
             this.btnGestion.FillColor = System.Drawing.Color.Transparent;
             this.btnGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestion.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnGestion.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnGestion.HoverState.Parent = this.btnGestion;
             this.btnGestion.Image = ((System.Drawing.Image)(resources.GetObject("btnGestion.Image")));
             this.btnGestion.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -262,6 +268,7 @@
             this.btnPedidos.FillColor = System.Drawing.Color.Transparent;
             this.btnPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedidos.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnPedidos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnPedidos.HoverState.Parent = this.btnPedidos;
             this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
             this.btnPedidos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -275,6 +282,7 @@
             // 
             // btnSignOut
             // 
+            this.btnSignOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignOut.Image = global::LP2Soft.Properties.Resources.signout;
             this.btnSignOut.Location = new System.Drawing.Point(1188, 685);
             this.btnSignOut.Name = "btnSignOut";
@@ -312,7 +320,7 @@
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPersona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersona)).EndInit();
             this.panelLateral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
@@ -327,7 +335,7 @@
         private System.Windows.Forms.Panel panelSuperior;
         private System.Windows.Forms.Panel panelLateral;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox pctPersona;
+        private Guna.UI2.WinForms.Guna2PictureBox pbPersona;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Button btnCaja;
         private Guna.UI2.WinForms.Guna2Button btnCocina;

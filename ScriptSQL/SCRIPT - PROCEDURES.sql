@@ -279,10 +279,10 @@ END$
 -- USUARIOS
 
 CREATE  PROCEDURE INSERTAR_USUARIO(in _id_usuario int , in _fid_rol varchar(50) , in _fid_restaurante varchar(50) ,in _usuario varchar(50),
-									in _password varchar(50) , in _salario decimal(10,2) , in _telefono varchar(50))
+									in _password varchar(50) , in _salario decimal(10,2) , in _telefono varchar(50) , in _correo varchar(100) , in _imagen longblob)
 BEGIN
-	insert into usuario(id_usuario, fid_rol,fid_restaurante,usuario,password,salario,telefono) 
-					values (_id_usuario, _fid_rol,_fid_restaurante,_usuario,_password,_salario,_telefono) ; 
+	insert into usuario(id_usuario, fid_rol,fid_restaurante,usuario,password,salario,telefono,correo,imagen) 
+					values (_id_usuario, _fid_rol,_fid_restaurante,_usuario,_password,_salario,_telefono,_correo,_imagen) ; 
 END$
 
 CREATE  PROCEDURE LISTAR_USUARIOS_TODOS()
@@ -695,12 +695,6 @@ BEGIN
     where p.activo = 1 AND  p.nombre LIKE CONCAT('%',_nombre,'%');
 END$
 
-CREATE  PROCEDURE INSERTAR_USUARIO(in _id_usuario int , in _fid_rol varchar(50) , in _fid_restaurante varchar(50) ,in _usuario varchar(50),
-									in _password varchar(50) , in _salario decimal(10,2) , in _telefono varchar(50))
-BEGIN
-	insert into usuario(id_usuario, fid_rol,fid_restaurante,usuario,password,salario,telefono) 
-					values (_id_usuario, _fid_rol,_fid_restaurante,_usuario,_password,_salario,_telefono) ; 
-END$
 
 CREATE PROCEDURE MODIFICAR_DATOS_USUARIO(in _id_usuario int , in _fid_rol int , in _salario decimal(10,2) , in _telefono varchar(30)  )
 begin 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -10,17 +12,23 @@ namespace LP2Soft
         private UserWS.rol rol;
         private Form formularioActivo = null;
         private Form cargando = new frm_Loading();
+        private int botonActivo ; 
         public Main()
         {
             InitializeComponent();
         }
-        public Main(UserWS.persona persona, UserWS.rol rol)
+        public Main(UserWS.persona persona, UserWS.rol rol , UserWS.usuario user)
         {
             InitializeComponent();
             this.persona = persona;
             this.rol = rol;
             lblNombre.Text = this.persona.nombre + " " + this.persona.apellido_paterno;
             lblRolPersona.Text = this.rol.descripcion;
+            if (user.imagen != null)
+            {
+                MemoryStream ms = new MemoryStream(user.imagen);
+                pbPersona.Image = new Bitmap(ms);
+            }
             if (rol.descripcion == "MESERO")
             {
                 btnAsistencia.Visible = false;
@@ -28,10 +36,15 @@ namespace LP2Soft
                 btnClientes.Visible = false;
                 btnGestion.Visible = false;
                 btnCocina.Visible = false;
+
             }
             else if (rol.descripcion == "CAJERO")
             {
                 btnGestion.Visible = false;
+                btnCocina.Location = new System.Drawing.Point(23, 142);
+                btnCaja.Location = new System.Drawing.Point(23, 193);
+                btnAsistencia.Location = new System.Drawing.Point(23, 243);
+                btnClientes.Location = new System.Drawing.Point(23, 293);
             }
             else if (rol.descripcion == "COCINERO")
             {
@@ -41,6 +54,15 @@ namespace LP2Soft
                 btnGestion.Visible = false;
                 btnPedidos.Visible = false;
             }
+        }
+        public void restablecerBotones()
+        {
+            btnAsistencia.FillColor = Color.Transparent;
+            btnCaja.FillColor = Color.Transparent;
+            btnClientes.FillColor = Color.Transparent;
+            btnCocina.FillColor = Color.Transparent;
+            btnGestion.FillColor = Color.Transparent;
+            btnPedidos.FillColor = Color.Transparent;
         }
 
         public void abrirFormulario(Form formularioMostrar)
@@ -55,6 +77,8 @@ namespace LP2Soft
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
+            restablecerBotones();
+            btnPedidos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             if (rol.descripcion == "MESERO")
             {
                 abrirFormulario(new frm_Mesero_MesaVer2(persona, rol));
@@ -66,16 +90,22 @@ namespace LP2Soft
 
         private void btnGestion_Click(object sender, EventArgs e)
         {
+            restablecerBotones();
+            btnGestion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             abrirFormulario(new frm_Gestion());
         }
 
         private void btnAsistencia_Click(object sender, EventArgs e)
         {
+            restablecerBotones();
+            btnAsistencia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             abrirFormulario(new frm_Asitencia());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            restablecerBotones();
+            btnClientes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             abrirFormulario(new frm_Clientes());
         }
 
@@ -93,12 +123,15 @@ namespace LP2Soft
 
         private  void btnCaja_Click(object sender, EventArgs e)
         {
-            
+            restablecerBotones();
+            btnCaja.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             abrirFormulario(new frm_Caja());
         }
 
         private void btnCocina_Click(object sender, EventArgs e)
         {
+            restablecerBotones();
+            btnCocina.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             abrirFormulario(new frm_Cocina());
         }
 

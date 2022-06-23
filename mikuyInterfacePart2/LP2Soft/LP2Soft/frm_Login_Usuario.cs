@@ -87,12 +87,24 @@ namespace LP2Soft
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            if (txtUsuario.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese un usuario", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtPassword.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese una constraseña", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             UserWS.usuario user = new UserWS.usuario();
             user.usuario1 = txtUsuario.Text;
             user.password = txtPassword.Text;
 
             UserWS.usuario userVerificar = new UserWS.usuario();
+            frm_Load cargando = new frm_Load();
             userVerificar = daoUser.verificarCuentaUsuario(user);
+            cargando.ShowDialog();
             if (userVerificar != null)
             {
                 //lblError.Visible = true;
@@ -100,7 +112,7 @@ namespace LP2Soft
                 UserWS.rol rol = daoUser.buscarRolPorId(userVerificar.rol.id_rol);
                 UserWS.persona persona = daoUser.buscarPersonaPorIdUsuario(userVerificar.id_usuario);
 
-                Main formPrincipal = new Main(persona, rol);
+                Main formPrincipal = new Main(persona, rol , userVerificar);
                 this.Hide();
                 formPrincipal.Show();
             }

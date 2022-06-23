@@ -2143,7 +2143,7 @@
     <value>753, 525</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>frm_Asitencia</value>
+    <value>Asistencia</value>
   </data>
   <data name="&gt;&gt;horaFecha.Name" xml:space="preserve">
     <value>horaFecha</value>

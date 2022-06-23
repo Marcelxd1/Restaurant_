@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Clientes_Registrar));
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtRazon = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRazon = new System.Windows.Forms.Label();
             this.txtApellidoMaterno = new Guna.UI2.WinForms.Guna2TextBox();
@@ -55,25 +54,15 @@
             this.epRUC = new System.Windows.Forms.ErrorProvider(this.components);
             this.epApMaterno = new System.Windows.Forms.ErrorProvider(this.components);
             this.epDNI = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.epNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epApPaterno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRazon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRUC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epApMaterno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epDNI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(12, 12);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(776, 426);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 42;
-            this.guna2PictureBox3.TabStop = false;
             // 
             // txtRazon
             // 
@@ -449,6 +438,17 @@
             // 
             this.epDNI.ContainerControl = this;
             // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.Location = new System.Drawing.Point(12, 12);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
+            this.guna2PictureBox3.Size = new System.Drawing.Size(776, 426);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 42;
+            this.guna2PictureBox3.TabStop = false;
+            // 
             // frm_Clientes_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,16 +473,17 @@
             this.Controls.Add(this.lblRuc);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.guna2PictureBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_Clientes_Registrar";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Text = "frm_Clientes_Registrar";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            this.Text = "Registrar Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.epNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epApPaterno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRazon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRUC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epApMaterno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epDNI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

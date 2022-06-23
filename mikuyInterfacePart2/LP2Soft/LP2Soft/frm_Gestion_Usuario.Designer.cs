@@ -48,11 +48,17 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnRegistrar = new Guna.UI2.WinForms.Guna2Button();
             this.lblDatosUsuario = new System.Windows.Forms.Label();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtTelefono = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtSueldo = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSueldo = new System.Windows.Forms.Label();
+            this.btnSubirFoto = new System.Windows.Forms.Button();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.txtCorreo = new Guna.UI2.WinForms.Guna2TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -343,6 +349,7 @@
             this.txtDNI.HoverState.Parent = this.txtDNI;
             this.txtDNI.Location = new System.Drawing.Point(74, 152);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.PasswordChar = '\0';
             this.txtDNI.PlaceholderText = "";
@@ -402,19 +409,6 @@
             this.lblDatosUsuario.Size = new System.Drawing.Size(177, 29);
             this.lblDatosUsuario.TabIndex = 37;
             this.lblDatosUsuario.Text = "Datos Usuario";
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(12, 12);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.ShadowDecoration.Color = System.Drawing.Color.IndianRed;
-            this.guna2PictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(837, 478);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 56;
-            this.guna2PictureBox3.TabStop = false;
             // 
             // txtTelefono
             // 
@@ -494,12 +488,93 @@
             this.lblSueldo.TabIndex = 60;
             this.lblSueldo.Text = "Sueldo";
             // 
+            // btnSubirFoto
+            // 
+            this.btnSubirFoto.BackgroundImage = global::LP2Soft.Properties.Resources.subir_foto;
+            this.btnSubirFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSubirFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubirFoto.Location = new System.Drawing.Point(742, 404);
+            this.btnSubirFoto.Name = "btnSubirFoto";
+            this.btnSubirFoto.Size = new System.Drawing.Size(40, 37);
+            this.btnSubirFoto.TabIndex = 62;
+            this.btnSubirFoto.UseVisualStyleBackColor = true;
+            this.btnSubirFoto.Click += new System.EventHandler(this.btnSubirFoto_Click);
+            // 
+            // pbFoto
+            // 
+            this.pbFoto.Location = new System.Drawing.Point(586, 217);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(196, 224);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoto.TabIndex = 61;
+            this.pbFoto.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.Location = new System.Drawing.Point(12, 12);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.ShadowDecoration.Color = System.Drawing.Color.IndianRed;
+            this.guna2PictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
+            this.guna2PictureBox3.Size = new System.Drawing.Size(837, 478);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 56;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // ofdFoto
+            // 
+            this.ofdFoto.FileName = "openFileDialog1";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.BackColor = System.Drawing.SystemColors.Window;
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.Location = new System.Drawing.Point(73, 383);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(68, 24);
+            this.lblCorreo.TabIndex = 64;
+            this.lblCorreo.Text = "Correo";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BorderColor = System.Drawing.Color.White;
+            this.txtCorreo.BorderRadius = 10;
+            this.txtCorreo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCorreo.DefaultText = "";
+            this.txtCorreo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCorreo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCorreo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCorreo.DisabledState.Parent = this.txtCorreo;
+            this.txtCorreo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCorreo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtCorreo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCorreo.FocusedState.Parent = this.txtCorreo;
+            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.Black;
+            this.txtCorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCorreo.HoverState.Parent = this.txtCorreo;
+            this.txtCorreo.Location = new System.Drawing.Point(77, 411);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.PasswordChar = '\0';
+            this.txtCorreo.PlaceholderText = "";
+            this.txtCorreo.SelectedText = "";
+            this.txtCorreo.ShadowDecoration.Parent = this.txtCorreo;
+            this.txtCorreo.Size = new System.Drawing.Size(203, 30);
+            this.txtCorreo.TabIndex = 63;
+            // 
             // frm_Gestion_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(861, 494);
+            this.Controls.Add(this.lblCorreo);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.btnSubirFoto);
+            this.Controls.Add(this.pbFoto);
             this.Controls.Add(this.lblSueldo);
             this.Controls.Add(this.txtSueldo);
             this.Controls.Add(this.lblTelefono);
@@ -528,6 +603,7 @@
             this.Name = "frm_Gestion_Usuario";
             this.Text = "frm_Gestion_Usuario";
             this.Load += new System.EventHandler(this.frm_Gestion_Usuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -560,5 +636,10 @@
         private System.Windows.Forms.Label lblTelefono;
         private Guna.UI2.WinForms.Guna2TextBox txtSueldo;
         private System.Windows.Forms.Label lblSueldo;
+        private System.Windows.Forms.PictureBox pbFoto;
+        private System.Windows.Forms.Button btnSubirFoto;
+        private System.Windows.Forms.OpenFileDialog ofdFoto;
+        private System.Windows.Forms.Label lblCorreo;
+        private Guna.UI2.WinForms.Guna2TextBox txtCorreo;
     }
 }

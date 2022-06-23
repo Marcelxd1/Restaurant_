@@ -110,6 +110,12 @@
     <Compile Include="frm_Gestion_Reportes.Designer.cs">
       <DependentUpon>frm_Gestion_Reportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Load.Designer.cs">
+      <DependentUpon>frm_Load.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Reportes.resx">
       <DependentUpon>frm_Gestion_Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Load.resx">
+      <DependentUpon>frm_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Loading.resx">
       <DependentUpon>frm_Loading.cs</DependentUpon>
@@ -855,6 +864,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\subir foto.png" />
     <None Include="Resources\llevar.png" />
     <None Include="Resources\pago.png" />
     <None Include="Resources\imprmir.png" />

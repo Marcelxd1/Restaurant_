@@ -96,5 +96,26 @@ namespace LP2Soft
         {
             abrirFormulario(new frm_Gestion_Usuario());
         }
+
+        private void guna2ImageButton1_MouseEnter(object sender, EventArgs e)
+        {
+            lblCrearUsuario.ForeColor = Color.Blue;
+            
+        }
+
+        private void guna2ImageButton1_MouseLeave(object sender, EventArgs e)
+        {
+            lblCrearUsuario.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void guna2ImageButton2_MouseEnter(object sender, EventArgs e)
+        {
+            lblListarUsuarios.ForeColor = Color.Blue;
+        }
+
+        private void guna2ImageButton2_MouseLeave(object sender, EventArgs e)
+        {
+            lblListarUsuarios.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
     }
 }

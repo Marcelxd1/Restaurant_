@@ -14,11 +14,12 @@ public class Usuario extends Persona {
     private String usuario ; 
     private String password ;
     //private boolean estado ; 
-    //private String imagen ; 
+    private byte[] imagen ; 
     private double salario ; 
     private String telefono ; 
     private Rol rol ; 
     private Restaurante restaurante ; 
+    private String correo ; 
     
     public Usuario(){}
 
@@ -88,5 +89,21 @@ public class Usuario extends Persona {
         this.restaurante = restaurante;
     }
 
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
     
 }

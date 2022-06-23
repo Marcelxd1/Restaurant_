@@ -96,5 +96,35 @@ namespace LP2Soft
         {
             abrirFormulario(new frm_Gestion_Productos_RegistroCategoria());
         }
+
+        private void guna2ImageButton3_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarCategoria.ForeColor = Color.Blue;
+        }
+
+        private void guna2ImageButton3_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarCategoria.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void guna2ImageButton1_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarCombo.ForeColor = Color.Blue;
+        }
+
+        private void guna2ImageButton1_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarCombo.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void guna2ImageButton2_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarPlato.ForeColor = Color.Blue;
+        }
+
+        private void guna2ImageButton2_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarPlato.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
     }
 }

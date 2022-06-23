@@ -34,6 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Gestion_Gastos));
             this.dgvGasto = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.txtDescripcion = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,11 +59,6 @@
             this.epPrecio = new System.Windows.Forms.ErrorProvider(this.components);
             this.epCantidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.epDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGasto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epItem)).BeginInit();
@@ -133,6 +133,49 @@
             this.dgvGasto.ThemeStyle.RowsStyle.Height = 22;
             this.dgvGasto.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvGasto.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // Nro
+            // 
+            this.Nro.DataPropertyName = "id_transaccion";
+            this.Nro.FillWeight = 76.14214F;
+            this.Nro.HeaderText = "Nro.";
+            this.Nro.MinimumWidth = 6;
+            this.Nro.Name = "Nro";
+            this.Nro.ReadOnly = true;
+            // 
+            // Item
+            // 
+            this.Item.DataPropertyName = "item";
+            this.Item.FillWeight = 105.9645F;
+            this.Item.HeaderText = "Item";
+            this.Item.MinimumWidth = 6;
+            this.Item.Name = "Item";
+            this.Item.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "precio";
+            this.Precio.FillWeight = 105.9645F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "cantidad";
+            this.Cantidad.FillWeight = 105.9645F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // btnGuardar
             // 
@@ -463,49 +506,6 @@
             // 
             this.epDescripcion.ContainerControl = this;
             // 
-            // Nro
-            // 
-            this.Nro.DataPropertyName = "id_transaccion";
-            this.Nro.FillWeight = 76.14214F;
-            this.Nro.HeaderText = "Nro.";
-            this.Nro.MinimumWidth = 6;
-            this.Nro.Name = "Nro";
-            this.Nro.ReadOnly = true;
-            // 
-            // Item
-            // 
-            this.Item.DataPropertyName = "item";
-            this.Item.FillWeight = 105.9645F;
-            this.Item.HeaderText = "Item";
-            this.Item.MinimumWidth = 6;
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "precio";
-            this.Precio.FillWeight = 105.9645F;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "cantidad";
-            this.Cantidad.FillWeight = 105.9645F;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
             // frm_Gestion_Gastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,7 +530,7 @@
             this.Controls.Add(this.guna2PictureBox3);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Gestion_Gastos";
-            this.Text = "frm_Gestion_Gastos";
+            this.Text = "Gestion de Gastos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGasto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epItem)).EndInit();

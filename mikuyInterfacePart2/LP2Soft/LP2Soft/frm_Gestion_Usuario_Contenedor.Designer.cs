@@ -77,6 +77,8 @@
             this.guna2PictureBox7.TabIndex = 48;
             this.guna2PictureBox7.TabStop = false;
             this.guna2PictureBox7.Click += new System.EventHandler(this.guna2PictureBox7_Click);
+            this.guna2PictureBox7.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
+            this.guna2PictureBox7.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
             // 
             // lblListarUsuarios
             // 
@@ -90,8 +92,8 @@
             this.lblListarUsuarios.Text = "Listar Usuarios";
             this.lblListarUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblListarUsuarios.Click += new System.EventHandler(this.lblListarUsuarios_Click);
-            this.lblListarUsuarios.MouseEnter += new System.EventHandler(this.lblListarUsuarios_MouseEnter);
-            this.lblListarUsuarios.MouseLeave += new System.EventHandler(this.lblListarUsuarios_MouseLeave);
+            this.lblListarUsuarios.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
+            this.lblListarUsuarios.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
             // 
             // guna2ImageButton2
             // 
@@ -107,6 +109,8 @@
             this.guna2ImageButton2.Size = new System.Drawing.Size(135, 121);
             this.guna2ImageButton2.TabIndex = 58;
             this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            this.guna2ImageButton2.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
+            this.guna2ImageButton2.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
             // 
             // panel1
             // 
@@ -132,6 +136,8 @@
             this.guna2PictureBox1.TabIndex = 48;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            this.guna2PictureBox1.MouseEnter += new System.EventHandler(this.guna2ImageButton1_MouseEnter);
+            this.guna2PictureBox1.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
             // 
             // lblCrearUsuario
             // 
@@ -145,8 +151,8 @@
             this.lblCrearUsuario.Text = "Crear Usuario";
             this.lblCrearUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCrearUsuario.Click += new System.EventHandler(this.lblCrearUsuario_Click);
-            this.lblCrearUsuario.MouseEnter += new System.EventHandler(this.lblCrearUsuario_MouseEnter);
-            this.lblCrearUsuario.MouseLeave += new System.EventHandler(this.lblCrearUsuario_MouseLeave);
+            this.lblCrearUsuario.MouseEnter += new System.EventHandler(this.guna2ImageButton1_MouseEnter);
+            this.lblCrearUsuario.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
             // 
             // guna2ImageButton1
             // 
@@ -162,6 +168,8 @@
             this.guna2ImageButton1.Size = new System.Drawing.Size(135, 121);
             this.guna2ImageButton1.TabIndex = 58;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            this.guna2ImageButton1.MouseEnter += new System.EventHandler(this.guna2ImageButton1_MouseEnter);
+            this.guna2ImageButton1.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
             // 
             // frm_Gestion_Usuario_Contenedor
             // 
