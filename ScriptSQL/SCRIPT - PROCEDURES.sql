@@ -193,9 +193,9 @@ END$
 
 -- MESA ----------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE INSERTAR_MESA(out _id_mesa int , in _capacidad int )
+CREATE PROCEDURE INSERTAR_MESA(out _id_mesa int , in _capacidad int, in _numMesa int )
 BEGIN
-    insert into mesa( capacidad,activo,disponible) values (_capacidad,1,1);
+    insert into mesa( capacidad, numMesa,activo,disponible) values (_capacidad, _numMesa,1,1);
     set _id_mesa = @@last_insert_id ;
 END$
 
@@ -208,17 +208,18 @@ END$
 
 CREATE PROCEDURE LISTAR_MESA_TODOS()
 BEGIN
-    SELECT id_mesa, capacidad, disponible FROM mesa WHERE activo = 1;
+    SELECT id_mesa, capacidad, numMesa, disponible FROM mesa WHERE activo = 1;
 END$
 
 CREATE PROCEDURE MODIFICAR_MESA(
     IN _id_mesa INT,
     IN _capacidad INT,
+    IN _numMesa INT,
     IN _activo INT,
     IN _disponible INT
 )
 BEGIN
-    UPDATE mesa SET capacidad = _capacidad , activo = _activo, disponible = _disponible
+    UPDATE mesa SET capacidad = _capacidad , numMesa = _numMesa, activo = _activo, disponible = _disponible
     WHERE id_mesa = _id_mesa;
 END$
 

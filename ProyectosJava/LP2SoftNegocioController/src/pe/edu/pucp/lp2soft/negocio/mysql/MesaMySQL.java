@@ -28,7 +28,8 @@ public class MesaMySQL implements MesaDAO {
             while (rs.next()) {
                 Mesa mesa = new Mesa();
                 mesa.setIdMesa(rs.getInt("id_mesa"));
-                mesa.setNumero(rs.getInt("capacidad"));
+                mesa.setCapacidad(rs.getInt("capacidad"));
+                mesa.setNumMesa(rs.getInt("numMesa"));
                 mesa.setEstado(true);
                 mesa.setDisponible(rs.getBoolean("disponible")); 
                 mesas.add(mesa);
@@ -51,9 +52,10 @@ public class MesaMySQL implements MesaDAO {
         //System.out.println(mesa.getId_personaje());
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_MESA(?,?)}");
+            cs = con.prepareCall("{call INSERTAR_MESA(?,?,?)}");
             cs.registerOutParameter("_id_mesa", java.sql.Types.INTEGER);
-            cs.setInt("_capacidad", mesa.getNumero());
+            cs.setInt("_capacidad", mesa.getCapacidad());
+            cs.setInt("_numMesa", mesa.getNumMesa());
             cs.executeUpdate();
             mesa.setIdMesa(cs.getInt("_id_mesa"));
             resultado = mesa.getIdMesa();
@@ -74,11 +76,12 @@ public class MesaMySQL implements MesaDAO {
         int resultado = 0;
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_MESA(?,?,?,?)}");
+            cs = con.prepareCall("{call MODIFICAR_MESA(?,?,?,?,?)}");
             cs.setInt("_id_mesa", mesa.getIdMesa());
             cs.setBoolean("_activo", mesa.isEstado());
             cs.setBoolean("_disponible", mesa.isDisponible());
-            cs.setInt("_capacidad", mesa.getNumero());
+            cs.setInt("_capacidad", mesa.getCapacidad());
+            cs.setInt("_numMesa", mesa.getNumMesa());
             cs.executeUpdate();
             resultado = 1;
             

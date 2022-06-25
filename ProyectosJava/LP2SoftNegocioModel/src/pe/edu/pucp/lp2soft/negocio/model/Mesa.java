@@ -5,13 +5,14 @@ public class Mesa {
     private int idMesa;
     private boolean estado;
     private boolean disponible;
-    private int numero;
+    private int capacidad;
+    private int numMesa;
 
     //CONSTRUCTOR 
     public Mesa() {}
 
-    public Mesa(int numero) {
-        this.numero = numero;
+    public Mesa(int capacidad) {
+        this.capacidad = capacidad;
         this.estado = true;
         this.disponible = true;
     }
@@ -33,12 +34,12 @@ public class Mesa {
         this.estado = estado;
     }
 
-    public int getNumero() {
-        return this.numero;
+    public int getCapacidad() {
+        return this.capacidad;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
     }
 
     public boolean isDisponible() {
@@ -49,4 +50,12 @@ public class Mesa {
         this.disponible = disponible;
     }
 
+    public int getNumMesa() {
+        return numMesa;
+    }
+
+    public void setNumMesa(int numMesa) {
+        this.numMesa = numMesa;
+    }
+    
 }

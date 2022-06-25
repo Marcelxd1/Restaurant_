@@ -60,7 +60,7 @@ public class PedidoMySQL implements PedidoDAO {
                 Mesa mesa= new Mesa();
                 mesa.setIdMesa(rs.getInt("id_mesa"));                
                 mesa.setEstado(rs.getBoolean("activo"));
-                mesa.setNumero(rs.getInt("capacidad"));
+                mesa.setCapacidad(rs.getInt("capacidad"));
                 pedido.setMesa(mesa);
                 pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
                 UsuarioDAO daouser= new UsuarioMySQL();
@@ -129,7 +129,7 @@ public class PedidoMySQL implements PedidoDAO {
                 Mesa mesa= new Mesa();
                 mesa.setIdMesa(rs.getInt("id_mesa"));                
                 mesa.setEstado(rs.getBoolean("activo"));
-                mesa.setNumero(rs.getInt("capacidad"));
+                mesa.setCapacidad(rs.getInt("capacidad"));
                 pedido.setMesa(mesa);
                 pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
                 
@@ -305,7 +305,7 @@ public class PedidoMySQL implements PedidoDAO {
                 pedido.setMesa(new Mesa());
                 pedido.getMesa().setIdMesa(rs.getInt("id_mesa"));
                 pedido.getMesa().setEstado(true);
-                pedido.getMesa().setNumero(rs.getInt("capacidad"));
+                pedido.getMesa().setCapacidad(rs.getInt("capacidad"));
                 
                 //producto.setTipoProducto(rs.getString("fid_tipo_producto").charAt(0));
                 pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
@@ -352,7 +352,7 @@ public class PedidoMySQL implements PedidoDAO {
                 pedido.setMesa(new Mesa());
                 pedido.getMesa().setIdMesa(rs.getInt("id_mesa"));
                 pedido.getMesa().setEstado(true);
-                pedido.getMesa().setNumero(rs.getInt("capacidad"));
+                pedido.getMesa().setCapacidad(rs.getInt("capacidad"));
                 
                 //producto.setTipoProducto(rs.getString("fid_tipo_producto").charAt(0));
                 pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
@@ -448,7 +448,7 @@ public class PedidoMySQL implements PedidoDAO {
                 Mesa mesa= new Mesa();
                 mesa.setIdMesa(rs.getInt("id_mesa"));                
                 mesa.setEstado(rs.getBoolean("activo"));
-                mesa.setNumero(rs.getInt("capacidad"));
+                mesa.setCapacidad(rs.getInt("capacidad"));
                 pedido.setMesa(mesa);
                 
                 i = rs.getInt("fid_cajero");

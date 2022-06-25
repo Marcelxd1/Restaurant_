@@ -106,7 +106,7 @@ namespace LP2Soft
             {
                 mesaSelecc = (NegocioWS.mesa)cbMesas.SelectedItem;
                 txtID.Text = mesaSelecc.idMesa.ToString();
-                txtCapacidad.Text = mesaSelecc.numero.ToString();
+                txtCapacidad.Text = mesaSelecc.capacidad.ToString();
             }
         }
 
@@ -122,7 +122,7 @@ namespace LP2Soft
             if (_estado == Estado.Nuevo)
             {
                 //_mesa.idMesa = 0;
-                _mesa.numero = Int32.Parse(txtCapacidad.Text);
+                _mesa.capacidad = Int32.Parse(txtCapacidad.Text);
                 resultado= daonegocio.insertarMesa(_mesa);
                 if (resultado != 0)
                 {
@@ -137,7 +137,7 @@ namespace LP2Soft
             else if (_estado == Estado.Modificar)
             {
                 _mesa = mesaSelecc;
-               _mesa.numero = Int32.Parse(txtCapacidad.Text);
+               _mesa.capacidad = Int32.Parse(txtCapacidad.Text);
                 
                 resultado = daonegocio.modificarMesa(_mesa);
                 if (resultado != 0)

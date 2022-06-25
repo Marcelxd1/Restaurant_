@@ -24,7 +24,7 @@ namespace LP2Soft
             this.persona = persona;
             this.rol = rol;
             daonegocio = new NegocioWS.NegocioWSClient();
-            //no se sabe si elimino los botones anteriores o no 
+            
             cargarBotonones();
             panelMesas.AutoScroll = true;
             label1.Enabled = false;
@@ -44,11 +44,17 @@ namespace LP2Soft
         {
             int top = 0;
             int left = 0;
+            int k = 0;
             lista_mesas = new BindingList<NegocioWS.mesa>();
             foreach (NegocioWS.mesa item in daonegocio.listarTodasMesa())
             {
                 if (item.estado == true)
+                {
+                    item.numMesa = k;
                     lista_mesas.Add(item);
+                    k++;
+                }
+                    
             }
             int limite = lista_mesas.Count();
             lista_botones = new BindingList<Button>();
