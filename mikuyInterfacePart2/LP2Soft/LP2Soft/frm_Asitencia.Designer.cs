@@ -68,6 +68,7 @@
             // 
             this.btnAsistencia.BorderRadius = 10;
             this.btnAsistencia.CheckedState.Parent = this.btnAsistencia;
+            this.btnAsistencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAsistencia.CustomImages.Parent = this.btnAsistencia;
             this.btnAsistencia.FillColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.btnAsistencia, "btnAsistencia");
@@ -81,6 +82,7 @@
             // 
             this.btnSalida.BorderRadius = 10;
             this.btnSalida.CheckedState.Parent = this.btnSalida;
+            this.btnSalida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalida.CustomImages.Parent = this.btnSalida;
             this.btnSalida.FillColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.btnSalida, "btnSalida");

@@ -75,6 +75,7 @@
             // 
             this.btnBuscar.BorderRadius = 10;
             this.btnBuscar.CheckedState.Parent = this.btnBuscar;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.CustomImages.Parent = this.btnBuscar;
             this.btnBuscar.FillColor = System.Drawing.Color.Black;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +137,7 @@
             // 
             this.btnGuardar.BorderRadius = 10;
             this.btnGuardar.CheckedState.Parent = this.btnGuardar;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.CustomImages.Parent = this.btnGuardar;
             this.btnGuardar.FillColor = System.Drawing.Color.Black;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,6 +155,7 @@
             // 
             this.btnModificar.BorderRadius = 10;
             this.btnModificar.CheckedState.Parent = this.btnModificar;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.CustomImages.Parent = this.btnModificar;
             this.btnModificar.FillColor = System.Drawing.Color.Black;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,6 +173,7 @@
             // 
             this.btnEliminar.BorderRadius = 10;
             this.btnEliminar.CheckedState.Parent = this.btnEliminar;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.CustomImages.Parent = this.btnEliminar;
             this.btnEliminar.FillColor = System.Drawing.Color.Black;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,6 +191,7 @@
             // 
             this.btnNuevo.BorderRadius = 10;
             this.btnNuevo.CheckedState.Parent = this.btnNuevo;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.CustomImages.Parent = this.btnNuevo;
             this.btnNuevo.FillColor = System.Drawing.Color.Black;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -281,6 +286,7 @@
             // 
             this.btnCancelar.BorderRadius = 10;
             this.btnCancelar.CheckedState.Parent = this.btnCancelar;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.CustomImages.Parent = this.btnCancelar;
             this.btnCancelar.FillColor = System.Drawing.Color.Black;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,7 +320,7 @@
             this.Controls.Add(this.cbMesas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2PictureBox3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Gestion_Mesas";
             this.Text = "Gestion de mesas";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();

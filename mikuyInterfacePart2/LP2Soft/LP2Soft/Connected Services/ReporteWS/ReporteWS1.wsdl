@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/ReporteWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="generarBoletaVenta">
-    <part name="parameters" element="tns:generarBoletaVenta" />
-  </message>
-  <message name="generarBoletaVentaResponse">
-    <part name="parameters" element="tns:generarBoletaVentaResponse" />
-  </message>
   <message name="generarReportePlatosMasVendidos">
     <part name="parameters" element="tns:generarReportePlatosMasVendidos" />
   </message>
   <message name="generarReportePlatosMasVendidosResponse">
     <part name="parameters" element="tns:generarReportePlatosMasVendidosResponse" />
+  </message>
+  <message name="generarBoletaVenta">
+    <part name="parameters" element="tns:generarBoletaVenta" />
+  </message>
+  <message name="generarBoletaVentaResponse">
+    <part name="parameters" element="tns:generarBoletaVentaResponse" />
   </message>
   <message name="generarFacturaVenta">
     <part name="parameters" element="tns:generarFacturaVenta" />
@@ -29,14 +29,20 @@
   <message name="generarReporteAsistenciaResponse">
     <part name="parameters" element="tns:generarReporteAsistenciaResponse" />
   </message>
+  <message name="generarReporteVentasXDiaFecha">
+    <part name="parameters" element="tns:generarReporteVentasXDiaFecha" />
+  </message>
+  <message name="generarReporteVentasXDiaFechaResponse">
+    <part name="parameters" element="tns:generarReporteVentasXDiaFechaResponse" />
+  </message>
   <portType name="ReporteWS">
-    <operation name="generarBoletaVenta">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse" message="tns:generarBoletaVentaResponse" />
-    </operation>
     <operation name="generarReportePlatosMasVendidos">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReportePlatosMasVendidosRequest" message="tns:generarReportePlatosMasVendidos" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReportePlatosMasVendidosResponse" message="tns:generarReportePlatosMasVendidosResponse" />
+    </operation>
+    <operation name="generarBoletaVenta">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse" message="tns:generarBoletaVentaResponse" />
     </operation>
     <operation name="generarFacturaVenta">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaVentaRequest" message="tns:generarFacturaVenta" />
@@ -46,10 +52,14 @@
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaRequest" message="tns:generarReporteAsistencia" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaResponse" message="tns:generarReporteAsistenciaResponse" />
     </operation>
+    <operation name="generarReporteVentasXDiaFecha">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteVentasXDiaFechaRequest" message="tns:generarReporteVentasXDiaFecha" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteVentasXDiaFechaResponse" message="tns:generarReporteVentasXDiaFechaResponse" />
+    </operation>
   </portType>
   <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="generarBoletaVenta">
+    <operation name="generarReportePlatosMasVendidos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="generarReportePlatosMasVendidos">
+    <operation name="generarBoletaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,6 +87,15 @@
       </output>
     </operation>
     <operation name="generarReporteAsistencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteVentasXDiaFecha">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

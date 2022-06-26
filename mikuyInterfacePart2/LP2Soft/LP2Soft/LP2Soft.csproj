@@ -266,6 +266,12 @@
     <Compile Include="frm_Mesero_MesaVer2.Designer.cs">
       <DependentUpon>frm_Mesero_MesaVer2.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ReporteVentasXFechaDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ReporteVentasXFechaDia.Designer.cs">
+      <DependentUpon>frm_ReporteVentasXFechaDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Reporte_Asistencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Mesero_MesaVer2.resx">
       <DependentUpon>frm_Mesero_MesaVer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ReporteVentasXFechaDia.resx">
+      <DependentUpon>frm_ReporteVentasXFechaDia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Reporte_Asistencia.resx">
       <DependentUpon>frm_Reporte_Asistencia.cs</DependentUpon>
@@ -608,6 +617,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarReportePlatosMasVendidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReporteWS\ReporteWS1.wsdl" />

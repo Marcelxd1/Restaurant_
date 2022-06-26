@@ -702,3 +702,14 @@ begin
 	update usuario set 	fid_rol = _fid_rol , salario = _salario , telefono = _telefono 
     where id_usuario = _id_usuario ; 
 end$
+
+CREATE PROCEDURE LISTAR_PEDIDOS_PENDIENTES()
+BEGIN
+	SELECT 	t.id_transaccion, t.fid_restaurante, t.total, t.fecha, 
+			m.id_mesa , m.activo, m.capacidad,
+            p.fid_tipo_pago, p.fid_mesero, p.fid_cajero, p.fid_cliente,
+			p.fid_tipo_pedido, p.fid_tipo_comprobante, p.numero_comprobante, p.fid_estado_pedido, m.numMesa
+    FROM transaccion t INNER JOIN pedido p ON p.id_pedido = t.id_transaccion
+    INNER JOIN mesa m ON m.id_mesa = p.fid_mesa
+    WHERE t.activo = 1 and fid_estado_pedido = 'E' or fid_estado_pedido = 'P' ;
+END$

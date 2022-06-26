@@ -392,6 +392,7 @@ public class PedidoMySQL implements PedidoDAO {
                 pedido.setIdPedido(rs.getInt("id_transaccion"));
                 Mesa mesa = new Mesa();
                 mesa.setIdMesa(rs.getInt("id_mesa"));
+                mesa.setNumMesa(rs.getInt("numMesa"));
                 pedido.setMesa(mesa);
                 pedido.setTipoPedido(rs.getString("fid_tipo_pedido").charAt(0));
                 pedido.setEstado(rs.getString("fid_estado_pedido").charAt(0));

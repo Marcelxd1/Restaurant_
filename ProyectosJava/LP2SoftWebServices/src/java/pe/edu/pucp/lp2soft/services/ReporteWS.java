@@ -115,4 +115,21 @@ public class ReporteWS {
         }
         return reporteBytes;
     }
+    
+    @WebMethod(operationName = "generarReporteVentasXDiaFecha")
+    public byte[] generarReporteVentasXDiaFecha() {
+        byte[] reporteBytes= null;
+        try {
+            Connection con= DBManager.getInstance().getConnection();
+            JasperReport reporte = (JasperReport)JRLoader.loadObject(ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/reports/ReporteVentasxDias.jasper"));
+            HashMap hm = new HashMap();
+            JasperPrint jp = JasperFillManager.fillReport(reporte, hm, con);
+            con.close();
+            reporteBytes = JasperExportManager.exportReportToPdf(jp);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return reporteBytes;
+    }
+    
 }

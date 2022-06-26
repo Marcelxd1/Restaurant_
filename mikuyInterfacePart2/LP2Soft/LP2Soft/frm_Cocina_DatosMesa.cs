@@ -27,12 +27,12 @@ namespace LP2Soft
             InitializeComponent();
             daoCaja = new CajaWS.CajaWSClient();
             CajaWS.lineaPedido[] lineas = daoCaja.listarLineaPedidoMesa(pedido.idPedido);
-            if(pedido.mesa.idMesa == 3)
+            if (pedido.mesa.idMesa == 3)
             {
                 lblMesa.Text = "Para llevar";
             }
             else
-                lblMesa.Text = "Mesa " + pedido.mesa.idMesa;
+                lblMesa.Text = "Mesa " + pedido.mesa.numMesa;
             lblIdPedido.Text = pedido.idPedido.ToString();
             panelPedidos.Controls.Clear();
             if (pedido.estado == 'E') // NO ATENDIDO

@@ -349,7 +349,6 @@
             this.txtDNI.HoverState.Parent = this.txtDNI;
             this.txtDNI.Location = new System.Drawing.Point(74, 152);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.PasswordChar = '\0';
             this.txtDNI.PlaceholderText = "";
@@ -385,6 +384,7 @@
             this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
             this.btnRegistrar.BorderRadius = 10;
             this.btnRegistrar.CheckedState.Parent = this.btnRegistrar;
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrar.CustomImages.Parent = this.btnRegistrar;
             this.btnRegistrar.FillColor = System.Drawing.Color.Black;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

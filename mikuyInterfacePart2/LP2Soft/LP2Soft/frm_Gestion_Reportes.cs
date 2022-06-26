@@ -71,12 +71,28 @@ namespace LP2Soft
 
         private void guna2ImageButton5_MouseEnter(object sender, EventArgs e)
         {
-            label4.ForeColor = Color.Blue;
+            lblVentas.ForeColor = Color.Blue;
         }
 
         private void guna2ImageButton5_MouseLeave(object sender, EventArgs e)
         {
-            label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            lblVentas.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void lblVentas_Click(object sender, EventArgs e)
+        {
+            frm_ReporteVentasXFechaDia formReporteVentasXFechaDia = new frm_ReporteVentasXFechaDia();
+            formReporteVentasXFechaDia.ShowDialog();
+        }
+
+        private void guna2PictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

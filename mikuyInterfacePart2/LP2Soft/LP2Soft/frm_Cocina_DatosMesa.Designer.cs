@@ -63,6 +63,7 @@
             // 
             this.btnListo.BorderRadius = 10;
             this.btnListo.CheckedState.Parent = this.btnListo;
+            this.btnListo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListo.CustomImages.Parent = this.btnListo;
             this.btnListo.FillColor = System.Drawing.Color.Black;
             this.btnListo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,6 +82,7 @@
             // 
             this.btnProceso.BorderRadius = 10;
             this.btnProceso.CheckedState.Parent = this.btnProceso;
+            this.btnProceso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProceso.CustomImages.Parent = this.btnProceso;
             this.btnProceso.FillColor = System.Drawing.Color.Black;
             this.btnProceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

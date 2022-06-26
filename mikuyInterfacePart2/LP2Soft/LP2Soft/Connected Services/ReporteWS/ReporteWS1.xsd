@@ -8,6 +8,8 @@
   <xs:element name="generarReporteAsistenciaResponse" type="tns:generarReporteAsistenciaResponse" />
   <xs:element name="generarReportePlatosMasVendidos" type="tns:generarReportePlatosMasVendidos" />
   <xs:element name="generarReportePlatosMasVendidosResponse" type="tns:generarReportePlatosMasVendidosResponse" />
+  <xs:element name="generarReporteVentasXDiaFecha" type="tns:generarReporteVentasXDiaFecha" />
+  <xs:element name="generarReporteVentasXDiaFechaResponse" type="tns:generarReporteVentasXDiaFechaResponse" />
   <xs:complexType name="generarReporteAsistencia">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
@@ -40,6 +42,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="generarReportePlatosMasVendidosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteVentasXDiaFecha">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="generarReporteVentasXDiaFechaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
     </xs:sequence>
