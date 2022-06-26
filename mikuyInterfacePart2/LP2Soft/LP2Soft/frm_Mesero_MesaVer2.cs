@@ -44,7 +44,7 @@ namespace LP2Soft
         {
             int top = 0;
             int left = 0;
-            int k = 0;
+            int k = 1;
             lista_mesas = new BindingList<NegocioWS.mesa>();
             foreach (NegocioWS.mesa item in daonegocio.listarTodasMesa())
             {
@@ -97,7 +97,15 @@ namespace LP2Soft
                     button.BackColor = Color.RoyalBlue;
                 else
                     button.BackColor = Color.IndianRed;
-
+                try
+                {
+                    daonegocio.modificarMesa(lista_mesas[i]);
+                    //para cargar el numero de mesa
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
                 lista_botones.Add(button);
                 panelMesas.Controls.Add((Control)button);
             }
