@@ -88,12 +88,16 @@ public class ReporteWS {
         try {
             Connection con= DBManager.getInstance().getConnection();
             JasperReport reporte = (JasperReport)JRLoader.loadObject(ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/reports/ReporteAsistencia.jasper"));
-            Date fini, ffin; 
+            Date fini, ffin;
+            String rutaImagen = 
+                    ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/img/logo_restaurant.png").getPath();
             fini = java.sql.Date.valueOf(fechaini);
             ffin = java.sql.Date.valueOf(fechafin);
+            Image imagen = (new ImageIcon(rutaImagen)).getImage();
             HashMap hm = new HashMap();// aqui entraria la imagen
             hm.put("fechaIni", fini);
             hm.put("fechaFin", ffin);
+            hm.put("paramImage", imagen);
             JasperPrint jp = JasperFillManager.fillReport(reporte, hm, con);
             con.close();
             reporteBytes = JasperExportManager.exportReportToPdf(jp);
@@ -110,11 +114,15 @@ public class ReporteWS {
             Connection con= DBManager.getInstance().getConnection();
             JasperReport reporte = (JasperReport)JRLoader.loadObject(ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/reports/ReportePlatosVendidos.jasper"));
             Date fini, ffin; 
+            String rutaImagen = 
+                    ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/img/logo_restaurant.png").getPath();
             fini = java.sql.Date.valueOf(fechaini);
             ffin = java.sql.Date.valueOf(fechafin);
+            Image imagen = (new ImageIcon(rutaImagen)).getImage();
             HashMap hm = new HashMap();// aqui entraria la imagen
             hm.put("fechaIni", fini);
             hm.put("fechaFin", ffin);
+            hm.put("paramImage", imagen);
             JasperPrint jp = JasperFillManager.fillReport(reporte, hm, con);
             con.close();
             reporteBytes = JasperExportManager.exportReportToPdf(jp);
