@@ -249,8 +249,12 @@ namespace LP2Soft
                 {
                     this._pedido.idPedido = resultado;
                     this._estado = Estado.Guardar;
+                    _mesa.estado = true;
+                    _mesa.disponible = false;
+                    _daoNegocio.modificarMesa(_mesa);
                     this.hecho = true;
                     MessageBox.Show("Se ha registrado con éxito", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Ha ocurrido un error", "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

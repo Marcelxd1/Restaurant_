@@ -14,6 +14,7 @@ namespace LP2Soft
     {
 
         private CajaWS.CajaWSClient daoCaja;
+        private NegocioWS.NegocioWSClient daoNegocio;
         private int idPedidoActualizado;
         private CajaWS.pedido _pedido;
         private UserWS.persona cajero;
@@ -21,6 +22,7 @@ namespace LP2Soft
         {
             InitializeComponent();
             daoCaja = new CajaWS.CajaWSClient();
+            daoNegocio = new NegocioWS.NegocioWSClient();
             cajero = _cajero;
             _pedido = pedido;
             CajaWS.lineaPedido[] lineas = daoCaja.listarLineaPedidoMesa(pedido.idPedido);
@@ -32,17 +34,10 @@ namespace LP2Soft
             }
             else
             {
-                lblMesa.Text = "Mesa " + pedido.mesa.idMesa;
+                lblMesa.Text = "Mesa " + _pedido.mesa.numMesa;
                 this.lblMesa.Location = new System.Drawing.Point(82, 18);
             }
-            if (pedido.tipoPedido == 'C')//para comer
-            {
-                lblPedido.Text = "Para mesa";
-            }
-            else
-            {
-                lblPedido.Text = "Para llevar";
-            }
+            
             if (lineas != null)
             {
                 BindingList<CajaWS.lineaPedido> lineaBL = new BindingList<CajaWS.lineaPedido>(lineas);

@@ -5,6 +5,120 @@
       <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/CajaWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+  <message name="listarPedidosNoPagados">
+    <part name="parameters" element="tns:listarPedidosNoPagados" />
+  </message>
+  <message name="listarPedidosNoPagadosResponse">
+    <part name="parameters" element="tns:listarPedidosNoPagadosResponse" />
+  </message>
+  <message name="listarTodosPedido">
+    <part name="parameters" element="tns:listarTodosPedido" />
+  </message>
+  <message name="listarTodosPedidoResponse">
+    <part name="parameters" element="tns:listarTodosPedidoResponse" />
+  </message>
+  <message name="listarLineaPXPedido">
+    <part name="parameters" element="tns:listarLineaPXPedido" />
+  </message>
+  <message name="listarLineaPXPedidoResponse">
+    <part name="parameters" element="tns:listarLineaPXPedidoResponse" />
+  </message>
+  <message name="buscarLineaPedidoXID">
+    <part name="parameters" element="tns:buscarLineaPedidoXID" />
+  </message>
+  <message name="buscarLineaPedidoXIDResponse">
+    <part name="parameters" element="tns:buscarLineaPedidoXIDResponse" />
+  </message>
+  <message name="eliminarLineaPedido">
+    <part name="parameters" element="tns:eliminarLineaPedido" />
+  </message>
+  <message name="eliminarLineaPedidoResponse">
+    <part name="parameters" element="tns:eliminarLineaPedidoResponse" />
+  </message>
+  <message name="BuscarPedidoXMesa">
+    <part name="parameters" element="tns:BuscarPedidoXMesa" />
+  </message>
+  <message name="BuscarPedidoXMesaResponse">
+    <part name="parameters" element="tns:BuscarPedidoXMesaResponse" />
+  </message>
+  <message name="listarTodosLineaPedido">
+    <part name="parameters" element="tns:listarTodosLineaPedido" />
+  </message>
+  <message name="listarTodosLineaPedidoResponse">
+    <part name="parameters" element="tns:listarTodosLineaPedidoResponse" />
+  </message>
+  <message name="insertarLineaPedido">
+    <part name="parameters" element="tns:insertarLineaPedido" />
+  </message>
+  <message name="insertarLineaPedidoResponse">
+    <part name="parameters" element="tns:insertarLineaPedidoResponse" />
+  </message>
+  <message name="listarPedidosPendientes">
+    <part name="parameters" element="tns:listarPedidosPendientes" />
+  </message>
+  <message name="listarPedidosPendientesResponse">
+    <part name="parameters" element="tns:listarPedidosPendientesResponse" />
+  </message>
+  <message name="modificarEstadoPedido">
+    <part name="parameters" element="tns:modificarEstadoPedido" />
+  </message>
+  <message name="modificarEstadoPedidoResponse">
+    <part name="parameters" element="tns:modificarEstadoPedidoResponse" />
+  </message>
+  <message name="listarTransaccionesXFecha">
+    <part name="parameters" element="tns:listarTransaccionesXFecha" />
+  </message>
+  <message name="listarTransaccionesXFechaResponse">
+    <part name="parameters" element="tns:listarTransaccionesXFechaResponse" />
+  </message>
+  <message name="listarTodosGastos">
+    <part name="parameters" element="tns:listarTodosGastos" />
+  </message>
+  <message name="listarTodosGastosResponse">
+    <part name="parameters" element="tns:listarTodosGastosResponse" />
+  </message>
+  <message name="listarTransacciones">
+    <part name="parameters" element="tns:listarTransacciones" />
+  </message>
+  <message name="listarTransaccionesResponse">
+    <part name="parameters" element="tns:listarTransaccionesResponse" />
+  </message>
+  <message name="ListarPedidosTransaccion">
+    <part name="parameters" element="tns:ListarPedidosTransaccion" />
+  </message>
+  <message name="ListarPedidosTransaccionResponse">
+    <part name="parameters" element="tns:ListarPedidosTransaccionResponse" />
+  </message>
+  <message name="listarGastosXNombre">
+    <part name="parameters" element="tns:listarGastosXNombre" />
+  </message>
+  <message name="listarGastosXNombreResponse">
+    <part name="parameters" element="tns:listarGastosXNombreResponse" />
+  </message>
+  <message name="modificarLineaPedido">
+    <part name="parameters" element="tns:modificarLineaPedido" />
+  </message>
+  <message name="modificarLineaPedidoResponse">
+    <part name="parameters" element="tns:modificarLineaPedidoResponse" />
+  </message>
+  <message name="listarLineaPedidoMesa">
+    <part name="parameters" element="tns:listarLineaPedidoMesa" />
+  </message>
+  <message name="listarLineaPedidoMesaResponse">
+    <part name="parameters" element="tns:listarLineaPedidoMesaResponse" />
+  </message>
+  <message name="buscarPedidoXID">
+    <part name="parameters" element="tns:buscarPedidoXID" />
+  </message>
+  <message name="buscarPedidoXIDResponse">
+    <part name="parameters" element="tns:buscarPedidoXIDResponse" />
+  </message>
+  <message name="modificarPedido">
+    <part name="parameters" element="tns:modificarPedido" />
+  </message>
+  <message name="modificarPedidoResponse">
+    <part name="parameters" element="tns:modificarPedidoResponse" />
+  </message>
   <message name="insertarGasto">
     <part name="parameters" element="tns:insertarGasto" />
   </message>
@@ -17,17 +131,11 @@
   <message name="eliminarGastoResponse">
     <part name="parameters" element="tns:eliminarGastoResponse" />
   </message>
-  <message name="modificarPedido">
-    <part name="parameters" element="tns:modificarPedido" />
+  <message name="eliminarPedido">
+    <part name="parameters" element="tns:eliminarPedido" />
   </message>
-  <message name="modificarPedidoResponse">
-    <part name="parameters" element="tns:modificarPedidoResponse" />
-  </message>
-  <message name="buscarPedidoXID">
-    <part name="parameters" element="tns:buscarPedidoXID" />
-  </message>
-  <message name="buscarPedidoXIDResponse">
-    <part name="parameters" element="tns:buscarPedidoXIDResponse" />
+  <message name="eliminarPedidoResponse">
+    <part name="parameters" element="tns:eliminarPedidoResponse" />
   </message>
   <message name="modificarGasto">
     <part name="parameters" element="tns:modificarGasto" />
@@ -35,11 +143,11 @@
   <message name="modificarGastoResponse">
     <part name="parameters" element="tns:modificarGastoResponse" />
   </message>
-  <message name="eliminarPedido">
-    <part name="parameters" element="tns:eliminarPedido" />
+  <message name="insertarPedido">
+    <part name="parameters" element="tns:insertarPedido" />
   </message>
-  <message name="eliminarPedidoResponse">
-    <part name="parameters" element="tns:eliminarPedidoResponse" />
+  <message name="insertarPedidoResponse">
+    <part name="parameters" element="tns:insertarPedidoResponse" />
   </message>
   <message name="RealizarPago">
     <part name="parameters" element="tns:RealizarPago" />
@@ -47,115 +155,83 @@
   <message name="RealizarPagoResponse">
     <part name="parameters" element="tns:RealizarPagoResponse" />
   </message>
-  <message name="insertarPedido">
-    <part name="parameters" element="tns:insertarPedido" />
-  </message>
-  <message name="insertarPedidoResponse">
-    <part name="parameters" element="tns:insertarPedidoResponse" />
-  </message>
-  <message name="listarPedidosPendientes">
-    <part name="parameters" element="tns:listarPedidosPendientes" />
-  </message>
-  <message name="listarPedidosPendientesResponse">
-    <part name="parameters" element="tns:listarPedidosPendientesResponse" />
-  </message>
-  <message name="ListarPedidosTransaccion">
-    <part name="parameters" element="tns:ListarPedidosTransaccion" />
-  </message>
-  <message name="ListarPedidosTransaccionResponse">
-    <part name="parameters" element="tns:ListarPedidosTransaccionResponse" />
-  </message>
-  <message name="BuscarPedidoXMesa">
-    <part name="parameters" element="tns:BuscarPedidoXMesa" />
-  </message>
-  <message name="BuscarPedidoXMesaResponse">
-    <part name="parameters" element="tns:BuscarPedidoXMesaResponse" />
-  </message>
-  <message name="listarLineaPXPedido">
-    <part name="parameters" element="tns:listarLineaPXPedido" />
-  </message>
-  <message name="listarLineaPXPedidoResponse">
-    <part name="parameters" element="tns:listarLineaPXPedidoResponse" />
-  </message>
-  <message name="insertarLineaPedido">
-    <part name="parameters" element="tns:insertarLineaPedido" />
-  </message>
-  <message name="insertarLineaPedidoResponse">
-    <part name="parameters" element="tns:insertarLineaPedidoResponse" />
-  </message>
-  <message name="listarTodosLineaPedido">
-    <part name="parameters" element="tns:listarTodosLineaPedido" />
-  </message>
-  <message name="listarTodosLineaPedidoResponse">
-    <part name="parameters" element="tns:listarTodosLineaPedidoResponse" />
-  </message>
-  <message name="buscarLineaPedidoXID">
-    <part name="parameters" element="tns:buscarLineaPedidoXID" />
-  </message>
-  <message name="buscarLineaPedidoXIDResponse">
-    <part name="parameters" element="tns:buscarLineaPedidoXIDResponse" />
-  </message>
-  <message name="modificarEstadoPedido">
-    <part name="parameters" element="tns:modificarEstadoPedido" />
-  </message>
-  <message name="modificarEstadoPedidoResponse">
-    <part name="parameters" element="tns:modificarEstadoPedidoResponse" />
-  </message>
-  <message name="listarGastosXNombre">
-    <part name="parameters" element="tns:listarGastosXNombre" />
-  </message>
-  <message name="listarGastosXNombreResponse">
-    <part name="parameters" element="tns:listarGastosXNombreResponse" />
-  </message>
-  <message name="listarLineaPedidoMesa">
-    <part name="parameters" element="tns:listarLineaPedidoMesa" />
-  </message>
-  <message name="listarLineaPedidoMesaResponse">
-    <part name="parameters" element="tns:listarLineaPedidoMesaResponse" />
-  </message>
-  <message name="listarTodosPedido">
-    <part name="parameters" element="tns:listarTodosPedido" />
-  </message>
-  <message name="listarTodosPedidoResponse">
-    <part name="parameters" element="tns:listarTodosPedidoResponse" />
-  </message>
-  <message name="modificarLineaPedido">
-    <part name="parameters" element="tns:modificarLineaPedido" />
-  </message>
-  <message name="modificarLineaPedidoResponse">
-    <part name="parameters" element="tns:modificarLineaPedidoResponse" />
-  </message>
-  <message name="listarPedidosNoPagados">
-    <part name="parameters" element="tns:listarPedidosNoPagados" />
-  </message>
-  <message name="listarPedidosNoPagadosResponse">
-    <part name="parameters" element="tns:listarPedidosNoPagadosResponse" />
-  </message>
-  <message name="eliminarLineaPedido">
-    <part name="parameters" element="tns:eliminarLineaPedido" />
-  </message>
-  <message name="eliminarLineaPedidoResponse">
-    <part name="parameters" element="tns:eliminarLineaPedidoResponse" />
-  </message>
-  <message name="listarTodosGastos">
-    <part name="parameters" element="tns:listarTodosGastos" />
-  </message>
-  <message name="listarTodosGastosResponse">
-    <part name="parameters" element="tns:listarTodosGastosResponse" />
-  </message>
-  <message name="listarTransaccionesXFecha">
-    <part name="parameters" element="tns:listarTransaccionesXFecha" />
-  </message>
-  <message name="listarTransaccionesXFechaResponse">
-    <part name="parameters" element="tns:listarTransaccionesXFechaResponse" />
-  </message>
-  <message name="listarTransacciones">
-    <part name="parameters" element="tns:listarTransacciones" />
-  </message>
-  <message name="listarTransaccionesResponse">
-    <part name="parameters" element="tns:listarTransaccionesResponse" />
-  </message>
   <portType name="CajaWS">
+    <operation name="listarPedidosNoPagados">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarPedidosNoPagadosRequest" message="tns:listarPedidosNoPagados" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarPedidosNoPagadosResponse" message="tns:listarPedidosNoPagadosResponse" />
+    </operation>
+    <operation name="listarTodosPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosPedidoRequest" message="tns:listarTodosPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosPedidoResponse" message="tns:listarTodosPedidoResponse" />
+    </operation>
+    <operation name="listarLineaPXPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarLineaPXPedidoRequest" message="tns:listarLineaPXPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarLineaPXPedidoResponse" message="tns:listarLineaPXPedidoResponse" />
+    </operation>
+    <operation name="buscarLineaPedidoXID">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/buscarLineaPedidoXIDRequest" message="tns:buscarLineaPedidoXID" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/buscarLineaPedidoXIDResponse" message="tns:buscarLineaPedidoXIDResponse" />
+    </operation>
+    <operation name="eliminarLineaPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarLineaPedidoRequest" message="tns:eliminarLineaPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarLineaPedidoResponse" message="tns:eliminarLineaPedidoResponse" />
+    </operation>
+    <operation name="BuscarPedidoXMesa">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/BuscarPedidoXMesaRequest" message="tns:BuscarPedidoXMesa" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/BuscarPedidoXMesaResponse" message="tns:BuscarPedidoXMesaResponse" />
+    </operation>
+    <operation name="listarTodosLineaPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosLineaPedidoRequest" message="tns:listarTodosLineaPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosLineaPedidoResponse" message="tns:listarTodosLineaPedidoResponse" />
+    </operation>
+    <operation name="insertarLineaPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarLineaPedidoRequest" message="tns:insertarLineaPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarLineaPedidoResponse" message="tns:insertarLineaPedidoResponse" />
+    </operation>
+    <operation name="listarPedidosPendientes">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarPedidosPendientesRequest" message="tns:listarPedidosPendientes" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarPedidosPendientesResponse" message="tns:listarPedidosPendientesResponse" />
+    </operation>
+    <operation name="modificarEstadoPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarEstadoPedidoRequest" message="tns:modificarEstadoPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarEstadoPedidoResponse" message="tns:modificarEstadoPedidoResponse" />
+    </operation>
+    <operation name="listarTransaccionesXFecha">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesXFechaRequest" message="tns:listarTransaccionesXFecha" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesXFechaResponse" message="tns:listarTransaccionesXFechaResponse" />
+    </operation>
+    <operation name="listarTodosGastos">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosRequest" message="tns:listarTodosGastos" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosResponse" message="tns:listarTodosGastosResponse" />
+    </operation>
+    <operation name="listarTransacciones">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesRequest" message="tns:listarTransacciones" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesResponse" message="tns:listarTransaccionesResponse" />
+    </operation>
+    <operation name="ListarPedidosTransaccion">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/ListarPedidosTransaccionRequest" message="tns:ListarPedidosTransaccion" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/ListarPedidosTransaccionResponse" message="tns:ListarPedidosTransaccionResponse" />
+    </operation>
+    <operation name="listarGastosXNombre">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreRequest" message="tns:listarGastosXNombre" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreResponse" message="tns:listarGastosXNombreResponse" />
+    </operation>
+    <operation name="modificarLineaPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarLineaPedidoRequest" message="tns:modificarLineaPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarLineaPedidoResponse" message="tns:modificarLineaPedidoResponse" />
+    </operation>
+    <operation name="listarLineaPedidoMesa">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarLineaPedidoMesaRequest" message="tns:listarLineaPedidoMesa" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarLineaPedidoMesaResponse" message="tns:listarLineaPedidoMesaResponse" />
+    </operation>
+    <operation name="buscarPedidoXID">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/buscarPedidoXIDRequest" message="tns:buscarPedidoXID" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/buscarPedidoXIDResponse" message="tns:buscarPedidoXIDResponse" />
+    </operation>
+    <operation name="modificarPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarPedidoRequest" message="tns:modificarPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarPedidoResponse" message="tns:modificarPedidoResponse" />
+    </operation>
     <operation name="insertarGasto">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoRequest" message="tns:insertarGasto" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarGastoResponse" message="tns:insertarGastoResponse" />
@@ -164,101 +240,196 @@
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarGastoRequest" message="tns:eliminarGasto" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarGastoResponse" message="tns:eliminarGastoResponse" />
     </operation>
-    <operation name="modificarPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarPedidoRequest" message="tns:modificarPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarPedidoResponse" message="tns:modificarPedidoResponse" />
-    </operation>
-    <operation name="buscarPedidoXID">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/buscarPedidoXIDRequest" message="tns:buscarPedidoXID" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/buscarPedidoXIDResponse" message="tns:buscarPedidoXIDResponse" />
+    <operation name="eliminarPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarPedidoRequest" message="tns:eliminarPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarPedidoResponse" message="tns:eliminarPedidoResponse" />
     </operation>
     <operation name="modificarGasto">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoRequest" message="tns:modificarGasto" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarGastoResponse" message="tns:modificarGastoResponse" />
     </operation>
-    <operation name="eliminarPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarPedidoRequest" message="tns:eliminarPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarPedidoResponse" message="tns:eliminarPedidoResponse" />
+    <operation name="insertarPedido">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarPedidoRequest" message="tns:insertarPedido" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarPedidoResponse" message="tns:insertarPedidoResponse" />
     </operation>
     <operation name="RealizarPago">
       <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/RealizarPagoRequest" message="tns:RealizarPago" />
       <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/RealizarPagoResponse" message="tns:RealizarPagoResponse" />
     </operation>
-    <operation name="insertarPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarPedidoRequest" message="tns:insertarPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarPedidoResponse" message="tns:insertarPedidoResponse" />
-    </operation>
-    <operation name="listarPedidosPendientes">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarPedidosPendientesRequest" message="tns:listarPedidosPendientes" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarPedidosPendientesResponse" message="tns:listarPedidosPendientesResponse" />
-    </operation>
-    <operation name="ListarPedidosTransaccion">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/ListarPedidosTransaccionRequest" message="tns:ListarPedidosTransaccion" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/ListarPedidosTransaccionResponse" message="tns:ListarPedidosTransaccionResponse" />
-    </operation>
-    <operation name="BuscarPedidoXMesa">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/BuscarPedidoXMesaRequest" message="tns:BuscarPedidoXMesa" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/BuscarPedidoXMesaResponse" message="tns:BuscarPedidoXMesaResponse" />
-    </operation>
-    <operation name="listarLineaPXPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarLineaPXPedidoRequest" message="tns:listarLineaPXPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarLineaPXPedidoResponse" message="tns:listarLineaPXPedidoResponse" />
-    </operation>
-    <operation name="insertarLineaPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarLineaPedidoRequest" message="tns:insertarLineaPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/insertarLineaPedidoResponse" message="tns:insertarLineaPedidoResponse" />
-    </operation>
-    <operation name="listarTodosLineaPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosLineaPedidoRequest" message="tns:listarTodosLineaPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosLineaPedidoResponse" message="tns:listarTodosLineaPedidoResponse" />
-    </operation>
-    <operation name="buscarLineaPedidoXID">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/buscarLineaPedidoXIDRequest" message="tns:buscarLineaPedidoXID" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/buscarLineaPedidoXIDResponse" message="tns:buscarLineaPedidoXIDResponse" />
-    </operation>
-    <operation name="modificarEstadoPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarEstadoPedidoRequest" message="tns:modificarEstadoPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarEstadoPedidoResponse" message="tns:modificarEstadoPedidoResponse" />
-    </operation>
-    <operation name="listarGastosXNombre">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreRequest" message="tns:listarGastosXNombre" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarGastosXNombreResponse" message="tns:listarGastosXNombreResponse" />
-    </operation>
-    <operation name="listarLineaPedidoMesa">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarLineaPedidoMesaRequest" message="tns:listarLineaPedidoMesa" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarLineaPedidoMesaResponse" message="tns:listarLineaPedidoMesaResponse" />
-    </operation>
-    <operation name="listarTodosPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosPedidoRequest" message="tns:listarTodosPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosPedidoResponse" message="tns:listarTodosPedidoResponse" />
-    </operation>
-    <operation name="modificarLineaPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarLineaPedidoRequest" message="tns:modificarLineaPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/modificarLineaPedidoResponse" message="tns:modificarLineaPedidoResponse" />
-    </operation>
-    <operation name="listarPedidosNoPagados">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarPedidosNoPagadosRequest" message="tns:listarPedidosNoPagados" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarPedidosNoPagadosResponse" message="tns:listarPedidosNoPagadosResponse" />
-    </operation>
-    <operation name="eliminarLineaPedido">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarLineaPedidoRequest" message="tns:eliminarLineaPedido" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/eliminarLineaPedidoResponse" message="tns:eliminarLineaPedidoResponse" />
-    </operation>
-    <operation name="listarTodosGastos">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosRequest" message="tns:listarTodosGastos" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTodosGastosResponse" message="tns:listarTodosGastosResponse" />
-    </operation>
-    <operation name="listarTransaccionesXFecha">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesXFechaRequest" message="tns:listarTransaccionesXFecha" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesXFechaResponse" message="tns:listarTransaccionesXFechaResponse" />
-    </operation>
-    <operation name="listarTransacciones">
-      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesRequest" message="tns:listarTransacciones" />
-      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/CajaWS/listarTransaccionesResponse" message="tns:listarTransaccionesResponse" />
-    </operation>
   </portType>
   <binding name="CajaWSPortBinding" type="tns:CajaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarPedidosNoPagados">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodosPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarLineaPXPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarLineaPedidoXID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarLineaPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="BuscarPedidoXMesa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodosLineaPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarLineaPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPedidosPendientes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarEstadoPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTransaccionesXFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodosGastos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTransacciones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarPedidosTransaccion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarGastosXNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarLineaPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarLineaPedidoMesa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPedidoXID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarGasto">
       <soap:operation soapAction="" />
       <input>
@@ -277,16 +448,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="buscarPedidoXID">
+    <operation name="eliminarPedido">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -304,24 +466,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="RealizarPago">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarPedido">
       <soap:operation soapAction="" />
       <input>
@@ -331,151 +475,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarPedidosPendientes">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="ListarPedidosTransaccion">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="BuscarPedidoXMesa">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarLineaPXPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarLineaPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTodosLineaPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="buscarLineaPedidoXID">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarEstadoPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarGastosXNombre">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarLineaPedidoMesa">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTodosPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarLineaPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarPedidosNoPagados">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarLineaPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTodosGastos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTransaccionesXFecha">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTransacciones">
+    <operation name="RealizarPago">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -546,7 +546,7 @@
             // pbCLiente
             // 
             this.pbCLiente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCLiente.Image = global::LP2Soft.Properties.Resources.User;
+            this.pbCLiente.Image = global::LP2Soft.Properties.Resources.agregar_usuario;
             this.pbCLiente.Location = new System.Drawing.Point(899, 52);
             this.pbCLiente.Name = "pbCLiente";
             this.pbCLiente.Size = new System.Drawing.Size(68, 72);

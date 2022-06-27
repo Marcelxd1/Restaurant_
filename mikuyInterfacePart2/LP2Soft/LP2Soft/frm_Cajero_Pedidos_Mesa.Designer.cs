@@ -29,24 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Cajero_Pedidos_Mesa));
-            this.lblPedido = new System.Windows.Forms.Label();
             this.btnPagar = new Guna.UI2.WinForms.Guna2Button();
             this.lblMesa = new System.Windows.Forms.Label();
             this.panelPedidos = new System.Windows.Forms.Panel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblPedido
-            // 
-            this.lblPedido.AutoSize = true;
-            this.lblPedido.BackColor = System.Drawing.Color.White;
-            this.lblPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedido.Location = new System.Drawing.Point(12, 42);
-            this.lblPedido.Name = "lblPedido";
-            this.lblPedido.Size = new System.Drawing.Size(66, 20);
-            this.lblPedido.TabIndex = 86;
-            this.lblPedido.Text = "Estado";
             // 
             // btnPagar
             // 
@@ -104,7 +92,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(235, 417);
-            this.Controls.Add(this.lblPedido);
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.lblMesa);
             this.Controls.Add(this.panelPedidos);
@@ -119,7 +106,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblPedido;
         private Guna.UI2.WinForms.Guna2Button btnPagar;
         private System.Windows.Forms.Label lblMesa;
         private System.Windows.Forms.Panel panelPedidos;

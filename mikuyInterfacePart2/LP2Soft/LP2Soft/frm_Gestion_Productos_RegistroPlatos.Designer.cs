@@ -61,12 +61,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cbCategoria = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblFoto = new System.Windows.Forms.Label();
+            this.ofdFotos = new System.Windows.Forms.OpenFileDialog();
             this.btnSubirFoto = new Guna.UI2.WinForms.Guna2Button();
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.pbPlato = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ofdFotos = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPrecio)).BeginInit();
@@ -542,6 +542,10 @@
             this.lblFoto.TabIndex = 62;
             this.lblFoto.Text = "Imagen";
             // 
+            // ofdFotos
+            // 
+            this.ofdFotos.FileName = "openFileDialog1";
+            // 
             // btnSubirFoto
             // 
             this.btnSubirFoto.CheckedState.Parent = this.btnSubirFoto;
@@ -627,10 +631,6 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 61;
             this.guna2PictureBox1.TabStop = false;
-            // 
-            // ofdFotos
-            // 
-            this.ofdFotos.FileName = "openFileDialog1";
             // 
             // frm_Gestion_Productos_RegistroPlatos
             // 

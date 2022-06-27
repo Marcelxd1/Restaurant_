@@ -91,7 +91,7 @@ public class LineaPedidoMySQL implements LineaPedidoDAO{
                 linea.setPedido(pedidodao.listarPorId(rs.getInt("fid_pedido")));//el mismo que los contiene
                 
                 linea.setUnidades(rs.getInt("unidades"));
-                linea.setSubtotal(rs.getInt("subtotal"));
+                linea.setSubtotal(rs.getDouble("subtotal"));
                 
                 lineas.add(linea);
             }
@@ -191,7 +191,7 @@ public class LineaPedidoMySQL implements LineaPedidoDAO{
                 item.setEstado(true);
                 linea.setItem(item); 
                 linea.setUnidades(rs.getInt("unidades"));
-                linea.setSubtotal(rs.getInt("subtotal"));
+                linea.setSubtotal(rs.getDouble("subtotal"));
                 
                 lineas.add(linea);
             }

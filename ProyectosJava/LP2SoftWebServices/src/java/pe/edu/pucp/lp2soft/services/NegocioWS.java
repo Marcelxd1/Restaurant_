@@ -71,6 +71,17 @@ public class NegocioWS {
         return resultado;
     }
     
+    @WebMethod(operationName = "buscaMesaXId")
+    public Mesa buscaMesaXId(@WebParam(name = "idmesa")int idmesa){
+        Mesa mesa = new Mesa();
+        try{
+            mesa = daoMesa.listarPorId(idmesa);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return mesa;
+    }
+
     @WebMethod(operationName = "listarTodasMesa")
     public ArrayList<Mesa> listarTodasMesa(){
         ArrayList<Mesa> resultado= new ArrayList<>() ;

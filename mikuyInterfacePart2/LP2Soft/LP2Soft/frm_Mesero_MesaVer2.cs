@@ -137,6 +137,8 @@ namespace LP2Soft
                         if(forPedMes.Hecho == true)//solo si se realizó pedido
                         {
                             mesaSelec.disponible = false;
+                            mesaSelec.estado = true;
+                            daonegocio.modificarMesa(mesaSelec);
                             lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
                         }
                         

@@ -513,6 +513,9 @@
     <None Include="Connected Services\CajaWS\LP2Soft.CajaWS.transaccion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.buscaMesaXIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NegocioWS\LP2Soft.NegocioWS.categoria.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -904,6 +907,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Resources\agregar-usuario1.png" />
     <Content Include="Resources\descargar.png" />
     <None Include="Resources\descargar1.png" />
   </ItemGroup>

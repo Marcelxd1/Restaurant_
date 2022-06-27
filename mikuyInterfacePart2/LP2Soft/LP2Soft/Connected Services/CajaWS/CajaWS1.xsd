@@ -263,16 +263,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarPedido">
-    <xs:sequence>
-      <xs:element name="idPedido" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarPedidoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarGastosXNombre">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -296,6 +286,16 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="eliminarPedido">
+    <xs:sequence>
+      <xs:element name="idPedido" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPedidoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarTransaccionesXFecha">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:dateTime" />
@@ -315,6 +315,14 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:gasto" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarTodosLineaPedido">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTodosLineaPedidoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:lineaPedido" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarGasto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Gasto" type="tns:gasto" />
@@ -323,14 +331,6 @@
   <xs:complexType name="insertarGastoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTodosLineaPedido">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarTodosLineaPedidoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:lineaPedido" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarLineaPedido">

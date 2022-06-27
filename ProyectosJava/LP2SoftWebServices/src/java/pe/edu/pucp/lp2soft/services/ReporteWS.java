@@ -21,7 +21,8 @@ public class ReporteWS {
 
     
     @WebMethod(operationName = "generarBoletaVenta")
-    public byte[] generarBoletaVenta( int idPedido, String cajero, String mesero, String cliente,String DNIRUC) {
+    public byte[] generarBoletaVenta( int idPedido, String cajero, String mesero, String cliente,String DNIRUC,int mesa,
+            double pago, double vuelto) {
         byte[] reporteBytes = null;
         try{
             Connection con = DBManager.getInstance().getConnection();
@@ -37,6 +38,9 @@ public class ReporteWS {
             hm.put("Mesero",mesero);
             hm.put("Cliente",cliente);
             hm.put("DNIRUC",DNIRUC);
+            hm.put("Mesa", mesa);
+            hm.put("Pago", pago);
+            hm.put("Vuelto", vuelto);
             JasperPrint jp = JasperFillManager.fillReport(reporte, hm,con);
             con.close();
             reporteBytes = JasperExportManager.exportReportToPdf(jp);
@@ -48,7 +52,8 @@ public class ReporteWS {
     }
     
     @WebMethod(operationName = "generarFacturaVenta")
-    public byte[] generarFacturaVenta( int idPedido, String cajero, String mesero, String cliente,String DNIRUC) {
+    public byte[] generarFacturaVenta( int idPedido, String cajero, String mesero, String cliente,String DNIRUC,int mesa,
+            double pago, double vuelto) {
         byte[] reporteBytes = null;
         try{
             Connection con = DBManager.getInstance().getConnection();
@@ -64,6 +69,9 @@ public class ReporteWS {
             hm.put("Mesero",mesero);
             hm.put("Cliente",cliente);
             hm.put("DNIRUC",DNIRUC);
+            hm.put("Mesa",mesa);
+            hm.put("Pago", pago);
+            hm.put("Vuelto", vuelto);
             JasperPrint jp = JasperFillManager.fillReport(reporte, hm,con);
             con.close();
             reporteBytes = JasperExportManager.exportReportToPdf(jp);

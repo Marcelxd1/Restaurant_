@@ -17,8 +17,11 @@ namespace LP2Soft
         private UserWS.persona _mesero;
         private UserWS.persona _cajero;
         private UserWS.persona cajeroOld;
+        private NegocioWS.mesa _mesa;
         private UserWS.UserWSClient _userWSClient;
-
+        private NegocioWS.NegocioWSClient _negocioWSClient;
+        private double impor = 0;
+        private double vuelto = 0;
         private CajaWS.CajaWSClient _cajaDao;
         private double total = 0.0;
         public frm_Caja_Pedido(CajaWS.pedido pedido, UserWS.persona cajero)
@@ -28,9 +31,12 @@ namespace LP2Soft
             _cliente = new UserWS.persona();
             _mesero = new UserWS.persona();
             _cajero = new UserWS.persona();
+            _mesa = new NegocioWS.mesa();
+            cajeroOld = new UserWS.persona();
             cajeroOld = cajero;
             _userWSClient = new UserWS.UserWSClient();
             _cajaDao = new CajaWS.CajaWSClient();
+            _negocioWSClient = new NegocioWS.NegocioWSClient();
             dgvPedidos.AutoGenerateColumns = false;
             dgvPedidos.DataSource = _pedido.list_lineaPedido;
             cargaComponentes();
@@ -45,6 +51,7 @@ namespace LP2Soft
                 {
                     txtDNIRUC.Text = _cliente.DNI;
                     _pedido.cliente.DNI = _cliente.DNI;
+                    _pedido.cliente.apellido_paterno = _cliente.apellido_paterno;
                 }
                 else
                 {
@@ -53,22 +60,25 @@ namespace LP2Soft
                 }
                 txtNombre.Text = _cliente.nombre;
                 _pedido.cliente.nombre = _cliente.nombre;
+                _pedido.cliente.tipo = _cliente.tipo;
+                
             }
             if (_pedido.mesero != null)
             {
-                _mesero = _userWSClient.buscarPersonaPorIdUsuario(_pedido.mesero.id_persona);
+                _mesero = _userWSClient.buscarPersonaPorIdUsuario(_pedido.mesero.id_usuario);
                 _pedido.mesero.nombre = _mesero.nombre;
+                _pedido.mesero.apellido_paterno= _mesero.apellido_paterno;
+                _mesa = _negocioWSClient.buscaMesaXId(_pedido.mesa.idMesa);
             }
-            if (_pedido.cajero != null)
+            if (cajeroOld != null)
             {
-                _cajero = _userWSClient.buscarPersonaPorIdUsuario(_pedido.cajero.id_usuario);
-                _pedido.cajero.nombre = _cajero.nombre;
-            }
-            else
-            {
-                _cajero = cajeroOld;
+                _pedido.cajero = new CajaWS.usuario();
+                _pedido.cajero.id_usuario = cajeroOld.id_persona;
                 _pedido.cajero.nombre = cajeroOld.nombre;
+                _pedido.cajero.apellido_paterno = cajeroOld.apellido_paterno;
+                
             }
+            
             foreach (CajaWS.lineaPedido line in _pedido.list_lineaPedido)
             {
                 total += line.subtotal;
@@ -85,13 +95,26 @@ namespace LP2Soft
                 dgvPedidos.Rows[e.RowIndex].Cells[0].Value = line.item.nombre;
                 dgvPedidos.Rows[e.RowIndex].Cells[2].Value = line.item.precio;
                 dgvPedidos.Rows[e.RowIndex].Cells[1].Value = line.unidades;
-                dgvPedidos.Rows[e.RowIndex].Cells[3].Value = line.unidades * line.item.precio;
+                dgvPedidos.Rows[e.RowIndex].Cells[3].Value = line.subtotal;
             }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            frmBoleta formBol = new frmBoleta(_pedido);
+            if (rbnBoleta.Checked)
+                _pedido.tipoComprobante = 'B';
+            else
+                _pedido.tipoComprobante = 'F';
+            if (rbnEfectivo.Checked)
+                _pedido.tipoPago = 'E';
+            else
+                _pedido.tipoPago = 'T';
+            if (txtImporte.Text.Trim() == "")
+            {
+                MessageBox.Show("Debe ingresar el importe", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return ;
+            }
+            frmBoleta formBol = new frmBoleta(_pedido,impor,vuelto);
             formBol.Show();
         }
 
@@ -123,6 +146,13 @@ namespace LP2Soft
             else
                 _pedido.tipoPago = 'T';
 
+            _mesa.disponible = true;
+            _negocioWSClient.modificarMesa(_mesa);
+            if (txtImporte.Text.Trim() == null)
+            {
+                MessageBox.Show("Debe ingresar un nombre", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             int resultado = _cajaDao.RealizarPago(_pedido);
             if (resultado != 0)
             {
@@ -150,15 +180,10 @@ namespace LP2Soft
             }
         }
 
-        private void btnImprimir_Click_1(object sender, EventArgs e)
-        {
-            frmBoleta formBol = new frmBoleta(_pedido);
-            formBol.Show();
-        }
-
+        
         private void txtImporte_TextChanged(object sender, EventArgs e)
         {
-            double impor = 0;
+            
             if (txtImporte.Text == "")
             {
                 impor = 0;
@@ -167,8 +192,11 @@ namespace LP2Soft
             {
                 impor = Double.Parse(txtImporte.Text);
             }
-            impor -= total;
-            txtVuelto.Text = impor.ToString("N2");
+            vuelto = impor - total;
+            txtVuelto.Text = vuelto.ToString("N2");
+
         }
+
+       
     }
 }

@@ -20,7 +20,8 @@ namespace LP2Soft
         private string mesero;
         private string cliente;
         private string dniRuc;
-        public frmBoleta(CajaWS.pedido _pedido)
+        private int mesa;
+        public frmBoleta(CajaWS.pedido _pedido,double pago, double vuelto)
         {
             InitializeComponent();
             pedido = _pedido;
@@ -33,29 +34,42 @@ namespace LP2Soft
             else // si hay cliente
             {
                 cliente = _pedido.cliente.nombre;
-                if (_pedido.cliente.tipo == 'N') //cliente natural
+                if (_pedido.cliente.tipo == 'N')
+                { //cliente natural
                     dniRuc = _pedido.cliente.DNI;
+                    cliente += " " + _pedido.cliente.apellido_paterno;
+                }
                 else //cliente juridico
                     dniRuc = _pedido.cliente.ruc;
             }
             if (pedido.cajero == null)//cajeros
                 cajero = "";
             else
+            {
                 cajero = _pedido.cajero.nombre;
+                cajero += " " + _pedido.cajero.apellido_paterno;
+            }
             if (pedido.mesero == null)//meseros
                 mesero = "";
             else
+            {
                 mesero = _pedido.mesero.nombre;
+                mesero += " "+ _pedido.mesero.apellido_paterno;
+            }
+            if (pedido.mesa != null)
+                mesa = pedido.mesa.numMesa;
+            else
+                mesa = 0;
 
             if (pedido.tipoComprobante == 'B')
             {
                 arreglo = reporte.generarBoletaVenta(_pedido.idPedido, cajero,
-                    mesero, cliente, dniRuc);
+                    mesero, cliente, dniRuc,mesa,pago,vuelto);
             }
             else
             {
                 arreglo = reporte.generarFacturaVenta(_pedido.idPedido, cajero,
-                    mesero, cliente, dniRuc);
+                    mesero, cliente, dniRuc,mesa,pago,vuelto);
             }
 
             File.WriteAllBytes("temporal.pdf", arreglo);

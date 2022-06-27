@@ -450,6 +450,7 @@ public class PedidoMySQL implements PedidoDAO {
                 mesa.setIdMesa(rs.getInt("id_mesa"));                
                 mesa.setEstado(rs.getBoolean("activo"));
                 mesa.setCapacidad(rs.getInt("capacidad"));
+                mesa.setNumMesa(rs.getInt("numMesa"));
                 pedido.setMesa(mesa);
                 
                 i = rs.getInt("fid_cajero");

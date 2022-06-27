@@ -116,6 +116,27 @@ public class MesaMySQL implements MesaDAO {
 
     @Override
     public Mesa listarPorId(int idmesa) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Mesa mesa = null;
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call BUSCAR_MESA_ID(?)}");
+            cs.setInt("_id_mesa", idmesa);
+            rs = cs.executeQuery();
+            if(rs.next()){
+                mesa = new Mesa();
+                mesa.setIdMesa(rs.getInt("id_mesa"));
+                mesa.setCapacidad(rs.getInt("capacidad"));
+                mesa.setNumMesa(rs.getInt("numMesa"));
+                mesa.setDisponible(rs.getBoolean("disponible"));
+                mesa.setEstado(true);
+            }
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return mesa;
     }
 }

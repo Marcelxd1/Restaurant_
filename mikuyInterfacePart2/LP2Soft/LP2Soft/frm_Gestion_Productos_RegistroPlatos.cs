@@ -46,6 +46,18 @@ namespace LP2Soft
                     cbCategoria.Enabled = false;
                     break;
                 case Estado.Modificar:
+                    btnNuevo.Enabled = true;
+                    btnGuardar.Enabled = true;
+                    btnModificar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    btnSubirFoto.Enabled = true;
+                    txtNombre.Enabled = true;
+                    txtDescripcion.Enabled = true;
+                    txtPrecio.Enabled = true;
+                    txtPresentacion.Enabled = false;
+                    rbBebida.Enabled = true;
+                    rbPlato.Enabled = true;
+                    cbCategoria.Enabled = true;
                     break;
                 case Estado.Nuevo:
                     btnNuevo.Enabled = true;
