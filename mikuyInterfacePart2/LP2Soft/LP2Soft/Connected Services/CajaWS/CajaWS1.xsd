@@ -138,6 +138,7 @@
   </xs:complexType>
   <xs:complexType name="lineaPedido">
     <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element name="id_linea_pedido" type="xs:int" />
       <xs:element minOccurs="0" name="item" type="tns:itemVendible" />
       <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
@@ -387,22 +388,22 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarPedido">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Pedido" type="tns:pedido" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarPedidoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="modificarGasto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Gasto" type="tns:gasto" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarGastoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Pedido" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPedidoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

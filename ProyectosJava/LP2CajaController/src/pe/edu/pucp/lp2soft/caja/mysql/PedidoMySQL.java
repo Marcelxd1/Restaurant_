@@ -219,33 +219,19 @@ public class PedidoMySQL implements PedidoDAO {
         try {
             con = DBManager.getInstance().getConnection();
             //valores en transaccion
-            cs = con.prepareCall("{call MODIFICAR_PEDIDO(?,?,?,?, ?,?,?,?, ?,?,?,?, ?)}");
+            cs = con.prepareCall("{call MODIFICAR_PEDIDO(?,?)}");
             cs.setInt("_id_pedido", pedido.getIdPedido());
-            cs.setInt("_fid_restaurante", pedido.getRestaurante().getId_restaurante());
-            cs.setDouble("_total", pedido.getTotal());
-            cs.setDate("_fecha", new java.sql.Date(pedido.getFecha().getTime()));
-            
-            cs.setInt("_fid_mesa", pedido.getMesa().getIdMesa());
-            cs.setString("_fid_tipo_pago", String.valueOf(pedido.getTipoPago()));//es un caracter
-            cs.setInt("_fid_mesero", pedido.getMesero().getId_usuario());
-            cs.setInt("_fid_cajero", pedido.getCajero().getId_usuario());
-            
-            cs.setString("_fid_tipo_pedido", String.valueOf(pedido.getTipoPedido()));//caracter
-            cs.setInt("_fid_cliente", pedido.getCliente().getId_persona());
-            cs.setString("_fid_tipo_comprobante", String.valueOf(pedido.getTipoComprobante()));
-            cs.setInt("_numero_comprobante", pedido.getNumeroComprobante());
-            
-            cs.setString("_fid_estado_pedido", String.valueOf(pedido.getEstado()));//caracter
+            cs.setDouble("total", pedido.getTotal());
             cs.executeUpdate();
-            
             //Datos lineaPedido
             for (LineaPedido linea : pedido.getList_lineaPedido()) {
-                cs = con.prepareCall("{call MODIFICAR_LINEA_PEDIDO(?,?,?,?,?)}");
-                cs.setInt("_id_linea_pedido", java.sql.Types.INTEGER);
+                cs = con.prepareCall("{call MODIFICAR_LINEA_PEDIDO(?,?,?,?,?,?)}");
+                cs.setInt("_id_linea_pedido", linea.getId_linea_pedido());
                 cs.setInt("_fid_itemVendible", linea.getItem().getIdItemVendible());
                 cs.setInt("_fid_pedido", linea.getPedido().getIdPedido());
                 cs.setInt("_unidades", linea.getUnidades());
                 cs.setDouble("_subtotal", linea.getSubtotal());
+                cs.setBoolean("_activo", linea.isActivo());
                 cs.executeUpdate();
             }
             resultado = 1;
@@ -335,6 +321,7 @@ public class PedidoMySQL implements PedidoDAO {
     public Pedido listarPorMesa(int idMesa) {
         Pedido pedido = null;
         int resultado = 0;
+        int idCliente;
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call BUSCAR_PEDIDO_POR_MESA(?)}");
@@ -355,18 +342,17 @@ public class PedidoMySQL implements PedidoDAO {
                 pedido.getMesa().setCapacidad(rs.getInt("capacidad"));
                 
                 //producto.setTipoProducto(rs.getString("fid_tipo_producto").charAt(0));
-                pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
                 
-                UsuarioDAO mesero = new UsuarioMySQL();                             
-                UsuarioDAO cajero = new UsuarioMySQL();     
-                pedido.setMesero(mesero.listarPorId(rs.getInt("fid_mesero")));      
-                pedido.setCajero(cajero.listarPorId(rs.getInt("fid_cajero"))); 
+                
+                UsuarioDAO mesero = new UsuarioMySQL();                       
+                pedido.setMesero(mesero.listarPorId(rs.getInt("fid_mesero")));
                 
                 pedido.setTipoPedido(rs.getString("fid_tipo_pedido").charAt(0));
-                
-                PersonaDAO cliente = new PersonaMySQL();
-                pedido.setCliente(cliente.listarPorId(rs.getInt("fid_cliente")));
-                pedido.setTipoComprobante(rs.getString("fid_tipo_comprobante").charAt(0));
+                idCliente = rs.getInt("fid_cliente");
+                if(idCliente!=0){
+                    PersonaDAO cliente = new PersonaMySQL();
+                    pedido.setCliente(cliente.listarPorId(idCliente));
+                }
                 pedido.setNumeroComprobante(rs.getInt("numero_comprobante"));
                 pedido.setTipoComprobante(rs.getString("fid_estado_pedido").charAt(0));
                 

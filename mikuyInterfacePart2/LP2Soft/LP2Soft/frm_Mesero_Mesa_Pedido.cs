@@ -27,30 +27,31 @@ namespace LP2Soft
         private double suma = 0;
         private CajaWS.pedido _pedido;
         private BindingList<CajaWS.lineaPedido> lista_lineas;
+        private BindingList<CajaWS.lineaPedido> lista_lineas_antigua;
         private NegocioWS.NegocioWSClient _daoNegocio;
         private CajaWS.CajaWSClient _daoCaja;
+        private UserWS.UserWSClient _userWSClient;
 
         private BindingList<NegocioWS.producto> _lista_prod;
 
         public mesa Mesa { get => _mesa; set => _mesa = value; }
         public persona Mesero { get => _mesero; set => _mesero = value; }
-
         public bool Hecho { get => hecho; set => hecho = value; }
         public persona Cajero { get => _cajero; set => _cajero = value; }
 
-
-
-        public frm_Mesero_Mesa_Pedido()
+        public frm_Mesero_Mesa_Pedido(Estado estado, int idMesa)
         {
             InitializeComponent();
             _cliente = new UserWS.persona();
             _pedido = new CajaWS.pedido();
-            _estado = Estado.Inicial;
+            //_estado = Estado.Inicial;
             _daoNegocio = new NegocioWS.NegocioWSClient();
+            _userWSClient = new UserWS.UserWSClient();
             _lista_prod = new BindingList<NegocioWS.producto>();
             lista_lineas = new BindingList<CajaWS.lineaPedido>();
+            lista_lineas_antigua = new BindingList<CajaWS.lineaPedido>();
             _daoCaja = new CajaWS.CajaWSClient();
-
+            _estado = estado;
             dgvItem.AutoGenerateColumns = false;
             dgvPedido.AutoGenerateColumns = false;
             dgvItem.DataSource = _daoNegocio.listarTodosItemsXNombre("");
@@ -58,21 +59,51 @@ namespace LP2Soft
             txtTotal.Enabled = false;
             txtTotal.Text = "0.00";
             cargarCategorias();
+            establecerEstadoComponentes(idMesa);
             //seModifica();
         }
 
-        public void establecerEstadoComponentes()
+        public void establecerEstadoComponentes(int idMesa)
         {
             switch (_estado)
             {
                 case Estado.Inicial:
+                    btnPedir.Text = "Pedir";
                     break;
                 case Estado.Modificar:
+                    btnPedir.Text = "Modificar";
+                    cargarComponentes(idMesa);
                     break;
                 case Estado.Nuevo:
                     break;
 
             }
+        }
+
+        void cargarComponentes(int idMesa)
+        {
+
+            _pedido = _daoCaja.BuscarPedidoXMesa(idMesa);
+            //dgvPedido.DataSource = _daoCaja.listarLineaPXPedido(_pedido.idPedido);
+            CajaWS.lineaPedido[] lineas = _daoCaja.listarLineaPXPedido(_pedido.idPedido);
+            foreach(CajaWS.lineaPedido l in lineas)
+            {
+                lista_lineas.Add(l);
+                suma += l.subtotal;
+            }
+            lista_lineas_antigua = lista_lineas;
+            dgvPedido.DataSource = lista_lineas;
+            dgvPedido.Refresh();
+            if (_pedido.cliente != null)
+            {
+                _cliente = _userWSClient.buscarPersonaPorIdUsuario(_pedido.cliente.id_persona);
+                txtNombre.Text = _cliente.nombre;
+                if (_cliente.tipo == 'N')
+                    txtDNIRUC.Text = _cliente.DNI;
+                else
+                    txtDNIRUC.Text = _cliente.ruc;
+            }
+            txtTotal.Text = suma.ToString("N2");
         }
 
 
@@ -156,12 +187,6 @@ namespace LP2Soft
                     }
                 }
             }
-            dgvPedido.Rows.Add(new string[] {
-                Convert.ToString(dgvItem[0, dgvItem.CurrentRow.Index].Value),
-                Convert.ToString(dgvItem[1, dgvItem.CurrentRow.Index].Value),
-                Convert.ToString(dgvItem[2, dgvItem.CurrentRow.Index].Value),
-                Convert.ToString(1)
-            });
             CajaWS.lineaPedido line = new CajaWS.lineaPedido();
             line.item = new CajaWS.itemVendible();
             line.item.idItemVendible = prod.idItemVendible;
@@ -172,18 +197,25 @@ namespace LP2Soft
             suma = suma + prod.precio;
             txtTotal.Text = suma.ToString("N2");
             lista_lineas.Add(line);
+            dgvPedido.DataSource = lista_lineas;
+            dgvPedido.Refresh();
         }
 
-        private void dgvPedido_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dgvPedido_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) 
         {
-
-            CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedido.Rows[e.RowIndex].DataBoundItem;
-            if (line != null)
+            try { 
+                CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedido.Rows[e.RowIndex].DataBoundItem;
+                if (line != null)
+                {
+                    dgvPedido.Rows[e.RowIndex].Cells[0].Value = line.item.idItemVendible;
+                    dgvPedido.Rows[e.RowIndex].Cells[1].Value = line.item.nombre;
+                    dgvPedido.Rows[e.RowIndex].Cells[2].Value = line.item.precio;
+                    dgvPedido.Rows[e.RowIndex].Cells[3].Value = line.unidades;
+                }
+            }
+            catch(Exception ex)
             {
-                dgvPedido.Rows[e.RowIndex].Cells[0].Value = line.item.idItemVendible;
-                dgvPedido.Rows[e.RowIndex].Cells[1].Value = line.item.nombre;
-                dgvPedido.Rows[e.RowIndex].Cells[2].Value = line.item.precio;
-                dgvPedido.Rows[e.RowIndex].Cells[3].Value = line.unidades;
+                string error = ex.Message ;
             }
         }
 
@@ -203,9 +235,26 @@ namespace LP2Soft
                 double precio = Convert.ToDouble(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[2].Value);
                 CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedido.CurrentRow.DataBoundItem;
                 suma = suma - cant * precio;
-                dgvPedido.Rows.RemoveAt(dgvPedido.CurrentRow.Index);
-                this.lista_lineas.Remove(line);
+                if(_estado == Estado.Inicial) { 
+                    this.lista_lineas.Remove(line);
+                }
                 txtTotal.Text = suma.ToString("N2");
+                //if(_estado == Estado.Modificar)
+                //{
+                //    int j = 0;
+                //    int i = this.lista_lineas_antigua.IndexOf(line);
+                //    foreach(CajaWS.lineaPedido l in this.lista_lineas)// Busco si linea esta en mi pedido anterior
+                //    {
+                //        if(line == l) //es un pedido anterior
+                //        {
+                //            this.lista_lineas[i].activo = false;
+                //            j = 1;
+                //            break;
+                //        }
+                //    }
+                //    if(j==0)//producto nuevo
+                //        this.lista_lineas.Remove(line);
+                //}
             }
         }
 
@@ -249,11 +298,9 @@ namespace LP2Soft
                 {
                     this._pedido.idPedido = resultado;
                     this._estado = Estado.Guardar;
-                    _mesa.estado = true;
-                    _mesa.disponible = false;
-                    _daoNegocio.modificarMesa(_mesa);
                     this.hecho = true;
                     MessageBox.Show("Se ha registrado con éxito", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
@@ -302,8 +349,13 @@ namespace LP2Soft
                 txtTotal.Text = suma.ToString("N2");
                 if (n-1 == 0)
                 {
-                    dgvPedido.Rows.RemoveAt(dgvPedido.CurrentRow.Index);
+                    
                     this.lista_lineas.Remove(line);
+                    if (_estado == Estado.Modificar)
+                    {
+                        int i = this.lista_lineas.IndexOf(line);
+                        this.lista_lineas[i].activo = false;
+                    }
                 }
 
             }

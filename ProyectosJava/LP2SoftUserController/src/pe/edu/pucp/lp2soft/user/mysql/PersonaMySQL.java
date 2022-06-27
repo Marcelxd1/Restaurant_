@@ -203,7 +203,7 @@ public class PersonaMySQL implements PersonaDAO {
             cs.setString("_nombre", persona.getNombre());
             cs.setString("_fid_tipo", String.valueOf(persona.getTipo()));
             cs.setString("_razon_social",persona.getRazon_social());
-            cs.setString("_ruc", persona.getNombre());
+            cs.setString("_ruc", persona.getRuc());
             cs.executeUpdate();
             persona.setId_persona(cs.getInt("_id_persona"));
             resultado = persona.getId_persona() ; 
@@ -224,8 +224,8 @@ public class PersonaMySQL implements PersonaDAO {
             cs = con.prepareCall("{call MODIFICAR_EMPRESA(?,?,?,?)}");
             cs.setInt("_id_persona",persona.getId_persona());
             cs.setString("_nombre" , persona.getNombre());
-            cs.setString("_razon_social" , persona.getApellido_paterno());
-            cs.setString("_RUC" , persona.getApellido_materno());
+            cs.setString("_razon_social" , persona.getRazon_social());
+            cs.setString("_RUC" , persona.getRuc());
             cs.executeUpdate();
             resultado  = 1; 
         }catch (Exception ex){

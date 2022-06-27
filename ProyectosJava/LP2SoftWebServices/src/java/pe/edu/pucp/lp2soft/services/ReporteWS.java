@@ -140,4 +140,36 @@ public class ReporteWS {
         return reporteBytes;
     }
     
+    @WebMethod(operationName = "generarReporteCajaxFecha")
+    public byte[] generarReporteCajaxFecha( String fechaInicio, String fechaFin ) {
+        byte[] reporteBytes= null;
+        try {
+            Connection con= DBManager.getInstance().getConnection();
+            JasperReport reporte = (JasperReport)JRLoader.loadObject(ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/reports/ReporteCaja.jasper"));
+            Date fini, ffin; 
+            String rutaImagen = 
+                    ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/img/logo_restaurant.png").getPath();
+            
+            fini = java.sql.Date.valueOf(fechaInicio);
+            ffin = java.sql.Date.valueOf(fechaFin);
+            
+            Image imagen = (new ImageIcon(rutaImagen)).getImage();
+            HashMap hm = new HashMap();// aqui entraria la imagen
+            
+            String rutaSubreporte = 
+			ReporteWS.class.getResource
+				("/pe/edu/pucp/lp2soft/reports/ResCaja.jasper").getPath();
+            hm.put("paramImage", imagen);
+            hm.put("fechaInicio", fini);
+            hm.put("fechaFin", ffin);
+            hm.put("rutaSubRepResumen", rutaSubreporte);
+            
+            JasperPrint jp = JasperFillManager.fillReport(reporte, hm, con);
+            con.close();
+            reporteBytes = JasperExportManager.exportReportToPdf(jp);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return reporteBytes;
+    }
 }

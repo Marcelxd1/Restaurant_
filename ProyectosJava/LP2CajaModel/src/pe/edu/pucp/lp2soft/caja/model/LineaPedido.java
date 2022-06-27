@@ -8,6 +8,7 @@ public class LineaPedido{
     private Pedido pedido;//esta por gusto creo porque pedido si puede llegar aqui a travez de la lista 
     private int unidades;//se repite
     private double subtotal;
+    private boolean activo;
 
     public LineaPedido() {
     }
@@ -64,6 +65,15 @@ public class LineaPedido{
 	public void setItem(ItemVendible item) {
 		this.item = item;
 	}
-    //METODOS Y PROCEDIMIENTOS 
+        
+       
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
 
 }

@@ -47,12 +47,13 @@ public class LineaPedidoMySQL implements LineaPedidoDAO{
         try{
             lineaPedido.setSubtotal(lineaPedido.getItem().getPrecio()*lineaPedido.getUnidades());
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_LINEA_PEDIDO(?,?,?,?, ?)}");
-            cs.setInt("_id_linea_pedido", java.sql.Types.INTEGER);
+            cs = con.prepareCall("{call MODIFICAR_LINEA_PEDIDO(?,?,?,?, ?,?)}");
+            cs.setInt("_id_linea_pedido", lineaPedido.getId_linea_pedido());
             cs.setInt("_fid_itemVendible", lineaPedido.getItem().getIdItemVendible());
             cs.setInt("_fid_pedido", lineaPedido.getPedido().getIdPedido());
             cs.setInt("_unidades", lineaPedido.getUnidades());
             cs.setDouble("_subtotal", lineaPedido.getSubtotal());
+            cs.setBoolean("_activo", lineaPedido.isActivo());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){

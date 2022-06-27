@@ -71,6 +71,7 @@ namespace LP2Soft
                 button.Click += new System.EventHandler(hacerCLik);
                 button.Font = new Font(label1.Font, FontStyle.Bold);
                 button.ForeColor = Color.White;
+                button.Cursor = Cursors.Hand;
                 this.Controls.Add(button);
                 left += button.Width+2;
                 if(left >= 470)
@@ -118,6 +119,7 @@ namespace LP2Soft
             string[] subs = sender.ToString().Split(sep, StringSplitOptions.RemoveEmptyEntries);
             //tendra btn y i
             int indice = Int32.Parse(subs[1]) - 1;
+            Estado estado;
             //obtener el objeto mesa
             NegocioWS.mesa mesaSelec = lista_mesas.ElementAt(indice);
             if (mesaSelec.disponible == true)
@@ -128,32 +130,35 @@ namespace LP2Soft
 
                 if (rol.descripcion == "MESERO")
                 {
-                    frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido();
+                    estado = Estado.Inicial;
+                    frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido(estado,mesaSelec.idMesa);
                     forPedMes.Mesa = mesaSelec;
                     forPedMes.Mesero = persona;
                     //forPedMes.iniciar();
                     if (forPedMes.ShowDialog() == DialogResult.OK)
                     {
-                        if(forPedMes.Hecho == true)//solo si se realizó pedido
+                        if (forPedMes.Hecho == true)//solo si se realizó pedido
                         {
                             mesaSelec.disponible = false;
-                            mesaSelec.estado = true;
-                            daonegocio.modificarMesa(mesaSelec);
                             lista_botones.ElementAt(indice).BackColor = Color.IndianRed;
                         }
-                        
+
                     }
 
                 }
 
             }
+            //else
+            //{
+            //    estado = Estado.Modificar;
+            //    frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido(estado, mesaSelec.idMesa);
+            //    forPedMes.Mesa = mesaSelec;
+            //    forPedMes.Mesero = persona;
+            //    if (forPedMes.ShowDialog() == DialogResult.OK)
+            //    {
 
-            else
-            {
-
-                mesaSelec.disponible = true;
-                lista_botones.ElementAt(indice).BackColor = Color.RoyalBlue;
-            }
+            //    }
+            //}
 
             daonegocio.modificarMesa(mesaSelec);
             

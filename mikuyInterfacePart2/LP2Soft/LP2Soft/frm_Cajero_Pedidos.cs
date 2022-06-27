@@ -45,7 +45,7 @@ namespace LP2Soft
 
         private void btnLlevar_Click(object sender, EventArgs e)
         {
-            frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido();
+            frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido(Estado.Inicial,0);
             forPedMes.Cajero = _cajero;
             forPedMes.ShowDialog();
         }

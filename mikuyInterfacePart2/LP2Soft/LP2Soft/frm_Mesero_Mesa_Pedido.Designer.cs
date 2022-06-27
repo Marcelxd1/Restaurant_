@@ -282,10 +282,10 @@
             this.btnPedir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedir.ForeColor = System.Drawing.Color.White;
             this.btnPedir.HoverState.Parent = this.btnPedir;
-            this.btnPedir.Location = new System.Drawing.Point(899, 510);
+            this.btnPedir.Location = new System.Drawing.Point(870, 510);
             this.btnPedir.Name = "btnPedir";
             this.btnPedir.ShadowDecoration.Parent = this.btnPedir;
-            this.btnPedir.Size = new System.Drawing.Size(83, 29);
+            this.btnPedir.Size = new System.Drawing.Size(112, 33);
             this.btnPedir.TabIndex = 138;
             this.btnPedir.Text = "Pedir";
             this.btnPedir.Click += new System.EventHandler(this.btnPedir_Click);
@@ -480,12 +480,13 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.HoverState.Parent = this.btnCancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(790, 510);
+            this.btnCancelar.Location = new System.Drawing.Point(761, 510);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.ShadowDecoration.Parent = this.btnCancelar;
-            this.btnCancelar.Size = new System.Drawing.Size(90, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(103, 33);
             this.btnCancelar.TabIndex = 141;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblNombre
