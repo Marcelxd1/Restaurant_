@@ -15,6 +15,8 @@ namespace LP2Soft
     {
         private ReporteWS.ReporteWSClient daoReporte;
         private byte[] archivoBytes = null;
+        string fechaini_str = "", fechafin_str = "";
+        DateTime ini = DateTime.Now.AddMonths(-1), fin = DateTime.Now;
         public frm_ReporteCaja()
         {
             InitializeComponent();
@@ -22,10 +24,10 @@ namespace LP2Soft
             dtpIni = null; dtpFin = null;
         }
 
-        private void btnGenerarReporte_Click(object sender, EventArgs e)
+        private async void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-            string fechaini_str = "", fechafin_str = "";
-            DateTime ini = DateTime.Now.AddMonths(-1), fin = DateTime.Now;
+            frm_Loading form_loading = new frm_Loading();
+            form_loading.Show();
             if (dtpIni != null && dtpFin != null)
             {
                 fechaini_str = dtpIni.Value.ToString("yyyy-MM-dd");
@@ -41,10 +43,19 @@ namespace LP2Soft
                 fechaini_str = ini.ToString("yyyy-MM-dd");
                 fechafin_str = fin.ToString("yyyy-MM-dd");
             }
-            archivoBytes = daoReporte.generarReporteCajaxFecha(fechaini_str, fechafin_str);
-            File.WriteAllBytes("temporal.pdf", archivoBytes);
+            Task hilo1 = new Task(generar);
+            hilo1.Start();
+            await hilo1;
+            form_loading.Hide();
+
             visorPDF.LoadFile("temporal.pdf");
             visorPDF.setShowToolbar(true);
+        }
+
+        private void generar()
+        {
+            archivoBytes = daoReporte.generarReporteCajaxFecha(fechaini_str, fechafin_str);
+            File.WriteAllBytes("temporal.pdf", archivoBytes);
         }
 
         private void label2_Click(object sender, EventArgs e)

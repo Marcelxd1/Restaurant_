@@ -640,6 +640,9 @@
     <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarReporteCajaxFechaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarReportePedidoxFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ReporteWS\LP2Soft.ReporteWS.generarReportePlatosMasVendidosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

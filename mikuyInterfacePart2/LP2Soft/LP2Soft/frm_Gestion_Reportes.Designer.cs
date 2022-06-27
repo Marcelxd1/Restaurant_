@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Gestion_Reportes));
             this.lblPlatoMasVendidos = new System.Windows.Forms.Label();
             this.lblAsistencia = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblReporteCaja = new System.Windows.Forms.Label();
+            this.lblReportePedido = new System.Windows.Forms.Label();
             this.lblVentas = new System.Windows.Forms.Label();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ImageButton5 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnReportePedido = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnReporteCaja = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -60,7 +60,7 @@
             this.lblPlatoMasVendidos.Name = "lblPlatoMasVendidos";
             this.lblPlatoMasVendidos.Size = new System.Drawing.Size(104, 81);
             this.lblPlatoMasVendidos.TabIndex = 49;
-            this.lblPlatoMasVendidos.Text = "Platos Mas Vendidos";
+            this.lblPlatoMasVendidos.Text = "Platos Más Vendidos";
             this.lblPlatoMasVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPlatoMasVendidos.Click += new System.EventHandler(this.lblPlatoMasVendidos_Click);
             this.lblPlatoMasVendidos.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
@@ -81,33 +81,35 @@
             this.lblAsistencia.MouseEnter += new System.EventHandler(this.guna2ImageButton1_MouseEnter);
             this.lblAsistencia.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
             // 
-            // label2
+            // lblReporteCaja
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(392, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 81);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Reportes";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
-            this.label2.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
+            this.lblReporteCaja.BackColor = System.Drawing.Color.Transparent;
+            this.lblReporteCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblReporteCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReporteCaja.Location = new System.Drawing.Point(392, 25);
+            this.lblReporteCaja.Name = "lblReporteCaja";
+            this.lblReporteCaja.Size = new System.Drawing.Size(104, 81);
+            this.lblReporteCaja.TabIndex = 55;
+            this.lblReporteCaja.Text = "Reporte de Caja";
+            this.lblReporteCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReporteCaja.Click += new System.EventHandler(this.lblReporteCaja_Click);
+            this.lblReporteCaja.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
+            this.lblReporteCaja.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
             // 
-            // label3
+            // lblReportePedido
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(118, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 81);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "Reportes";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.MouseEnter += new System.EventHandler(this.guna2ImageButton4_MouseEnter);
-            this.label3.MouseLeave += new System.EventHandler(this.guna2ImageButton4_MouseLeave);
+            this.lblReportePedido.BackColor = System.Drawing.Color.Transparent;
+            this.lblReportePedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblReportePedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReportePedido.Location = new System.Drawing.Point(118, 196);
+            this.lblReportePedido.Name = "lblReportePedido";
+            this.lblReportePedido.Size = new System.Drawing.Size(104, 81);
+            this.lblReportePedido.TabIndex = 58;
+            this.lblReportePedido.Text = "Reporte de Pedido";
+            this.lblReportePedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReportePedido.Click += new System.EventHandler(this.lblReportePedido_Click);
+            this.lblReportePedido.MouseEnter += new System.EventHandler(this.guna2ImageButton4_MouseEnter);
+            this.lblReportePedido.MouseLeave += new System.EventHandler(this.guna2ImageButton4_MouseLeave);
             // 
             // lblVentas
             // 
@@ -118,7 +120,7 @@
             this.lblVentas.Name = "lblVentas";
             this.lblVentas.Size = new System.Drawing.Size(143, 81);
             this.lblVentas.TabIndex = 61;
-            this.lblVentas.Text = "Reporte con las mejores ventas (fecha - dia)";
+            this.lblVentas.Text = "Reporte con las mejores ventas (fecha - dáa)";
             this.lblVentas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblVentas.Click += new System.EventHandler(this.lblVentas_Click);
             this.lblVentas.MouseEnter += new System.EventHandler(this.guna2ImageButton5_MouseEnter);
@@ -128,7 +130,7 @@
             // 
             this.guna2PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
-            this.guna2PictureBox5.Location = new System.Drawing.Point(342, 282);
+            this.guna2PictureBox5.Location = new System.Drawing.Point(351, 282);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
             this.guna2PictureBox5.ShadowDecoration.Parent = this.guna2PictureBox5;
             this.guna2PictureBox5.Size = new System.Drawing.Size(40, 35);
@@ -170,21 +172,22 @@
             this.guna2PictureBox4.MouseEnter += new System.EventHandler(this.guna2ImageButton4_MouseEnter);
             this.guna2PictureBox4.MouseLeave += new System.EventHandler(this.guna2ImageButton4_MouseLeave);
             // 
-            // guna2ImageButton4
+            // btnReportePedido
             // 
-            this.guna2ImageButton4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton4.BackgroundImage")));
-            this.guna2ImageButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2ImageButton4.CheckedState.Parent = this.guna2ImageButton4;
-            this.guna2ImageButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ImageButton4.HoverState.Parent = this.guna2ImageButton4;
-            this.guna2ImageButton4.Location = new System.Drawing.Point(100, 196);
-            this.guna2ImageButton4.Name = "guna2ImageButton4";
-            this.guna2ImageButton4.PressedState.Parent = this.guna2ImageButton4;
-            this.guna2ImageButton4.Size = new System.Drawing.Size(135, 121);
-            this.guna2ImageButton4.TabIndex = 57;
-            this.guna2ImageButton4.MouseEnter += new System.EventHandler(this.guna2ImageButton4_MouseEnter);
-            this.guna2ImageButton4.MouseLeave += new System.EventHandler(this.guna2ImageButton4_MouseLeave);
+            this.btnReportePedido.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportePedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReportePedido.BackgroundImage")));
+            this.btnReportePedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReportePedido.CheckedState.Parent = this.btnReportePedido;
+            this.btnReportePedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportePedido.HoverState.Parent = this.btnReportePedido;
+            this.btnReportePedido.Location = new System.Drawing.Point(100, 196);
+            this.btnReportePedido.Name = "btnReportePedido";
+            this.btnReportePedido.PressedState.Parent = this.btnReportePedido;
+            this.btnReportePedido.Size = new System.Drawing.Size(135, 121);
+            this.btnReportePedido.TabIndex = 57;
+            this.btnReportePedido.Click += new System.EventHandler(this.btnReportePedido_Click);
+            this.btnReportePedido.MouseEnter += new System.EventHandler(this.guna2ImageButton4_MouseEnter);
+            this.btnReportePedido.MouseLeave += new System.EventHandler(this.guna2ImageButton4_MouseLeave);
             // 
             // guna2PictureBox3
             // 
@@ -200,27 +203,28 @@
             this.guna2PictureBox3.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
             this.guna2PictureBox3.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
             // 
-            // guna2ImageButton3
+            // btnReporteCaja
             // 
-            this.guna2ImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton3.BackgroundImage")));
-            this.guna2ImageButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ImageButton3.HoverState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.Location = new System.Drawing.Point(374, 25);
-            this.guna2ImageButton3.Name = "guna2ImageButton3";
-            this.guna2ImageButton3.PressedState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.Size = new System.Drawing.Size(135, 121);
-            this.guna2ImageButton3.TabIndex = 54;
-            this.guna2ImageButton3.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
-            this.guna2ImageButton3.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
+            this.btnReporteCaja.BackColor = System.Drawing.Color.Transparent;
+            this.btnReporteCaja.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReporteCaja.BackgroundImage")));
+            this.btnReporteCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReporteCaja.CheckedState.Parent = this.btnReporteCaja;
+            this.btnReporteCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteCaja.HoverState.Parent = this.btnReporteCaja;
+            this.btnReporteCaja.Location = new System.Drawing.Point(374, 25);
+            this.btnReporteCaja.Name = "btnReporteCaja";
+            this.btnReporteCaja.PressedState.Parent = this.btnReporteCaja;
+            this.btnReporteCaja.Size = new System.Drawing.Size(135, 121);
+            this.btnReporteCaja.TabIndex = 54;
+            this.btnReporteCaja.Click += new System.EventHandler(this.btnReporteCaja_Click);
+            this.btnReporteCaja.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
+            this.btnReporteCaja.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.Location = new System.Drawing.Point(235, 96);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(232, 96);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
             this.guna2PictureBox2.Size = new System.Drawing.Size(40, 35);
@@ -250,7 +254,7 @@
             // 
             this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(75, 96);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(74, 96);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(40, 35);
@@ -286,11 +290,11 @@
             this.Controls.Add(this.lblVentas);
             this.Controls.Add(this.guna2ImageButton5);
             this.Controls.Add(this.guna2PictureBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.guna2ImageButton4);
+            this.Controls.Add(this.lblReportePedido);
+            this.Controls.Add(this.btnReportePedido);
             this.Controls.Add(this.guna2PictureBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.guna2ImageButton3);
+            this.Controls.Add(this.lblReporteCaja);
+            this.Controls.Add(this.btnReporteCaja);
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.lblAsistencia);
             this.Controls.Add(this.guna2ImageButton1);
@@ -319,11 +323,11 @@
         private System.Windows.Forms.Label lblAsistencia;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private System.Windows.Forms.Label lblReporteCaja;
+        private Guna.UI2.WinForms.Guna2ImageButton btnReporteCaja;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton4;
+        private System.Windows.Forms.Label lblReportePedido;
+        private Guna.UI2.WinForms.Guna2ImageButton btnReportePedido;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
         private System.Windows.Forms.Label lblVentas;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton5;

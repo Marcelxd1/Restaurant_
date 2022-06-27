@@ -51,22 +51,22 @@ namespace LP2Soft
 
         private void guna2ImageButton3_MouseEnter(object sender, EventArgs e)
         {
-            label2.ForeColor = Color.Blue;
+            lblReporteCaja.ForeColor = Color.Blue;
         }
 
         private void guna2ImageButton3_MouseLeave(object sender, EventArgs e)
         {
-            label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            lblReporteCaja.ForeColor = System.Drawing.SystemColors.ControlText;
         }
 
         private void guna2ImageButton4_MouseEnter(object sender, EventArgs e)
         {
-            label3.ForeColor = Color.Blue;
+            lblReportePedido.ForeColor = Color.Blue;
         }
 
         private void guna2ImageButton4_MouseLeave(object sender, EventArgs e)
         {
-            label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            lblReportePedido.ForeColor = System.Drawing.SystemColors.ControlText;
         }
 
         private void guna2ImageButton5_MouseEnter(object sender, EventArgs e)
@@ -93,6 +93,30 @@ namespace LP2Soft
         private void guna2ImageButton5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblReporteCaja_Click(object sender, EventArgs e)
+        {
+            frm_ReporteCaja form = new frm_ReporteCaja();
+            form.ShowDialog();
+        }
+
+        private void btnReporteCaja_Click(object sender, EventArgs e)
+        {
+            frm_ReporteCaja form = new frm_ReporteCaja();
+            form.ShowDialog();
+        }
+
+        private void lblReportePedido_Click(object sender, EventArgs e)
+        {
+            frm_ReportePedido form = new frm_ReportePedido();
+            form.ShowDialog();
+        }
+
+        private void btnReportePedido_Click(object sender, EventArgs e)
+        {
+            frm_ReportePedido form = new frm_ReportePedido();
+            form.ShowDialog();
         }
     }
 }

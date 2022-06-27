@@ -729,3 +729,10 @@ C:\Users\marce\Documents\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\es-
 C:\Users\marce\Documents\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.csproj.CopyComplete
 C:\Users\marce\Documents\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_ReporteCaja.resources
 C:\Users\marce\Documents\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_ReportePedido.resources
+C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Reportes.resources
+C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Load.resources
+C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_ReporteCaja.resources
+C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_ReportePedido.resources
+C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_ReporteVentasXFechaDia.resources
+C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Reporte_Asistencia.resources
+C:\Users\Atiqu\Documents\LP2\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Reporte_PlatosMasVendidos.resources

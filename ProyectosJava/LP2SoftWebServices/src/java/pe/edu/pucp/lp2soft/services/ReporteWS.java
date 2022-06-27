@@ -172,4 +172,46 @@ public class ReporteWS {
         }
         return reporteBytes;
     }
+    
+    @WebMethod(operationName = "generarReportePedidoxFecha")
+    public byte[] generarReportePedidoxFecha( String fechaInicio, String fechaFin ) {
+        byte[] reporteBytes= null;
+        try {
+            Connection con= DBManager.getInstance().getConnection();
+            JasperReport reporte = (JasperReport)JRLoader.loadObject(ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/reports/ReporteVentas.jasper"));
+            Date fini, ffin; 
+            String rutaImagen = 
+                    ReporteWS.class.getResource("/pe/edu/pucp/lp2soft/img/logo_restaurant.png").getPath();
+            
+            fini = java.sql.Date.valueOf(fechaInicio);
+            ffin = java.sql.Date.valueOf(fechaFin);
+            
+            Image imagen = (new ImageIcon(rutaImagen)).getImage();
+            HashMap hm = new HashMap();// aqui entraria la imagen
+            
+            String rutaSubreporte1 = 
+			ReporteWS.class.getResource
+				("/pe/edu/pucp/lp2soft/reports/PedidoCajero.jasper").getPath();
+            String rutaSubreporte2 = 
+			ReporteWS.class.getResource
+				("/pe/edu/pucp/lp2soft/reports/GraficoPedidoxTipo.jasper").getPath();
+            String rutaSubreporte3 = 
+			ReporteWS.class.getResource
+				("/pe/edu/pucp/lp2soft/reports/PedidoMesero.jasper").getPath();
+            hm.put("paramImage", imagen);
+            hm.put("fechaInicio", fini);
+            hm.put("fechaFin", ffin);
+            hm.put("rutaSubRepPedidoTipo", rutaSubreporte1);
+            hm.put("rutaSubPedidoCajero", rutaSubreporte2);
+            hm.put("rutaSubPedMes", rutaSubreporte3);
+            
+            JasperPrint jp = JasperFillManager.fillReport(reporte, hm, con);
+            con.close();
+            reporteBytes = JasperExportManager.exportReportToPdf(jp);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return reporteBytes;
+    }
+    
 }
