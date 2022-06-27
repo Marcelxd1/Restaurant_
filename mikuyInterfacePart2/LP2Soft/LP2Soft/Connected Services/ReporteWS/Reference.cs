@@ -15,6 +15,20 @@ namespace LP2Soft.ReporteWS {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", ConfigurationName="ReporteWS.ReporteWS")]
     public interface ReporteWS {
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteCajaxFechaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteCajaxFechaResponse")]
+        LP2Soft.ReporteWS.generarReporteCajaxFechaResponse generarReporteCajaxFecha(LP2Soft.ReporteWS.generarReporteCajaxFechaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteCajaxFechaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteCajaxFechaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteCajaxFechaResponse> generarReporteCajaxFechaAsync(LP2Soft.ReporteWS.generarReporteCajaxFechaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg1 del espacio de nombres  no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse")]
+        LP2Soft.ReporteWS.generarBoletaVentaResponse generarBoletaVenta(LP2Soft.ReporteWS.generarBoletaVentaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarBoletaVentaResponse> generarBoletaVentaAsync(LP2Soft.ReporteWS.generarBoletaVentaRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg1 del espacio de nombres  no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaVentaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaVentaResponse")]
         LP2Soft.ReporteWS.generarFacturaVentaResponse generarFacturaVenta(LP2Soft.ReporteWS.generarFacturaVentaRequest request);
@@ -33,20 +47,6 @@ namespace LP2Soft.ReporteWS {
             "onse")]
         System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReportePlatosMasVendidosResponse> generarReportePlatosMasVendidosAsync(LP2Soft.ReporteWS.generarReportePlatosMasVendidosRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg1 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse")]
-        LP2Soft.ReporteWS.generarBoletaVentaResponse generarBoletaVenta(LP2Soft.ReporteWS.generarBoletaVentaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarBoletaVentaResponse> generarBoletaVentaAsync(LP2Soft.ReporteWS.generarBoletaVentaRequest request);
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaResponse")]
-        LP2Soft.ReporteWS.generarReporteAsistenciaResponse generarReporteAsistencia(LP2Soft.ReporteWS.generarReporteAsistenciaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteAsistenciaResponse> generarReporteAsistenciaAsync(LP2Soft.ReporteWS.generarReporteAsistenciaRequest request);
-        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el espacio de nombres de partes de mensaje () no coincide con el valor predeterminado (http://services.lp2soft.pucp.edu.pe/).
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteVentasXDiaFechaReques" +
             "t", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteVentasXDiaFechaRespon" +
@@ -58,6 +58,181 @@ namespace LP2Soft.ReporteWS {
             "t", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteVentasXDiaFechaRespon" +
             "se")]
         System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse> generarReporteVentasXDiaFechaAsync(LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaResponse")]
+        LP2Soft.ReporteWS.generarReporteAsistenciaResponse generarReporteAsistencia(LP2Soft.ReporteWS.generarReporteAsistenciaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteAsistenciaResponse> generarReporteAsistenciaAsync(LP2Soft.ReporteWS.generarReporteAsistenciaRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class generarReporteCajaxFechaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="generarReporteCajaxFecha", Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        public LP2Soft.ReporteWS.generarReporteCajaxFechaRequestBody Body;
+        
+        public generarReporteCajaxFechaRequest() {
+        }
+        
+        public generarReporteCajaxFechaRequest(LP2Soft.ReporteWS.generarReporteCajaxFechaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class generarReporteCajaxFechaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string arg0;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string arg1;
+        
+        public generarReporteCajaxFechaRequestBody() {
+        }
+        
+        public generarReporteCajaxFechaRequestBody(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class generarReporteCajaxFechaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="generarReporteCajaxFechaResponse", Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        public LP2Soft.ReporteWS.generarReporteCajaxFechaResponseBody Body;
+        
+        public generarReporteCajaxFechaResponse() {
+        }
+        
+        public generarReporteCajaxFechaResponse(LP2Soft.ReporteWS.generarReporteCajaxFechaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class generarReporteCajaxFechaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public byte[] @return;
+        
+        public generarReporteCajaxFechaResponseBody() {
+        }
+        
+        public generarReporteCajaxFechaResponseBody(byte[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class generarBoletaVentaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="generarBoletaVenta", Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        public LP2Soft.ReporteWS.generarBoletaVentaRequestBody Body;
+        
+        public generarBoletaVentaRequest() {
+        }
+        
+        public generarBoletaVentaRequest(LP2Soft.ReporteWS.generarBoletaVentaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class generarBoletaVentaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int arg0;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string arg1;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string arg2;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string arg3;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string arg4;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int arg5;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public double arg6;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public double arg7;
+        
+        public generarBoletaVentaRequestBody() {
+        }
+        
+        public generarBoletaVentaRequestBody(int arg0, string arg1, string arg2, string arg3, string arg4, int arg5, double arg6, double arg7) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+            this.arg4 = arg4;
+            this.arg5 = arg5;
+            this.arg6 = arg6;
+            this.arg7 = arg7;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class generarBoletaVentaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="generarBoletaVentaResponse", Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        public LP2Soft.ReporteWS.generarBoletaVentaResponseBody Body;
+        
+        public generarBoletaVentaResponse() {
+        }
+        
+        public generarBoletaVentaResponse(LP2Soft.ReporteWS.generarBoletaVentaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class generarBoletaVentaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public byte[] @return;
+        
+        public generarBoletaVentaResponseBody() {
+        }
+        
+        public generarBoletaVentaResponseBody(byte[] @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -231,95 +406,26 @@ namespace LP2Soft.ReporteWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class generarBoletaVentaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteVentasXDiaFecha", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class generarReporteVentasXDiaFechaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="generarBoletaVenta", Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        public LP2Soft.ReporteWS.generarBoletaVentaRequestBody Body;
-        
-        public generarBoletaVentaRequest() {
-        }
-        
-        public generarBoletaVentaRequest(LP2Soft.ReporteWS.generarBoletaVentaRequestBody Body) {
-            this.Body = Body;
+        public generarReporteVentasXDiaFechaRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class generarBoletaVentaRequestBody {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteVentasXDiaFechaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class generarReporteVentasXDiaFechaResponse {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int arg0;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string arg1;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string arg2;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string arg3;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string arg4;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public int arg5;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public double arg6;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public double arg7;
-        
-        public generarBoletaVentaRequestBody() {
-        }
-        
-        public generarBoletaVentaRequestBody(int arg0, string arg1, string arg2, string arg3, string arg4, int arg5, double arg6, double arg7) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class generarBoletaVentaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="generarBoletaVentaResponse", Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        public LP2Soft.ReporteWS.generarBoletaVentaResponseBody Body;
-        
-        public generarBoletaVentaResponse() {
-        }
-        
-        public generarBoletaVentaResponse(LP2Soft.ReporteWS.generarBoletaVentaResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class generarBoletaVentaResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public byte[] @return;
         
-        public generarBoletaVentaResponseBody() {
+        public generarReporteVentasXDiaFechaResponse() {
         }
         
-        public generarBoletaVentaResponseBody(byte[] @return) {
+        public generarReporteVentasXDiaFechaResponse(byte[] @return) {
             this.@return = @return;
         }
     }
@@ -396,33 +502,6 @@ namespace LP2Soft.ReporteWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteVentasXDiaFecha", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class generarReporteVentasXDiaFechaRequest {
-        
-        public generarReporteVentasXDiaFechaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteVentasXDiaFechaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class generarReporteVentasXDiaFechaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public byte[] @return;
-        
-        public generarReporteVentasXDiaFechaResponse() {
-        }
-        
-        public generarReporteVentasXDiaFechaResponse(byte[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ReporteWSChannel : LP2Soft.ReporteWS.ReporteWS, System.ServiceModel.IClientChannel {
     }
@@ -448,6 +527,72 @@ namespace LP2Soft.ReporteWS {
         
         public ReporteWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.ReporteWS.generarReporteCajaxFechaResponse LP2Soft.ReporteWS.ReporteWS.generarReporteCajaxFecha(LP2Soft.ReporteWS.generarReporteCajaxFechaRequest request) {
+            return base.Channel.generarReporteCajaxFecha(request);
+        }
+        
+        public byte[] generarReporteCajaxFecha(string arg0, string arg1) {
+            LP2Soft.ReporteWS.generarReporteCajaxFechaRequest inValue = new LP2Soft.ReporteWS.generarReporteCajaxFechaRequest();
+            inValue.Body = new LP2Soft.ReporteWS.generarReporteCajaxFechaRequestBody();
+            inValue.Body.arg0 = arg0;
+            inValue.Body.arg1 = arg1;
+            LP2Soft.ReporteWS.generarReporteCajaxFechaResponse retVal = ((LP2Soft.ReporteWS.ReporteWS)(this)).generarReporteCajaxFecha(inValue);
+            return retVal.Body.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteCajaxFechaResponse> LP2Soft.ReporteWS.ReporteWS.generarReporteCajaxFechaAsync(LP2Soft.ReporteWS.generarReporteCajaxFechaRequest request) {
+            return base.Channel.generarReporteCajaxFechaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteCajaxFechaResponse> generarReporteCajaxFechaAsync(string arg0, string arg1) {
+            LP2Soft.ReporteWS.generarReporteCajaxFechaRequest inValue = new LP2Soft.ReporteWS.generarReporteCajaxFechaRequest();
+            inValue.Body = new LP2Soft.ReporteWS.generarReporteCajaxFechaRequestBody();
+            inValue.Body.arg0 = arg0;
+            inValue.Body.arg1 = arg1;
+            return ((LP2Soft.ReporteWS.ReporteWS)(this)).generarReporteCajaxFechaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.ReporteWS.generarBoletaVentaResponse LP2Soft.ReporteWS.ReporteWS.generarBoletaVenta(LP2Soft.ReporteWS.generarBoletaVentaRequest request) {
+            return base.Channel.generarBoletaVenta(request);
+        }
+        
+        public byte[] generarBoletaVenta(int arg0, string arg1, string arg2, string arg3, string arg4, int arg5, double arg6, double arg7) {
+            LP2Soft.ReporteWS.generarBoletaVentaRequest inValue = new LP2Soft.ReporteWS.generarBoletaVentaRequest();
+            inValue.Body = new LP2Soft.ReporteWS.generarBoletaVentaRequestBody();
+            inValue.Body.arg0 = arg0;
+            inValue.Body.arg1 = arg1;
+            inValue.Body.arg2 = arg2;
+            inValue.Body.arg3 = arg3;
+            inValue.Body.arg4 = arg4;
+            inValue.Body.arg5 = arg5;
+            inValue.Body.arg6 = arg6;
+            inValue.Body.arg7 = arg7;
+            LP2Soft.ReporteWS.generarBoletaVentaResponse retVal = ((LP2Soft.ReporteWS.ReporteWS)(this)).generarBoletaVenta(inValue);
+            return retVal.Body.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarBoletaVentaResponse> LP2Soft.ReporteWS.ReporteWS.generarBoletaVentaAsync(LP2Soft.ReporteWS.generarBoletaVentaRequest request) {
+            return base.Channel.generarBoletaVentaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarBoletaVentaResponse> generarBoletaVentaAsync(int arg0, string arg1, string arg2, string arg3, string arg4, int arg5, double arg6, double arg7) {
+            LP2Soft.ReporteWS.generarBoletaVentaRequest inValue = new LP2Soft.ReporteWS.generarBoletaVentaRequest();
+            inValue.Body = new LP2Soft.ReporteWS.generarBoletaVentaRequestBody();
+            inValue.Body.arg0 = arg0;
+            inValue.Body.arg1 = arg1;
+            inValue.Body.arg2 = arg2;
+            inValue.Body.arg3 = arg3;
+            inValue.Body.arg4 = arg4;
+            inValue.Body.arg5 = arg5;
+            inValue.Body.arg6 = arg6;
+            inValue.Body.arg7 = arg7;
+            return ((LP2Soft.ReporteWS.ReporteWS)(this)).generarBoletaVentaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -517,42 +662,24 @@ namespace LP2Soft.ReporteWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.ReporteWS.generarBoletaVentaResponse LP2Soft.ReporteWS.ReporteWS.generarBoletaVenta(LP2Soft.ReporteWS.generarBoletaVentaRequest request) {
-            return base.Channel.generarBoletaVenta(request);
+        LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse LP2Soft.ReporteWS.ReporteWS.generarReporteVentasXDiaFecha(LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest request) {
+            return base.Channel.generarReporteVentasXDiaFecha(request);
         }
         
-        public byte[] generarBoletaVenta(int arg0, string arg1, string arg2, string arg3, string arg4, int arg5, double arg6, double arg7) {
-            LP2Soft.ReporteWS.generarBoletaVentaRequest inValue = new LP2Soft.ReporteWS.generarBoletaVentaRequest();
-            inValue.Body = new LP2Soft.ReporteWS.generarBoletaVentaRequestBody();
-            inValue.Body.arg0 = arg0;
-            inValue.Body.arg1 = arg1;
-            inValue.Body.arg2 = arg2;
-            inValue.Body.arg3 = arg3;
-            inValue.Body.arg4 = arg4;
-            inValue.Body.arg5 = arg5;
-            inValue.Body.arg6 = arg6;
-            inValue.Body.arg7 = arg7;
-            LP2Soft.ReporteWS.generarBoletaVentaResponse retVal = ((LP2Soft.ReporteWS.ReporteWS)(this)).generarBoletaVenta(inValue);
-            return retVal.Body.@return;
+        public byte[] generarReporteVentasXDiaFecha() {
+            LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest inValue = new LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest();
+            LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse retVal = ((LP2Soft.ReporteWS.ReporteWS)(this)).generarReporteVentasXDiaFecha(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarBoletaVentaResponse> LP2Soft.ReporteWS.ReporteWS.generarBoletaVentaAsync(LP2Soft.ReporteWS.generarBoletaVentaRequest request) {
-            return base.Channel.generarBoletaVentaAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse> LP2Soft.ReporteWS.ReporteWS.generarReporteVentasXDiaFechaAsync(LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest request) {
+            return base.Channel.generarReporteVentasXDiaFechaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarBoletaVentaResponse> generarBoletaVentaAsync(int arg0, string arg1, string arg2, string arg3, string arg4, int arg5, double arg6, double arg7) {
-            LP2Soft.ReporteWS.generarBoletaVentaRequest inValue = new LP2Soft.ReporteWS.generarBoletaVentaRequest();
-            inValue.Body = new LP2Soft.ReporteWS.generarBoletaVentaRequestBody();
-            inValue.Body.arg0 = arg0;
-            inValue.Body.arg1 = arg1;
-            inValue.Body.arg2 = arg2;
-            inValue.Body.arg3 = arg3;
-            inValue.Body.arg4 = arg4;
-            inValue.Body.arg5 = arg5;
-            inValue.Body.arg6 = arg6;
-            inValue.Body.arg7 = arg7;
-            return ((LP2Soft.ReporteWS.ReporteWS)(this)).generarBoletaVentaAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse> generarReporteVentasXDiaFechaAsync() {
+            LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest inValue = new LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest();
+            return ((LP2Soft.ReporteWS.ReporteWS)(this)).generarReporteVentasXDiaFechaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -580,27 +707,6 @@ namespace LP2Soft.ReporteWS {
             inValue.Body.arg0 = arg0;
             inValue.Body.arg1 = arg1;
             return ((LP2Soft.ReporteWS.ReporteWS)(this)).generarReporteAsistenciaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse LP2Soft.ReporteWS.ReporteWS.generarReporteVentasXDiaFecha(LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest request) {
-            return base.Channel.generarReporteVentasXDiaFecha(request);
-        }
-        
-        public byte[] generarReporteVentasXDiaFecha() {
-            LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest inValue = new LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest();
-            LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse retVal = ((LP2Soft.ReporteWS.ReporteWS)(this)).generarReporteVentasXDiaFecha(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse> LP2Soft.ReporteWS.ReporteWS.generarReporteVentasXDiaFechaAsync(LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest request) {
-            return base.Channel.generarReporteVentasXDiaFechaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.ReporteWS.generarReporteVentasXDiaFechaResponse> generarReporteVentasXDiaFechaAsync() {
-            LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest inValue = new LP2Soft.ReporteWS.generarReporteVentasXDiaFechaRequest();
-            return ((LP2Soft.ReporteWS.ReporteWS)(this)).generarReporteVentasXDiaFechaAsync(inValue);
         }
     }
 }

@@ -133,12 +133,7 @@ public class PedidoMySQL implements PedidoDAO {
                 pedido.setMesa(mesa);
                 pedido.setTipoPago(rs.getString("fid_tipo_pago").charAt(0));
                 
-                pedido.setCajero(new Usuario());
-                pedido.getCajero().setId_usuario(rs.getInt("fid_cajero")); 
-                pedido.setMesero(new Usuario());
-                pedido.getMesero().setId_usuario(rs.getInt("fid_mesero")); 
-                pedido.setCliente(new Persona());
-                pedido.getCliente().setId_persona(rs.getInt("fid_cliente")); 
+               
                 
                 pedido.setTipoPedido(rs.getString("fid_tipo_pedido").charAt(0));
                 pedido.setTipoComprobante(rs.getString("fid_tipo_comprobante").charAt(0));

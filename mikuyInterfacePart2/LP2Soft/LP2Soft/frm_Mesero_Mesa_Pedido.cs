@@ -42,7 +42,6 @@ namespace LP2Soft
         public frm_Mesero_Mesa_Pedido(Estado estado, int idMesa)
         {
             InitializeComponent();
-            _cliente = new UserWS.persona();
             _pedido = new CajaWS.pedido();
             //_estado = Estado.Inicial;
             _daoNegocio = new NegocioWS.NegocioWSClient();
@@ -373,6 +372,7 @@ namespace LP2Soft
             frmBusquedaCliente formBusquedaCliente = new frmBusquedaCliente();
             if(formBusquedaCliente.ShowDialog() == DialogResult.OK)
             {
+                _cliente = new UserWS.persona();
                 string doc;
                 _cliente.id_persona = formBusquedaCliente.ClienteSeleccionado.id_persona;
                 _cliente.nombre = formBusquedaCliente.ClienteSeleccionado.nombre;

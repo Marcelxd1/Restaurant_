@@ -1,6 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,7 +33,8 @@ namespace LP2Soft
             }
             if (rol.descripcion == "MESERO")
             {
-                btnAsistencia.Visible = false;
+                btnAsistencia.Visible = true;
+                btnAsistencia.Location = new System.Drawing.Point(23, 142);
                 btnCaja.Visible = false;
                 btnClientes.Visible = false;
                 btnGestion.Visible = false;
@@ -41,14 +44,15 @@ namespace LP2Soft
             else if (rol.descripcion == "CAJERO")
             {
                 btnGestion.Visible = false;
-                btnCocina.Location = new System.Drawing.Point(23, 142);
-                btnCaja.Location = new System.Drawing.Point(23, 193);
-                btnAsistencia.Location = new System.Drawing.Point(23, 243);
-                btnClientes.Location = new System.Drawing.Point(23, 293);
+                //btnCocina.Location = new System.Drawing.Point(23, 142);
+                btnCaja.Location = new System.Drawing.Point(23, 142);
+                btnAsistencia.Location = new System.Drawing.Point(23, 193);
+                //btnClientes.Location = new System.Drawing.Point(23, 293);
+                btnClientes.Visible = false;
             }
             else if (rol.descripcion == "COCINERO")
             {
-                btnAsistencia.Visible = false;
+                btnAsistencia.Visible = true;
                 btnCaja.Visible = false;
                 btnClientes.Visible = false;
                 btnGestion.Visible = false;
@@ -65,6 +69,8 @@ namespace LP2Soft
             btnPedidos.FillColor = Color.Transparent;
         }
 
+        
+
         public void abrirFormulario(Form formularioMostrar)
         {
             if (formularioActivo != null)
@@ -74,6 +80,7 @@ namespace LP2Soft
             panelContenedor.Controls.Add(formularioMostrar);
             formularioMostrar.Show();
         }
+
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {

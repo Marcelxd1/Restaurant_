@@ -124,13 +124,21 @@ namespace LP2Soft
             if (formBusquedaCliente.ShowDialog() == DialogResult.OK)
             {
                 string doc;
-                _cliente.id_persona = formBusquedaCliente.ClienteSeleccionado.id_persona;
-                _cliente.nombre = formBusquedaCliente.ClienteSeleccionado.nombre;
+                _pedido.cliente = new CajaWS.persona();
+                _pedido.cliente.id_persona = formBusquedaCliente.ClienteSeleccionado.id_persona;
+                _pedido.cliente.nombre = formBusquedaCliente.ClienteSeleccionado.nombre;
                 if (formBusquedaCliente.ClienteSeleccionado.tipo == 'N')
+                {
                     doc = formBusquedaCliente.ClienteSeleccionado.DNI;
-                else
+                    _pedido.cliente.DNI = doc;
+                    _pedido.cliente.apellido_paterno = formBusquedaCliente.ClienteSeleccionado.apellido_paterno;
+                }
+                else { 
                     doc = formBusquedaCliente.ClienteSeleccionado.ruc;
-                txtNombre.Text = _cliente.nombre;
+                    _pedido.cliente.ruc = doc;
+                }
+                _pedido.cliente.tipo = formBusquedaCliente.ClienteSeleccionado.tipo;
+                txtNombre.Text = _pedido.cliente.nombre;
                 txtDNIRUC.Text = doc;
             }
         }
@@ -169,15 +177,24 @@ namespace LP2Soft
             if (formClienteRegistro.ShowDialog() == DialogResult.OK)
             {
                 string doc;
-                _cliente.id_persona = formClienteRegistro.ClienteSeleccionado.id_persona;
-                _cliente.nombre = formClienteRegistro.ClienteSeleccionado.nombre;
+                _pedido.cliente.id_persona = formClienteRegistro.ClienteSeleccionado.id_persona;
+                _pedido.cliente.nombre = formClienteRegistro.ClienteSeleccionado.nombre;
                 if (formClienteRegistro.ClienteSeleccionado.tipo == 'N')
+                {
                     doc = formClienteRegistro.ClienteSeleccionado.DNI;
+                    _pedido.cliente.DNI = doc;
+                    _pedido.cliente.apellido_paterno = formClienteRegistro.ClienteSeleccionado.apellido_paterno;
+                }
                 else
+                {
                     doc = formClienteRegistro.ClienteSeleccionado.ruc;
-                txtNombre.Text = _cliente.nombre;
+                    _pedido.cliente.ruc = doc;
+                }
+                _pedido.cliente.tipo = formClienteRegistro.ClienteSeleccionado.tipo;
+                txtNombre.Text = _pedido.cliente.nombre;
                 txtDNIRUC.Text = doc;
             }
+            
         }
 
         

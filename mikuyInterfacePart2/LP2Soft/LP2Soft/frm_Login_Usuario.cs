@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,7 +14,9 @@ namespace LP2Soft
     public partial class frm_Login_Usuario : Form
     {
         private UserWS.UserWSClient daoUser;
-        
+        private UserWS.rol rol ;
+        private UserWS.persona persona;
+        private UserWS.usuario userVerificar;
         public frm_Login_Usuario()
         {
             InitializeComponent();
@@ -21,35 +24,6 @@ namespace LP2Soft
             lblError.Visible = false;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -85,7 +59,20 @@ namespace LP2Soft
             }
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private async void guna2Button1_Click(object sender, EventArgs e)
+        {
+            frm_Loading form_loading = new frm_Loading();
+            form_loading.Show();
+            Task hilo1 = new Task(cargaAparte);
+            hilo1.Start();
+            await hilo1;
+            this.Hide();
+            form_loading.Hide();
+            Main formPrincipal = new Main(persona, rol, userVerificar);
+            formPrincipal.Show();
+        }
+
+        private void cargaAparte()
         {
             if (txtUsuario.Text.Trim() == "")
             {
@@ -101,26 +88,24 @@ namespace LP2Soft
             user.usuario1 = txtUsuario.Text;
             user.password = txtPassword.Text;
 
-            UserWS.usuario userVerificar = new UserWS.usuario();
-            frm_Load cargando = new frm_Load();
+            userVerificar = new UserWS.usuario();
+            //frm_Load cargando = new frm_Load();
             userVerificar = daoUser.verificarCuentaUsuario(user);
-            cargando.ShowDialog();
+            //cargando.ShowDialog();
             if (userVerificar != null)
             {
                 //lblError.Visible = true;
                 //lblError.Text = "ENTRO ACA.";
-                UserWS.rol rol = daoUser.buscarRolPorId(userVerificar.rol.id_rol);
-                UserWS.persona persona = daoUser.buscarPersonaPorIdUsuario(userVerificar.id_usuario);
-
-                Main formPrincipal = new Main(persona, rol , userVerificar);
-                this.Hide();
-                formPrincipal.Show();
+                rol = daoUser.buscarRolPorId(userVerificar.rol.id_rol);
+                persona = daoUser.buscarPersonaPorIdUsuario(userVerificar.id_usuario);
+                
             }
             else
             {
                 lblError.Visible = true;
                 lblError.Text = "La cuenta de usuario o contraseña no es correcta!";
             }
+
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)

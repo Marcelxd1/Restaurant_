@@ -121,8 +121,6 @@ namespace LP2Soft
 
             }
             txtGastos.Text = totalGasto.ToString("N2");
-            txtTotPedi.Text = totalPedido.ToString("N2");
-            txtTotalPago.Text = totalPedido.ToString("N2");
             pedidos = daoCaja.ListarPedidosTransaccion();
             foreach (CajaWS.pedido p in pedidos)
             {
@@ -131,12 +129,14 @@ namespace LP2Soft
                 else
                     totLLeva += p.total;//Para llebar
 
-                if (p.tipoComprobante == 'E')//Efectivo
+                if (p.tipoPago == 'E')//Efectivo
                     totEfec += p.total;
                 else
                     totTarj += p.total;//Tarjeta
             }
             txtPedLLevar.Text = totLLeva.ToString("N2");
+            txtTotPedi.Text = (totMesa+totLLeva).ToString("N2");
+            txtTotalPago.Text = (totEfec + totTarj).ToString("N2");
             txtPedMEsa.Text = totMesa.ToString("N2");
             txtTarjeta.Text = totTarj.ToString("N2");
             txtEfectivo.Text = totEfec.ToString("N2");

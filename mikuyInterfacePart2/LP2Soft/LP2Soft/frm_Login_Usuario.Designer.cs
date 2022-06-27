@@ -62,7 +62,6 @@
             this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Usuario";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -75,7 +74,6 @@
             this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Contraseña";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -233,7 +231,6 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // label1
             // 
@@ -246,7 +243,6 @@
             this.label1.Size = new System.Drawing.Size(106, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "Login";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblError
             // 
