@@ -135,6 +135,7 @@
             // 
             this.btnClientes.BorderColor = System.Drawing.Color.BlanchedAlmond;
             this.btnClientes.CheckedState.Parent = this.btnClientes;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes.CustomImages.Parent = this.btnClientes;
             this.btnClientes.FillColor = System.Drawing.Color.Transparent;
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,7 +148,7 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.PressedColor = System.Drawing.Color.Brown;
             this.btnClientes.ShadowDecoration.Parent = this.btnClientes;
-            this.btnClientes.Size = new System.Drawing.Size(171, 45);
+            this.btnClientes.Size = new System.Drawing.Size(180, 45);
             this.btnClientes.TabIndex = 23;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
@@ -157,6 +158,7 @@
             this.btnAsistencia.BorderColor = System.Drawing.Color.BlanchedAlmond;
             this.btnAsistencia.CheckedState.FillColor = System.Drawing.Color.Transparent;
             this.btnAsistencia.CheckedState.Parent = this.btnAsistencia;
+            this.btnAsistencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAsistencia.CustomImages.Parent = this.btnAsistencia;
             this.btnAsistencia.FillColor = System.Drawing.Color.Transparent;
             this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,7 +171,7 @@
             this.btnAsistencia.Name = "btnAsistencia";
             this.btnAsistencia.PressedColor = System.Drawing.Color.Brown;
             this.btnAsistencia.ShadowDecoration.Parent = this.btnAsistencia;
-            this.btnAsistencia.Size = new System.Drawing.Size(189, 45);
+            this.btnAsistencia.Size = new System.Drawing.Size(180, 45);
             this.btnAsistencia.TabIndex = 22;
             this.btnAsistencia.Text = "Asistencia";
             this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
@@ -202,6 +204,7 @@
             // 
             this.btnCaja.BorderColor = System.Drawing.Color.BlanchedAlmond;
             this.btnCaja.CheckedState.Parent = this.btnCaja;
+            this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaja.CustomImages.Parent = this.btnCaja;
             this.btnCaja.FillColor = System.Drawing.Color.Transparent;
             this.btnCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,7 +217,7 @@
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.PressedColor = System.Drawing.Color.Brown;
             this.btnCaja.ShadowDecoration.Parent = this.btnCaja;
-            this.btnCaja.Size = new System.Drawing.Size(160, 45);
+            this.btnCaja.Size = new System.Drawing.Size(180, 45);
             this.btnCaja.TabIndex = 20;
             this.btnCaja.Text = "Caja";
             this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
@@ -223,6 +226,7 @@
             // 
             this.btnCocina.BorderColor = System.Drawing.Color.BlanchedAlmond;
             this.btnCocina.CheckedState.Parent = this.btnCocina;
+            this.btnCocina.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCocina.CustomImages.Parent = this.btnCocina;
             this.btnCocina.FillColor = System.Drawing.Color.Transparent;
             this.btnCocina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,7 +239,7 @@
             this.btnCocina.Name = "btnCocina";
             this.btnCocina.PressedColor = System.Drawing.Color.Brown;
             this.btnCocina.ShadowDecoration.Parent = this.btnCocina;
-            this.btnCocina.Size = new System.Drawing.Size(171, 45);
+            this.btnCocina.Size = new System.Drawing.Size(180, 45);
             this.btnCocina.TabIndex = 19;
             this.btnCocina.Text = "Cocina";
             this.btnCocina.Click += new System.EventHandler(this.btnCocina_Click);
@@ -244,6 +248,7 @@
             // 
             this.btnGestion.BorderColor = System.Drawing.Color.BlanchedAlmond;
             this.btnGestion.CheckedState.Parent = this.btnGestion;
+            this.btnGestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestion.CustomImages.Parent = this.btnGestion;
             this.btnGestion.FillColor = System.Drawing.Color.Transparent;
             this.btnGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,6 +269,7 @@
             // 
             this.btnPedidos.BorderColor = System.Drawing.Color.BlanchedAlmond;
             this.btnPedidos.CheckedState.Parent = this.btnPedidos;
+            this.btnPedidos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPedidos.CustomImages.Parent = this.btnPedidos;
             this.btnPedidos.FillColor = System.Drawing.Color.Transparent;
             this.btnPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

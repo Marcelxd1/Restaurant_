@@ -14,6 +14,7 @@ namespace LP2Soft
         private UserWS.rol rol;
         private Form formularioActivo = null;
         private Form cargando = new frm_Loading();
+        private frm_Mesero_MesaVer2 formMesero1;
         private int botonActivo ; 
         public Main()
         {
@@ -52,7 +53,10 @@ namespace LP2Soft
             }
             else if (rol.descripcion == "COCINERO")
             {
+                btnCocina.Visible = true;
                 btnAsistencia.Visible = true;
+                btnCocina.Location = new System.Drawing.Point(23, 91);
+                btnAsistencia.Location = new System.Drawing.Point(23, 142);
                 btnCaja.Visible = false;
                 btnClientes.Visible = false;
                 btnGestion.Visible = false;
@@ -82,17 +86,29 @@ namespace LP2Soft
         }
 
 
-        private void btnPedidos_Click(object sender, EventArgs e)
+        private async void btnPedidos_Click(object sender, EventArgs e)
         {
             restablecerBotones();
+            frm_Loading frm_Loading = new frm_Loading();
+            frm_Loading.Show();
             btnPedidos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            Task hilo1 = new Task(InicializarForm);
+            hilo1.Start();
+            await hilo1;
+            frm_Loading.Hide(); 
             if (rol.descripcion == "MESERO")
             {
-                abrirFormulario(new frm_Mesero_MesaVer2(persona, rol));
+                abrirFormulario(formMesero1);
             }
             else
                 abrirFormulario(new frm_Cajero_Pedidos(persona, rol));
 
+        }
+
+        private void InicializarForm()
+        {
+            if (rol.descripcion == "MESERO")
+                formMesero1 = new frm_Mesero_MesaVer2(persona, rol);
         }
 
         private void btnGestion_Click(object sender, EventArgs e)
