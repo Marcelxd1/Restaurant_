@@ -560,7 +560,6 @@ C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2S
 C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.exe
 C:\Users\Atiqu\Documents\NetBeansProjects\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.pdb
 C:\Users\marce\Documents\PUCP\7 CICLO\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frmBusquedaCliente.resources
-C:\Users\marce\Pictures\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\obj\Debug\LP2Soft.pdb
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\bin\Debug\LP2Soft.exe.config
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\bin\Debug\LP2Soft.exe
 C:\Users\axeli\Documents\NetBeansProjects\LP2MIKUY\Mikuy\mikuyInterfacePart2\LP2Soft\LP2Soft\bin\Debug\LP2Soft.pdb
