@@ -70,7 +70,7 @@ namespace LP2Soft
                     btnPedir.Text = "Pedir";
                     break;
                 case Estado.Modificar:
-                    btnPedir.Text = "Modificar";
+                    btnPedir.Text = "Eliminar";
                     cargarComponentes(idMesa);
                     break;
                 case Estado.Nuevo:
@@ -307,12 +307,13 @@ namespace LP2Soft
             }
             else if (_estado == Estado.Modificar)
             {
-                int resultado = _daoCaja.modificarPedido(_pedido);
+                int resultado = _daoCaja.eliminarPedido(_pedido.idPedido);
                 if (resultado != 0)
                 {
-                    MessageBox.Show("Se ha modificado con exito", "Mensaje Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha eliminado con exito", "Mensaje Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
                     this._estado = Estado.Guardar;
-                    this.hecho=true;
+                    this.hecho = true;
                 }
                 else MessageBox.Show("Ha ocurrido un error", "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -119,7 +119,6 @@ public class LineaPromocionMYSQL implements LineaPromocionDAO{
 
                 linea.setProducto(nuevo);
                 //fin del seteo de producto ahora sigue linea
-                linea.setIdLineaPromocion(subrs.getInt("fid_producto"));
                 list_lineas.add(linea);//agregamos a la lista 
             }
         }catch(Exception ex){

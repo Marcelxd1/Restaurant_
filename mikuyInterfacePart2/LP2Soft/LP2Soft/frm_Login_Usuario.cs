@@ -61,19 +61,6 @@ namespace LP2Soft
 
         private async void guna2Button1_Click(object sender, EventArgs e)
         {
-            frm_Loading form_loading = new frm_Loading();
-            form_loading.Show();
-            Task hilo1 = new Task(cargaAparte);
-            hilo1.Start();
-            await hilo1;
-            this.Hide();
-            form_loading.Hide();
-            Main formPrincipal = new Main(persona, rol, userVerificar);
-            formPrincipal.Show();
-        }
-
-        private void cargaAparte()
-        {
             if (txtUsuario.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese un usuario", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -84,6 +71,29 @@ namespace LP2Soft
                 MessageBox.Show("Ingrese una constraseña", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            frm_Loading form_loading = new frm_Loading();
+            form_loading.Show();
+            Task hilo1 = new Task(cargaAparte);
+            hilo1.Start();
+            await hilo1;
+            form_loading.Hide();
+            if (userVerificar != null)
+            {
+
+                this.Hide();
+                Main formPrincipal = new Main(persona, rol, userVerificar);
+                formPrincipal.Show();
+
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblError.Text = "La cuenta de usuario o contraseña no es correcta!";
+            }
+        }
+
+        private void cargaAparte()
+        {
             UserWS.usuario user = new UserWS.usuario();
             user.usuario1 = txtUsuario.Text;
             user.password = txtPassword.Text;
@@ -98,12 +108,7 @@ namespace LP2Soft
                 //lblError.Text = "ENTRO ACA.";
                 rol = daoUser.buscarRolPorId(userVerificar.rol.id_rol);
                 persona = daoUser.buscarPersonaPorIdUsuario(userVerificar.id_usuario);
-                
-            }
-            else
-            {
-                lblError.Visible = true;
-                lblError.Text = "La cuenta de usuario o contraseña no es correcta!";
+
             }
 
         }

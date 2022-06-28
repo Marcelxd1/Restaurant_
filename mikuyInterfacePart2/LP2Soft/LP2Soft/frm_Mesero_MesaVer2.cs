@@ -150,17 +150,22 @@ namespace LP2Soft
                 }
 
             }
-            //else
-            //{
-            //    estado = Estado.Modificar;
-            //    frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido(estado, mesaSelec.idMesa);
-            //    forPedMes.Mesa = mesaSelec;
-            //    forPedMes.Mesero = persona;
-            //    if (forPedMes.ShowDialog() == DialogResult.OK)
-            //    {
+            else
+            {
+                estado = Estado.Modificar;
+                frm_Mesero_Mesa_Pedido forPedMes = new frm_Mesero_Mesa_Pedido(estado, mesaSelec.idMesa);
+                forPedMes.Mesa = mesaSelec;
+                forPedMes.Mesero = persona;
+                if (forPedMes.ShowDialog() == DialogResult.OK)
+                {
+                    if (forPedMes.Hecho == true)//solo si se realizó pedido
+                    {
+                        mesaSelec.disponible = true;
+                        lista_botones.ElementAt(indice).BackColor = Color.RoyalBlue;
+                    }
 
-            //    }
-            //}
+                }
+            }
 
             daonegocio.modificarMesa(mesaSelec);
             
