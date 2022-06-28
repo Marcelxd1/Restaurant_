@@ -25,6 +25,7 @@ namespace LP2Soft
             _estado = Estado.Inicial;
             dgvPlatos.AutoGenerateColumns= false;
             dgvLineas.AutoGenerateColumns= false;
+            dgvPlatos.ScrollBars = ScrollBars.Both;
             dgvLineas.ScrollBars = ScrollBars.Both;
             establecerEstadoComponentes();
             
@@ -256,6 +257,7 @@ namespace LP2Soft
             }
             else if (_estado == Estado.Modificar)
             {
+                _promo.lista_de_Comidas = _listaLineas.ToArray();
                 int resultado = daoNegocio.modificarPromocion(_promo);
                 if (resultado != 0)
                 {
@@ -353,6 +355,8 @@ namespace LP2Soft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            if (dgvPlatos.CurrentRow == null)
+                return;
             _prodSelec = new NegocioWS.producto();
             _prodSelec = (NegocioWS.producto)dgvPlatos.CurrentRow.DataBoundItem;
             //this.DialogResult = DialogResult.OK;
@@ -376,9 +380,7 @@ namespace LP2Soft
             NegocioWS.lineaPromocion linea = new NegocioWS.lineaPromocion();
             NegocioWS.producto prodinser= new NegocioWS.producto();
             prodinser = _prodSelec;
-            //linea.idLineaPromocion = _prodSelec.id generado en BD
-            //los insertados al inicio solo tendra id 0
-            //pero sacados de la BD ya tendran un id asignado
+            
             linea.estado = true;
             linea.producto = prodinser;
             linea.unidades = Int32.Parse(txtCantidad.Text);
@@ -386,7 +388,7 @@ namespace LP2Soft
             _listaLineas.Add(linea);
             dgvLineas.Rows[dgvLineas.RowCount-2].Cells[1].Value = linea.producto.nombre;
             String dato = dgvLineas.Rows[dgvLineas.RowCount - 2].Cells[1].Value.ToString();
-            MessageBox.Show(dato);
+            //MessageBox.Show(dato);
             
 
         }
@@ -400,7 +402,7 @@ namespace LP2Soft
             {
                 _listaLineas.Remove(_lineaSelec);
                 _lineasEliminadas.Add(_lineaSelec);
-
+                
             }
             catch (Exception ex)
             {
@@ -433,6 +435,11 @@ namespace LP2Soft
                 return;
             }
 
+        }
+
+        private void txtBuscar_IconRightClick(object sender, EventArgs e)
+        {
+            dgvPlatos.DataSource = daoNegocio.listarProductoXNombre(txtBuscar.Text);
         }
     }
 }

@@ -20,13 +20,16 @@ namespace LP2Soft
             InitializeComponent();
             PromoSeleccionada = new NegocioWS.promocion();
             daoNegocio = new NegocioWS.NegocioWSClient();
-
+            dgvCombos.AutoGenerateColumns = false;
+            dgvCombos.ScrollBars = ScrollBars.Both;
         }
 
         public promocion PromoSeleccionada { get => _promoSeleccionada; set => _promoSeleccionada = value; }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            if (dgvCombos.CurrentRow == null)
+                return;
             PromoSeleccionada = (NegocioWS.promocion)dgvCombos.CurrentRow.DataBoundItem;
             this.DialogResult = DialogResult.OK;
         }
@@ -41,6 +44,13 @@ namespace LP2Soft
                     dgvCombos.DataSource = new BindingList<NegocioWS.promocion>(combos);
 
             }
+        }
+
+        private void txtBuscarCombo_IconRightClick(object sender, EventArgs e)
+        {
+            NegocioWS.promocion[] combos = daoNegocio.listarPromociones_X_nombre(txtBuscarCombo.Text);
+            if (combos != null)
+                dgvCombos.DataSource = new BindingList<NegocioWS.promocion>(combos);
         }
     }
 }

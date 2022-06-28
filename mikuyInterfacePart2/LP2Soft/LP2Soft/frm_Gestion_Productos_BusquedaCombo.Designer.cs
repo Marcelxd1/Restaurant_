@@ -38,7 +38,9 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSeleccionar = new Guna.UI2.WinForms.Guna2Button();
             this.txtBuscarCombo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombos)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvCombos
@@ -74,17 +76,18 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCombos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCombos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCombos.EnableHeadersVisualStyles = false;
             this.dgvCombos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCombos.Location = new System.Drawing.Point(36, 53);
-            this.dgvCombos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCombos.Location = new System.Drawing.Point(0, 0);
+            this.dgvCombos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCombos.Name = "dgvCombos";
             this.dgvCombos.ReadOnly = true;
             this.dgvCombos.RowHeadersVisible = false;
             this.dgvCombos.RowHeadersWidth = 51;
             this.dgvCombos.RowTemplate.Height = 24;
             this.dgvCombos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCombos.Size = new System.Drawing.Size(530, 273);
+            this.dgvCombos.Size = new System.Drawing.Size(775, 379);
             this.dgvCombos.TabIndex = 0;
             this.dgvCombos.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvCombos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -148,11 +151,11 @@
             this.btnSeleccionar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionar.HoverState.Parent = this.btnSeleccionar;
-            this.btnSeleccionar.Location = new System.Drawing.Point(430, 10);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeleccionar.Location = new System.Drawing.Point(573, 12);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.ShadowDecoration.Parent = this.btnSeleccionar;
-            this.btnSeleccionar.Size = new System.Drawing.Size(135, 37);
+            this.btnSeleccionar.Size = new System.Drawing.Size(180, 46);
             this.btnSeleccionar.TabIndex = 1;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
@@ -179,30 +182,40 @@
             this.txtBuscarCombo.HoverState.Parent = this.txtBuscarCombo;
             this.txtBuscarCombo.IconRight = global::LP2Soft.Properties.Resources.Buscar;
             this.txtBuscarCombo.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtBuscarCombo.Location = new System.Drawing.Point(48, 10);
-            this.txtBuscarCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarCombo.Location = new System.Drawing.Point(64, 12);
+            this.txtBuscarCombo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtBuscarCombo.Name = "txtBuscarCombo";
             this.txtBuscarCombo.PasswordChar = '\0';
             this.txtBuscarCombo.PlaceholderText = "";
             this.txtBuscarCombo.SelectedText = "";
             this.txtBuscarCombo.ShadowDecoration.Parent = this.txtBuscarCombo;
-            this.txtBuscarCombo.Size = new System.Drawing.Size(205, 32);
+            this.txtBuscarCombo.Size = new System.Drawing.Size(273, 39);
             this.txtBuscarCombo.TabIndex = 42;
+            this.txtBuscarCombo.IconRightClick += new System.EventHandler(this.txtBuscarCombo_IconRightClick);
             this.txtBuscarCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvCombos);
+            this.panel1.Location = new System.Drawing.Point(46, 63);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(775, 379);
+            this.panel1.TabIndex = 43;
             // 
             // frm_Gestion_Productos_BusquedaCombo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(850, 478);
             this.Controls.Add(this.txtBuscarCombo);
             this.Controls.Add(this.btnSeleccionar);
-            this.Controls.Add(this.dgvCombos);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_Gestion_Productos_BusquedaCombo";
             this.Text = "Busqueda de combos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombos)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -216,5 +229,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private Guna.UI2.WinForms.Guna2Button btnSeleccionar;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarCombo;
+        private System.Windows.Forms.Panel panel1;
     }
 }
