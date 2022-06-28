@@ -424,7 +424,7 @@ USE `Restaurante` ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `BUSCAR_CATEGORIA_POR_ID`(
+CREATE PROCEDURE `BUSCAR_CATEGORIA_POR_ID`(
 	IN _id_categoria INT
 )
 BEGIN
@@ -439,7 +439,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `BUSCAR_LINEAPEDIDO_POR_ID`(IN _id_lineaPedido INT)
+CREATE  PROCEDURE `BUSCAR_LINEAPEDIDO_POR_ID`(IN _id_lineaPedido INT)
 BEGIN
 	SELECT 	i.id_item_vendible, i.nombre, i.precio, i.descripcion, 
 			l.fid_pedido, l.unidades, l.subtotal
@@ -455,7 +455,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `BUSCAR_LINEAPEDIDO_POR_PEDIDO`(IN _id_pedido INT)
+CREATE  PROCEDURE `BUSCAR_LINEAPEDIDO_POR_PEDIDO`(IN _id_pedido INT)
 BEGIN
 	SELECT 	l.id_linea_pedido,i.id_item_vendible, i.nombre, i.precio, i.descripcion, 
 			l.fid_pedido, l.unidades, l.subtotal
@@ -471,7 +471,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `BUSCAR_MESA_ID`(in _id_mesa INT)
+CREATE  PROCEDURE `BUSCAR_MESA_ID`(in _id_mesa INT)
 BEGIN
     SELECT id_mesa, capacidad, numMesa, disponible FROM mesa 
     WHERE activo = 1 AND id_mesa = _id_mesa;
@@ -485,7 +485,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `BUSCAR_PEDIDO_POR_ID`(
+CREATE  PROCEDURE `BUSCAR_PEDIDO_POR_ID`(
 	IN _id_pedido INT
 )
 BEGIN
@@ -506,7 +506,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `BUSCAR_PEDIDO_POR_MESA`(IN _fid_mesa INT)
+CREATE  PROCEDURE `BUSCAR_PEDIDO_POR_MESA`(IN _fid_mesa INT)
 BEGIN
 	SELECT 	t.id_transaccion, t.fid_restaurante, t.total, t.fecha, 
 			m.id_mesa , m.activo, m.capacidad,
@@ -526,7 +526,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `BUSCAR_PERSONA_POR_ID`(
+CREATE  PROCEDURE `BUSCAR_PERSONA_POR_ID`(
 	IN _id_persona	INT
 )
 BEGIN
@@ -541,7 +541,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `BUSCAR_RESTAURANTE_POR_ID`(
+CREATE  PROCEDURE `BUSCAR_RESTAURANTE_POR_ID`(
 	IN _id_restaurante INT
 )
 BEGIN
@@ -558,7 +558,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `BUSCAR_ROL_POR_ID`(in _id_rol int)
+CREATE  PROCEDURE `BUSCAR_ROL_POR_ID`(in _id_rol int)
 begin
 	select * from rol where id_rol = _id_rol ; 
 end$$
@@ -571,7 +571,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `BUSCAR_USUARIO_POR_ID`(IN _id_usuario INT)
+CREATE  PROCEDURE `BUSCAR_USUARIO_POR_ID`(IN _id_usuario INT)
 BEGIN
 	SELECT 	p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI, p.fid_tipo , p.razon_social, p.RUC,
 			r.id_rol, r.descripcion, 
@@ -589,7 +589,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `CAMBIAR_CONTRASENIA`(in _id_usuario int, in _password varchar(100))
+CREATE  PROCEDURE `CAMBIAR_CONTRASENIA`(in _id_usuario int, in _password varchar(100))
 BEGIN
 	update usuario set password = _password where id_usuario = _id_usuario ; 
 END$$
@@ -602,7 +602,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `ELIMINAR_ASISTENCIA`(
+CREATE  PROCEDURE `ELIMINAR_ASISTENCIA`(
 	IN _id_asistencia INT
 )
 BEGIN
@@ -617,7 +617,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `ELIMINAR_CATEGORIA`(
+CREATE  PROCEDURE `ELIMINAR_CATEGORIA`(
 	IN _id_categoria INT
 )
 BEGIN
@@ -632,7 +632,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `ELIMINAR_GASTO`(
+CREATE  PROCEDURE `ELIMINAR_GASTO`(
 	IN _id_transaccion INT
 )
 BEGIN
@@ -647,7 +647,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `ELIMINAR_LINEA_PROMOCION`(
+CREATE PROCEDURE `ELIMINAR_LINEA_PROMOCION`(
 	IN _idlinea INT,
     IN _idPromo INT
 )
@@ -663,7 +663,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `ELIMINAR_MESA`(
+CREATE  PROCEDURE `ELIMINAR_MESA`(
     IN _id_mesa INT
 )
 BEGIN
@@ -678,7 +678,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `ELIMINAR_PEDIDO`(
+CREATE  PROCEDURE `ELIMINAR_PEDIDO`(
 	IN _id_transaccion  INT
 )
 BEGIN
@@ -693,7 +693,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `ELIMINAR_PERSONA`(in _id_persona int )
+CREATE PROCEDURE `ELIMINAR_PERSONA`(in _id_persona int )
 begin 
 	update persona set activo = 0 where id_persona = _id_persona ;
 end$$
@@ -706,7 +706,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `ELIMINAR_PRODUCTO`(
+CREATE PROCEDURE `ELIMINAR_PRODUCTO`(
 	IN _id_item_vendible INT
 )
 BEGIN
@@ -721,7 +721,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `ELIMINAR_PROMOCION`(
+CREATE  PROCEDURE `ELIMINAR_PROMOCION`(
 	IN _id_item_vendible INT
 )
 BEGIN
@@ -739,7 +739,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `ELIMINAR_RESTAURANTE`(
+CREATE  PROCEDURE `ELIMINAR_RESTAURANTE`(
 	IN _id_restaurante INT
 )
 BEGIN
@@ -754,7 +754,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `ELIMINAR_ROL`(IN _idRol int)
+CREATE PROCEDURE `ELIMINAR_ROL`(IN _idRol int)
 begin
 	update rol set activo = 0 where id_rol = _idRol ;
 end$$
@@ -767,7 +767,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `ELIMINAR_USUARIO`(IN _id_usuario INT)
+CREATE  PROCEDURE `ELIMINAR_USUARIO`(IN _id_usuario INT)
 BEGIN
 	UPDATE persona SET activo = 0 WHERE id_persona = _id_usuario ;
 END$$
@@ -780,7 +780,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_ASISTENCIA_ENTRADA`(
+CREATE  PROCEDURE `INSERTAR_ASISTENCIA_ENTRADA`(
     IN _fid_usuario INT
 )
 BEGIN
@@ -796,7 +796,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_ASISTENCIA_SALIDA`(
+CREATE  PROCEDURE `INSERTAR_ASISTENCIA_SALIDA`(
 	IN _id_usuario INT
 )
 BEGIN
@@ -813,7 +813,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `INSERTAR_CATEGORIA`(
+CREATE  PROCEDURE `INSERTAR_CATEGORIA`(
 	OUT _id_categoria INT,
     IN _nombre VARCHAR(100),
 	IN _descripcion VARCHAR(100)
@@ -831,7 +831,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_EMPRESA`(out _id_persona int , in _razon_social varchar(100) , in _ruc varchar(30), in _nombre VARCHAR(100), in _fid_tipo char )
+CREATE  PROCEDURE `INSERTAR_EMPRESA`(out _id_persona int , in _razon_social varchar(100) , in _ruc varchar(30), in _nombre VARCHAR(100), in _fid_tipo char )
 begin
 	insert into persona(nombre, fid_tipo,razon_social,RUC , activo ) values (_nombre,_fid_tipo , _razon_social , _ruc , 1) ;
 	set _id_persona = @@last_insert_id ;
@@ -845,7 +845,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_GASTO`(
+CREATE  PROCEDURE `INSERTAR_GASTO`(
 	OUT _id_transaccion INT,
     IN _fid_restaurante INT,
     IN  _item VARCHAR(100),
@@ -871,7 +871,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_LINEA_PEDIDO`(
+CREATE  PROCEDURE `INSERTAR_LINEA_PEDIDO`(
 	OUT _id_linea_pedido INT,
     IN _fid_itemVendible INT,
     IN _fid_pedido INT,
@@ -892,7 +892,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `INSERTAR_LINEA_PROMOCION`(
+CREATE  PROCEDURE `INSERTAR_LINEA_PROMOCION`(
 	OUT _idLineaPromocion INT,
 	IN _unidades INT, 
     IN _fid_promocion INT ,
@@ -914,7 +914,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `INSERTAR_MESA`(out _id_mesa int , in _capacidad int, in _numMesa int )
+CREATE  PROCEDURE `INSERTAR_MESA`(out _id_mesa int , in _capacidad int, in _numMesa int )
 BEGIN
     insert into mesa( capacidad, numMesa,activo,disponible) values (_capacidad, _numMesa,1,1);
     set _id_mesa = @@last_insert_id ;
@@ -928,7 +928,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_PEDIDO`(
+CREATE  PROCEDURE `INSERTAR_PEDIDO`(
 	OUT _id_transaccion INT, 
     IN _fid_restaurante INT, 
 	IN  _total DECIMAL(10,2), 
@@ -963,7 +963,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_PEDIDO_CAJERO_CLIENTE`(
+CREATE  PROCEDURE `INSERTAR_PEDIDO_CAJERO_CLIENTE`(
 	OUT _id_transaccion INT, 
     IN _fid_restaurante INT, 
 	IN  _total DECIMAL(10,2), 
@@ -991,7 +991,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_PEDIDO_MESERO_CLIENTE`(
+CREATE  PROCEDURE `INSERTAR_PEDIDO_MESERO_CLIENTE`(
 	OUT _id_transaccion INT, 
     IN _fid_restaurante INT, 
 	IN  _total DECIMAL(10,2), 
@@ -1020,7 +1020,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_PEDIDO_SOLO_CAJERO`(
+CREATE PROCEDURE `INSERTAR_PEDIDO_SOLO_CAJERO`(
 	OUT _id_transaccion INT, 
     IN _fid_restaurante INT, 
 	IN  _total DECIMAL(10,2), 
@@ -1047,7 +1047,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_PEDIDO_SOLO_MESERO`(
+CREATE  PROCEDURE `INSERTAR_PEDIDO_SOLO_MESERO`(
 	OUT _id_transaccion INT, 
     IN _fid_restaurante INT, 
 	IN  _total DECIMAL(10,2), 
@@ -1075,7 +1075,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `INSERTAR_PERSONA`(out _id_persona int ,in _fid_tipo char, in _nombre varchar(50) , in _apellido_paterno varchar(50) , in _apellido_materno varchar(20),
+CREATE  PROCEDURE `INSERTAR_PERSONA`(out _id_persona int ,in _fid_tipo char, in _nombre varchar(50) , in _apellido_paterno varchar(50) , in _apellido_materno varchar(20),
 									in _DNI varchar(50) )
 BEGIN
 	insert into persona(fid_tipo,nombre,apellido_paterno,apellido_materno,DNI,activo )
@@ -1091,7 +1091,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_PRODUCTO`(
+CREATE  PROCEDURE `INSERTAR_PRODUCTO`(
 	OUT _id_item_vendible INT,
 	IN _nombre VARCHAR(100),
     IN  _precio DECIMAL(10,2),
@@ -1117,7 +1117,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `INSERTAR_PROMOCION`(
+CREATE  PROCEDURE `INSERTAR_PROMOCION`(
 OUT _id_item_vendible INT ,
 IN _nombre VARCHAR(50) ,
 IN _precio DECIMAL(10,2) ,
@@ -1140,7 +1140,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `INSERTAR_RESTAURANTE`(out _id_rest int , in _ruc varchar(20) , in _nombre varchar(50) , in _telefono varchar(20),
+CREATE  PROCEDURE `INSERTAR_RESTAURANTE`(out _id_rest int , in _ruc varchar(20) , in _nombre varchar(50) , in _telefono varchar(20),
 									in _direccion varchar(50) , in _dineroActual decimal(10,2))
 BEGIN
 	insert into restaurante(ruc,nombre,telefono,direccion,dineroActual,activo) 
@@ -1156,7 +1156,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `INSERTAR_ROL`(out _id_rol int , in _descripcion varchar(50) )
+CREATE PROCEDURE `INSERTAR_ROL`(out _id_rol int , in _descripcion varchar(50) )
 BEGIN
 	insert into rol(descripcion,activo) values (_descripcion,1) ; 
     set _id_rol = @@last_insert_id ;
@@ -1170,7 +1170,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `INSERTAR_USUARIO`(in _id_usuario int , in _fid_rol varchar(50) , in _fid_restaurante varchar(50) ,in _usuario varchar(50),
+CREATE PROCEDURE `INSERTAR_USUARIO`(in _id_usuario int , in _fid_rol varchar(50) , in _fid_restaurante varchar(50) ,in _usuario varchar(50),
 									in _password varchar(50) , in _salario decimal(10,2) , in _telefono varchar(50) , in _correo varchar(100) , in _imagen longblob)
 BEGIN
 	insert into usuario(id_usuario, fid_rol,fid_restaurante,usuario,password,salario,telefono,correo,imagen) 
@@ -1185,7 +1185,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_ASISTENCIA_TODOS`()
+CREATE  PROCEDURE `LISTAR_ASISTENCIA_TODOS`()
 BEGIN
 	SELECT a.id_asistencia, a.hora_inicio, a.hora_fin, a.fecha, u.id_usuario,p.nombre, p.DNI
 		FROM asistencia a INNER JOIN usuario u ON a.fid_usuario = u.id_usuario
@@ -1201,7 +1201,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `LISTAR_CATEGORIAS_TODAS`()
+CREATE  PROCEDURE `LISTAR_CATEGORIAS_TODAS`()
 BEGIN
 	SELECT id_categoria, nombre, descripcion FROM categoria WHERE activo = 1;
 END$$
@@ -1214,7 +1214,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_CLIENTES_X_NOMBRE`(in _nombre varchar(50))
+CREATE PROCEDURE `LISTAR_CLIENTES_X_NOMBRE`(in _nombre varchar(50))
 BEGIN 
 	SELECT p.id_persona , p.nombre, p.apellido_paterno, p.apellido_materno , p.DNI, p.razon_social, p.RUC, t.descripcion, p.fid_tipo, p.activo
     from persona p INNER JOIN tipo_persona t 
@@ -1230,7 +1230,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_EMPRESAS`()
+CREATE  PROCEDURE `LISTAR_EMPRESAS`()
 BEGIN 
 	SELECT p.id_persona , p.nombre, p.razon_social, p.RUC, p.fid_tipo, t.descripcion 
     from persona p INNER JOIN tipo_persona t 
@@ -1247,7 +1247,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_GASTOS_TODOS`()
+CREATE  PROCEDURE `LISTAR_GASTOS_TODOS`()
 BEGIN
 	SELECT t.id_transaccion, t.fecha, t.total,t.activo , g.item, g.cantidad, g.precio, g.descripcion, r.id_restaurante,r.nombre,r.dineroActual
 		FROM transaccion t INNER JOIN gasto g ON t.id_transaccion = g.id_gasto 
@@ -1263,7 +1263,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_GASTOS_X_NOMBRE`(in _nombre varchar(50))
+CREATE PROCEDURE `LISTAR_GASTOS_X_NOMBRE`(in _nombre varchar(50))
 BEGIN
 	SELECT t.id_transaccion, t.fecha, t.total,t.activo , g.item, g.cantidad, g.precio, g.descripcion, r.id_restaurante,r.nombre,r.dineroActual
 		FROM transaccion t INNER JOIN gasto g ON t.id_transaccion = g.id_gasto 
@@ -1279,7 +1279,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_ITEMVENDIBLE_X_NOMBRE`(IN _nombre VARCHAR(100))
+CREATE PROCEDURE `LISTAR_ITEMVENDIBLE_X_NOMBRE`(IN _nombre VARCHAR(100))
 BEGIN
 	SELECT id_item_vendible, nombre, precio, descripcion FROM item_vendible 
     WHERE estado = 1 AND 
@@ -1294,7 +1294,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_LINEA_PEDIDO`()
+CREATE  PROCEDURE `LISTAR_LINEA_PEDIDO`()
 BEGIN
 	SELECT l.id_linea_pedido, i.id_item_vendible, i.nombre, i.precio, i.descripcion, 
     l.fid_pedido, l.unidades, l.subtotal
@@ -1310,7 +1310,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_LINEA_PEDIDO_MESA`(in _fid_pedido int)
+CREATE PROCEDURE `LISTAR_LINEA_PEDIDO_MESA`(in _fid_pedido int)
 BEGIN
 	SELECT l.id_linea_pedido, i.id_item_vendible, i.nombre, i.precio, i.descripcion, 
     l.fid_pedido, l.unidades, l.subtotal
@@ -1326,7 +1326,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `LISTAR_LINEA_PROMOCION_PROMO`(
+CREATE  PROCEDURE `LISTAR_LINEA_PROMOCION_PROMO`(
 	in _idPromo INT -- es el id de la proomocion que es el id itemvendible en la lista IV 
 )
 BEGIN
@@ -1351,7 +1351,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `LISTAR_MESA_TODOS`()
+CREATE  PROCEDURE `LISTAR_MESA_TODOS`()
 BEGIN
     SELECT id_mesa, capacidad, numMesa, disponible FROM mesa WHERE activo = 1;
 END$$
@@ -1364,7 +1364,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `LISTAR_PEDIDOS_PENDIENTES`()
+CREATE  PROCEDURE `LISTAR_PEDIDOS_PENDIENTES`()
 BEGIN
 	SELECT 	t.id_transaccion, t.fid_restaurante, t.total, t.fecha, 
 			m.id_mesa , m.activo, m.capacidad,
@@ -1383,7 +1383,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_PEDIDOS_SIN_PAGAR`()
+CREATE  PROCEDURE `LISTAR_PEDIDOS_SIN_PAGAR`()
 BEGIN
 	SELECT 	t.id_transaccion, t.fid_restaurante, t.total, t.fecha, 
 			m.id_mesa , m.activo, m.capacidad,m.numMesa,
@@ -1402,7 +1402,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_PEDIDOS_TODOS`()
+CREATE PROCEDURE `LISTAR_PEDIDOS_TODOS`()
 BEGIN
 	SELECT 	t.id_transaccion, t.fid_restaurante, t.total, t.fecha, 
 			m.id_mesa , m.activo, m.capacidad,
@@ -1421,7 +1421,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_PERSONAS`()
+CREATE  PROCEDURE `LISTAR_PERSONAS`()
 BEGIN 
 	SELECT p.id_persona , p.nombre, p.apellido_paterno, p.apellido_materno , p.DNI, p.fid_tipo, t.descripcion 
     from persona p INNER JOIN tipo_persona t 
@@ -1438,7 +1438,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_PERSONAS_TODAS`()
+CREATE  PROCEDURE `LISTAR_PERSONAS_TODAS`()
 BEGIN 
 	SELECT p.id_persona , p.nombre, p.apellido_paterno, p.apellido_materno , p.DNI, p.razon_social, p.RUC,t.id_tipo_persona, t.descripcion 
     from persona p INNER JOIN tipo_persona t 
@@ -1454,7 +1454,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_PRODUCTOS_TODOS`()
+CREATE  PROCEDURE `LISTAR_PRODUCTOS_TODOS`()
 BEGIN
 	SELECT i.id_item_vendible, i.nombre, i.precio, i.descripcion, i.estado, i.imagen, p.fid_tipo_producto, p.presentacion, c.id_categoria, c.nombre as nombre_cat, c.descripcion as detalle 
     FROM item_vendible i INNER JOIN producto p ON p.id_producto = i.id_item_vendible 
@@ -1470,7 +1470,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `LISTAR_PRODUCTOS_X_CATEGORIA`(IN _nombre VARCHAR(100))
+CREATE PROCEDURE `LISTAR_PRODUCTOS_X_CATEGORIA`(IN _nombre VARCHAR(100))
 BEGIN
 	SELECT i.id_item_vendible, i.nombre, i.precio, i.descripcion, i.estado, p.fid_tipo_producto, p.presentacion, 
     c.id_categoria, c.nombre as nombre_cat, c.descripcion as detalle  
@@ -1489,7 +1489,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_PRODUCTOS_X_NOMBRE`(IN _nombre VARCHAR(100))
+CREATE PROCEDURE `LISTAR_PRODUCTOS_X_NOMBRE`(IN _nombre VARCHAR(100))
 BEGIN
 	SELECT i.id_item_vendible, i.nombre, i.precio, i.descripcion, i.estado, i.imagen, p.fid_tipo_producto, p.presentacion, c.id_categoria, c.nombre as nombre_cat, c.descripcion as detalle  
     FROM producto p
@@ -1507,7 +1507,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `LISTAR_PROMOCIONES_TODOS`(
+CREATE PROCEDURE `LISTAR_PROMOCIONES_TODOS`(
 )
 BEGIN	
 	SELECT iv.id_item_vendible, iv.nombre, iv.precio , iv.descripcion, iv.estado from promocion p 
@@ -1522,7 +1522,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `LISTAR_PROMOCIONES_X_NOMBRE`(
+CREATE  PROCEDURE `LISTAR_PROMOCIONES_X_NOMBRE`(
 	IN _nom varchar(200) 
 )
 BEGIN	
@@ -1539,7 +1539,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_RESTAURANTE_TODAS`()
+CREATE  PROCEDURE `LISTAR_RESTAURANTE_TODAS`()
 BEGIN
 	select * from restaurante 
     where activo = 1;
@@ -1553,7 +1553,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `LISTAR_ROL_TODAS`()
+CREATE  PROCEDURE `LISTAR_ROL_TODAS`()
 BEGIN
 	select id_rol , descripcion from rol where activo = 1  ;
 END$$
@@ -1566,7 +1566,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_TRANSACCIONES`()
+CREATE PROCEDURE `LISTAR_TRANSACCIONES`()
 BEGIN 
 	select DISTINCT t.id_transaccion,t.total, t.fecha, t.tipo 
     from transaccion t inner join pedido p on p.pagado = 1 where t.activo = 1;
@@ -1580,7 +1580,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_TRANSACCIONES_X_FECHAS`(in fecha1 DATE, in fecha2 DATE)
+CREATE PROCEDURE `LISTAR_TRANSACCIONES_X_FECHAS`(in fecha1 DATE, in fecha2 DATE)
 BEGIN 
 	select DISTINCT t.id_transaccion,t.total, t.fecha, t.tipo 
     from transaccion t inner join pedido p on p.pagado = 1 where t.activo = 1
@@ -1595,7 +1595,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `LISTAR_USUARIOS_TODOS`()
+CREATE PROCEDURE `LISTAR_USUARIOS_TODOS`()
 BEGIN 
 	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI
     from usuario u inner join persona p on u.id_usuario = p.id_persona
@@ -1610,7 +1610,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `LISTAR_USUARIO_X_NOMBRE`(IN _nombre VARCHAR(100))
+CREATE PROCEDURE `LISTAR_USUARIO_X_NOMBRE`(IN _nombre VARCHAR(100))
 BEGIN
 	select u.id_usuario , u.usuario , u.salario , u.telefono , p.nombre, p.apellido_paterno, p.apellido_materno, p.DNI , r.descripcion as rol , r.id_rol as id_rol
     from usuario u 
@@ -1627,7 +1627,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Nuevo`@`%` PROCEDURE `MODIFICAR_CATEGORIA`(
+CREATE PROCEDURE `MODIFICAR_CATEGORIA`(
 	IN _id_categoria INT,
     IN _nombre VARCHAR(100),
 	IN _descripcion VARCHAR(100)
@@ -1645,7 +1645,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `MODIFICAR_DATOS_USUARIO`(in _id_usuario int , in _fid_rol int , in _salario decimal(10,2) , in _telefono varchar(30)  )
+CREATE PROCEDURE `MODIFICAR_DATOS_USUARIO`(in _id_usuario int , in _fid_rol int , in _salario decimal(10,2) , in _telefono varchar(30)  )
 begin 
 	update usuario set 	fid_rol = _fid_rol , salario = _salario , telefono = _telefono 
     where id_usuario = _id_usuario ; 
@@ -1659,7 +1659,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `MODIFICAR_EMPRESA`(in _id_persona int ,in _razon_social varchar(100) , in _ruc varchar(30), in _nombre VARCHAR(100))
+CREATE PROCEDURE `MODIFICAR_EMPRESA`(in _id_persona int ,in _razon_social varchar(100) , in _ruc varchar(30), in _nombre VARCHAR(100))
 begin
 	update persona set nombre = _nombre , razon_social = _razon_social, ruc = _ruc
     where id_persona = _id_persona ; 
@@ -1673,7 +1673,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `MODIFICAR_ESTADO_PEDIDO`(in _idPedido int , in _estado char)
+CREATE  PROCEDURE `MODIFICAR_ESTADO_PEDIDO`(in _idPedido int , in _estado char)
 begin
 	update pedido set fid_estado_pedido = _estado 
     where id_pedido = _idPedido ;
@@ -1687,7 +1687,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `MODIFICAR_GASTO`(
+CREATE  PROCEDURE `MODIFICAR_GASTO`(
 	IN _id_transaccion INT,
 	IN _activo TINYINT,
 	IN _item VARCHAR(100),
@@ -1709,7 +1709,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `MODIFICAR_LINEA_PEDIDO`(
+CREATE  PROCEDURE `MODIFICAR_LINEA_PEDIDO`(
 	IN _id_linea_pedido INT,
     IN _fid_itemVendible INT,
     IN _fid_pedido INT,
@@ -1731,7 +1731,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `MODIFICAR_LINEA_PROMOCION`(
+CREATE  PROCEDURE `MODIFICAR_LINEA_PROMOCION`(
 	IN _id_linea_promocion INT,
     in _unidad INT, 
     in _fid_promocion INT, 
@@ -1752,7 +1752,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `MODIFICAR_MESA`(
+CREATE  PROCEDURE `MODIFICAR_MESA`(
     IN _id_mesa INT,
     IN _capacidad INT,
     IN _numMesa INT,
@@ -1772,7 +1772,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `MODIFICAR_PEDIDO`(
+CREATE  PROCEDURE `MODIFICAR_PEDIDO`(
 	IN _id_pedido INT,  IN  _total DECIMAL(10,2))
 BEGIN
 	UPDATE transaccion 
@@ -1788,7 +1788,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `MODIFICAR_PERSONA`(in _id_persona int ,in _nombre varchar(50),in _apellido_paterno varchar(50),in _apellido_materno varchar(50), in _DNI varchar(10), in _RUC varchar(50), in _razon_social varchar(50))
+CREATE PROCEDURE `MODIFICAR_PERSONA`(in _id_persona int ,in _nombre varchar(50),in _apellido_paterno varchar(50),in _apellido_materno varchar(50), in _DNI varchar(10), in _RUC varchar(50), in _razon_social varchar(50))
 begin
 	update persona set nombre = _nombre , apellido_paterno = _apellido_paterno, apellido_materno = _apellido_materno , DNI = _DNI, RUC = _RUC, razon_social = _razon_social
     where id_persona = _id_persona ; 
@@ -1802,7 +1802,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `MODIFICAR_PRODUCTO`(
+CREATE  PROCEDURE `MODIFICAR_PRODUCTO`(
 	IN _id_item_vendible INT,
 	IN _nombre VARCHAR(100),
     IN  _precio DECIMAL(10,2),
@@ -1826,7 +1826,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Jhosep`@`%` PROCEDURE `MODIFICAR_PROMOCION`(
+CREATE PROCEDURE `MODIFICAR_PROMOCION`(
 	IN _id_item_vendible INT,
     IN _nombre VARCHAR(50),
     IN _precio DECIMAL(10,2), 
@@ -1848,7 +1848,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `MODIFICAR_RESTAURANTE`(in _id_restaurante int ,in _ruc varchar(50),
+CREATE PROCEDURE `MODIFICAR_RESTAURANTE`(in _id_restaurante int ,in _ruc varchar(50),
 									in _nombre varchar(50), in _telefono varchar(50),in _direccion varchar(50),in _dineroActual DECIMAL(10,2),in _activo INT)
 begin
 	update restaurante set ruc = _ruc ,nombre = _nombre ,telefono = _telefono ,direccion = _direccion, dineroActual = _dineroActual, activo =_activo
@@ -1863,7 +1863,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `MODIFICAR_ROL`(IN _idRol int  , IN _descripcion varchar(50))
+CREATE PROCEDURE `MODIFICAR_ROL`(IN _idRol int  , IN _descripcion varchar(50))
 BEGIN
 	update rol set descripcion = _descripcion where rol.id_rol = _idRol ;
 END$$
@@ -1876,7 +1876,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `MODIFICAR_USUARIO`(in _id_usuario int , in _usuario varchar(50) , in _password varchar(50) )
+CREATE PROCEDURE `MODIFICAR_USUARIO`(in _id_usuario int , in _usuario varchar(50) , in _password varchar(50) )
 BEGIN
 	update usuario set usuario = _usuario , password = _password where id_usuario = _id_usuario ; 
 END$$
@@ -1889,7 +1889,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`admin1`@`%` PROCEDURE `REALIZAR_PAGO`(
+CREATE PROCEDURE `REALIZAR_PAGO`(
 	IN _id_pedido INT, IN _fid_tipo_pago CHAR(1), IN _fid_cajero INT,
      IN _fid_cliente INT, IN _fid_tipo_comprobante CHAR(1)
 )
@@ -1908,7 +1908,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `VERIFICAR_CUENTA_USUARIO`(in _username varchar(100) , in _password varchar(100))
+CREATE PROCEDURE `VERIFICAR_CUENTA_USUARIO`(in _username varchar(100) , in _password varchar(100))
 begin
 	select * from usuario where usuario = _username and password = _password ;
 end$$
@@ -1921,7 +1921,7 @@ DELIMITER ;
 
 DELIMITER $$
 USE `Restaurante`$$
-CREATE DEFINER=`Axel`@`%` PROCEDURE `VERIFICAR_USUARIO`(in _DNI int , in _apellido_paterno varchar(45))
+CREATE PROCEDURE `VERIFICAR_USUARIO`(in _DNI int , in _apellido_paterno varchar(45))
 BEGIN
 	select id_usuario
     from usuario u inner join persona p on p.id_persona = u.id_usuario
@@ -1930,42 +1930,26 @@ BEGIN
     p.activo = 1; 
 END$$
 
-DELIMITER ;
-USE `Restaurante`;
-
-DELIMITER $$
-USE `Restaurante`$$
-CREATE
-DEFINER=`admin1`@`%`
-TRIGGER `Restaurante`.`ACTUALIZAR_GASTO`
-AFTER INSERT ON `Restaurante`.`transaccion`
-FOR EACH ROW
-BEGIN
-  UPDATE restaurante
-  SET dineroActual = dineroActual - new.total
-  WHERE id_restaurante = new.fid_restaurante
-  AND new.tipo = 'G';
-END$$
-
-USE `Restaurante`$$
-CREATE
-DEFINER=`admin1`@`%`
-TRIGGER `Restaurante`.`ACTUALIZAR_PEDIDO`
-AFTER UPDATE ON `Restaurante`.`pedido`
-FOR EACH ROW
-BEGIN
-  DECLARE new_total DECIMAL(10,2);
-  SELECT total INTO new_total from transaccion where id_transaccion = old.id_pedido;
-  IF new.pagado = 1 THEN
-	  UPDATE restaurante
-	  SET dineroActual = dineroActual + new_total
-	  WHERE id_restaurante = 1;
-  END IF;
-END$$
-
 
 DELIMITER ;
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+# DATOS INICIALES
+INSERT INTO `Restaurante`.`tipo_persona` (`id_tipo_persona`, `descripcion`) VALUES ('N', 'NATURAL');
+INSERT INTO `Restaurante`.`tipo_persona` (`id_tipo_persona`, `descripcion`) VALUES ('J', 'JURIDICA');
+
+INSERT INTO `Restaurante`.`tipo_producto` (`id_tipo_producto`, `descripcion`) VALUES ('C', 'COMIDAS');
+INSERT INTO `Restaurante`.`tipo_producto` (`id_tipo_producto`, `descripcion`) VALUES ('B', 'BEBIDAS');
+
+INSERT INTO Restaurante.tipo_pago(id_tipo_pago, descripcion) values('E', 'En efectivo');
+INSERT INTO Restaurante.tipo_pago(id_tipo_pago, descripcion) values('T', 'Tarjeta');
+
+INSERT INTO Restaurante.tipo_comprobante(id_tipo_comprobante, descripcion) values('B', 'Boleta');
+INSERT INTO Restaurante.tipo_comprobante(id_tipo_comprobante, descripcion) values('F', 'Factura');
+
+INSERT INTO Restaurante.tipo_pedido(id_tipo_pedido, descripcion) values('L', 'Para llevar');
+INSERT INTO Restaurante.tipo_pedido(id_tipo_pedido, descripcion) values('C', 'Para comer');
+
+INSERT INTO Restaurante.estado_pedido(id_estado_pedido, descripcion) values('E', 'En espera');
+INSERT INTO Restaurante.estado_pedido(id_estado_pedido, descripcion) values('P', 'En proceso');
+INSERT INTO Restaurante.estado_pedido(id_estado_pedido, descripcion) values('L', 'Listo');
+
