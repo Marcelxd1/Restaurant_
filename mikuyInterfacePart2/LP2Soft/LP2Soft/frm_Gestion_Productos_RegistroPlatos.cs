@@ -54,7 +54,7 @@ namespace LP2Soft
                     txtNombre.Enabled = true;
                     txtDescripcion.Enabled = true;
                     txtPrecio.Enabled = true;
-                    txtPresentacion.Enabled = false;
+                    txtPresentacion.Enabled = true;
                     rbBebida.Enabled = true;
                     rbPlato.Enabled = true;
                     cbCategoria.Enabled = true;
