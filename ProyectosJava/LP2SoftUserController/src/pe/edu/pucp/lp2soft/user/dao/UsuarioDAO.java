@@ -10,10 +10,9 @@ public interface UsuarioDAO {
     int modificar(Usuario usuario);
     int eliminiar(int idUsuario);
     Usuario listarPorId(int idUsuario);
-    ArrayList<Usuario> listarXNombre(String nombre, int rol);
+    ArrayList<Usuario> listarXNombre(String nombre);
     Usuario verificarUsuario (Usuario usuario);
     int modificarDatos (Usuario usuario);
-    int modificarTodo(Usuario usuario);
     int validarRecuperarContrasenia (int dni , String apellido_paterno);
     int cambiarContrasenia(int id_usuario, String password);
 }

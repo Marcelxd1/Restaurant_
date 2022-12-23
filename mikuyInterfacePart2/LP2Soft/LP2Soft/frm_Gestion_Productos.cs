@@ -16,7 +16,7 @@ namespace LP2Soft
         public frm_Gestion_Productos()
         {
             InitializeComponent();
-            abrirFormulario(new frm_Gestion_Productos_RegistroCategoria());
+            abrirFormulario(new frm_Gestion_Productos_RegistroPlatos());
         }
         public void abrirFormulario(Form formularioMostrar)
         {
@@ -32,26 +32,54 @@ namespace LP2Soft
             formularioMostrar.Show();
         }
 
-       
+        private void lblRegistrarPlato_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarPlato.ForeColor = Color.Blue;
+        }
+
+        private void lblRegistrarPlato_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarPlato.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void lblRegistrarCombo_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarCombo.ForeColor = Color.Blue;
+        }
+
+        private void lblRegistrarCombo_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarCombo.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void lblRegistrarCategoria_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarCategoria.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void lblRegistrarCategoria_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarCategoria.ForeColor = Color.Blue;
+        }
+
         private void lblRegistrarPlato_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frm_Gestion_Productos_ListarPlatos());
-            
+            abrirFormulario(new frm_Gestion_Productos_RegistroPlatos());
         }
 
         private void lblRegistrarCombo_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frm_Gestion_Productos_BusquedaCombo());
+            abrirFormulario(new frm_Gestion_Productos_RegistroCombo());
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-            //abrirFormulario(new frm_Gestion_Productos_RegistroCombo());
+            abrirFormulario(new frm_Gestion_Productos_RegistroCombo());
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            //abrirFormulario(new frm_Gestion_Productos_RegistroCombo());
+            abrirFormulario(new frm_Gestion_Productos_RegistroCombo());
         }
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
@@ -69,6 +97,34 @@ namespace LP2Soft
             abrirFormulario(new frm_Gestion_Productos_RegistroCategoria());
         }
 
-       
+        private void guna2ImageButton3_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarCategoria.ForeColor = Color.Blue;
+        }
+
+        private void guna2ImageButton3_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarCategoria.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void guna2ImageButton1_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarCombo.ForeColor = Color.Blue;
+        }
+
+        private void guna2ImageButton1_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarCombo.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void guna2ImageButton2_MouseEnter(object sender, EventArgs e)
+        {
+            lblRegistrarPlato.ForeColor = Color.Blue;
+        }
+
+        private void guna2ImageButton2_MouseLeave(object sender, EventArgs e)
+        {
+            lblRegistrarPlato.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
     }
 }

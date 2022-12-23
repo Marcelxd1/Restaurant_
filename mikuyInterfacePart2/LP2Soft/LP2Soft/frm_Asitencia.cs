@@ -14,15 +14,10 @@ namespace LP2Soft
     {
 
         private UserWS.UserWSClient daoUser;
-        private UserWS.persona persona;
-        public frm_Asitencia(UserWS.persona persona1)
+        public frm_Asitencia()
         {
             InitializeComponent();
             daoUser = new UserWS.UserWSClient();
-            dgvAsistencias.AutoGenerateColumns = false;
-            persona = persona1;
-            dgvAsistencias.DataSource = daoUser.listarAsistenciasUsuario(persona.id_persona);
-            
         }
 
 
@@ -89,7 +84,7 @@ namespace LP2Soft
                     int resultado = daoUser.asistenciaEntrada(userVerificar.id_usuario);
                     if (resultado != 0)
                     {
-                        MessageBox.Show("Se ha registrado su entrada correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se ha registrado entrada correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                     }
                     else
@@ -100,8 +95,6 @@ namespace LP2Soft
                     MessageBox.Show("Cuenta o contraseña incorrecta", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 limpiarComponentes();
-                dgvAsistencias.DataSource = daoUser.listarAsistenciasUsuario(persona.id_persona);
-                dgvAsistencias.Refresh();   
             }
             else
                 return;
@@ -121,7 +114,7 @@ namespace LP2Soft
                     int resultado = daoUser.asistenciaSalida(userVerificar.id_usuario);
                     if (resultado != 0)
                     {
-                        MessageBox.Show("Se ha registrado su salida correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se ha registrado salida correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else
@@ -132,8 +125,6 @@ namespace LP2Soft
                     MessageBox.Show("Cuenta o contraseña incorrecta", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 limpiarComponentes();
-                dgvAsistencias.DataSource = daoUser.listarAsistenciasUsuario(persona.id_persona);
-                dgvAsistencias.Refresh();
             }
             else
                 return;
@@ -143,16 +134,5 @@ namespace LP2Soft
         {
 
         }
-
-        private void dgvAsistencias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            UserWS.asistencia asis = (UserWS.asistencia)dgvAsistencias.Rows[e.RowIndex].DataBoundItem;
-            dgvAsistencias.Rows[e.RowIndex].Cells[0].Value = asis.fecha.ToString("dd-MM-yyyy");
-            dgvAsistencias.Rows[e.RowIndex].Cells[1].Value = asis.hora_inicio.ToString("hh:mm:ss tt");
-            if(asis.hora_finSpecified == true)
-                dgvAsistencias.Rows[e.RowIndex].Cells[2].Value = asis.hora_fin.ToString("hh:mm:ss tt");
-            
-        }
-
     }
 }

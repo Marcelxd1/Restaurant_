@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,17 +15,16 @@ namespace LP2Soft
         private NegocioWS.categoria _categoria;
         private NegocioWS.NegocioWSClient daoNegocio;
         private Estado _estado;
-        private string _rutaFotoPortada;
         public frm_Gestion_Productos_RegistroCategoria()
         {
             InitializeComponent();
             daoNegocio = new NegocioWS.NegocioWSClient();
             dgvListar.AutoGenerateColumns = false;
+            //dgvListar.DataSource = daoNegocio.listarTodasCategorias();
             
             _estado = Estado.Inicial;
             establecerEstadoComponentes();
             limpiarComponentes();
-            cargarTabla();
         }
 
         public void establecerEstadoComponentes()
@@ -35,16 +33,15 @@ namespace LP2Soft
             {
                 case Estado.Inicial:
                     btnNuevo.Enabled = true;
+                    btnImgListar.Enabled = true;
                     btnGuardar.Enabled = false;
                     btnCancelar.Enabled = false;
-                    btnModificar.Enabled = true;
+                    btnModificar.Enabled = false;
                     btnEliminar.Enabled = false;
 
                     txtDescripcion.Enabled = false;
                     txtNombre.Enabled = false;
-                    pbIcono.Enabled = false;
-                    pbIcono.Text = "ÍCONO";
-                    epNombre.SetError(txtNombre, "");
+                    dgvListar.Enabled = false;
                     break;
                 case Estado.Modificar:
                 case Estado.Nuevo:
@@ -53,11 +50,11 @@ namespace LP2Soft
                     btnCancelar.Enabled = true;
                     btnModificar.Enabled = false;
                     btnEliminar.Enabled = false;
+                    btnImgListar.Enabled = false;
 
                     txtDescripcion.Enabled = true;
                     txtNombre.Enabled = true;
-                    pbIcono.Enabled=true;
-
+                    dgvListar.Enabled = false;
                     break;
                 case Estado.Buscar:
                     btnNuevo.Enabled = false;
@@ -65,17 +62,13 @@ namespace LP2Soft
                     btnCancelar.Enabled = true;
                     btnModificar.Enabled = true;
                     btnEliminar.Enabled = true;
+                    btnImgListar.Enabled = true;
 
                     txtDescripcion.Enabled = false;
                     txtNombre.Enabled = false;
+                    dgvListar.Enabled = true;
                     break;
             }
-        }
-
-        private void cargarTabla()
-        {
-
-            dgvListar.DataSource = daoNegocio.listarTodasCategorias();
         }
 
         public void limpiarComponentes()
@@ -83,11 +76,7 @@ namespace LP2Soft
             txtNombre.Text = "";
             txtDescripcion.Text = "";
             _categoria = new NegocioWS.categoria();
-            
             //dgvListar.AutoGenerateColumns = false;
-            epNombre.SetError(txtNombre, "");
-            
-            this.pbIcono.Image = global::LP2Soft.Properties.Resources.newImagen;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -132,7 +121,6 @@ namespace LP2Soft
                     _estado = Estado.Inicial;
                     limpiarComponentes();
                     establecerEstadoComponentes();
-                    cargarTabla();
                 }
                 else
                     MessageBox.Show("Ha ocurrido un error con el registro", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -148,7 +136,6 @@ namespace LP2Soft
                     dgvListar.DataSource = daoNegocio.listarTodasCategorias();
                     limpiarComponentes();
                     establecerEstadoComponentes();
-                    cargarTabla();
                 }
                 else
                     MessageBox.Show("Ha ocurrido un error con la modificación", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -162,12 +149,6 @@ namespace LP2Soft
             _categoria = (NegocioWS.categoria)dgvListar.CurrentRow.DataBoundItem;
             txtDescripcion.Text = _categoria.descripcion;
             txtNombre.Text = _categoria.nombre;
-            pbIcono.Text = _categoria.nombre;
-            if (_categoria.icono != null)
-            {
-                MemoryStream ms = new MemoryStream(_categoria.icono);
-                pbIcono.Image = new Bitmap(ms);
-            }
             establecerEstadoComponentes();
         }
 
@@ -211,34 +192,6 @@ namespace LP2Soft
             }
             else
                 epNombre.SetError(txtNombre, "");
-        }
-
-        private void pbIcono_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (ofdFotos.ShowDialog() == DialogResult.OK)
-                {
-                    _rutaFotoPortada = ofdFotos.FileName;
-                    pbIcono.Image = Image.FromFile(_rutaFotoPortada);
-                    FileStream fs = new FileStream(_rutaFotoPortada, FileMode.Open, FileAccess.Read);
-                    BinaryReader br = new BinaryReader(fs);
-                    this._categoria.icono = br.ReadBytes((int)fs.Length);
-                    fs.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
-            }
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            if (pbIcono.Text != "")
-                pbIcono.Text = txtNombre.Text;
-            else
-                pbIcono.Text = "ÌCONO";
         }
     }
 }

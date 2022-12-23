@@ -7,12 +7,9 @@ public class Persona {
     private String apellido_materno ;
     private String DNI ; 
     private char tipo ; 
-    private Actividad actividad;
     private String razon_social;
     private String ruc ;
     private boolean activo ; 
-    private boolean VIP ; 
-    private boolean asociado ; 
     
     public Persona(){}
     public Persona( String nombre, String apellido_paterno, String apellido_materno, String DNI, char tipo ) {
@@ -104,31 +101,7 @@ public class Persona {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-
-    public Actividad getActividad() {
-        return actividad;
-    }
-
-    public void setActividad(Actividad actividad) {
-        this.actividad = actividad;
-    }
-
-    public boolean isVIP() {
-        return VIP;
-    }
-
-    public void setVIP(boolean VIP) {
-        this.VIP = VIP;
-    }
-
-    public boolean isAsociado() {
-        return asociado;
-    }
-
-    public void setAsociado(boolean asociado) {
-        this.asociado = asociado;
-    }
     
-    
+
     
 }

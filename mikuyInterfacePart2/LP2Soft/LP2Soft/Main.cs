@@ -15,9 +15,7 @@ namespace LP2Soft
         private Form formularioActivo = null;
         private Form cargando = new frm_Loading();
         private frm_Mesero_MesaVer2 formMesero1;
-        private int botonActivo ;
-        private bool flag = false;
-        private bool gestion = false;
+        private int botonActivo ; 
         public Main()
         {
             InitializeComponent();
@@ -73,11 +71,6 @@ namespace LP2Soft
             btnCocina.FillColor = Color.Transparent;
             btnGestion.FillColor = Color.Transparent;
             btnPedidos.FillColor = Color.Transparent;
-            btnProductos.FillColor = Color.Transparent;
-            btnGasto.FillColor = Color.Transparent;
-            btnMesa.FillColor = Color.Transparent;
-            btnClient.FillColor = Color.Transparent;
-            btnEmpleados.FillColor = Color.Transparent;
         }
 
         
@@ -120,35 +113,23 @@ namespace LP2Soft
 
         private void btnGestion_Click(object sender, EventArgs e)
         {
-            if (gestion == false)
-            {
-                panelGestion.Height = 260;
-                gestion = true;
-                this.panelGestion.BackgroundImage = global::LP2Soft.Properties.Resources.fonii;
-            }
-            else
-            {
-                panelGestion.Height = 39;
-                this.panelGestion.BackgroundImage = global::LP2Soft.Properties.Resources.fondo2;
-                gestion = false;
-            }
-            //restablecerBotones();
-            //btnGestion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            //abrirFormulario(new frm_Gestion());
+            restablecerBotones();
+            btnGestion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            abrirFormulario(new frm_Gestion());
         }
 
         private void btnAsistencia_Click(object sender, EventArgs e)
         {
             restablecerBotones();
             btnAsistencia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            abrirFormulario(new frm_Asitencia(this.persona));
+            abrirFormulario(new frm_Asitencia());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             restablecerBotones();
             btnClientes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            abrirFormulario(new frm_Gestion_Reportes());
+            abrirFormulario(new frm_Clientes());
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -177,69 +158,7 @@ namespace LP2Soft
             abrirFormulario(new frm_Cocina());
         }
 
+
         
-
-        private void btnPedidos_MouseMove(object sender, MouseEventArgs e)
-        {
-            PanelMenu.Width = 185;
-            btnSignOut.Width = 185;
-        }
-
-        private void btnPedidos_MouseLeave(object sender, EventArgs e)
-        {
-            PanelMenu.Width = 58;
-            btnSignOut.Width = 58;
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            if(flag == false)
-            {
-                PanelMenu.Width = 185;
-                btnSignOut.Width = 185;
-                flag = true;
-            }
-            else
-            {
-                PanelMenu.Width = 58;
-                btnSignOut.Width = 58;
-                flag = false;
-            }
-        }
-
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            restablecerBotones();
-            btnProductos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            abrirFormulario(new frm_Gestion_Productos());
-        }
-
-        private void btnEmpleados_Click(object sender, EventArgs e)
-        {
-            restablecerBotones();
-            btnEmpleados.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            abrirFormulario(new frm_Gestion_Usuario_Listar());
-        }
-
-        private void btnClient_Click(object sender, EventArgs e)
-        {
-            restablecerBotones();
-            btnClient.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            abrirFormulario(new frm_Clientes_Listar());
-        }
-
-        private void btnMesa_Click(object sender, EventArgs e)
-        {
-            restablecerBotones();
-            btnMesa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            abrirFormulario(new frm_Gestion_Mesas());
-        }
-
-        private void btnGasto_Click(object sender, EventArgs e)
-        {
-            restablecerBotones();
-            btnGasto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            abrirFormulario(new frm_Gestion_Gastos());
-        }
     }
 }

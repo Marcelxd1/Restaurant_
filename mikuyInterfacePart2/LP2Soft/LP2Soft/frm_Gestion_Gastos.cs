@@ -67,7 +67,6 @@ namespace LP2Soft
             txtDescripcion.Text = "";
             txtPrecio.Text = "";
             txtCantidad.Text = "";
-            txtTotal.Text = "";
             _gasto = new CajaWS.gasto();
 
         }
@@ -93,7 +92,7 @@ namespace LP2Soft
         {
             if (verificarDatos())
             {
-                _gasto.item = txtItem.Text.Trim().ToUpper();
+                _gasto.item = txtItem.Text.Trim();
                 _gasto.precio = Double.Parse(txtPrecio.Text.Trim());
                 _gasto.descripcion = txtDescripcion.Text.Trim();
                 _gasto.cantidad = int.Parse(txtCantidad.Text.Trim());
@@ -262,14 +261,6 @@ namespace LP2Soft
             }
             else
                 epCantidad.SetError(txtCantidad, "");
-        }
-
-        private void txtCantidad_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCantidad.Text.Trim() == string.Empty)
-                return;
-            double total = Double.Parse(txtCantidad.Text)*Double.Parse(txtPrecio.Text);
-            txtTotal.Text = total.ToString();
         }
     }
 }

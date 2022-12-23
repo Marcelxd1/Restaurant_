@@ -25,11 +25,24 @@ namespace LP2Soft
             daonegocio = new NegocioWS.NegocioWSClient();
             _estado = Estado.Inicial;
             establecerComponentes();
+
+            refreshComboBox(); 
             _mesa = new NegocioWS.mesa();
-            mesaSelecc = new NegocioWS.mesa();
+                
 
         }
-        
+        private void refreshComboBox()
+        {
+            lista_mesas = new BindingList<NegocioWS.mesa>(daonegocio.listarTodasMesa());
+            if (lista_mesas != null)
+            {
+                cbMesas.DataSource = lista_mesas;
+                cbMesas.DisplayMember = "idMesa";
+                cbMesas.ValueMember = "idMesa";
+                lista_mesas.AllowEdit = true;
+                lista_mesas.AllowNew = true;
+            }
+        }
         public void establecerComponentes()
         {
             switch (_estado)
@@ -40,67 +53,65 @@ namespace LP2Soft
                     txtID.Enabled = false;
                     txtCapacidad.Enabled = false;
                     txtCapacidad.ReadOnly = true;
-                    txtID.Enabled = false;
+                    txtID.Enabled = true;
+                    txtCapacidad.Enabled = true;
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
-                    btnModificar.Enabled = true;
-                    btnEliminar.Enabled = true;
-                    btnCancelar.Enabled = false;
-                    cargarTabla();
+                    btnBuscar.Enabled = true;
+                    btnModificar.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    cbMesas.Enabled = false;
                     break;
                 case Estado.Modificar:
                 case Estado.Nuevo:
-                    txtID.Enabled = false;
+                    txtID.Enabled = true;
                     txtCapacidad.Enabled = true;
                     txtCapacidad.ReadOnly = false;
                     btnNuevo.Enabled = false;
                     btnGuardar.Enabled = true;
+                    btnBuscar.Enabled = false;
                     btnModificar.Enabled = false;
                     btnEliminar.Enabled = false;
-                    btnCancelar.Enabled = true;
+                    cbMesas.Enabled = false;
                     break;
+                case Estado.Buscar:
+                    txtID.Enabled = false;
+                    txtCapacidad.Enabled= false;
+                    txtCapacidad.ReadOnly = true;
+                    btnNuevo.Enabled = false;
+                    btnGuardar.Enabled = false;
+                    btnBuscar.Enabled = false;
+                    btnModificar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    cbMesas.Enabled = true;
+                    break;
+                
             }
-        }
-
-        private void limpiar()
-        {
-            txtCapacidad.Text = "";
-            txtID.Text = "";
-            _estado = Estado.Inicial;
-            establecerComponentes();
-        }
-
-        private void cargarTabla()
-        {
-            NegocioWS.mesa[] mesas = daonegocio.listarTodasMesa();
-            if (mesas != null)
-                dgvMesa.DataSource = new BindingList<NegocioWS.mesa>(mesas);
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             _estado = Estado.Nuevo;
             establecerComponentes();
         }
-
-
-        private void dgvMesa_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            NegocioWS.mesa mesa = (NegocioWS.mesa)dgvMesa.Rows[e.RowIndex].DataBoundItem;
-            dgvMesa.Rows[e.RowIndex].Cells[0].Value = mesa.idMesa;
-            dgvMesa.Rows[e.RowIndex].Cells[1].Value = mesa.numMesa;
-            dgvMesa.Rows[e.RowIndex].Cells[2].Value = mesa.capacidad;
-            if(mesa.disponible)
-                dgvMesa.Rows[e.RowIndex].Cells[3].Value = "Disponible";
-            else
-                dgvMesa.Rows[e.RowIndex].Cells[3].Value = "Ocupado";
+            _estado= Estado.Buscar;
+            establecerComponentes();
+            
+        }
+
+        private void cbMesas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(_estado != Estado.Inicial && _estado!= Estado.Nuevo)
+            {
+                mesaSelecc = (NegocioWS.mesa)cbMesas.SelectedItem;
+                txtID.Text = mesaSelecc.idMesa.ToString();
+                txtCapacidad.Text = mesaSelecc.capacidad.ToString();
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
-            mesaSelecc = (NegocioWS.mesa)dgvMesa.CurrentRow.DataBoundItem;
-            txtID.Text = mesaSelecc.idMesa.ToString();
-            txtCapacidad.Text= mesaSelecc.capacidad.ToString();
             _estado = Estado.Modificar;
             establecerComponentes();
         }
@@ -108,12 +119,6 @@ namespace LP2Soft
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             int resultado=0;
-            _mesa.numMesa = 10;
-            if (txtCapacidad.Text.Trim() == "")
-            {
-                MessageBox.Show("Debe ingresar una capacidad", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             if (_estado == Estado.Nuevo)
             {
                 //_mesa.idMesa = 0;
@@ -124,6 +129,7 @@ namespace LP2Soft
                     MessageBox.Show("Se ha registrado la mesa correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _estado = Estado.Inicial;
                     establecerComponentes();
+                    refreshComboBox();
                 }
                 else
                     MessageBox.Show("Ha ocurrido un error con el registro", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -139,6 +145,7 @@ namespace LP2Soft
                     MessageBox.Show("Se ha modificado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _estado = Estado.Inicial;
                     establecerComponentes();
+                    refreshComboBox();
                 }
                 else
                     MessageBox.Show("Ha ocurrido un error con la modificación", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -149,8 +156,6 @@ namespace LP2Soft
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int resultado = 0;
-
-            mesaSelecc = (NegocioWS.mesa)dgvMesa.CurrentRow.DataBoundItem;
             _mesa = mesaSelecc;
             resultado= daonegocio.eliminarMesa(_mesa.idMesa);
             if (resultado != 0)
@@ -158,6 +163,7 @@ namespace LP2Soft
                 MessageBox.Show("Se ha eliminado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _estado = Estado.Inicial;
                 establecerComponentes();
+                refreshComboBox();
             }
             else
                 MessageBox.Show("Ha ocurrido un error con la eliminacion", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -165,8 +171,10 @@ namespace LP2Soft
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            limpiar();
+            _estado = Estado.Inicial;
+            establecerComponentes();
         }
 
+        
     }
 }

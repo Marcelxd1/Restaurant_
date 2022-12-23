@@ -16,113 +16,40 @@ namespace LP2Soft
         private string _rutaFoto;
         private UserWS.UserWSClient daoUser;
         private UserWS.usuario _usuario;
-        private UserWS.usuario _usuarioSeleccionado;
-        private Estado _estado;
-        private bool flagFoto = false;
-
-        public frm_Gestion_Usuario(Estado estado, UserWS.usuario user)
+        public frm_Gestion_Usuario()
         {
             InitializeComponent();
-            _estado = estado;
             daoUser = new UserWS.UserWSClient();    
             _usuario = new UserWS.usuario();
             cmbRol.DataSource = daoUser.listarRolTodos();
             cmbRol.DisplayMember = "descripcion";
             cmbRol.ValueMember = "id_rol";
             cmbRol.SelectedIndex = -1; 
-            _usuarioSeleccionado = new UserWS.usuario();
-            _usuarioSeleccionado = user;
-            flagFoto = false;
-            establecerEstadoComponentes();
         }
 
-        public UserWS.usuario UsuarioSeleccionado { get => _usuarioSeleccionado; set => _usuarioSeleccionado = value; }
-
-        public void establecerEstadoComponentes()
+        private void label6_Click(object sender, EventArgs e)
         {
-            switch (_estado)
-            {
-                
-                case Estado.Modificar:
-                    completarDatos();
-                    btnRegistrar.Text = "Modificar";
-                    btnSubirFoto.Enabled = true;
-                    btnRegistrar.Enabled = true;
-                    btnCancelar.Enabled = true;
-                    txtNombre.Enabled = true;
-                    txtApellidoMaterno.Enabled = true;
-                    txtApellidoPaterno.Enabled = true;
-                    txtCorreo.Enabled = true;
-                    txtDNI.Enabled = true;
-                    txtPassword.Enabled = true;
-                    txtTelefono.Enabled = true;
-                    txtUsername.Enabled = true;
-                    cmbRol.Enabled = true;
-                    break;
-                case Estado.Nuevo:
-                    limpiarComponentes();
-                    btnRegistrar.Text = "Registrar";
-                    btnSubirFoto.Enabled = true;
-                    btnRegistrar.Enabled = true;
-                    btnCancelar.Enabled = true;
-                    txtNombre.Enabled = true;
-                    txtApellidoMaterno.Enabled = true;
-                    txtApellidoPaterno.Enabled = true;
-                    txtCorreo.Enabled = true;
-                    txtDNI.Enabled = true;
-                    txtPassword.Enabled = true;    
-                    txtTelefono.Enabled = true;
-                    txtUsername.Enabled = true;
-                    cmbRol.Enabled = true;
-                    break;
 
-            }
         }
 
-        private void completarDatos()
+        private void label1_Click(object sender, EventArgs e)
         {
-            txtNombre.Text = _usuarioSeleccionado.nombre;
-            txtApellidoMaterno.Text = _usuarioSeleccionado.apellido_paterno;
-            txtApellidoPaterno.Text = _usuarioSeleccionado.apellido_materno;
-            txtCorreo.Text = _usuarioSeleccionado.correo;
-            txtDNI.Text = _usuarioSeleccionado.DNI;
-            txtPassword.Text = _usuarioSeleccionado.password;
-            txtTelefono.Text = _usuarioSeleccionado.telefono;
-            txtUsername.Text = _usuarioSeleccionado.usuario1;
-            cmbRol.SelectedIndex = _usuarioSeleccionado.rol.id_rol-1;
-            txtSueldo.Text = _usuarioSeleccionado.salario.ToString();
-            txtPassword.Text = _usuarioSeleccionado.password;
-            if (_usuarioSeleccionado.imagen != null)
-            {
-                MemoryStream ms = new MemoryStream(_usuarioSeleccionado.imagen);
-                pbFoto.Image = new Bitmap(ms);
-            }
-            else pbFoto.Image = null;
+
         }
 
-        private void limpiarComponentes()
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            txtNombre.Text = "";
-            txtApellidoMaterno.Text = "";
-            txtApellidoPaterno.Text = "";
-            txtCorreo.Text = "";
-            txtDNI.Text = "";
-            txtPassword.Text = "";
-            txtPasswordConfirm.Text = "";
-            txtSueldo.Text = "";
-            txtTelefono.Text = "";
-            txtUsername.Text = "";
-            epApeMater.SetError(txtApellidoMaterno, "");
-            epApePater.SetError(txtApellidoPaterno, "");
-            epContraseña.SetError(txtPassword, "");
-            epCorreo.SetError(txtCorreo, "");
-            epDNI.SetError(txtDNI, "");
-            epNombre.SetError(txtNombre, "");
-            epSueldo.SetError(txtSueldo, "");
-            epTelefono.SetError(txtTelefono, "");
-            epUsername.SetError(txtUsername, "");
-            cmbRol.SelectedIndex = -1;
-            pbFoto.Image = null;
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_Gestion_Usuario_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -210,52 +137,41 @@ namespace LP2Soft
                 MessageBox.Show("La confirmacion del password no es la misma", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            _usuario.apellido_materno = txtApellidoMaterno.Text.Trim().ToUpper();
-            _usuario.apellido_paterno = txtApellidoPaterno.Text.Trim().ToUpper();
+            _usuario.apellido_materno = txtApellidoMaterno.Text.Trim();
+            _usuario.apellido_paterno = txtApellidoPaterno.Text.Trim();
             _usuario.DNI   = txtDNI.Text.Trim();
-            _usuario.nombre = txtNombre.Text.Trim().ToUpper();
+            _usuario.nombre = txtNombre.Text.Trim();
             _usuario.rol = (UserWS.rol)cmbRol.SelectedItem;
             _usuario.salario = Double.Parse(txtSueldo.Text.Trim());
             _usuario.telefono = txtTelefono.Text.Trim();
             _usuario.usuario1 = txtUsername.Text.Trim();
             _usuario.password = pass1; 
             _usuario.correo = txtCorreo.Text.Trim();
-            if (_estado == Estado.Nuevo)
+            int resultado = daoUser.insertarUsuario(_usuario);
+            if(resultado > 0)
             {
-                int resultado = daoUser.insertarUsuario(_usuario);
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Se ha registrado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _estado = Estado.Nuevo;
-                    establecerEstadoComponentes();
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show("Ha ocurrido un error con el registro", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+                MessageBox.Show("Se ha registrado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtApellidoMaterno.Text = "";
+                txtApellidoPaterno.Text = "";
+                txtDNI.Text = "";
+                txtNombre.Text = "";
+                txtPassword.Text = "";
+                txtPasswordConfirm.Text = "";
+                txtSueldo.Text = "";
+                txtTelefono.Text = "";
+                txtUsername.Text = "";
+                txtCorreo.Text = "";
+                pbFoto.Image = null;
             }
-            if (_estado == Estado.Modificar)
+            else
             {
-                _usuario.id_usuario = _usuarioSeleccionado.id_usuario;
-                if (flagFoto == false)
-                    _usuario.imagen = _usuarioSeleccionado.imagen;
-                int resultado = daoUser.modificarUsuarioTodos(_usuario);
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Se ha modificado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _estado = Estado.Nuevo;
-                    establecerEstadoComponentes();
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show("Ha ocurrido un error con la modificación", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+                MessageBox.Show("Ha ocurrido un error con el registro", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+
+
+
+
+    }
 
         private void btnSubirFoto_Click(object sender, EventArgs e)
         {
@@ -269,141 +185,12 @@ namespace LP2Soft
                     BinaryReader br = new BinaryReader(fs);
                     _usuario.imagen = br.ReadBytes((int)fs.Length);
                     fs.Close();
-                    if(_estado == Estado.Modificar)
-                    {
-                        flagFoto = true;
-                    }
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
-            }
-        }
-
-
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            limpiarComponentes();
-            if(_estado == Estado.Modificar)
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        //VALIDACIONES ===========================================================================
-
-        private void txtNombre_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtNombre.Text.Trim() == "")
-            {
-                epNombre.SetError(txtNombre, "Debe ingresar el nombre");
-            }
-            else
-                epNombre.SetError(txtNombre, "");
-        }
-
-        private void txtApellidoPaterno_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtApellidoPaterno.Text.Trim() == "")
-            {
-                epApePater.SetError(txtApellidoPaterno, "Debe ingresar el apellido paterno");
-            }
-            else
-                epApePater.SetError(txtApellidoPaterno, "");
-        }
-
-        private void txtApellidoMaterno_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtApellidoMaterno.Text.Trim() == "")
-            {
-                epApeMater.SetError(txtApellidoMaterno, "Debe ingresar el apellido materno");
-            }
-            else
-                epApeMater.SetError(txtApellidoMaterno, "");
-        }
-
-        private void txtDNI_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtDNI.Text.Trim() == "")
-            {
-                epDNI.SetError(txtDNI, "Debe ingresar el DNI");
-            }
-            else
-                epDNI.SetError(txtDNI, "");
-        }
-
-        private void txtSueldo_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtSueldo.Text.Trim() == "")
-            {
-                epSueldo.SetError(txtSueldo, "Debe ingresar el sueldo");
-            }
-            else
-                epSueldo.SetError(txtSueldo, "");
-        }
-
-        private void txtTelefono_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtTelefono.Text.Trim() == "")
-            {
-                epTelefono.SetError(txtTelefono, "Debe ingresar el teléfono");
-            }
-            else
-                epTelefono.SetError(txtTelefono, "");
-        }
-
-        private void txtUsername_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtUsername.Text.Trim() == "")
-            {
-                epUsername.SetError(txtUsername, "Debe ingresar el username");
-            }
-            else
-                epUsername.SetError(txtUsername, "");
-        }
-
-        private void txtPassword_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtPassword.Text.Trim() == "")
-            {
-                epContraseña.SetError(txtPassword, "Debe ingresar la contraseña");
-            }
-            else
-                epContraseña.SetError(txtPassword, "");
-        }
-
-        private void txtCorreo_Validating(object sender, CancelEventArgs e)
-        {
-            if (txtCorreo.Text.Trim() == "")
-            {
-                epCorreo.SetError(txtCorreo, "Debe ingresar el correo");
-            }
-            else
-                epCorreo.SetError(txtCorreo, "");
-        }
-
-        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
             }
         }
     }

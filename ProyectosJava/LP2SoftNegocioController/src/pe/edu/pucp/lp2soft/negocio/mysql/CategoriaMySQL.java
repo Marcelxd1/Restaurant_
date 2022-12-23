@@ -25,7 +25,6 @@ public class CategoriaMySQL implements CategoriaDAO{
                 categoria.setIdCategoria(rs.getInt("id_categoria"));
                 categoria.setNombre(rs.getString("nombre"));
                 categoria.setDescripcion(rs.getString("descripcion"));
-                categoria.setIcono(rs.getBytes("icono"));
                 categoria.setActivo(true);
                 categorias.add(categoria);
             }
@@ -42,11 +41,10 @@ public class CategoriaMySQL implements CategoriaDAO{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_CATEGORIA(?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_CATEGORIA(?,?,?)}");
             cs.registerOutParameter("_id_categoria", java.sql.Types.INTEGER);
             cs.setString("_nombre", categoria.getNombre());
             cs.setString("_descripcion", categoria.getDescripcion());
-            cs.setBytes("_icono", categoria.getIcono());
             cs.executeUpdate();
             categoria.setIdCategoria(cs.getInt("_id_categoria"));
             resultado = 1;
@@ -63,11 +61,10 @@ public class CategoriaMySQL implements CategoriaDAO{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_CATEGORIA(?,?,?,?)}");
+            cs = con.prepareCall("{call MODIFICAR_CATEGORIA(?,?,?)}");
             cs.setInt("_id_categoria", categoria.getIdCategoria());
             cs.setString("_nombre", categoria.getNombre());
             cs.setString("_descripcion", categoria.getDescripcion());
-            cs.setBytes("_icono", categoria.getIcono());
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -109,8 +106,6 @@ public class CategoriaMySQL implements CategoriaDAO{
                 categoria = new Categoria();
                 categoria.setIdCategoria(id_categoria);
                 categoria.setNombre(rs.getString("nombre"));
-                categoria.setIcono(rs.getBytes("icono"));
-                categoria.setDescripcion(rs.getString("descripcion")); 
                 categoria.setActivo(true);
             }
             resultado = 1;

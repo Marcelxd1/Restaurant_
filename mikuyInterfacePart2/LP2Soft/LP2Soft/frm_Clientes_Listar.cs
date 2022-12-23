@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,71 +14,72 @@ namespace LP2Soft
     {
         private UserWS.persona _cliente;
         private UserWS.UserWSClient daoUser;
-        private UserWS.actividad _act;
         private Estado _estado;
-        private BindingList<UserWS.actividad> acts;
-        private BindingList<UserWS.sector> sects;
         public frm_Clientes_Listar()
         {
             InitializeComponent();
             daoUser = new UserWS.UserWSClient();
             dgvListarClientes.AutoGenerateColumns = false;
-            
-            rbPersona.Checked = true;
-            UserWS.sector sector = new UserWS.sector();
-            UserWS.actividad actividad = new UserWS.actividad();
-            sects = new BindingList<UserWS.sector>();
-            sects = new BindingList<UserWS.sector>(daoUser.listarSectores().ToList());
-            sector.id_sector = 0;
-            sector.descripcion = "TODOS";
-            sects.Insert(0, sector);
-            cbSector.DataSource = sects;
-            cbSector.DisplayMember = "descripcion";
-            cbSector.ValueMember = "id_sector";
-            acts = new BindingList<UserWS.actividad>();
-            acts = new BindingList<UserWS.actividad>(daoUser.listarActividadesXSector(0).ToList());
-            actividad.id_actividad = 0;
-            actividad.descripcion = "TODOS";
-            acts.Insert(0, actividad);
-            cbActividad.DataSource = acts;
-            cbActividad.DisplayMember = "descripcion";
-            cbActividad.ValueMember = "id_actividad";
-            cbSector.SelectedIndex = 0;
-            cbActividad.SelectedIndex = 0;
-            establecerTabla();
+            cargarTabla();
+            _estado = Estado.Inicial;
+            establecerEstadoComponentes();
+            limpiarComponentes();
         }
 
-        private void establecerTabla()
+        public void establecerEstadoComponentes()
         {
-            if(rbPersona.Checked == true)
+            switch (_estado)
             {
-                RUC.Visible = false;
-                Sector.Visible = false;
-                Actividad.Visible = false;
-                ApellidoPaterno.Visible = true;
-                ApeMAter.Visible = true;
-                DNIRUC.Visible = true;
-                cbActividad.Enabled = false;
-                cbSector.Enabled = false;
-                Asociado.Visible = true ;
-                VIP.Visible = true ;
-                Razon.Visible = false;
+                case Estado.Inicial:
+                    btnGuardar.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnModificar.Enabled = true;
+                    btnEliminar.Enabled = true;
+
+                    txtNombre.Enabled = false;
+                    txtApellidoMaterno.Enabled = false;
+                    txtApellidoPaterno.Enabled = false;
+                    txtDNIRUC.Enabled = false;
+                    txtRazonSocial.Enabled = false;
+                    txtBuscar.Enabled = true;
+                    txtRUC.Enabled = false;
+                    break;
+
+                case Estado.Modificar:
+                    btnGuardar.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    btnModificar.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    txtBuscar.Enabled = false;
+
+                    txtNombre.Enabled = true;
+                    break;
+
+                case Estado.Buscar:
+                    btnGuardar.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnModificar.Enabled = true;
+                    btnEliminar.Enabled = true;
+
+                    txtNombre.Enabled = false;
+                    txtApellidoMaterno.Enabled = false;
+                    txtApellidoPaterno.Enabled = false;
+                    txtDNIRUC.Enabled = false;
+                    txtRazonSocial.Enabled = false;
+                    txtBuscar.Enabled = true;
+                    break;
             }
-            else if(rbEmpresa.Checked == true)
-            {
-                RUC.Visible = true;
-                Sector.Visible = true;
-                Actividad.Visible = true;
-                DNIRUC.Visible = false;
-                ApeMAter.Visible =false;
-                ApellidoPaterno.Visible=false;
-                cbActividad.Enabled = true;
-                cbSector.Enabled=true;
-                Asociado.Visible = true;
-                VIP.Visible = true;
-                Razon.Visible=true;
-            }
-            cargarTabla();
+        }
+
+        public void limpiarComponentes()
+        {
+            txtNombre.Text = "";
+            txtApellidoMaterno.Text = "";
+            txtApellidoPaterno.Text = "";
+            txtDNIRUC.Text = "";
+            txtRazonSocial.Text = "";
+            txtRUC.Text = "";
+            _cliente = new UserWS.persona();
         }
 
         private void cargarTabla()
@@ -87,22 +87,40 @@ namespace LP2Soft
             string indicador = "";
             if (txtBuscar.Text != "Buscar")
                 indicador = txtBuscar.Text;
-            if(rbPersona.Checked ==true)
-                dgvListarClientes.DataSource = daoUser.listarPersona(indicador);
+            UserWS.persona[] personas = daoUser.listarClienteXNombre(indicador);
+            if (personas != null)
+                dgvListarClientes.DataSource = new BindingList<UserWS.persona>(personas);
             else
-            {
-                _act = new UserWS.actividad();
-                _act = (UserWS.actividad)cbActividad.SelectedItem;
-                
-                dgvListarClientes.DataSource = daoUser.listarClienteXNombre(indicador, cbSector.SelectedIndex, _act.id_actividad);
-                
-            }
-            //if (personas != null)
-            //    dgvListarClientes.DataSource = new BindingList<UserWS.persona>(personas);
-            //else
-            //    MessageBox.Show("errooooooor", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("errooooooor", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            _estado = Estado.Modificar;
+            _cliente = (UserWS.persona)dgvListarClientes.CurrentRow.DataBoundItem;
+            txtNombre.Text = _cliente.nombre;
+
+            if (_cliente.tipo == 'N')    //si es natural
+            {
+                txtDNIRUC.Enabled = true;
+                txtApellidoMaterno.Enabled = true;
+                txtApellidoPaterno.Enabled = true;
+                txtApellidoMaterno.Text = _cliente.apellido_materno;
+                txtApellidoPaterno.Text = _cliente.apellido_paterno;
+                txtDNIRUC.Text = _cliente.DNI;
+
+            }
+            else                        //si es juridico
+            {
+                txtRazonSocial.Enabled = true;
+                txtRUC.Enabled = true;
+                txtRUC.Text = _cliente.ruc;
+                txtRazonSocial.Text = _cliente.razon_social;
+            }
+            establecerEstadoComponentes();
+            
+        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -123,36 +141,168 @@ namespace LP2Soft
             }
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            _estado = Estado.Inicial;
+            limpiarComponentes();
+            establecerEstadoComponentes();
+            epNombre.SetError(txtNombre, "");
+            if(_cliente.tipo == 'N')
+            {
+                epApMaterno.SetError(txtApellidoMaterno, "");
+                epApPaterno.SetError(txtApellidoPaterno, "");
+                epDNI.SetError(txtDNIRUC, "");
+            }
+            else
+            {
+                epRazon.SetError(txtRazonSocial, "");
+                epRUC.SetError(txtRUC, "");
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text.Trim() == "")
+            {
+                MessageBox.Show("Debe ingresar un nombre", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (_cliente.tipo == 'N')
+            {
+                if (txtDNIRUC.Text.Trim().Length != 8)
+                {
+                    MessageBox.Show("El DNI ingresado debe tener 8 dígitos", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                try
+                {
+                    Int32.Parse(txtDNIRUC.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El DNI debe ser un número", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (txtApellidoPaterno.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe ingresar un apellido", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (txtApellidoMaterno.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe ingresar un apellido", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                _cliente.DNI = txtDNIRUC.Text.Trim();
+                _cliente.apellido_paterno = txtApellidoPaterno.Text.Trim();
+                _cliente.apellido_materno = txtApellidoMaterno.Text.Trim();
+            }
+            else
+            {
+                if (txtRUC.Text.Trim().Length != 11)
+                {
+                    MessageBox.Show("El RUC ingresado debe tener 11 dígitos", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                try
+                {
+                    Int64.Parse(txtRUC.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El RUC debe ser un número", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (txtRazonSocial.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe ingresar la razón social", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                _cliente.ruc = txtRUC.Text.Trim();
+                _cliente.razon_social = txtRazonSocial.Text.Trim();
+            }
+
+            _cliente.nombre = txtNombre.Text.Trim();
+            if (_estado == Estado.Modificar)
+            {
+                int resultado = daoUser.modificarPersona(_cliente);
+                if (resultado != 0)
+                {
+                    MessageBox.Show("Se ha modificado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _estado = Estado.Inicial;
+                    cargarTabla();
+                    establecerEstadoComponentes();
+                }
+                else
+                    MessageBox.Show("Ha ocurrido un error con la modificación", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void dgvListarClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             UserWS.persona cliente = (UserWS.persona)dgvListarClientes.Rows[e.RowIndex].DataBoundItem;
             dgvListarClientes.Rows[e.RowIndex].Cells[0].Value = cliente.id_persona;
-            dgvListarClientes.Rows[e.RowIndex].Cells[5].Value = cliente.nombre;
-            if(cliente.VIP==true)
-                dgvListarClientes.Rows[e.RowIndex].Cells[6].Value = "SI";
-            else
-                dgvListarClientes.Rows[e.RowIndex].Cells[6].Value = "NO";
-            if (cliente.asociado == true)
-                dgvListarClientes.Rows[e.RowIndex].Cells[7].Value = "SI";
-            else
-                dgvListarClientes.Rows[e.RowIndex].Cells[7].Value = "NO";
-
             if (cliente.tipo == 'N')
             {
+                dgvListarClientes.Rows[e.RowIndex].Cells[1].Value = "Persona";
                 dgvListarClientes.Rows[e.RowIndex].Cells[2].Value = cliente.DNI;
-                dgvListarClientes.Rows[e.RowIndex].Cells[3].Value = cliente.apellido_paterno;
-                dgvListarClientes.Rows[e.RowIndex].Cells[4].Value = cliente.apellido_materno;
+                dgvListarClientes.Rows[e.RowIndex].Cells[3].Value =
+                    cliente.nombre + " " + cliente.apellido_paterno + " " + cliente.apellido_materno;
             }
             else
             {
-                dgvListarClientes.Rows[e.RowIndex].Cells[1].Value = cliente.ruc;
-                dgvListarClientes.Rows[e.RowIndex].Cells[8].Value = cliente.actividad.sector.descripcion;
-                dgvListarClientes.Rows[e.RowIndex].Cells[9].Value = cliente.actividad.descripcion;
-                dgvListarClientes.Rows[e.RowIndex].Cells[10].Value = cliente.razon_social;
-
+                dgvListarClientes.Rows[e.RowIndex].Cells[1].Value = "Empresa";
+                dgvListarClientes.Rows[e.RowIndex].Cells[2].Value = cliente.ruc;
+                dgvListarClientes.Rows[e.RowIndex].Cells[3].Value =
+                    cliente.nombre;
             }
         } 
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (!char.IsLetter(e.KeyChar)) && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellidoPaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (!char.IsLetter(e.KeyChar)) && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellidoMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (!char.IsLetter(e.KeyChar)) && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRazonSocial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (!char.IsLetter(e.KeyChar)) && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDNIRUC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void txtBuscar_DoubleClick(object sender, EventArgs e)
         {
@@ -164,51 +314,64 @@ namespace LP2Soft
             cargarTabla();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
         {
-            frm_Clientes_Registrar frmClientes = new frm_Clientes_Registrar(Estado.Modificar, (UserWS.persona)dgvListarClientes.CurrentRow.DataBoundItem);
-            if (frmClientes.ShowDialog() == DialogResult.OK)
+            if (txtNombre.Text.Trim() == "")
             {
-                cargarTabla();
+                epNombre.SetError(txtNombre, "Debe ingresar el nombre");
             }
+            else
+                epNombre.SetError(txtNombre, "");
         }
 
-        private void btnNuvo_Click(object sender, EventArgs e)
+        private void txtApellidoPaterno_Validating(object sender, CancelEventArgs e)
         {
-            frm_Clientes_Registrar frmClientes = new frm_Clientes_Registrar(Estado.Nuevo,null);
-            if (frmClientes.ShowDialog() == DialogResult.OK)
+            if (txtApellidoPaterno.Text.Trim() == "")
             {
-                cargarTabla();
+                epApPaterno.SetError(txtApellidoPaterno, "Debe ingresar el apellido paterno");
             }
+            else
+                epApPaterno.SetError(txtApellidoPaterno, "");
         }
 
-        private void rbEmpresa_CheckedChanged(object sender, EventArgs e)
+        private void txtApellidoMaterno_Validating(object sender, CancelEventArgs e)
         {
-            establecerTabla();
+            if (txtApellidoMaterno.Text.Trim() == "")
+            {
+                epApMaterno.SetError(txtApellidoMaterno, "Debe ingresar el apellido materno");
+            }
+            else
+                epApMaterno.SetError(txtApellidoMaterno, "");
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void txtDNIRUC_Validating(object sender, CancelEventArgs e)
         {
-
+            if (txtDNIRUC.Text.Trim() == "")
+            {
+                epDNI.SetError(txtDNIRUC, "Debe ingresar el DNI");
+            }
+            else
+                epDNI.SetError(txtDNIRUC, "");
         }
 
-        private void cbSector_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtRazonSocial_Validating(object sender, CancelEventArgs e)
         {
-            UserWS.actividad actividad = new UserWS.actividad();
-            acts = new BindingList<UserWS.actividad>();
-            acts = new BindingList<UserWS.actividad>(daoUser.listarActividadesXSector(cbSector.SelectedIndex).ToList());
-            actividad.id_actividad = 0;
-            actividad.descripcion = "TODOS";
-            acts.Insert(0, actividad);
-            cbActividad.DataSource = acts;
-            cbActividad.DisplayMember = "descripcion";
-            cbActividad.ValueMember = "id_actividad";
-            cbActividad.SelectedIndex = 0;
+            if (txtRazonSocial.Text.Trim() == "")
+            {
+                epRazon.SetError(txtRazonSocial, "Debe ingresar la razón social");
+            }
+            else
+                epRazon.SetError(txtRazonSocial, "");
         }
 
-        private void guna2PictureBox3_Click(object sender, EventArgs e)
+        private void txtRUC_Validating(object sender, CancelEventArgs e)
         {
-
+            if (txtRUC.Text.Trim() == "")
+            {
+                epRUC.SetError(txtRUC, "Debe ingresar el RUC");
+            }
+            else
+                epRUC.SetError(txtRUC, "");
         }
     }
 }

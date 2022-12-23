@@ -44,12 +44,6 @@ public class UsuarioMySQL implements UsuarioDAO {
                 usuario.setApellido_paterno(rs.getString("apellido_paterno"));
                 usuario.setApellido_materno(rs.getString("apellido_materno"));
                 usuario.setDNI(rs.getString("DNI")); 
-                usuario.setCorreo(rs.getString("correo")); 
-                usuario.setPassword(rs.getString("password")); 
-                usuario.setRol(new Rol());
-                usuario.getRol().setId_rol(rs.getInt("id_rol"));
-                usuario.getRol().setDescripcion(rs.getString("descripcion")); 
-                usuario.setImagen(rs.getBytes("imagen"));
                 usuarios.add(usuario);
             }
         }catch (Exception ex){
@@ -62,13 +56,12 @@ public class UsuarioMySQL implements UsuarioDAO {
     }
     
     @Override
-    public ArrayList<Usuario> listarXNombre(String nombre, int rol) {
+    public ArrayList<Usuario> listarXNombre(String nombre) {
         ArrayList<Usuario> usuarios = new ArrayList<>();
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_USUARIO_X_NOMBRE(?,?)}");
+            cs = con.prepareCall("{call LISTAR_USUARIO_X_NOMBRE(?)}");
             cs.setString("_nombre", nombre);
-            cs.setInt("_rol", rol);
             rs = cs.executeQuery();
             while (rs.next()){
                 Usuario usuario = new Usuario();
@@ -80,12 +73,10 @@ public class UsuarioMySQL implements UsuarioDAO {
                 usuario.setApellido_paterno(rs.getString("apellido_paterno"));
                 usuario.setApellido_materno(rs.getString("apellido_materno"));
                 usuario.setDNI(rs.getString("DNI")); 
-                usuario.setCorreo(rs.getString("correo"));
-                usuario.setPassword(rs.getString("password"));
+                
                 usuario.setRol(new Rol());
                 usuario.getRol().setId_rol(rs.getInt("id_rol"));
                 usuario.getRol().setDescripcion(rs.getString("rol"));
-                usuario.setImagen(rs.getBytes("imagen"));
                 usuarios.add(usuario);
             }
         }catch (Exception ex){
@@ -102,58 +93,19 @@ public class UsuarioMySQL implements UsuarioDAO {
         int resultado = 0 ; 
         try {
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_PERSONA(?,?,?,?,?,?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_PERSONA(?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_persona", java.sql.Types.INTEGER);
             cs.setString("_fid_tipo",String.valueOf('N'));
             cs.setString("_nombre", usuario.getNombre());
             cs.setString("_apellido_paterno", usuario.getApellido_paterno());
             cs.setString("_apellido_materno", usuario.getApellido_materno());
             cs.setString("_DNI", usuario.getDNI());
-            cs.setBoolean("_VIP", false);
-            cs.setBoolean("_asociado", false);
-            cs.setBoolean("_cliente", false);
             cs.executeUpdate();
             usuario.setId_usuario(cs.getInt("_id_persona"));
             usuario.setId_persona(cs.getInt("_id_persona"));
             
             cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?,?,?,?,?,?)}");
             cs.setInt("_id_usuario",usuario.getId_persona());
-            cs.setInt("_fid_rol", usuario.getRol().getId_rol());
-            cs.setInt("_fid_restaurante", 1);
-            cs.setString("_usuario", usuario.getUsuario());
-            cs.setString("_password", usuario.getPassword());
-            cs.setDouble("_salario", usuario.getSalario());
-            cs.setString("_telefono", usuario.getTelefono());
-            cs.setString("_correo",usuario.getCorreo());
-            cs.setBytes("_imagen", usuario.getImagen());
-            cs.executeUpdate();
-            resultado = usuario.getId_usuario() ; 
-        }catch (Exception ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-        }
-        
-        return resultado ; 
-    }
-
-    @Override
-    public int modificarTodo(Usuario usuario) {
-        int resultado = 0 ; 
-        try {
-            con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_PERSONA(?,?,?,?,?,?,?)}");
-            cs.setInt("_id_persona",usuario.getId_usuario());
-            cs.setString("_nombre" , usuario.getNombre());
-            cs.setString("_apellido_paterno" , usuario.getApellido_paterno());
-            cs.setString("_apellido_materno" , usuario.getApellido_materno());
-            cs.setString("_DNI" , usuario.getDNI());
-            cs.setBoolean("_VIP", false);
-            cs.setBoolean("_asociado", false);
-            cs.executeUpdate();
-            
-            cs = con.prepareCall("{call MODIFICAR_USUARIO2(?,?,?,?,?,?,?,?,?)}");
-            cs.setInt("_id_usuario",usuario.getId_usuario());
             cs.setInt("_fid_rol", usuario.getRol().getId_rol());
             cs.setInt("_fid_restaurante", 1);
             cs.setString("_usuario", usuario.getUsuario());

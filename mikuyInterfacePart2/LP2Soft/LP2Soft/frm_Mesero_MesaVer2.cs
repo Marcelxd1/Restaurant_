@@ -63,7 +63,7 @@ namespace LP2Soft
                 for (int i = 0; i < limite; i++)
                 {
                     Button button = new Button();
-                    button.Size = new Size(158, 100);
+                    button.Size = new Size(150, 90);
                     button.Left = left;
                     button.Top = top;
                     button.Text = "Mesa_" + (i + 1).ToString();
@@ -76,7 +76,7 @@ namespace LP2Soft
                     button.Cursor = Cursors.Hand;
                     this.Controls.Add(button);
                     left += button.Width + 2;
-                    if (left >= 948)
+                    if (left >= 470)
                     {
                         left = 0;
                         top += button.Height + 2;
@@ -97,7 +97,7 @@ namespace LP2Soft
                     //}
 
                     if (lista_mesas[i].disponible == true)
-                        button.BackColor = Color.DarkSlateBlue;
+                        button.BackColor = Color.RoyalBlue;
                     else
                         button.BackColor = Color.IndianRed;
                     try

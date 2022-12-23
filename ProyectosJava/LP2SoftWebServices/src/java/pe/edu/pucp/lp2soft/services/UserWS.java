@@ -8,20 +8,16 @@ import pe.edu.pucp.lp2soft.user.dao.AsistenciaDAO;
 import pe.edu.pucp.lp2soft.user.dao.PersonaDAO;
 import pe.edu.pucp.lp2soft.user.dao.RestauranteDAO;
 import pe.edu.pucp.lp2soft.user.dao.RolDAO;
-import pe.edu.pucp.lp2soft.user.dao.SectorDAO;
 import pe.edu.pucp.lp2soft.user.dao.UsuarioDAO;
 import pe.edu.pucp.lp2soft.user.mysql.AsistenciaMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.PersonaMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.RestauranteMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.RolMySQL;
-import pe.edu.pucp.lp2soft.user.mysql.SectorMySQL;
 import pe.edu.pucp.lp2soft.user.mysql.UsuarioMySQL;
-import pe.edu.pucp.lp2soft.usuario.model.Actividad;
 import pe.edu.pucp.lp2soft.usuario.model.Asistencia;
 import pe.edu.pucp.lp2soft.usuario.model.Persona;
 import pe.edu.pucp.lp2soft.usuario.model.Restaurante;
 import pe.edu.pucp.lp2soft.usuario.model.Rol;
-import pe.edu.pucp.lp2soft.usuario.model.Sector;
 import pe.edu.pucp.lp2soft.usuario.model.Usuario;
 
 
@@ -33,7 +29,6 @@ public class UserWS {
     private PersonaDAO daoPersona = new PersonaMySQL();
     private RolDAO daoRol = new RolMySQL();
     private RestauranteDAO daoREst = new RestauranteMySQL();
-    private SectorDAO daoSector = new SectorMySQL();
     
     //ASISTENCIA =========================================================================
 
@@ -64,17 +59,6 @@ public class UserWS {
         ArrayList<Asistencia> asistencias = new ArrayList<>();
         try{
             asistencias= daoAsistencia.listarAsistencia();
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return asistencias;
-    }
-
-    @WebMethod(operationName = "listarAsistenciasUsuario")
-    public ArrayList<Asistencia> listarAsistenciasUsuario(int idUsuario) {
-        ArrayList<Asistencia> asistencias = new ArrayList<>();
-        try{
-            asistencias= daoAsistencia.listarAsistenciaUsuario(idUsuario);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -116,17 +100,6 @@ public class UserWS {
         return resultado;
     }
     
-    @WebMethod(operationName = "modificarUsuarioTodos")
-    public int modificarUsuarioTodos(@WebParam(name = "Usuario") Usuario usuario) {
-        int resultado = 0;
-        try{
-            resultado= daoUsuario.modificarTodo(usuario);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-    
     @WebMethod(operationName = "elminarUsuario")
     public int elminarUsuario(@WebParam(name = "idUsuario") int idUsuario) {
         int resultado = 0;
@@ -150,11 +123,10 @@ public class UserWS {
     }
     
     @WebMethod(operationName = "listarUsuariosXNombre")
-    public ArrayList<Usuario> listarUsuariosXNombre(@WebParam(name = "nombre") String nombre,
-            @WebParam(name = "rol") int rol) {
+    public ArrayList<Usuario> listarUsuariosXNombre(@WebParam(name = "nombre") String nombre) {
         ArrayList<Usuario> usuarios = new ArrayList<>();
         try{
-            usuarios= daoUsuario.listarXNombre(nombre,rol);
+            usuarios= daoUsuario.listarXNombre(nombre);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -196,10 +168,10 @@ public class UserWS {
     }
     
     @WebMethod(operationName = "listarPersona")
-    public ArrayList<Persona> listarPersona(String nombre) {
+    public ArrayList<Persona> listarPersona() {
         ArrayList<Persona> personas = new ArrayList<>();
         try{
-            personas= daoPersona.listarPersonasXnombre(nombre); 
+            personas= daoPersona.listarPersonas();
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -208,11 +180,10 @@ public class UserWS {
     
     
     @WebMethod(operationName = "listarClienteXNombre")
-    public ArrayList<Persona> listarClienteXNombre(@WebParam(name = "nombre") String nombre,
-            @WebParam(name = "sector")int sector,@WebParam(name = "actividad")int actividad) {
+    public ArrayList<Persona> listarClienteXNombre(@WebParam(name = "nombre") String nombre) {
         ArrayList<Persona> personas = new ArrayList<>();
         try{
-            personas = daoPersona.listarClientesXNombre(nombre,sector,actividad);
+            personas = daoPersona.listarClientesXNombre(nombre);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -352,29 +323,5 @@ public class UserWS {
             System.out.println(ex.getMessage());
         }
         return res;
-    }
-    
-    //=====================================================================================
-    
-    @WebMethod(operationName = "listarSectores")
-    public ArrayList<Sector> listarSectores() {
-        ArrayList<Sector> sectores = new ArrayList<>();
-        try{
-            sectores= daoSector.listarSectores();
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return sectores;
-    }
-    
-    @WebMethod(operationName = "listarActividadesXSector")
-    public ArrayList<Actividad> listarActividadesXSector(int idSector) {
-        ArrayList<Actividad> actividades = new ArrayList<>();
-        try{
-            actividades= daoSector.listarAcvXsector(idSector);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return actividades;
     }
 }

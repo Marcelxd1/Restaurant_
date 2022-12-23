@@ -14,6 +14,6 @@ import pe.edu.pucp.lp2soft.negocio.model.LineaPromocion;
 public interface LineaPromocionDAO {
     int insertar(LineaPromocion linea,int idPromo);
     int modificar(LineaPromocion linea,int idPromo);
-    int eliminar(int idLinea);
+    int eliminar(int idLinea,int idPromo);
     ArrayList<LineaPromocion> listarTodos( int idPromo);
 }

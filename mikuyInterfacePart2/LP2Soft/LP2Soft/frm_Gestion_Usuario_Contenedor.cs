@@ -44,7 +44,7 @@ namespace LP2Soft
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frm_Gestion_Usuario(Estado.Inicial,null));
+            abrirFormulario(new frm_Gestion_Usuario());
         }
 
         private void lblListarUsuarios_MouseEnter(object sender, EventArgs e)
@@ -84,17 +84,17 @@ namespace LP2Soft
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frm_Gestion_Usuario(Estado.Nuevo,null));
+            abrirFormulario(new frm_Gestion_Usuario());
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frm_Gestion_Usuario(Estado.Nuevo, null));
+            abrirFormulario(new frm_Gestion_Usuario());
         }
 
         private void lblCrearUsuario_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new frm_Gestion_Usuario(Estado.Nuevo, null));
+            abrirFormulario(new frm_Gestion_Usuario());
         }
 
         private void guna2ImageButton1_MouseEnter(object sender, EventArgs e)

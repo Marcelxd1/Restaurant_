@@ -127,7 +127,7 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox1.Image = global::LP2Soft.Properties.Resources.cerrardo;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.Location = new System.Drawing.Point(51, 68);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
@@ -180,7 +180,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelPlato);
             this.Controls.Add(this.panelGestionContenedor);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Gestion_Usuario_Contenedor";
             this.Text = "Gestion de Usuario";
             this.panelPlato.ResumeLayout(false);
