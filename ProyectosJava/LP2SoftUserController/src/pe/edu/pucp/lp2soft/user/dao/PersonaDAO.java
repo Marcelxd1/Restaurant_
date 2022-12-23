@@ -14,7 +14,7 @@ import pe.edu.pucp.lp2soft.usuario.model.Persona;
  */
 public interface PersonaDAO {
     ArrayList<Persona> listarPersonasTodas();
-    ArrayList<Persona> listarPersonas();
+    ArrayList<Persona> listarPersonasXnombre(String nombre);
     int insertarPersona(Persona persona);
     int modificarPersona(Persona persona);
     int eliminarPersona(int idPersona);
@@ -22,5 +22,5 @@ public interface PersonaDAO {
     int insertarEmpresa(Persona persona );
     int modificarEmpresa(Persona persona);
     Persona listarPorId(int idPersona);
-    ArrayList<Persona> listarClientesXNombre(String nombre);
+    ArrayList<Persona> listarClientesXNombre(String nombre, int sector,int actividad);
 }

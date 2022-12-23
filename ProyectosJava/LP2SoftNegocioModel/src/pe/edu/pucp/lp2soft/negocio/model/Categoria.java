@@ -4,6 +4,7 @@ public class Categoria {
     private int idCategoria;
     private String nombre;
     private String descripcion;
+    private byte[] icono;
     private boolean activo;
 
     public Categoria(String nombre, String descripcion) {
@@ -45,4 +46,14 @@ public class Categoria {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }   
+
+    public byte[] getIcono() {
+        return icono;
+    }
+
+    public void setIcono(byte[] icono) {
+        this.icono = icono;
+    }
+    
+    
 }

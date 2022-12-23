@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.lp2soft.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ReporteWS" targetNamespace="http://services.lp2soft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/LP2SoftWebServices/ReporteWS?xsd=1" namespace="http://services.lp2soft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="generarBoletaVenta">
+    <part name="parameters" element="tns:generarBoletaVenta" />
+  </message>
+  <message name="generarBoletaVentaResponse">
+    <part name="parameters" element="tns:generarBoletaVentaResponse" />
+  </message>
+  <message name="generarReportePlatosMasVendidos">
+    <part name="parameters" element="tns:generarReportePlatosMasVendidos" />
+  </message>
+  <message name="generarReportePlatosMasVendidosResponse">
+    <part name="parameters" element="tns:generarReportePlatosMasVendidosResponse" />
+  </message>
+  <message name="generarFacturaVenta">
+    <part name="parameters" element="tns:generarFacturaVenta" />
+  </message>
+  <message name="generarFacturaVentaResponse">
+    <part name="parameters" element="tns:generarFacturaVentaResponse" />
+  </message>
+  <message name="generarReportePedidoxFecha">
+    <part name="parameters" element="tns:generarReportePedidoxFecha" />
+  </message>
+  <message name="generarReportePedidoxFechaResponse">
+    <part name="parameters" element="tns:generarReportePedidoxFechaResponse" />
+  </message>
+  <message name="generarReporteAsistencia">
+    <part name="parameters" element="tns:generarReporteAsistencia" />
+  </message>
+  <message name="generarReporteAsistenciaResponse">
+    <part name="parameters" element="tns:generarReporteAsistenciaResponse" />
+  </message>
+  <message name="generarReporteCajaxFecha">
+    <part name="parameters" element="tns:generarReporteCajaxFecha" />
+  </message>
+  <message name="generarReporteCajaxFechaResponse">
+    <part name="parameters" element="tns:generarReporteCajaxFechaResponse" />
+  </message>
+  <message name="generarReporteVentasXDiaFecha">
+    <part name="parameters" element="tns:generarReporteVentasXDiaFecha" />
+  </message>
+  <message name="generarReporteVentasXDiaFechaResponse">
+    <part name="parameters" element="tns:generarReporteVentasXDiaFechaResponse" />
+  </message>
+  <portType name="ReporteWS">
+    <operation name="generarBoletaVenta">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarBoletaVentaResponse" message="tns:generarBoletaVentaResponse" />
+    </operation>
+    <operation name="generarReportePlatosMasVendidos">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReportePlatosMasVendidosRequest" message="tns:generarReportePlatosMasVendidos" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReportePlatosMasVendidosResponse" message="tns:generarReportePlatosMasVendidosResponse" />
+    </operation>
+    <operation name="generarFacturaVenta">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaVentaRequest" message="tns:generarFacturaVenta" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarFacturaVentaResponse" message="tns:generarFacturaVentaResponse" />
+    </operation>
+    <operation name="generarReportePedidoxFecha">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReportePedidoxFechaRequest" message="tns:generarReportePedidoxFecha" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReportePedidoxFechaResponse" message="tns:generarReportePedidoxFechaResponse" />
+    </operation>
+    <operation name="generarReporteAsistencia">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaRequest" message="tns:generarReporteAsistencia" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteAsistenciaResponse" message="tns:generarReporteAsistenciaResponse" />
+    </operation>
+    <operation name="generarReporteCajaxFecha">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteCajaxFechaRequest" message="tns:generarReporteCajaxFecha" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteCajaxFechaResponse" message="tns:generarReporteCajaxFechaResponse" />
+    </operation>
+    <operation name="generarReporteVentasXDiaFecha">
+      <input wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteVentasXDiaFechaRequest" message="tns:generarReporteVentasXDiaFecha" />
+      <output wsam:Action="http://services.lp2soft.pucp.edu.pe/ReporteWS/generarReporteVentasXDiaFechaResponse" message="tns:generarReporteVentasXDiaFechaResponse" />
+    </operation>
+  </portType>
+  <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="generarBoletaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReportePlatosMasVendidos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarFacturaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReportePedidoxFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteAsistencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteCajaxFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteVentasXDiaFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ReporteWS">
+    <port name="ReporteWSPort" binding="tns:ReporteWSPortBinding">
+      <soap:address location="http://localhost:8080/LP2SoftWebServices/ReporteWS" />
+    </port>
+  </service>
+</definitions>

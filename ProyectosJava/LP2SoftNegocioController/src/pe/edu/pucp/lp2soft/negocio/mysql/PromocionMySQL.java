@@ -85,20 +85,26 @@ public class PromocionMySQL implements PromocionDAO{
             cs.setString("_descripcion", promocion.getDescripcion());
             cs.setBoolean("_estado", promocion.isEstado());
             cs.executeUpdate();
+            
+            con= DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call ELIMINAR_LINEA_PROMOCION(?)}");
+            cs.setInt("_idlinea", promocion.getIdItemVendible());
+            cs.executeUpdate();
            
-            //modificamos cada una de las Lineas asociadas a la promo 
             for (LineaPromocion linea : promocion.getLista_de_Comidas()) {
-                cs= con.prepareCall("{call MODIFICAR_LINEA_PROMOCION(?,?,?,?,?)}");
-                cs.setInt("_id_linea_promocion", linea.getIdLineaPromocion()); // el _id_linea_promocion es aparte del itemvendi
-                cs.setInt("_unidad", linea.getUnidades());
-                cs.setInt("_fid_promocion", promocion.getIdItemVendible());//aun necesita la FK 
-                //cs.setInt("_fid_promocion", linea.getPromocion().getIdItemVendible());//este es el item vendible
-                cs.setInt("_fid_producto", linea.getProducto().getIdItemVendible());
-                cs.setBoolean("_estado", linea.isEstado());
+                cs= con.prepareCall("{call INSERTAR_LINEA_PROMOCION(?,?,?,?)}");
+                cs.registerOutParameter("_idLineaPromocion", java.sql.Types.INTEGER);
+                cs.setInt("_unidades", linea.getUnidades());
+                cs.setInt("_fid_promocion", promocion.getIdItemVendible());
+                //cs.setInt("_fid_promocion", linea.getPromocion().getIdItemVendible());
+                cs.setInt("_fid_producto", linea.getProducto().getIdItemVendible());//no se usa el idProducto
+                linea.setEstado(true); //porque si lo inserto entrara por defecto como activo
+                
                 cs.executeUpdate();
+                linea.setIdLineaPromocion(cs.getInt("_idLineaPromocion"));//Este es el generado
                 
             }
-            resultado = 1;
+            resultado = promocion.getIdItemVendible();
             
         }catch(Exception ex){
             System.out.println(ex.getMessage());

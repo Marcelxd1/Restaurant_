@@ -65,13 +65,12 @@ public class LineaPromocionMYSQL implements LineaPromocionDAO{
     }
 
     @Override
-    public int eliminar(int idLinea, int idPromo) {
+    public int eliminar(int idLinea) {
         int resultado = 0;
         try{
             con= DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call ELIMINAR_LINEA_PROMOCION(?,?)}");
+            cs = con.prepareCall("{call ELIMINAR_LINEA_PROMOCION(?)}");
             cs.setInt("_idlinea", idLinea);
-            cs.setInt("_idPromo", idPromo);
             cs.executeUpdate();
             resultado = 1;
             
