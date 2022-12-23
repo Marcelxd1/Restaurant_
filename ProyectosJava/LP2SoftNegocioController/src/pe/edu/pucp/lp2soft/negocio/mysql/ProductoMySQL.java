@@ -114,12 +114,14 @@ public class ProductoMySQL implements ProductoDAO{
     }
 
     @Override
-    public ArrayList<Producto> listarXNombre(String nombre) {
+    public ArrayList<Producto> listarXNombre(String nombre,int idCategoria, char tipo) {
         ArrayList<Producto> productos = new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_PRODUCTOS_X_NOMBRE(?)}");
+            cs = con.prepareCall("{call LISTAR_PRODUCTOS_X_NOMBRE(?,?,?)}");
             cs.setString("_nombre",nombre);
+            cs.setInt("_id_categoria",idCategoria);
+            cs.setString("_tipo",String.valueOf(tipo));
             rs = cs.executeQuery();
             while(rs.next()){
                 Producto producto = new Producto();

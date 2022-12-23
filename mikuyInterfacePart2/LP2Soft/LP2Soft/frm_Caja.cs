@@ -67,8 +67,7 @@ namespace LP2Soft
             
             if (transaccions != null)
                 dgvTransaccion.DataSource = new BindingList<CajaWS.transaccion>(transaccions);
-            else
-                MessageBox.Show("ERROR tabla nula", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           
         }
 
         private void dgvTransaccion_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -107,7 +106,7 @@ namespace LP2Soft
             restaurante = daoUsuario.BuscaRestaurante(1);
             txtTotalCaja.Text = restaurante.dineroActual.ToString("N2");
             tran = daoCaja.listarTransacciones();
-            double totalGasto = 0, totalPedido = 0,totMesa=0,totLLeva =0,totTarj=0,totEfec=0,totModo;
+            double totalGasto = 0, totalPedido = 0,totMesa=0,totLLeva =0,totTarj=0,totEfec=0;
             foreach(CajaWS.transaccion t in tran)
             {
                 if(t.tipo == 'G')//Gastos

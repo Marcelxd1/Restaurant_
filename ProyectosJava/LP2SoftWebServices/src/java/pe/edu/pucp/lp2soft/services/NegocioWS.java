@@ -116,10 +116,10 @@ public class NegocioWS {
         return resultado;
     }
     @WebMethod(operationName = "eliminarLineaPromo")
-    public int eliminarLineaPromo(@WebParam(name = "idlinea")int idlinea,@WebParam(name = "idPromo")int idPromo ){
+    public int eliminarLineaPromo(@WebParam(name = "idlinea")int idlinea ){
         int resultado = 0;
         try{
-            resultado=daolineaPromo.eliminar(idlinea,idPromo);
+            resultado=daolineaPromo.eliminar(idlinea);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -244,10 +244,10 @@ public class NegocioWS {
     }
     
     @WebMethod(operationName = "listarProductoXNombre")
-    public ArrayList<Producto> listarProductoXNombre(@WebParam(name = "nombre") String nombre) {
+    public ArrayList<Producto> listarProductoXNombre(@WebParam(name = "nombre") String nombre,int idCategoria, char tipo) {
         ArrayList<Producto> productos = new ArrayList<>();
         try{
-            productos = daoProducto.listarXNombre(nombre);
+            productos = daoProducto.listarXNombre(nombre, idCategoria,  tipo);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }

@@ -30,7 +30,7 @@ namespace LP2Soft
             string indicador = "";
             if (txtBuscar.Text != "Buscar")
                 indicador = txtBuscar.Text;
-            UserWS.persona[] personas = daoCliente.listarClienteXNombre(indicador);
+            UserWS.persona[] personas = daoCliente.listarClienteXNombre(indicador,0,0);
             if (personas != null)
                 dgvListarClientes.DataSource = new BindingList<UserWS.persona>(personas);
             else

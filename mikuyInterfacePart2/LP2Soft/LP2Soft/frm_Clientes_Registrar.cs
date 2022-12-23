@@ -18,18 +18,33 @@ namespace LP2Soft
         private UserWS.UserWSClient daoUser;
         private Estado _estado;
         private int dato = 0;
+        private bool emp = false;
+        private bool per = true;
+        private BindingList<UserWS.sector> sects;
 
         public persona ClienteSeleccionado { get => _clienteSeleccionado; set => _clienteSeleccionado = value; }
         public int Dato { get => dato; set => dato = value; }
 
-        public frm_Clientes_Registrar()
+        public frm_Clientes_Registrar(Estado estado, UserWS.persona ppersona)
         {
             InitializeComponent();
+            _estado = estado;
             daoUser = new UserWS.UserWSClient();
             _clienteSeleccionado = new UserWS.persona();
-            _estado = Estado.Inicial;
+            _clienteSeleccionado = ppersona;
+            UserWS.sector sector = new UserWS.sector();
+            sects = new BindingList<UserWS.sector>();
+            sects = new BindingList<UserWS.sector>(daoUser.listarSectores().ToList());
+            sector.id_sector = 0;
+            sector.descripcion = "TODOS";
+            sects.Insert(0, sector);
+            cbSector.DataSource = sects;
+            cbSector.DisplayMember = "descripcion";
+            cbSector.ValueMember = "id_sector";
+            cbActividad.DataSource = daoUser.listarActividadesXSector(0).ToList();
+            cbActividad.DisplayMember = "descripcion";
+            cbActividad.ValueMember = "id_actividad";
             establecerEstadoComponentes();
-            limpiarComponentes();
         }
 
         public void establecerEstadoComponentes()
@@ -37,35 +52,20 @@ namespace LP2Soft
             switch (_estado)
             {
                 case Estado.Nuevo:
-                    rbEmpresa.Enabled = true;
-                    rbPersona.Enabled = true;
                     btnRegistrar.Enabled = true;
                     btnCancelar.Enabled = true;
 
-                    txtNombre.Enabled = false;
-                    txtApellidoPaterno.Enabled = false;
-                    txtApellidoMaterno.Enabled = false;
-                    txtDNI.Enabled = false;
-                    txtRuc.Enabled = false;
-                    txtRazon.Enabled = false;
-
-                    txtNombre.Show() ;
-                    lblNombre.Show() ;
-                    txtApellidoPaterno.Show() ;
-                    lblApellidoPaterno.Show();
-                    txtApellidoMaterno.Show() ;
-                    lblApellidoMaterno.Show();
-                    txtDNI.Show() ;
-                    lblDNI.Show() ;
-                    txtRuc.Show() ;
-                    lblRuc.Show();
-                    txtRazon.Show();
-                    lblRazon.Show();
+                    txtNombre.Enabled = true;
+                    txtApellidoPaterno.Enabled = true;
+                    txtApellidoMaterno.Enabled = true;
+                    txtDNI.Enabled = true;
+                    txtRuc.Enabled = true;
+                    txtRazon.Enabled = true;
+                    btnRegistrar.Text = "Registrar";
+                    limpiarComponentes();
                     break;
 
                 case Estado.Inicial:
-                    rbEmpresa.Enabled = true;
-                    rbPersona.Enabled = true;
                     btnRegistrar.Enabled = false;
                     btnCancelar.Enabled = false;
 
@@ -90,9 +90,106 @@ namespace LP2Soft
                     lblRazon.Show();
                     limpiarComponentes();
                     break;
+
+                case Estado.Modificar:
+                    btnRegistrar.Enabled = true;
+                    btnCancelar.Enabled = true;
+
+                    txtNombre.Enabled = true;
+                    txtApellidoPaterno.Enabled = true;
+                    txtApellidoMaterno.Enabled = true;
+                    txtDNI.Enabled = true;
+                    txtRuc.Enabled = true;
+                    txtRazon.Enabled = true;
+                    btnRegistrar.Text = "Modificar";
+                    llenarDatos();
+                    break;
             }
         }
 
+        private void llenarDatos()
+        {
+            txtNombre.Text = _clienteSeleccionado.nombre;
+
+            if (_clienteSeleccionado.tipo == 'N')    //si es natural
+            {
+                per = true;
+                emp = false;
+                EstablecerPersona();
+                txtApellidoMaterno.Text = _clienteSeleccionado.apellido_materno;
+                txtApellidoPaterno.Text = _clienteSeleccionado.apellido_paterno;
+                txtDNI.Text = _clienteSeleccionado.DNI;
+            }
+            else                        //si es juridico
+            {
+                per = false;
+                emp = true;
+                EstablecerPersona();
+                txtRuc.Text = _clienteSeleccionado.ruc;
+                cbSector.SelectedIndex = _clienteSeleccionado.actividad.sector.id_sector;
+                int i = 0;
+                foreach (UserWS.actividad act in cbActividad.Items)
+                {
+                    if(act.id_actividad == _clienteSeleccionado.actividad.id_actividad)
+                    {
+                        cbActividad.SelectedIndex = i;
+                        break;
+                    }
+                    i++;
+                }
+                txtRazon.Text = _clienteSeleccionado.razon_social;
+            }
+            if(_clienteSeleccionado.VIP == true)
+                cbVIP.Checked = true;
+            if(_clienteSeleccionado.asociado == true)
+                cbAsociado.Checked = true;
+        }
+
+        private void EstablecerPersona()
+        {
+            if(per == true)
+            {
+                txtNombre.Show();
+                lblNombre.Show();
+                txtApellidoPaterno.Show();
+                lblApellidoPaterno.Text = "Apellido Paterno";
+                lblApellidoPaterno.Show();
+                txtApellidoMaterno.Show();
+                lblApellidoMaterno.Text = "Apellido Materno";
+                lblApellidoMaterno.Show();
+                txtDNI.Show();
+                lblDNI.Show();
+                txtRuc.Hide();
+                lblRuc.Hide();
+                txtRazon.Hide();
+                lblRazon.Hide();
+                cbSector.Hide();
+                cbActividad.Hide();
+                btnPersona.BackColor = Color.SlateBlue;
+                btnEmpresa.BackColor = Color.WhiteSmoke;
+            }
+            else
+            {
+                txtNombre.Show();
+                lblNombre.Show();
+                txtApellidoPaterno.Hide();
+                lblApellidoPaterno.Show();
+                lblApellidoPaterno.Text = "Sector";
+                txtApellidoMaterno.Hide();
+                lblApellidoMaterno.Show();
+                lblApellidoMaterno.Text = "Actividad";
+                txtDNI.Hide();
+                lblDNI.Hide();
+                txtRuc.Show();
+                lblRuc.Show();
+                txtRazon.Show();
+                lblRazon.Show();
+                cbSector.Show();
+                cbActividad.Show();
+                btnPersona.BackColor = Color.WhiteSmoke;
+                btnEmpresa.BackColor = Color.SlateBlue;
+            }
+        }
         public void limpiarComponentes()
         {
             txtNombre.Text = "";
@@ -101,37 +198,23 @@ namespace LP2Soft
             txtDNI.Text = "";
             txtRuc.Text = "";
             txtRazon.Text = "";
+            cbAsociado.Checked = false;
+            cbVIP.Checked = false;
             _cliente = new UserWS.persona();
+            cbSector.SelectedIndex = 0;
+            epRazon.SetError(txtRazon, "");
+            epApMaterno.SetError(txtRazon, "");
+            epApPaterno.SetError(txtRazon, "");
+            epDNI.SetError(txtRazon, "");
+            epRUC.SetError(txtRazon, "");
+            per = true;
+            emp = false;
+            EstablecerPersona();
         }
 
         private void rbPersona_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbPersona.Checked) { 
-                _estado = Estado.Nuevo;
-                establecerEstadoComponentes();
-                txtNombre.Enabled = true;
-                txtApellidoPaterno.Enabled = true;
-                txtApellidoMaterno.Enabled = true;
-                txtDNI.Enabled = true;
-                lblRuc.Hide();
-                txtRuc.Hide();
-                lblRazon.Hide();
-                txtRazon.Hide();
-            }
-            else
-            {
-                _estado = Estado.Nuevo;
-                establecerEstadoComponentes();
-                txtNombre.Enabled = true;
-                txtRuc.Enabled = true;
-                txtRazon.Enabled = true;
-                txtApellidoPaterno.Hide();
-                lblApellidoPaterno.Hide();
-                txtApellidoMaterno.Hide();
-                lblApellidoMaterno.Hide();
-                txtDNI.Hide();
-                lblDNI.Hide();
-            }
+            
         }
 
         private void rbEmpresa_CheckedChanged(object sender, EventArgs e)
@@ -147,7 +230,7 @@ namespace LP2Soft
                 MessageBox.Show("Debe ingresar un nombre", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (rbPersona.Checked == true && rbEmpresa.Checked == false)
+            if (per == true && emp == false)
             {
 
                 if (txtDNI.Text.Trim().Length != 8)
@@ -166,20 +249,20 @@ namespace LP2Soft
                 }
                 if (txtApellidoPaterno.Text.Trim() == "")
                 {
-                    MessageBox.Show("Debe ingresar un apellido", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe ingresar un apellido paterno", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (txtApellidoMaterno.Text.Trim() == "")
                 {
-                    MessageBox.Show("Debe ingresar un apellido", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe ingresar un apellido materno", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 _cliente.DNI = txtDNI.Text.Trim();
-                _cliente.apellido_paterno = txtApellidoPaterno.Text.Trim();
-                _cliente.apellido_materno = txtApellidoMaterno.Text.Trim();
+                _cliente.apellido_paterno = txtApellidoPaterno.Text.Trim().ToUpper();
+                _cliente.apellido_materno = txtApellidoMaterno.Text.Trim().ToUpper();
                 _cliente.tipo = 'N';
             }
-            else if(rbEmpresa.Checked == true && rbPersona.Checked == false)
+            else if(emp == true && per == false)
             {
                 if (txtRuc.Text.Trim().Length != 11)
                 {
@@ -201,12 +284,15 @@ namespace LP2Soft
                     return;
                 }
                 _cliente.ruc = txtRuc.Text.Trim();
-                _cliente.razon_social = txtRazon.Text.Trim();
+                _cliente.razon_social = txtRazon.Text.Trim().ToUpper();
+                _cliente.actividad = (UserWS.actividad)cbActividad.SelectedItem;
                 _cliente.tipo = 'J';
             }
 
-            _cliente.nombre = txtNombre.Text.Trim();
-            if(true)
+            _cliente.nombre = txtNombre.Text.Trim().ToUpper();
+            _cliente.VIP = cbVIP.Checked;
+            _cliente.asociado = cbAsociado.Checked;
+            if(_estado == Estado.Nuevo)
             {
                 int resultado;
                 if (_cliente.tipo == 'J')
@@ -215,12 +301,8 @@ namespace LP2Soft
                     if (resultado != 0)
                     {
                         MessageBox.Show("Se ha registrado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        _estado = Estado.Inicial;
-                        _clienteSeleccionado = _cliente;
-                        if(dato == 1)
-                        {
-                            this.DialogResult = DialogResult.OK;
-                        }
+                        _estado = Estado.Nuevo;
+                        this.DialogResult = DialogResult.OK;
                         establecerEstadoComponentes();
                     }
                     else
@@ -233,8 +315,8 @@ namespace LP2Soft
                     if (resultado != 0)
                     {
                         MessageBox.Show("Se ha registrado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        _estado = Estado.Inicial;
-
+                        _estado = Estado.Nuevo;
+                        this.DialogResult=DialogResult.OK;
                         establecerEstadoComponentes();
                     }
                     else
@@ -242,19 +324,51 @@ namespace LP2Soft
 
                 }
             }
+            else if(_estado == Estado.Modificar)
+            {
+                int resultado;
+                if (_cliente.tipo == 'J')
+                {
+                    resultado = daoUser.modificarEmpresa(_cliente);
+                    if (resultado != 0)
+                    {
+                        MessageBox.Show("Se ha modificado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error con la modificación", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else if (_cliente.tipo == 'N')
+                {
+                    resultado = daoUser.modificarPersona(_cliente);
+                    if (resultado != 0)
+                    {
+                        MessageBox.Show("Se ha modificado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error con la modificación", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            _estado = Estado.Inicial;
-            limpiarComponentes();
-            establecerEstadoComponentes();
-            epNombre.SetError(txtNombre, "");
-            epApPaterno.SetError(txtApellidoPaterno, "");
-            epApMaterno.SetError(txtApellidoMaterno, "");
-            epDNI.SetError(txtDNI, "");
-            epRazon.SetError(txtRazon, "");
-            epRUC.SetError(txtRuc, "");
+            if (_estado == Estado.Nuevo)
+            {
+                _estado = Estado.Nuevo;
+                limpiarComponentes();
+                establecerEstadoComponentes();
+            }
+            else if(_estado == Estado.Modificar)
+            {
+                this.DialogResult=DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -364,5 +478,52 @@ namespace LP2Soft
             else
                 epRUC.SetError(txtRuc, "");
         }
+
+        private void lblDNI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDNI_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRuc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRuc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEmpresa_Click(object sender, EventArgs e)
+        {
+            if (emp == false)
+            {
+                emp = true;
+                per = false;
+                EstablecerPersona();
+            }
+            
+        }
+
+        private void btnPersona_Click(object sender, EventArgs e)
+        {
+            if (per == false)
+            {
+                per = true;
+                emp = false;
+                EstablecerPersona();
+            }
+        }
+
+        private void cbSector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbActividad.DataSource = daoUser.listarActividadesXSector(cbSector.SelectedIndex);
+        }
+
     }
 }

@@ -32,6 +32,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2">
       <HintPath>G:\USUARIO\Descargas\GUNA\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 2.0\Guna.UI2.dll</HintPath>
@@ -103,6 +112,12 @@
     </Compile>
     <Compile Include="frm_Cajero_Pedidos_Mesa.Designer.cs">
       <DependentUpon>frm_Cajero_Pedidos_Mesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Gestion_Productos_ListarPlatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Gestion_Productos_ListarPlatos.Designer.cs">
+      <DependentUpon>frm_Gestion_Productos_ListarPlatos.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Gestion_Reportes.cs">
       <SubType>Form</SubType>
@@ -324,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Cajero_Pedidos_Mesa.resx">
       <DependentUpon>frm_Cajero_Pedidos_Mesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Gestion_Productos_ListarPlatos.resx">
+      <DependentUpon>frm_Gestion_Productos_ListarPlatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Reportes.resx">
       <DependentUpon>frm_Gestion_Reportes.cs</DependentUpon>
@@ -653,6 +671,9 @@
     <None Include="Connected Services\ReporteWS\ReporteWS1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.actividad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.asistencia.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -692,7 +713,13 @@
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.insertarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarActividadesXSectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarAsistenciasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarAsistenciasUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarClienteXNombreResponse.datasource">
@@ -708,6 +735,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarRolTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarSectoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.listarTodosUsuariosResponse.datasource">
@@ -728,6 +758,9 @@
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.modificarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.modificarUsuarioTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.persona.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -735,6 +768,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.rol.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UserWS\LP2Soft.UserWS.sector.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\UserWS\LP2Soft.UserWS.usuario.datasource">
@@ -750,6 +786,7 @@
     <None Include="Connected Services\UserWS\UserWS1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -903,6 +940,38 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pedir.png" />
+    <None Include="Resources\parrilla.png" />
+    <None Include="Resources\sodas.png" />
+    <None Include="Resources\pollos.png" />
+    <None Include="Resources\postres.png" />
+    <None Include="Resources\snacks.png" />
+    <None Include="Resources\pajarito.png" />
+    <None Include="Resources\subir.png" />
+    <None Include="Resources\ulpoad.png" />
+    <None Include="Resources\quinti.png" />
+    <None Include="Resources\fondo.png" />
+    <None Include="Resources\fondo2.png" />
+    <None Include="Resources\eliminar1.png" />
+    <None Include="Resources\borrar.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\caerrar.png" />
+    <None Include="Resources\cerrardo.png" />
+    <None Include="Resources\generalComida.png" />
+    <None Include="Resources\ensaldas.png" />
+    <None Include="Resources\hamburguesas.png" />
+    <Content Include="Resources\foni.png" />
+    <Content Include="Resources\invisible.png" />
+    <None Include="Resources\invisible1.png" />
+    <None Include="Resources\new.png" />
+    <None Include="Resources\nuuu.png" />
+    <None Include="Resources\marina.png" />
+    <None Include="Resources\licores.png" />
+    <None Include="Resources\newImagen.png" />
+    <None Include="Resources\lupa1.png" />
+    <None Include="Resources\listo.png" />
+    <Content Include="Resources\ojo.png" />
+    <None Include="Resources\ojo1.png" />
     <None Include="Resources\subir foto.png" />
     <None Include="Resources\llevar.png" />
     <None Include="Resources\pago.png" />

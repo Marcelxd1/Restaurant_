@@ -44,6 +44,35 @@ public class AsistenciaMySQL implements AsistenciaDAO {
         
         return asistencias ;
     }
+    
+    @Override
+    public ArrayList<Asistencia> listarAsistenciaUsuario(int idUsuario) {
+        ArrayList<Asistencia> asistencias = new ArrayList<>();
+        try {
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_ASISTENCIA_USUARIO(?)}");
+            cs.setInt("_id_usuario", idUsuario);
+            rs = cs.executeQuery();
+            while (rs.next()){
+                Asistencia asist = new Asistencia();
+                asist.setId_asistencia(rs.getInt("id_asistencia"));
+                asist.setHora_inicio(rs.getTime("hora_inicio"));
+                asist.setHora_fin(rs.getTime("hora_fin"));
+                asist.setFecha(rs.getDate("fecha"));
+                asist.setUsuario(new Usuario());
+                asist.getUsuario().setId_usuario(rs.getInt("id_usuario"));
+                asist.getUsuario().setNombre(rs.getString("nombre"));
+                asist.getUsuario().setDNI(rs.getString("DNI"));
+                asistencias.add(asist);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return asistencias ;
+    }
 
     @Override
     public int registrarAsistencia(int idUsuario ) {

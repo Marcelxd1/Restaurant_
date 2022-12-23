@@ -10,21 +10,21 @@ namespace LP2Soft
     {
         private Estado _estado;
         private NegocioWS.producto _producto;
+        private NegocioWS.producto prodSelecciona;
         private NegocioWS.NegocioWSClient daoNegocio;
         private string _rutaFotoPortada;
 
-        public frm_Gestion_Productos_RegistroPlatos()
+        public frm_Gestion_Productos_RegistroPlatos(Estado estado, NegocioWS.producto producto)
         {
             InitializeComponent();
             daoNegocio = new NegocioWS.NegocioWSClient();
-            dgvProductos.AutoGenerateColumns = false;
-            cargarTabla();
             cbCategoria.DataSource = daoNegocio.listarTodasCategorias();
             cbCategoria.DisplayMember = "nombre";
             cbCategoria.ValueMember = "idCategoria";
-            _estado = Estado.Inicial;
-            establecerEstadoComponentes();
+            _estado = estado;
+            prodSelecciona = producto;
             limpiarComponentes();
+            establecerEstadoComponentes();
         }
 
         public void establecerEstadoComponentes()
@@ -32,11 +32,8 @@ namespace LP2Soft
             switch (_estado)
             {
                 case Estado.Inicial:
-                    btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
-                    btnModificar.Enabled = true;
                     btnSubirFoto.Enabled = false;
-                    btnEliminar.Enabled = true;
                     txtNombre.Enabled = false;
                     txtDescripcion.Enabled = false;
                     txtPrecio.Enabled = false;
@@ -46,10 +43,7 @@ namespace LP2Soft
                     cbCategoria.Enabled = false;
                     break;
                 case Estado.Modificar:
-                    btnNuevo.Enabled = true;
                     btnGuardar.Enabled = true;
-                    btnModificar.Enabled = true;
-                    btnEliminar.Enabled = true;
                     btnSubirFoto.Enabled = true;
                     txtNombre.Enabled = true;
                     txtDescripcion.Enabled = true;
@@ -58,12 +52,11 @@ namespace LP2Soft
                     rbBebida.Enabled = true;
                     rbPlato.Enabled = true;
                     cbCategoria.Enabled = true;
+                    btnGuardar.Text = "Modificar";
+                    completaDatos();
                     break;
                 case Estado.Nuevo:
-                    btnNuevo.Enabled = true;
                     btnGuardar.Enabled = true;
-                    btnModificar.Enabled = true;
-                    btnEliminar.Enabled = true;
                     btnSubirFoto.Enabled=true;
                     txtNombre.Enabled = true;
                     txtDescripcion.Enabled = true;
@@ -72,6 +65,7 @@ namespace LP2Soft
                     rbBebida.Enabled = true;
                     rbPlato.Enabled = true;
                     cbCategoria.Enabled = true;
+                    btnGuardar.Text = "Registrar";
                     break;
 
             }
@@ -102,9 +96,9 @@ namespace LP2Soft
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            _estado = Estado.Inicial;
-            limpiarComponentes();
-            establecerEstadoComponentes();
+            
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -131,8 +125,10 @@ namespace LP2Soft
                     if (resultado != 0)
                     {
                         MessageBox.Show("Se ha registrado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        _estado = Estado.Inicial;
+                        _estado = Estado.Nuevo;
+                        limpiarComponentes();
                         establecerEstadoComponentes();
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                         MessageBox.Show("Ha ocurrido un error con el registro", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -140,78 +136,55 @@ namespace LP2Soft
                 }
                 else if (_estado == Estado.Modificar)
                 {
+                    _producto.idItemVendible = prodSelecciona.idItemVendible;
                     int resultado = daoNegocio.modificarProducto(_producto);
                     if (resultado != 0)
                     {
                         MessageBox.Show("Se ha modificado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        _estado = Estado.Inicial;
-                        establecerEstadoComponentes();
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
                     }
                     else
                         MessageBox.Show("Ha ocurrido un error con la modificación", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                cargarTabla();
             }
             else { return; }
 
         }
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            _producto = (NegocioWS.producto)dgvProductos.CurrentRow.DataBoundItem;
-            int resultado = daoNegocio.eliminarProducto(_producto.idProducto);
-            
-            if (resultado != 0)
-            {
-                MessageBox.Show("Se ha eliminado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _estado = Estado.Inicial;
-                establecerEstadoComponentes();
-            }
-            else
-                MessageBox.Show("Ha ocurrido un error con la eliminación", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            cargarTabla();
-        }
+        
 
         private void rbBebida_CheckedChanged(object sender, EventArgs e)
         {
             txtPresentacion.Enabled = rbBebida.Checked;
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void completaDatos()
         {
-            _producto = (NegocioWS.producto)dgvProductos.CurrentRow.DataBoundItem;
-            txtNombre.Text = _producto.nombre;
-            txtDescripcion.Text = _producto.descripcion;
-            txtPrecio.Text = _producto.precio.ToString("N2");
-            if(_producto.imagen != null) { 
-                MemoryStream ms = new MemoryStream(_producto.imagen);
+            //prodSelecciona = (NegocioWS.producto)dgvProductos.CurrentRow.DataBoundItem;
+            txtNombre.Text = prodSelecciona.nombre;
+            txtDescripcion.Text = prodSelecciona.descripcion;
+            txtPrecio.Text = prodSelecciona.precio.ToString("N2");
+            if(prodSelecciona.imagen != null) { 
+                MemoryStream ms = new MemoryStream(prodSelecciona.imagen);
                 pbPlato.Image = new Bitmap(ms);
             }
             else pbPlato.Image = null;
-            if (_producto.tipoProducto == 'B')
+            if (prodSelecciona.tipoProducto == 'B')
             {
                 rbBebida.Checked = true;
                 //rbPlato.Checked = true;
-                txtPresentacion.Text = _producto.presentacion;
+                txtPresentacion.Text = prodSelecciona.presentacion;
             }
             else
             {
                 rbPlato.Checked= true;
                 txtPresentacion.Text = "";
             }
-            cbCategoria.SelectedValue = _producto.categoria.idCategoria;
-            _estado = Estado.Modificar;
-            establecerEstadoComponentes();
+            cbCategoria.SelectedValue = prodSelecciona.categoria.idCategoria;
         }
 
-        private void txtBuscar_DoubleClick(object sender, EventArgs e)
-        {
-            txtBuscar.Text = "";
-        }
-
-        private void txtBuscar_IconRightClick(object sender, EventArgs e)
-        {
-            cargarTabla();
-        }
+        
 
         private void btnSubirFoto_Click(object sender, EventArgs e)
         {
@@ -233,15 +206,7 @@ namespace LP2Soft
             }
         }
 
-        private void cargarTabla()
-        {
-            string indicador = "";
-            if(txtBuscar.Text != "Buscar")
-                indicador = txtBuscar.Text;
-            NegocioWS.producto[] productos = daoNegocio.listarProductoXNombre(indicador);
-            if (productos != null)
-                dgvProductos.DataSource = new BindingList<NegocioWS.producto>(productos);
-        }
+        
 
         // Restricciones para los caracteres de los campos TXT 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)

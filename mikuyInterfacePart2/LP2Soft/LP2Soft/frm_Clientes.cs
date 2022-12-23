@@ -37,19 +37,19 @@ namespace LP2Soft
 
         private void lblCrearUsuario_Click(object sender, EventArgs e)
         {
-            frm_Clientes_Registrar formClientesRegistrar = new frm_Clientes_Registrar();
+            frm_Clientes_Registrar formClientesRegistrar = new frm_Clientes_Registrar(Estado.Nuevo,null);
             formClientesRegistrar.ShowDialog();
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-            frm_Clientes_Registrar formClientesRegistrar = new frm_Clientes_Registrar();
+            frm_Clientes_Registrar formClientesRegistrar = new frm_Clientes_Registrar(Estado.Nuevo, null);
             formClientesRegistrar.ShowDialog();
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            frm_Clientes_Registrar formClientesRegistrar = new frm_Clientes_Registrar();
+            frm_Clientes_Registrar formClientesRegistrar = new frm_Clientes_Registrar(Estado.Nuevo, null);
             formClientesRegistrar.ShowDialog();
         }
 

@@ -8,6 +8,6 @@ public interface ProductoDAO {
     int insertar(Producto producto);
     int modificar(Producto producto);
     int eliminar(int idProducto);
-    ArrayList<Producto> listarXNombre(String nombre);
+    ArrayList<Producto> listarXNombre(String nombre,int idCategoria, char tipo);
     ArrayList<Producto> listarXCategoria(String nombre);
 }

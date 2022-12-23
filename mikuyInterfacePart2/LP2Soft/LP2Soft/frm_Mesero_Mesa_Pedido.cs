@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +25,7 @@ namespace LP2Soft
 
 
         private BindingList<NegocioWS.categoria> _listaCat;
-        private BindingList<Button> lista_botones;
+        private BindingList<Guna.UI2.WinForms.Guna2GradientCircleButton> lista_botones;
         private double suma = 0;
         private CajaWS.pedido _pedido;
         private BindingList<CajaWS.lineaPedido> lista_lineas;
@@ -122,30 +124,65 @@ namespace LP2Soft
         {
             int top = 0;
             int left = 0;
-            lista_botones = new BindingList<Button>();
+            lista_botones = new BindingList<Guna.UI2.WinForms.Guna2GradientCircleButton>();
             _listaCat = new BindingList<NegocioWS.categoria>();
+            Guna.UI2.WinForms.Guna2GradientCircleButton b = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            b.Size = new Size(75, 70);
+            b.Top = top;
+            b.Text = "Todos";
+            b.Name = "btn_Todos";
+            b.Font = new System.Drawing.Font("Microsoft Sans Serif", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            b.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(39)))), ((int)(((byte)(232)))));
+            b.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(90)))), ((int)(((byte)(207)))));
+            b.ForeColor = Color.White;
+            b.Image = global::LP2Soft.Properties.Resources.productos;
+            b.ImageSize = new System.Drawing.Size(20, 20);
+            b.BackColor = System.Drawing.Color.Transparent;
+            b.Cursor = System.Windows.Forms.Cursors.Hand;
+            b.Click += new System.EventHandler(hacerCLik2);
+            top += b.Height + 4;
+            Guna.UI2.WinForms.Guna2GradientCircleButton c = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            c.Size = new Size(75, 70);
+            c.Top = top;
+            c.Text = "Combos";
+            c.Name = "btn_Combos";
+            c.Font = new System.Drawing.Font("Microsoft Sans Serif", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            c.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(39)))), ((int)(((byte)(232)))));
+            c.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(90)))), ((int)(((byte)(207)))));
+            c.ForeColor = Color.White;
+            c.Image = global::LP2Soft.Properties.Resources.productos;
+            c.ImageSize = new System.Drawing.Size(20, 20);
+            c.BackColor = System.Drawing.Color.Transparent;
+            c.Cursor = System.Windows.Forms.Cursors.Hand;
+            c.Click += new System.EventHandler(hacerCLik3);
+            this.Controls.Add(b);
+            this.Controls.Add(c);
+            top += c.Height + 4;
+            lista_botones.Add(b);
+            lista_botones.Add(c);
+            panelCategorias.Controls.Add((Control)b);
+            panelCategorias.Controls.Add((Control)c);
             foreach (NegocioWS.categoria item in _daoNegocio.listarTodasCategorias())
             {
                 _listaCat.Add(item);
-                Button button = new Button();
-                button.Size = new Size(145, 39);
-                button.Left = left;
+                Guna.UI2.WinForms.Guna2GradientCircleButton button = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+                button.Size = new Size(75, 70);
                 button.Top = top;
                 button.Text = item.nombre;
                 button.Name = "btn_" + item.nombre;
-                button.Font = new Font(btnBuscar.Font, FontStyle.Bold);
+                button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(39)))), ((int)(((byte)(232)))));
+                button.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(90)))), ((int)(((byte)(207)))));
                 button.ForeColor = Color.White;
-                button.FlatAppearance.BorderSize = 0; //FromArgb(16, 28, 67)
-                button.BackColor = System.Drawing.Color.Black;
+                MemoryStream ms = new MemoryStream(item.icono);
+                Bitmap bm = new Bitmap(ms);
+                button.Image = bm;
+                button.ImageSize = new System.Drawing.Size(20, 20);
+                button.BackColor = System.Drawing.Color.Transparent;
                 button.Cursor = System.Windows.Forms.Cursors.Hand;
                 button.Click += new System.EventHandler(hacerCLik);
                 this.Controls.Add(button);
-                left += button.Width + 4;
-                if (left >= 413)
-                {
-                    left = 0;
-                    top += button.Height + 4;
-                }
+                top += button.Height + 4;
                 lista_botones.Add(button);
                 panelCategorias.Controls.Add((Control)button);
             }
@@ -155,9 +192,19 @@ namespace LP2Soft
         private void hacerCLik(object sender, EventArgs e)
         {
             char[] sep = new char[] { ' ' };
+            string name = ((Guna.UI2.WinForms.Suite.CustomButtonBase)sender).Text;
             string[] subs = sender.ToString().Split(sep, StringSplitOptions.RemoveEmptyEntries);
-            string name = subs[2];
             dgvItem.DataSource = _daoNegocio.listarProductoXCategoria(name);
+        }
+
+
+        private void hacerCLik2(object sender, EventArgs e)
+        {
+            dgvItem.DataSource = _daoNegocio.listarTodosItemsXNombre("");
+        }
+        private void hacerCLik3(object sender, EventArgs e)
+        {
+            dgvItem.DataSource = _daoNegocio.listarTodasPromociones();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -206,10 +253,9 @@ namespace LP2Soft
                 CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedido.Rows[e.RowIndex].DataBoundItem;
                 if (line != null)
                 {
-                    dgvPedido.Rows[e.RowIndex].Cells[0].Value = line.item.idItemVendible;
-                    dgvPedido.Rows[e.RowIndex].Cells[1].Value = line.item.nombre;
-                    dgvPedido.Rows[e.RowIndex].Cells[2].Value = line.item.precio;
-                    dgvPedido.Rows[e.RowIndex].Cells[3].Value = line.unidades;
+                    dgvPedido.Rows[e.RowIndex].Cells[0].Value = line.item.nombre;
+                    dgvPedido.Rows[e.RowIndex].Cells[1].Value = line.item.precio;
+                    dgvPedido.Rows[e.RowIndex].Cells[2].Value = line.unidades;
                 }
             }
             catch(Exception ex)
@@ -221,17 +267,16 @@ namespace LP2Soft
         private void dgvItem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             NegocioWS.itemVendible item = (NegocioWS.itemVendible)dgvItem.Rows[e.RowIndex].DataBoundItem;
-            dgvItem.Rows[e.RowIndex].Cells[0].Value = item.idItemVendible;
-            dgvItem.Rows[e.RowIndex].Cells[1].Value = item.nombre;
-            dgvItem.Rows[e.RowIndex].Cells[2].Value = item.precio;
+            dgvItem.Rows[e.RowIndex].Cells[0].Value = item.nombre;
+            dgvItem.Rows[e.RowIndex].Cells[1].Value = item.precio;
         }
 
         private void btnEliminarProd_Click(object sender, EventArgs e)
         {
             if (dgvPedido.CurrentRow != null)
             {
-                int cant = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value);
-                double precio = Convert.ToDouble(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[2].Value);
+                int cant = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[2].Value);
+                double precio = Convert.ToDouble(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[1].Value);
                 CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedido.CurrentRow.DataBoundItem;
                 suma = suma - cant * precio;
                 if(_estado == Estado.Inicial) { 
@@ -324,10 +369,10 @@ namespace LP2Soft
             int n;
             if(dgvPedido.CurrentRow != null)
             {
-                n = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value);
-                dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value = n + 1;
+                n = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[2].Value);
+                dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[2].Value = n + 1;
 
-                suma += Convert.ToDouble(dgvPedido[2, dgvPedido.CurrentRow.Index].Value);
+                suma += Convert.ToDouble(dgvPedido[1, dgvPedido.CurrentRow.Index].Value);
                 txtTotal.Text = suma.ToString("N2");
                 lista_lineas[dgvPedido.CurrentRow.Index].unidades = n+1;
                 lista_lineas[dgvPedido.CurrentRow.Index].subtotal = 
@@ -341,11 +386,11 @@ namespace LP2Soft
             if(dgvPedido.CurrentRow != null)
             {
                 CajaWS.lineaPedido line = (CajaWS.lineaPedido)dgvPedido.CurrentRow.DataBoundItem;
-                n = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value);
+                n = Convert.ToInt32(dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[2].Value);
                 
-                dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[3].Value = n - 1;
+                dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells[2].Value = n - 1;
 
-                suma -= Convert.ToDouble(dgvPedido[2, dgvPedido.CurrentRow.Index].Value);
+                suma -= Convert.ToDouble(dgvPedido[1, dgvPedido.CurrentRow.Index].Value);
                 txtTotal.Text = suma.ToString("N2");
                 if (n-1 == 0)
                 {
@@ -389,7 +434,7 @@ namespace LP2Soft
 
         private void pbCLiente_Click(object sender, EventArgs e)
         {
-            frm_Clientes_Registrar formClienteRegistro = new frm_Clientes_Registrar();
+            frm_Clientes_Registrar formClienteRegistro = new frm_Clientes_Registrar(Estado.Nuevo,null);
             formClienteRegistro.Dato = 1;
             if (formClienteRegistro.ShowDialog() == DialogResult.OK)
             {

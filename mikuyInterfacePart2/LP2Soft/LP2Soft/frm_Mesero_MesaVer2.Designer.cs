@@ -43,7 +43,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(334, 76);
+            this.label3.Location = new System.Drawing.Point(522, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 29);
             this.label3.TabIndex = 38;
@@ -55,7 +55,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(288, 35);
+            this.label2.Location = new System.Drawing.Point(338, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 29);
             this.label2.TabIndex = 37;
@@ -64,10 +64,11 @@
             // 
             // panelMesas
             // 
+            this.panelMesas.BackColor = System.Drawing.Color.White;
             this.panelMesas.Location = new System.Drawing.Point(30, 120);
             this.panelMesas.Margin = new System.Windows.Forms.Padding(2);
             this.panelMesas.Name = "panelMesas";
-            this.panelMesas.Size = new System.Drawing.Size(690, 382);
+            this.panelMesas.Size = new System.Drawing.Size(954, 431);
             this.panelMesas.TabIndex = 39;
             // 
             // label1
@@ -86,10 +87,10 @@
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(-3, -2);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(4, -1);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(759, 528);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(1007, 585);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 42;
             this.guna2PictureBox3.TabStop = false;
@@ -98,8 +99,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(753, 525);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1010, 579);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
