@@ -18,6 +18,7 @@ namespace LP2Soft
         private int botonActivo ;
         private bool flag = false;
         private bool gestion = false;
+        private bool cerrar = true;
         public Main()
         {
             InitializeComponent();
@@ -160,6 +161,7 @@ namespace LP2Soft
         {
             frm_Login_Usuario frmLogin = new frm_Login_Usuario();
             frmLogin.Show();
+            cerrar = false;
             this.Close();
         }
 
@@ -240,6 +242,15 @@ namespace LP2Soft
             restablecerBotones();
             btnGasto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             abrirFormulario(new frm_Gestion_Gastos());
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (cerrar)
+            {
+                frm_Login_Usuario frmLogin = new frm_Login_Usuario();
+                frmLogin.Show();
+            }
         }
     }
 }

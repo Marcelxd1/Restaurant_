@@ -73,7 +73,7 @@
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
             this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(1062, 168);
+            this.panelSuperior.Size = new System.Drawing.Size(1062, 135);
             this.panelSuperior.TabIndex = 0;
             // 
             // panelNombre
@@ -93,7 +93,7 @@
             this.panelNombre.RowCount = 2;
             this.panelNombre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.41322F));
             this.panelNombre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.58678F));
-            this.panelNombre.Size = new System.Drawing.Size(241, 121);
+            this.panelNombre.Size = new System.Drawing.Size(204, 87);
             this.panelNombre.TabIndex = 9;
             // 
             // lblNombre
@@ -105,7 +105,7 @@
             this.lblNombre.Location = new System.Drawing.Point(2, 0);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(237, 60);
+            this.lblNombre.Size = new System.Drawing.Size(200, 43);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Juan Carlos";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,10 +116,10 @@
             this.lblRolPersona.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblRolPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRolPersona.ForeColor = System.Drawing.Color.White;
-            this.lblRolPersona.Location = new System.Drawing.Point(2, 60);
+            this.lblRolPersona.Location = new System.Drawing.Point(2, 43);
             this.lblRolPersona.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRolPersona.Name = "lblRolPersona";
-            this.lblRolPersona.Size = new System.Drawing.Size(237, 61);
+            this.lblRolPersona.Size = new System.Drawing.Size(200, 44);
             this.lblRolPersona.TabIndex = 8;
             this.lblRolPersona.Text = "Mesero";
             this.lblRolPersona.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -133,7 +133,7 @@
             this.guna2PictureBox1.Location = new System.Drawing.Point(42, 12);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(128, 112);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(83, 84);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 5;
             this.guna2PictureBox1.TabStop = false;
@@ -143,10 +143,10 @@
             this.pbPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbPersona.Enabled = false;
             this.pbPersona.Image = global::LP2Soft.Properties.Resources.User;
-            this.pbPersona.Location = new System.Drawing.Point(915, 26);
+            this.pbPersona.Location = new System.Drawing.Point(917, 16);
             this.pbPersona.Name = "pbPersona";
             this.pbPersona.ShadowDecoration.Parent = this.pbPersona;
-            this.pbPersona.Size = new System.Drawing.Size(116, 121);
+            this.pbPersona.Size = new System.Drawing.Size(87, 97);
             this.pbPersona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPersona.TabIndex = 4;
             this.pbPersona.TabStop = false;
@@ -156,10 +156,10 @@
             this.guna2PictureBox2.BackgroundImage = global::LP2Soft.Properties.Resources.fondo2;
             this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox2.Image = global::LP2Soft.Properties.Resources.LA_CAMPIÑA;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(9, 127);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(12, 100);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(203, 30);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(161, 26);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 0;
             this.guna2PictureBox2.TabStop = false;
@@ -167,7 +167,7 @@
             // panelContenedor
             // 
             this.panelContenedor.Image = ((System.Drawing.Image)(resources.GetObject("panelContenedor.Image")));
-            this.panelContenedor.Location = new System.Drawing.Point(52, 168);
+            this.panelContenedor.Location = new System.Drawing.Point(52, 133);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.ShadowDecoration.Parent = this.panelContenedor;
             this.panelContenedor.Size = new System.Drawing.Size(1010, 579);
@@ -354,7 +354,7 @@
             this.PanelMenu.Controls.Add(this.btnCaja);
             this.PanelMenu.Controls.Add(this.btnAsistencia);
             this.PanelMenu.Controls.Add(this.btnClientes);
-            this.PanelMenu.Location = new System.Drawing.Point(0, 168);
+            this.PanelMenu.Location = new System.Drawing.Point(0, 134);
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(58, 523);
             this.PanelMenu.TabIndex = 4;
@@ -526,7 +526,7 @@
             this.btnSignOut.Image = global::LP2Soft.Properties.Resources.close;
             this.btnSignOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSignOut.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnSignOut.Location = new System.Drawing.Point(0, 688);
+            this.btnSignOut.Location = new System.Drawing.Point(0, 657);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.ShadowDecoration.Parent = this.btnSignOut;
             this.btnSignOut.Size = new System.Drawing.Size(58, 59);
@@ -543,14 +543,16 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1062, 747);
+            this.ClientSize = new System.Drawing.Size(1062, 701);
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.panelContenedor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.panelSuperior.ResumeLayout(false);
             this.panelNombre.ResumeLayout(false);
