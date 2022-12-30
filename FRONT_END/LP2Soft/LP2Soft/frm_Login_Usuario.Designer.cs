@@ -85,9 +85,9 @@
             this.label4.Location = new System.Drawing.Point(449, 259);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 13);
+            this.label4.Size = new System.Drawing.Size(155, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Olvidaste la contraseña?";
+            this.label4.Text = "¿Olvidaste la contraseña?";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // guna2ControlBox1

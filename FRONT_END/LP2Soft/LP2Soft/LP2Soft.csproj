@@ -209,12 +209,6 @@
     <Compile Include="frm_Asitencia.Designer.cs">
       <DependentUpon>frm_Asitencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Clientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Clientes.Designer.cs">
-      <DependentUpon>frm_Clientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Clientes_Listar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,9 +384,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Asitencia.resx">
       <DependentUpon>frm_Asitencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Clientes.resx">
-      <DependentUpon>frm_Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Clientes_Listar.resx">
       <DependentUpon>frm_Clientes_Listar.cs</DependentUpon>

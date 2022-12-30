@@ -22,9 +22,7 @@ namespace LP2Soft
             InitializeComponent();
             daoNegocio = new NegocioWS.NegocioWSClient();
             dgvProductos.AutoGenerateColumns = false;
-            cbCategoria.DataSource = daoNegocio.listarTodasCategorias();
             NegocioWS.categoria categoria = new NegocioWS.categoria();
-            cats = new BindingList<NegocioWS.categoria>();
             cats = new BindingList<NegocioWS.categoria>(daoNegocio.listarTodasCategorias().ToList());
             categoria.idCategoria = 0;
             categoria.nombre = "TODOS";

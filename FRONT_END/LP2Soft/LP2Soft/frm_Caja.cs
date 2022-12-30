@@ -105,33 +105,38 @@ namespace LP2Soft
         {
             restaurante = daoUsuario.BuscaRestaurante(1);
             txtTotalCaja.Text = restaurante.dineroActual.ToString("N2");
+            double totalGasto = 0, totalPedido = 0, totMesa = 0, totLLeva = 0, totTarj = 0, totEfec = 0;
             tran = daoCaja.listarTransacciones();
-            double totalGasto = 0, totalPedido = 0,totMesa=0,totLLeva =0,totTarj=0,totEfec=0;
-            foreach(CajaWS.transaccion t in tran)
-            {
-                if(t.tipo == 'G')//Gastos
+            if(tran != null) { 
+                foreach(CajaWS.transaccion t in tran)
                 {
-                    totalGasto += t.total;
-                }
-                else
-                {
-                    totalPedido += t.total;
-                }
+                    if(t.tipo == 'G')//Gastos
+                    {
+                        totalGasto += t.total;
+                    }
+                    else
+                    {
+                        totalPedido += t.total;
+                    }
 
+                }
             }
             txtGastos.Text = totalGasto.ToString("N2");
             pedidos = daoCaja.ListarPedidosTransaccion();
-            foreach (CajaWS.pedido p in pedidos)
+            if (pedidos != null)
             {
-                if (p.tipoPedido == 'C')//Para mesa
-                    totMesa += p.total;
-                else
-                    totLLeva += p.total;//Para llebar
+                foreach (CajaWS.pedido p in pedidos)
+                {
+                    if (p.tipoPedido == 'C')//Para mesa
+                        totMesa += p.total;
+                    else
+                        totLLeva += p.total;//Para llebar
 
-                if (p.tipoPago == 'E')//Efectivo
-                    totEfec += p.total;
-                else
-                    totTarj += p.total;//Tarjeta
+                    if (p.tipoPago == 'E')//Efectivo
+                        totEfec += p.total;
+                    else
+                        totTarj += p.total;//Tarjeta
+                }
             }
             txtPedLLevar.Text = totLLeva.ToString("N2");
             txtTotPedi.Text = (totMesa+totLLeva).ToString("N2");

@@ -141,6 +141,7 @@
             // pbPersona
             // 
             this.pbPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPersona.Enabled = false;
             this.pbPersona.Image = global::LP2Soft.Properties.Resources.User;
             this.pbPersona.Location = new System.Drawing.Point(915, 26);
             this.pbPersona.Name = "pbPersona";
@@ -539,13 +540,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1062, 747);
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.panelContenedor);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";

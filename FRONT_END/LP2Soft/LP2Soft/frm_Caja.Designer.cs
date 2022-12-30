@@ -556,6 +556,7 @@
             // 
             // guna2PictureBox3
             // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.Location = new System.Drawing.Point(1, 1);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
