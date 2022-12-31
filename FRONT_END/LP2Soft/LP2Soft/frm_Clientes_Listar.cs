@@ -85,7 +85,7 @@ namespace LP2Soft
         private void cargarTabla()
         {
             string indicador = "";
-            if (txtBuscar.Text != "Buscar")
+            if (txtBuscar.Text != "Ingresar nombre")
                 indicador = txtBuscar.Text;
             if(rbPersona.Checked ==true)
                 dgvListarClientes.DataSource = daoUser.listarPersona(indicador);

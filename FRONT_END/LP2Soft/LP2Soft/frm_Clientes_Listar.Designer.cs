@@ -56,6 +56,7 @@
             this.cbActividad = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnBuscaCliente = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -284,7 +285,7 @@
             this.txtBuscar.BorderRadius = 10;
             this.txtBuscar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBuscar.DefaultText = "Buscar";
+            this.txtBuscar.DefaultText = "Ingresar nombre";
             this.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -297,7 +298,6 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.Black;
             this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscar.HoverState.Parent = this.txtBuscar;
-            this.txtBuscar.IconRight = global::LP2Soft.Properties.Resources.Buscar;
             this.txtBuscar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.txtBuscar.Location = new System.Drawing.Point(25, 72);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -305,10 +305,10 @@
             this.txtBuscar.PasswordChar = '\0';
             this.txtBuscar.PlaceholderText = "";
             this.txtBuscar.SelectedText = "";
-            this.txtBuscar.SelectionStart = 6;
             this.txtBuscar.ShadowDecoration.Parent = this.txtBuscar;
-            this.txtBuscar.Size = new System.Drawing.Size(373, 30);
+            this.txtBuscar.Size = new System.Drawing.Size(361, 30);
             this.txtBuscar.TabIndex = 39;
+            this.txtBuscar.TextOffset = new System.Drawing.Point(0, -2);
             this.txtBuscar.IconRightClick += new System.EventHandler(this.txtBuscar_IconRightClick);
             this.txtBuscar.DoubleClick += new System.EventHandler(this.txtBuscar_DoubleClick);
             // 
@@ -375,7 +375,7 @@
             this.rbPersona.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPersona.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.rbPersona.Location = new System.Drawing.Point(563, 72);
+            this.rbPersona.Location = new System.Drawing.Point(421, 72);
             this.rbPersona.Name = "rbPersona";
             this.rbPersona.Size = new System.Drawing.Size(93, 24);
             this.rbPersona.TabIndex = 45;
@@ -399,7 +399,7 @@
             this.rbEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbEmpresa.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.rbEmpresa.Location = new System.Drawing.Point(714, 72);
+            this.rbEmpresa.Location = new System.Drawing.Point(572, 72);
             this.rbEmpresa.Name = "rbEmpresa";
             this.rbEmpresa.Size = new System.Drawing.Size(98, 24);
             this.rbEmpresa.TabIndex = 46;
@@ -483,11 +483,38 @@
             this.label2.Text = "Actividad:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnBuscaCliente
+            // 
+            this.btnBuscaCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscaCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaCliente.BackgroundImage")));
+            this.btnBuscaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCliente.BorderRadius = 10;
+            this.btnBuscaCliente.CheckedState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.FillColor = System.Drawing.Color.Transparent;
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Image = global::LP2Soft.Properties.Resources.lupa1;
+            this.btnBuscaCliente.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscaCliente.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnBuscaCliente.Location = new System.Drawing.Point(843, 111);
+            this.btnBuscaCliente.Name = "btnBuscaCliente";
+            this.btnBuscaCliente.PressedColor = System.Drawing.Color.Red;
+            this.btnBuscaCliente.ShadowDecoration.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Size = new System.Drawing.Size(149, 45);
+            this.btnBuscaCliente.TabIndex = 155;
+            this.btnBuscaCliente.Text = "Buscar";
+            this.btnBuscaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscaCliente.Click += new System.EventHandler(this.txtBuscar_IconRightClick);
+            // 
             // frm_Clientes_Listar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 579);
+            this.Controls.Add(this.btnBuscaCliente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbActividad);
@@ -537,5 +564,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sector;
         private System.Windows.Forms.DataGridViewTextBoxColumn Actividad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Razon;
+        private Guna.UI2.WinForms.Guna2Button btnBuscaCliente;
     }
 }
