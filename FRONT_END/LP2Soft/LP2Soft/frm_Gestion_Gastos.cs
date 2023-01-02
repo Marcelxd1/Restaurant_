@@ -75,7 +75,7 @@ namespace LP2Soft
         private void cargarTabla()
         {
             string indicador = "";
-            if (txtBuscar.Text != "Buscar")
+            if (txtBuscar.Text != "Ingrese item")
                 indicador = txtBuscar.Text;
             CajaWS.gasto[] gastos = daoCaja.listarGastosXNombre(indicador);
             if (gastos != null)

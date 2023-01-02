@@ -46,7 +46,7 @@ namespace LP2Soft
         private void txtBoxBuscar_IconRightClick(object sender, EventArgs e)
         {
             String nombre = txtBoxBuscar.Text;
-            if (nombre == "Ingrese nombre...")
+            if (nombre == "Ingrese nombre")
             {
                 nombre = "";
             }

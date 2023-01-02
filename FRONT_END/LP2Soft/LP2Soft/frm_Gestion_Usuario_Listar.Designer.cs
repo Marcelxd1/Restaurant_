@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Gestion_Usuario_Listar));
             this.lblDatosUsuario = new System.Windows.Forms.Label();
             this.dgvListarUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -54,6 +54,10 @@
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.txtBoxBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnBuscaCliente = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNombre)).BeginInit();
@@ -71,30 +75,30 @@
             this.lblDatosUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatosUsuario.Location = new System.Drawing.Point(24, 23);
             this.lblDatosUsuario.Name = "lblDatosUsuario";
-            this.lblDatosUsuario.Size = new System.Drawing.Size(273, 31);
+            this.lblDatosUsuario.Size = new System.Drawing.Size(279, 31);
             this.lblDatosUsuario.TabIndex = 30;
-            this.lblDatosUsuario.Text = "Listado de Usuarios";
+            this.lblDatosUsuario.Text = "Gestión de Usuarios";
             this.lblDatosUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvListarUsuarios
             // 
             this.dgvListarUsuarios.AllowUserToAddRows = false;
             this.dgvListarUsuarios.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvListarUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvListarUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvListarUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListarUsuarios.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dgvListarUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListarUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvListarUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListarUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListarUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvListarUsuarios.ColumnHeadersHeight = 24;
             this.dgvListarUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -105,22 +109,22 @@
             this.Salario,
             this.Correo});
             this.dgvListarUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarUsuarios.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvListarUsuarios.EnableHeadersVisualStyles = false;
             this.dgvListarUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvListarUsuarios.Location = new System.Drawing.Point(30, 115);
+            this.dgvListarUsuarios.Location = new System.Drawing.Point(30, 203);
             this.dgvListarUsuarios.Name = "dgvListarUsuarios";
             this.dgvListarUsuarios.ReadOnly = true;
             this.dgvListarUsuarios.RowHeadersVisible = false;
             this.dgvListarUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarUsuarios.Size = new System.Drawing.Size(788, 435);
+            this.dgvListarUsuarios.Size = new System.Drawing.Size(788, 354);
             this.dgvListarUsuarios.TabIndex = 33;
             this.dgvListarUsuarios.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvListarUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -241,13 +245,13 @@
             this.cboRol.FillColor = System.Drawing.Color.WhiteSmoke;
             this.cboRol.FocusedColor = System.Drawing.Color.Empty;
             this.cboRol.FocusedState.Parent = this.cboRol;
-            this.cboRol.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRol.ForeColor = System.Drawing.Color.Black;
             this.cboRol.FormattingEnabled = true;
             this.cboRol.HoverState.Parent = this.cboRol;
             this.cboRol.ItemHeight = 30;
             this.cboRol.ItemsAppearance.Parent = this.cboRol;
-            this.cboRol.Location = new System.Drawing.Point(593, 73);
+            this.cboRol.Location = new System.Drawing.Point(459, 114);
             this.cboRol.Name = "cboRol";
             this.cboRol.ShadowDecoration.Parent = this.cboRol;
             this.cboRol.Size = new System.Drawing.Size(225, 36);
@@ -270,7 +274,7 @@
             this.btnModify.Image = global::LP2Soft.Properties.Resources.edit;
             this.btnModify.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnModify.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnModify.Location = new System.Drawing.Point(838, 166);
+            this.btnModify.Location = new System.Drawing.Point(836, 253);
             this.btnModify.Name = "btnModify";
             this.btnModify.PressedColor = System.Drawing.Color.Red;
             this.btnModify.ShadowDecoration.Parent = this.btnModify;
@@ -297,7 +301,7 @@
             this.btnNuevo.Image = global::LP2Soft.Properties.Resources._new;
             this.btnNuevo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNuevo.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnNuevo.Location = new System.Drawing.Point(838, 115);
+            this.btnNuevo.Location = new System.Drawing.Point(836, 202);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.PressedColor = System.Drawing.Color.Red;
             this.btnNuevo.ShadowDecoration.Parent = this.btnNuevo;
@@ -324,7 +328,7 @@
             this.btnEliminar.Image = global::LP2Soft.Properties.Resources.borrar;
             this.btnEliminar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEliminar.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnEliminar.Location = new System.Drawing.Point(838, 217);
+            this.btnEliminar.Location = new System.Drawing.Point(836, 304);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.PressedColor = System.Drawing.Color.Red;
             this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
@@ -341,7 +345,7 @@
             this.txtBoxBuscar.BorderRadius = 10;
             this.txtBoxBuscar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.txtBoxBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBoxBuscar.DefaultText = "Ingrese nombre...";
+            this.txtBoxBuscar.DefaultText = "Ingrese nombre";
             this.txtBoxBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtBoxBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtBoxBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -354,32 +358,95 @@
             this.txtBoxBuscar.ForeColor = System.Drawing.Color.Black;
             this.txtBoxBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBoxBuscar.HoverState.Parent = this.txtBoxBuscar;
-            this.txtBoxBuscar.IconRight = global::LP2Soft.Properties.Resources.Buscar;
             this.txtBoxBuscar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtBoxBuscar.Location = new System.Drawing.Point(30, 73);
+            this.txtBoxBuscar.Location = new System.Drawing.Point(30, 114);
             this.txtBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxBuscar.Name = "txtBoxBuscar";
             this.txtBoxBuscar.PasswordChar = '\0';
             this.txtBoxBuscar.PlaceholderText = "";
             this.txtBoxBuscar.SelectedText = "";
-            this.txtBoxBuscar.SelectionStart = 17;
+            this.txtBoxBuscar.SelectionStart = 14;
             this.txtBoxBuscar.ShadowDecoration.Parent = this.txtBoxBuscar;
-            this.txtBoxBuscar.Size = new System.Drawing.Size(393, 35);
+            this.txtBoxBuscar.Size = new System.Drawing.Size(375, 35);
             this.txtBoxBuscar.TabIndex = 32;
+            this.txtBoxBuscar.TextOffset = new System.Drawing.Point(0, -2);
             this.txtBoxBuscar.IconRightClick += new System.EventHandler(this.txtBoxBuscar_IconRightClick);
             this.txtBoxBuscar.DoubleClick += new System.EventHandler(this.txtBoxBuscar_DoubleClick);
             // 
             // guna2PictureBox3
             // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.White;
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(-2, -1);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(1, -1);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(1013, 585);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(1009, 585);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 34;
             this.guna2PictureBox3.TabStop = false;
+            // 
+            // btnBuscaCliente
+            // 
+            this.btnBuscaCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscaCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaCliente.BackgroundImage")));
+            this.btnBuscaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCliente.BorderRadius = 10;
+            this.btnBuscaCliente.CheckedState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.FillColor = System.Drawing.Color.Transparent;
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Image = global::LP2Soft.Properties.Resources.lupa1;
+            this.btnBuscaCliente.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscaCliente.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnBuscaCliente.Location = new System.Drawing.Point(703, 114);
+            this.btnBuscaCliente.Name = "btnBuscaCliente";
+            this.btnBuscaCliente.PressedColor = System.Drawing.Color.Red;
+            this.btnBuscaCliente.ShadowDecoration.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Size = new System.Drawing.Size(115, 39);
+            this.btnBuscaCliente.TabIndex = 156;
+            this.btnBuscaCliente.Text = "Buscar";
+            this.btnBuscaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscaCliente.Click += new System.EventHandler(this.txtBoxBuscar_IconRightClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 166);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 25);
+            this.label3.TabIndex = 160;
+            this.label3.Text = "Lista de usuarios";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(247, 25);
+            this.label4.TabIndex = 159;
+            this.label4.Text = "Búsqueda de usuarios";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(412, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 20);
+            this.label2.TabIndex = 161;
+            this.label2.Text = "Rol:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frm_Gestion_Usuario_Listar
             // 
@@ -387,6 +454,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1007, 579);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnBuscaCliente);
             this.Controls.Add(this.cboRol);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnNuevo);
@@ -434,5 +505,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Salario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private Guna.UI2.WinForms.Guna2Button btnBuscaCliente;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

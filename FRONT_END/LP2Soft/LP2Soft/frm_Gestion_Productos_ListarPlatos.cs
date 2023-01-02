@@ -36,15 +36,11 @@ namespace LP2Soft
 
         private void cargarTabla()
         {
-            char i='C';
-            if (rbBebida.Checked)
-                i = 'B';
-            if (rbComida.Checked)
-                i = 'C';
+            
             string indicador = "";
-            if (txtBuscar.Text != "Buscar")
+            if (txtBuscar.Text != "Inserte nombre")
                 indicador = txtBuscar.Text;
-            dgvProductos.DataSource = daoNegocio.listarProductoXNombre(indicador, cbCategoria.SelectedIndex, i);
+            dgvProductos.DataSource = daoNegocio.listarProductoXNombre(indicador, cbCategoria.SelectedIndex, 0);
         }
 
         private void txtBuscar_IconRightClick(object sender, EventArgs e)
@@ -60,12 +56,11 @@ namespace LP2Soft
         private void dgvProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             NegocioWS.producto producto = (NegocioWS.producto)dgvProductos.Rows[e.RowIndex].DataBoundItem;
-            dgvProductos.Rows[e.RowIndex].Cells[0].Value = producto.idProducto;
-            dgvProductos.Rows[e.RowIndex].Cells[1].Value = producto.categoria.nombre;
-            dgvProductos.Rows[e.RowIndex].Cells[2].Value = producto.nombre;
-            dgvProductos.Rows[e.RowIndex].Cells[3].Value = producto.precio;
+            dgvProductos.Rows[e.RowIndex].Cells[0].Value = producto.categoria.nombre;
+            dgvProductos.Rows[e.RowIndex].Cells[1].Value = producto.nombre;
+            dgvProductos.Rows[e.RowIndex].Cells[2].Value = producto.precio;
             
-            dgvProductos.Rows[e.RowIndex].Cells[4].Value = producto.presentacion;
+            dgvProductos.Rows[e.RowIndex].Cells[3].Value = producto.presentacion;
 
 
         }

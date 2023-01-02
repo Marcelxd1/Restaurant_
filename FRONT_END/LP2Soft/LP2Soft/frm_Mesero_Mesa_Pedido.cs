@@ -267,8 +267,10 @@ namespace LP2Soft
         private void dgvItem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             NegocioWS.itemVendible item = (NegocioWS.itemVendible)dgvItem.Rows[e.RowIndex].DataBoundItem;
-            dgvItem.Rows[e.RowIndex].Cells[0].Value = item.nombre;
-            dgvItem.Rows[e.RowIndex].Cells[1].Value = item.precio;
+            if (item != null) { 
+                dgvItem.Rows[e.RowIndex].Cells[0].Value = item.nombre;
+                dgvItem.Rows[e.RowIndex].Cells[1].Value = item.precio;
+            }
         }
 
         private void btnEliminarProd_Click(object sender, EventArgs e)

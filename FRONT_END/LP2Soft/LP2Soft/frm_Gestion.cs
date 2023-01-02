@@ -69,8 +69,7 @@ namespace LP2Soft
 
         private void lblGestionUsuario_Click(object sender, EventArgs e)
         {
-            frm_Gestion_Usuario_Contenedor formGestionUsuario = new frm_Gestion_Usuario_Contenedor();
-            formGestionUsuario.ShowDialog();
+
         }
 
         private void pctBGestionUsuario_Click(object sender, EventArgs e)

@@ -46,7 +46,7 @@ namespace LP2Soft
         private void cargaPlatos()
         {
             string ind = "";
-            if(txtBuscar.Text != "Buscar Platos")
+            if(txtBuscar.Text != "Ingrese nombre")
                 ind = txtBuscar.Text;
             dgvPlatos.DataSource = daoNegocio.listarProductoXNombre(ind,cbCategoria.SelectedIndex,0);
         }
@@ -342,6 +342,7 @@ namespace LP2Soft
                         NegocioWS.lineaPromocion linea = (NegocioWS.lineaPromocion)dgvLineas.Rows[e.RowIndex].DataBoundItem;
                         dgvLineas.Rows[e.RowIndex].Cells[0].Value = linea.producto.nombre;
                         dgvLineas.Rows[e.RowIndex].Cells[1].Value = linea.unidades;
+                        dgvLineas.Rows[e.RowIndex].Cells[2].Value = linea.unidades*linea.producto.precio;
                 }
             }
             catch (Exception)
@@ -356,5 +357,9 @@ namespace LP2Soft
             cargaPlatos();
         }
 
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

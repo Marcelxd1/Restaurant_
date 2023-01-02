@@ -63,6 +63,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBuscaCliente = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGasto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epItem)).BeginInit();
@@ -110,13 +111,13 @@
             this.dgvGasto.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGasto.EnableHeadersVisualStyles = false;
             this.dgvGasto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvGasto.Location = new System.Drawing.Point(17, 75);
+            this.dgvGasto.Location = new System.Drawing.Point(17, 84);
             this.dgvGasto.Name = "dgvGasto";
             this.dgvGasto.ReadOnly = true;
             this.dgvGasto.RowHeadersVisible = false;
             this.dgvGasto.RowHeadersWidth = 51;
             this.dgvGasto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGasto.Size = new System.Drawing.Size(486, 367);
+            this.dgvGasto.Size = new System.Drawing.Size(486, 382);
             this.dgvGasto.TabIndex = 46;
             this.dgvGasto.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvGasto.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -211,7 +212,7 @@
             this.btnGuardar.Image = global::LP2Soft.Properties.Resources.save;
             this.btnGuardar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuardar.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnGuardar.Location = new System.Drawing.Point(830, 296);
+            this.btnGuardar.Location = new System.Drawing.Point(839, 296);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.ShadowDecoration.Parent = this.btnGuardar;
             this.btnGuardar.Size = new System.Drawing.Size(149, 45);
@@ -240,7 +241,7 @@
             this.txtDescripcion.ForeColor = System.Drawing.Color.Black;
             this.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcion.HoverState.Parent = this.txtDescripcion;
-            this.txtDescripcion.Location = new System.Drawing.Point(17, 342);
+            this.txtDescripcion.Location = new System.Drawing.Point(17, 366);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -258,7 +259,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.Window;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(15, 314);
+            this.label5.Location = new System.Drawing.Point(15, 338);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 24);
             this.label5.TabIndex = 42;
@@ -283,7 +284,7 @@
             this.txtCantidad.ForeColor = System.Drawing.Color.Black;
             this.txtCantidad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCantidad.HoverState.Parent = this.txtCantidad;
-            this.txtCantidad.Location = new System.Drawing.Point(17, 207);
+            this.txtCantidad.Location = new System.Drawing.Point(17, 218);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.PasswordChar = '\0';
@@ -302,7 +303,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(14, 179);
+            this.label4.Location = new System.Drawing.Point(14, 190);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 24);
             this.label4.TabIndex = 40;
@@ -327,7 +328,7 @@
             this.txtPrecio.ForeColor = System.Drawing.Color.Black;
             this.txtPrecio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrecio.HoverState.Parent = this.txtPrecio;
-            this.txtPrecio.Location = new System.Drawing.Point(17, 141);
+            this.txtPrecio.Location = new System.Drawing.Point(17, 146);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.PasswordChar = '\0';
@@ -345,7 +346,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(14, 113);
+            this.label3.Location = new System.Drawing.Point(14, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 24);
             this.label3.TabIndex = 38;
@@ -356,7 +357,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 20);
+            this.label2.Location = new System.Drawing.Point(13, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(250, 31);
             this.label2.TabIndex = 37;
@@ -412,7 +413,7 @@
             this.txtBuscar.BorderRadius = 10;
             this.txtBuscar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBuscar.DefaultText = "Buscar";
+            this.txtBuscar.DefaultText = "Ingrese item";
             this.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -425,7 +426,6 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.Black;
             this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscar.HoverState.Parent = this.txtBuscar;
-            this.txtBuscar.IconRight = global::LP2Soft.Properties.Resources.Buscar;
             this.txtBuscar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.txtBuscar.Location = new System.Drawing.Point(17, 36);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -433,9 +433,8 @@
             this.txtBuscar.PasswordChar = '\0';
             this.txtBuscar.PlaceholderText = "";
             this.txtBuscar.SelectedText = "";
-            this.txtBuscar.SelectionStart = 6;
             this.txtBuscar.ShadowDecoration.Parent = this.txtBuscar;
-            this.txtBuscar.Size = new System.Drawing.Size(314, 32);
+            this.txtBuscar.Size = new System.Drawing.Size(326, 35);
             this.txtBuscar.TabIndex = 45;
             this.txtBuscar.IconRightClick += new System.EventHandler(this.txtBuscar_IconRightClick);
             this.txtBuscar.DoubleClick += new System.EventHandler(this.txtBuscar_DoubleClick);
@@ -443,10 +442,10 @@
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(-7, -3);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(-2, 2);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(1004, 549);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(1017, 580);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 34;
             this.guna2PictureBox3.TabStop = false;
@@ -468,7 +467,7 @@
             this.btnCancelar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCancelar.ImageOffset = new System.Drawing.Point(1, 0);
             this.btnCancelar.ImageSize = new System.Drawing.Size(23, 20);
-            this.btnCancelar.Location = new System.Drawing.Point(830, 347);
+            this.btnCancelar.Location = new System.Drawing.Point(839, 347);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.ShadowDecoration.Parent = this.btnCancelar;
             this.btnCancelar.Size = new System.Drawing.Size(149, 45);
@@ -494,7 +493,7 @@
             this.btnNuevo.Image = global::LP2Soft.Properties.Resources._new;
             this.btnNuevo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNuevo.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnNuevo.Location = new System.Drawing.Point(830, 143);
+            this.btnNuevo.Location = new System.Drawing.Point(839, 143);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.ShadowDecoration.Parent = this.btnNuevo;
             this.btnNuevo.Size = new System.Drawing.Size(149, 45);
@@ -520,7 +519,7 @@
             this.btnModificar.Image = global::LP2Soft.Properties.Resources.edit;
             this.btnModificar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnModificar.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnModificar.Location = new System.Drawing.Point(830, 194);
+            this.btnModificar.Location = new System.Drawing.Point(839, 194);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.PressedColor = System.Drawing.Color.Blue;
             this.btnModificar.ShadowDecoration.Parent = this.btnModificar;
@@ -547,7 +546,7 @@
             this.btnEliminar.Image = global::LP2Soft.Properties.Resources.borrar;
             this.btnEliminar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEliminar.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnEliminar.Location = new System.Drawing.Point(830, 245);
+            this.btnEliminar.Location = new System.Drawing.Point(839, 245);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.PressedColor = System.Drawing.Color.Red;
             this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
@@ -594,7 +593,7 @@
             this.txtTotal.ForeColor = System.Drawing.Color.Black;
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.HoverState.Parent = this.txtTotal;
-            this.txtTotal.Location = new System.Drawing.Point(18, 274);
+            this.txtTotal.Location = new System.Drawing.Point(18, 291);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
@@ -610,7 +609,7 @@
             this.lblTotal.BackColor = System.Drawing.SystemColors.Window;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblTotal.Location = new System.Drawing.Point(15, 246);
+            this.lblTotal.Location = new System.Drawing.Point(15, 263);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(51, 24);
             this.lblTotal.TabIndex = 54;
@@ -633,7 +632,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.groupBox1.Location = new System.Drawing.Point(18, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 457);
+            this.groupBox1.Size = new System.Drawing.Size(268, 485);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Compra";
@@ -641,22 +640,49 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.btnBuscaCliente);
             this.groupBox2.Controls.Add(this.txtBuscar);
             this.groupBox2.Controls.Add(this.dgvGasto);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.groupBox2.Location = new System.Drawing.Point(304, 71);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(520, 457);
+            this.groupBox2.Size = new System.Drawing.Size(520, 485);
             this.groupBox2.TabIndex = 56;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Compras";
+            // 
+            // btnBuscaCliente
+            // 
+            this.btnBuscaCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscaCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaCliente.BackgroundImage")));
+            this.btnBuscaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCliente.BorderRadius = 10;
+            this.btnBuscaCliente.CheckedState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.FillColor = System.Drawing.Color.Transparent;
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Image = global::LP2Soft.Properties.Resources.lupa1;
+            this.btnBuscaCliente.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscaCliente.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnBuscaCliente.Location = new System.Drawing.Point(375, 33);
+            this.btnBuscaCliente.Name = "btnBuscaCliente";
+            this.btnBuscaCliente.PressedColor = System.Drawing.Color.Red;
+            this.btnBuscaCliente.ShadowDecoration.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Size = new System.Drawing.Size(115, 39);
+            this.btnBuscaCliente.TabIndex = 156;
+            this.btnBuscaCliente.Text = "Buscar";
+            this.btnBuscaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscaCliente.Click += new System.EventHandler(this.txtBuscar_IconRightClick);
             // 
             // frm_Gestion_Gastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 540);
+            this.ClientSize = new System.Drawing.Size(1010, 579);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
@@ -715,5 +741,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private Guna.UI2.WinForms.Guna2Button btnBuscaCliente;
     }
 }

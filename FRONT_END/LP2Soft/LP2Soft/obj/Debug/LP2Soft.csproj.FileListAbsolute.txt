@@ -955,7 +955,6 @@ C:\Users\marce\Downloads\Restaurant_\FRONT_END\LP2Soft\LP2Soft\obj\Debug\LP2Soft
 C:\Users\marce\Downloads\Restaurant_\FRONT_END\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Productos_RegistroCategoria.resources
 C:\Users\marce\Downloads\Restaurant_\FRONT_END\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Productos_RegistroCombo.resources
 C:\Users\marce\Downloads\Restaurant_\FRONT_END\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Usuario.resources
-C:\Users\marce\Downloads\Restaurant_\FRONT_END\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Usuario_Contenedor.resources
 C:\Users\marce\Downloads\Restaurant_\FRONT_END\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Gestion_Usuario_Listar.resources
 C:\Users\marce\Downloads\Restaurant_\FRONT_END\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Mesero_Mesa_Pedido.resources
 C:\Users\marce\Downloads\Restaurant_\FRONT_END\LP2Soft\LP2Soft\obj\Debug\LP2Soft.frm_Mesero_MesaVer2.resources

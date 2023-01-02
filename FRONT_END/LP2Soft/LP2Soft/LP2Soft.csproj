@@ -251,12 +251,6 @@
     <Compile Include="frm_Gestion_Usuario.Designer.cs">
       <DependentUpon>frm_Gestion_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Gestion_Usuario_Contenedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Gestion_Usuario_Contenedor.Designer.cs">
-      <DependentUpon>frm_Gestion_Usuario_Contenedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Gestion_Usuario_Listar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,9 +399,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Usuario.resx">
       <DependentUpon>frm_Gestion_Usuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Gestion_Usuario_Contenedor.resx">
-      <DependentUpon>frm_Gestion_Usuario_Contenedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Usuario_Listar.resx">
       <DependentUpon>frm_Gestion_Usuario_Listar.cs</DependentUpon>

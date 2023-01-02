@@ -31,18 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Gestion_Productos_BusquedaCombo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBuscarCombo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dgvCombos = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModify = new Guna.UI2.WinForms.Guna2Button();
             this.btnNuevo = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.lblCombos = new System.Windows.Forms.Label();
+            this.btnBuscaCliente = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombos)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +57,7 @@
             this.txtBuscarCombo.BorderRadius = 10;
             this.txtBuscarCombo.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.txtBuscarCombo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBuscarCombo.DefaultText = "";
+            this.txtBuscarCombo.DefaultText = "Inserte nombre";
             this.txtBuscarCombo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtBuscarCombo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtBuscarCombo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -67,14 +70,14 @@
             this.txtBuscarCombo.ForeColor = System.Drawing.Color.Black;
             this.txtBuscarCombo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscarCombo.HoverState.Parent = this.txtBuscarCombo;
-            this.txtBuscarCombo.IconRight = global::LP2Soft.Properties.Resources.Buscar;
             this.txtBuscarCombo.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtBuscarCombo.Location = new System.Drawing.Point(22, 67);
+            this.txtBuscarCombo.Location = new System.Drawing.Point(22, 95);
             this.txtBuscarCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscarCombo.Name = "txtBuscarCombo";
             this.txtBuscarCombo.PasswordChar = '\0';
             this.txtBuscarCombo.PlaceholderText = "";
             this.txtBuscarCombo.SelectedText = "";
+            this.txtBuscarCombo.SelectionStart = 14;
             this.txtBuscarCombo.ShadowDecoration.Parent = this.txtBuscarCombo;
             this.txtBuscarCombo.Size = new System.Drawing.Size(411, 32);
             this.txtBuscarCombo.TabIndex = 42;
@@ -114,21 +117,20 @@
             this.dgvCombos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCombos.ColumnHeadersHeight = 27;
             this.dgvCombos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
             this.Nombre,
             this.Precio,
             this.Descripcion});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCombos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCombos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCombos.EnableHeadersVisualStyles = false;
             this.dgvCombos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCombos.Location = new System.Drawing.Point(22, 105);
+            this.dgvCombos.Location = new System.Drawing.Point(22, 181);
             this.dgvCombos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCombos.Name = "dgvCombos";
             this.dgvCombos.ReadOnly = true;
@@ -136,7 +138,7 @@
             this.dgvCombos.RowHeadersWidth = 51;
             this.dgvCombos.RowTemplate.Height = 24;
             this.dgvCombos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCombos.Size = new System.Drawing.Size(694, 443);
+            this.dgvCombos.Size = new System.Drawing.Size(694, 367);
             this.dgvCombos.TabIndex = 0;
             this.dgvCombos.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvCombos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -161,48 +163,6 @@
             this.dgvCombos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCombos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID.DataPropertyName = "idItemVendible";
-            this.ID.FillWeight = 60.9137F;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 30;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 30;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Nombre.DataPropertyName = "nombre";
-            this.Nombre.FillWeight = 113.0288F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 200;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 200;
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Precio.DataPropertyName = "precio";
-            this.Precio.FillWeight = 113.0288F;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 90;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 90;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "descripcion";
-            this.Descripcion.FillWeight = 113.0288F;
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
             // btnModify
             // 
             this.btnModify.BackColor = System.Drawing.Color.White;
@@ -220,7 +180,7 @@
             this.btnModify.Image = global::LP2Soft.Properties.Resources.edit;
             this.btnModify.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnModify.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnModify.Location = new System.Drawing.Point(721, 156);
+            this.btnModify.Location = new System.Drawing.Point(721, 232);
             this.btnModify.Name = "btnModify";
             this.btnModify.PressedColor = System.Drawing.Color.Red;
             this.btnModify.ShadowDecoration.Parent = this.btnModify;
@@ -247,7 +207,7 @@
             this.btnNuevo.Image = global::LP2Soft.Properties.Resources._new;
             this.btnNuevo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNuevo.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnNuevo.Location = new System.Drawing.Point(721, 105);
+            this.btnNuevo.Location = new System.Drawing.Point(721, 181);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.PressedColor = System.Drawing.Color.Red;
             this.btnNuevo.ShadowDecoration.Parent = this.btnNuevo;
@@ -274,7 +234,7 @@
             this.btnEliminar.Image = global::LP2Soft.Properties.Resources.borrar;
             this.btnEliminar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEliminar.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnEliminar.Location = new System.Drawing.Point(721, 207);
+            this.btnEliminar.Location = new System.Drawing.Point(721, 283);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.PressedColor = System.Drawing.Color.Red;
             this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
@@ -296,11 +256,98 @@
             this.lblCombos.Text = "Listado de Combos";
             this.lblCombos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnBuscaCliente
+            // 
+            this.btnBuscaCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscaCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscaCliente.BackgroundImage")));
+            this.btnBuscaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCliente.BorderRadius = 10;
+            this.btnBuscaCliente.CheckedState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.FillColor = System.Drawing.Color.Transparent;
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Image = global::LP2Soft.Properties.Resources.lupa1;
+            this.btnBuscaCliente.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscaCliente.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnBuscaCliente.Location = new System.Drawing.Point(481, 95);
+            this.btnBuscaCliente.Name = "btnBuscaCliente";
+            this.btnBuscaCliente.PressedColor = System.Drawing.Color.Red;
+            this.btnBuscaCliente.ShadowDecoration.Parent = this.btnBuscaCliente;
+            this.btnBuscaCliente.Size = new System.Drawing.Size(115, 37);
+            this.btnBuscaCliente.TabIndex = 156;
+            this.btnBuscaCliente.Text = "Buscar";
+            this.btnBuscaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscaCliente.Click += new System.EventHandler(this.txtBuscarCombo_IconRightClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(184, 25);
+            this.label3.TabIndex = 160;
+            this.label3.Text = "Lista de combos";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(238, 25);
+            this.label4.TabIndex = 159;
+            this.label4.Text = "Búsqueda de combos";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nombre.DataPropertyName = "nombre";
+            this.Nombre.FillWeight = 113.0288F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 200;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 200;
+            // 
+            // Precio
+            // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Precio.DataPropertyName = "precio";
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Precio.FillWeight = 113.0288F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 90;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 90;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.FillWeight = 113.0288F;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
             // frm_Gestion_Productos_BusquedaCombo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 570);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnBuscaCliente);
             this.Controls.Add(this.lblCombos);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnNuevo);
@@ -326,10 +373,12 @@
         private Guna.UI2.WinForms.Guna2Button btnModify;
         private Guna.UI2.WinForms.Guna2Button btnNuevo;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Label lblCombos;
+        private Guna.UI2.WinForms.Guna2Button btnBuscaCliente;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.Label lblCombos;
     }
 }

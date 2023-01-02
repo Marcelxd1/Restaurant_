@@ -57,6 +57,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscaCliente = new Guna.UI2.WinForms.Guna2Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +79,7 @@
             this.btnModificar.Image = global::LP2Soft.Properties.Resources.edit;
             this.btnModificar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnModificar.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnModificar.Location = new System.Drawing.Point(843, 216);
+            this.btnModificar.Location = new System.Drawing.Point(843, 303);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.PressedColor = System.Drawing.Color.Red;
             this.btnModificar.ShadowDecoration.Parent = this.btnModificar;
@@ -103,7 +105,7 @@
             this.btnEliminar.Image = global::LP2Soft.Properties.Resources.borrar;
             this.btnEliminar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEliminar.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnEliminar.Location = new System.Drawing.Point(843, 267);
+            this.btnEliminar.Location = new System.Drawing.Point(843, 354);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.PressedColor = System.Drawing.Color.Red;
             this.btnEliminar.ShadowDecoration.Parent = this.btnEliminar;
@@ -156,12 +158,12 @@
             this.dgvListarClientes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListarClientes.EnableHeadersVisualStyles = false;
             this.dgvListarClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvListarClientes.Location = new System.Drawing.Point(25, 166);
+            this.dgvListarClientes.Location = new System.Drawing.Point(25, 252);
             this.dgvListarClientes.Name = "dgvListarClientes";
             this.dgvListarClientes.ReadOnly = true;
             this.dgvListarClientes.RowHeadersVisible = false;
             this.dgvListarClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarClientes.Size = new System.Drawing.Size(800, 391);
+            this.dgvListarClientes.Size = new System.Drawing.Size(800, 305);
             this.dgvListarClientes.TabIndex = 40;
             this.dgvListarClientes.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvListarClientes.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -285,7 +287,7 @@
             this.txtBuscar.BorderRadius = 10;
             this.txtBuscar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBuscar.DefaultText = "Ingresar nombre";
+            this.txtBuscar.DefaultText = "Ingrese nombre";
             this.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -299,14 +301,15 @@
             this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscar.HoverState.Parent = this.txtBuscar;
             this.txtBuscar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtBuscar.Location = new System.Drawing.Point(25, 72);
+            this.txtBuscar.Location = new System.Drawing.Point(25, 108);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.PasswordChar = '\0';
             this.txtBuscar.PlaceholderText = "";
             this.txtBuscar.SelectedText = "";
+            this.txtBuscar.SelectionStart = 14;
             this.txtBuscar.ShadowDecoration.Parent = this.txtBuscar;
-            this.txtBuscar.Size = new System.Drawing.Size(361, 30);
+            this.txtBuscar.Size = new System.Drawing.Size(432, 30);
             this.txtBuscar.TabIndex = 39;
             this.txtBuscar.TextOffset = new System.Drawing.Point(0, -2);
             this.txtBuscar.IconRightClick += new System.EventHandler(this.txtBuscar_IconRightClick);
@@ -319,9 +322,9 @@
             this.lblDatosUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblDatosUsuario.Location = new System.Drawing.Point(24, 23);
             this.lblDatosUsuario.Name = "lblDatosUsuario";
-            this.lblDatosUsuario.Size = new System.Drawing.Size(232, 31);
+            this.lblDatosUsuario.Size = new System.Drawing.Size(270, 31);
             this.lblDatosUsuario.TabIndex = 37;
-            this.lblDatosUsuario.Text = "Lista de Clientes";
+            this.lblDatosUsuario.Text = "Gestión de Clientes";
             this.lblDatosUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox3
@@ -352,7 +355,7 @@
             this.btnNuvo.Image = global::LP2Soft.Properties.Resources._new;
             this.btnNuvo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNuvo.ImageSize = new System.Drawing.Size(28, 25);
-            this.btnNuvo.Location = new System.Drawing.Point(843, 165);
+            this.btnNuvo.Location = new System.Drawing.Point(843, 252);
             this.btnNuvo.Name = "btnNuvo";
             this.btnNuvo.PressedColor = System.Drawing.Color.Red;
             this.btnNuvo.ShadowDecoration.Parent = this.btnNuvo;
@@ -375,7 +378,7 @@
             this.rbPersona.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPersona.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.rbPersona.Location = new System.Drawing.Point(421, 72);
+            this.rbPersona.Location = new System.Drawing.Point(497, 108);
             this.rbPersona.Name = "rbPersona";
             this.rbPersona.Size = new System.Drawing.Size(93, 24);
             this.rbPersona.TabIndex = 45;
@@ -399,7 +402,7 @@
             this.rbEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbEmpresa.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.rbEmpresa.Location = new System.Drawing.Point(572, 72);
+            this.rbEmpresa.Location = new System.Drawing.Point(616, 108);
             this.rbEmpresa.Name = "rbEmpresa";
             this.rbEmpresa.Size = new System.Drawing.Size(98, 24);
             this.rbEmpresa.TabIndex = 46;
@@ -414,57 +417,57 @@
             // cbSector
             // 
             this.cbSector.BackColor = System.Drawing.Color.Transparent;
-            this.cbSector.BorderColor = System.Drawing.Color.Black;
+            this.cbSector.BorderColor = System.Drawing.Color.DimGray;
             this.cbSector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSector.FillColor = System.Drawing.Color.WhiteSmoke;
             this.cbSector.FocusedColor = System.Drawing.Color.Empty;
             this.cbSector.FocusedState.Parent = this.cbSector;
-            this.cbSector.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSector.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSector.ForeColor = System.Drawing.Color.Black;
             this.cbSector.FormattingEnabled = true;
             this.cbSector.HoverState.Parent = this.cbSector;
             this.cbSector.ItemHeight = 30;
             this.cbSector.ItemsAppearance.Parent = this.cbSector;
-            this.cbSector.Location = new System.Drawing.Point(108, 115);
+            this.cbSector.Location = new System.Drawing.Point(100, 158);
             this.cbSector.Name = "cbSector";
             this.cbSector.ShadowDecoration.Parent = this.cbSector;
-            this.cbSector.Size = new System.Drawing.Size(238, 36);
+            this.cbSector.Size = new System.Drawing.Size(181, 36);
             this.cbSector.TabIndex = 47;
             this.cbSector.SelectedIndexChanged += new System.EventHandler(this.cbSector_SelectedIndexChanged);
             // 
             // cbActividad
             // 
             this.cbActividad.BackColor = System.Drawing.Color.Transparent;
-            this.cbActividad.BorderColor = System.Drawing.Color.Black;
+            this.cbActividad.BorderColor = System.Drawing.Color.DimGray;
             this.cbActividad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbActividad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbActividad.FillColor = System.Drawing.Color.WhiteSmoke;
             this.cbActividad.FocusedColor = System.Drawing.Color.Empty;
             this.cbActividad.FocusedState.Parent = this.cbActividad;
-            this.cbActividad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActividad.ForeColor = System.Drawing.Color.Black;
             this.cbActividad.FormattingEnabled = true;
             this.cbActividad.HoverState.Parent = this.cbActividad;
             this.cbActividad.ItemHeight = 30;
             this.cbActividad.ItemsAppearance.Parent = this.cbActividad;
-            this.cbActividad.Location = new System.Drawing.Point(473, 115);
+            this.cbActividad.Location = new System.Drawing.Point(392, 158);
             this.cbActividad.Name = "cbActividad";
             this.cbActividad.ShadowDecoration.Parent = this.cbActividad;
-            this.cbActividad.Size = new System.Drawing.Size(238, 36);
+            this.cbActividad.Size = new System.Drawing.Size(198, 36);
             this.cbActividad.TabIndex = 48;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label1.Location = new System.Drawing.Point(26, 122);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(27, 165);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 24);
+            this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 49;
             this.label1.Text = "Sector:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -474,11 +477,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label2.Location = new System.Drawing.Point(366, 122);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(299, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 24);
+            this.label2.Size = new System.Drawing.Size(87, 20);
             this.label2.TabIndex = 50;
             this.label2.Text = "Actividad:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -493,27 +496,53 @@
             this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.FillColor = System.Drawing.Color.Transparent;
-            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
             this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.Image = global::LP2Soft.Properties.Resources.lupa1;
             this.btnBuscaCliente.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBuscaCliente.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnBuscaCliente.Location = new System.Drawing.Point(843, 111);
+            this.btnBuscaCliente.Location = new System.Drawing.Point(710, 158);
             this.btnBuscaCliente.Name = "btnBuscaCliente";
             this.btnBuscaCliente.PressedColor = System.Drawing.Color.Red;
             this.btnBuscaCliente.ShadowDecoration.Parent = this.btnBuscaCliente;
-            this.btnBuscaCliente.Size = new System.Drawing.Size(149, 45);
+            this.btnBuscaCliente.Size = new System.Drawing.Size(115, 39);
             this.btnBuscaCliente.TabIndex = 155;
             this.btnBuscaCliente.Text = "Buscar";
             this.btnBuscaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBuscaCliente.Click += new System.EventHandler(this.txtBuscar_IconRightClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(239, 25);
+            this.label4.TabIndex = 157;
+            this.label4.Text = "Búsqueda de clientes";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 215);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(185, 25);
+            this.label3.TabIndex = 158;
+            this.label3.Text = "Lista de clientes";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frm_Clientes_Listar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 579);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBuscaCliente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -565,5 +594,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Actividad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Razon;
         private Guna.UI2.WinForms.Guna2Button btnBuscaCliente;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

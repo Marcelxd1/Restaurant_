@@ -40,7 +40,10 @@ namespace LP2Soft
 
         private void txtBuscarCombo_IconRightClick(object sender, EventArgs e)
         {
-            NegocioWS.promocion[] combos = daoNegocio.listarPromociones_X_nombre(txtBuscarCombo.Text);
+            string indicador = "";
+            if (txtBuscarCombo.Text != "Inserte nombre")
+                indicador = txtBuscarCombo.Text;
+            NegocioWS.promocion[] combos = daoNegocio.listarPromociones_X_nombre(indicador);
                 dgvCombos.DataSource = new BindingList<NegocioWS.promocion>(combos);
         }
 

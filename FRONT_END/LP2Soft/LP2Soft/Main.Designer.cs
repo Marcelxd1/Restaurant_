@@ -425,7 +425,7 @@
             this.btnEmpleados.ShadowDecoration.Parent = this.btnEmpleados;
             this.btnEmpleados.Size = new System.Drawing.Size(185, 37);
             this.btnEmpleados.TabIndex = 20;
-            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.Text = "Usuarios";
             this.btnEmpleados.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEmpleados.TextOffset = new System.Drawing.Point(20, 0);
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
