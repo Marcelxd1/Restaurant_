@@ -30,6 +30,8 @@ namespace LP2Soft
             this.rol = rol;
             lblNombre.Text = this.persona.nombre + " " + this.persona.apellido_paterno;
             lblRolPersona.Text = this.rol.descripcion;
+            btnAsistencia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            abrirFormulario(new frm_Asitencia(this.persona));
             if (user.imagen != null)
             {
                 MemoryStream ms = new MemoryStream(user.imagen);
@@ -64,7 +66,7 @@ namespace LP2Soft
                 btnClientes.Visible = false;
                 btnGestion.Visible = false;
                 btnPedidos.Visible = false;
-            }
+            }            
         }
         public void restablecerBotones()
         {

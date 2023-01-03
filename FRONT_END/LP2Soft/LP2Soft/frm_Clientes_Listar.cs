@@ -56,8 +56,7 @@ namespace LP2Soft
                 RUC.Visible = false;
                 Sector.Visible = false;
                 Actividad.Visible = false;
-                ApellidoPaterno.Visible = true;
-                ApeMAter.Visible = true;
+                Column4.Visible = true;
                 DNIRUC.Visible = true;
                 cbActividad.Enabled = false;
                 cbSector.Enabled = false;
@@ -71,8 +70,7 @@ namespace LP2Soft
                 Sector.Visible = true;
                 Actividad.Visible = true;
                 DNIRUC.Visible = false;
-                ApeMAter.Visible =false;
-                ApellidoPaterno.Visible=false;
+                Column4.Visible= true;
                 cbActividad.Enabled = true;
                 cbSector.Enabled=true;
                 Asociado.Visible = true;
@@ -127,28 +125,27 @@ namespace LP2Soft
         {
             UserWS.persona cliente = (UserWS.persona)dgvListarClientes.Rows[e.RowIndex].DataBoundItem;
             dgvListarClientes.Rows[e.RowIndex].Cells[0].Value = cliente.id_persona;
-            dgvListarClientes.Rows[e.RowIndex].Cells[5].Value = cliente.nombre;
             if(cliente.VIP==true)
-                dgvListarClientes.Rows[e.RowIndex].Cells[6].Value = "SI";
+                dgvListarClientes.Rows[e.RowIndex].Cells[4].Value = "SI";
             else
-                dgvListarClientes.Rows[e.RowIndex].Cells[6].Value = "NO";
+                dgvListarClientes.Rows[e.RowIndex].Cells[4].Value = "NO";
             if (cliente.asociado == true)
-                dgvListarClientes.Rows[e.RowIndex].Cells[7].Value = "SI";
+                dgvListarClientes.Rows[e.RowIndex].Cells[5].Value = "SI";
             else
-                dgvListarClientes.Rows[e.RowIndex].Cells[7].Value = "NO";
+                dgvListarClientes.Rows[e.RowIndex].Cells[5].Value = "NO";
 
             if (cliente.tipo == 'N')
             {
                 dgvListarClientes.Rows[e.RowIndex].Cells[2].Value = cliente.DNI;
-                dgvListarClientes.Rows[e.RowIndex].Cells[3].Value = cliente.apellido_paterno;
-                dgvListarClientes.Rows[e.RowIndex].Cells[4].Value = cliente.apellido_materno;
+                dgvListarClientes.Rows[e.RowIndex].Cells[3].Value = cliente.nombre + " " + cliente.apellido_paterno + " " + cliente.apellido_materno;
             }
             else
             {
                 dgvListarClientes.Rows[e.RowIndex].Cells[1].Value = cliente.ruc;
-                dgvListarClientes.Rows[e.RowIndex].Cells[8].Value = cliente.actividad.sector.descripcion;
-                dgvListarClientes.Rows[e.RowIndex].Cells[9].Value = cliente.actividad.descripcion;
-                dgvListarClientes.Rows[e.RowIndex].Cells[10].Value = cliente.razon_social;
+                dgvListarClientes.Rows[e.RowIndex].Cells[3].Value = cliente.nombre;
+                dgvListarClientes.Rows[e.RowIndex].Cells[6].Value = cliente.actividad.sector.descripcion;
+                dgvListarClientes.Rows[e.RowIndex].Cells[7].Value = cliente.actividad.descripcion;
+                dgvListarClientes.Rows[e.RowIndex].Cells[8].Value = cliente.razon_social;
 
             }
         } 

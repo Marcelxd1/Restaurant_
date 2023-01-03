@@ -9082,7 +9082,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="lblHora.Location" type="System.Drawing.Point, System.Drawing">
-    <value>667, 69</value>
+    <value>763, 72</value>
   </data>
   <data name="lblHora.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -9106,7 +9106,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblHora.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>0</value>
+  </data>
+  <data name="lblFecha.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
   </data>
   <data name="lblFecha.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9114,8 +9117,11 @@
   <data name="lblFecha.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
+  <data name="lblFecha.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
   <data name="lblFecha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>667, 30</value>
+    <value>691, 41</value>
   </data>
   <data name="lblFecha.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
@@ -9139,7 +9145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFecha.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>1</value>
   </data>
   <metadata name="horaFecha.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -10870,7 +10876,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnShow.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnHide.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -10897,7 +10903,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnHide.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="txtPassword.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -10924,7 +10930,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtPassword.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="txtUsuario.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -10951,7 +10957,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtUsuario.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="dgvAsistencias.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>24</value>
@@ -11005,7 +11011,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvAsistencias.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11038,7 +11044,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11071,7 +11077,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
