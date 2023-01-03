@@ -15,6 +15,7 @@ namespace LP2Soft
     {
         private NegocioWS.promocion _promoSeleccionada;
         private NegocioWS.NegocioWSClient daoNegocio;
+        private frm_Gestion_Productos_RegistroCombo combosModify;
         public frm_Gestion_Productos_BusquedaCombo()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace LP2Soft
             daoNegocio = new NegocioWS.NegocioWSClient();
             dgvCombos.AutoGenerateColumns = false;
             dgvCombos.ScrollBars = ScrollBars.Both;
-            dgvCombos.DataSource = daoNegocio.listarPromociones_X_nombre(txtBuscarCombo.Text);
+            cargarTabla();
         }
              
 
@@ -30,21 +31,23 @@ namespace LP2Soft
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //al apretar enter se muestra los productos
-                NegocioWS.promocion[] combos = daoNegocio.listarPromociones_X_nombre(txtBuscarCombo.Text);
-                if (combos != null)
-                    dgvCombos.DataSource = new BindingList<NegocioWS.promocion>(combos);
+                cargarTabla();
 
             }
         }
 
-        private void txtBuscarCombo_IconRightClick(object sender, EventArgs e)
+        private void cargarTabla()
         {
             string indicador = "";
             if (txtBuscarCombo.Text != "Inserte nombre")
                 indicador = txtBuscarCombo.Text;
             NegocioWS.promocion[] combos = daoNegocio.listarPromociones_X_nombre(indicador);
-                dgvCombos.DataSource = new BindingList<NegocioWS.promocion>(combos);
+            dgvCombos.DataSource = new BindingList<NegocioWS.promocion>(combos);
+        }
+
+        private void txtBuscarCombo_IconRightClick(object sender, EventArgs e)
+        {
+            cargarTabla();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -52,16 +55,27 @@ namespace LP2Soft
             frm_Gestion_Productos_RegistroCombo frmProdc = new frm_Gestion_Productos_RegistroCombo(Estado.Nuevo, null);
             if (frmProdc.ShowDialog() == DialogResult.OK)
             {
-                dgvCombos.DataSource = daoNegocio.listarPromociones_X_nombre(txtBuscarCombo.Text);
+                cargarTabla();
             }
         }
 
-        private void btnModify_Click(object sender, EventArgs e)
+        private async void btnModify_Click(object sender, EventArgs e)
         {
-            frm_Gestion_Productos_RegistroCombo frmProdc = new frm_Gestion_Productos_RegistroCombo(Estado.Modificar, (NegocioWS.promocion)dgvCombos.CurrentRow.DataBoundItem);
-            if (frmProdc.ShowDialog() == DialogResult.OK)
+            frm_Loading frm_Loading = new frm_Loading();
+            frm_Loading.Show();
+            Task hilo1 = new Task(InicializarForm);
+            hilo1.Start();
+            await hilo1;
+            frm_Loading.Hide();
+        }
+
+        private void InicializarForm()
+        {
+            combosModify = new frm_Gestion_Productos_RegistroCombo(Estado.Modificar, (NegocioWS.promocion)dgvCombos.CurrentRow.DataBoundItem);
+
+            if (combosModify.ShowDialog() == DialogResult.OK)
             {
-                dgvCombos.DataSource = daoNegocio.listarPromociones_X_nombre(txtBuscarCombo.Text);
+                cargarTabla();
             }
         }
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,6 +41,8 @@ namespace LP2Soft
             dgvPlatos.ScrollBars = ScrollBars.Both;
             dgvLineas.ScrollBars = ScrollBars.Both;
             _promo = promo;
+           
+            
             establecerEstadoComponentes();
         }
 
@@ -50,7 +53,7 @@ namespace LP2Soft
                 ind = txtBuscar.Text;
             dgvPlatos.DataSource = daoNegocio.listarProductoXNombre(ind,cbCategoria.SelectedIndex,0);
         }
-        public void establecerEstadoComponentes()
+        public async void establecerEstadoComponentes()
         {
             switch (_estado)
             {
@@ -66,7 +69,7 @@ namespace LP2Soft
                     dgvLineas.Enabled = true;
                     dgvPlatos.Enabled = true;
                     limpiarComponentes();
-                    cargaDatos( );
+                    cargaDatos();
                     break;
                 case Estado.Nuevo:
                     btnGuardar.Text = "Registrar";

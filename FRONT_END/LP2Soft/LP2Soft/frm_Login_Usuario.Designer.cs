@@ -219,6 +219,7 @@
             this.txtPassword.TabIndex = 6;
             this.txtPassword.TextOffset = new System.Drawing.Point(8, 0);
             this.txtPassword.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtUsuario
             // 

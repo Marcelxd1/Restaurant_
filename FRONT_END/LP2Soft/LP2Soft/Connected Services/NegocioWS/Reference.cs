@@ -16,15 +16,6 @@ namespace LP2Soft.NegocioWS {
     public interface NegocioWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.listarTodosProductosResponse listarTodosProductos(LP2Soft.NegocioWS.listarTodosProductosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosProductosResponse> listarTodosProductosAsync(LP2Soft.NegocioWS.listarTodosProductosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarPromocionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -32,96 +23,6 @@ namespace LP2Soft.NegocioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarPromocionResponse")]
         System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarPromocionResponse> eliminarPromocionAsync(LP2Soft.NegocioWS.eliminarPromocionRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.listarProductoXCategoriaResponse listarProductoXCategoria(LP2Soft.NegocioWS.listarProductoXCategoriaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarProductoXCategoriaResponse> listarProductoXCategoriaAsync(LP2Soft.NegocioWS.listarProductoXCategoriaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.listarPromociones_X_nombreResponse listarPromociones_X_nombre(LP2Soft.NegocioWS.listarPromociones_X_nombreRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarPromociones_X_nombreResponse> listarPromociones_X_nombreAsync(LP2Soft.NegocioWS.listarPromociones_X_nombreRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.modificarProductoResponse modificarProducto(LP2Soft.NegocioWS.modificarProductoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarProductoResponse> modificarProductoAsync(LP2Soft.NegocioWS.modificarProductoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.insertarLineaPromoResponse insertarLineaPromo(LP2Soft.NegocioWS.insertarLineaPromoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarLineaPromoResponse> insertarLineaPromoAsync(LP2Soft.NegocioWS.insertarLineaPromoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.listarProductoXNombreResponse listarProductoXNombre(LP2Soft.NegocioWS.listarProductoXNombreRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarProductoXNombreResponse> listarProductoXNombreAsync(LP2Soft.NegocioWS.listarProductoXNombreRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.modificarLineaPromoResponse modificarLineaPromo(LP2Soft.NegocioWS.modificarLineaPromoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarLineaPromoResponse> modificarLineaPromoAsync(LP2Soft.NegocioWS.modificarLineaPromoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.eliminarLineaPromoResponse eliminarLineaPromo(LP2Soft.NegocioWS.eliminarLineaPromoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarLineaPromoResponse> eliminarLineaPromoAsync(LP2Soft.NegocioWS.eliminarLineaPromoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.listarTodosLineaPromoResponse listarTodosLineaPromo(LP2Soft.NegocioWS.listarTodosLineaPromoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosLineaPromoResponse> listarTodosLineaPromoAsync(LP2Soft.NegocioWS.listarTodosLineaPromoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.insertarPromocionResponse insertarPromocion(LP2Soft.NegocioWS.insertarPromocionRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarPromocionResponse> insertarPromocionAsync(LP2Soft.NegocioWS.insertarPromocionRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.modificarPromocionResponse modificarPromocion(LP2Soft.NegocioWS.modificarPromocionRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarPromocionResponse> modificarPromocionAsync(LP2Soft.NegocioWS.modificarPromocionRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasPromocionesRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasPromocionesResponse")]
@@ -133,13 +34,58 @@ namespace LP2Soft.NegocioWS {
         System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodasPromocionesResponse> listarTodasPromocionesAsync(LP2Soft.NegocioWS.listarTodasPromocionesRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.insertarCategoriaResponse insertarCategoria(LP2Soft.NegocioWS.insertarCategoriaRequest request);
+        LP2Soft.NegocioWS.modificarLineaPromoResponse modificarLineaPromo(LP2Soft.NegocioWS.modificarLineaPromoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarCategoriaResponse> insertarCategoriaAsync(LP2Soft.NegocioWS.insertarCategoriaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarLineaPromoResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarLineaPromoResponse> modificarLineaPromoAsync(LP2Soft.NegocioWS.modificarLineaPromoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.listarTodosLineaPromoResponse listarTodosLineaPromo(LP2Soft.NegocioWS.listarTodosLineaPromoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosLineaPromoResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosLineaPromoResponse> listarTodosLineaPromoAsync(LP2Soft.NegocioWS.listarTodosLineaPromoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.eliminarLineaPromoResponse eliminarLineaPromo(LP2Soft.NegocioWS.eliminarLineaPromoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarLineaPromoResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarLineaPromoResponse> eliminarLineaPromoAsync(LP2Soft.NegocioWS.eliminarLineaPromoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.modificarProductoResponse modificarProducto(LP2Soft.NegocioWS.modificarProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarProductoResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarProductoResponse> modificarProductoAsync(LP2Soft.NegocioWS.modificarProductoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.modificarPromocionResponse modificarPromocion(LP2Soft.NegocioWS.modificarPromocionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarPromocionResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarPromocionResponse> modificarPromocionAsync(LP2Soft.NegocioWS.modificarPromocionRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.listarTodosProductosResponse listarTodosProductos(LP2Soft.NegocioWS.listarTodosProductosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodosProductosResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosProductosResponse> listarTodosProductosAsync(LP2Soft.NegocioWS.listarTodosProductosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/modificarCategoriaResponse")]
@@ -151,6 +97,15 @@ namespace LP2Soft.NegocioWS {
         System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarCategoriaResponse> modificarCategoriaAsync(LP2Soft.NegocioWS.modificarCategoriaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.listarProductoXNombreResponse listarProductoXNombre(LP2Soft.NegocioWS.listarProductoXNombreRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXNombreResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarProductoXNombreResponse> listarProductoXNombreAsync(LP2Soft.NegocioWS.listarProductoXNombreRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarCategoriaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -158,6 +113,51 @@ namespace LP2Soft.NegocioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarCategoriaResponse")]
         System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarCategoriaResponse> eliminarCategoriaAsync(LP2Soft.NegocioWS.eliminarCategoriaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.listarProductoXCategoriaResponse listarProductoXCategoria(LP2Soft.NegocioWS.listarProductoXCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarProductoXCategoriaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarProductoXCategoriaResponse> listarProductoXCategoriaAsync(LP2Soft.NegocioWS.listarProductoXCategoriaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.insertarLineaPromoResponse insertarLineaPromo(LP2Soft.NegocioWS.insertarLineaPromoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarLineaPromoResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarLineaPromoResponse> insertarLineaPromoAsync(LP2Soft.NegocioWS.insertarLineaPromoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.insertarPromocionResponse insertarPromocion(LP2Soft.NegocioWS.insertarPromocionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarPromocionResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarPromocionResponse> insertarPromocionAsync(LP2Soft.NegocioWS.insertarPromocionRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.listarPromociones_X_nombreResponse listarPromociones_X_nombre(LP2Soft.NegocioWS.listarPromociones_X_nombreRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarPromociones_X_nombreResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarPromociones_X_nombreResponse> listarPromociones_X_nombreAsync(LP2Soft.NegocioWS.listarPromociones_X_nombreRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.insertarCategoriaResponse insertarCategoria(LP2Soft.NegocioWS.insertarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarCategoriaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarCategoriaResponse> insertarCategoriaAsync(LP2Soft.NegocioWS.insertarCategoriaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasCategoriasRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasCategoriasResponse")]
@@ -178,15 +178,6 @@ namespace LP2Soft.NegocioWS {
         System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosItemsXNombreResponse> listarTodosItemsXNombreAsync(LP2Soft.NegocioWS.listarTodosItemsXNombreRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.eliminarMesaResponse eliminarMesa(LP2Soft.NegocioWS.eliminarMesaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarMesaResponse> eliminarMesaAsync(LP2Soft.NegocioWS.eliminarMesaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarMesaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/insertarMesaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -205,13 +196,13 @@ namespace LP2Soft.NegocioWS {
         System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarMesaResponse> modificarMesaAsync(LP2Soft.NegocioWS.modificarMesaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/buscaMesaXIdRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/buscaMesaXIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        LP2Soft.NegocioWS.buscaMesaXIdResponse buscaMesaXId(LP2Soft.NegocioWS.buscaMesaXIdRequest request);
+        LP2Soft.NegocioWS.eliminarMesaResponse eliminarMesa(LP2Soft.NegocioWS.eliminarMesaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/buscaMesaXIdRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/buscaMesaXIdResponse")]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.buscaMesaXIdResponse> buscaMesaXIdAsync(LP2Soft.NegocioWS.buscaMesaXIdRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarMesaResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarMesaResponse> eliminarMesaAsync(LP2Soft.NegocioWS.eliminarMesaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasMesaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasMesaResponse")]
@@ -221,6 +212,15 @@ namespace LP2Soft.NegocioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasMesaRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/listarTodasMesaResponse")]
         System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodasMesaResponse> listarTodasMesaAsync(LP2Soft.NegocioWS.listarTodasMesaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/buscaMesaXIdRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/buscaMesaXIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        LP2Soft.NegocioWS.buscaMesaXIdResponse buscaMesaXId(LP2Soft.NegocioWS.buscaMesaXIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/buscaMesaXIdRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/buscaMesaXIdResponse")]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.buscaMesaXIdResponse> buscaMesaXIdAsync(LP2Soft.NegocioWS.buscaMesaXIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarProductoRequest", ReplyAction="http://services.lp2soft.pucp.edu.pe/NegocioWS/eliminarProductoResponse")]
@@ -241,8 +241,141 @@ namespace LP2Soft.NegocioWS {
         System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarProductoResponse> insertarProductoAsync(LP2Soft.NegocioWS.insertarProductoRequest request);
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPromocion", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarPromocionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPromocion;
+        
+        public eliminarPromocionRequest() {
+        }
+        
+        public eliminarPromocionRequest(int idPromocion) {
+            this.idPromocion = idPromocion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPromocionResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarPromocionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarPromocionResponse() {
+        }
+        
+        public eliminarPromocionResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/")]
+    public partial class promocion : itemVendible {
+        
+        private lineaPromocion[] lista_de_ComidasField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("lista_de_Comidas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public lineaPromocion[] lista_de_Comidas {
+            get {
+                return this.lista_de_ComidasField;
+            }
+            set {
+                this.lista_de_ComidasField = value;
+                this.RaisePropertyChanged("lista_de_Comidas");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/")]
+    public partial class lineaPromocion : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool estadoField;
+        
+        private int idLineaPromocionField;
+        
+        private producto productoField;
+        
+        private int unidadesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public bool estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                this.estadoField = value;
+                this.RaisePropertyChanged("estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int idLineaPromocion {
+            get {
+                return this.idLineaPromocionField;
+            }
+            set {
+                this.idLineaPromocionField = value;
+                this.RaisePropertyChanged("idLineaPromocion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public producto producto {
+            get {
+                return this.productoField;
+            }
+            set {
+                this.productoField = value;
+                this.RaisePropertyChanged("producto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public int unidades {
+            get {
+                return this.unidadesField;
+            }
+            set {
+                this.unidadesField = value;
+                this.RaisePropertyChanged("unidades");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -307,7 +440,7 @@ namespace LP2Soft.NegocioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -395,7 +528,7 @@ namespace LP2Soft.NegocioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -483,83 +616,9 @@ namespace LP2Soft.NegocioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/")]
-    public partial class lineaPromocion : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private bool estadoField;
-        
-        private int idLineaPromocionField;
-        
-        private producto productoField;
-        
-        private int unidadesField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public bool estado {
-            get {
-                return this.estadoField;
-            }
-            set {
-                this.estadoField = value;
-                this.RaisePropertyChanged("estado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int idLineaPromocion {
-            get {
-                return this.idLineaPromocionField;
-            }
-            set {
-                this.idLineaPromocionField = value;
-                this.RaisePropertyChanged("idLineaPromocion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public producto producto {
-            get {
-                return this.productoField;
-            }
-            set {
-                this.productoField = value;
-                this.RaisePropertyChanged("producto");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public int unidades {
-            get {
-                return this.unidadesField;
-            }
-            set {
-                this.unidadesField = value;
-                this.RaisePropertyChanged("unidades");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(promocion))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(producto))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -660,161 +719,143 @@ namespace LP2Soft.NegocioWS {
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/")]
-    public partial class promocion : itemVendible {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasPromociones", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodasPromocionesRequest {
         
-        private lineaPromocion[] lista_de_ComidasField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("lista_de_Comidas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public lineaPromocion[] lista_de_Comidas {
-            get {
-                return this.lista_de_ComidasField;
-            }
-            set {
-                this.lista_de_ComidasField = value;
-                this.RaisePropertyChanged("lista_de_Comidas");
-            }
+        public listarTodasPromocionesRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosProductos", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodosProductosRequest {
-        
-        public listarTodosProductosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosProductosResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodosProductosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.NegocioWS.producto[] @return;
-        
-        public listarTodosProductosResponse() {
-        }
-        
-        public listarTodosProductosResponse(LP2Soft.NegocioWS.producto[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPromocion", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarPromocionRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPromocion;
-        
-        public eliminarPromocionRequest() {
-        }
-        
-        public eliminarPromocionRequest(int idPromocion) {
-            this.idPromocion = idPromocion;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPromocionResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarPromocionResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarPromocionResponse() {
-        }
-        
-        public eliminarPromocionResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoXCategoria", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarProductoXCategoriaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nombre;
-        
-        public listarProductoXCategoriaRequest() {
-        }
-        
-        public listarProductoXCategoriaRequest(string nombre) {
-            this.nombre = nombre;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoXCategoriaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarProductoXCategoriaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.NegocioWS.producto[] @return;
-        
-        public listarProductoXCategoriaResponse() {
-        }
-        
-        public listarProductoXCategoriaResponse(LP2Soft.NegocioWS.producto[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPromociones_X_nombre", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPromociones_X_nombreRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string idPromocion;
-        
-        public listarPromociones_X_nombreRequest() {
-        }
-        
-        public listarPromociones_X_nombreRequest(string idPromocion) {
-            this.idPromocion = idPromocion;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPromociones_X_nombreResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPromociones_X_nombreResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasPromocionesResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodasPromocionesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public LP2Soft.NegocioWS.promocion[] @return;
         
-        public listarPromociones_X_nombreResponse() {
+        public listarTodasPromocionesResponse() {
         }
         
-        public listarPromociones_X_nombreResponse(LP2Soft.NegocioWS.promocion[] @return) {
+        public listarTodasPromocionesResponse(LP2Soft.NegocioWS.promocion[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarLineaPromo", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarLineaPromoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.NegocioWS.lineaPromocion Linea;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPromo;
+        
+        public modificarLineaPromoRequest() {
+        }
+        
+        public modificarLineaPromoRequest(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
+            this.Linea = Linea;
+            this.idPromo = idPromo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarLineaPromoResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarLineaPromoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarLineaPromoResponse() {
+        }
+        
+        public modificarLineaPromoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosLineaPromo", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodosLineaPromoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPromo;
+        
+        public listarTodosLineaPromoRequest() {
+        }
+        
+        public listarTodosLineaPromoRequest(int idPromo) {
+            this.idPromo = idPromo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosLineaPromoResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodosLineaPromoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.NegocioWS.lineaPromocion[] @return;
+        
+        public listarTodosLineaPromoResponse() {
+        }
+        
+        public listarTodosLineaPromoResponse(LP2Soft.NegocioWS.lineaPromocion[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarLineaPromo", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarLineaPromoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idlinea;
+        
+        public eliminarLineaPromoRequest() {
+        }
+        
+        public eliminarLineaPromoRequest(int idlinea) {
+            this.idlinea = idlinea;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarLineaPromoResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarLineaPromoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarLineaPromoResponse() {
+        }
+        
+        public eliminarLineaPromoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -858,40 +899,99 @@ namespace LP2Soft.NegocioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaPromo", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarLineaPromoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPromocion", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarPromocionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.NegocioWS.lineaPromocion Linea;
+        public LP2Soft.NegocioWS.promocion Promocion;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPromo;
-        
-        public insertarLineaPromoRequest() {
+        public modificarPromocionRequest() {
         }
         
-        public insertarLineaPromoRequest(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
-            this.Linea = Linea;
-            this.idPromo = idPromo;
+        public modificarPromocionRequest(LP2Soft.NegocioWS.promocion Promocion) {
+            this.Promocion = Promocion;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaPromoResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarLineaPromoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPromocionResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarPromocionResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public insertarLineaPromoResponse() {
+        public modificarPromocionResponse() {
         }
         
-        public insertarLineaPromoResponse(int @return) {
+        public modificarPromocionResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosProductos", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodosProductosRequest {
+        
+        public listarTodosProductosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosProductosResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodosProductosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.NegocioWS.producto[] @return;
+        
+        public listarTodosProductosResponse() {
+        }
+        
+        public listarTodosProductosResponse(LP2Soft.NegocioWS.producto[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCategoria", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.NegocioWS.categoria Categoria;
+        
+        public modificarCategoriaRequest() {
+        }
+        
+        public modificarCategoriaRequest(LP2Soft.NegocioWS.categoria Categoria) {
+            this.Categoria = Categoria;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCategoriaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class modificarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarCategoriaResponse() {
+        }
+        
+        public modificarCategoriaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -945,8 +1045,80 @@ namespace LP2Soft.NegocioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarLineaPromo", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarLineaPromoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCategoria", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idCategoria;
+        
+        public eliminarCategoriaRequest() {
+        }
+        
+        public eliminarCategoriaRequest(int idCategoria) {
+            this.idCategoria = idCategoria;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCategoriaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarCategoriaResponse() {
+        }
+        
+        public eliminarCategoriaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoXCategoria", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarProductoXCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
+        
+        public listarProductoXCategoriaRequest() {
+        }
+        
+        public listarProductoXCategoriaRequest(string nombre) {
+            this.nombre = nombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoXCategoriaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarProductoXCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.NegocioWS.producto[] @return;
+        
+        public listarProductoXCategoriaResponse() {
+        }
+        
+        public listarProductoXCategoriaResponse(LP2Soft.NegocioWS.producto[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaPromo", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarLineaPromoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -956,10 +1128,10 @@ namespace LP2Soft.NegocioWS {
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int idPromo;
         
-        public modificarLineaPromoRequest() {
+        public insertarLineaPromoRequest() {
         }
         
-        public modificarLineaPromoRequest(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
+        public insertarLineaPromoRequest(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
             this.Linea = Linea;
             this.idPromo = idPromo;
         }
@@ -968,89 +1140,17 @@ namespace LP2Soft.NegocioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarLineaPromoResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarLineaPromoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaPromoResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarLineaPromoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarLineaPromoResponse() {
+        public insertarLineaPromoResponse() {
         }
         
-        public modificarLineaPromoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarLineaPromo", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarLineaPromoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idlinea;
-        
-        public eliminarLineaPromoRequest() {
-        }
-        
-        public eliminarLineaPromoRequest(int idlinea) {
-            this.idlinea = idlinea;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarLineaPromoResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarLineaPromoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarLineaPromoResponse() {
-        }
-        
-        public eliminarLineaPromoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosLineaPromo", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodosLineaPromoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPromo;
-        
-        public listarTodosLineaPromoRequest() {
-        }
-        
-        public listarTodosLineaPromoRequest(int idPromo) {
-            this.idPromo = idPromo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodosLineaPromoResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodosLineaPromoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.NegocioWS.lineaPromocion[] @return;
-        
-        public listarTodosLineaPromoResponse() {
-        }
-        
-        public listarTodosLineaPromoResponse(LP2Soft.NegocioWS.lineaPromocion[] @return) {
+        public insertarLineaPromoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1094,63 +1194,35 @@ namespace LP2Soft.NegocioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPromocion", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarPromocionRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPromociones_X_nombre", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPromociones_X_nombreRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.NegocioWS.promocion Promocion;
+        public string idPromocion;
         
-        public modificarPromocionRequest() {
+        public listarPromociones_X_nombreRequest() {
         }
         
-        public modificarPromocionRequest(LP2Soft.NegocioWS.promocion Promocion) {
-            this.Promocion = Promocion;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPromocionResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarPromocionResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarPromocionResponse() {
-        }
-        
-        public modificarPromocionResponse(int @return) {
-            this.@return = @return;
+        public listarPromociones_X_nombreRequest(string idPromocion) {
+            this.idPromocion = idPromocion;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasPromociones", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodasPromocionesRequest {
-        
-        public listarTodasPromocionesRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasPromocionesResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodasPromocionesResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPromociones_X_nombreResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPromociones_X_nombreResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public LP2Soft.NegocioWS.promocion[] @return;
         
-        public listarTodasPromocionesResponse() {
+        public listarPromociones_X_nombreResponse() {
         }
         
-        public listarTodasPromocionesResponse(LP2Soft.NegocioWS.promocion[] @return) {
+        public listarPromociones_X_nombreResponse(LP2Soft.NegocioWS.promocion[] @return) {
             this.@return = @return;
         }
     }
@@ -1187,78 +1259,6 @@ namespace LP2Soft.NegocioWS {
         }
         
         public insertarCategoriaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCategoria", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarCategoriaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.NegocioWS.categoria Categoria;
-        
-        public modificarCategoriaRequest() {
-        }
-        
-        public modificarCategoriaRequest(LP2Soft.NegocioWS.categoria Categoria) {
-            this.Categoria = Categoria;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCategoriaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class modificarCategoriaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarCategoriaResponse() {
-        }
-        
-        public modificarCategoriaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCategoria", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarCategoriaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idCategoria;
-        
-        public eliminarCategoriaRequest() {
-        }
-        
-        public eliminarCategoriaRequest(int idCategoria) {
-            this.idCategoria = idCategoria;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCategoriaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarCategoriaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarCategoriaResponse() {
-        }
-        
-        public eliminarCategoriaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1323,42 +1323,6 @@ namespace LP2Soft.NegocioWS {
         }
         
         public listarTodosItemsXNombreResponse(LP2Soft.NegocioWS.itemVendible[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMesa", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarMesaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idmesa;
-        
-        public eliminarMesaRequest() {
-        }
-        
-        public eliminarMesaRequest(int idmesa) {
-            this.idmesa = idmesa;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMesaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarMesaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarMesaResponse() {
-        }
-        
-        public eliminarMesaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -1438,6 +1402,70 @@ namespace LP2Soft.NegocioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMesa", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarMesaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idmesa;
+        
+        public eliminarMesaRequest() {
+        }
+        
+        public eliminarMesaRequest(int idmesa) {
+            this.idmesa = idmesa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarMesaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarMesaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarMesaResponse() {
+        }
+        
+        public eliminarMesaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasMesa", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodasMesaRequest {
+        
+        public listarTodasMesaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasMesaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTodasMesaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public LP2Soft.NegocioWS.mesa[] @return;
+        
+        public listarTodasMesaResponse() {
+        }
+        
+        public listarTodasMesaResponse(LP2Soft.NegocioWS.mesa[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="buscaMesaXId", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
     public partial class buscaMesaXIdRequest {
         
@@ -1467,34 +1495,6 @@ namespace LP2Soft.NegocioWS {
         }
         
         public buscaMesaXIdResponse(LP2Soft.NegocioWS.mesa @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasMesa", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodasMesaRequest {
-        
-        public listarTodasMesaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTodasMesaResponse", WrapperNamespace="http://services.lp2soft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTodasMesaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.lp2soft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public LP2Soft.NegocioWS.mesa[] @return;
-        
-        public listarTodasMesaResponse() {
-        }
-        
-        public listarTodasMesaResponse(LP2Soft.NegocioWS.mesa[] @return) {
             this.@return = @return;
         }
     }
@@ -1599,27 +1599,6 @@ namespace LP2Soft.NegocioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.listarTodosProductosResponse LP2Soft.NegocioWS.NegocioWS.listarTodosProductos(LP2Soft.NegocioWS.listarTodosProductosRequest request) {
-            return base.Channel.listarTodosProductos(request);
-        }
-        
-        public LP2Soft.NegocioWS.producto[] listarTodosProductos() {
-            LP2Soft.NegocioWS.listarTodosProductosRequest inValue = new LP2Soft.NegocioWS.listarTodosProductosRequest();
-            LP2Soft.NegocioWS.listarTodosProductosResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosProductos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosProductosResponse> LP2Soft.NegocioWS.NegocioWS.listarTodosProductosAsync(LP2Soft.NegocioWS.listarTodosProductosRequest request) {
-            return base.Channel.listarTodosProductosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosProductosResponse> listarTodosProductosAsync() {
-            LP2Soft.NegocioWS.listarTodosProductosRequest inValue = new LP2Soft.NegocioWS.listarTodosProductosRequest();
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosProductosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         LP2Soft.NegocioWS.eliminarPromocionResponse LP2Soft.NegocioWS.NegocioWS.eliminarPromocion(LP2Soft.NegocioWS.eliminarPromocionRequest request) {
             return base.Channel.eliminarPromocion(request);
         }
@@ -1643,49 +1622,95 @@ namespace LP2Soft.NegocioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.listarProductoXCategoriaResponse LP2Soft.NegocioWS.NegocioWS.listarProductoXCategoria(LP2Soft.NegocioWS.listarProductoXCategoriaRequest request) {
-            return base.Channel.listarProductoXCategoria(request);
+        LP2Soft.NegocioWS.listarTodasPromocionesResponse LP2Soft.NegocioWS.NegocioWS.listarTodasPromociones(LP2Soft.NegocioWS.listarTodasPromocionesRequest request) {
+            return base.Channel.listarTodasPromociones(request);
         }
         
-        public LP2Soft.NegocioWS.producto[] listarProductoXCategoria(string nombre) {
-            LP2Soft.NegocioWS.listarProductoXCategoriaRequest inValue = new LP2Soft.NegocioWS.listarProductoXCategoriaRequest();
-            inValue.nombre = nombre;
-            LP2Soft.NegocioWS.listarProductoXCategoriaResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarProductoXCategoria(inValue);
+        public LP2Soft.NegocioWS.promocion[] listarTodasPromociones() {
+            LP2Soft.NegocioWS.listarTodasPromocionesRequest inValue = new LP2Soft.NegocioWS.listarTodasPromocionesRequest();
+            LP2Soft.NegocioWS.listarTodasPromocionesResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodasPromociones(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarProductoXCategoriaResponse> LP2Soft.NegocioWS.NegocioWS.listarProductoXCategoriaAsync(LP2Soft.NegocioWS.listarProductoXCategoriaRequest request) {
-            return base.Channel.listarProductoXCategoriaAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodasPromocionesResponse> LP2Soft.NegocioWS.NegocioWS.listarTodasPromocionesAsync(LP2Soft.NegocioWS.listarTodasPromocionesRequest request) {
+            return base.Channel.listarTodasPromocionesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarProductoXCategoriaResponse> listarProductoXCategoriaAsync(string nombre) {
-            LP2Soft.NegocioWS.listarProductoXCategoriaRequest inValue = new LP2Soft.NegocioWS.listarProductoXCategoriaRequest();
-            inValue.nombre = nombre;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarProductoXCategoriaAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodasPromocionesResponse> listarTodasPromocionesAsync() {
+            LP2Soft.NegocioWS.listarTodasPromocionesRequest inValue = new LP2Soft.NegocioWS.listarTodasPromocionesRequest();
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodasPromocionesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.listarPromociones_X_nombreResponse LP2Soft.NegocioWS.NegocioWS.listarPromociones_X_nombre(LP2Soft.NegocioWS.listarPromociones_X_nombreRequest request) {
-            return base.Channel.listarPromociones_X_nombre(request);
+        LP2Soft.NegocioWS.modificarLineaPromoResponse LP2Soft.NegocioWS.NegocioWS.modificarLineaPromo(LP2Soft.NegocioWS.modificarLineaPromoRequest request) {
+            return base.Channel.modificarLineaPromo(request);
         }
         
-        public LP2Soft.NegocioWS.promocion[] listarPromociones_X_nombre(string idPromocion) {
-            LP2Soft.NegocioWS.listarPromociones_X_nombreRequest inValue = new LP2Soft.NegocioWS.listarPromociones_X_nombreRequest();
-            inValue.idPromocion = idPromocion;
-            LP2Soft.NegocioWS.listarPromociones_X_nombreResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarPromociones_X_nombre(inValue);
+        public int modificarLineaPromo(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
+            LP2Soft.NegocioWS.modificarLineaPromoRequest inValue = new LP2Soft.NegocioWS.modificarLineaPromoRequest();
+            inValue.Linea = Linea;
+            inValue.idPromo = idPromo;
+            LP2Soft.NegocioWS.modificarLineaPromoResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarLineaPromo(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarPromociones_X_nombreResponse> LP2Soft.NegocioWS.NegocioWS.listarPromociones_X_nombreAsync(LP2Soft.NegocioWS.listarPromociones_X_nombreRequest request) {
-            return base.Channel.listarPromociones_X_nombreAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarLineaPromoResponse> LP2Soft.NegocioWS.NegocioWS.modificarLineaPromoAsync(LP2Soft.NegocioWS.modificarLineaPromoRequest request) {
+            return base.Channel.modificarLineaPromoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarPromociones_X_nombreResponse> listarPromociones_X_nombreAsync(string idPromocion) {
-            LP2Soft.NegocioWS.listarPromociones_X_nombreRequest inValue = new LP2Soft.NegocioWS.listarPromociones_X_nombreRequest();
-            inValue.idPromocion = idPromocion;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarPromociones_X_nombreAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarLineaPromoResponse> modificarLineaPromoAsync(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
+            LP2Soft.NegocioWS.modificarLineaPromoRequest inValue = new LP2Soft.NegocioWS.modificarLineaPromoRequest();
+            inValue.Linea = Linea;
+            inValue.idPromo = idPromo;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarLineaPromoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.NegocioWS.listarTodosLineaPromoResponse LP2Soft.NegocioWS.NegocioWS.listarTodosLineaPromo(LP2Soft.NegocioWS.listarTodosLineaPromoRequest request) {
+            return base.Channel.listarTodosLineaPromo(request);
+        }
+        
+        public LP2Soft.NegocioWS.lineaPromocion[] listarTodosLineaPromo(int idPromo) {
+            LP2Soft.NegocioWS.listarTodosLineaPromoRequest inValue = new LP2Soft.NegocioWS.listarTodosLineaPromoRequest();
+            inValue.idPromo = idPromo;
+            LP2Soft.NegocioWS.listarTodosLineaPromoResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosLineaPromo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosLineaPromoResponse> LP2Soft.NegocioWS.NegocioWS.listarTodosLineaPromoAsync(LP2Soft.NegocioWS.listarTodosLineaPromoRequest request) {
+            return base.Channel.listarTodosLineaPromoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosLineaPromoResponse> listarTodosLineaPromoAsync(int idPromo) {
+            LP2Soft.NegocioWS.listarTodosLineaPromoRequest inValue = new LP2Soft.NegocioWS.listarTodosLineaPromoRequest();
+            inValue.idPromo = idPromo;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosLineaPromoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.NegocioWS.eliminarLineaPromoResponse LP2Soft.NegocioWS.NegocioWS.eliminarLineaPromo(LP2Soft.NegocioWS.eliminarLineaPromoRequest request) {
+            return base.Channel.eliminarLineaPromo(request);
+        }
+        
+        public int eliminarLineaPromo(int idlinea) {
+            LP2Soft.NegocioWS.eliminarLineaPromoRequest inValue = new LP2Soft.NegocioWS.eliminarLineaPromoRequest();
+            inValue.idlinea = idlinea;
+            LP2Soft.NegocioWS.eliminarLineaPromoResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarLineaPromo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarLineaPromoResponse> LP2Soft.NegocioWS.NegocioWS.eliminarLineaPromoAsync(LP2Soft.NegocioWS.eliminarLineaPromoRequest request) {
+            return base.Channel.eliminarLineaPromoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarLineaPromoResponse> eliminarLineaPromoAsync(int idlinea) {
+            LP2Soft.NegocioWS.eliminarLineaPromoRequest inValue = new LP2Soft.NegocioWS.eliminarLineaPromoRequest();
+            inValue.idlinea = idlinea;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarLineaPromoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1712,28 +1737,70 @@ namespace LP2Soft.NegocioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.insertarLineaPromoResponse LP2Soft.NegocioWS.NegocioWS.insertarLineaPromo(LP2Soft.NegocioWS.insertarLineaPromoRequest request) {
-            return base.Channel.insertarLineaPromo(request);
+        LP2Soft.NegocioWS.modificarPromocionResponse LP2Soft.NegocioWS.NegocioWS.modificarPromocion(LP2Soft.NegocioWS.modificarPromocionRequest request) {
+            return base.Channel.modificarPromocion(request);
         }
         
-        public int insertarLineaPromo(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
-            LP2Soft.NegocioWS.insertarLineaPromoRequest inValue = new LP2Soft.NegocioWS.insertarLineaPromoRequest();
-            inValue.Linea = Linea;
-            inValue.idPromo = idPromo;
-            LP2Soft.NegocioWS.insertarLineaPromoResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).insertarLineaPromo(inValue);
+        public int modificarPromocion(LP2Soft.NegocioWS.promocion Promocion) {
+            LP2Soft.NegocioWS.modificarPromocionRequest inValue = new LP2Soft.NegocioWS.modificarPromocionRequest();
+            inValue.Promocion = Promocion;
+            LP2Soft.NegocioWS.modificarPromocionResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarPromocion(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarLineaPromoResponse> LP2Soft.NegocioWS.NegocioWS.insertarLineaPromoAsync(LP2Soft.NegocioWS.insertarLineaPromoRequest request) {
-            return base.Channel.insertarLineaPromoAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarPromocionResponse> LP2Soft.NegocioWS.NegocioWS.modificarPromocionAsync(LP2Soft.NegocioWS.modificarPromocionRequest request) {
+            return base.Channel.modificarPromocionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarLineaPromoResponse> insertarLineaPromoAsync(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
-            LP2Soft.NegocioWS.insertarLineaPromoRequest inValue = new LP2Soft.NegocioWS.insertarLineaPromoRequest();
-            inValue.Linea = Linea;
-            inValue.idPromo = idPromo;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).insertarLineaPromoAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarPromocionResponse> modificarPromocionAsync(LP2Soft.NegocioWS.promocion Promocion) {
+            LP2Soft.NegocioWS.modificarPromocionRequest inValue = new LP2Soft.NegocioWS.modificarPromocionRequest();
+            inValue.Promocion = Promocion;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarPromocionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.NegocioWS.listarTodosProductosResponse LP2Soft.NegocioWS.NegocioWS.listarTodosProductos(LP2Soft.NegocioWS.listarTodosProductosRequest request) {
+            return base.Channel.listarTodosProductos(request);
+        }
+        
+        public LP2Soft.NegocioWS.producto[] listarTodosProductos() {
+            LP2Soft.NegocioWS.listarTodosProductosRequest inValue = new LP2Soft.NegocioWS.listarTodosProductosRequest();
+            LP2Soft.NegocioWS.listarTodosProductosResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosProductos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosProductosResponse> LP2Soft.NegocioWS.NegocioWS.listarTodosProductosAsync(LP2Soft.NegocioWS.listarTodosProductosRequest request) {
+            return base.Channel.listarTodosProductosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosProductosResponse> listarTodosProductosAsync() {
+            LP2Soft.NegocioWS.listarTodosProductosRequest inValue = new LP2Soft.NegocioWS.listarTodosProductosRequest();
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosProductosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.NegocioWS.modificarCategoriaResponse LP2Soft.NegocioWS.NegocioWS.modificarCategoria(LP2Soft.NegocioWS.modificarCategoriaRequest request) {
+            return base.Channel.modificarCategoria(request);
+        }
+        
+        public int modificarCategoria(LP2Soft.NegocioWS.categoria Categoria) {
+            LP2Soft.NegocioWS.modificarCategoriaRequest inValue = new LP2Soft.NegocioWS.modificarCategoriaRequest();
+            inValue.Categoria = Categoria;
+            LP2Soft.NegocioWS.modificarCategoriaResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarCategoria(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarCategoriaResponse> LP2Soft.NegocioWS.NegocioWS.modificarCategoriaAsync(LP2Soft.NegocioWS.modificarCategoriaRequest request) {
+            return base.Channel.modificarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarCategoriaResponse> modificarCategoriaAsync(LP2Soft.NegocioWS.categoria Categoria) {
+            LP2Soft.NegocioWS.modificarCategoriaRequest inValue = new LP2Soft.NegocioWS.modificarCategoriaRequest();
+            inValue.Categoria = Categoria;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1764,74 +1831,74 @@ namespace LP2Soft.NegocioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.modificarLineaPromoResponse LP2Soft.NegocioWS.NegocioWS.modificarLineaPromo(LP2Soft.NegocioWS.modificarLineaPromoRequest request) {
-            return base.Channel.modificarLineaPromo(request);
+        LP2Soft.NegocioWS.eliminarCategoriaResponse LP2Soft.NegocioWS.NegocioWS.eliminarCategoria(LP2Soft.NegocioWS.eliminarCategoriaRequest request) {
+            return base.Channel.eliminarCategoria(request);
         }
         
-        public int modificarLineaPromo(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
-            LP2Soft.NegocioWS.modificarLineaPromoRequest inValue = new LP2Soft.NegocioWS.modificarLineaPromoRequest();
+        public int eliminarCategoria(int idCategoria) {
+            LP2Soft.NegocioWS.eliminarCategoriaRequest inValue = new LP2Soft.NegocioWS.eliminarCategoriaRequest();
+            inValue.idCategoria = idCategoria;
+            LP2Soft.NegocioWS.eliminarCategoriaResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarCategoria(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarCategoriaResponse> LP2Soft.NegocioWS.NegocioWS.eliminarCategoriaAsync(LP2Soft.NegocioWS.eliminarCategoriaRequest request) {
+            return base.Channel.eliminarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarCategoriaResponse> eliminarCategoriaAsync(int idCategoria) {
+            LP2Soft.NegocioWS.eliminarCategoriaRequest inValue = new LP2Soft.NegocioWS.eliminarCategoriaRequest();
+            inValue.idCategoria = idCategoria;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.NegocioWS.listarProductoXCategoriaResponse LP2Soft.NegocioWS.NegocioWS.listarProductoXCategoria(LP2Soft.NegocioWS.listarProductoXCategoriaRequest request) {
+            return base.Channel.listarProductoXCategoria(request);
+        }
+        
+        public LP2Soft.NegocioWS.producto[] listarProductoXCategoria(string nombre) {
+            LP2Soft.NegocioWS.listarProductoXCategoriaRequest inValue = new LP2Soft.NegocioWS.listarProductoXCategoriaRequest();
+            inValue.nombre = nombre;
+            LP2Soft.NegocioWS.listarProductoXCategoriaResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarProductoXCategoria(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarProductoXCategoriaResponse> LP2Soft.NegocioWS.NegocioWS.listarProductoXCategoriaAsync(LP2Soft.NegocioWS.listarProductoXCategoriaRequest request) {
+            return base.Channel.listarProductoXCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarProductoXCategoriaResponse> listarProductoXCategoriaAsync(string nombre) {
+            LP2Soft.NegocioWS.listarProductoXCategoriaRequest inValue = new LP2Soft.NegocioWS.listarProductoXCategoriaRequest();
+            inValue.nombre = nombre;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarProductoXCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.NegocioWS.insertarLineaPromoResponse LP2Soft.NegocioWS.NegocioWS.insertarLineaPromo(LP2Soft.NegocioWS.insertarLineaPromoRequest request) {
+            return base.Channel.insertarLineaPromo(request);
+        }
+        
+        public int insertarLineaPromo(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
+            LP2Soft.NegocioWS.insertarLineaPromoRequest inValue = new LP2Soft.NegocioWS.insertarLineaPromoRequest();
             inValue.Linea = Linea;
             inValue.idPromo = idPromo;
-            LP2Soft.NegocioWS.modificarLineaPromoResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarLineaPromo(inValue);
+            LP2Soft.NegocioWS.insertarLineaPromoResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).insertarLineaPromo(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarLineaPromoResponse> LP2Soft.NegocioWS.NegocioWS.modificarLineaPromoAsync(LP2Soft.NegocioWS.modificarLineaPromoRequest request) {
-            return base.Channel.modificarLineaPromoAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarLineaPromoResponse> LP2Soft.NegocioWS.NegocioWS.insertarLineaPromoAsync(LP2Soft.NegocioWS.insertarLineaPromoRequest request) {
+            return base.Channel.insertarLineaPromoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarLineaPromoResponse> modificarLineaPromoAsync(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
-            LP2Soft.NegocioWS.modificarLineaPromoRequest inValue = new LP2Soft.NegocioWS.modificarLineaPromoRequest();
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.insertarLineaPromoResponse> insertarLineaPromoAsync(LP2Soft.NegocioWS.lineaPromocion Linea, int idPromo) {
+            LP2Soft.NegocioWS.insertarLineaPromoRequest inValue = new LP2Soft.NegocioWS.insertarLineaPromoRequest();
             inValue.Linea = Linea;
             inValue.idPromo = idPromo;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarLineaPromoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.eliminarLineaPromoResponse LP2Soft.NegocioWS.NegocioWS.eliminarLineaPromo(LP2Soft.NegocioWS.eliminarLineaPromoRequest request) {
-            return base.Channel.eliminarLineaPromo(request);
-        }
-        
-        public int eliminarLineaPromo(int idlinea) {
-            LP2Soft.NegocioWS.eliminarLineaPromoRequest inValue = new LP2Soft.NegocioWS.eliminarLineaPromoRequest();
-            inValue.idlinea = idlinea;
-            LP2Soft.NegocioWS.eliminarLineaPromoResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarLineaPromo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarLineaPromoResponse> LP2Soft.NegocioWS.NegocioWS.eliminarLineaPromoAsync(LP2Soft.NegocioWS.eliminarLineaPromoRequest request) {
-            return base.Channel.eliminarLineaPromoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarLineaPromoResponse> eliminarLineaPromoAsync(int idlinea) {
-            LP2Soft.NegocioWS.eliminarLineaPromoRequest inValue = new LP2Soft.NegocioWS.eliminarLineaPromoRequest();
-            inValue.idlinea = idlinea;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarLineaPromoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.listarTodosLineaPromoResponse LP2Soft.NegocioWS.NegocioWS.listarTodosLineaPromo(LP2Soft.NegocioWS.listarTodosLineaPromoRequest request) {
-            return base.Channel.listarTodosLineaPromo(request);
-        }
-        
-        public LP2Soft.NegocioWS.lineaPromocion[] listarTodosLineaPromo(int idPromo) {
-            LP2Soft.NegocioWS.listarTodosLineaPromoRequest inValue = new LP2Soft.NegocioWS.listarTodosLineaPromoRequest();
-            inValue.idPromo = idPromo;
-            LP2Soft.NegocioWS.listarTodosLineaPromoResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosLineaPromo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosLineaPromoResponse> LP2Soft.NegocioWS.NegocioWS.listarTodosLineaPromoAsync(LP2Soft.NegocioWS.listarTodosLineaPromoRequest request) {
-            return base.Channel.listarTodosLineaPromoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodosLineaPromoResponse> listarTodosLineaPromoAsync(int idPromo) {
-            LP2Soft.NegocioWS.listarTodosLineaPromoRequest inValue = new LP2Soft.NegocioWS.listarTodosLineaPromoRequest();
-            inValue.idPromo = idPromo;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosLineaPromoAsync(inValue);
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).insertarLineaPromoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1858,47 +1925,26 @@ namespace LP2Soft.NegocioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.modificarPromocionResponse LP2Soft.NegocioWS.NegocioWS.modificarPromocion(LP2Soft.NegocioWS.modificarPromocionRequest request) {
-            return base.Channel.modificarPromocion(request);
+        LP2Soft.NegocioWS.listarPromociones_X_nombreResponse LP2Soft.NegocioWS.NegocioWS.listarPromociones_X_nombre(LP2Soft.NegocioWS.listarPromociones_X_nombreRequest request) {
+            return base.Channel.listarPromociones_X_nombre(request);
         }
         
-        public int modificarPromocion(LP2Soft.NegocioWS.promocion Promocion) {
-            LP2Soft.NegocioWS.modificarPromocionRequest inValue = new LP2Soft.NegocioWS.modificarPromocionRequest();
-            inValue.Promocion = Promocion;
-            LP2Soft.NegocioWS.modificarPromocionResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarPromocion(inValue);
+        public LP2Soft.NegocioWS.promocion[] listarPromociones_X_nombre(string idPromocion) {
+            LP2Soft.NegocioWS.listarPromociones_X_nombreRequest inValue = new LP2Soft.NegocioWS.listarPromociones_X_nombreRequest();
+            inValue.idPromocion = idPromocion;
+            LP2Soft.NegocioWS.listarPromociones_X_nombreResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarPromociones_X_nombre(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarPromocionResponse> LP2Soft.NegocioWS.NegocioWS.modificarPromocionAsync(LP2Soft.NegocioWS.modificarPromocionRequest request) {
-            return base.Channel.modificarPromocionAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarPromociones_X_nombreResponse> LP2Soft.NegocioWS.NegocioWS.listarPromociones_X_nombreAsync(LP2Soft.NegocioWS.listarPromociones_X_nombreRequest request) {
+            return base.Channel.listarPromociones_X_nombreAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarPromocionResponse> modificarPromocionAsync(LP2Soft.NegocioWS.promocion Promocion) {
-            LP2Soft.NegocioWS.modificarPromocionRequest inValue = new LP2Soft.NegocioWS.modificarPromocionRequest();
-            inValue.Promocion = Promocion;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarPromocionAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.listarTodasPromocionesResponse LP2Soft.NegocioWS.NegocioWS.listarTodasPromociones(LP2Soft.NegocioWS.listarTodasPromocionesRequest request) {
-            return base.Channel.listarTodasPromociones(request);
-        }
-        
-        public LP2Soft.NegocioWS.promocion[] listarTodasPromociones() {
-            LP2Soft.NegocioWS.listarTodasPromocionesRequest inValue = new LP2Soft.NegocioWS.listarTodasPromocionesRequest();
-            LP2Soft.NegocioWS.listarTodasPromocionesResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodasPromociones(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodasPromocionesResponse> LP2Soft.NegocioWS.NegocioWS.listarTodasPromocionesAsync(LP2Soft.NegocioWS.listarTodasPromocionesRequest request) {
-            return base.Channel.listarTodasPromocionesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodasPromocionesResponse> listarTodasPromocionesAsync() {
-            LP2Soft.NegocioWS.listarTodasPromocionesRequest inValue = new LP2Soft.NegocioWS.listarTodasPromocionesRequest();
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodasPromocionesAsync(inValue);
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarPromociones_X_nombreResponse> listarPromociones_X_nombreAsync(string idPromocion) {
+            LP2Soft.NegocioWS.listarPromociones_X_nombreRequest inValue = new LP2Soft.NegocioWS.listarPromociones_X_nombreRequest();
+            inValue.idPromocion = idPromocion;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarPromociones_X_nombreAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1922,52 +1968,6 @@ namespace LP2Soft.NegocioWS {
             LP2Soft.NegocioWS.insertarCategoriaRequest inValue = new LP2Soft.NegocioWS.insertarCategoriaRequest();
             inValue.Categoria = Categoria;
             return ((LP2Soft.NegocioWS.NegocioWS)(this)).insertarCategoriaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.modificarCategoriaResponse LP2Soft.NegocioWS.NegocioWS.modificarCategoria(LP2Soft.NegocioWS.modificarCategoriaRequest request) {
-            return base.Channel.modificarCategoria(request);
-        }
-        
-        public int modificarCategoria(LP2Soft.NegocioWS.categoria Categoria) {
-            LP2Soft.NegocioWS.modificarCategoriaRequest inValue = new LP2Soft.NegocioWS.modificarCategoriaRequest();
-            inValue.Categoria = Categoria;
-            LP2Soft.NegocioWS.modificarCategoriaResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarCategoria(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarCategoriaResponse> LP2Soft.NegocioWS.NegocioWS.modificarCategoriaAsync(LP2Soft.NegocioWS.modificarCategoriaRequest request) {
-            return base.Channel.modificarCategoriaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.modificarCategoriaResponse> modificarCategoriaAsync(LP2Soft.NegocioWS.categoria Categoria) {
-            LP2Soft.NegocioWS.modificarCategoriaRequest inValue = new LP2Soft.NegocioWS.modificarCategoriaRequest();
-            inValue.Categoria = Categoria;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).modificarCategoriaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.eliminarCategoriaResponse LP2Soft.NegocioWS.NegocioWS.eliminarCategoria(LP2Soft.NegocioWS.eliminarCategoriaRequest request) {
-            return base.Channel.eliminarCategoria(request);
-        }
-        
-        public int eliminarCategoria(int idCategoria) {
-            LP2Soft.NegocioWS.eliminarCategoriaRequest inValue = new LP2Soft.NegocioWS.eliminarCategoriaRequest();
-            inValue.idCategoria = idCategoria;
-            LP2Soft.NegocioWS.eliminarCategoriaResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarCategoria(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarCategoriaResponse> LP2Soft.NegocioWS.NegocioWS.eliminarCategoriaAsync(LP2Soft.NegocioWS.eliminarCategoriaRequest request) {
-            return base.Channel.eliminarCategoriaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarCategoriaResponse> eliminarCategoriaAsync(int idCategoria) {
-            LP2Soft.NegocioWS.eliminarCategoriaRequest inValue = new LP2Soft.NegocioWS.eliminarCategoriaRequest();
-            inValue.idCategoria = idCategoria;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2012,29 +2012,6 @@ namespace LP2Soft.NegocioWS {
             LP2Soft.NegocioWS.listarTodosItemsXNombreRequest inValue = new LP2Soft.NegocioWS.listarTodosItemsXNombreRequest();
             inValue.nombre = nombre;
             return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodosItemsXNombreAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.eliminarMesaResponse LP2Soft.NegocioWS.NegocioWS.eliminarMesa(LP2Soft.NegocioWS.eliminarMesaRequest request) {
-            return base.Channel.eliminarMesa(request);
-        }
-        
-        public int eliminarMesa(int idmesa) {
-            LP2Soft.NegocioWS.eliminarMesaRequest inValue = new LP2Soft.NegocioWS.eliminarMesaRequest();
-            inValue.idmesa = idmesa;
-            LP2Soft.NegocioWS.eliminarMesaResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarMesa(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarMesaResponse> LP2Soft.NegocioWS.NegocioWS.eliminarMesaAsync(LP2Soft.NegocioWS.eliminarMesaRequest request) {
-            return base.Channel.eliminarMesaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarMesaResponse> eliminarMesaAsync(int idmesa) {
-            LP2Soft.NegocioWS.eliminarMesaRequest inValue = new LP2Soft.NegocioWS.eliminarMesaRequest();
-            inValue.idmesa = idmesa;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarMesaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2084,26 +2061,26 @@ namespace LP2Soft.NegocioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LP2Soft.NegocioWS.buscaMesaXIdResponse LP2Soft.NegocioWS.NegocioWS.buscaMesaXId(LP2Soft.NegocioWS.buscaMesaXIdRequest request) {
-            return base.Channel.buscaMesaXId(request);
+        LP2Soft.NegocioWS.eliminarMesaResponse LP2Soft.NegocioWS.NegocioWS.eliminarMesa(LP2Soft.NegocioWS.eliminarMesaRequest request) {
+            return base.Channel.eliminarMesa(request);
         }
         
-        public LP2Soft.NegocioWS.mesa buscaMesaXId(int idmesa) {
-            LP2Soft.NegocioWS.buscaMesaXIdRequest inValue = new LP2Soft.NegocioWS.buscaMesaXIdRequest();
+        public int eliminarMesa(int idmesa) {
+            LP2Soft.NegocioWS.eliminarMesaRequest inValue = new LP2Soft.NegocioWS.eliminarMesaRequest();
             inValue.idmesa = idmesa;
-            LP2Soft.NegocioWS.buscaMesaXIdResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).buscaMesaXId(inValue);
+            LP2Soft.NegocioWS.eliminarMesaResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarMesa(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<LP2Soft.NegocioWS.buscaMesaXIdResponse> LP2Soft.NegocioWS.NegocioWS.buscaMesaXIdAsync(LP2Soft.NegocioWS.buscaMesaXIdRequest request) {
-            return base.Channel.buscaMesaXIdAsync(request);
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarMesaResponse> LP2Soft.NegocioWS.NegocioWS.eliminarMesaAsync(LP2Soft.NegocioWS.eliminarMesaRequest request) {
+            return base.Channel.eliminarMesaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.buscaMesaXIdResponse> buscaMesaXIdAsync(int idmesa) {
-            LP2Soft.NegocioWS.buscaMesaXIdRequest inValue = new LP2Soft.NegocioWS.buscaMesaXIdRequest();
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.eliminarMesaResponse> eliminarMesaAsync(int idmesa) {
+            LP2Soft.NegocioWS.eliminarMesaRequest inValue = new LP2Soft.NegocioWS.eliminarMesaRequest();
             inValue.idmesa = idmesa;
-            return ((LP2Soft.NegocioWS.NegocioWS)(this)).buscaMesaXIdAsync(inValue);
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).eliminarMesaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2125,6 +2102,29 @@ namespace LP2Soft.NegocioWS {
         public System.Threading.Tasks.Task<LP2Soft.NegocioWS.listarTodasMesaResponse> listarTodasMesaAsync() {
             LP2Soft.NegocioWS.listarTodasMesaRequest inValue = new LP2Soft.NegocioWS.listarTodasMesaRequest();
             return ((LP2Soft.NegocioWS.NegocioWS)(this)).listarTodasMesaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        LP2Soft.NegocioWS.buscaMesaXIdResponse LP2Soft.NegocioWS.NegocioWS.buscaMesaXId(LP2Soft.NegocioWS.buscaMesaXIdRequest request) {
+            return base.Channel.buscaMesaXId(request);
+        }
+        
+        public LP2Soft.NegocioWS.mesa buscaMesaXId(int idmesa) {
+            LP2Soft.NegocioWS.buscaMesaXIdRequest inValue = new LP2Soft.NegocioWS.buscaMesaXIdRequest();
+            inValue.idmesa = idmesa;
+            LP2Soft.NegocioWS.buscaMesaXIdResponse retVal = ((LP2Soft.NegocioWS.NegocioWS)(this)).buscaMesaXId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<LP2Soft.NegocioWS.buscaMesaXIdResponse> LP2Soft.NegocioWS.NegocioWS.buscaMesaXIdAsync(LP2Soft.NegocioWS.buscaMesaXIdRequest request) {
+            return base.Channel.buscaMesaXIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<LP2Soft.NegocioWS.buscaMesaXIdResponse> buscaMesaXIdAsync(int idmesa) {
+            LP2Soft.NegocioWS.buscaMesaXIdRequest inValue = new LP2Soft.NegocioWS.buscaMesaXIdRequest();
+            inValue.idmesa = idmesa;
+            return ((LP2Soft.NegocioWS.NegocioWS)(this)).buscaMesaXIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

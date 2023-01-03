@@ -273,6 +273,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarTodasPromociones">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTodasPromocionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocion" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarProductoXCategoria">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -281,14 +289,6 @@
   <xs:complexType name="listarProductoXCategoriaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTodasPromociones">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarTodasPromocionesResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocion" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarPromocion">

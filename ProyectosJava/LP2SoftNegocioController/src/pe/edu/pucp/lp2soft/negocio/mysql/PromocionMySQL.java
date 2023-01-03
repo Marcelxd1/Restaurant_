@@ -88,7 +88,7 @@ public class PromocionMySQL implements PromocionDAO{
             
             con= DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call ELIMINAR_LINEA_PROMOCION(?)}");
-            cs.setInt("_idlinea", promocion.getIdItemVendible());
+            cs.setInt("_idPromo", promocion.getIdItemVendible());
             cs.executeUpdate();
            
             for (LineaPromocion linea : promocion.getLista_de_Comidas()) {

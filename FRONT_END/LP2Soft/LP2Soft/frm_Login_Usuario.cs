@@ -123,6 +123,13 @@ namespace LP2Soft
 
         }
 
-   
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2Button1_Click(sender,e);
+
+            }
+        }
     }
 }
