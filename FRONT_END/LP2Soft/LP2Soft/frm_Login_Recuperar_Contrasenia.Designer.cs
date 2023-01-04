@@ -28,253 +28,218 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtApellidoPaterno = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtDNI = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnRecuperar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.lblMsjError = new System.Windows.Forms.Label();
-            this.pcbRecuperar = new System.Windows.Forms.PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblNuevaPass = new System.Windows.Forms.Label();
-            this.txtContraseniaNueva = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnCambiarContrasenia = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbRecuperar)).BeginInit();
+            this.btnSiguiente = new Guna.UI2.WinForms.Guna2Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.txtContrasenia2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblMsjError2 = new System.Windows.Forms.Label();
+            this.lblTipo2 = new System.Windows.Forms.Label();
+            this.epInput = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epContrasenia2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epContrasenia2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.AutoEllipsis = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label1.Location = new System.Drawing.Point(403, 9);
+            this.label1.Location = new System.Drawing.Point(349, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 39);
+            this.label1.Size = new System.Drawing.Size(391, 38);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Recuperar Contraseña";
+            this.label1.Text = "Cambio de contraseña";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtApellidoPaterno
+            // txtInput
             // 
-            this.txtApellidoPaterno.BorderRadius = 10;
-            this.txtApellidoPaterno.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtApellidoPaterno.DefaultText = "";
-            this.txtApellidoPaterno.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtApellidoPaterno.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtApellidoPaterno.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtApellidoPaterno.DisabledState.Parent = this.txtApellidoPaterno;
-            this.txtApellidoPaterno.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtApellidoPaterno.FillColor = System.Drawing.Color.DarkGray;
-            this.txtApellidoPaterno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtApellidoPaterno.FocusedState.Parent = this.txtApellidoPaterno;
-            this.txtApellidoPaterno.ForeColor = System.Drawing.Color.Black;
-            this.txtApellidoPaterno.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtApellidoPaterno.HoverState.Parent = this.txtApellidoPaterno;
-            this.txtApellidoPaterno.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(365, 155);
-            this.txtApellidoPaterno.Margin = new System.Windows.Forms.Padding(4);
-            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.PasswordChar = '\0';
-            this.txtApellidoPaterno.PlaceholderText = "";
-            this.txtApellidoPaterno.SelectedText = "";
-            this.txtApellidoPaterno.ShadowDecoration.Parent = this.txtApellidoPaterno;
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(228, 36);
-            this.txtApellidoPaterno.TabIndex = 10;
+            this.txtInput.BorderColor = System.Drawing.Color.Gray;
+            this.txtInput.BorderRadius = 10;
+            this.txtInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtInput.DefaultText = "";
+            this.txtInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInput.DisabledState.Parent = this.txtInput;
+            this.txtInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInput.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txtInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtInput.FocusedState.Parent = this.txtInput;
+            this.txtInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInput.ForeColor = System.Drawing.Color.Black;
+            this.txtInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtInput.HoverState.Parent = this.txtInput;
+            this.txtInput.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.txtInput.Location = new System.Drawing.Point(376, 120);
+            this.txtInput.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInput.Name = "txtInput";
+            this.txtInput.PasswordChar = '\0';
+            this.txtInput.PlaceholderText = "";
+            this.txtInput.SelectedText = "";
+            this.txtInput.ShadowDecoration.Parent = this.txtInput;
+            this.txtInput.Size = new System.Drawing.Size(327, 36);
+            this.txtInput.TabIndex = 9;
+            this.txtInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
+            this.txtInput.Validating += new System.ComponentModel.CancelEventHandler(this.txtInput_Validating);
             // 
-            // txtDNI
+            // lblTipo
             // 
-            this.txtDNI.BorderRadius = 10;
-            this.txtDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDNI.DefaultText = "";
-            this.txtDNI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDNI.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDNI.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDNI.DisabledState.Parent = this.txtDNI;
-            this.txtDNI.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDNI.FillColor = System.Drawing.Color.DarkGray;
-            this.txtDNI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDNI.FocusedState.Parent = this.txtDNI;
-            this.txtDNI.ForeColor = System.Drawing.Color.Black;
-            this.txtDNI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDNI.HoverState.Parent = this.txtDNI;
-            this.txtDNI.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.txtDNI.Location = new System.Drawing.Point(366, 91);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDNI.MaxLength = 8;
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.PasswordChar = '\0';
-            this.txtDNI.PlaceholderText = "";
-            this.txtDNI.SelectedText = "";
-            this.txtDNI.ShadowDecoration.Parent = this.txtDNI;
-            this.txtDNI.Size = new System.Drawing.Size(227, 36);
-            this.txtDNI.TabIndex = 9;
-            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(362, 67);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "DNI";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(362, 131);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Apellido Paterno";
-            // 
-            // btnRecuperar
-            // 
-            this.btnRecuperar.BorderRadius = 20;
-            this.btnRecuperar.CheckedState.Parent = this.btnRecuperar;
-            this.btnRecuperar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecuperar.CustomImages.Parent = this.btnRecuperar;
-            this.btnRecuperar.FillColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnRecuperar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRecuperar.ForeColor = System.Drawing.Color.White;
-            this.btnRecuperar.HoverState.Parent = this.btnRecuperar;
-            this.btnRecuperar.Location = new System.Drawing.Point(410, 227);
-            this.btnRecuperar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRecuperar.Name = "btnRecuperar";
-            this.btnRecuperar.ShadowDecoration.Parent = this.btnRecuperar;
-            this.btnRecuperar.Size = new System.Drawing.Size(181, 37);
-            this.btnRecuperar.TabIndex = 12;
-            this.btnRecuperar.Text = "Recuperar Contraseña";
-            this.btnRecuperar.Click += new System.EventHandler(this.btnRecuperar_Click);
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.ForeColor = System.Drawing.Color.Black;
+            this.lblTipo.Location = new System.Drawing.Point(376, 67);
+            this.lblTipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTipo.MaximumSize = new System.Drawing.Size(339, 51);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(327, 51);
+            this.lblTipo.TabIndex = 7;
+            this.lblTipo.Text = "Ingrese su dirección de correo electrónico";
+            this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTipo.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblMsjError
             // 
-            this.lblMsjError.AutoSize = true;
-            this.lblMsjError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMsjError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMsjError.ForeColor = System.Drawing.Color.Red;
-            this.lblMsjError.Location = new System.Drawing.Point(362, 195);
+            this.lblMsjError.Location = new System.Drawing.Point(386, 160);
             this.lblMsjError.Name = "lblMsjError";
-            this.lblMsjError.Size = new System.Drawing.Size(144, 20);
+            this.lblMsjError.Size = new System.Drawing.Size(300, 47);
             this.lblMsjError.TabIndex = 15;
-            this.lblMsjError.Text = "Mensaje de error";
+            this.lblMsjError.Text = "No pudimos encontrar tu cuenta de Quinti";
             this.lblMsjError.Visible = false;
-            // 
-            // pcbRecuperar
-            // 
-            this.pcbRecuperar.BackgroundImage = global::LP2Soft.Properties.Resources.icons8_olvidó_su_contraseña_64;
-            this.pcbRecuperar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbRecuperar.Location = new System.Drawing.Point(369, 227);
-            this.pcbRecuperar.Name = "pcbRecuperar";
-            this.pcbRecuperar.Size = new System.Drawing.Size(36, 37);
-            this.pcbRecuperar.TabIndex = 13;
-            this.pcbRecuperar.TabStop = false;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox1.Image = global::LP2Soft.Properties.Resources.login_logo;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-14, -66);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-32, -49);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(358, 533);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(381, 469);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 4;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // lblNuevaPass
+            // btnSiguiente
             // 
-            this.lblNuevaPass.AutoSize = true;
-            this.lblNuevaPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevaPass.ForeColor = System.Drawing.Color.Black;
-            this.lblNuevaPass.Location = new System.Drawing.Point(365, 304);
-            this.lblNuevaPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNuevaPass.Name = "lblNuevaPass";
-            this.lblNuevaPass.Size = new System.Drawing.Size(218, 20);
-            this.lblNuevaPass.TabIndex = 16;
-            this.lblNuevaPass.Text = "Ingrese nueva contraseña";
-            this.lblNuevaPass.Visible = false;
+            this.btnSiguiente.BackgroundImage = global::LP2Soft.Properties.Resources.foni;
+            this.btnSiguiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSiguiente.BorderRadius = 20;
+            this.btnSiguiente.CheckedState.Parent = this.btnSiguiente;
+            this.btnSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSiguiente.CustomImages.Parent = this.btnSiguiente;
+            this.btnSiguiente.FillColor = System.Drawing.Color.Transparent;
+            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSiguiente.ForeColor = System.Drawing.Color.White;
+            this.btnSiguiente.HoverState.Parent = this.btnSiguiente;
+            this.btnSiguiente.Location = new System.Drawing.Point(533, 326);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.ShadowDecoration.Parent = this.btnSiguiente;
+            this.btnSiguiente.Size = new System.Drawing.Size(170, 37);
+            this.btnSiguiente.TabIndex = 18;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.Visible = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // txtContraseniaNueva
+            // imageList1
             // 
-            this.txtContraseniaNueva.BorderRadius = 10;
-            this.txtContraseniaNueva.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtContraseniaNueva.DefaultText = "";
-            this.txtContraseniaNueva.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtContraseniaNueva.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtContraseniaNueva.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtContraseniaNueva.DisabledState.Parent = this.txtContraseniaNueva;
-            this.txtContraseniaNueva.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtContraseniaNueva.FillColor = System.Drawing.Color.DarkGray;
-            this.txtContraseniaNueva.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContraseniaNueva.FocusedState.Parent = this.txtContraseniaNueva;
-            this.txtContraseniaNueva.ForeColor = System.Drawing.Color.Black;
-            this.txtContraseniaNueva.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContraseniaNueva.HoverState.Parent = this.txtContraseniaNueva;
-            this.txtContraseniaNueva.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.txtContraseniaNueva.Location = new System.Drawing.Point(369, 328);
-            this.txtContraseniaNueva.Margin = new System.Windows.Forms.Padding(4);
-            this.txtContraseniaNueva.Name = "txtContraseniaNueva";
-            this.txtContraseniaNueva.PasswordChar = '\0';
-            this.txtContraseniaNueva.PlaceholderText = "";
-            this.txtContraseniaNueva.SelectedText = "";
-            this.txtContraseniaNueva.ShadowDecoration.Parent = this.txtContraseniaNueva;
-            this.txtContraseniaNueva.Size = new System.Drawing.Size(227, 36);
-            this.txtContraseniaNueva.TabIndex = 17;
-            this.txtContraseniaNueva.Visible = false;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // btnCambiarContrasenia
+            // txtContrasenia2
             // 
-            this.btnCambiarContrasenia.BorderRadius = 20;
-            this.btnCambiarContrasenia.CheckedState.Parent = this.btnCambiarContrasenia;
-            this.btnCambiarContrasenia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarContrasenia.CustomImages.Parent = this.btnCambiarContrasenia;
-            this.btnCambiarContrasenia.FillColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCambiarContrasenia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCambiarContrasenia.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarContrasenia.HoverState.Parent = this.btnCambiarContrasenia;
-            this.btnCambiarContrasenia.Location = new System.Drawing.Point(608, 327);
-            this.btnCambiarContrasenia.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCambiarContrasenia.Name = "btnCambiarContrasenia";
-            this.btnCambiarContrasenia.ShadowDecoration.Parent = this.btnCambiarContrasenia;
-            this.btnCambiarContrasenia.Size = new System.Drawing.Size(181, 37);
-            this.btnCambiarContrasenia.TabIndex = 18;
-            this.btnCambiarContrasenia.Text = "Cambiar Contraseña";
-            this.btnCambiarContrasenia.Visible = false;
-            this.btnCambiarContrasenia.Click += new System.EventHandler(this.btnCambiarContrasenia_Click);
+            this.txtContrasenia2.BorderColor = System.Drawing.Color.Gray;
+            this.txtContrasenia2.BorderRadius = 10;
+            this.txtContrasenia2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtContrasenia2.DefaultText = "";
+            this.txtContrasenia2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtContrasenia2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtContrasenia2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtContrasenia2.DisabledState.Parent = this.txtContrasenia2;
+            this.txtContrasenia2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtContrasenia2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txtContrasenia2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtContrasenia2.FocusedState.Parent = this.txtContrasenia2;
+            this.txtContrasenia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia2.ForeColor = System.Drawing.Color.Black;
+            this.txtContrasenia2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtContrasenia2.HoverState.Parent = this.txtContrasenia2;
+            this.txtContrasenia2.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.txtContrasenia2.Location = new System.Drawing.Point(376, 232);
+            this.txtContrasenia2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtContrasenia2.Name = "txtContrasenia2";
+            this.txtContrasenia2.PasswordChar = '\0';
+            this.txtContrasenia2.PlaceholderText = "";
+            this.txtContrasenia2.SelectedText = "";
+            this.txtContrasenia2.ShadowDecoration.Parent = this.txtContrasenia2;
+            this.txtContrasenia2.Size = new System.Drawing.Size(327, 36);
+            this.txtContrasenia2.TabIndex = 19;
+            // 
+            // lblMsjError2
+            // 
+            this.lblMsjError2.AutoSize = true;
+            this.lblMsjError2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMsjError2.ForeColor = System.Drawing.Color.Red;
+            this.lblMsjError2.Location = new System.Drawing.Point(386, 271);
+            this.lblMsjError2.Name = "lblMsjError2";
+            this.lblMsjError2.Size = new System.Drawing.Size(198, 15);
+            this.lblMsjError2.TabIndex = 20;
+            this.lblMsjError2.Text = "Las contraseñas no coinciden";
+            this.lblMsjError2.Visible = false;
+            // 
+            // lblTipo2
+            // 
+            this.lblTipo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo2.ForeColor = System.Drawing.Color.Black;
+            this.lblTipo2.Location = new System.Drawing.Point(376, 199);
+            this.lblTipo2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTipo2.MaximumSize = new System.Drawing.Size(339, 28);
+            this.lblTipo2.Name = "lblTipo2";
+            this.lblTipo2.Size = new System.Drawing.Size(339, 28);
+            this.lblTipo2.TabIndex = 21;
+            this.lblTipo2.Text = "Confirme la nueva contraseña";
+            this.lblTipo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // epInput
+            // 
+            this.epInput.ContainerControl = this;
+            // 
+            // epContrasenia2
+            // 
+            this.epContrasenia2.ContainerControl = this;
             // 
             // frm_Login_Recuperar_Contrasenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 383);
-            this.Controls.Add(this.btnCambiarContrasenia);
-            this.Controls.Add(this.txtContraseniaNueva);
-            this.Controls.Add(this.lblNuevaPass);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(741, 383);
+            this.Controls.Add(this.lblTipo2);
+            this.Controls.Add(this.lblMsjError2);
+            this.Controls.Add(this.txtContrasenia2);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.lblMsjError);
-            this.Controls.Add(this.pcbRecuperar);
-            this.Controls.Add(this.btnRecuperar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtApellidoPaterno);
-            this.Controls.Add(this.txtDNI);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtInput);
+            this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Login_Recuperar_Contrasenia";
             this.Text = "Restablecer Contraseña";
-            ((System.ComponentModel.ISupportInitialize)(this.pcbRecuperar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epContrasenia2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,15 +249,15 @@
 
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox txtApellidoPaterno;
-        private Guna.UI2.WinForms.Guna2TextBox txtDNI;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2Button btnRecuperar;
-        private System.Windows.Forms.PictureBox pcbRecuperar;
+        private Guna.UI2.WinForms.Guna2TextBox txtInput;
+        private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblMsjError;
-        private System.Windows.Forms.Label lblNuevaPass;
-        private Guna.UI2.WinForms.Guna2TextBox txtContraseniaNueva;
-        private Guna.UI2.WinForms.Guna2Button btnCambiarContrasenia;
+        private Guna.UI2.WinForms.Guna2Button btnSiguiente;
+        private System.Windows.Forms.ImageList imageList1;
+        private Guna.UI2.WinForms.Guna2TextBox txtContrasenia2;
+        private System.Windows.Forms.Label lblMsjError2;
+        private System.Windows.Forms.Label lblTipo2;
+        private System.Windows.Forms.ErrorProvider epInput;
+        private System.Windows.Forms.ErrorProvider epContrasenia2;
     }
 }
