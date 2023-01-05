@@ -21,12 +21,22 @@ namespace LP2Soft
             daoReporte = new ReporteWS.ReporteWSClient();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private async void btnGeneraReporte_Click(object sender, EventArgs e)
+        {
+            frm_Loading form_loading = new frm_Loading();
+            form_loading.Show();
+            Task hilo1 = new Task(generar);
+            hilo1.Start();
+            await hilo1;
+            form_loading.Hide();
+            visorPDF.LoadFile("temporal.pdf");
+            visorPDF.setShowToolbar(true);
+        }
+
+        private void generar()
         {
             archivoBytes = daoReporte.generarReporteVentasXDiaFecha();
             File.WriteAllBytes("temporal.pdf", archivoBytes);
-            visorPDF.LoadFile("temporal.pdf");
-            visorPDF.setShowToolbar(true);
         }
     }
 }

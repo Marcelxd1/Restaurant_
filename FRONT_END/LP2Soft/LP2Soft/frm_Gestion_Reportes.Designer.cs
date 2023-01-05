@@ -29,307 +29,226 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Gestion_Reportes));
-            this.lblPlatoMasVendidos = new System.Windows.Forms.Label();
-            this.lblAsistencia = new System.Windows.Forms.Label();
-            this.lblReporteCaja = new System.Windows.Forms.Label();
-            this.lblReportePedido = new System.Windows.Forms.Label();
-            this.lblVentas = new System.Windows.Forms.Label();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2ImageButton5 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnReportePedido = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnReporteCaja = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnAsistencia = new Guna.UI.WinForms.GunaTileButton();
+            this.btnPedidos = new Guna.UI.WinForms.GunaTileButton();
+            this.btnPlatos = new Guna.UI.WinForms.GunaTileButton();
+            this.btnCaja = new Guna.UI.WinForms.GunaTileButton();
+            this.btnMejoresVentas = new Guna.UI.WinForms.GunaTileButton();
+            this.lblReporte = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblPlatoMasVendidos
+            // guna2PictureBox6
             // 
-            this.lblPlatoMasVendidos.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlatoMasVendidos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblPlatoMasVendidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlatoMasVendidos.Location = new System.Drawing.Point(38, 25);
-            this.lblPlatoMasVendidos.Name = "lblPlatoMasVendidos";
-            this.lblPlatoMasVendidos.Size = new System.Drawing.Size(104, 81);
-            this.lblPlatoMasVendidos.TabIndex = 49;
-            this.lblPlatoMasVendidos.Text = "Platos Más Vendidos";
-            this.lblPlatoMasVendidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPlatoMasVendidos.Click += new System.EventHandler(this.lblPlatoMasVendidos_Click);
-            this.lblPlatoMasVendidos.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
-            this.lblPlatoMasVendidos.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
+            this.guna2PictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox6.Image")));
+            this.guna2PictureBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.guna2PictureBox6.Location = new System.Drawing.Point(4, -1);
+            this.guna2PictureBox6.Name = "guna2PictureBox6";
+            this.guna2PictureBox6.ShadowDecoration.Parent = this.guna2PictureBox6;
+            this.guna2PictureBox6.Size = new System.Drawing.Size(1012, 583);
+            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox6.TabIndex = 63;
+            this.guna2PictureBox6.TabStop = false;
             // 
-            // lblAsistencia
+            // btnAsistencia
             // 
-            this.lblAsistencia.BackColor = System.Drawing.Color.Transparent;
-            this.lblAsistencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsistencia.Location = new System.Drawing.Point(202, 25);
-            this.lblAsistencia.Name = "lblAsistencia";
-            this.lblAsistencia.Size = new System.Drawing.Size(104, 81);
-            this.lblAsistencia.TabIndex = 52;
-            this.lblAsistencia.Text = "Asistencia";
-            this.lblAsistencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAsistencia.Click += new System.EventHandler(this.lblAsistencia_Click);
-            this.lblAsistencia.MouseEnter += new System.EventHandler(this.guna2ImageButton1_MouseEnter);
-            this.lblAsistencia.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
+            this.btnAsistencia.AnimationHoverSpeed = 0.07F;
+            this.btnAsistencia.AnimationSpeed = 0.03F;
+            this.btnAsistencia.BackColor = System.Drawing.Color.Transparent;
+            this.btnAsistencia.BackgroundImage = global::LP2Soft.Properties.Resources.foni;
+            this.btnAsistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAsistencia.BaseColor = System.Drawing.Color.Transparent;
+            this.btnAsistencia.BorderColor = System.Drawing.Color.Black;
+            this.btnAsistencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAsistencia.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAsistencia.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAsistencia.ForeColor = System.Drawing.Color.White;
+            this.btnAsistencia.Image = global::LP2Soft.Properties.Resources.asistencia;
+            this.btnAsistencia.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnAsistencia.Location = new System.Drawing.Point(203, 143);
+            this.btnAsistencia.Name = "btnAsistencia";
+            this.btnAsistencia.OnHoverBaseColor = System.Drawing.Color.SlateBlue;
+            this.btnAsistencia.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnAsistencia.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAsistencia.OnHoverImage = null;
+            this.btnAsistencia.OnPressedColor = System.Drawing.Color.Red;
+            this.btnAsistencia.OnPressedDepth = 0;
+            this.btnAsistencia.Radius = 10;
+            this.btnAsistencia.Size = new System.Drawing.Size(141, 132);
+            this.btnAsistencia.TabIndex = 65;
+            this.btnAsistencia.Tag = "Reporte de asistencia";
+            this.btnAsistencia.Text = "Asistencia";
+            this.btnAsistencia.TextImageOffsetY = 5;
+            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
             // 
-            // lblReporteCaja
+            // btnPedidos
             // 
-            this.lblReporteCaja.BackColor = System.Drawing.Color.Transparent;
-            this.lblReporteCaja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblReporteCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReporteCaja.Location = new System.Drawing.Point(392, 25);
-            this.lblReporteCaja.Name = "lblReporteCaja";
-            this.lblReporteCaja.Size = new System.Drawing.Size(104, 81);
-            this.lblReporteCaja.TabIndex = 55;
-            this.lblReporteCaja.Text = "Reporte de Caja";
-            this.lblReporteCaja.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblReporteCaja.Click += new System.EventHandler(this.lblReporteCaja_Click);
-            this.lblReporteCaja.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
-            this.lblReporteCaja.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
+            this.btnPedidos.AnimationHoverSpeed = 0.07F;
+            this.btnPedidos.AnimationSpeed = 0.03F;
+            this.btnPedidos.BackColor = System.Drawing.Color.Transparent;
+            this.btnPedidos.BackgroundImage = global::LP2Soft.Properties.Resources.foni;
+            this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPedidos.BaseColor = System.Drawing.Color.Transparent;
+            this.btnPedidos.BorderColor = System.Drawing.Color.Black;
+            this.btnPedidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPedidos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPedidos.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPedidos.ForeColor = System.Drawing.Color.White;
+            this.btnPedidos.Image = global::LP2Soft.Properties.Resources.pedir;
+            this.btnPedidos.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnPedidos.Location = new System.Drawing.Point(309, 334);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.OnHoverBaseColor = System.Drawing.Color.SlateBlue;
+            this.btnPedidos.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnPedidos.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPedidos.OnHoverImage = null;
+            this.btnPedidos.OnPressedColor = System.Drawing.Color.Red;
+            this.btnPedidos.Radius = 10;
+            this.btnPedidos.Size = new System.Drawing.Size(141, 132);
+            this.btnPedidos.TabIndex = 66;
+            this.btnPedidos.Tag = "Reporte de pedidos";
+            this.btnPedidos.Text = "Pedidos";
+            this.btnPedidos.TextImageOffsetY = 5;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
-            // lblReportePedido
+            // btnPlatos
             // 
-            this.lblReportePedido.BackColor = System.Drawing.Color.Transparent;
-            this.lblReportePedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblReportePedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportePedido.Location = new System.Drawing.Point(118, 196);
-            this.lblReportePedido.Name = "lblReportePedido";
-            this.lblReportePedido.Size = new System.Drawing.Size(104, 81);
-            this.lblReportePedido.TabIndex = 58;
-            this.lblReportePedido.Text = "Reporte de Pedido";
-            this.lblReportePedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblReportePedido.Click += new System.EventHandler(this.lblReportePedido_Click);
-            this.lblReportePedido.MouseEnter += new System.EventHandler(this.guna2ImageButton4_MouseEnter);
-            this.lblReportePedido.MouseLeave += new System.EventHandler(this.guna2ImageButton4_MouseLeave);
+            this.btnPlatos.AnimationHoverSpeed = 0.07F;
+            this.btnPlatos.AnimationSpeed = 0.03F;
+            this.btnPlatos.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlatos.BackgroundImage = global::LP2Soft.Properties.Resources.foni;
+            this.btnPlatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlatos.BaseColor = System.Drawing.Color.Transparent;
+            this.btnPlatos.BorderColor = System.Drawing.Color.Black;
+            this.btnPlatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlatos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPlatos.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPlatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPlatos.ForeColor = System.Drawing.Color.White;
+            this.btnPlatos.Image = global::LP2Soft.Properties.Resources.productos;
+            this.btnPlatos.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnPlatos.Location = new System.Drawing.Point(531, 334);
+            this.btnPlatos.Name = "btnPlatos";
+            this.btnPlatos.OnHoverBaseColor = System.Drawing.Color.SlateBlue;
+            this.btnPlatos.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnPlatos.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPlatos.OnHoverImage = null;
+            this.btnPlatos.OnPressedColor = System.Drawing.Color.Red;
+            this.btnPlatos.Radius = 10;
+            this.btnPlatos.Size = new System.Drawing.Size(141, 132);
+            this.btnPlatos.TabIndex = 67;
+            this.btnPlatos.Tag = "Reporte de platos más vendidos";
+            this.btnPlatos.Text = "Platos más vendidos";
+            this.btnPlatos.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.ClearTypeGridFit;
+            this.btnPlatos.Click += new System.EventHandler(this.btnPlatos_Click);
             // 
-            // lblVentas
+            // btnCaja
             // 
-            this.lblVentas.BackColor = System.Drawing.Color.Transparent;
-            this.lblVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVentas.Location = new System.Drawing.Point(299, 198);
-            this.lblVentas.Name = "lblVentas";
-            this.lblVentas.Size = new System.Drawing.Size(143, 81);
-            this.lblVentas.TabIndex = 61;
-            this.lblVentas.Text = "Reporte con las mejores ventas (fecha - dáa)";
-            this.lblVentas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblVentas.Click += new System.EventHandler(this.lblVentas_Click);
-            this.lblVentas.MouseEnter += new System.EventHandler(this.guna2ImageButton5_MouseEnter);
-            this.lblVentas.MouseLeave += new System.EventHandler(this.guna2ImageButton5_MouseLeave);
+            this.btnCaja.AnimationHoverSpeed = 0.07F;
+            this.btnCaja.AnimationSpeed = 0.03F;
+            this.btnCaja.BackColor = System.Drawing.Color.Transparent;
+            this.btnCaja.BackgroundImage = global::LP2Soft.Properties.Resources.foni;
+            this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCaja.BaseColor = System.Drawing.Color.Transparent;
+            this.btnCaja.BorderColor = System.Drawing.Color.Black;
+            this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCaja.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCaja.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCaja.Image = global::LP2Soft.Properties.Resources.caja;
+            this.btnCaja.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnCaja.Location = new System.Drawing.Point(427, 143);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.OnHoverBaseColor = System.Drawing.Color.SlateBlue;
+            this.btnCaja.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnCaja.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCaja.OnHoverImage = null;
+            this.btnCaja.OnPressedColor = System.Drawing.Color.Red;
+            this.btnCaja.Radius = 10;
+            this.btnCaja.Size = new System.Drawing.Size(141, 132);
+            this.btnCaja.TabIndex = 68;
+            this.btnCaja.Tag = "Reporte de caja";
+            this.btnCaja.Text = "Caja";
+            this.btnCaja.TextImageOffsetY = 5;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
             // 
-            // guna2PictureBox5
+            // btnMejoresVentas
             // 
-            this.guna2PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
-            this.guna2PictureBox5.Location = new System.Drawing.Point(351, 282);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.ShadowDecoration.Parent = this.guna2PictureBox5;
-            this.guna2PictureBox5.Size = new System.Drawing.Size(40, 35);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox5.TabIndex = 62;
-            this.guna2PictureBox5.TabStop = false;
-            this.guna2PictureBox5.Click += new System.EventHandler(this.guna2PictureBox5_Click);
-            this.guna2PictureBox5.MouseEnter += new System.EventHandler(this.guna2ImageButton5_MouseEnter);
-            this.guna2PictureBox5.MouseLeave += new System.EventHandler(this.guna2ImageButton5_MouseLeave);
+            this.btnMejoresVentas.AnimationHoverSpeed = 0.07F;
+            this.btnMejoresVentas.AnimationSpeed = 0.03F;
+            this.btnMejoresVentas.BackColor = System.Drawing.Color.Transparent;
+            this.btnMejoresVentas.BackgroundImage = global::LP2Soft.Properties.Resources.foni;
+            this.btnMejoresVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMejoresVentas.BaseColor = System.Drawing.Color.Transparent;
+            this.btnMejoresVentas.BorderColor = System.Drawing.Color.Black;
+            this.btnMejoresVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMejoresVentas.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnMejoresVentas.FocusedColor = System.Drawing.Color.Empty;
+            this.btnMejoresVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMejoresVentas.ForeColor = System.Drawing.Color.White;
+            this.btnMejoresVentas.Image = global::LP2Soft.Properties.Resources.reporte;
+            this.btnMejoresVentas.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnMejoresVentas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnMejoresVentas.Location = new System.Drawing.Point(651, 143);
+            this.btnMejoresVentas.Name = "btnMejoresVentas";
+            this.btnMejoresVentas.OnHoverBaseColor = System.Drawing.Color.SlateBlue;
+            this.btnMejoresVentas.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnMejoresVentas.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnMejoresVentas.OnHoverImage = null;
+            this.btnMejoresVentas.OnPressedColor = System.Drawing.Color.Red;
+            this.btnMejoresVentas.Radius = 10;
+            this.btnMejoresVentas.Size = new System.Drawing.Size(141, 132);
+            this.btnMejoresVentas.TabIndex = 69;
+            this.btnMejoresVentas.Tag = "Reporte de las mejores ventas";
+            this.btnMejoresVentas.Text = "Mejores      ventas";
+            this.btnMejoresVentas.TextImageOffsetY = 5;
+            this.btnMejoresVentas.Click += new System.EventHandler(this.btnMejoresVentas_Click);
             // 
-            // guna2ImageButton5
+            // lblReporte
             // 
-            this.guna2ImageButton5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton5.BackgroundImage")));
-            this.guna2ImageButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2ImageButton5.CheckedState.Parent = this.guna2ImageButton5;
-            this.guna2ImageButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ImageButton5.HoverState.Parent = this.guna2ImageButton5;
-            this.guna2ImageButton5.Location = new System.Drawing.Point(291, 196);
-            this.guna2ImageButton5.Name = "guna2ImageButton5";
-            this.guna2ImageButton5.PressedState.Parent = this.guna2ImageButton5;
-            this.guna2ImageButton5.Size = new System.Drawing.Size(161, 137);
-            this.guna2ImageButton5.TabIndex = 60;
-            this.guna2ImageButton5.Click += new System.EventHandler(this.guna2ImageButton5_Click);
-            this.guna2ImageButton5.MouseEnter += new System.EventHandler(this.guna2ImageButton5_MouseEnter);
-            this.guna2ImageButton5.MouseLeave += new System.EventHandler(this.guna2ImageButton5_MouseLeave);
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
-            this.guna2PictureBox4.Location = new System.Drawing.Point(151, 266);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.ShadowDecoration.Parent = this.guna2PictureBox4;
-            this.guna2PictureBox4.Size = new System.Drawing.Size(40, 35);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 59;
-            this.guna2PictureBox4.TabStop = false;
-            this.guna2PictureBox4.MouseEnter += new System.EventHandler(this.guna2ImageButton4_MouseEnter);
-            this.guna2PictureBox4.MouseLeave += new System.EventHandler(this.guna2ImageButton4_MouseLeave);
-            // 
-            // btnReportePedido
-            // 
-            this.btnReportePedido.BackColor = System.Drawing.Color.Transparent;
-            this.btnReportePedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReportePedido.BackgroundImage")));
-            this.btnReportePedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReportePedido.CheckedState.Parent = this.btnReportePedido;
-            this.btnReportePedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportePedido.HoverState.Parent = this.btnReportePedido;
-            this.btnReportePedido.Location = new System.Drawing.Point(100, 196);
-            this.btnReportePedido.Name = "btnReportePedido";
-            this.btnReportePedido.PressedState.Parent = this.btnReportePedido;
-            this.btnReportePedido.Size = new System.Drawing.Size(135, 121);
-            this.btnReportePedido.TabIndex = 57;
-            this.btnReportePedido.Click += new System.EventHandler(this.btnReportePedido_Click);
-            this.btnReportePedido.MouseEnter += new System.EventHandler(this.guna2ImageButton4_MouseEnter);
-            this.btnReportePedido.MouseLeave += new System.EventHandler(this.guna2ImageButton4_MouseLeave);
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(424, 96);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(40, 35);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 56;
-            this.guna2PictureBox3.TabStop = false;
-            this.guna2PictureBox3.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
-            this.guna2PictureBox3.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
-            // 
-            // btnReporteCaja
-            // 
-            this.btnReporteCaja.BackColor = System.Drawing.Color.Transparent;
-            this.btnReporteCaja.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReporteCaja.BackgroundImage")));
-            this.btnReporteCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReporteCaja.CheckedState.Parent = this.btnReporteCaja;
-            this.btnReporteCaja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporteCaja.HoverState.Parent = this.btnReporteCaja;
-            this.btnReporteCaja.Location = new System.Drawing.Point(374, 25);
-            this.btnReporteCaja.Name = "btnReporteCaja";
-            this.btnReporteCaja.PressedState.Parent = this.btnReporteCaja;
-            this.btnReporteCaja.Size = new System.Drawing.Size(135, 121);
-            this.btnReporteCaja.TabIndex = 54;
-            this.btnReporteCaja.Click += new System.EventHandler(this.btnReporteCaja_Click);
-            this.btnReporteCaja.MouseEnter += new System.EventHandler(this.guna2ImageButton3_MouseEnter);
-            this.btnReporteCaja.MouseLeave += new System.EventHandler(this.guna2ImageButton3_MouseLeave);
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.Location = new System.Drawing.Point(232, 96);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(40, 35);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 53;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.MouseEnter += new System.EventHandler(this.guna2ImageButton1_MouseEnter);
-            this.guna2PictureBox2.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.BackgroundImage")));
-            this.guna2ImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(184, 25);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(135, 121);
-            this.guna2ImageButton1.TabIndex = 51;
-            this.guna2ImageButton1.MouseEnter += new System.EventHandler(this.guna2ImageButton1_MouseEnter);
-            this.guna2ImageButton1.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(74, 96);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 35);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 50;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
-            this.guna2PictureBox1.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
-            // 
-            // guna2ImageButton2
-            // 
-            this.guna2ImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.BackgroundImage")));
-            this.guna2ImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2ImageButton2.CheckedState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.Location = new System.Drawing.Point(25, 25);
-            this.guna2ImageButton2.Name = "guna2ImageButton2";
-            this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.Size = new System.Drawing.Size(135, 121);
-            this.guna2ImageButton2.TabIndex = 48;
-            this.guna2ImageButton2.MouseEnter += new System.EventHandler(this.guna2ImageButton2_MouseEnter);
-            this.guna2ImageButton2.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
+            this.lblReporte.BackColor = System.Drawing.Color.White;
+            this.lblReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblReporte.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblReporte.Location = new System.Drawing.Point(292, 41);
+            this.lblReporte.Name = "lblReporte";
+            this.lblReporte.Size = new System.Drawing.Size(440, 31);
+            this.lblReporte.TabIndex = 70;
+            this.lblReporte.Text = "Reportes";
+            this.lblReporte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frm_Gestion_Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.guna2PictureBox5);
-            this.Controls.Add(this.lblVentas);
-            this.Controls.Add(this.guna2ImageButton5);
-            this.Controls.Add(this.guna2PictureBox4);
-            this.Controls.Add(this.lblReportePedido);
-            this.Controls.Add(this.btnReportePedido);
-            this.Controls.Add(this.guna2PictureBox3);
-            this.Controls.Add(this.lblReporteCaja);
-            this.Controls.Add(this.btnReporteCaja);
-            this.Controls.Add(this.guna2PictureBox2);
-            this.Controls.Add(this.lblAsistencia);
-            this.Controls.Add(this.guna2ImageButton1);
-            this.Controls.Add(this.guna2PictureBox1);
-            this.Controls.Add(this.lblPlatoMasVendidos);
-            this.Controls.Add(this.guna2ImageButton2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1010, 579);
+            this.Controls.Add(this.lblReporte);
+            this.Controls.Add(this.btnMejoresVentas);
+            this.Controls.Add(this.btnCaja);
+            this.Controls.Add(this.btnPlatos);
+            this.Controls.Add(this.btnPedidos);
+            this.Controls.Add(this.btnAsistencia);
+            this.Controls.Add(this.guna2PictureBox6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Gestion_Reportes";
             this.Text = "Reportes";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.Label lblPlatoMasVendidos;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private System.Windows.Forms.Label lblAsistencia;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private System.Windows.Forms.Label lblReporteCaja;
-        private Guna.UI2.WinForms.Guna2ImageButton btnReporteCaja;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private System.Windows.Forms.Label lblReportePedido;
-        private Guna.UI2.WinForms.Guna2ImageButton btnReportePedido;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
-        private System.Windows.Forms.Label lblVentas;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton5;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
+        private Guna.UI.WinForms.GunaTileButton btnAsistencia;
+        private Guna.UI.WinForms.GunaTileButton btnPedidos;
+        private Guna.UI.WinForms.GunaTileButton btnPlatos;
+        private Guna.UI.WinForms.GunaTileButton btnCaja;
+        private Guna.UI.WinForms.GunaTileButton btnMejoresVentas;
+        private System.Windows.Forms.Label lblReporte;
     }
 }

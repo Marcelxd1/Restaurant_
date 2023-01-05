@@ -30,16 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ReportePedido));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.dtpIni = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.btnGenerarReporte = new Guna.UI2.WinForms.Guna2Button();
-            this.lblInicio = new System.Windows.Forms.Label();
             this.dtpFin = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnImprimir = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.visorPDF = new AxAcroPDFLib.AxAcroPDF();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.splitter2 = new System.Windows.Forms.Splitter();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visorPDF)).BeginInit();
@@ -48,122 +46,125 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.guna2Panel1.Controls.Add(this.splitter2);
-            this.guna2Panel1.Controls.Add(this.splitter1);
-            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.dtpIni);
-            this.guna2Panel1.Controls.Add(this.btnGenerarReporte);
-            this.guna2Panel1.Controls.Add(this.lblInicio);
             this.guna2Panel1.Controls.Add(this.dtpFin);
+            this.guna2Panel1.Controls.Add(this.btnImprimir);
+            this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(200, 452);
+            this.guna2Panel1.Size = new System.Drawing.Size(311, 437);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(3, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(291, 24);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Reporte de pedidos";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtpIni
+            // 
+            this.dtpIni.BorderColor = System.Drawing.Color.MediumPurple;
+            this.dtpIni.BorderRadius = 5;
+            this.dtpIni.BorderThickness = 1;
+            this.dtpIni.CheckedState.Parent = this.dtpIni;
+            this.dtpIni.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpIni.FillColor = System.Drawing.Color.Transparent;
+            this.dtpIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpIni.HoverState.Parent = this.dtpIni;
+            this.dtpIni.Location = new System.Drawing.Point(40, 145);
+            this.dtpIni.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpIni.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpIni.Name = "dtpIni";
+            this.dtpIni.ShadowDecoration.Parent = this.dtpIni;
+            this.dtpIni.Size = new System.Drawing.Size(190, 31);
+            this.dtpIni.TabIndex = 74;
+            this.dtpIni.Value = new System.DateTime(2022, 6, 15, 0, 0, 0, 0);
+            // 
+            // dtpFin
+            // 
+            this.dtpFin.BorderColor = System.Drawing.Color.MediumPurple;
+            this.dtpFin.BorderRadius = 5;
+            this.dtpFin.BorderThickness = 1;
+            this.dtpFin.CheckedState.Parent = this.dtpFin;
+            this.dtpFin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpFin.FillColor = System.Drawing.Color.Transparent;
+            this.dtpFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFin.HoverState.Parent = this.dtpFin;
+            this.dtpFin.Location = new System.Drawing.Point(40, 240);
+            this.dtpFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFin.Name = "dtpFin";
+            this.dtpFin.ShadowDecoration.Parent = this.dtpFin;
+            this.dtpFin.Size = new System.Drawing.Size(190, 31);
+            this.dtpFin.TabIndex = 73;
+            this.dtpFin.Value = new System.DateTime(2022, 6, 15, 0, 0, 0, 0);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImprimir.BackgroundImage")));
+            this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImprimir.BorderColor = System.Drawing.Color.Transparent;
+            this.btnImprimir.BorderRadius = 10;
+            this.btnImprimir.CheckedState.Parent = this.btnImprimir;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.CustomImages.Parent = this.btnImprimir;
+            this.btnImprimir.FillColor = System.Drawing.Color.Transparent;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.HoverState.Parent = this.btnImprimir;
+            this.btnImprimir.Location = new System.Drawing.Point(117, 345);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.PressedColor = System.Drawing.Color.Red;
+            this.btnImprimir.ShadowDecoration.Parent = this.btnImprimir;
+            this.btnImprimir.Size = new System.Drawing.Size(153, 38);
+            this.btnImprimir.TabIndex = 72;
+            this.btnImprimir.Tag = "Generar reporte";
+            this.btnImprimir.Text = "Generar reporte";
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 110);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 22);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Ingrese la fecha de inicio:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 204);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 22);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "Ingrese la fecha de fin:";
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.visorPDF);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(200, 0);
+            this.guna2Panel2.Location = new System.Drawing.Point(311, 0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(426, 452);
+            this.guna2Panel2.Size = new System.Drawing.Size(397, 437);
             this.guna2Panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(9, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 24);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "Reporte de Pedido";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dtpIni
-            // 
-            this.dtpIni.BackColor = System.Drawing.Color.Gainsboro;
-            this.dtpIni.CheckedState.Parent = this.dtpIni;
-            this.dtpIni.FillColor = System.Drawing.Color.Transparent;
-            this.dtpIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpIni.HoverState.Parent = this.dtpIni;
-            this.dtpIni.Location = new System.Drawing.Point(34, 159);
-            this.dtpIni.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpIni.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpIni.Name = "dtpIni";
-            this.dtpIni.ShadowDecoration.Parent = this.dtpIni;
-            this.dtpIni.Size = new System.Drawing.Size(122, 31);
-            this.dtpIni.TabIndex = 63;
-            this.dtpIni.Value = new System.DateTime(2022, 6, 26, 0, 0, 0, 0);
-            // 
-            // btnGenerarReporte
-            // 
-            this.btnGenerarReporte.BorderRadius = 10;
-            this.btnGenerarReporte.CheckedState.Parent = this.btnGenerarReporte;
-            this.btnGenerarReporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerarReporte.CustomImages.Parent = this.btnGenerarReporte;
-            this.btnGenerarReporte.FillColor = System.Drawing.Color.Black;
-            this.btnGenerarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporte.HoverState.Parent = this.btnGenerarReporte;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(20, 318);
-            this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.PressedColor = System.Drawing.Color.Blue;
-            this.btnGenerarReporte.ShadowDecoration.Parent = this.btnGenerarReporte;
-            this.btnGenerarReporte.Size = new System.Drawing.Size(165, 42);
-            this.btnGenerarReporte.TabIndex = 67;
-            this.btnGenerarReporte.Text = "Generar Reporte";
-            this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
-            // 
-            // lblInicio
-            // 
-            this.lblInicio.AutoSize = true;
-            this.lblInicio.BackColor = System.Drawing.Color.White;
-            this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblInicio.Location = new System.Drawing.Point(34, 129);
-            this.lblInicio.Name = "lblInicio";
-            this.lblInicio.Size = new System.Drawing.Size(89, 18);
-            this.lblInicio.TabIndex = 64;
-            this.lblInicio.Text = "Fecha Inicial";
-            this.lblInicio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dtpFin
-            // 
-            this.dtpFin.BackColor = System.Drawing.Color.Gainsboro;
-            this.dtpFin.BorderColor = System.Drawing.Color.DimGray;
-            this.dtpFin.BorderRadius = 1;
-            this.dtpFin.CheckedState.Parent = this.dtpFin;
-            this.dtpFin.FillColor = System.Drawing.Color.Transparent;
-            this.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFin.HoverState.Parent = this.dtpFin;
-            this.dtpFin.Location = new System.Drawing.Point(34, 241);
-            this.dtpFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFin.Name = "dtpFin";
-            this.dtpFin.ShadowDecoration.Parent = this.dtpFin;
-            this.dtpFin.Size = new System.Drawing.Size(119, 31);
-            this.dtpFin.TabIndex = 66;
-            this.dtpFin.Value = new System.DateTime(2022, 6, 26, 0, 0, 0, 0);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(34, 210);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 18);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "Fecha Final";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // visorPDF
             // 
@@ -173,30 +174,14 @@
             this.visorPDF.Margin = new System.Windows.Forms.Padding(2);
             this.visorPDF.Name = "visorPDF";
             this.visorPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("visorPDF.OcxState")));
-            this.visorPDF.Size = new System.Drawing.Size(426, 452);
+            this.visorPDF.Size = new System.Drawing.Size(397, 437);
             this.visorPDF.TabIndex = 10;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 452);
-            this.splitter1.TabIndex = 69;
-            this.splitter1.TabStop = false;
-            // 
-            // splitter2
-            // 
-            this.splitter2.Location = new System.Drawing.Point(3, 0);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(3, 452);
-            this.splitter2.TabIndex = 70;
-            this.splitter2.TabStop = false;
             // 
             // frm_ReportePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 452);
+            this.ClientSize = new System.Drawing.Size(708, 437);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "frm_ReportePedido";
@@ -213,14 +198,12 @@
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpIni;
-        private Guna.UI2.WinForms.Guna2Button btnGenerarReporte;
-        private System.Windows.Forms.Label lblInicio;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFin;
-        private System.Windows.Forms.Label label2;
         private AxAcroPDFLib.AxAcroPDF visorPDF;
-        private System.Windows.Forms.Splitter splitter2;
-        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpIni;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFin;
+        private Guna.UI2.WinForms.Guna2Button btnImprimir;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

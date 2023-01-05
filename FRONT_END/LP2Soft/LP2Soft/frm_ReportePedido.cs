@@ -21,10 +21,11 @@ namespace LP2Soft
         {
             InitializeComponent();
             daoReporte = new ReporteWS.ReporteWSClient();
+            dtpIni.Text = fin.ToString(); dtpFin.Text = fin.ToString();
             dtpIni = null; dtpFin = null;
         }
 
-        private async void btnGenerarReporte_Click(object sender, EventArgs e)
+        private async void btnImprimir_Click(object sender, EventArgs e)
         {
             frm_Loading form_loading = new frm_Loading();
             form_loading.Show();

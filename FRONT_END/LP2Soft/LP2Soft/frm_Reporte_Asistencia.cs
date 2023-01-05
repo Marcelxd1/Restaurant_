@@ -15,23 +15,50 @@ namespace LP2Soft
     {
         private ReporteWS.ReporteWSClient daoReporte ;
         private byte[] archivoBytes;
+        string fechaini_str = "", fechafin_str = "";
+        DateTime ini = DateTime.Now.AddMonths(-1), fin = DateTime.Now;
         public frm_Reporte_Asistencia()
         {
             InitializeComponent();
             daoReporte = new ReporteWS.ReporteWSClient();
-
+            dtpIni.Text = fin.ToString(); dtpFin.Text = fin.ToString();
+            dtpIni = null; dtpFin = null;
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private async void btnImprimir_Click(object sender, EventArgs e)
         {
+            frm_Loading form_loading = new frm_Loading();
+            form_loading.Show();
 
-            //debe de tener este formato
-            string fechaini_str = dtpFechaIni.Value.ToString("yyyy-MM-dd");
-            string fechafin_str = dtpFechaFin.Value.ToString("yyyy-MM-dd");
-            archivoBytes = daoReporte.generarReporteAsistencia(fechaini_str,fechafin_str);
-            File.WriteAllBytes("temporal.pdf",archivoBytes);
+            if (dtpIni != null && dtpFin != null)
+            {
+                fechaini_str = dtpIni.Value.ToString("yyyy-MM-dd");
+                fechafin_str = dtpFin.Value.ToString("yyyy-MM-dd");
+            }
+            else if (dtpIni != null)
+            {
+                fechaini_str = dtpIni.Value.ToString("yyyy-MM-dd");
+                fechafin_str = fin.ToString("yyyy-MM-dd");
+            }
+            else if (dtpIni == null && dtpFin == null)
+            {
+                fechaini_str = ini.ToString("yyyy-MM-dd");
+                fechafin_str = fin.ToString("yyyy-MM-dd");
+            }
+           
+            Task hilo1 = new Task(generar);
+            hilo1.Start();
+            await hilo1;
+            form_loading.Hide();
+
             visorPDF.LoadFile("temporal.pdf");
             visorPDF.setShowToolbar(true);
+        }
+
+        private void generar()
+        {
+            archivoBytes = daoReporte.generarReporteAsistencia(fechaini_str, fechafin_str);
+            File.WriteAllBytes("temporal.pdf", archivoBytes);
         }
     }
 }
