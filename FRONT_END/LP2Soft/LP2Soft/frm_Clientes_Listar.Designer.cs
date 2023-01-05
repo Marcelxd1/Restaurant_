@@ -29,12 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Clientes_Listar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.dgvListarClientes = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNIRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Asociado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sector = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Razon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblDatosUsuario = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -48,15 +57,6 @@
             this.btnBuscaCliente = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNIRUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Asociado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sector = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Actividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Razon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -117,21 +117,21 @@
             // 
             this.dgvListarClientes.AllowUserToAddRows = false;
             this.dgvListarClientes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvListarClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvListarClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListarClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListarClientes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvListarClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListarClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvListarClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListarClientes.ColumnHeadersHeight = 24;
             this.dgvListarClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nro,
@@ -144,14 +144,14 @@
             this.Actividad,
             this.Razon});
             this.dgvListarClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarClientes.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarClientes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListarClientes.EnableHeadersVisualStyles = false;
             this.dgvListarClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvListarClientes.Location = new System.Drawing.Point(25, 252);
@@ -185,12 +185,86 @@
             this.dgvListarClientes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvListarClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListarClientes_CellFormatting);
             // 
+            // Nro
+            // 
+            this.Nro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nro.FillWeight = 58.58155F;
+            this.Nro.HeaderText = "ID";
+            this.Nro.Name = "Nro";
+            this.Nro.ReadOnly = true;
+            this.Nro.Width = 50;
+            // 
+            // RUC
+            // 
+            this.RUC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.RUC.HeaderText = "RUC";
+            this.RUC.Name = "RUC";
+            this.RUC.ReadOnly = true;
+            this.RUC.Width = 150;
+            // 
+            // DNIRUC
+            // 
+            this.DNIRUC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DNIRUC.FillWeight = 69.81967F;
+            this.DNIRUC.HeaderText = "DNI";
+            this.DNIRUC.MinimumWidth = 100;
+            this.DNIRUC.Name = "DNIRUC";
+            this.DNIRUC.ReadOnly = true;
+            this.DNIRUC.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column4.FillWeight = 380F;
+            this.Column4.HeaderText = "Nombre";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 240;
+            // 
+            // VIP
+            // 
+            this.VIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.VIP.HeaderText = "VIP";
+            this.VIP.Name = "VIP";
+            this.VIP.ReadOnly = true;
+            // 
+            // Asociado
+            // 
+            this.Asociado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Asociado.HeaderText = "Asociado";
+            this.Asociado.MinimumWidth = 100;
+            this.Asociado.Name = "Asociado";
+            this.Asociado.ReadOnly = true;
+            // 
+            // Sector
+            // 
+            this.Sector.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Sector.HeaderText = "Sector";
+            this.Sector.Name = "Sector";
+            this.Sector.ReadOnly = true;
+            this.Sector.Width = 140;
+            // 
+            // Actividad
+            // 
+            this.Actividad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Actividad.HeaderText = "Actividad";
+            this.Actividad.Name = "Actividad";
+            this.Actividad.ReadOnly = true;
+            this.Actividad.Width = 150;
+            // 
+            // Razon
+            // 
+            this.Razon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Razon.HeaderText = "Razón Social";
+            this.Razon.Name = "Razon";
+            this.Razon.ReadOnly = true;
+            this.Razon.Width = 170;
+            // 
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.White;
-            this.txtBuscar.BorderColor = System.Drawing.Color.Transparent;
+            this.txtBuscar.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtBuscar.BorderRadius = 10;
-            this.txtBuscar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuscar.DefaultText = "";
             this.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -199,18 +273,20 @@
             this.txtBuscar.DisabledState.Parent = this.txtBuscar;
             this.txtBuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtBuscar.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.txtBuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBuscar.FocusedState.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.txtBuscar.FocusedState.Parent = this.txtBuscar;
+            this.txtBuscar.FocusedState.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.DarkSlateBlue;
             this.txtBuscar.HoverState.Parent = this.txtBuscar;
+            this.txtBuscar.HoverState.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtBuscar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.txtBuscar.Location = new System.Drawing.Point(25, 108);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.PasswordChar = '\0';
-            this.txtBuscar.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtBuscar.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.txtBuscar.PlaceholderText = "Ingrese nombre";
             this.txtBuscar.SelectedText = "";
             this.txtBuscar.ShadowDecoration.Parent = this.txtBuscar;
@@ -275,9 +351,9 @@
             this.rbPersona.AutoSize = true;
             this.rbPersona.BackColor = System.Drawing.Color.White;
             this.rbPersona.Checked = true;
-            this.rbPersona.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbPersona.CheckedState.BorderColor = System.Drawing.Color.MediumPurple;
             this.rbPersona.CheckedState.BorderThickness = 0;
-            this.rbPersona.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbPersona.CheckedState.FillColor = System.Drawing.Color.DarkSlateBlue;
             this.rbPersona.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbPersona.CheckedState.InnerOffset = -4;
             this.rbPersona.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -299,9 +375,9 @@
             // 
             this.rbEmpresa.AutoSize = true;
             this.rbEmpresa.BackColor = System.Drawing.Color.White;
-            this.rbEmpresa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbEmpresa.CheckedState.BorderColor = System.Drawing.Color.MediumPurple;
             this.rbEmpresa.CheckedState.BorderThickness = 0;
-            this.rbEmpresa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbEmpresa.CheckedState.FillColor = System.Drawing.Color.DarkSlateBlue;
             this.rbEmpresa.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbEmpresa.CheckedState.InnerOffset = -4;
             this.rbEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -322,7 +398,7 @@
             // cbSector
             // 
             this.cbSector.BackColor = System.Drawing.Color.White;
-            this.cbSector.BorderColor = System.Drawing.Color.DimGray;
+            this.cbSector.BorderColor = System.Drawing.Color.MediumPurple;
             this.cbSector.BorderRadius = 10;
             this.cbSector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -346,7 +422,7 @@
             // cbActividad
             // 
             this.cbActividad.BackColor = System.Drawing.Color.White;
-            this.cbActividad.BorderColor = System.Drawing.Color.DimGray;
+            this.cbActividad.BorderColor = System.Drawing.Color.MediumPurple;
             this.cbActividad.BorderRadius = 10;
             this.cbActividad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbActividad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -442,81 +518,6 @@
             this.label3.TabIndex = 158;
             this.label3.Text = "Lista de clientes";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Nro
-            // 
-            this.Nro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Nro.FillWeight = 58.58155F;
-            this.Nro.HeaderText = "ID";
-            this.Nro.Name = "Nro";
-            this.Nro.ReadOnly = true;
-            this.Nro.Width = 50;
-            // 
-            // RUC
-            // 
-            this.RUC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.RUC.HeaderText = "RUC";
-            this.RUC.Name = "RUC";
-            this.RUC.ReadOnly = true;
-            this.RUC.Width = 150;
-            // 
-            // DNIRUC
-            // 
-            this.DNIRUC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DNIRUC.FillWeight = 69.81967F;
-            this.DNIRUC.HeaderText = "DNI";
-            this.DNIRUC.MinimumWidth = 100;
-            this.DNIRUC.Name = "DNIRUC";
-            this.DNIRUC.ReadOnly = true;
-            this.DNIRUC.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column4.FillWeight = 380F;
-            this.Column4.HeaderText = "Nombre";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 240;
-            // 
-            // VIP
-            // 
-            this.VIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.VIP.HeaderText = "VIP";
-            this.VIP.Name = "VIP";
-            this.VIP.ReadOnly = true;
-            // 
-            // Asociado
-            // 
-            this.Asociado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Asociado.HeaderText = "Asociado";
-            this.Asociado.MinimumWidth = 100;
-            this.Asociado.Name = "Asociado";
-            this.Asociado.ReadOnly = true;
-            // 
-            // Sector
-            // 
-            this.Sector.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Sector.HeaderText = "Sector";
-            this.Sector.Name = "Sector";
-            this.Sector.ReadOnly = true;
-            this.Sector.Width = 140;
-            // 
-            // Actividad
-            // 
-            this.Actividad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Actividad.HeaderText = "Actividad";
-            this.Actividad.Name = "Actividad";
-            this.Actividad.ReadOnly = true;
-            this.Actividad.Width = 150;
-            // 
-            // Razon
-            // 
-            this.Razon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Razon.HeaderText = "Razón Social";
-            this.Razon.Name = "Razon";
-            this.Razon.ReadOnly = true;
-            this.Razon.Width = 170;
             // 
             // frm_Clientes_Listar
             // 

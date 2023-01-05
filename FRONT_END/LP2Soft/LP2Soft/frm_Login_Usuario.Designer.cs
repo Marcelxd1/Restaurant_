@@ -130,7 +130,7 @@
             // 
             // btnShow
             // 
-            this.btnShow.BackColor = System.Drawing.Color.LightGray;
+            this.btnShow.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnShow.BackgroundImage = global::LP2Soft.Properties.Resources.ojo;
             this.btnShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnShow.BorderRadius = 10;
@@ -198,7 +198,7 @@
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.DisabledState.Parent = this.txtPassword;
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.FillColor = System.Drawing.Color.LightGray;
+            this.txtPassword.FillColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.FocusedState.Parent = this.txtPassword;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,7 +231,7 @@
             this.txtUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsuario.DisabledState.Parent = this.txtUsuario;
             this.txtUsuario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUsuario.FillColor = System.Drawing.Color.LightGray;
+            this.txtUsuario.FillColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsuario.FocusedState.Parent = this.txtUsuario;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

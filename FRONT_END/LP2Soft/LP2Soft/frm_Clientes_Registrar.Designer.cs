@@ -79,7 +79,7 @@
             // txtApellidoMaterno
             // 
             this.txtApellidoMaterno.BackColor = System.Drawing.Color.White;
-            this.txtApellidoMaterno.BorderColor = System.Drawing.Color.DimGray;
+            this.txtApellidoMaterno.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtApellidoMaterno.BorderRadius = 10;
             this.txtApellidoMaterno.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellidoMaterno.DefaultText = "";
@@ -122,7 +122,7 @@
             // txtApellidoPaterno
             // 
             this.txtApellidoPaterno.BackColor = System.Drawing.Color.White;
-            this.txtApellidoPaterno.BorderColor = System.Drawing.Color.DimGray;
+            this.txtApellidoPaterno.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtApellidoPaterno.BorderRadius = 10;
             this.txtApellidoPaterno.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellidoPaterno.DefaultText = "";
@@ -165,7 +165,7 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.BorderColor = System.Drawing.Color.DimGray;
+            this.txtNombre.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
@@ -465,7 +465,7 @@
             // cbActividad
             // 
             this.cbActividad.BackColor = System.Drawing.Color.Transparent;
-            this.cbActividad.BorderColor = System.Drawing.Color.DimGray;
+            this.cbActividad.BorderColor = System.Drawing.Color.MediumPurple;
             this.cbActividad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbActividad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -487,7 +487,7 @@
             // txtRazon
             // 
             this.txtRazon.BackColor = System.Drawing.Color.White;
-            this.txtRazon.BorderColor = System.Drawing.Color.DimGray;
+            this.txtRazon.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtRazon.BorderRadius = 10;
             this.txtRazon.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRazon.DefaultText = "";
@@ -516,7 +516,7 @@
             // cbSector
             // 
             this.cbSector.BackColor = System.Drawing.Color.Transparent;
-            this.cbSector.BorderColor = System.Drawing.Color.DimGray;
+            this.cbSector.BorderColor = System.Drawing.Color.MediumPurple;
             this.cbSector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -551,7 +551,7 @@
             // txtRuc
             // 
             this.txtRuc.BackColor = System.Drawing.Color.White;
-            this.txtRuc.BorderColor = System.Drawing.Color.DimGray;
+            this.txtRuc.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtRuc.BorderRadius = 10;
             this.txtRuc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRuc.DefaultText = "";
@@ -623,6 +623,8 @@
             // 
             this.cbVIP.AutoSize = true;
             this.cbVIP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbVIP.FlatAppearance.BorderColor = System.Drawing.Color.MediumPurple;
+            this.cbVIP.FlatAppearance.CheckedBackColor = System.Drawing.Color.MediumPurple;
             this.cbVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.cbVIP.ForeColor = System.Drawing.Color.Black;
             this.cbVIP.Location = new System.Drawing.Point(14, 68);
