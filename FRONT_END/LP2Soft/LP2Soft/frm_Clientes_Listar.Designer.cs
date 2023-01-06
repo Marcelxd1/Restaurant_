@@ -263,7 +263,6 @@
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.White;
-            this.txtBuscar.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtBuscar.BorderRadius = 10;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuscar.DefaultText = "";
@@ -398,7 +397,7 @@
             // cbSector
             // 
             this.cbSector.BackColor = System.Drawing.Color.White;
-            this.cbSector.BorderColor = System.Drawing.Color.MediumPurple;
+            this.cbSector.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.cbSector.BorderRadius = 10;
             this.cbSector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -422,7 +421,7 @@
             // cbActividad
             // 
             this.cbActividad.BackColor = System.Drawing.Color.White;
-            this.cbActividad.BorderColor = System.Drawing.Color.MediumPurple;
+            this.cbActividad.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.cbActividad.BorderRadius = 10;
             this.cbActividad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbActividad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;

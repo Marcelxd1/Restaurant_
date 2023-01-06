@@ -225,7 +225,6 @@
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.Color.White;
-            this.txtDescripcion.BorderColor = System.Drawing.Color.DimGray;
             this.txtDescripcion.BorderRadius = 10;
             this.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescripcion.DefaultText = "";
@@ -268,7 +267,6 @@
             // txtCantidad
             // 
             this.txtCantidad.BackColor = System.Drawing.Color.White;
-            this.txtCantidad.BorderColor = System.Drawing.Color.DimGray;
             this.txtCantidad.BorderRadius = 10;
             this.txtCantidad.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCantidad.DefaultText = "";
@@ -312,7 +310,6 @@
             // txtPrecio
             // 
             this.txtPrecio.BackColor = System.Drawing.Color.White;
-            this.txtPrecio.BorderColor = System.Drawing.Color.DimGray;
             this.txtPrecio.BorderRadius = 10;
             this.txtPrecio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrecio.DefaultText = "";
@@ -367,7 +364,6 @@
             // txtItem
             // 
             this.txtItem.BackColor = System.Drawing.Color.White;
-            this.txtItem.BorderColor = System.Drawing.Color.DimGray;
             this.txtItem.BorderRadius = 10;
             this.txtItem.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtItem.DefaultText = "";
@@ -409,7 +405,6 @@
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.White;
-            this.txtBuscar.BorderColor = System.Drawing.Color.Transparent;
             this.txtBuscar.BorderRadius = 10;
             this.txtBuscar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -433,6 +428,7 @@
             this.txtBuscar.PasswordChar = '\0';
             this.txtBuscar.PlaceholderText = "";
             this.txtBuscar.SelectedText = "";
+            this.txtBuscar.SelectionStart = 12;
             this.txtBuscar.ShadowDecoration.Parent = this.txtBuscar;
             this.txtBuscar.Size = new System.Drawing.Size(326, 35);
             this.txtBuscar.TabIndex = 45;
@@ -576,7 +572,6 @@
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.White;
-            this.txtTotal.BorderColor = System.Drawing.Color.DimGray;
             this.txtTotal.BorderRadius = 10;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotal.DefaultText = "";
@@ -662,7 +657,7 @@
             this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.FillColor = System.Drawing.Color.Transparent;
-            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
             this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.Image = global::LP2Soft.Properties.Resources.lupa1;

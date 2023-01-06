@@ -143,7 +143,6 @@
             // txtDNIRUC
             // 
             this.txtDNIRUC.BackColor = System.Drawing.Color.White;
-            this.txtDNIRUC.BorderColor = System.Drawing.Color.White;
             this.txtDNIRUC.BorderRadius = 10;
             this.txtDNIRUC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDNIRUC.DefaultText = "";
@@ -187,7 +186,6 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.BorderColor = System.Drawing.Color.White;
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
@@ -322,7 +320,7 @@
             this.Importe});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateBlue;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -499,7 +497,6 @@
             // txtVuelto
             // 
             this.txtVuelto.BackColor = System.Drawing.Color.White;
-            this.txtVuelto.BorderColor = System.Drawing.Color.White;
             this.txtVuelto.BorderRadius = 10;
             this.txtVuelto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtVuelto.DefaultText = "";
@@ -567,7 +564,6 @@
             // txtImporte
             // 
             this.txtImporte.BackColor = System.Drawing.Color.White;
-            this.txtImporte.BorderColor = System.Drawing.Color.White;
             this.txtImporte.BorderRadius = 10;
             this.txtImporte.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtImporte.DefaultText = "";
@@ -610,7 +606,6 @@
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.White;
-            this.txtTotal.BorderColor = System.Drawing.Color.White;
             this.txtTotal.BorderRadius = 10;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotal.DefaultText = "";

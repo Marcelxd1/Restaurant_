@@ -79,7 +79,6 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BorderColor = System.Drawing.Color.DimGray;
             this.txtDescripcion.BorderRadius = 10;
             this.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescripcion.DefaultText = "";
@@ -120,7 +119,6 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.BorderColor = System.Drawing.Color.DimGray;
             this.txtPrecio.BorderRadius = 10;
             this.txtPrecio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrecio.DefaultText = "";
@@ -161,7 +159,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.BorderColor = System.Drawing.Color.DimGray;
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
@@ -412,7 +409,7 @@
             this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.FillColor = System.Drawing.Color.Transparent;
-            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
             this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.Image = global::LP2Soft.Properties.Resources.lupa1;
@@ -431,7 +428,8 @@
             // cbCategoria
             // 
             this.cbCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.cbCategoria.BorderColor = System.Drawing.Color.DimGray;
+            this.cbCategoria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.cbCategoria.BorderRadius = 10;
             this.cbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -495,7 +493,6 @@
             this.numCantidad.Size = new System.Drawing.Size(88, 32);
             this.numCantidad.TabIndex = 67;
             this.numCantidad.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue;
-            this.numCantidad.UpDownButtonForeColor = System.Drawing.Color.White;
             this.numCantidad.Value = new decimal(new int[] {
             1,
             0,

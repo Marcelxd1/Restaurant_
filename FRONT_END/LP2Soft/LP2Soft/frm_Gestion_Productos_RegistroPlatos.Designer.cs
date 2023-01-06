@@ -68,7 +68,6 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BorderColor = System.Drawing.Color.DimGray;
             this.txtDescripcion.BorderRadius = 10;
             this.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescripcion.DefaultText = "";
@@ -110,7 +109,6 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.BorderColor = System.Drawing.Color.DimGray;
             this.txtPrecio.BorderRadius = 10;
             this.txtPrecio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrecio.DefaultText = "";
@@ -152,7 +150,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.BorderColor = System.Drawing.Color.DimGray;
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
@@ -205,7 +202,6 @@
             // 
             // txtPresentacion
             // 
-            this.txtPresentacion.BorderColor = System.Drawing.Color.DimGray;
             this.txtPresentacion.BorderRadius = 10;
             this.txtPresentacion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPresentacion.DefaultText = "";
@@ -258,9 +254,9 @@
             // rbPlato
             // 
             this.rbPlato.AutoSize = true;
-            this.rbPlato.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbPlato.CheckedState.BorderColor = System.Drawing.Color.SlateBlue;
             this.rbPlato.CheckedState.BorderThickness = 0;
-            this.rbPlato.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbPlato.CheckedState.FillColor = System.Drawing.Color.DarkSlateBlue;
             this.rbPlato.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbPlato.CheckedState.InnerOffset = -4;
             this.rbPlato.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -280,9 +276,9 @@
             // rbBebida
             // 
             this.rbBebida.AutoSize = true;
-            this.rbBebida.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbBebida.CheckedState.BorderColor = System.Drawing.Color.SlateBlue;
             this.rbBebida.CheckedState.BorderThickness = 0;
-            this.rbBebida.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbBebida.CheckedState.FillColor = System.Drawing.Color.DarkSlateBlue;
             this.rbBebida.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbBebida.CheckedState.InnerOffset = -4;
             this.rbBebida.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -319,7 +315,8 @@
             // cbCategoria
             // 
             this.cbCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.cbCategoria.BorderColor = System.Drawing.Color.DimGray;
+            this.cbCategoria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.cbCategoria.BorderRadius = 10;
             this.cbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

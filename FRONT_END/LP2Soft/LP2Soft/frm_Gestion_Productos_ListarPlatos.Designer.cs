@@ -35,6 +35,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dgvProductos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModify = new Guna.UI2.WinForms.Guna2Button();
             this.btnNuevo = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
@@ -45,10 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnBuscaCliente = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
@@ -130,6 +130,45 @@
             this.dgvProductos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProductos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvProductos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProductos_CellFormatting);
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column5.FillWeight = 22.17966F;
+            this.Column5.HeaderText = "Categoría";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 120;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column3.FillWeight = 380.7106F;
+            this.Column3.HeaderText = "Producto";
+            this.Column3.MinimumWidth = 240;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 240;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column4.FillWeight = 73.33102F;
+            this.Column4.HeaderText = "Precio";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 105;
+            // 
+            // Salario
+            // 
+            this.Salario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Salario.HeaderText = "Presentación";
+            this.Salario.MinimumWidth = 160;
+            this.Salario.Name = "Salario";
+            this.Salario.ReadOnly = true;
             // 
             // btnModify
             // 
@@ -214,8 +253,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBuscar.BorderColor = System.Drawing.Color.DimGray;
+            this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderRadius = 10;
             this.txtBuscar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -260,8 +298,9 @@
             // 
             // cbCategoria
             // 
-            this.cbCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.cbCategoria.BorderColor = System.Drawing.Color.DimGray;
+            this.cbCategoria.BackColor = System.Drawing.Color.White;
+            this.cbCategoria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.cbCategoria.BorderRadius = 10;
             this.cbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -315,7 +354,7 @@
             this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscaCliente.CustomImages.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.FillColor = System.Drawing.Color.Transparent;
-            this.btnBuscaCliente.Font = new System.Drawing.Font("Sans Serif Collection", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
             this.btnBuscaCliente.HoverState.Parent = this.btnBuscaCliente;
             this.btnBuscaCliente.Image = global::LP2Soft.Properties.Resources.lupa1;
@@ -343,45 +382,6 @@
             this.label2.TabIndex = 164;
             this.label2.Text = "Categoría:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column5.FillWeight = 22.17966F;
-            this.Column5.HeaderText = "Categoría";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 120;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column3.FillWeight = 380.7106F;
-            this.Column3.HeaderText = "Producto";
-            this.Column3.MinimumWidth = 240;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 240;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column4.FillWeight = 73.33102F;
-            this.Column4.HeaderText = "Precio";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 105;
-            // 
-            // Salario
-            // 
-            this.Salario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Salario.HeaderText = "Presentación";
-            this.Salario.MinimumWidth = 160;
-            this.Salario.Name = "Salario";
-            this.Salario.ReadOnly = true;
             // 
             // frm_Gestion_Productos_ListarPlatos
             // 

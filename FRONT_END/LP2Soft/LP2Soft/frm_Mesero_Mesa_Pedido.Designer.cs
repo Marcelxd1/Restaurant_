@@ -74,10 +74,10 @@
             // panelCategorias
             // 
             this.panelCategorias.BackColor = System.Drawing.SystemColors.Window;
-            this.panelCategorias.Location = new System.Drawing.Point(11, 111);
+            this.panelCategorias.Location = new System.Drawing.Point(11, 117);
             this.panelCategorias.Name = "panelCategorias";
             this.panelCategorias.ShadowDecoration.Parent = this.panelCategorias;
-            this.panelCategorias.Size = new System.Drawing.Size(99, 466);
+            this.panelCategorias.Size = new System.Drawing.Size(99, 460);
             this.panelCategorias.TabIndex = 128;
             // 
             // txtTotal
@@ -305,7 +305,6 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.BorderColor = System.Drawing.Color.DimGray;
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
@@ -362,7 +361,6 @@
             // txtDNIRUC
             // 
             this.txtDNIRUC.BackColor = System.Drawing.Color.White;
-            this.txtDNIRUC.BorderColor = System.Drawing.Color.DimGray;
             this.txtDNIRUC.BorderRadius = 10;
             this.txtDNIRUC.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDNIRUC.DefaultText = "";

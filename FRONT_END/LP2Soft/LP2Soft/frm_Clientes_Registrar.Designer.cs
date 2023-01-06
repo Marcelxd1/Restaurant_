@@ -79,7 +79,6 @@
             // txtApellidoMaterno
             // 
             this.txtApellidoMaterno.BackColor = System.Drawing.Color.White;
-            this.txtApellidoMaterno.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtApellidoMaterno.BorderRadius = 10;
             this.txtApellidoMaterno.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellidoMaterno.DefaultText = "";
@@ -122,7 +121,6 @@
             // txtApellidoPaterno
             // 
             this.txtApellidoPaterno.BackColor = System.Drawing.Color.White;
-            this.txtApellidoPaterno.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtApellidoPaterno.BorderRadius = 10;
             this.txtApellidoPaterno.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellidoPaterno.DefaultText = "";
@@ -165,7 +163,6 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
@@ -221,7 +218,6 @@
             // txtDNI
             // 
             this.txtDNI.BackColor = System.Drawing.Color.White;
-            this.txtDNI.BorderColor = System.Drawing.Color.Transparent;
             this.txtDNI.BorderRadius = 10;
             this.txtDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDNI.DefaultText = "";
@@ -465,7 +461,8 @@
             // cbActividad
             // 
             this.cbActividad.BackColor = System.Drawing.Color.Transparent;
-            this.cbActividad.BorderColor = System.Drawing.Color.MediumPurple;
+            this.cbActividad.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.cbActividad.BorderRadius = 10;
             this.cbActividad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbActividad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -487,7 +484,6 @@
             // txtRazon
             // 
             this.txtRazon.BackColor = System.Drawing.Color.White;
-            this.txtRazon.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtRazon.BorderRadius = 10;
             this.txtRazon.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRazon.DefaultText = "";
@@ -516,7 +512,8 @@
             // cbSector
             // 
             this.cbSector.BackColor = System.Drawing.Color.Transparent;
-            this.cbSector.BorderColor = System.Drawing.Color.MediumPurple;
+            this.cbSector.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.cbSector.BorderRadius = 10;
             this.cbSector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -551,7 +548,6 @@
             // txtRuc
             // 
             this.txtRuc.BackColor = System.Drawing.Color.White;
-            this.txtRuc.BorderColor = System.Drawing.Color.MediumPurple;
             this.txtRuc.BorderRadius = 10;
             this.txtRuc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRuc.DefaultText = "";

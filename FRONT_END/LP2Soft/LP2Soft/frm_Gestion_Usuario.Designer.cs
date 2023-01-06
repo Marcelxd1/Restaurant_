@@ -91,7 +91,7 @@
             // cmbRol
             // 
             this.cmbRol.BackColor = System.Drawing.Color.Transparent;
-            this.cmbRol.BorderColor = System.Drawing.Color.DimGray;
+            this.cmbRol.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.cmbRol.BorderRadius = 10;
             this.cmbRol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbRol.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -114,7 +114,6 @@
             // 
             // txtPasswordConfirm
             // 
-            this.txtPasswordConfirm.BorderColor = System.Drawing.Color.DimGray;
             this.txtPasswordConfirm.BorderRadius = 10;
             this.txtPasswordConfirm.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPasswordConfirm.DefaultText = "";
@@ -154,7 +153,6 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.BorderColor = System.Drawing.Color.DimGray;
             this.txtPassword.BorderRadius = 10;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
@@ -207,7 +205,6 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.BorderColor = System.Drawing.Color.DimGray;
             this.txtUsername.BorderRadius = 10;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultText = "";
@@ -224,7 +221,7 @@
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.HoverState.Parent = this.txtUsername;
             this.txtUsername.Location = new System.Drawing.Point(188, 38);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "";
@@ -237,7 +234,6 @@
             // 
             // txtApellidoMaterno
             // 
-            this.txtApellidoMaterno.BorderColor = System.Drawing.Color.DimGray;
             this.txtApellidoMaterno.BorderRadius = 10;
             this.txtApellidoMaterno.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellidoMaterno.DefaultText = "";
@@ -278,7 +274,6 @@
             // 
             // txtApellidoPaterno
             // 
-            this.txtApellidoPaterno.BorderColor = System.Drawing.Color.DimGray;
             this.txtApellidoPaterno.BorderRadius = 10;
             this.txtApellidoPaterno.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellidoPaterno.DefaultText = "";
@@ -331,7 +326,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.BorderColor = System.Drawing.Color.DimGray;
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
@@ -360,7 +354,6 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.BorderColor = System.Drawing.Color.DimGray;
             this.txtDNI.BorderRadius = 10;
             this.txtDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDNI.DefaultText = "";
@@ -414,7 +407,6 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.BorderColor = System.Drawing.Color.DimGray;
             this.txtTelefono.BorderRadius = 10;
             this.txtTelefono.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTelefono.DefaultText = "";
@@ -456,7 +448,6 @@
             // 
             // txtSueldo
             // 
-            this.txtSueldo.BorderColor = System.Drawing.Color.DimGray;
             this.txtSueldo.BorderRadius = 10;
             this.txtSueldo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSueldo.DefaultText = "";
@@ -514,7 +505,6 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.BorderColor = System.Drawing.Color.DimGray;
             this.txtCorreo.BorderRadius = 10;
             this.txtCorreo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCorreo.DefaultText = "";
