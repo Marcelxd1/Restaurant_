@@ -48,14 +48,14 @@ namespace LP2Soft
             hilo1.Start();
             await hilo1;
             form_loading.Hide();
-            visorPDF.LoadFile("temporal.pdf");
+            visorPDF.LoadFile($"ReportePlatosMásVendidos {fechaini_str} - {fechafin_str}.pdf");
             visorPDF.setShowToolbar(true);
         }
 
         private void generar()
         {
             archivoBytes = daoReporte.generarReportePlatosMasVendidos(fechaini_str, fechafin_str);
-            File.WriteAllBytes("temporal.pdf", archivoBytes);
+            File.WriteAllBytes($"ReportePlatosMásVendidos {fechaini_str} - {fechafin_str}.pdf", archivoBytes);
         }
     }
 }

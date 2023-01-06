@@ -51,14 +51,14 @@ namespace LP2Soft
             await hilo1;
             form_loading.Hide();
 
-            visorPDF.LoadFile("temporal.pdf");
+            visorPDF.LoadFile($"ReporteAsistencia {fechaini_str} - {fechafin_str}.pdf");
             visorPDF.setShowToolbar(true);
         }
 
         private void generar()
         {
             archivoBytes = daoReporte.generarReporteAsistencia(fechaini_str, fechafin_str);
-            File.WriteAllBytes("temporal.pdf", archivoBytes);
+            File.WriteAllBytes($"ReporteAsistencia {fechaini_str} - {fechafin_str}.pdf", archivoBytes);
         }
     }
 }

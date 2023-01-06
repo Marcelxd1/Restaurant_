@@ -25,40 +25,6 @@ namespace LP2Soft
             dtpIni = null; dtpFin = null;
         }
 
-        private async void btnGenerarReporte_Click(object sender, EventArgs e)
-        {
-            frm_Loading form_loading = new frm_Loading();
-            form_loading.Show();
-            if (dtpIni != null && dtpFin != null)
-            {
-                fechaini_str = dtpIni.Value.ToString("yyyy-MM-dd");
-                fechafin_str = dtpFin.Value.ToString("yyyy-MM-dd");
-            }
-            else if(dtpIni != null)
-            {
-                fechaini_str = dtpIni.Value.ToString("yyyy-MM-dd");
-                fechafin_str = fin.ToString("yyyy-MM-dd");
-            }
-            else if(dtpIni == null && dtpFin == null)
-            {
-                fechaini_str = ini.ToString("yyyy-MM-dd");
-                fechafin_str = fin.ToString("yyyy-MM-dd");
-            }
-            Task hilo1 = new Task(generar);
-            hilo1.Start();
-            await hilo1;
-            form_loading.Hide();
-
-            visorPDF.LoadFile("temporal.pdf");
-            visorPDF.setShowToolbar(true);
-        }
-
-        private void generar()
-        {
-            archivoBytes = daoReporte.generarReporteCajaxFecha(fechaini_str, fechafin_str);
-            File.WriteAllBytes("temporal.pdf", archivoBytes);
-        }
-
         private async void btnGeneraReporte_Click(object sender, EventArgs e)
         {
             frm_Loading form_loading = new frm_Loading();
@@ -83,18 +49,15 @@ namespace LP2Soft
             await hilo1;
             form_loading.Hide();
 
-            visorPDF.LoadFile("temporal.pdf");
+            visorPDF.LoadFile($"ReporteCaja {fechaini_str} - {fechafin_str}.pdf");
             visorPDF.setShowToolbar(true);
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void generar()
         {
-
+            archivoBytes = daoReporte.generarReporteCajaxFecha(fechaini_str, fechafin_str);
+            File.WriteAllBytes($"ReporteCaja {fechaini_str} - {fechafin_str}.pdf", archivoBytes);
         }
 
-        private void dtpFin_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

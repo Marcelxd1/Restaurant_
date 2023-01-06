@@ -29,14 +29,14 @@ namespace LP2Soft
             hilo1.Start();
             await hilo1;
             form_loading.Hide();
-            visorPDF.LoadFile("temporal.pdf");
+            visorPDF.LoadFile("ReporteVentas.pdf");
             visorPDF.setShowToolbar(true);
         }
 
         private void generar()
         {
             archivoBytes = daoReporte.generarReporteVentasXDiaFecha();
-            File.WriteAllBytes("temporal.pdf", archivoBytes);
+            File.WriteAllBytes("ReporteVentas.pdf", archivoBytes);
         }
     }
 }
