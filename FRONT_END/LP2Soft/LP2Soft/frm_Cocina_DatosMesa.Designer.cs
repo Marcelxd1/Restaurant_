@@ -104,7 +104,7 @@
             this.btnListo.Image = global::LP2Soft.Properties.Resources.listo;
             this.btnListo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListo.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnListo.Location = new System.Drawing.Point(12, 446);
+            this.btnListo.Location = new System.Drawing.Point(12, 449);
             this.btnListo.Name = "btnListo";
             this.btnListo.PressedColor = System.Drawing.Color.Red;
             this.btnListo.ShadowDecoration.Parent = this.btnListo;
@@ -130,7 +130,7 @@
             this.btnProceso.Image = global::LP2Soft.Properties.Resources.generalComida;
             this.btnProceso.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProceso.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnProceso.Location = new System.Drawing.Point(129, 446);
+            this.btnProceso.Location = new System.Drawing.Point(129, 449);
             this.btnProceso.Name = "btnProceso";
             this.btnProceso.PressedColor = System.Drawing.Color.Red;
             this.btnProceso.ShadowDecoration.Parent = this.btnProceso;

@@ -29,35 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Cajero_Pedidos));
-            this.lblPedidos = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.lblNotificacion = new System.Windows.Forms.Label();
-            this.btnLlevar = new System.Windows.Forms.Button();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnLlevar = new Guna.UI2.WinForms.Guna2Button();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblPedidos
-            // 
-            this.lblPedidos.AutoSize = true;
-            this.lblPedidos.BackColor = System.Drawing.Color.White;
-            this.lblPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedidos.Location = new System.Drawing.Point(326, 14);
-            this.lblPedidos.Name = "lblPedidos";
-            this.lblPedidos.Size = new System.Drawing.Size(110, 29);
-            this.lblPedidos.TabIndex = 113;
-            this.lblPedidos.Text = "Pedidos";
             // 
             // panelContenedor
             // 
             this.panelContenedor.AutoScroll = true;
             this.panelContenedor.BackColor = System.Drawing.Color.White;
             this.panelContenedor.Controls.Add(this.lblNotificacion);
-            this.panelContenedor.Location = new System.Drawing.Point(22, 72);
+            this.panelContenedor.Location = new System.Drawing.Point(38, 69);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(709, 436);
+            this.panelContenedor.Size = new System.Drawing.Size(929, 498);
             this.panelContenedor.TabIndex = 114;
             // 
             // lblNotificacion
@@ -72,50 +60,63 @@
             this.lblNotificacion.Text = "label1";
             this.lblNotificacion.Visible = false;
             // 
-            // btnLlevar
-            // 
-            this.btnLlevar.BackgroundImage = global::LP2Soft.Properties.Resources.llevar;
-            this.btnLlevar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLlevar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLlevar.Location = new System.Drawing.Point(682, 21);
-            this.btnLlevar.Name = "btnLlevar";
-            this.btnLlevar.Size = new System.Drawing.Size(49, 45);
-            this.btnLlevar.TabIndex = 115;
-            this.btnLlevar.UseVisualStyleBackColor = true;
-            this.btnLlevar.Click += new System.EventHandler(this.btnLlevar_Click);
-            // 
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.Location = new System.Drawing.Point(-3, -3);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(1, 4);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(758, 530);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(1011, 582);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 112;
+            this.guna2PictureBox3.TabIndex = 117;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // label1
+            // label2
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(633, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 45);
-            this.label1.TabIndex = 116;
-            this.label1.Text = "Para Llevar";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(447, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 31);
+            this.label2.TabIndex = 118;
+            this.label2.Text = "Pedidos";
+            // 
+            // btnLlevar
+            // 
+            this.btnLlevar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLlevar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLlevar.BackgroundImage")));
+            this.btnLlevar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLlevar.BorderRadius = 10;
+            this.btnLlevar.CheckedState.Parent = this.btnLlevar;
+            this.btnLlevar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLlevar.CustomImages.Parent = this.btnLlevar;
+            this.btnLlevar.FillColor = System.Drawing.Color.Transparent;
+            this.btnLlevar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLlevar.ForeColor = System.Drawing.Color.White;
+            this.btnLlevar.HoverState.Parent = this.btnLlevar;
+            this.btnLlevar.Image = global::LP2Soft.Properties.Resources.pedir;
+            this.btnLlevar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLlevar.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnLlevar.Location = new System.Drawing.Point(833, 24);
+            this.btnLlevar.Name = "btnLlevar";
+            this.btnLlevar.PressedColor = System.Drawing.Color.Red;
+            this.btnLlevar.ShadowDecoration.Parent = this.btnLlevar;
+            this.btnLlevar.Size = new System.Drawing.Size(134, 39);
+            this.btnLlevar.TabIndex = 156;
+            this.btnLlevar.Text = "Para llevar";
+            this.btnLlevar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLlevar.Click += new System.EventHandler(this.btnLlevar_Click);
             // 
             // frm_Cajero_Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(753, 525);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1010, 579);
             this.Controls.Add(this.btnLlevar);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panelContenedor);
-            this.Controls.Add(this.lblPedidos);
             this.Controls.Add(this.guna2PictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Cajero_Pedidos";
@@ -129,12 +130,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblPedidos;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Label lblNotificacion;
-        private System.Windows.Forms.Button btnLlevar;
-        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button btnLlevar;
     }
 }

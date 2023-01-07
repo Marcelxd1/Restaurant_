@@ -311,10 +311,12 @@
             // 
             // dtpIni
             // 
+            this.dtpIni.BorderColor = System.Drawing.Color.DimGray;
             this.dtpIni.CheckedState.Parent = this.dtpIni;
             this.dtpIni.FillColor = System.Drawing.Color.Transparent;
             this.dtpIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpIni.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.dtpIni.HoverState.Parent = this.dtpIni;
             this.dtpIni.Location = new System.Drawing.Point(17, 68);
             this.dtpIni.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -355,10 +357,12 @@
             // 
             // dtpFin
             // 
+            this.dtpFin.BorderColor = System.Drawing.Color.DimGray;
             this.dtpFin.CheckedState.Parent = this.dtpFin;
             this.dtpFin.FillColor = System.Drawing.Color.Transparent;
             this.dtpFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.dtpFin.HoverState.Parent = this.dtpFin;
             this.dtpFin.Location = new System.Drawing.Point(268, 68);
             this.dtpFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);

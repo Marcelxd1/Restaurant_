@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Caja_Pedido));
-            this.lblPedidos = new System.Windows.Forms.Label();
             this.gbIngresos = new Guna.UI2.WinForms.Guna2GroupBox();
             this.pbCLiente = new System.Windows.Forms.PictureBox();
-            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.txtDNIRUC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
@@ -68,6 +66,8 @@
             this.rbnTarjeta = new Guna.UI2.WinForms.Guna2RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
+            this.lblCabecera = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.gbIngresos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCLiente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
@@ -75,21 +75,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblPedidos
-            // 
-            this.lblPedidos.AutoSize = true;
-            this.lblPedidos.BackColor = System.Drawing.Color.White;
-            this.lblPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedidos.Location = new System.Drawing.Point(315, 21);
-            this.lblPedidos.Name = "lblPedidos";
-            this.lblPedidos.Size = new System.Drawing.Size(186, 29);
-            this.lblPedidos.TabIndex = 111;
-            this.lblPedidos.Text = "Procesar Pago";
-            // 
             // gbIngresos
             // 
-            this.gbIngresos.Controls.Add(this.pbCLiente);
             this.gbIngresos.Controls.Add(this.btnBuscar);
+            this.gbIngresos.Controls.Add(this.pbCLiente);
             this.gbIngresos.Controls.Add(this.txtDNIRUC);
             this.gbIngresos.Controls.Add(this.label2);
             this.gbIngresos.Controls.Add(this.txtNombre);
@@ -114,31 +103,13 @@
             // 
             this.pbCLiente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCLiente.Image = global::LP2Soft.Properties.Resources.agregar_usuario;
-            this.pbCLiente.Location = new System.Drawing.Point(11, 109);
+            this.pbCLiente.Location = new System.Drawing.Point(11, 92);
             this.pbCLiente.Name = "pbCLiente";
             this.pbCLiente.Size = new System.Drawing.Size(69, 77);
             this.pbCLiente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCLiente.TabIndex = 147;
             this.pbCLiente.TabStop = false;
             this.pbCLiente.Click += new System.EventHandler(this.pbCLiente_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BorderRadius = 10;
-            this.btnBuscar.CheckedState.Parent = this.btnBuscar;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.CustomImages.Parent = this.btnBuscar;
-            this.btnBuscar.FillColor = System.Drawing.Color.Black;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.HoverState.Parent = this.btnBuscar;
-            this.btnBuscar.Location = new System.Drawing.Point(137, 195);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
-            this.btnBuscar.Size = new System.Drawing.Size(96, 28);
-            this.btnBuscar.TabIndex = 146;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtDNIRUC
             // 
@@ -159,7 +130,7 @@
             this.txtDNIRUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDNIRUC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDNIRUC.HoverState.Parent = this.txtDNIRUC;
-            this.txtDNIRUC.Location = new System.Drawing.Point(159, 149);
+            this.txtDNIRUC.Location = new System.Drawing.Point(159, 136);
             this.txtDNIRUC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDNIRUC.Multiline = true;
             this.txtDNIRUC.Name = "txtDNIRUC";
@@ -177,7 +148,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(86, 109);
+            this.label2.Location = new System.Drawing.Point(86, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 113;
@@ -202,7 +173,7 @@
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
-            this.txtNombre.Location = new System.Drawing.Point(159, 104);
+            this.txtNombre.Location = new System.Drawing.Point(159, 91);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -231,7 +202,7 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(86, 156);
+            this.label7.Location = new System.Drawing.Point(86, 143);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 18);
             this.label7.TabIndex = 65;
@@ -297,48 +268,48 @@
             // 
             // dgvPedidos
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPedidos.BackgroundColor = System.Drawing.Color.White;
             this.dgvPedidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPedidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPedidos.ColumnHeadersHeight = 22;
             this.dgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
             this.Cantidad,
             this.Precio,
             this.Importe});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPedidos.EnableHeadersVisualStyles = false;
             this.dgvPedidos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPedidos.Location = new System.Drawing.Point(402, 63);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPedidos.RowHeadersVisible = false;
             this.dgvPedidos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -715,16 +686,57 @@
             this.guna2PictureBox3.TabIndex = 110;
             this.guna2PictureBox3.TabStop = false;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.BorderRadius = 10;
+            this.btnBuscar.CheckedState.Parent = this.btnBuscar;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.CustomImages.Parent = this.btnBuscar;
+            this.btnBuscar.FillColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.HoverState.Parent = this.btnBuscar;
+            this.btnBuscar.Image = global::LP2Soft.Properties.Resources.lupa1;
+            this.btnBuscar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscar.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnBuscar.Location = new System.Drawing.Point(135, 187);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.PressedColor = System.Drawing.Color.Red;
+            this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
+            this.btnBuscar.Size = new System.Drawing.Size(115, 39);
+            this.btnBuscar.TabIndex = 156;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // lblCabecera
+            // 
+            this.lblCabecera.AutoSize = false;
+            this.lblCabecera.BackColor = System.Drawing.Color.Transparent;
+            this.lblCabecera.BackgroundImage = global::LP2Soft.Properties.Resources.fondo1;
+            this.lblCabecera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.lblCabecera.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.lblCabecera.ForeColor = System.Drawing.Color.White;
+            this.lblCabecera.Location = new System.Drawing.Point(0, 0);
+            this.lblCabecera.Name = "lblCabecera";
+            this.lblCabecera.Size = new System.Drawing.Size(838, 47);
+            this.lblCabecera.TabIndex = 148;
+            this.lblCabecera.Text = "Procesar Pago";
+            this.lblCabecera.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frm_Caja_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(830, 514);
+            this.Controls.Add(this.lblCabecera);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.dgvPedidos);
             this.Controls.Add(this.gbIngresos);
-            this.Controls.Add(this.lblPedidos);
             this.Controls.Add(this.guna2PictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -738,13 +750,10 @@
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblPedidos;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2GroupBox gbIngresos;
         private System.Windows.Forms.Label lblMesa;
@@ -755,7 +764,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDNIRUC;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
-        private Guna.UI2.WinForms.Guna2Button btnBuscar;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPedidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
@@ -779,5 +787,7 @@
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.PictureBox pbCLiente;
+        private Guna.UI2.WinForms.Guna2Button btnBuscar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblCabecera;
     }
 }

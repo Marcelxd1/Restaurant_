@@ -40,19 +40,18 @@ namespace LP2Soft
         private void dgvListarClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             UserWS.persona cliente = (UserWS.persona)dgvListarClientes.Rows[e.RowIndex].DataBoundItem;
-            dgvListarClientes.Rows[e.RowIndex].Cells[0].Value = cliente.id_persona;
             if (cliente.tipo == 'N')
             {
-                dgvListarClientes.Rows[e.RowIndex].Cells[1].Value = "Persona";
-                dgvListarClientes.Rows[e.RowIndex].Cells[2].Value = cliente.DNI;
-                dgvListarClientes.Rows[e.RowIndex].Cells[3].Value =
+                dgvListarClientes.Rows[e.RowIndex].Cells[0].Value = "Persona";
+                dgvListarClientes.Rows[e.RowIndex].Cells[1].Value = cliente.DNI;
+                dgvListarClientes.Rows[e.RowIndex].Cells[2].Value =
                     cliente.nombre + " " + cliente.apellido_paterno + " " + cliente.apellido_materno;
             }
             else
             {
-                dgvListarClientes.Rows[e.RowIndex].Cells[1].Value = "Empresa";
-                dgvListarClientes.Rows[e.RowIndex].Cells[2].Value = cliente.ruc;
-                dgvListarClientes.Rows[e.RowIndex].Cells[3].Value =
+                dgvListarClientes.Rows[e.RowIndex].Cells[0].Value = "Empresa";
+                dgvListarClientes.Rows[e.RowIndex].Cells[1].Value = cliente.ruc;
+                dgvListarClientes.Rows[e.RowIndex].Cells[2].Value =
                     cliente.nombre;
             }
         }

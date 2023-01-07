@@ -102,6 +102,7 @@
             this.cmbRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRol.ForeColor = System.Drawing.Color.Black;
             this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbRol.HoverState.Parent = this.cmbRol;
             this.cmbRol.ItemHeight = 30;
             this.cmbRol.ItemsAppearance.Parent = this.cmbRol;

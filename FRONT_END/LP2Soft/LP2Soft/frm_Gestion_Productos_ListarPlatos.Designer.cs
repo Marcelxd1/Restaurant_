@@ -310,6 +310,7 @@
             this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.cbCategoria.ForeColor = System.Drawing.Color.Black;
             this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbCategoria.HoverState.Parent = this.cbCategoria;
             this.cbCategoria.ItemHeight = 30;
             this.cbCategoria.ItemsAppearance.Parent = this.cbCategoria;

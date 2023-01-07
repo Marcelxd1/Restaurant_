@@ -43,7 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI">
-      <HintPath>D:\PROGRAMAS\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI WinForms\.net 2.0\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\..\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI WinForms\.net 2.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>G:\USUARIO\Descargas\GUNA\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 2.0\Guna.UI2.dll</HintPath>
@@ -224,12 +224,6 @@
     <Compile Include="frm_Clientes_Registrar.Designer.cs">
       <DependentUpon>frm_Clientes_Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Gestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Gestion.Designer.cs">
-      <DependentUpon>frm_Gestion.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Gestion_Productos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,9 +381,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Clientes_Registrar.resx">
       <DependentUpon>frm_Clientes_Registrar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Gestion.resx">
-      <DependentUpon>frm_Gestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Gestion_Productos.resx">
       <DependentUpon>frm_Gestion_Productos.cs</DependentUpon>

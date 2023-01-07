@@ -277,7 +277,7 @@
             this.txtBuscar.FocusedState.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.DarkSlateBlue;
+            this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscar.HoverState.Parent = this.txtBuscar;
             this.txtBuscar.HoverState.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtBuscar.IconRightCursor = System.Windows.Forms.Cursors.Hand;
@@ -408,6 +408,7 @@
             this.cbSector.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSector.ForeColor = System.Drawing.Color.Black;
             this.cbSector.FormattingEnabled = true;
+            this.cbSector.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSector.HoverState.Parent = this.cbSector;
             this.cbSector.ItemHeight = 30;
             this.cbSector.ItemsAppearance.Parent = this.cbSector;
@@ -432,6 +433,7 @@
             this.cbActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActividad.ForeColor = System.Drawing.Color.Black;
             this.cbActividad.FormattingEnabled = true;
+            this.cbActividad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbActividad.HoverState.Parent = this.cbActividad;
             this.cbActividad.ItemHeight = 30;
             this.cbActividad.ItemsAppearance.Parent = this.cbActividad;

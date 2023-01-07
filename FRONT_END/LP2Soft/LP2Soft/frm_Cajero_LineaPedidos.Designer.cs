@@ -40,9 +40,9 @@
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.ptbNotificacion);
             this.groupBox1.Controls.Add(this.lblPedido);
-            this.groupBox1.Location = new System.Drawing.Point(4, 12);
+            this.groupBox1.Location = new System.Drawing.Point(13, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 54);
+            this.groupBox1.Size = new System.Drawing.Size(195, 62);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -71,7 +71,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(200, 78);
+            this.ClientSize = new System.Drawing.Size(219, 78);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Cajero_LineaPedidos";
